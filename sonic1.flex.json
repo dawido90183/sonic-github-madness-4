@@ -10,23 +10,31 @@
                     "name": "Sonic",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
+                            "length": 1
+                        },
+                        {
+                            "path": "!Characters/Sonic/Palette - LZ Underwater.bin",
+                            "length": 1
+                        },
+                        {
+                            "path": "!Characters/Sonic/Palette - SBZ3 Underwater.bin",
                             "length": 1
                         }
                     ],
                     "format": "Sonic 1.js",
                     "art": {
-                        "path": "artunc/Sonic.bin",
+                        "path": "!Characters/Sonic/Art.bin",
                         "compression": "Uncompressed",
-                        "offset": 0
+                        "offset": "0"
                     },
                     "mappings": {
-                        "path": "_maps/Sonic.asm",
+                        "path": "!Characters/Sonic/Mappings.asm",
                         "label": ""
                     },
                     "dplcs": {
                         "enabled": true,
-                        "path": "_maps/Sonic - Dynamic Gfx Script.asm",
+                        "path": "!Characters/Sonic/DPLC.asm",
                         "label": ""
                     },
                     "uuid": "da472ab9-f363-45e6-8ee3-a83fd70d6d9c"
@@ -35,7 +43,7 @@
                     "name": "Signpost",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         }
                     ],
@@ -61,7 +69,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         }
                     ],
@@ -86,7 +94,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         }
                     ],
@@ -111,7 +119,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         }
                     ],
@@ -136,7 +144,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         }
                     ],
@@ -161,7 +169,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         }
                     ],
@@ -185,7 +193,7 @@
                     "name": "Giant ring",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         }
                     ],
@@ -211,7 +219,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         }
                     ],
@@ -236,7 +244,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         }
                     ],
@@ -261,7 +269,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         }
                     ],
@@ -283,7 +291,7 @@
                 }
             ],
             "isDirectory": true,
-            "expanded": false,
+            "expanded": true,
             "uuid": "14da472a-b9f3-4355-a6ce-e3a83fd70d6d"
         },
         {
@@ -314,7 +322,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -343,7 +351,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -372,7 +380,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -401,7 +409,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -430,7 +438,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -458,7 +466,7 @@
                     "name": "Bridge stump",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -487,7 +495,7 @@
                     "name": "Crabmeat",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -516,7 +524,7 @@
                     "name": "Buzz Bomber",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -545,7 +553,7 @@
                     "name": "Chopper",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -574,7 +582,7 @@
                     "name": "Purple rock",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -604,7 +612,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -632,7 +640,7 @@
                     "name": "Moto Bug",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -662,7 +670,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -691,7 +699,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -717,7 +725,7 @@
                 }
             ],
             "isDirectory": true,
-            "expanded": false,
+            "expanded": true,
             "uuid": "d70d6d9c-d886-4fb1-8792-9999eaa239c3"
         },
         {
@@ -728,7 +736,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -757,7 +765,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -786,7 +794,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -815,7 +823,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -843,7 +851,7 @@
                     "name": "Burrobot",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -873,7 +881,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -902,7 +910,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -931,7 +939,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -960,7 +968,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -989,7 +997,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -1017,7 +1025,7 @@
                     "name": "Gargoyle",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -1047,7 +1055,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -1076,7 +1084,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -1105,7 +1113,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -1134,7 +1142,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -1171,7 +1179,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -1199,7 +1207,7 @@
                     "name": "Buzz Bomber",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -1229,7 +1237,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -1257,7 +1265,7 @@
                     "name": "Large Glass Pillar",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -1287,7 +1295,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -1315,7 +1323,7 @@
                     "name": "Movable Block",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -1345,7 +1353,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -1374,7 +1382,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -1402,7 +1410,7 @@
                     "name": "Wall of Lava",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -1431,7 +1439,7 @@
                     "name": "Yadrin",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -1461,7 +1469,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -1490,7 +1498,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -1518,7 +1526,7 @@
                     "name": "Collapsing Floor",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -1547,7 +1555,7 @@
                     "name": "Basaran",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -1576,7 +1584,7 @@
                     "name": "Caterkiller",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -1614,7 +1622,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -1643,7 +1651,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -1671,7 +1679,7 @@
                     "name": "One-Way Barrier",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -1701,7 +1709,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -1730,7 +1738,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -1758,7 +1766,7 @@
                     "name": "Collapsing Floor",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -1787,7 +1795,7 @@
                     "name": "Bomb",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -1817,7 +1825,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -1846,7 +1854,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -1875,7 +1883,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -1903,7 +1911,7 @@
                     "name": "Vanishing Platform",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -1933,7 +1941,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -1961,7 +1969,7 @@
                     "name": "Electrocuter",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -1990,7 +1998,7 @@
                     "name": "Girder Block",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -2019,7 +2027,7 @@
                     "name": "Caterkiller",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -2057,7 +2065,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -2086,7 +2094,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -2115,7 +2123,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -2143,7 +2151,7 @@
                     "name": "Fireball Thrower",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -2172,7 +2180,7 @@
                     "name": "Breakable Wall",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -2201,7 +2209,7 @@
                     "name": "Collapsing Floor",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -2231,7 +2239,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -2260,7 +2268,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -2289,7 +2297,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -2318,7 +2326,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -2347,7 +2355,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -2375,7 +2383,7 @@
                     "name": "Bomb",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -2405,7 +2413,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -2441,7 +2449,7 @@
                     "name": "Siren Light",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -2471,7 +2479,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -2499,7 +2507,7 @@
                     "name": "Crabmeat",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -2528,7 +2536,7 @@
                     "name": "Buzz Bomber",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -2558,7 +2566,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -2586,7 +2594,7 @@
                     "name": "Roller",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -2615,7 +2623,7 @@
                     "name": "Bumper",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -2644,7 +2652,7 @@
                     "name": "Yadrin",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -2674,7 +2682,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -2703,7 +2711,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -2732,7 +2740,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
@@ -2760,7 +2768,7 @@
                     "name": "Caterkiller",
                     "palettes": [
                         {
-                            "path": "palette/Sonic.bin",
+                            "path": "!Characters/Sonic/Palette - Normal.bin",
                             "length": 1
                         },
                         {
