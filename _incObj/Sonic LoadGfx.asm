@@ -12,7 +12,7 @@ Sonic_LoadGfx:
 		beq.s	@nochange	; if not, branch
 
 		move.b	d0,(v_sonframenum).w
-		lea	(SonicDynPLC).l,a2 ; load PLC script
+		lea	(DPLC_Sonic).l,a2 ; load PLC script
 		add.w	d0,d0
 		adda.w	(a2,d0.w),a2
 		moveq	#0,d1

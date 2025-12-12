@@ -1965,7 +1965,6 @@ PalLoad4_Water:
 Pal_SegaBG:	incbin	"palette\Sega Background.bin"
 Pal_Title:	incbin	"palette\Title Screen.bin"
 Pal_LevelSel:	incbin	"palette\Level Select.bin"
-Pal_Sonic:	incbin	"palette\Sonic.bin"
 Pal_GHZ:	incbin	"palette\Green Hill Zone.bin"
 Pal_LZ:		incbin	"palette\Labyrinth Zone.bin"
 Pal_LZWater:	incbin	"palette\Labyrinth Zone Underwater.bin"
@@ -1977,11 +1976,22 @@ Pal_SBZ2:	incbin	"palette\SBZ Act 2.bin"
 Pal_Special:	incbin	"palette\Special Stage.bin"
 Pal_SBZ3:	incbin	"palette\SBZ Act 3.bin"
 Pal_SBZ3Water:	incbin	"palette\SBZ Act 3 Underwater.bin"
-Pal_LZSonWater:	incbin	"palette\Sonic - LZ Underwater.bin"
-Pal_SBZ3SonWat:	incbin	"palette\Sonic - SBZ3 Underwater.bin"
 Pal_SSResult:	incbin	"palette\Special Stage Results.bin"
 Pal_Continue:	incbin	"palette\Special Stage Continue Bonus.bin"
 Pal_Ending:	incbin	"palette\Ending.bin"
+; ---------------------------------------------------------------------------
+; Palette data (Character)
+; ---------------------------------------------------------------------------
+
+pal_char:	macro name
+Pal_\name:		incbin "!Characters\\\name\\Palette - Normal.bin"
+Pal_LZWater_\name:		incbin "!Characters\\\name\\Palette - LZ Underwater.bin"
+Pal_SBZ3Water_\name:		incbin "!Characters\\\name\\Palette - SBZ3 Underwater.bin"
+		endm
+
+	; CHAR ADD STUFF
+
+	pal_char Sonic
 
 ; ---------------------------------------------------------------------------
 ; Subroutine to wait for VBlank routines to complete
@@ -2936,10 +2946,10 @@ Level_LoadPal:
 		cmpi.b	#id_LZ,(v_zone).w ; is level LZ?
 		bne.s	Level_GetBgm	; if not, branch
 
-		moveq	#palid_LZSonWater,d0 ; palette number $F (LZ)
+		moveq	#palid_LZWater_Sonic,d0 ; palette number $F (LZ)
 		cmpi.b	#3,(v_act).w	; is act number 3?
 		bne.s	Level_WaterPal	; if not, branch
-		moveq	#palid_SBZ3SonWat,d0 ; palette number $10 (SBZ3)
+		moveq	#palid_SBZ3Water_Sonic,d0 ; palette number $10 (SBZ3)
 
 	Level_WaterPal:
 		bsr.w	PalLoad3_Water	; load underwater palette
@@ -8648,13 +8658,30 @@ Eni_JapNames:	incbin	"tilemaps\Hidden Japanese Credits.bin" ; Japanese credits (
 Nem_JapNames:	incbin	"artnem\Hidden Japanese Credits.bin"
 		even
 
-Map_Sonic:	include	"_maps\Sonic.asm"
-SonicDynPLC:	include	"_maps\Sonic - Dynamic Gfx Script.asm"
+; ---------------------------------------------------------------------------
+; Mappings - Characters
+; ---------------------------------------------------------------------------
+
+map_char:	macro name
+Map_\name:	include	"!Characters\\\name\\Mappings.asm"
+DPLC_\name:	include	"!Characters\\\name\\DPLC.asm"
+		endm
+
+	; CHAR ADD STUFF
+
+	map_char Sonic
 
 ; ---------------------------------------------------------------------------
-; Uncompressed graphics - Sonic
+; Uncompressed graphics - Characters
 ; ---------------------------------------------------------------------------
-Art_Sonic:	incbin	"artunc\Sonic.bin"	; Sonic
+art_char:	macro name
+Art_\name:	incbin	"!Characters\\\name\\Art.bin"
+	endm
+
+	; CHAR ADD STUFF
+
+	art_char Sonic
+	; add next char here
 		even
 ; ---------------------------------------------------------------------------
 ; Compressed graphics - various
