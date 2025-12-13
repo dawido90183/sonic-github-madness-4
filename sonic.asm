@@ -336,7 +336,7 @@ GameInit:
 
 MainGameLoop:
 		move.b	(v_gamemode).w,d0 ; load Game Mode
-		andi.w	#$1C,d0	; limit Game Mode value to $1C max (change to a maximum of 7C to add more game modes)
+		andi.w	#$3C,d0	; limit Game Mode value to $1C max (change to a maximum of 7C to add more game modes)
 		jsr	GameModeArray(pc,d0.w) ; jump to apt location in ROM
 		bra.s	MainGameLoop	; loop indefinitely
 ; ===========================================================================
@@ -361,6 +361,8 @@ ptr_GM_Cont:	bra.w	GM_Continue	; Continue Screen ($14)
 ptr_GM_Ending:	bra.w	GM_Ending	; End of game sequence ($18)
 
 ptr_GM_Credits:	bra.w	GM_Credits	; Credits ($1C)
+
+ptr_GM_Splash:	bra.w	GM_Splash		; Splash Screens ($20)
 
 		rts	
 ; ===========================================================================
@@ -2162,9 +2164,95 @@ Sega_WaitEnd:
 		beq.s	Sega_WaitEnd	; if not, branch
 
 Sega_GotoTitle:
-		move.b	#id_Title,(v_gamemode).w ; go to title screen
+		move.b	#id_SplashScreen,(v_gamemode).w ; go to splash screen
 		rts	
 ; ===========================================================================
+
+; ---------------------------------------------------------------------------
+; Splash Screens
+; ---------------------------------------------------------------------------
+
+VDP_Data_Splash:
+	dc.w	$8004 ; 8-colour mode
+	dc.w	$8200+(vram_fg>>10) ; set foreground nametable address
+	dc.w	$8400+(vram_bg>>13) ; set background nametable address
+	dc.w	$9001 ; 64-cell hscroll size
+	dc.w	$9200 ; window vertical position
+	dc.w	$8B03 ; scroll mode
+	dc.w	$8720 ; set background colour (palette line 2, entry 0)
+
+GM_Splash:
+		move.b	#bgm_Stop,d0
+		bsr.w	PlaySound_Special ; stop music
+		bsr.w	ClearPLC
+		bsr.w	PaletteFadeOut
+		disable_ints
+		bsr.w	SoundDriverLoad
+
+		; Set up VDP
+		lea	(vdp_control_port).l,a6
+		move.w	#7-1,d0
+		clr.w	d1
+	@vdploop:
+		move.w	VDP_Data_Splash(pc,d1.w),(a6)
+		addq.w	#2,d1
+		dbf.w	d0,@vdploop
+
+		clr.b	(f_wtr_state).w
+		bsr.w	ClearScreen
+
+		lea (Splash_Screen_Entries).l,a2
+	@load_next_splash:
+		locVRAM 0
+		move.l	(a2)+,a0 ; art
+		bsr.w	NemDec
+
+		lea	($FF0000).l,a1
+		move.l	(a2)+,a0 ; tilemap
+		clr.w	d0
+		move.l	a2,-(sp)
+		bsr.w	EniDec
+		move.l	(sp)+,a2
+
+		copyTilemap	$FF0000,$C000,$27,$1B
+
+		move.b	(a2)+,d0 ; palette
+
+		move.l	a2,-(sp)
+		bsr.w	PalLoad1
+		move.l	(sp)+,a2
+
+		move.b	(a2)+,d0 ; music
+		bsr.w	PlaySound_Special
+
+		move.w	(a2)+,(v_generictimer).w ; duration in seconds
+		bsr.w	PaletteFadeIn
+	@loop:
+		move.b	#4,(v_vbla_routine).w
+		bsr.w	WaitForVBla
+
+		tst.w	(v_generictimer).w
+		beq.s	@time_over
+
+		tst.b	(v_jpadpress1).w ; check if any button is pressed
+		beq.s	@loop	; if not, branch
+
+	@time_over:
+		bsr.w	PaletteFadeOut
+
+		tst.l	(a2)
+		bpl.s	@load_next_splash
+
+		move.b	#id_Title,(v_gamemode).w ; go to title screen
+		rts
+
+Splash_Screen_Entries:
+	; Art .l, Tilemap .l, Palette ID .b ,Music .b, Duration in frames .w
+	dc.l	Nem_JapNames,Eni_JapNames ; Example
+	dc.b	palid_SSResult,0
+	dc.w	1*60
+
+	dc.l	-1 ; end marker
 
 ; ---------------------------------------------------------------------------
 ; Title screen
@@ -2176,15 +2264,6 @@ GM_Title:
 		bsr.w	ClearPLC
 		bsr.w	PaletteFadeOut
 		disable_ints
-		bsr.w	SoundDriverLoad
-		lea	(vdp_control_port).l,a6
-		move.w	#$8004,(a6)	; 8-colour mode
-		move.w	#$8200+(vram_fg>>10),(a6) ; set foreground nametable address
-		move.w	#$8400+(vram_bg>>13),(a6) ; set background nametable address
-		move.w	#$9001,(a6)	; 64-cell hscroll size
-		move.w	#$9200,(a6)	; window vertical position
-		move.w	#$8B03,(a6)
-		move.w	#$8720,(a6)	; set background colour (palette line 2, entry 0)
 		clr.b	(f_wtr_state).w
 		bsr.w	ClearScreen
 
