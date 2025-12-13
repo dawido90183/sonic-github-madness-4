@@ -2373,12 +2373,9 @@ GM_Title:
 		move.b	#0,(f_debugmode).w ; disable debug mode
 		move.w	#$178,(v_generictimer).w ; run title screen for $178 frames
 		
-		; Bug: this only clears half of the "SONIC TEAM PRESENTS" slot.
-		; This is responsible for why the "PRESS START BUTTON" text doesn't
-		; show up, as the routine ID isn't reset.
 		lea	(v_sonicteam).w,a1
 		moveq	#0,d0
-		move.w	#7,d1			; should be $F
+		move.w	#$F,d1
 
 	Tit_ClrObj2:
 		move.l	d0,(a1)+
@@ -2386,13 +2383,9 @@ GM_Title:
 
 		move.b	#id_TitleSonic,(v_titlesonic).w ; load big Sonic object
 		move.b	#id_PSBTM,(v_pressstart).w ; load "PRESS START BUTTON" object
-		;clr.b	(v_pressstart+obRoutine).w ; The 'Mega Games 10' version of Sonic 1 added this line, to fix the 'PRESS START BUTTON' object not appearing
 
-		if Revision=0
-		else
-			tst.b   (v_megadrive).w	; is console Japanese?
-			bpl.s   @isjap		; if yes, branch
-		endc
+		tst.b   (v_megadrive).w	; is console Japanese?
+		bpl.s   @isjap		; if yes, branch
 
 		move.b	#id_PSBTM,(v_titletm).w ; load "TM" object
 		move.b	#3,(v_titletm+obFrame).w
@@ -2794,8 +2787,8 @@ LevSel_SndTest:
 
 LevSelTextLoad:
 
-	textpos:	= ($40000000+(($E210&$3FFF)<<16)+(($E210&$C000)>>14))
-					; $E210 is a VRAM address
+	textpos:	= ($40000000+(($E182&$3FFF)<<16)+(($E182&$C000)>>14))
+					; $E202 is a VRAM address
 
 		lea	(LevelMenuText).l,a1
 		lea	(vdp_data_port).l,a6
@@ -2817,10 +2810,9 @@ LevSelTextLoad:
 		swap	d0
 		add.l	d0,d4
 		lea	(LevelMenuText).l,a1
-		lsl.w	#3,d1
-		move.w	d1,d0
+	rept 4
 		add.w	d1,d1
-		add.w	d0,d1
+	endr
 		adda.w	d1,a1
 		move.w	#$C680,d3	; VRAM setting (3rd palette, $680th tile)
 		move.l	d4,4(a6)
@@ -2831,7 +2823,7 @@ LevSelTextLoad:
 		move.w	#$C680,d3
 
 LevSel_DrawSnd:
-		locVRAM	$EC28		; sound test position on screen
+		locVRAM	$EB9A		; sound test position on screen
 		move.w	(v_levselsound).w,d0
 		move.b	d0,d2
 		lsr.b	#4,d0
@@ -2862,7 +2854,7 @@ LevSel_ChgSnd:
 
 
 LevSel_ChgLine:
-		moveq	#$17,d2		; number of characters per line
+		moveq	#16-1,d2		; number of characters per line
 
 	LevSel_LineLoop:
 		moveq	#0,d0
@@ -2887,8 +2879,8 @@ LevSel_ChgLine:
 lstxt macro textline
 	i:   = 1
 	len: = strlen(\textline)
-	if len<>24
-		inform 2, "line length must be exactly 24 characters"
+	if len<>16
+		inform 2, "line length must be exactly 16 characters"
 	endif
 
 	while (i<=len)
@@ -2922,27 +2914,27 @@ lstxt macro textline
 	endm
 
 LevelMenuText:
-	lstxt "GREEN HILL ZONE  STAGE 1"
-	lstxt "                 STAGE 2"
-	lstxt "                 STAGE 3"
-	lstxt "MARBLE ZONE      STAGE 1"
-	lstxt "                 STAGE 2"
-	lstxt "                 STAGE 3"
-	lstxt "SPRING YARD ZONE STAGE 1"
-	lstxt "                 STAGE 2"
-	lstxt "                 STAGE 3"
-	lstxt "LABYRINTH ZONE   STAGE 1"
-	lstxt "                 STAGE 2"
-	lstxt "                 STAGE 3"
-	lstxt "STAR LIGHT ZONE  STAGE 1"
-	lstxt "                 STAGE 2"
-	lstxt "                 STAGE 3"
-	lstxt "SCRAP BRAIN ZONE STAGE 1"
-	lstxt "                 STAGE 2"
-	lstxt "                 STAGE 3"
-	lstxt "FINAL ZONE              "
-	lstxt "SPECIAL STAGE           "
-	lstxt "SOUND TEST -  -         "
+	lstxt "GREEN HILL     1"
+	lstxt "               2"
+	lstxt "               3"
+	lstxt "MARBLE ZONE    1"
+	lstxt "               2"
+	lstxt "               3"
+	lstxt "SPRING YARD    1"
+	lstxt "               2"
+	lstxt "               3"
+	lstxt "LABYRINTH      1"
+	lstxt "               2"
+	lstxt "               3"
+	lstxt "STAR LIGHT     1"
+	lstxt "               2"
+	lstxt "               3"
+	lstxt "SCRAP BRAIN    1"
+	lstxt "               2"
+	lstxt "               3"
+	lstxt "FINAL ZONE      "
+	lstxt "SPECIAL STAGE   "
+	lstxt "SOUND TEST -  - "
 	even
 ; ---------------------------------------------------------------------------
 ; Music playlist
