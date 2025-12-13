@@ -2179,7 +2179,7 @@ VDP_Data_Splash:
 	dc.w	$9001 ; 64-cell hscroll size
 	dc.w	$9200 ; window vertical position
 	dc.w	$8B03 ; scroll mode
-	dc.w	$8720 ; set background colour (palette line 2, entry 0)
+	dc.w	$8700 ; set background colour (palette line 0, entry 0)
 
 GM_Splash:
 		move.b	#bgm_Stop,d0
@@ -2216,11 +2216,14 @@ GM_Splash:
 
 		copyTilemap	$FF0000,$C000,$27,$1B
 
-		move.b	(a2)+,d0 ; palette
+		lea	(v_pal_dry_dup).w,a3
+		movea.l	(a2)+,a4	; get palette data address
+		clr.w	d7
+		move.b	(a2)+,d7	; get length of palette data
 
-		move.l	a2,-(sp)
-		bsr.w	PalLoad1
-		move.l	(sp)+,a2
+	@loop_pal:
+		move.l	(a4)+,(a3)+	; move data to RAM
+		dbf	d7,@loop_pal
 
 		move.b	(a2)+,d0 ; music
 		bsr.w	PlaySound_Special
@@ -2247,11 +2250,14 @@ GM_Splash:
 		rts
 
 Splash_Screen_Entries:
-	; Art .l, Tilemap .l, Palette ID .b ,Music .b, Duration in frames .w
-	dc.l	Nem_JapNames,Eni_JapNames ; Example
-	dc.b	palid_SSResult,0
-	dc.w	1*60
+splash_entry macro art,tilemap,palette,size,music_id,duration_in_frames
+	dc.l	art,tilemap
+	dc.l	palette
+	dc.b	(size/4)-1,music_id
+	dc.w	duration_in_frames
+	endm
 
+	splash_entry Nem_JapNames,Eni_JapNames,Pal_SSResult,$20,0,60
 	dc.l	-1 ; end marker
 
 ; ---------------------------------------------------------------------------
@@ -2264,6 +2270,9 @@ GM_Title:
 		bsr.w	ClearPLC
 		bsr.w	PaletteFadeOut
 		disable_ints
+
+		lea	(vdp_control_port).l,a6
+		move.w	$8720,(a6) ; set background colour (palette line 2, entry 0)
 		clr.b	(f_wtr_state).w
 		bsr.w	ClearScreen
 
