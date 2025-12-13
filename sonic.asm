@@ -2257,7 +2257,8 @@ splash_entry macro art,tilemap,palette,size,music_id,duration_in_frames
 	dc.w	duration_in_frames
 	endm
 
-	splash_entry Nem_JapNames,Eni_JapNames,Pal_SSResult,$20,0,60
+	splash_entry Nem_JapNames,Eni_JapNames,Pal_SSResult,$20,sfx_SSGoal,120
+	splash_entry Nem_Splash_Shiki,Eni_Splash_Shiki,Pal_Splash_Shiki,$20,sfx_Bumper,120
 	dc.l	-1 ; end marker
 
 ; ---------------------------------------------------------------------------
@@ -8843,6 +8844,21 @@ Art_\name:	incbin	"!Characters\\\name\\Art.bin"
 	art_char Sonic
 	; add next char here
 		even
+
+; ---------------------------------------------------------------------------
+; Compressed graphics - Splash Screens
+; ---------------------------------------------------------------------------
+splash_data:	macro name
+Nem_Splash_\name:	incbin	"splash\\Art - \name\.bin"
+	even
+Eni_Splash_\name:	incbin	"splash\\Map - \name\.bin"
+	even
+Pal_Splash_\name:	incbin	"splash\\Pal - \name\.bin"
+	even
+	endm
+
+	splash_data Shiki
+	; next splash screen data here
 ; ---------------------------------------------------------------------------
 ; Compressed graphics - various
 ; ---------------------------------------------------------------------------
