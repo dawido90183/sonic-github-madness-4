@@ -9,28 +9,28 @@ Sonic_JumpDirection:
 		move.w	(v_sonspeedmax).w,d6
 		move.w	(v_sonspeedacc).w,d5
 		asl.w	#1,d5
-		btst	#4,obStatus(a0)
-		bne.s	Obj01_ResetScr2
+		;btst	#4,obStatus(a0) ; roll lock.. BEGONE!
+		;bne.s	Obj01_ResetScr2
 		move.w	obVelX(a0),d0
 		btst	#bitL,(v_jpadhold2).w ; is left being pressed?
 		beq.s	loc_13278	; if not, branch
 		bset	#0,obStatus(a0)
-		sub.w	d5,d0
-		move.w	d6,d1
-		neg.w	d1
-		cmp.w	d1,d0
-		bgt.s	loc_13278
-		move.w	d1,d0
 
+		neg.w	d6
+		cmp.w	d6,d0
+		blt.s	@overspeedcap
+
+		sub.w	d5,d0
+	@overspeedcap:
+		neg.w	d6
 loc_13278:
 		btst	#bitR,(v_jpadhold2).w ; is right being pressed?
 		beq.s	Obj01_JumpMove	; if not, branch
 		bclr	#0,obStatus(a0)
-		add.w	d5,d0
 		cmp.w	d6,d0
-		blt.s	Obj01_JumpMove
-		move.w	d6,d0
+		bgt.s	Obj01_JumpMove
 
+		add.w	d5,d0
 Obj01_JumpMove:
 		move.w	d0,obVelX(a0)	; change Sonic's horizontal speed
 

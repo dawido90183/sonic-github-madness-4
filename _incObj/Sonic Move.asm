@@ -208,14 +208,13 @@ loc_13086:
 		move.b	#1,obNextAni(a0)
 
 loc_1309A:
-		sub.w	d5,d0
-		move.w	d6,d1
-		neg.w	d1
-		cmp.w	d1,d0
-		bgt.s	loc_130A6
-		move.w	d1,d0
+		neg.w	d6
+		cmp.w	d6,d0
+		blt.s	@overspeedcap
 
-loc_130A6:
+		sub.w	d5,d0
+	@overspeedcap:
+		neg.w	d6
 		move.w	d0,obInertia(a0)
 		move.b	#id_Walk,obAnim(a0) ; use walking animation
 		rts	
@@ -256,12 +255,11 @@ Sonic_MoveRight:
 		move.b	#1,obNextAni(a0)
 
 loc_13104:
-		add.w	d5,d0
 		cmp.w	d6,d0
-		blt.s	loc_1310C
-		move.w	d6,d0
+		bgt.s	@overspeedcap
 
-loc_1310C:
+		add.w	d5,d0
+	@overspeedcap:
 		move.w	d0,obInertia(a0)
 		move.b	#id_Walk,obAnim(a0) ; use walking animation
 		rts	
