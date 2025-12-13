@@ -99,13 +99,23 @@ ptr_musend
 ; ---------------------------------------------------------------------------
 ; SoundTypes:
 SoundPriorities:
-		dc.b     $90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90	; $81
+		dc.b     $90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90	; $01
+		dc.b $90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90	; $10
+		dc.b $90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90	; $20
+		dc.b $90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90	; $30
+		dc.b $90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90	; $40
+		dc.b $90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90	; $50
+		dc.b $90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90	; $60
+		dc.b $90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90	; $70
+		dc.b $90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90	; $80
 		dc.b $90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90	; $90
 		dc.b $80,$70,$70,$70,$70,$70,$70,$70,$70,$70,$68,$70,$70,$70,$60,$70	; $A0
 		dc.b $70,$60,$70,$60,$70,$70,$70,$70,$70,$70,$70,$70,$70,$70,$70,$7F	; $B0
 		dc.b $60,$70,$70,$70,$70,$70,$70,$70,$70,$70,$70,$70,$70,$70,$70,$70	; $C0
 		dc.b $80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80,$80	; $D0
-		dc.b $90,$90,$90,$90,$90                                            	; $E0
+		dc.b $90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90	; $E0
+		dc.b $90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90,$90	; $F0
+	even
 
 ; ---------------------------------------------------------------------------
 ; Subroutine to update music more than once per frame
@@ -162,11 +172,6 @@ UpdateMusic:
 		jsr	CycleSoundQueue(pc)
 ; loc_71BBC:
 @nosndinput:
-		cmpi.b	#$80,v_sound_id(a6)	; is song queue set for silence (empty)?
-		beq.s	@nonewsound		; If yes, branch
-		jsr	PlaySoundID(pc)
-; loc_71BC8:
-@nonewsound:
 		lea	v_music_dac_track(a6),a5
 		tst.b	(a5)			; Is DAC track playing? (TrackPlaybackControl)
 		bpl.s	@dacdone		; Branch if not
@@ -619,13 +624,7 @@ CycleSoundQueue:
 		clr.b	(a1)+			; Clear entry
 		subi.b	#bgm__First,d0		; Make it into 0-based index
 		bcs.s	@nextinput		; If negative (i.e., it was $80 or lower), branch
-		cmpi.b	#$80,v_sound_id(a6)	; Is v_sound_id a $80 (silence/empty)?
-		beq.s	@havesound		; If yes, branch
-		move.b	d1,v_soundqueue0(a6)	; Put sound into v_soundqueue0
-		bra.s	@nextinput
-; ===========================================================================
-; loc_71F2C:
-@havesound:
+
 		andi.w	#$7F,d0			; Clear high byte and sign bit
 		move.b	(a0,d0.w),d2		; Get sound type
 		cmp.b	d3,d2			; Is it a lower priority sound?
@@ -637,11 +636,10 @@ CycleSoundQueue:
 		dbf	d4,@inputloop
 
 		tst.b	d3			; We don't want to change sound priority if it is negative
-		bmi.s	@locret
+		bmi.s	PlaySoundID
 		move.b	d3,v_sndprio(a6)	; Set new sound priority
 ; locret_71F4A:
-@locret:
-		rts	
+
 ; End of function CycleSoundQueue
 
 
@@ -651,28 +649,25 @@ CycleSoundQueue:
 PlaySoundID:
 		moveq	#0,d7
 		move.b	v_sound_id(a6),d7
-		beq.w	StopAllSound
-		bpl.s	@locret			; If >= 0, return (not a valid sound, bgm or command)
-		move.b	#$80,v_sound_id(a6)	; reset music flag
-		; DANGER! Music ends at $93, yet this checks until $9F; attempting to
-		; play sounds $94-$9F will cause a crash! Remove the '+$C' to fix this.
-		; See LevSel_NoCheat for more.
-		cmpi.b	#bgm__Last+$C,d7	; Is this music ($81-$9F)?
+		move.b	#$80,v_sound_id(a6)	; reset	music flag
+
+		; Music
+		cmpi.b	#bgm__Last,d7		; Is this music?
 		bls.w	Sound_PlayBGM		; Branch if yes
-		cmpi.b	#sfx__First,d7		; Is this after music but before sfx? (redundant check)
+		cmpi.b	#sfx__First,d7		; Is this after music but before sfx?
 		blo.w	@locret			; Return if yes
-		cmpi.b	#sfx__Last,d7		; Is this sfx ($A0-$CF)?
+		; SFX
+		cmpi.b	#sfx__Last,d7		; Is this sfx?
 		bls.w	Sound_PlaySFX		; Branch if yes
-		cmpi.b	#spec__First,d7		; Is this after sfx but before special sfx? (redundant check)
+		cmpi.b	#spec__First,d7		; Is this after sfx but before special sfx?
 		blo.w	@locret			; Return if yes
-		; DANGER! Special SFXes end at $D0, yet this checks until $DF; attempting to
-		; play sounds $D1-$DF will cause a crash! Remove the '+$10' and change the 'blo' to a 'bls'
-		; and uncomment the two lines below to fix this.
-		cmpi.b	#spec__Last+$10,d7	; Is this special sfx ($D0-$DF)?
-		blo.w	Sound_PlaySpecial	; Branch if yes
-		;cmpi.b	#flg__First,d7		; Is this after special sfx but before $E0?
-		;blo.w	@locret			; Return if yes
-		cmpi.b	#flg__Last,d7		; Is this $E0-$E4?
+		; Special SFX
+		cmpi.b	#spec__Last,d7		; Is this special sfx?
+		bls.w	Sound_PlaySpecial	; Branch if yes
+		cmpi.b	#flg__First,d7		; Is this after special sfx but before the commands?
+		blo.w	@locret			; Return if yes
+		; Sound Commands
+		cmpi.b	#flg__Last,d7		; Is this sound commands?
 		bls.s	Sound_E0toE4		; Branch if yes
 ; locret_71F8C:
 @locret:
@@ -958,9 +953,7 @@ Sound_PlaySFX:
 		move.w	(a1)+,d1		; Voice pointer
 		add.l	a3,d1			; Relative pointer
 		move.b	(a1)+,d5		; Dividing timing
-		; DANGER! there is a missing 'moveq	#0,d7' here, without which SFXes whose
-		; index entry is above $3F will cause a crash. This is actually the same way that
-		; this bug is fixed in Ristar's driver.
+		moveq	#0,d7
 		move.b	(a1)+,d7	; Number of tracks (FM + PSG)
 		subq.b	#1,d7
 		moveq	#TrackSz,d6
@@ -1079,8 +1072,7 @@ Sound_PlaySpecial:
 		add.l	a3,d0				; Relative pointer
 		move.l	d0,v_special_voice_ptr(a6)	; Store voice pointer
 		move.b	(a1)+,d5			; Dividing timing
-		; DANGER! there is a missing 'moveq #0,d7' here, without which special SFXes whose
-		; index entry is above $3F will cause a crash. This instance was not fixed in Ristar's driver.
+		moveq #0,d7
 		move.b	(a1)+,d7			; Number of tracks (FM + PSG)
 		subq.b	#1,d7
 		moveq	#TrackSz,d6
@@ -1185,9 +1177,7 @@ StopSFX:
 		bne.s	@getfmpointer					; Branch if not
 		tst.b	v_spcsfx_fm4_track+TrackPlaybackControl(a6)	; Is special SFX playing?
 		bpl.s	@getfmpointer					; Branch if not
-		; DANGER! there is a missing 'movea.l	a5,a3' here, without which the
-		; code is broken. It is dangerous to do a fade out when a GHZ waterfall
-		; is playing its sound!
+		movea.l	a5,a3
 		lea	v_spcsfx_fm4_track(a6),a5
 		movea.l	v_special_voice_ptr(a6),a1	; Get special voice pointer
 		bra.s	@gotfmpointer
@@ -1394,9 +1384,7 @@ StopAllSound:
 		moveq	#0,d1		; FM3/FM6 normal mode, disable timers
 		jsr	WriteFMI(pc)
 		movea.l	a6,a0
-		; DANGER! This should be clearing all variables and track data, but misses the last $10 bytes of v_spcsfx_psg3_track.
-		; Remove the '-$10' to fix this.
-		move.w	#((v_spcsfx_track_ram_end-v_startofvariables-$10)/4)-1,d0	; Clear $390 bytes: all variables and most track data
+		move.w	#((v_spcsfx_track_ram_end-v_startofvariables)/4)-1,d0	; Clear $390 bytes: all variables and most track data
 ; loc_725B6:
 @clearramloop:
 		clr.l	(a0)+
@@ -1431,33 +1419,20 @@ InitMusicPlayback:
 		move.b	d4,v_fadein_counter(a6)
 		move.w	d5,v_soundqueue0(a6)
 		move.b	#$80,v_sound_id(a6)	; set music to $80 (silence)
-		; DANGER! This silences ALL channels, even the ones being used
-		; by SFX, and not music! @sendfmnoteoff does this already, and
-		; doesn't affect SFX channels, either.
-		; This should be replaced with an 'rts'.
-		jsr	FMSilenceAll(pc)
-		bra.w	PSGSilenceAll
-		; DANGER! InitMusicPlayback, and Sound_PlayBGM for that matter,
-		; don't do a very good job of setting up the music tracks.
-		; Tracks that aren't defined in a music file's header don't have
-		; their channels defined, meaning @sendfmnoteoff won't silence
-		; hardware properly. In combination with removing the above
-		; calls to FMSilenceAll/PSGSilenceAll, this will cause hanging
-		; notes.
-		; To fix this, I suggest using this code, instead of an 'rts':
-		;lea	v_music_track_ram+TrackVoiceControl(a6),a1
-		;lea	FMDACInitBytes(pc),a2
-		;moveq	#((v_music_fmdac_tracks_end-v_music_fmdac_tracks)/TrackSz)-1,d1		; 7 DAC/FM tracks
-		;bsr.s	@writeloop
-		;lea	PSGInitBytes(pc),a2
-		;moveq	#((v_music_psg_tracks_end-v_music_psg_tracks)/TrackSz)-1,d1	; 3 PSG tracks
 
-;@writeloop:
-		;move.b	(a2)+,(a1)		; Write track's channel byte
-		;lea	TrackSz(a1),a1		; Next track
-		;dbf	d1,@writeloop		; Loop for all DAC/FM/PSG tracks
+		lea	v_music_track_ram+TrackVoiceControl(a6),a1
+		lea	FMDACInitBytes(pc),a2
+		moveq	#((v_music_fmdac_tracks_end-v_music_fmdac_tracks)/TrackSz)-1,d1		; 7 DAC/FM tracks
+		bsr.s	@writeloop
+		lea	PSGInitBytes(pc),a2
+		moveq	#((v_music_psg_tracks_end-v_music_psg_tracks)/TrackSz)-1,d1	; 3 PSG tracks
 
-		;rts
+@writeloop:
+		move.b	(a2)+,(a1)		; Write track's channel byte
+		lea	TrackSz(a1),a1		; Next track
+		dbf	d1,@writeloop		; Loop for all DAC/FM/PSG tracks
+
+		rts
 	
 ; End of function InitMusicPlayback
 

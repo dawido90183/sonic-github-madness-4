@@ -2524,27 +2524,18 @@ LevelSelect:
 		bsr.w	RunPLC
 		tst.l	(v_plc_buffer).w
 		bne.s	LevelSelect
-		andi.b	#btnABC+btnStart,(v_jpadpress1).w ; is A, B, C, or Start pressed?
+		andi.b	#btnC+btnStart,(v_jpadpress1).w ; is C or Start pressed?
 		beq.s	LevelSelect	; if not, branch
 		move.w	(v_levselitem).w,d0
 		cmpi.w	#$14,d0		; have you selected item $14 (sound test)?
 		bne.s	LevSel_Level_SS	; if not, go to Level/SS subroutine
 		move.w	(v_levselsound).w,d0
-		addi.w	#$80,d0
 		tst.b	(f_creditscheat).w ; is Japanese Credits cheat on?
-		beq.s	LevSel_NoCheat	; if not, branch
+		beq.s	LevSel_PlaySnd	; if not, branch
 		cmpi.w	#$9F,d0		; is sound $9F being played?
 		beq.s	LevSel_Ending	; if yes, branch
 		cmpi.w	#$9E,d0		; is sound $9E being played?
 		beq.s	LevSel_Credits	; if yes, branch
-
-LevSel_NoCheat:
-		; This is a workaround for a bug; see PlaySoundID for more.
-		; Once you've fixed the bugs there, comment these four instructions out.
-		cmpi.w	#bgm__Last+1,d0	; is sound $80-$93 being played?
-		blo.s	LevSel_PlaySnd	; if yes, branch
-		cmpi.w	#sfx__First,d0	; is sound $94-$9F being played?
-		blo.s	LevelSelect	; if yes, branch
 
 LevSel_PlaySnd:
 		bsr.w	PlaySound_Special
@@ -2612,28 +2603,7 @@ PlayLevel:
 ; ---------------------------------------------------------------------------
 ; Level select - level pointers
 ; ---------------------------------------------------------------------------
-LevSel_Ptrs:	if Revision=0
-		; old level order
-		dc.b id_GHZ, 0
-		dc.b id_GHZ, 1
-		dc.b id_GHZ, 2
-		dc.b id_LZ, 0
-		dc.b id_LZ, 1
-		dc.b id_LZ, 2
-		dc.b id_MZ, 0
-		dc.b id_MZ, 1
-		dc.b id_MZ, 2
-		dc.b id_SLZ, 0
-		dc.b id_SLZ, 1
-		dc.b id_SLZ, 2
-		dc.b id_SYZ, 0
-		dc.b id_SYZ, 1
-		dc.b id_SYZ, 2
-		dc.b id_SBZ, 0
-		dc.b id_SBZ, 1
-		dc.b id_LZ, 3		; Scrap Brain Zone 3
-		dc.b id_SBZ, 2		; Final Zone
-		else
+LevSel_Ptrs:
 		; correct level order
 		dc.b id_GHZ, 0
 		dc.b id_GHZ, 1
@@ -2654,7 +2624,7 @@ LevSel_Ptrs:	if Revision=0
 		dc.b id_SBZ, 1
 		dc.b id_LZ, 3
 		dc.b id_SBZ, 2
-		endc
+
 		dc.b id_SS, 0		; Special Stage
 		dc.w $8000		; Sound Test
 		even
@@ -2780,30 +2750,38 @@ LevSel_Refresh:
 
 LevSel_SndTest:
 		cmpi.w	#$14,(v_levselitem).w ; is item $14 selected?
-		bne.s	LevSel_NoMove	; if not, branch
+		bne.s	@noinput	; if not, branch
 		move.b	(v_jpadpress1).w,d1
-		andi.b	#btnR+btnL,d1	; is left/right pressed?
-		beq.s	LevSel_NoMove	; if not, branch
+		andi.b	#btnR+btnL+btnA+btnB,d1	; is L/R/A/B pressed?
+		beq.s	@noinput
+
 		move.w	(v_levselsound).w,d0
-		btst	#bitL,d1	; is left pressed?
-		beq.s	LevSel_Right	; if not, branch
-		subq.w	#1,d0		; subtract 1 from sound test
-		bhs.s	LevSel_Right
-		moveq	#$4F,d0		; if sound test moves below 0, set to $4F
-
-LevSel_Right:
-		btst	#bitR,d1	; is right pressed?
-		beq.s	LevSel_Refresh2	; if not, branch
-		addq.w	#1,d0		; add 1 to sound test
-		cmpi.w	#$50,d0
-		blo.s	LevSel_Refresh2
-		moveq	#0,d0		; if sound test moves above $4F, set to 0
-
-LevSel_Refresh2:
+		btst	#bitL,d1
+		beq.s	@notleft
+		subq.b	#1,d0
+		bra.s	@refresh
+	@notleft:
+		btst	#bitR,d1
+		beq.s	@notright
+		addq.b	#1,d0
+		bra.s	@refresh
+	@notright:
+		btst	#bitA,d1
+		beq.s	@nota
+		subi.b	#$10,d0
+		bra.s	@refresh
+	@nota:
+		btst	#bitB,d1
+		beq.s	@refresh
+		addi.b	#$10,d0
+	@refresh:
 		move.w	d0,(v_levselsound).w ; set sound test number
-		bsr.w	LevSelTextLoad	; refresh text
 
-LevSel_NoMove:
+		lea	(vdp_data_port).l,a6
+		move.w	#$C680,d3	; VRAM setting (3rd palette, $680th tile)
+		bsr.w	LevSel_DrawSnd	; refresh text
+
+@noinput:
 		rts	
 ; End of function LevSelControls
 
@@ -2853,9 +2831,8 @@ LevSelTextLoad:
 		move.w	#$C680,d3
 
 LevSel_DrawSnd:
-		locVRAM	$EC30		; sound test position on screen
+		locVRAM	$EC28		; sound test position on screen
 		move.w	(v_levselsound).w,d0
-		addi.w	#$80,d0
 		move.b	d0,d2
 		lsr.b	#4,d0
 		bsr.w	LevSel_ChgSnd	; draw 1st digit
@@ -2944,52 +2921,29 @@ lstxt macro textline
 	endw
 	endm
 
-LevelMenuText:	if Revision=0
-		lstxt "GREEN HILL ZONE  STAGE 1"
-		lstxt "                 STAGE 2"
-		lstxt "                 STAGE 3"
-		lstxt "LABYRINTH ZONE   STAGE 1"
-		lstxt "                 STAGE 2"
-		lstxt "                 STAGE 3"
-		lstxt "MARBLE ZONE      STAGE 1"
-		lstxt "                 STAGE 2"
-		lstxt "                 STAGE 3"
-		lstxt "STAR LIGHT ZONE  STAGE 1"
-		lstxt "                 STAGE 2"
-		lstxt "                 STAGE 3"
-		lstxt "SPRING YARD ZONE STAGE 1"
-		lstxt "                 STAGE 2"
-		lstxt "                 STAGE 3"
-		lstxt "SCRAP BRAIN ZONE STAGE 1"
-		lstxt "                 STAGE 2"
-		lstxt "                 STAGE 3"
-		lstxt "FINAL ZONE              "
-		lstxt "SPECIAL STAGE           "
-		lstxt "SOUND SELECT            "
-		else
-		lstxt "GREEN HILL ZONE  STAGE 1"
-		lstxt "                 STAGE 2"
-		lstxt "                 STAGE 3"
-		lstxt "MARBLE ZONE      STAGE 1"
-		lstxt "                 STAGE 2"
-		lstxt "                 STAGE 3"
-		lstxt "SPRING YARD ZONE STAGE 1"
-		lstxt "                 STAGE 2"
-		lstxt "                 STAGE 3"
-		lstxt "LABYRINTH ZONE   STAGE 1"
-		lstxt "                 STAGE 2"
-		lstxt "                 STAGE 3"
-		lstxt "STAR LIGHT ZONE  STAGE 1"
-		lstxt "                 STAGE 2"
-		lstxt "                 STAGE 3"
-		lstxt "SCRAP BRAIN ZONE STAGE 1"
-		lstxt "                 STAGE 2"
-		lstxt "                 STAGE 3"
-		lstxt "FINAL ZONE              "
-		lstxt "SPECIAL STAGE           "
-		lstxt "SOUND SELECT            "
-		endc
-		even
+LevelMenuText:
+	lstxt "GREEN HILL ZONE  STAGE 1"
+	lstxt "                 STAGE 2"
+	lstxt "                 STAGE 3"
+	lstxt "MARBLE ZONE      STAGE 1"
+	lstxt "                 STAGE 2"
+	lstxt "                 STAGE 3"
+	lstxt "SPRING YARD ZONE STAGE 1"
+	lstxt "                 STAGE 2"
+	lstxt "                 STAGE 3"
+	lstxt "LABYRINTH ZONE   STAGE 1"
+	lstxt "                 STAGE 2"
+	lstxt "                 STAGE 3"
+	lstxt "STAR LIGHT ZONE  STAGE 1"
+	lstxt "                 STAGE 2"
+	lstxt "                 STAGE 3"
+	lstxt "SCRAP BRAIN ZONE STAGE 1"
+	lstxt "                 STAGE 2"
+	lstxt "                 STAGE 3"
+	lstxt "FINAL ZONE              "
+	lstxt "SPECIAL STAGE           "
+	lstxt "SOUND TEST -  -         "
+	even
 ; ---------------------------------------------------------------------------
 ; Music playlist
 ; ---------------------------------------------------------------------------
