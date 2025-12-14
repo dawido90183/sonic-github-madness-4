@@ -2068,9 +2068,13 @@ Pal_LZWater_\name:		incbin "!Characters\\\name\\Palette - LZ Underwater.bin"
 Pal_SBZ3Water_\name:		incbin "!Characters\\\name\\Palette - SBZ3 Underwater.bin"
 		endm
 
+Char_Pal:
+
 	; CHAR ADD STUFF
 
 	pal_char Sonic
+	pal_char GHM3_Guy
+	; add next char here
 
 ; ---------------------------------------------------------------------------
 ; Subroutine to wait for VBlank routines to complete
@@ -2484,10 +2488,14 @@ loc_3230:
 		beq.w	Tit_MainLoop	; if not, branch
 
 Tit_ChkLevSel:
+		move.w	#0,(v_character).w ; testing
+
 		tst.b	(f_levselcheat).w ; check if level select code is on
 		beq.w	PlayLevel	; if not, play level
 		btst	#bitA,(v_jpadhold1).w ; check if A is pressed
 		beq.w	PlayLevel	; if not, play level
+
+		move.w	#4,(v_character).w ; testing
 
 		moveq	#palid_LevelSel,d0
 		bsr.w	PalLoad2	; load level select palette
@@ -2995,7 +3003,7 @@ GM_CharSelect:
 		bsr.w	PlaySound_Special ; stop music
 
 		bsr.w	PaletteFadeIn
-
+		bsr.w	LoadCharacterCharSelect
 CharSelect_Loop:
 		move.b	#4,(v_vbla_routine).w
 		bsr.w	WaitForVBla
@@ -3003,6 +3011,34 @@ CharSelect_Loop:
 		tst.l	(v_plc_buffer).w
 		bne.s	CharSelect_Loop
 		bra.s	CharSelect_Loop
+		rts
+
+LoadCharacterCharSelect:
+		lea (v_pal_dry+$60).l,a3
+		move.w	#0,d2
+		bsr.s	LoadPlayerPalette_main
+		; load rest of stuff I guess
+		rts
+
+LoadPlayerPalette: ; d2 -> offset in memory .w
+		lea (v_pal_dry).l,a3
+LoadPlayerPalette_main:
+		move.w	(v_character).w,d0
+		lea	(Char_Pal).l,a2
+	rept 3
+		add.w	d0,d0
+	endr ; * 8
+		move.w	d0,d1
+		add.w	d0,d0
+		add.w	d1,d0 ; * 3
+
+		add.w	d2,d0
+		add.w	d0,a2
+		move.w	#($20/4)-1,d7
+
+	@loop:
+		move.l	(a2)+,(a3)+	; move data to RAM
+		dbf	d7,@loop
 		rts
 ; ---------------------------------------------------------------------------
 ; Music playlist
@@ -3120,18 +3156,19 @@ Level_ClrRam:
 Level_LoadPal:
 		move.w	#30,(v_air).w
 		enable_ints
-		moveq	#palid_Sonic,d0
-		bsr.w	PalLoad2	; load Sonic's palette
+		clr.w	d2
+		bsr.w	LoadPlayerPalette	; load Sonic's palette
 		cmpi.b	#id_LZ,(v_zone).w ; is level LZ?
 		bne.s	Level_GetBgm	; if not, branch
 
-		moveq	#palid_LZWater_Sonic,d0 ; palette number $F (LZ)
+		move.w	#$20,d2 ; palette 1 (LZ)
 		cmpi.b	#3,(v_act).w	; is act number 3?
 		bne.s	Level_WaterPal	; if not, branch
-		moveq	#palid_SBZ3Water_Sonic,d0 ; palette number $10 (SBZ3)
+		move.w	#$40,d2 ; palette 2 (SBZ3)
 
 	Level_WaterPal:
-		bsr.w	PalLoad3_Water	; load underwater palette
+		lea (v_pal_water).l,a3
+		bsr.w	LoadPlayerPalette_main	; load Sonic's palette
 		tst.b	(v_lastlamp).w
 		beq.s	Level_GetBgm
 		move.b	($FFFFFE53).w,(f_wtr_state).w
@@ -7211,11 +7248,17 @@ Sonic_Index:	dc.w Sonic_Main-Sonic_Index
 		dc.w Sonic_ResetLevel-Sonic_Index
 ; ===========================================================================
 
+Char_Map:	; CHAR ADD STUFF
+	dc.l	Map_Sonic
+	dc.l	Map_Sonic
+	; add next char here
+
 Sonic_Main:	; Routine 0
 		addq.b	#2,obRoutine(a0)
 		move.b	#$13,obHeight(a0)
 		move.b	#9,obWidth(a0)
-		move.l	#Map_Sonic,obMap(a0)
+		move.w	(v_character).w,d5
+		move.l	Char_Map(pc,d5.w),obMap(a0) ; load PLC script
 		move.w	#$780,obGfx(a0)
 		move.b	#2,obPriority(a0)
 		move.b	#$18,obActWid(a0)
@@ -8845,6 +8888,7 @@ DPLC_\name:	include	"!Characters\\\name\\DPLC.asm"
 	; CHAR ADD STUFF
 
 	map_char Sonic
+	; add next char here
 
 ; ---------------------------------------------------------------------------
 ; Uncompressed graphics - Characters

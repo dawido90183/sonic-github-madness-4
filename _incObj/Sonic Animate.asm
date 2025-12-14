@@ -4,9 +4,14 @@
 
 ; ||||||||||||||| S U B R O U T I N E |||||||||||||||||||||||||||||||||||||||
 
+Char_Ani:	; CHAR ADD STUFF
+	dc.l	Ani_Sonic
+	dc.l	Ani_Sonic
+	; add next char here
 
 Sonic_Animate:
-		lea	(Ani_Sonic).l,a1
+		move.w	(v_character).w,d0
+		move.l	Char_Ani(pc,d0.w),a1 ; load animation
 		moveq	#0,d0
 		move.b	obAnim(a0),d0
 		cmp.b	obNextAni(a0),d0 ; is animation set to restart?

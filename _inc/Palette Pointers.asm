@@ -34,8 +34,6 @@ ptr_Pal_Ending:		palp	Pal_Ending,v_pal_dry,$40		; $13 (19) - ending sequence
 
 ptr_Pal_CharSel:	palp	Pal_CharSel,v_pal_dry,$30	; character select
 
-Pal_Characters:
-
 pal_char_ptr:	macro name
 ptr_Pal_\name:		palp	Pal_\name,v_pal_dry,$10
 ptr_Pal_LZWater_\name:		palp	Pal_LZWater_\name,v_pal_dry,$10
@@ -47,7 +45,7 @@ palid_SBZ3Water_\name:		equ (ptr_Pal_SBZ3Water_\name-PalPointers)/8
 
 		endm
 
-	; CHAR ADD STUFF
+	; CHAR ADD STUFF (Not necessary unless you'll use the palette outside of the character)
 
 	pal_char_ptr Sonic
 
