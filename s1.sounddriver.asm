@@ -99,7 +99,24 @@ ptr_mus1A:	dc.l Music1A
 ptr_mus1C:	dc.l Music1C
 ptr_mus1D:	dc.l Music1D
 ptr_mus1E:	dc.l Music1E
-;ptr_mus1F:	dc.l Music1F
+ptr_mus1F:	dc.l Music1F
+;ptr_mus20:	dc.l Music20
+;ptr_mus21:	dc.l Music21
+;ptr_mus22:	dc.l Music22
+;ptr_mus23:	dc.l Music23
+;ptr_mus24:	dc.l Music24
+;ptr_mus25:	dc.l Music25
+;ptr_mus26:	dc.l Music26
+;ptr_mus27:	dc.l Music27
+;ptr_mus28:	dc.l Music28
+;ptr_mus29:	dc.l Music29
+;ptr_mus2A:	dc.l Music2A
+;ptr_mus2B:	dc.l Music2B
+;ptr_mus2C:	dc.l Music2C
+;ptr_mus2D:	dc.l Music2D
+;ptr_mus2E:	dc.l Music2E
+;ptr_mus2F:	dc.l Music2F
+;ptr_mus30:	dc.l Music30
 ptr_musend
 
 ;Note to TG2000 or any other track implementors, remove semicolons on pointers upon implementing a track on a commented pointer! 
@@ -2586,6 +2603,8 @@ Music1C:	include	"sound/music/TG2000Tracks/WarnOfSon.asm"
 Music1D:	include	"sound/music/TG2000Tracks/Carefree.asm"
 		even
 Music1E:	include	"sound/music/TG2000Tracks/GreenHills.asm"
+		even
+Music1F:	include	"sound/music/TG2000Tracks/Son1UP.asm"
 		even
 
 ; ---------------------------------------------------------------------------
