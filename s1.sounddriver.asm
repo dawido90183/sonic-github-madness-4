@@ -98,7 +98,7 @@ ptr_mus19:	dc.l Music19
 ptr_mus1A:	dc.l Music1A
 ptr_mus1C:	dc.l Music1C
 ptr_mus1D:	dc.l Music1D
-;ptr_mus1E:	dc.l Music1E
+ptr_mus1E:	dc.l Music1E
 ;ptr_mus1F:	dc.l Music1F
 ptr_musend
 
@@ -2584,6 +2584,8 @@ Music1A:	include	"sound/music/TG2000Tracks/Ding.asm"
 Music1C:	include	"sound/music/TG2000Tracks/WarnOfSon.asm"
 		even
 Music1D:	include	"sound/music/TG2000Tracks/Carefree.asm"
+		even
+Music1E:	include	"sound/music/TG2000Tracks/GreenHills.asm"
 		even
 
 ; ---------------------------------------------------------------------------
