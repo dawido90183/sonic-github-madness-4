@@ -563,16 +563,16 @@ VBlank:
 		movem.l	d0-a6,-(sp)
 		tst.b	(v_vbla_routine).w
 		beq.w	VBla_00
-		move.w	(vdp_control_port).l,d0
 
-        move.l    #$40000010,(vdp_control_port).l ; go to $0 in VSRAM
+		lea		(vdp_data_port).l,a1
+        move.l    #$40000010,4(a1) ; go to $0 in VSRAM
 
 		cmpi.b	#id_SegaJP,(v_gamemode).w
-		beq.s	@not_jp
+		bne.s	@not_jp
 
 		lea    (v_vscrolltablebuffer).l,a0 ; get buffer from RAM
         move.w    #($80/4)-1,d1
-		lea		(vdp_data_port).l,a1
+
     @vscrollloop:
         move.l    (a0)+,(a1) ; send screen y-axis pos. to VSRAM
         dbf.w    d1,@vscrollloop
@@ -580,7 +580,7 @@ VBlank:
 		bra.s	@continue
 
 	@not_jp:
-		move.l	(v_scrposy_vdp).w,(vdp_data_port).l ; send screen y-axis pos. to VSRAM
+		move.l	(v_scrposy_vdp).w,(a1) ; send screen y-axis pos. to VSRAM
 ; ---------------------------------------------------------------------------
 
 	@continue:
@@ -2287,23 +2287,54 @@ GM_SegaJP:
 		move.b	#palid_Sonic,d0
 		bsr.w	PalLoad1
 
-		lea (v_vscrolltablebuffer-2).l,a0
-		move.w    #($80/4)-1,d1
-		move.l	 #$1,d0
-    @vscroll_reset:
-        move.l    d0,(a0)+ ; send screen y-axis pos. to VSRAM
-        addq.w	#$2,d0
-        dbf.w    d1,@vscroll_reset
+        move.w    #$80,(v_vscrolltablebuffer+$20) ; send screen y-axis pos. to VSRAM
+        move.w    #$80,(v_vscrolltablebuffer+$24) ; send screen y-axis pos. to VSRAM
+        move.w    #$80,(v_vscrolltablebuffer+$28) ; send screen y-axis pos. to VSRAM
 
 		bsr.w	PaletteFadeIn
 
-	@loop:
+		move.w	#$60,(v_generictimer).w
+
+	@loop_start:
 		move.b	#4,(v_vbla_routine).w
 		bsr.w	WaitForVBla
 
-		tst.b	(v_jpadpress1).w ; check if any button is pressed
-		beq.s	@loop	; if not, branch
+		tst.b	(v_jpadpress1).w
+		bne.s	ExitSegaJP
 
+		tst.w	(v_generictimer).w
+		bne.s	@loop_start
+
+	@crane_lower:
+		move.b	#4,(v_vbla_routine).w
+		bsr.w	WaitForVBla
+
+		move.l	(v_vscrolltablebuffer+$1E),d0
+		subq.l	#$1,d0
+		lea 	(v_vscrolltablebuffer+$1E).l,a0
+	rept 3
+		move.l	d0,(a0)+
+	endr
+
+		tst.b	(v_jpadpress1).w
+		bne.s	ExitSegaJP
+
+		tst.w	d0
+		bne.s	@crane_lower
+
+		move.w	#$60,(v_generictimer).w
+
+	@loop_end:
+		move.b	#4,(v_vbla_routine).w
+		bsr.w	WaitForVBla
+
+		tst.b	(v_jpadpress1).w
+		bne.s	ExitSegaJP
+
+		tst.w	(v_generictimer).w
+		bne.s	@loop_end
+
+ExitSegaJP:
 		move.b	#id_SplashScreen,(v_gamemode).w ; go to splash screen
 		rts
 ; ===========================================================================
