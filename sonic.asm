@@ -8920,6 +8920,7 @@ Pal_Splash_\name:	incbin	"splash\\Pal - \name\.bin"
 	splash_data SonicBroke
 	splash_data Wait
 	splash_data Blessed
+	splash_data Monke
 	; next splash screen data here
 
 ; ---------------------------------------------------------------------------
