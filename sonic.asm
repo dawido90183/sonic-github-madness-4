@@ -366,6 +366,8 @@ ptr_GM_Splash:	bra.w	GM_Splash		; Splash Screens ($20)
 
 ptr_GM_CharSelect:	bra.w	GM_CharSelect		; Splash Screens ($24)
 
+ptr_GM_SegaJP:	bra.w	GM_SegaJP		; Sega Screen JP ($28)
+
 		rts	
 ; ===========================================================================
 
@@ -560,10 +562,28 @@ Art_Text:	incbin	"artunc\menutext.bin" ; text used in level select and debug mod
 VBlank:
 		movem.l	d0-a6,-(sp)
 		tst.b	(v_vbla_routine).w
-		beq.s	VBla_00
+		beq.w	VBla_00
 		move.w	(vdp_control_port).l,d0
-		move.l	#$40000010,(vdp_control_port).l
+
+        move.l    #$40000010,(vdp_control_port).l ; go to $0 in VSRAM
+
+		cmpi.b	#id_SegaJP,(v_gamemode).w
+		beq.s	@not_jp
+
+		lea    (v_vscrolltablebuffer).l,a0 ; get buffer from RAM
+        move.w    #($80/4)-1,d1
+		lea		(vdp_data_port).l,a1
+    @vscrollloop:
+        move.l    (a0)+,(a1) ; send screen y-axis pos. to VSRAM
+        dbf.w    d1,@vscrollloop
+
+		bra.s	@continue
+
+	@not_jp:
 		move.l	(v_scrposy_vdp).w,(vdp_data_port).l ; send screen y-axis pos. to VSRAM
+; ---------------------------------------------------------------------------
+
+	@continue:
 		btst	#6,(v_megadrive).w ; is Megadrive PAL?
 		beq.s	@notPAL		; if not, branch
 
@@ -2059,6 +2079,7 @@ Pal_SSResult:	incbin	"palette\Special Stage Results.bin"
 Pal_Continue:	incbin	"palette\Special Stage Continue Bonus.bin"
 Pal_Ending:	incbin	"palette\Ending.bin"
 Pal_CharSel:	incbin "palette\Character Select.bin"
+Pal_SegaJP:	incbin	"palette\Sega Logo JP.bin"
 ; ---------------------------------------------------------------------------
 ; Palette data (Character)
 ; ---------------------------------------------------------------------------
@@ -2148,6 +2169,13 @@ GenerateSegaTiles: ; d4 -> vram location, d6 -> counter for skip
 		rts
 
 GM_Sega:
+		tst.b   (v_megadrive).w	; is console Japanese?
+		bmi.s   @ok		; if not, branch
+
+		move.b	#id_SegaJP,(v_gamemode).w ; go to JP screen
+		rts
+	@ok:
+
 		move.b	#bgm_Stop,d0
 		bsr.w	PlaySound_Special ; stop music
 		bsr.w	ClearPLC
@@ -2183,13 +2211,6 @@ GM_Sega:
 
 		bsr.w GenerateSegaTiles
 
-		if Revision=0
-		else
-			tst.b   (v_megadrive).w	; is console Japanese?
-			bmi.s   @loadpal
-			copyTilemap	$FF0A40,$C53A,2,1 ; hide "TM" with a white rectangle
-		endc
-
 	@loadpal:
 		moveq	#palid_SegaBG,d0
 		bsr.w	PalLoad2	; load Sega logo palette
@@ -2224,6 +2245,67 @@ Sega_WaitEnd:
 Sega_GotoTitle:
 		move.b	#id_SplashScreen,(v_gamemode).w ; go to splash screen
 		rts	
+; ===========================================================================
+VDP_Data_SegaJP:
+	dc.w	$8024 ; 8-colour mode
+	dc.w	$8174 ; enable display
+	dc.w	$8200+(vram_fg>>10) ; set foreground nametable address
+	dc.w	$8400+(vram_bg>>13) ; set background nametable address
+	dc.w	$9001 ; 64-cell hscroll size
+	dc.w	$9200 ; window vertical position
+	dc.w	$8B07 ; scroll mode (vscroll enabled)
+	dc.w	$8700 ; set background colour (palette line 0, entry 0)
+GM_SegaJP:
+		disable_ints
+		; Set up VDP
+		lea	(vdp_control_port).l,a6
+		move.w	#8-1,d0
+		clr.w	d1
+	@vdploop:
+		move.w	VDP_Data_SegaJP(pc,d1.w),(a6)
+		addq.w	#2,d1
+		dbf.w	d0,@vdploop
+
+		bsr.w	SoundDriverLoad
+		move.b	#bgm_Stop,d0
+		bsr.w	PlaySound_Special ; stop music
+		bsr.w	ClearScreen
+
+		locVRAM 0
+		lea	(Nem_SegaJP).l,a0 ; art
+		bsr.w	NemDec
+
+		lea	($FF0000).l,a1
+		lea	(Eni_SegaJP).l,a0 ; tilemap
+		clr.w	d0
+		bsr.w	EniDec
+
+		copyTilemap	$FF0000,$C61A,$C,$4
+
+		move.b	#palid_SegaJP,d0
+		bsr.w	PalLoad1
+		move.b	#palid_Sonic,d0
+		bsr.w	PalLoad1
+
+		lea (v_vscrolltablebuffer-2).l,a0
+		move.w    #($80/4)-1,d1
+		move.l	 #$1,d0
+    @vscroll_reset:
+        move.l    d0,(a0)+ ; send screen y-axis pos. to VSRAM
+        addq.w	#$2,d0
+        dbf.w    d1,@vscroll_reset
+
+		bsr.w	PaletteFadeIn
+
+	@loop:
+		move.b	#4,(v_vbla_routine).w
+		bsr.w	WaitForVBla
+
+		tst.b	(v_jpadpress1).w ; check if any button is pressed
+		beq.s	@loop	; if not, branch
+
+		move.b	#id_SplashScreen,(v_gamemode).w ; go to splash screen
+		rts
 ; ===========================================================================
 
 ; ---------------------------------------------------------------------------
@@ -8906,6 +8988,12 @@ Nem_SegaLogo:	incbin	"artnem\Doo Doo Feces.bin"	; large Sega logo
 		even
 Eni_SegaLogo:	incbin	"tilemaps\Doo Doo Feces.bin" ; large Sega logo (mappings)
 		even
+
+Nem_SegaJP:	incbin	"artnem\Sega Logo JP.bin"	; JP Sega logo
+		even
+Eni_SegaJP:	incbin	"tilemaps\Sega Logo JP.bin" ; JP Sega logo (mappings)
+		even
+
 
 Eni_Title:	incbin	"tilemaps\Title Screen.bin" ; title screen foreground (mappings)
 		even

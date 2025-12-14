@@ -1,5 +1,8 @@
 ; Variables (v) and Flags (f)
 
+v_vscrolltablebuffer: equ $FFFF0200	; $80 bytes
+
+
 v_regbuffer:	equ $FFFFFC00	; stores registers d0-a7 during an error event ($40 bytes)
 v_spbuffer:	equ $FFFFFC40	; stores most recent sp address (4 bytes)
 v_errortype:	equ $FFFFFC44	; error type

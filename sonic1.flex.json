@@ -59,7 +59,7 @@
                     "art": {
                         "path": "!Characters/Sonic/Art.bin",
                         "compression": "Uncompressed",
-                        "offset": ""
+                        "offset": 0
                     },
                     "mappings": {
                         "path": "!Characters/Sonic/Mappings.asm",

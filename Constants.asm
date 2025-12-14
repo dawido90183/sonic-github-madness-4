@@ -81,6 +81,7 @@ id_Ending:	equ ptr_GM_Ending-GameModeArray	; $18
 id_Credits:	equ ptr_GM_Credits-GameModeArray; $1C
 id_SplashScreen:	equ ptr_GM_Splash-GameModeArray ; $20
 id_CharSelect:	equ ptr_GM_CharSelect-GameModeArray ; $24
+id_SegaJP:	equ ptr_GM_SegaJP-GameModeArray ; $28
 
 ; Levels
 id_GHZ:		equ 0
