@@ -95,7 +95,16 @@ ptr_mus17:	dc.l Music17
 ptr_mus18:	dc.l Music18
 ptr_mus94:	dc.l Music94
 ptr_mus19:	dc.l Music19
+ptr_mus1A:	dc.l Music1A
+;ptr_mus1B:	dc.l Music1B
+;ptr_mus1C:	dc.l Music1C
+;ptr_mus1D:	dc.l Music1D
+;ptr_mus1E:	dc.l Music1E
+;ptr_mus1F:	dc.l Music1F
 ptr_musend
+
+;Note to TG2000 or any other track implementors, remove semicolons on pointers upon implementing a track on a commented pointer! 
+
 ; ---------------------------------------------------------------------------
 ; Priority of sound. New music or SFX must have a priority higher than or equal
 ; to what is stored in v_sndprio or it won't play. If bit 7 of new priority is
@@ -2570,6 +2579,8 @@ Music18:	include	"sound/music/TG2000Tracks/TwoSteps.asm"
 		even
 Music94:	include	"sound/music/HS_Tracks/Basillica.asm"
 Music19:	include	"sound/music/TG2000Tracks/FurElise.asm"
+		even
+Music1A:	include	"sound/music/TG2000Tracks/Ding.asm"
 		even
 
 ; ---------------------------------------------------------------------------

@@ -2263,6 +2263,7 @@ splash_entry macro art,tilemap,palette,size,music_id,duration_in_frames
 	splash_entry Nem_JapNames,Eni_JapNames,Pal_SSResult,$20,sfx_SSGoal,120
 	splash_entry Nem_Splash_Shiki,Eni_Splash_Shiki,Pal_Splash_Shiki,$20,sfx_Bumper,120
 	splash_entry Nem_Splash_SonicBroke,Eni_Splash_SonicBroke,Pal_Splash_SonicBroke,$20,bgm_Continue,480
+	splash_entry Nem_Splash_Wait,Eni_Splash_Wait,Pal_Splash_Wait,$40,$1A,120
 	dc.l	-1 ; end marker
 
 ; ---------------------------------------------------------------------------
@@ -8872,6 +8873,7 @@ Pal_Splash_\name:	incbin	"splash\\Pal - \name\.bin"
 
 	splash_data Shiki
 	splash_data SonicBroke
+	splash_data Wait
 	; next splash screen data here
 
 ; ---------------------------------------------------------------------------
