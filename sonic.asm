@@ -2262,6 +2262,7 @@ splash_entry macro art,tilemap,palette,size,music_id,duration_in_frames
 
 	splash_entry Nem_JapNames,Eni_JapNames,Pal_SSResult,$20,sfx_SSGoal,120
 	splash_entry Nem_Splash_Shiki,Eni_Splash_Shiki,Pal_Splash_Shiki,$20,sfx_Bumper,120
+	splash_entry Nem_Splash_SonicBroke,Eni_Splash_SonicBroke,Pal_Splash_SonicBroke,$20,bgm_Continue,480
 	dc.l	-1 ; end marker
 
 ; ---------------------------------------------------------------------------
@@ -2988,6 +2989,9 @@ GM_CharSelect:
 
 		moveq	#palid_CharSel,d0
 		bsr.w	PalLoad1	; load char select palette
+
+		move.b	#bgm_Basillica,d0
+		bsr.w	PlaySound_Special ; stop music
 
 		bsr.w	PaletteFadeIn
 
@@ -8867,6 +8871,7 @@ Pal_Splash_\name:	incbin	"splash\\Pal - \name\.bin"
 	endm
 
 	splash_data Shiki
+	splash_data SonicBroke
 	; next splash screen data here
 
 ; ---------------------------------------------------------------------------
