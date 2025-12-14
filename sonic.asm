@@ -2268,6 +2268,7 @@ splash_entry macro art,tilemap,palette,size,music_id,duration_in_frames
 	splash_entry Nem_Splash_Shiki,Eni_Splash_Shiki,Pal_Splash_Shiki,$20,sfx_Bumper,120
 	splash_entry Nem_Splash_SonicBroke,Eni_Splash_SonicBroke,Pal_Splash_SonicBroke,$20,bgm_Continue,480
 	splash_entry Nem_Splash_Wait,Eni_Splash_Wait,Pal_Splash_Wait,$60,$1C,145
+    splash_entry Nem_Monke,Eni_Monke,Pal_Monke,$20,sfx_Teleport,120
 	dc.l	-1 ; end marker
 
 ; ---------------------------------------------------------------------------
