@@ -93,6 +93,7 @@ ptr_mus15:	dc.l Music15
 ptr_mus16:	dc.l Music16
 ptr_mus17:	dc.l Music17
 ptr_mus18:	dc.l Music18
+ptr_mus19:	dc.l Music19
 ptr_musend
 ; ---------------------------------------------------------------------------
 ; Priority of sound. New music or SFX must have a priority higher than or equal
@@ -2565,6 +2566,8 @@ Music16:	include	"sound/music/TG2000Tracks/Gadget.asm"
 Music17:	include	"sound/music/TG2000Tracks/CanCan.asm"
 		even
 Music18:	include	"sound/music/TG2000Tracks/TwoSteps.asm"
+		even
+Music19:	include	"sound/music/TG2000Tracks/FurElise.asm"
 		even
 
 ; ---------------------------------------------------------------------------
