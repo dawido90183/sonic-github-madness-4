@@ -364,6 +364,8 @@ ptr_GM_Credits:	bra.w	GM_Credits	; Credits ($1C)
 
 ptr_GM_Splash:	bra.w	GM_Splash		; Splash Screens ($20)
 
+ptr_GM_CharSelect:	bra.w	GM_CharSelect		; Splash Screens ($24)
+
 		rts	
 ; ===========================================================================
 
@@ -2055,6 +2057,7 @@ Pal_SBZ3Water:	incbin	"palette\SBZ Act 3 Underwater.bin"
 Pal_SSResult:	incbin	"palette\Special Stage Results.bin"
 Pal_Continue:	incbin	"palette\Special Stage Continue Bonus.bin"
 Pal_Ending:	incbin	"palette\Ending.bin"
+Pal_CharSel:	incbin "palette\Character Select.bin"
 ; ---------------------------------------------------------------------------
 ; Palette data (Character)
 ; ---------------------------------------------------------------------------
@@ -2520,6 +2523,8 @@ LevelSelect:
 		andi.b	#btnC+btnStart,(v_jpadpress1).w ; is C or Start pressed?
 		beq.s	LevelSelect	; if not, branch
 		move.w	(v_levselitem).w,d0
+		cmpi.w	#$15,d0		; char select?
+		beq.s	LevSel_CharSelect
 		cmpi.w	#$14,d0		; have you selected item $14 (sound test)?
 		bne.s	LevSel_Level_SS	; if not, go to Level/SS subroutine
 		move.w	(v_levselsound).w,d0
@@ -2534,6 +2539,10 @@ LevSel_PlaySnd:
 		bsr.w	PlaySound_Special
 		bra.s	LevelSelect
 ; ===========================================================================
+
+LevSel_CharSelect:
+		move.b	#id_CharSelect,(v_gamemode).w ; set screen mode to Char select
+		rts
 
 LevSel_Ending:
 		move.b	#id_Ending,(v_gamemode).w ; set screen mode to $18 (Ending)
@@ -2725,15 +2734,15 @@ LevSel_UpDown:
 		beq.s	LevSel_Down	; if not, branch
 		subq.w	#1,d0		; move up 1 selection
 		bhs.s	LevSel_Down
-		moveq	#$14,d0		; if selection moves below 0, jump to selection $14
+		moveq	#$15,d0		; if selection moves below 0, jump to selection $15
 
 LevSel_Down:
 		btst	#bitDn,d1	; is down pressed?
 		beq.s	LevSel_Refresh	; if not, branch
 		addq.w	#1,d0		; move down 1 selection
-		cmpi.w	#$15,d0
+		cmpi.w	#$16,d0
 		blo.s	LevSel_Refresh
-		moveq	#0,d0		; if selection moves above $14, jump to selection 0
+		moveq	#0,d0		; if selection moves above $15, jump to selection 0
 
 LevSel_Refresh:
 		move.w	d0,(v_levselitem).w ; set new selection
@@ -2794,7 +2803,7 @@ LevSelTextLoad:
 		lea	(vdp_data_port).l,a6
 		move.l	#textpos,d4	; text position on screen
 		move.w	#$E680,d3	; VRAM setting (4th palette, $680th tile)
-		moveq	#$14,d1		; number of lines of text
+		moveq	#22-1,d1		; number of lines of text
 
 	LevSel_DrawAll:
 		move.l	d4,4(a6)
@@ -2935,7 +2944,61 @@ LevelMenuText:
 	lstxt "FINAL ZONE      "
 	lstxt "SPECIAL STAGE   "
 	lstxt "SOUND TEST -  - "
+	lstxt "CHAR SELECT     "
 	even
+
+GM_CharSelect:
+		move.b	#bgm_Stop,d0
+		bsr.w	PlaySound_Special ; stop music
+		bsr.w	ClearPLC
+		bsr.w	PaletteFadeOut
+		disable_ints
+		clr.b	(f_wtr_state).w
+		bsr.w	ClearScreen
+
+		lea	(v_objspace).w,a1
+		moveq	#0,d0
+		move.w	#$7FF,d1
+
+	@clrobj:
+		move.l	d0,(a1)+
+		dbf	d1,@clrobj	; fill object space ($D000-$EFFF) with 0
+
+		locVRAM 0
+		lea	(Nem_CharSelBG).l,a0 ; art
+		bsr.w	NemDec
+
+		lea	($FF0000).l,a1
+		lea	(Eni_CharSelBG).l,a0 ; tilemap
+		clr.w	d0
+		bsr.w	EniDec
+
+		copyTilemap	$FF0000,$E000,$27,$1B
+
+		locVRAM $20*$20
+		lea	(Nem_CharSelFG).l,a0 ; art
+		bsr.w	NemDec
+
+		lea	($FF0000).l,a1
+		lea	(Eni_CharSelFG).l,a0 ; tilemap
+		move.w	#$20,d0
+		bsr.w	EniDec
+
+		copyTilemap	$FF0000,$C000,$27,$1B
+
+		moveq	#palid_CharSel,d0
+		bsr.w	PalLoad1	; load char select palette
+
+		bsr.w	PaletteFadeIn
+
+CharSelect_Loop:
+		move.b	#4,(v_vbla_routine).w
+		bsr.w	WaitForVBla
+		bsr.w	RunPLC
+		tst.l	(v_plc_buffer).w
+		bne.s	CharSelect_Loop
+		bra.s	CharSelect_Loop
+		rts
 ; ---------------------------------------------------------------------------
 ; Music playlist
 ; ---------------------------------------------------------------------------
@@ -8805,31 +8868,26 @@ Pal_Splash_\name:	incbin	"splash\\Pal - \name\.bin"
 
 	splash_data Shiki
 	; next splash screen data here
+
+; ---------------------------------------------------------------------------
+; Compressed graphics - Character Select
+; ---------------------------------------------------------------------------
+Nem_CharSelBG:	incbin	"artnem\Character Select Background.bin" ; background art
+		even
+Eni_CharSelBG:	incbin	"tilemaps\Character Select Background.bin" ; background (mappings)
+		even
+
+Nem_CharSelFG:	incbin	"artnem\Character Select Foreground.bin" ; foreground art
+		even
+Eni_CharSelFG:	incbin	"tilemaps\Character Select Foreground.bin" ; foreground (mappings)
+		even
 ; ---------------------------------------------------------------------------
 ; Compressed graphics - various
 ; ---------------------------------------------------------------------------
-		if Revision=0
-Nem_Smoke:	incbin	"artnem\Unused - Smoke.bin"
-		even
-Nem_SyzSparkle:	incbin	"artnem\Unused - SYZ Sparkles.bin"
-		even
-		else
-		endc
 Nem_Shield:	incbin	"artnem\Shield.bin"
 		even
 Nem_Stars:	incbin	"artnem\Invincibility Stars.bin"
 		even
-		if Revision=0
-Nem_LzSonic:	incbin	"artnem\Unused - LZ Sonic.bin" ; Sonic holding his breath
-		even
-Nem_UnkFire:	incbin	"artnem\Unused - Fireball.bin" ; unused fireball
-		even
-Nem_Warp:	incbin	"artnem\Unused - SStage Flash.bin" ; entry to special stage flash
-		even
-Nem_Goggle:	incbin	"artnem\Unused - Goggles.bin" ; unused goggles
-		even
-		else
-		endc
 
 Map_SSWalls:	include	"_maps\SS Walls.asm"
 
