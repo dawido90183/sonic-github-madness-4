@@ -2315,7 +2315,7 @@ splash_entry macro art,tilemap,palette,size,music_id,duration_in_frames
 	dc.w	duration_in_frames
 	endm
 
-	splash_entry Nem_Splash_Blessed,Eni_Splash_Blessed,Pal_Splash_Blessed,$20,sfx_SSGoal,120
+	splash_entry Nem_Splash_Blessed,Eni_Splash_Blessed,Pal_Splash_Blessed,$40,sfx_SSGoal,140
 	splash_entry Nem_Splash_Shiki,Eni_Splash_Shiki,Pal_Splash_Shiki,$20,sfx_Bumper,120
 	splash_entry Nem_Splash_SonicBroke,Eni_Splash_SonicBroke,Pal_Splash_SonicBroke,$20,bgm_Continue,480
     splash_entry Nem_Splash_Monke,Eni_Splash_Monke,Pal_Splash_Monke,$20,$1D,480 ; my dumbass brain did not get it how it works, untill now :P
