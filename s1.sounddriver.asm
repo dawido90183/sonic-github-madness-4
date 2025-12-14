@@ -88,6 +88,11 @@ ptr_mus90:	dc.l Music90
 ptr_mus91:	dc.l Music91
 ptr_mus92:	dc.l Music92
 ptr_mus93:	dc.l Music93
+ptr_mus14:	dc.l Music14
+ptr_mus15:	dc.l Music15
+ptr_mus16:	dc.l Music16
+ptr_mus17:	dc.l Music17
+ptr_mus18:	dc.l Music18
 ptr_musend
 ; ---------------------------------------------------------------------------
 ; Priority of sound. New music or SFX must have a priority higher than or equal
@@ -2550,6 +2555,16 @@ Music91:	include	"sound/music/Mus91 - Credits.asm"
 Music92:	include	"sound/music/Mus92 - Drowning.asm"
 		even
 Music93:	include	"sound/music/Mus93 - Get Emerald.asm"
+		even
+Music14:	include	"sound/music/TG2000Tracks/Aporia.asm"
+		even
+Music15:	include	"sound/music/TG2000Tracks/VampireKiller.asm"
+		even
+Music16:	include	"sound/music/TG2000Tracks/Gadget.asm"
+		even
+Music17:	include	"sound/music/TG2000Tracks/CanCan.asm"
+		even
+Music18:	include	"sound/music/TG2000Tracks/TwoSteps.asm"
 		even
 
 ; ---------------------------------------------------------------------------
