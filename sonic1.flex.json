@@ -1,10 +1,10 @@
 {
     "Flex": 2,
     "name": "Sonic 1",
-    "node": "da472ab9-f363-45e6-8ee3-a83fd70d6d9c",
+    "node": "bd49cb9b-eb59-40ee-ac21-6c5808332911",
     "objects": [
         {
-            "name": "Common",
+            "name": "Chars",
             "children": [
                 {
                     "name": "Sonic",
@@ -37,8 +37,49 @@
                         "path": "!Characters/Sonic/DPLC.asm",
                         "label": ""
                     },
-                    "uuid": "da472ab9-f363-45e6-8ee3-a83fd70d6d9c"
+                    "uuid": "7aae929a-16cb-40bd-8db2-a62e6b6c6c13"
                 },
+                {
+                    "name": "Orange Guy",
+                    "palettes": [
+                        {
+                            "path": "!Characters/GHM3_Guy/Palette - Normal.bin",
+                            "length": 1
+                        },
+                        {
+                            "path": "!Characters/GHM3_Guy/Palette - LZ Underwater.bin",
+                            "length": 1
+                        },
+                        {
+                            "path": "!Characters/GHM3_Guy/Palette - SBZ3 Underwater.bin",
+                            "length": 1
+                        }
+                    ],
+                    "format": "Sonic 1.js",
+                    "art": {
+                        "path": "!Characters/Sonic/Art.bin",
+                        "compression": "Uncompressed",
+                        "offset": ""
+                    },
+                    "mappings": {
+                        "path": "!Characters/Sonic/Mappings.asm",
+                        "label": ""
+                    },
+                    "dplcs": {
+                        "enabled": false,
+                        "path": "!Characters/Sonic/DPLC.asm",
+                        "label": ""
+                    },
+                    "uuid": "bd49cb9b-eb59-40ee-ac21-6c5808332911"
+                }
+            ],
+            "isDirectory": true,
+            "expanded": true,
+            "uuid": "5c587aae-929a-46cb-90bd-cdb2a62e6b6c"
+        },
+        {
+            "name": "Common",
+            "children": [
                 {
                     "name": "Signpost",
                     "palettes": [
@@ -262,7 +303,8 @@
                         "path": "",
                         "label": ""
                     },
-                    "uuid": "a83fd70d-6d9c-4886-9fb1-47929999eaa2"
+                    "uuid": "a83fd70d-6d9c-4886-9fb1-47929999eaa2",
+                    "expanded": true
                 },
                 {
                     "name": "Hidden Point Bonus",
@@ -2439,7 +2481,7 @@
                 }
             ],
             "isDirectory": true,
-            "expanded": false,
+            "expanded": true,
             "uuid": "a1e8ddd8-1c53-4e89-aa36-5cd177686c63"
         },
         {
@@ -2795,8 +2837,36 @@
                 }
             ],
             "isDirectory": true,
-            "expanded": false,
+            "expanded": true,
             "uuid": "6c6337c4-6aa9-448b-b085-fe2f6400cd25"
+        },
+        {
+            "name": "Char Select",
+            "children": [
+                {
+                    "format": "Sonic 1.js",
+                    "name": "Selection",
+                    "palettes": [],
+                    "art": {
+                        "path": "",
+                        "compression": "Uncompressed",
+                        "offset": 0
+                    },
+                    "mappings": {
+                        "path": "",
+                        "label": ""
+                    },
+                    "dplcs": {
+                        "enabled": false,
+                        "path": "",
+                        "label": ""
+                    },
+                    "uuid": "7ebd49cb-9beb-4960-ae2c-216c58083329"
+                }
+            ],
+            "isDirectory": true,
+            "expanded": true,
+            "uuid": "587aae92-9a16-4bd0-bdcd-b2a62e6b6c6c"
         }
     ]
 }

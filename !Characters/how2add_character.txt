@@ -1,7 +1,7 @@
 How to make a character!
 
-Adding characters is unfinished as of now...
+Should be working
 
 - Copy the Sonic folder and name it accordingly;
 - Edit data in the folder;
-- Search for 'CHAR ADD STUFF' in sonic.asm & Palette Pointers.asm and add your character.
+- Search for 'CHAR ADD STUFF' in sonic.asm, _incObj/Sonic LoadGfx.asm, _incObj/Sonic Animate.asm & _inc/Palette Pointers.asm (optional) and add your character.

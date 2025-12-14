@@ -4,6 +4,10 @@
 
 ; ||||||||||||||| S U B R O U T I N E |||||||||||||||||||||||||||||||||||||||
 
+Char_DPLC:	; CHAR ADD STUFF
+	dc.l	DPLC_Sonic
+	dc.l	DPLC_Sonic
+	; add next char here
 
 Sonic_LoadGfx:
 		moveq	#0,d0
@@ -12,7 +16,9 @@ Sonic_LoadGfx:
 		beq.s	@nochange	; if not, branch
 
 		move.b	d0,(v_sonframenum).w
-		lea	(DPLC_Sonic).l,a2 ; load PLC script
+
+		move.w	(v_character).w,d1
+		move.l	Char_DPLC(pc,d1.w),a2 ; load PLC script
 		add.w	d0,d0
 		adda.w	(a2,d0.w),a2
 		moveq	#0,d5
@@ -20,7 +26,8 @@ Sonic_LoadGfx:
 		subq.w	#1,d5
 		bmi.s	@nochange	; if zero, branch
 		move.w	#$F000,d4
-		move.l	#Art_Sonic,d6
+
+		move.l	Char_Art(pc,d1.w),d6 ; load Art
 
 	@readentry:
 		moveq	#0,d1
@@ -42,5 +49,10 @@ Sonic_LoadGfx:
 
 	@nochange:
 		rts	
+
+Char_Art:	; CHAR ADD STUFF
+	dc.l	Art_Sonic
+	dc.l	Art_Sonic
+	; add next char here
 
 ; End of function Sonic_LoadGfx

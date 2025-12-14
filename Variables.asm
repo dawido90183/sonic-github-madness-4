@@ -182,6 +182,8 @@ v_bgscrposx_vdp:	equ $FFFFF61C	; background screen position x (VDP) (2 bytes)
 v_bg3scrposy_vdp:	equ $FFFFF61E	; (2 bytes)
 v_bg3scrposx_vdp:	equ $FFFFF620	; (2 bytes)
 
+v_character:	equ $FFFFF622	; each character is split by 4, so sonic=0,tails=4,etc.
+
 v_hbla_hreg:	equ $FFFFF624	; VDP H.interrupt register buffer (8Axx) (2 bytes)
 v_hbla_line:	equ $FFFFF625	; screen line where water starts and palette is changed by HBlank
 v_pfade_start:	equ $FFFFF626	; palette fading - start position in bytes
@@ -311,6 +313,7 @@ v_scroll_block_2_size:	equ $FFFFF7F2	; unused (2 bytes)
 v_scroll_block_3_size:	equ $FFFFF7F4	; unused (2 bytes)
 v_scroll_block_4_size:	equ $FFFFF7F6	; unused (2 bytes)
 
+
 v_spritetablebuffer:	equ $FFFFF800 ; sprite table ($280 bytes, last $80 bytes are overwritten by v_pal_water_dup)
 v_pal_water_dup:	equ $FFFFFA00 ; duplicate underwater palette, used for transitions ($80 bytes)
 v_pal_water:	equ $FFFFFA80	; main underwater palette ($80 bytes)
@@ -395,7 +398,6 @@ v_bg1_scroll_flags_dup:	equ $FFFFFF32
 v_bg2_scroll_flags_dup:	equ $FFFFFF34
 v_bg3_scroll_flags_dup:	equ $FFFFFF36
 
-v_character:	equ $FFFFFF7E	; character
 v_levseldelay:	equ $FFFFFF80	; level select - time until change when up/down is held (2 bytes)
 v_levselitem:	equ $FFFFFF82	; level select - item selected (2 bytes)
 v_levselsound:	equ $FFFFFF84	; level select - sound selected (2 bytes)
