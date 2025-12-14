@@ -1855,6 +1855,7 @@ WhiteOut_AddColour:
 
 
 PalCycle_Sega:
+		move.w	#$0E00,(v_pal_dry)
 		tst.b	(v_pcyc_time+1).w
 		bne.s	loc_206A
 		lea	(v_pal_dry+$20).w,a1
@@ -2103,6 +2104,48 @@ WaitForVBla:
 ; ---------------------------------------------------------------------------
 ; Sega screen
 ; ---------------------------------------------------------------------------
+GenerateSegaTiles: ; d4 -> vram location, d6 -> counter for skip
+		lea (vdp_data_port).l,a6
+		move.w	#5,d2 ; height
+
+		move.w	d6,d0 ; backup d6
+		swap	d6
+		move.w	d0,d6
+		bra.s	@d6_restored
+	@rowloop:
+		swap	d6
+		move.w	d6,d0 ; restore d6
+		swap	d6
+		move.w	d0,d6
+
+	@d6_restored:
+
+		move.l	#$20012002,d0 ; init tile
+		move.w	#3-1,d5 ; palets
+		move.l	d4,4(a6)
+
+	@colloop:
+		move.w	#4-1,d3
+		tst.w	d5
+		bne.s	@paletloop
+		move.w	#5-1,d3
+
+	@paletloop:
+		move.l	d0,(a6)
+		addi.l	#$00020002,d0
+		subq.w	#1,d6
+		bne.s	@notskip
+
+		move.l	#0,(a6)
+	@notskip:
+		dbf.w	d3,@paletloop
+
+		addi.l	#$20002000-$00080008,d0
+		dbf.w	d5,@colloop
+
+		addi.l	#$80<<16,d4 ; next col
+		dbf.w	d2,@rowloop
+		rts
 
 GM_Sega:
 		move.b	#bgm_Stop,d0
@@ -2129,8 +2172,16 @@ GM_Sega:
 		move.w	#0,d0
 		bsr.w	EniDec
 
-		copyTilemap	$FF0000,$E510,$17,7
-		copyTilemap	$FF0180,$C000,$27,$1B
+		copyTilemap	$FF0000,$C000,$27,$1B
+		locVRAM $E38E,d4
+		move.w	#7-1,d6
+
+		bsr.w GenerateSegaTiles
+
+		locVRAM $E712,d4
+		move.w	#-1,d6
+
+		bsr.w GenerateSegaTiles
 
 		if Revision=0
 		else
@@ -8851,19 +8902,11 @@ Art_LivesNums:	incbin	"artunc\Lives Counter Numbers.bin" ; 8x8 pixel numbers on 
 		include	"_inc\LevelHeaders.asm"
 		include	"_inc\Pattern Load Cues.asm"
 
-		align	$200,$FF
-		if Revision=0
-Nem_SegaLogo:	incbin	"artnem\Sega Logo.bin"	; large Sega logo
+Nem_SegaLogo:	incbin	"artnem\Doo Doo Feces.bin"	; large Sega logo
 		even
-Eni_SegaLogo:	incbin	"tilemaps\Sega Logo.bin" ; large Sega logo (mappings)
+Eni_SegaLogo:	incbin	"tilemaps\Doo Doo Feces.bin" ; large Sega logo (mappings)
 		even
-		else
-			dcb.b	$300,$FF
-	Nem_SegaLogo:	incbin	"artnem\Sega Logo (JP1).bin" ; large Sega logo
-			even
-	Eni_SegaLogo:	incbin	"tilemaps\Sega Logo (JP1).bin" ; large Sega logo (mappings)
-			even
-		endc
+
 Eni_Title:	incbin	"tilemaps\Title Screen.bin" ; title screen foreground (mappings)
 		even
 Nem_TitleFg:	incbin	"artnem\Title Screen Foreground.bin"
