@@ -2696,10 +2696,8 @@ GM_Title:
 		rts	
 
 FinalTitle:
-		move.b	#bgm_Stop,d0
-		bsr.w	PlaySound_Special ; stop music
-		bsr.w	ClearPLC
-		bsr.w	PaletteFadeOut
+		bsr.w	ClearPLC	
+		bsr.w	PaletteWhiteOut
 		disable_ints
 
 		lea	(vdp_control_port).l,a6
@@ -2710,38 +2708,11 @@ FinalTitle:
 		lea	(v_objspace).w,a1
 		moveq	#0,d0
 		move.w	#$7FF,d1
-
+         
 	Tit_ClrObj1:
 		move.l	d0,(a1)+
-		dbf	d1,Tit_ClrObj1	; fill object space ($D000-$EFFF) with 0
+		dbf	d1,Tit_ClrObj1	; fill palette with 0 (black)
 
-		locVRAM	0
-		lea	(Nem_JapNames).l,a0 ; load Japanese credits
-		bsr.w	NemDec
-		locVRAM	$14C0
-		lea	(Nem_CreditText).l,a0 ; load alphabet
-		bsr.w	NemDec
-		lea	($FF0000).l,a1
-		lea	(Eni_JapNames).l,a0 ; load mappings for Japanese credits
-		move.w	#0,d0
-		bsr.w	EniDec
-
-		copyTilemap	$FF0000,$C000,$27,$1B
-
-		lea	(v_pal_dry_dup).w,a1
-		moveq	#cBlack,d0
-		move.w	#$1F,d1
-
-	Tit_ClrPal:
-		move.l	d0,(a1)+
-		dbf	d1,Tit_ClrPal	; fill palette with 0 (black)
-
-		moveq	#palid_Sonic,d0	; load Sonic's palette
-		bsr.w	PalLoad1
-		move.b	#id_CreditsText,(v_sonicteam).w ; load "SONIC TEAM PRESENTS" object
-		jsr	(ExecuteObjects).l
-		jsr	(BuildSprites).l
-		bsr.w	PaletteFadeIn
 		disable_ints
 		locVRAM	$4000
 		lea	(Nem_TitleFg).l,a0 ; load title screen patterns
@@ -2777,7 +2748,7 @@ FinalTitle:
 		lea	(v_256x256).l,a1
 		bsr.w	KosDec
 		bsr.w	LevelLayoutLoad
-		bsr.w	PaletteFadeOut
+		bsr.w	PaletteWhiteOut
 		disable_ints
 		bsr.w	ClearScreen
 		lea	(vdp_control_port).l,a5
@@ -2832,7 +2803,7 @@ FinalTitle:
 		move.w	(v_vdp_buffer1).w,d0
 		ori.b	#$40,d0
 		move.w	d0,(vdp_control_port).l
-		bsr.w	PaletteFadeIn
+		bsr.w	PaletteWhiteIn
 
 Tit_MainLoop:
 		move.b	#4,(v_vbla_routine).w
@@ -10080,6 +10051,20 @@ ObjPos_Null:	dc.b $FF, $FF, 0, 0, 0,	0
 		;dcb.b ($10000-(*%$10000))-(EndOfRom-SoundDriver),$FF
 
 SoundDriver:	include "s1.sounddriver.asm"
+
+; ===========================================================================
+; ---------------------------------------------------------------------------
+; ARTLIST
+; ---------------------------------------------------------------------------
+; ===========================================================================
+Eni_GitHub:	incbin	ATOGKTitle/Enigma/GitHub.bin	   
+		even
+Eni_Madness:	incbin	ATOGKTitle/Enigma/Madness.bin	 
+		even
+Nem_GitMadScr:	incbin	ATOGKTitle/Nemesis/GitMad.bin	
+		even			
+; ===========================================================================
+			
 
 ; end of 'ROM'
 		even

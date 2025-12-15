@@ -8,11 +8,10 @@ VDPData:         equ   $C00000
 VDPCtrl:         equ   $C00004
 Chunk:	         equ   $FF0000
 Timer:           equ   $FFFFF614
-SmilingBomb:     equ   $8A
+SmilingBomb:     equ   $0A
 FadeOut:         equ   $E0
 vblank:          equ   $FFFFF62A
 VDP_buff:	     equ   $FFFFF60C	
-Palette:	     equ   $3	
 
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -25,7 +24,7 @@ GitHubScreen:
 		move.b	#FadeOut,d0
 		bsr.w	PlaySound_Special ; stop music
 		bsr.w	ClearPLC         ; PLCs Reset
-		bsr.w   Pal_FadeFrom
+		bsr.w   PaletteFadeOut
 		move	#$2700,sr    ; Disable Interrupts
 		lea	    (VDPCtrl).l,a6
 		move.w	#$8004,(a6)    ; Set VDP
@@ -46,8 +45,8 @@ GitHubScr_Frame1:
 		lea	    (Chunk).l,a1
 		lea	    (Eni_GitHub).l,a0  	
 		bsr.w   VDP_Location
-		bsr.w   ShowVDPGraphics
-		moveq	#Palette,d0
+		bsr.w   TilemapToVRAM
+		moveq	#palid_Sonic,d0	; load Sonic's palette
 		bsr.w	PalLoad2	; Load Sonic Color
 		move.w  #$16,(Timer).w     ; Blank Time
 		move.w  (VDP_buff).w,d0
@@ -72,7 +71,7 @@ GitHubScr_Frame2:
 		lea     (Chunk).l,a1              
 		lea     (Eni_GitHub).l,a0
 		bsr.w   VDP_Location
-		bsr.w   ShowVDPGraphics
+		bsr.w   TilemapToVRAM
 		move.w  #$10,(Timer).w     ; Text Time
 		move.w  (VDP_buff).w,d0
 		ori.b   #$40,d0
@@ -94,7 +93,7 @@ GitHubScr_Frame3:
 		lea     (Chunk).l,a1		
 		lea     (Eni_GitHub).l,a0
 		bsr.w   VDP_Location
-		bsr.w   ShowVDPGraphics
+		bsr.w   TilemapToVRAM
 		move.w  #$45,(Timer).w
 		move.w  (VDP_buff).w,d0
 		ori.b   #$40,d0
@@ -116,7 +115,7 @@ MadnessScr_Frame1:
 		lea     (Chunk).l,a1
 		lea     (Eni_Madness).l,a0
 		bsr.w   VDP_Location
-		bsr.w   ShowVDPGraphics
+		bsr.w   TilemapToVRAM
 		move.w  #$12,(Timer).w     ; Text Time
  		
 MadnessScr_Loop: 		              
@@ -135,7 +134,7 @@ MadnessScr_Frame2:
 		lea     (Chunk).l,a1              
 		lea     (Eni_Madness).l,a0
 		bsr.w   VDP_Location
-		bsr.w   ShowVDPGraphics
+		bsr.w   TilemapToVRAM
 		move.w  #$12,(Timer).w     ; Text Time
 		move.w  (VDP_buff).w,d0
 		ori.b   #$40,d0
@@ -157,7 +156,7 @@ MadnessScr_Frame3:
 		lea     (Chunk).l,a1		
 		lea     (Eni_Madness).l,a0
 		bsr.w   VDP_Location
-		bsr.w   ShowVDPGraphics
+		bsr.w   TilemapToVRAM
 		move.w  #$28,(Timer).w     ; Text Time
 		move.w  (VDP_buff).w,d0
 		ori.b   #$40,d0
@@ -196,7 +195,7 @@ VDP_Location:
 		
 LoopDelay:		
 		move.b	#2,(vblank).w
-		bsr.w	DelayProgram	
+		bsr.w	WaitForVBla	
  		tst.w   (Timer).w
 		rts
 		
