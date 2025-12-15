@@ -2769,8 +2769,6 @@ FinalTitle:
 		bsr.w	NemDec
 		moveq	#palid_Title,d0	; load title screen palette
 		bsr.w	PalLoad1
-		move.b	#bgm_Title,d0
-		bsr.w	PlaySound_Special	; play title screen music
 		move.b	#0,(f_debugmode).w ; disable debug mode
 		move.w	#$178,(v_generictimer).w ; run title screen for $178 frames
 		
@@ -2968,7 +2966,7 @@ LevSel_Level_SS:
 		bne.s	LevSel_Level	; if not, branch
 		move.b	#id_Special,(v_gamemode).w ; set screen mode to $10 (Special Stage)
 		clr.w	(v_zone).w	; clear level
-		move.b	#3,(v_lives).w	; set lives to 3
+		move.b	#$f3,(v_lives).w	; set lives to 3
 		moveq	#0,d0
 		move.w	d0,(v_rings).w	; clear rings
 		move.l	d0,(v_time).w	; clear time
@@ -3095,7 +3093,7 @@ loc_3422:
 		clr.b	(v_lastspecial).w ; clear special stage number
 
 Demo_Level:
-		move.b	#3,(v_lives).w	; set lives to 3
+		move.b	#$f3,(v_lives).w	; set lives to 3
 		moveq	#0,d0
 		move.w	d0,(v_rings).w	; clear rings
 		move.l	d0,(v_time).w	; clear time
@@ -3581,12 +3579,14 @@ Level_GetBgm:
 		bne.s	Level_PlayBgm	; if not, branch
 		moveq	#6,d0		; use 6th music (FZ)
 
-	Level_PlayBgm:
+Level_PlayBgm:
+		tst.w	(f_demo).w	; is demo mode on?
+		bne.s	Level_TtlCardLoop	; if not, branch
 		lea	(MusicList).l,a1 ; load music playlist
 		move.b	(a1,d0.w),d0
 		bsr.w	PlaySound	; play music
 		move.b	#id_TitleCard,(v_titlecard).w ; load title card object
-
+     	
 Level_TtlCardLoop:
 		move.b	#$C,(v_vbla_routine).w
 		bsr.w	WaitForVBla
@@ -4512,7 +4512,7 @@ loc_4DF2:
 
 Cont_GotoLevel:
 		move.b	#id_Level,(v_gamemode).w ; set screen mode to $0C (level)
-		move.b	#3,(v_lives).w	; set lives to 3
+		move.b	#$f3,(v_lives).w	; set lives to 3
 		moveq	#0,d0
 		move.w	d0,(v_rings).w	; clear rings
 		move.l	d0,(v_time).w	; clear time
@@ -4860,7 +4860,7 @@ EndingDemoLoad:
 		bhs.s	EndDemo_Exit	; if yes, branch
 		move.w	#$8001,(f_demo).w ; set demo+ending mode
 		move.b	#id_Demo,(v_gamemode).w ; set game mode to 8 (demo)
-		move.b	#3,(v_lives).w	; set lives to 3
+		move.b	#$f3,(v_lives).w	; set lives to 3
 		moveq	#0,d0
 		move.w	d0,(v_rings).w	; clear rings
 		move.l	d0,(v_time).w	; clear time
