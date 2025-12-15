@@ -53,9 +53,9 @@ Vectors:	dc.l v_systemstack&$FFFFFF	; Initial stack pointer value
 		dc.l ErrorTrap			; IRQ level 1
 		dc.l ErrorTrap			; IRQ level 2
 		dc.l ErrorTrap			; IRQ level 3 (28)
-		dc.l HBlank				; IRQ level 4 (horizontal retrace interrupt)
+		dc.l H_int_jump			; IRQ level 4 (horizontal retrace interrupt)
 		dc.l ErrorTrap			; IRQ level 5
-		dc.l VBlank				; IRQ level 6 (vertical retrace interrupt)
+		dc.l V_int_jump			; IRQ level 6 (vertical retrace interrupt)
 		dc.l ErrorTrap			; IRQ level 7 (32)
 		dc.l ErrorTrap			; TRAP #00 exception
 		dc.l ErrorTrap			; TRAP #01 exception
@@ -289,6 +289,7 @@ SetupValues:	dc.w $8000		; VDP register start number
 
 GameProgram:
 		tst.w	(vdp_control_port).l
+
 		btst	#6,($A1000D).l
 		beq.s	CheckSumCheck
 		cmpi.l	#'init',(v_init).w ; has checksum routine already run?
@@ -328,6 +329,12 @@ GameInit:
 	@clearRAM:
 		move.l	d7,(a6)+
 		dbf	d6,@clearRAM	; clear RAM ($0000-$FDFF)
+
+		move.w	#$4EF9,d0							; machine code for jmp
+		move.w	d0,(V_int_jump).w
+		move.w	d0,(H_int_jump).w
+		move.l	#VBlank,(V_int_addr).w
+		move.l	#HBlank,(H_int_addr).w
 
 		bsr.w	VDPSetupGame
 		bsr.w	SoundDriverLoad
@@ -537,7 +544,7 @@ ShowErrorValue:
 	@chars0to9:
 		addi.w	#$7C0,d1
 		move.w	d1,(a6)
-		rts	
+		rts
 ; End of function sub_5CA
 
 
@@ -910,6 +917,22 @@ loc_119E:
 		rte	
 ; End of function HBlank
 
+HBlank_SegaJP:
+		disable_ints
+		move.l	a0,-(sp)
+
+		lea	(vdp_data_port).l,a1
+		locCRAM $C,4(a1) ; set VDP to CRAM write
+		rept 2
+			move.l	#0,(a1)
+		endr
+		move.w	#$8A00+127,4(a1) ; reset HBlank register
+		move.l	(sp)+,a0
+
+		movem.l	d0-a6,-(sp)
+		jsr	(UpdateMusic).l
+		movem.l	(sp)+,d0-a6
+		rte
 ; ---------------------------------------------------------------------------
 ; Subroutine to initialise joypads
 ; ---------------------------------------------------------------------------
@@ -2255,7 +2278,8 @@ Sega_GotoTitle:
 		rts	
 ; ===========================================================================
 VDP_Data_SegaJP:
-	dc.w	$8024 ; 8-colour mode
+	dc.w	$8A00+127 ; reset HBlank register
+	dc.w	$8034 ; 8-colour mode (hblank enabled)
 	dc.w	$8174 ; enable display
 	dc.w	$8200+(vram_fg>>10) ; set foreground nametable address
 	dc.w	$8400+(vram_bg>>13) ; set background nametable address
@@ -2265,9 +2289,13 @@ VDP_Data_SegaJP:
 	dc.w	$8700 ; set background colour (palette line 0, entry 0)
 GM_SegaJP:
 		disable_ints
+
+		move.l	#VBlank,(V_int_addr).w
+		move.l	#HBlank_SegaJP,(H_int_addr).w
+
 		; Set up VDP
 		lea	(vdp_control_port).l,a6
-		move.w	#8-1,d0
+		move.w	#9-1,d0
 		clr.w	d1
 	@vdploop:
 		move.w	VDP_Data_SegaJP(pc,d1.w),(a6)
@@ -2288,18 +2316,32 @@ GM_SegaJP:
 		clr.w	d0
 		bsr.w	EniDec
 
-		copyTilemap	$FF0000,$C61A,$C,$4
+		copyTilemap	$FF0000,$C61A,$C,$3
 
 		move.b	#palid_SegaJP,d0
 		bsr.w	PalLoad1
 		move.b	#palid_Sonic,d0
 		bsr.w	PalLoad1
 
-        move.w    #$80,(v_vscrolltablebuffer+$20) ; send screen y-axis pos. to VSRAM
-        move.w    #$80,(v_vscrolltablebuffer+$24) ; send screen y-axis pos. to VSRAM
-        move.w    #$80,(v_vscrolltablebuffer+$28) ; send screen y-axis pos. to VSRAM
+        move.w    #$80,(v_vscrolltablebuffer+$20) ; sega ; send screen y-axis pos. to VSRAM
+        move.w    #$80,(v_vscrolltablebuffer+$22) ; crane
+        move.w    #$80,(v_vscrolltablebuffer+$24) ; sega
+        move.w    #$80,(v_vscrolltablebuffer+$28) ; sega
+        move.w    #$80,(v_vscrolltablebuffer+$2A) ; crane
 
 		bsr.w	PaletteFadeIn
+
+		lea	($FF0000).l,a1
+		lea	(Eni_SegaCraneJP).l,a0 ; tilemap
+		clr.w	d0
+		bsr.w	EniDec
+
+		move.b	#4,(v_vbla_routine).w
+		bsr.w	WaitForVBla
+
+		disable_ints
+		copyTilemap	$FF0000,$E020,$1,$B
+		copyTilemap	$FF0000,$E028,$1,$B
 
 		move.w	#$60,(v_generictimer).w
 
@@ -2308,7 +2350,7 @@ GM_SegaJP:
 		bsr.w	WaitForVBla
 
 		tst.b	(v_jpadpress1).w
-		bne.s	ExitSegaJP
+		bne.w	ExitSegaJP
 
 		tst.w	(v_generictimer).w
 		bne.s	@loop_start
@@ -2317,24 +2359,73 @@ GM_SegaJP:
 		move.b	#4,(v_vbla_routine).w
 		bsr.w	WaitForVBla
 
-		move.l	(v_vscrolltablebuffer+$1E),d0
-		subq.l	#$1,d0
-		lea 	(v_vscrolltablebuffer+$1E).l,a0
+		move.w	(v_vscrolltablebuffer+$20),d0
+		subq.w	#$1,d0
+		move.w	d0,d1
+		swap	d0
+		move.w	d1,d0
+		lea 	(v_vscrolltablebuffer+$20).l,a0
 	rept 3
 		move.l	d0,(a0)+
 	endr
 
 		tst.b	(v_jpadpress1).w
-		bne.s	ExitSegaJP
+		bne.w	ExitSegaJP
 
 		tst.w	d0
 		bne.s	@crane_lower
 
-		move.w	#$60,(v_generictimer).w
+
+	@crane_raise:
+		move.b	#4,(v_vbla_routine).w
+		bsr.w	WaitForVBla
+
+		addq.w	#$1,(v_objspace).w
+		move.w	(v_objspace).w,d2
+
+		add.w	d2,(v_objspace+2).w
+		move.w	(v_objspace+2).w,d0
+		lsr.w	#6,d0
+
+		move.w	d0,(v_vscrolltablebuffer+$22)
+		move.w	d0,(v_vscrolltablebuffer+$2A)
+
+		tst.b	(v_jpadpress1).w
+		bne.w	ExitSegaJP
+
+		cmpi.w	#$80,d0
+		blt.s	@crane_raise
+
+		move.l	#0,(v_pal_dry+$C).w
+		move.l	#0,(v_pal_dry+$10).w
+
+		move.b	#4,(v_vbla_routine).w
+		bsr.w	WaitForVBla
+
+		move.w	#$8024,(vdp_control_port).l ; disable h ints
+
+		move.w	#64*3,(v_generictimer).w
+
+		move.b	#bgm_JPSega,d0
+		bsr.w	PlaySound_Special ; stop music
 
 	@loop_end:
 		move.b	#4,(v_vbla_routine).w
 		bsr.w	WaitForVBla
+
+		move.w	(v_generictimer).w,d0
+		andi.w	#$3,d0
+		bne.s	@nopaletrotatething
+
+		move.w	(v_pal_dry+$22).w,d3
+		lea		(v_pal_dry+$22),a0
+		lea		(v_pal_dry+$24),a1
+		rept 3
+			move.l	(a1)+,(a0)+
+		endr
+		move.w	(a1)+,(a0)+
+		move.w	d3,(a0)
+	@nopaletrotatething:
 
 		tst.b	(v_jpadpress1).w
 		bne.s	ExitSegaJP
@@ -2342,7 +2433,27 @@ GM_SegaJP:
 		tst.w	(v_generictimer).w
 		bne.s	@loop_end
 
+		move.w	#60*2,(v_generictimer).w
+
+	@loop_end_after_song:
+		move.b	#4,(v_vbla_routine).w
+		bsr.w	WaitForVBla
+
+		tst.b	(v_jpadpress1).w
+		bne.s	ExitSegaJP
+
+		tst.w	(v_generictimer).w
+		bne.s	@loop_end_after_song
+
 ExitSegaJP:
+		move.l	#0,(v_pal_dry+$C).w
+		move.l	#0,(v_pal_dry+$10).w
+		move.b	#4,(v_vbla_routine).w
+		bsr.w	WaitForVBla
+		; Set up VDP
+		disable_ints
+		move.w	#$8004,(vdp_control_port).l ; disable h ints
+		move.l	#HBlank,(H_int_addr).w
 		move.b	#id_SplashScreen,(v_gamemode).w ; go to splash screen
 		rts
 ; ===========================================================================
@@ -3308,6 +3419,8 @@ MusicList:
 ; ---------------------------------------------------------------------------
 
 GM_Level:
+		move.l	#VBlank,(V_int_addr).w
+		move.l	#HBlank,(H_int_addr).w
 		bset	#7,(v_gamemode).w ; add $80 to screen mode (for pre level sequence)
 		tst.w	(f_demo).w
 		bmi.s	Level_NoMusicFade
@@ -9107,7 +9220,8 @@ Nem_SegaJP:	incbin	"artnem\Sega Logo JP.bin"	; JP Sega logo
 		even
 Eni_SegaJP:	incbin	"tilemaps\Sega Logo JP.bin" ; JP Sega logo (mappings)
 		even
-
+Eni_SegaCraneJP:	incbin	"tilemaps\Sega Crane JP.bin" ; JP Sega crane (mappings)
+		even
 
 Eni_Title:	incbin	"tilemaps\Title Screen.bin" ; title screen foreground (mappings)
 		even

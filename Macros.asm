@@ -24,6 +24,14 @@ locVRAM:	macro loc,controlport
 		endc
 		endm
 
+locCRAM:	macro loc,controlport
+		if (narg=1)
+		move.l	#($C0000000+((loc&$3FFF)<<16)+((loc&$C000)>>14)),(vdp_control_port).l
+		else
+		move.l	#($C0000000+((loc&$3FFF)<<16)+((loc&$C000)>>14)),\controlport
+		endc
+		endm
+
 ; ---------------------------------------------------------------------------
 ; DMA copy data from 68K (ROM/RAM) to the VRAM
 ; input: source, length, destination

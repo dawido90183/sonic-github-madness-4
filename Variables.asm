@@ -210,6 +210,9 @@ v_pal_buffer:	equ $FFFFF650	; palette data buffer (used for palette cycling) ($3
 v_plc_buffer:	equ $FFFFF680	; pattern load cues buffer (maximum $10 PLCs) ($60 bytes)
 v_ptrnemcode:	equ $FFFFF6E0	; pointer for nemesis decompression code ($1502 or $150C) (4 bytes)
 
+H_int_jump:	equ $FFFFF6E4 ;.w
+H_int_addr: equ $FFFFF6E6 ;.l
+
 f_plc_execute:	equ $FFFFF6F8	; flag set for pattern load cue execution (2 bytes)
 
 v_screenposx:	equ $FFFFF700	; screen position x (2 bytes)
@@ -406,6 +409,10 @@ v_levselitem:	equ $FFFFFF82	; level select - item selected (2 bytes)
 v_levselsound:	equ $FFFFFF84	; level select - sound selected (2 bytes)
 v_scorecopy:	equ $FFFFFFC0	; score, duplicate (4 bytes)
 v_scorelife:	equ $FFFFFFC0	; points required for an extra life (4 bytes) (JP1 only)
+
+V_int_jump:	equ $FFFFFFC4
+V_int_addr: equ $FFFFFFC6 ; .l
+
 f_levselcheat:	equ $FFFFFFE0	; level select cheat flag
 f_slomocheat:	equ $FFFFFFE1	; slow motion & frame advance cheat flag
 f_debugcheat:	equ $FFFFFFE2	; debug mode cheat flag
