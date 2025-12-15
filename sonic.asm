@@ -377,6 +377,8 @@ ptr_GM_SegaJP:	bra.w	GM_SegaJP		; Sega Screen JP ($28)
 
 ptr_GM_SegaEU:	bra.w	GM_SegaEU		; Sega Screen EU ($2C)
 
+ptr_GM_Sega50JP:	jmp	(GM_Sega50JP).l		; Sega Screen JP PAL ($30)
+
 		rts	
 ; ===========================================================================
 
@@ -2194,17 +2196,21 @@ GenerateSegaTiles: ; d4 -> vram location, d6 -> counter for skip
 		rts
 
 GM_Sega:
-		btst	#6,(v_megadrive).w ; is Megadrive PAL?
-		bmi.s	@ok		; if not, branch
-		move.b	#id_SegaEU,(v_gamemode).w ; go to EU screen
-
-		tst.b   (v_megadrive).w	; is console Japanese?
-		bmi.s   @ok		; if not, branch
-
-		move.b	#id_SegaJP,(v_gamemode).w ; go to JP screen
+		cmpi.b	#$80,(v_megadrive).w	; check	if the machine is NTSC International
+		beq.s	.skip			; if yes, branch
+		btst	#6,(v_megadrive).w	; check	if the machine is NTSC
+		beq.s	@notPAL			; if NTSC, branch
+		add.b	#2,d0
+@notPAL:
+		btst	#7,(v_megadrive).w 	; check	if the machine is Japanese
+		beq.s	@noteng			; if Japanese, branch
+		add.b	#1,d0
+@noteng:
+		lea	SEGAScreenTable,a1
+		move.b	(a1,d0.w),d0		; get logo from array
+		move.b	d0,(v_gamemode).w ; go to screen
 		rts
-
-	@ok:
+.skip:
 
 		move.b	#bgm_Stop,d0
 		bsr.w	PlaySound_Special ; stop music
@@ -2275,6 +2281,12 @@ Sega_WaitEnd:
 Sega_GotoTitle:
 		move.b	#id_SplashScreen,(v_gamemode).w ; go to splash screen
 		rts	
+SEGAScreenTable:
+	dc.b id_SegaJP	; NTSC JAP
+	dc.b id_Sega	; NTSC ENG
+	dc.b id_Sega50JP; PAL JAP
+	dc.b id_SegaEU	; PAL ENG
+	even
 ; ===========================================================================
 VDP_Data_SegaJP:
 	dc.w	$8A00+127 ; reset HBlank register
@@ -10065,6 +10077,7 @@ Nem_GitMadScr:	incbin	ATOGKTitle/Nemesis/GitMad.bin
 		even			
 ; ===========================================================================
 			
+	include "cool basic bitch splash screen/SEGA.ASM"
 
 ; end of 'ROM'
 		even
