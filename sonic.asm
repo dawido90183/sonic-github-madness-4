@@ -105,9 +105,9 @@ loc_E0:
 		dc.l ErrorTrap
 	endc
 		dc.b "SEGA MEGA DRIVE " ; Hardware system ID (Console name)
-		dc.b "(C)SEGA 1991.APR" ; Copyright holder and release date (generally year)
-		dc.b "SONIC THE               HEDGEHOG                " ; Domestic name
-		dc.b "SONIC THE               HEDGEHOG                " ; International name
+		dc.b "IAMDINGINGWING.." ; Copyright holder and release date (generally year)
+		dc.b "SoNiC geethoub maedness 4 sonic tts 4 no        " ; Domestic name
+		dc.b "making SonLVL on my s1built build into batch of " ; International name
 		if Revision=0
 		dc.b "GM 00001009-00"   ; Serial/version number (Rev 0)
 		else
@@ -2683,6 +2683,7 @@ splash_entry macro art,tilemap,palette,size,music_id,duration_in_frames
 	splash_entry Nem_Splash_SonicBroke,Eni_Splash_SonicBroke,Pal_Splash_SonicBroke,$20,bgm_Continue,480
     splash_entry Nem_Splash_Monke,Eni_Splash_Monke,Pal_Splash_Monke,$20,$1D,480 ; my dumbass brain did not get it how it works, untill now :P
 	splash_entry Nem_Splash_Wait,Eni_Splash_Wait,Pal_Splash_Wait,$60,$1C,145
+		splash_entry Nem_Splash_Wait,Eni_Splash_Wait,Pal_Splash_Wait,$60,$1B,500
 	dc.l	-1 ; end marker
 ; ===========================================================================		
 		include	"ATOGKTitle/MAIN.asm"	; Code
