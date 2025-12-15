@@ -110,7 +110,7 @@ Spring_LR:	; Routine 8
 
 loc_DC0C:
 		cmpi.b	#1,d4
-		bne.s	Spring_BounceLR
+		beq.s	Spring_BounceLR
 		rts	
 ; ===========================================================================
 
