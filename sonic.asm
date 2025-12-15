@@ -929,9 +929,8 @@ HBlank_SegaJP:
 		move.w	#$8A00+127,4(a1) ; reset HBlank register
 		move.l	(sp)+,a0
 
-		movem.l	d0-a6,-(sp)
-		jsr	(UpdateMusic).l
-		movem.l	(sp)+,d0-a6
+		tst.b	($FFFFF64F).w
+		bne.s	loc_119E
 		rte
 ; ---------------------------------------------------------------------------
 ; Subroutine to initialise joypads
@@ -2343,7 +2342,7 @@ GM_SegaJP:
 		copyTilemap	$FF0000,$E020,$1,$B
 		copyTilemap	$FF0000,$E028,$1,$B
 
-		move.w	#$60,(v_generictimer).w
+		move.w	#60,(v_generictimer).w
 
 	@loop_start:
 		move.b	#4,(v_vbla_routine).w
@@ -2355,12 +2354,23 @@ GM_SegaJP:
 		tst.w	(v_generictimer).w
 		bne.s	@loop_start
 
+		move.w	#0,(v_objspace).w
+		move.w	#$80<<5,(v_objspace+2).w
+
+		move.b	#sfx_AB,d0
+		bsr.w	PlaySound_Special ; stop music
+
 	@crane_lower:
 		move.b	#4,(v_vbla_routine).w
 		bsr.w	WaitForVBla
 
-		move.w	(v_vscrolltablebuffer+$20),d0
-		subq.w	#$1,d0
+		addq.w	#$1,(v_objspace).w
+		move.w	(v_objspace).w,d2
+
+		sub.w	d2,(v_objspace+2).w
+		move.w	(v_objspace+2).w,d0
+		lsr.w	#5,d0
+
 		move.w	d0,d1
 		swap	d0
 		move.w	d1,d0
@@ -2372,9 +2382,55 @@ GM_SegaJP:
 		tst.b	(v_jpadpress1).w
 		bne.w	ExitSegaJP
 
-		tst.w	d0
-		bne.s	@crane_lower
+		tst.b	d0
+		bgt.s	@crane_lower
 
+		lea 	(v_vscrolltablebuffer+$20).l,a0
+	rept 3
+		move.l	#0,(a0)+
+	endr
+
+		move.w	#60,(v_generictimer).w
+		move.w	#$30,(v_objspace).w
+
+		move.b	#sfx_ChainStomp,d0
+		bsr.w	PlaySound_Special ; stop music
+
+
+	@shake:
+		move.b	#4,(v_vbla_routine).w
+		bsr.w	WaitForVBla
+
+		move.w	(v_objspace).w,d0
+		asr.w	#4,d0
+		sub.w	d0,(v_objspace).w
+		neg.w	(v_objspace).w
+
+		lea	(v_hscrolltablebuffer).l,a0
+		move.w	#$80-1,d1
+		move.w	(v_objspace).w,d0
+		neg.w	d0
+		swap	d0
+		move.w	(v_objspace).w,d0
+	@shake_hscroll:
+		move.l	d0,(a0)+
+		neg.w	d0
+		addq.w	#$1,d0
+		dbf.w	d1,@shake_hscroll
+
+		tst.b	(v_jpadpress1).w
+		bne.w	ExitSegaJP
+
+		tst.w	(v_generictimer).w
+		bne.s	@shake
+
+		lea	(v_hscrolltablebuffer).l,a0
+		move.w	#$80-1,d1
+	@clear_hs:
+		move.l	#0,(a0)+
+		dbf.w	d1,@clear_hs
+
+		move.l	#0,(v_objspace).w
 
 	@crane_raise:
 		move.b	#4,(v_vbla_routine).w
