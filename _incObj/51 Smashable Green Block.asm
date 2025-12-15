@@ -50,7 +50,7 @@ sonicAniFrame:	equ $32		; Sonic's current animation number
 		move.b	#$E,obHeight(a1)
 		move.b	#7,obWidth(a1)
 		move.b	#id_Roll,obAnim(a1) ; make Sonic roll
-		move.w	#-$300,obVelY(a1) ; rebound Sonic
+		move.w	#-$700,obVelY(a1) ; rebound Sonic
 		bset	#1,obStatus(a1)
 		bclr	#3,obStatus(a1)
 		move.b	#2,obRoutine(a1)
