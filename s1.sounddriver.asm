@@ -100,7 +100,7 @@ ptr_mus1C:	dc.l Music1C
 ptr_mus1D:	dc.l Music1D
 ptr_mus1E:	dc.l Music1E
 ptr_mus1F:	dc.l Music1F
-;ptr_mus20:	dc.l Music20
+ptr_mus20:	dc.l Music20
 ;ptr_mus21:	dc.l Music21
 ;ptr_mus22:	dc.l Music22
 ;ptr_mus23:	dc.l Music23
@@ -2605,6 +2605,8 @@ Music1D:	include	"sound/music/TG2000Tracks/Carefree.asm"
 Music1E:	include	"sound/music/TG2000Tracks/GreenHills.asm"
 		even
 Music1F:	include	"sound/music/TG2000Tracks/Son1UP.asm"
+		even
+Music20:	include	"sound/music/TG2000Tracks/1UPEmerald.asm"
 		even
 
 ; ---------------------------------------------------------------------------

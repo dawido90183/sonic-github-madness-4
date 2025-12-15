@@ -37,6 +37,8 @@ ptr_Pal_SegaJP:		palp	Pal_SegaJP,v_pal_dry+$20,$10		; Sega logo JP
 
 ptr_Pal_CharSel:	palp	Pal_CharSel,v_pal_dry,$30	; character select
 
+ptr_Pal_SplashPal:	palp	Pal_SplashPal,v_pal_dry,$40	; European Sega Splash Screen
+
 pal_char_ptr:	macro name
 ptr_Pal_\name:		palp	Pal_\name,v_pal_dry,$10
 ptr_Pal_LZWater_\name:		palp	Pal_LZWater_\name,v_pal_dry,$10
@@ -72,3 +74,4 @@ palid_Continue:		equ (ptr_Pal_Continue-PalPointers)/8
 palid_Ending:		equ (ptr_Pal_Ending-PalPointers)/8
 palid_CharSel:		equ (ptr_Pal_CharSel-PalPointers)/8
 palid_SegaJP:		equ (ptr_Pal_SegaJP-PalPointers)/8
+palid_SplashPal:	equ (ptr_Pal_SplashPal-PalPointers)/8

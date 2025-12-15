@@ -82,6 +82,7 @@ id_Credits:	equ ptr_GM_Credits-GameModeArray; $1C
 id_SplashScreen:	equ ptr_GM_Splash-GameModeArray ; $20
 id_CharSelect:	equ ptr_GM_CharSelect-GameModeArray ; $24
 id_SegaJP:	equ ptr_GM_SegaJP-GameModeArray ; $28
+id_SegaEU:	equ ptr_GM_SegaEU-GameModeArray ; $2C
 
 ; Levels
 id_GHZ:		equ 0
@@ -215,6 +216,7 @@ bgm_Credits:	equ ((ptr_mus91-MusicIndex)/4)+bgm__First
 bgm_Drowning:	equ ((ptr_mus92-MusicIndex)/4)+bgm__First
 bgm_Emerald:	equ ((ptr_mus93-MusicIndex)/4)+bgm__First
 bgm_Basillica:	equ ((ptr_mus94-MusicIndex)/4)+bgm__First
+bgm_EuroSega:	equ ((ptr_mus20-MusicIndex)/4)+bgm__First
 bgm__Last:	equ ((ptr_musend-MusicIndex-4)/4)+bgm__First
 
 ; Sound effects

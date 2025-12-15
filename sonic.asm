@@ -368,6 +368,8 @@ ptr_GM_CharSelect:	bra.w	GM_CharSelect		; Splash Screens ($24)
 
 ptr_GM_SegaJP:	bra.w	GM_SegaJP		; Sega Screen JP ($28)
 
+ptr_GM_SegaEU:	bra.w	GM_SegaEU		; Sega Screen EU ($2C)
+
 		rts	
 ; ===========================================================================
 
@@ -2080,6 +2082,7 @@ Pal_Continue:	incbin	"palette\Special Stage Continue Bonus.bin"
 Pal_Ending:	incbin	"palette\Ending.bin"
 Pal_CharSel:	incbin "palette\Character Select.bin"
 Pal_SegaJP:	incbin	"palette\Sega Logo JP.bin"
+Pal_SplashPal:	incbin	"eurosega\pal.bin"
 ; ---------------------------------------------------------------------------
 ; Palette data (Character)
 ; ---------------------------------------------------------------------------
@@ -2169,11 +2172,16 @@ GenerateSegaTiles: ; d4 -> vram location, d6 -> counter for skip
 		rts
 
 GM_Sega:
+		btst	#6,(v_megadrive).w ; is Megadrive PAL?
+		bmi.s	@ok		; if not, branch
+		move.b	#id_SegaEU,(v_gamemode).w ; go to EU screen
+
 		tst.b   (v_megadrive).w	; is console Japanese?
 		bmi.s   @ok		; if not, branch
 
 		move.b	#id_SegaJP,(v_gamemode).w ; go to JP screen
 		rts
+
 	@ok:
 
 		move.b	#bgm_Stop,d0
@@ -2338,6 +2346,81 @@ ExitSegaJP:
 		move.b	#id_SplashScreen,(v_gamemode).w ; go to splash screen
 		rts
 ; ===========================================================================
+
+;----------------------------------------------------------------------------
+; EUROPEAN SEGA SPLASH SCREEN
+;----------------------------------------------------------------------------
+GM_SegaEU:
+
+		move.b	#bgm_Fade,d0
+		bsr.w	ClearPLC
+		bsr.w	PaletteFadeOut
+		lea	(vdp_control_port).l,a6
+		move.w	#$8004,(a6)	; use 8-colour mode
+		move.w	#$8200+(vram_fg>>10),(a6) ; set foreground nametable address
+		move.w	#$8400+(vram_bg>>13),(a6) ; set background nametable address
+		move.w	#$9001,(a6)		; 64-cell hscroll size
+		move.w	#$9200,(a6)		; window vertical position
+		move.w	#$8B03,(a6)		; line scroll mode
+
+		clr.b	(f_wtr_state).w
+		bsr.w	ClearScreen
+
+		lea	(v_objspace).w,a1
+		moveq	#0,d0
+		move.w	#$7FF,d1
+
+GM_SegaEU_ClrObjRam:
+		move.l	d0,(a1)+
+		dbf	d1,GM_SegaEU_ClrObjRam ; clear object RAM
+		
+		lea	(v_pal_dry_dup).w,a1
+		moveq	#cBlack,d0
+		move.w	#$1F,d1
+
+.blackfill0:
+		move.l	d0,(a1)+
+		dbf	d1,.blackfill0 ; fill palette with black
+	
+		
+         move.l  #$40000000,($C00004).l
+         lea     (Nem_SplashTiles).l,a0
+         bsr.w   NemDec		
+
+		lea	($FF0000).l,a1
+		lea	(Eni_SplashMap).l,a0 ; load mappings for Background Art
+
+		
+		move.w	#0,d0
+		bsr.w	EniDec
+
+		copyTilemap	v_256x256&$FFFFFF,vram_fg,40,28
+
+		moveq	#palid_SplashPal,d0
+		bsr.w	PalLoad1	; load Sonic's palette
+		clr.w	(v_pal_dry_dup+$40).w
+		jsr	(ExecuteObjects).l
+		jsr	(BuildSprites).l
+		bsr.w	PaletteFadeIn
+		move.b	#bgm_EuroSega,d0
+		bsr.w	PlaySound_Special	
+
+
+GM_SegaEU_MainLoop:
+		move.b	#4,(v_vbla_routine).w
+		bsr.w	WaitForVBla
+		jsr	(ExecuteObjects).l
+		jsr	(BuildSprites).l
+		andi.b	#btnStart,(v_jpadpress1).w		
+		beq.s	GM_SegaEU_MainLoop
+		move.w	#$60,(v_generictimer).w
+
+
+	move.b	#04,($FFFFF600).w	; go to Title Screen
+		
+GM_SegaEU_Return:
+		rts
+
 
 ; ---------------------------------------------------------------------------
 ; Splash Screens
@@ -9037,6 +9120,10 @@ Nem_TitleTM:	incbin	"artnem\Title Screen TM.bin"
 Eni_JapNames:	incbin	"tilemaps\Hidden Japanese Credits.bin" ; Japanese credits (mappings)
 		even
 Nem_JapNames:	incbin	"artnem\Hidden Japanese Credits.bin"
+		even
+Eni_SplashMap:	incbin	"eurosega\map.bin" 
+		even
+Nem_SplashTiles:	incbin	"eurosega\tiles.bin"
 		even
 
 ; ---------------------------------------------------------------------------
