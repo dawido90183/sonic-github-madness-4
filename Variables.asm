@@ -165,6 +165,9 @@ v_spcsfx_track_ram_end:	equ v_spcsfx_track_ram+TrackSz*2
 
 v_1up_ram_copy:		equ v_spcsfx_track_ram_end
 
+v_palmuscounter: equ $FFFFF5F0
+v_palmusflag:	 equ $FFFFF5F1
+
 ; =================================================================================
 ; From here on, no longer relative to sound driver RAM
 ; =================================================================================

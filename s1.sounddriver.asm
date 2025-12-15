@@ -65,6 +65,58 @@ SpeedUpIndex:
 		;dc.b ?		; Drowning
 		;dc.b ?		; Get Emerald
 
+PALSpeedIndex:			; NOTE BY CONI - this is for whenever you want your music to play either at the same speed or slower in PAL consoles
+						; set the byte for your respective music to 0 if you want your track to play slower
+						; 81-93 are basically placeholders for sonic 1 music, change them if otherwise
+		dc.b $01	; $01
+		dc.b $01	; $02
+		dc.b $01	; $03
+		dc.b $01	; $04
+		dc.b $01	; $05
+		dc.b $01	; $06
+		dc.b $01	; $07
+		dc.b $00	; $08
+		dc.b $01	; $09
+		dc.b $00	; $0A
+		dc.b $00	; $0B
+		dc.b $01	; $0C
+		dc.b $01	; $0D
+		dc.b $00	; $0E
+		dc.b $00	; $0F
+		dc.b $00	; $10
+		dc.b $00	; $11
+		dc.b $00	; $12
+		dc.b $00	; $13
+		dc.b $01	; $14
+		dc.b $01	; $15
+		dc.b $01	; $16
+		dc.b $01	; $17
+		dc.b $01	; $18
+		dc.b $01	; $19
+		dc.b $01	; $1A
+		dc.b $00	; $1B
+		dc.b $00	; $1C
+		dc.b $01	; $1D
+		dc.b $01	; $1E
+		dc.b $01	; $2F
+		dc.b $01	; $20
+		dc.b $01	; $21
+		dc.b $01	; $22
+		dc.b $01	; $23
+		dc.b $01	; $24
+		dc.b $01	; $25
+		dc.b $01	; $26
+		dc.b $01	; $27
+		dc.b $01	; $28
+		dc.b $01	; $29
+		dc.b $01	; $2A
+		dc.b $01	; $2B
+		dc.b $01	; $2C
+		dc.b $01	; $2D
+		dc.b $01	; $2E
+		dc.b $01	; $2F
+        even
+
 ; ---------------------------------------------------------------------------
 ; Music Pointers
 ; ---------------------------------------------------------------------------
@@ -232,7 +284,17 @@ UpdateMusic:
 ; loc_71BF8:
 @bgmpsgnext:
 		dbf	d7,@bgmpsgloop
-
+		btst #6,(v_megadrive).w ; is MD PAL?
+		beq.s @SMPSPALno ; if not, don't run
+		tst.b (v_palmusflag).w		; was the music needed to be optimized
+		beq.s @SMPSPALno		; if not, don't run
+		cmpi.b #$5,(v_palmuscounter).w ; 5th frame?
+		bne.s @end ; if not, branch
+		clr.b (v_palmuscounter).w ; reset counter
+		bra.w UpdateMusic ; run sound driver again
+	@end:
+		addq.b #$1,(v_palmuscounter).w ; add 1 to frame count
+@SMPSPALno:
 		move.b	#$80,f_voice_selector(a6)			; Now at SFX tracks
 		moveq	#((v_sfx_fm_tracks_end-v_sfx_fm_tracks)/TrackSz)-1,d7	; 3 FM tracks (SFX)
 ; loc_71C04:
@@ -789,6 +851,8 @@ Sound_PlayBGM:
 		movea.l	(Go_SpeedUpIndex).l,a4
 		subi.b	#bgm__First,d7
 		move.b	(a4,d7.w),v_speeduptempo(a6)
+        lea    (PALSpeedIndex).l,a4
+		move.b	(a4,d7.w),(v_palmusflag).w
 		movea.l	(Go_MusicIndex).l,a4
 		lsl.w	#2,d7
 		movea.l	(a4,d7.w),a4		; a4 now points to (uncompressed) song data
