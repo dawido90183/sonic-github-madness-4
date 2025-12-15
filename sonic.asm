@@ -2684,12 +2684,18 @@ splash_entry macro art,tilemap,palette,size,music_id,duration_in_frames
     splash_entry Nem_Splash_Monke,Eni_Splash_Monke,Pal_Splash_Monke,$20,$1D,480 ; my dumbass brain did not get it how it works, untill now :P
 	splash_entry Nem_Splash_Wait,Eni_Splash_Wait,Pal_Splash_Wait,$60,$1C,145
 	dc.l	-1 ; end marker
-
+; ===========================================================================		
+		include	"ATOGKTitle/MAIN.asm"	; Code
+	
 ; ---------------------------------------------------------------------------
 ; Title screen
 ; ---------------------------------------------------------------------------
 
 GM_Title:
+        jsr     GitHubScreen
+		rts	
+
+FinalTitle:
 		move.b	#bgm_Stop,d0
 		bsr.w	PlaySound_Special ; stop music
 		bsr.w	ClearPLC
