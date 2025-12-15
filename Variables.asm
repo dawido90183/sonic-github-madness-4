@@ -169,6 +169,9 @@ v_1up_ram_copy:		equ v_spcsfx_track_ram_end
 ; From here on, no longer relative to sound driver RAM
 ; =================================================================================
 
+H_int_jump:	equ $FFFFF5FA ;.w
+H_int_addr: equ $FFFFF5FC ;.l
+
 v_gamemode:	equ $FFFFF600	; game mode (00=Sega; 04=Title; 08=Demo; 0C=Level; 10=SS; 14=Cont; 18=End; 1C=Credit; +8C=PreLevel)
 v_jpadhold2:	equ $FFFFF602	; joypad input - held, duplicate
 v_jpadpress2:	equ $FFFFF603	; joypad input - pressed, duplicate
@@ -209,9 +212,6 @@ f_wtr_state:	equ $FFFFF64E	; water palette state when water is above/below the s
 v_pal_buffer:	equ $FFFFF650	; palette data buffer (used for palette cycling) ($30 bytes)
 v_plc_buffer:	equ $FFFFF680	; pattern load cues buffer (maximum $10 PLCs) ($60 bytes)
 v_ptrnemcode:	equ $FFFFF6E0	; pointer for nemesis decompression code ($1502 or $150C) (4 bytes)
-
-H_int_jump:	equ $FFFFF6E4 ;.w
-H_int_addr: equ $FFFFF6E6 ;.l
 
 f_plc_execute:	equ $FFFFF6F8	; flag set for pattern load cue execution (2 bytes)
 
