@@ -83,6 +83,7 @@ id_SplashScreen:	equ ptr_GM_Splash-GameModeArray ; $20
 id_CharSelect:	equ ptr_GM_CharSelect-GameModeArray ; $24
 id_SegaJP:	equ ptr_GM_SegaJP-GameModeArray ; $28
 id_SegaEU:	equ ptr_GM_SegaEU-GameModeArray ; $2C
+id_Sega50JP:	equ ptr_GM_Sega50JP-GameModeArray ; $30
 
 ; Levels
 id_GHZ:		equ 0
