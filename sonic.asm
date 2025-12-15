@@ -2695,6 +2695,7 @@ splash_entry macro art,tilemap,palette,size,music_id,duration_in_frames
 	splash_entry Nem_Splash_SonicBroke,Eni_Splash_SonicBroke,Pal_Splash_SonicBroke,$20,bgm_Continue,480
     splash_entry Nem_Splash_Monke,Eni_Splash_Monke,Pal_Splash_Monke,$20,$1D,480 ; my dumbass brain did not get it how it works, untill now :P
 	splash_entry Nem_Splash_Wait,Eni_Splash_Wait,Pal_Splash_Wait,$60,$1C,145
+        splash_entry Nem_Splash_Drift,Eni_Splash_Drift,Pal_Splash_Drift,$20,$1D,480
 	dc.l	-1 ; end marker
 ; ===========================================================================		
 		include	"ATOGKTitle/MAIN.asm"	; Code
@@ -9329,6 +9330,7 @@ Pal_Splash_\name:	incbin	"splash\\Pal - \name\.bin"
 	splash_data Wait
 	splash_data Blessed
 	splash_data Monke
+	splash_data Drift
 	; next splash screen data here
 
 ; ---------------------------------------------------------------------------
