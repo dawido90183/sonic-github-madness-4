@@ -49,7 +49,7 @@ yad_timedelay:	equ $30
 
 Yad_Main:	; Routine 0
 		move.l	#Map_Yad,obMap(a0)
-		move.w	#$247B,obGfx(a0)
+		move.w	#$47B,obGfx(a0)
 		move.b	#4,obRender(a0)
 		move.b	#4,obPriority(a0)
 		move.b	#$14,obActWid(a0)
@@ -86,7 +86,7 @@ Yad_Move:
 		subq.w	#1,yad_timedelay(a0) ; subtract 1 from pause time
 		bpl.s	locret_F8E2	; if time remains, branch
 		addq.b	#2,ob2ndRout(a0)
-		move.w	#-$100,obVelX(a0) ; move object
+		move.w	#-$600,obVelX(a0) ; move object
 		move.b	#1,obAnim(a0)
 		bchg	#0,obStatus(a0)
 		bne.s	locret_F8E2
