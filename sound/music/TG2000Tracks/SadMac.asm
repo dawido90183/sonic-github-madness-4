@@ -1,7 +1,7 @@
 SadMac_Header:
 	smpsHeaderStartSong 1
 	smpsHeaderVoice	SadMac_Voices
-	smpsHeaderChan	$06,	$03
+	smpsHeaderChan	$07,	$03
 	smpsHeaderTempo	$01,	$00
 
 	smpsHeaderDAC	SadMac_DAC
@@ -10,24 +10,27 @@ SadMac_Header:
 	smpsHeaderFM	SadMac_FM3,	smpsPitch00,	$00
 	smpsHeaderFM	SadMac_FM4,	smpsPitch00,	$00
 	smpsHeaderFM	SadMac_FM5,	smpsPitch00,	$00
+	smpsHeaderFM	SadMac_FM6,	smpsPitch00,	$00
 	smpsHeaderPSG       SadMac_PSG1,	$00, $00, $00, $00
 	smpsHeaderPSG       SadMac_PSG2,	$00, $00, $00, $00
 	smpsHeaderPSG       SadMac_PSG3,	$00, $00, $00, $00
-	dc.b		$00,	$00,	$00,	$00	smpsStop
+	dc.b		$00,	$00,	$00,	$00	
 
 ; DAC Data
 SadMac_DAC:
-	smpsStop
+
+; FM6 Data
+SadMac_FM6:
 
 ; FM5 Data
 SadMac_FM5:
 
 ; PSG1 Data
 SadMac_PSG1:
-
+	smpsStop
 ; PSG2 Data
 SadMac_PSG2:
-
+	smpsStop
 ; PSG3 Data
 SadMac_PSG3:
 	smpsStop
