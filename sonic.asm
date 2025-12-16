@@ -2580,6 +2580,7 @@ ExitSegaJP:
 		disable_ints
 		move.w	#$8004,(vdp_control_port).l ; disable h ints
 		move.l	#HBlank,(H_int_addr).w
+		move.l	#VBlank,(V_int_addr).w
 		move.b	#id_SplashScreen,(v_gamemode).w ; go to splash screen
 		rts
 ; ===========================================================================
@@ -2653,7 +2654,7 @@ GM_SegaEU_MainLoop:
 		move.w	#$60,(v_generictimer).w
 
 
-	move.b	#04,($FFFFF600).w	; go to Title Screen
+		move.b	#04,($FFFFF600).w	; go to Title Screen
 		
 GM_SegaEU_Return:
 		rts
