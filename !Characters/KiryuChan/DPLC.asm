@@ -1,38 +1,86 @@
-DPLC_dabf:
-DPLC_dabf_0: 	dc.w DPLC_dabf_12-DPLC_dabf
-DPLC_dabf_2: 	dc.w DPLC_dabf_17-DPLC_dabf
-DPLC_dabf_4: 	dc.w DPLC_dabf_1C-DPLC_dabf
-DPLC_dabf_6: 	dc.w DPLC_dabf_21-DPLC_dabf
-DPLC_dabf_8: 	dc.w DPLC_dabf_26-DPLC_dabf
-DPLC_dabf_A: 	dc.w DPLC_dabf_2B-DPLC_dabf
-DPLC_dabf_C: 	dc.w DPLC_dabf_30-DPLC_dabf
-DPLC_dabf_E: 	dc.w DPLC_dabf_35-DPLC_dabf
-DPLC_dabf_10: 	dc.w DPLC_dabf_3A-DPLC_dabf
-DPLC_dabf_12: 	dc.b $2
+@internal:
+@internal_0: 	dc.w @internal_2A-@internal
+@internal_2: 	dc.w @internal_2F-@internal
+@internal_4: 	dc.w @internal_34-@internal
+@internal_6: 	dc.w @internal_39-@internal
+@internal_8: 	dc.w @internal_3E-@internal
+@internal_A: 	dc.w @internal_43-@internal
+@internal_C: 	dc.w @internal_48-@internal
+@internal_E: 	dc.w @internal_4D-@internal
+@internal_10: 	dc.w @internal_52-@internal
+@internal_12: 	dc.w @internal_57-@internal
+@internal_14: 	dc.w @internal_5C-@internal
+@internal_16: 	dc.w @internal_61-@internal
+@internal_18: 	dc.w @internal_66-@internal
+@internal_1A: 	dc.w @internal_6B-@internal
+@internal_1C: 	dc.w @internal_70-@internal
+@internal_1E: 	dc.w @internal_75-@internal
+@internal_20: 	dc.w @internal_7A-@internal
+@internal_22: 	dc.w @internal_7F-@internal
+@internal_24: 	dc.w @internal_84-@internal
+@internal_26: 	dc.w @internal_89-@internal
+@internal_28: 	dc.w @internal_8E-@internal
+@internal_2A: 	dc.b $2
 	dc.b $F0, $0
 	dc.b $70, $10
-DPLC_dabf_17: 	dc.b $2
+@internal_2F: 	dc.b $2
 	dc.b $F0, $18
 	dc.b $B0, $28
-DPLC_dabf_1C: 	dc.b $2
+@internal_34: 	dc.b $2
 	dc.b $F0, $34
 	dc.b $90, $44
-DPLC_dabf_21: 	dc.b $2
-	dc.b $F0, $6B
-	dc.b $C0, $7B
-DPLC_dabf_26: 	dc.b $2
+@internal_39: 	dc.b $2
 	dc.b $F0, $4E
 	dc.b $C0, $5E
-DPLC_dabf_2B: 	dc.b $2
+@internal_3E: 	dc.b $2
+	dc.b $F0, $6B
+	dc.b $C0, $7B
+@internal_43: 	dc.b $2
 	dc.b $F0, $88
 	dc.b $C0, $98
-DPLC_dabf_30: 	dc.b $2
+@internal_48: 	dc.b $2
 	dc.b $F0, $A5
-	dc.b $E0, $B5
-DPLC_dabf_35: 	dc.b $2
-	dc.b $F0, $C4
-	dc.b $B0, $D4
-DPLC_dabf_3A: 	dc.b $2
-	dc.b $F0, $E0
-	dc.b $90, $F0
+	dc.b $B0, $B5
+@internal_4D: 	dc.b $2
+	dc.b $F0, $C1
+	dc.b $D0, $D1
+@internal_52: 	dc.b $2
+	dc.b $F0, $DF
+	dc.b $C0, $EF
+@internal_57: 	dc.b $2
+	dc.b $F0, $FC
+	dc.b $B1, $C
+@internal_5C: 	dc.b $2
+	dc.b $F1, $18
+	dc.b $91, $28
+@internal_61: 	dc.b $2
+	dc.b $F1, $32
+	dc.b $C1, $42
+@internal_66: 	dc.b $2
+	dc.b $F1, $4F
+	dc.b $C1, $5F
+@internal_6B: 	dc.b $2
+	dc.b $F0, $88
+	dc.b $C0, $98
+@internal_70: 	dc.b $2
+	dc.b $F0, $A5
+	dc.b $B0, $B5
+@internal_75: 	dc.b $2
+	dc.b $F0, $C1
+	dc.b $C0, $D1
+@internal_7A: 	dc.b $2
+	dc.b $F0, $DF
+	dc.b $C0, $EF
+@internal_7F: 	dc.b $2
+	dc.b $F1, $6C
+	dc.b $C1, $7C
+@internal_84: 	dc.b $2
+	dc.b $F1, $89
+	dc.b $E1, $99
+@internal_89: 	dc.b $2
+	dc.b $F1, $A8
+	dc.b $B1, $B8
+@internal_8E: 	dc.b $2
+	dc.b $F1, $C4
+	dc.b $91, $D4
 	even

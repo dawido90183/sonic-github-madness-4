@@ -418,6 +418,8 @@ v_scorelife:	equ $FFFFFFC0	; points required for an extra life (4 bytes) (JP1 on
 V_int_jump:	equ $FFFFFFC4
 V_int_addr: equ $FFFFFFC6 ; .l
 
+v_char_pal: equ $FFFFFFCA ; byte
+
 f_levselcheat:	equ $FFFFFFE0	; level select cheat flag
 f_slomocheat:	equ $FFFFFFE1	; slow motion & frame advance cheat flag
 f_debugcheat:	equ $FFFFFFE2	; debug mode cheat flag

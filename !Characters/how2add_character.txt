@@ -16,3 +16,4 @@ Porting GHM3 chars to 4:
 - make sure to reorder the animations, ones not listed in the anim constants go after
 
 ALSO PRESS A ON THE TITLE SCREEN TO SCROLL THROUGH CHARACTERS
+B TO SCROLL THROUGH PALETTES 0,1,2 & 3

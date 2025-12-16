@@ -38,15 +38,15 @@
 
 @placeholder:
 @run:
-@walk:	dc.b 3,1,2,3,4, afEnd
+@walk:	dc.b $FF,1,2,3,4, afEnd
 		even
 @roll2:
-@roll:	dc.b 4, 7, afEnd, afEnd, afEnd, afEnd
+@roll:	dc.b 4, $13, afEnd, afEnd, afEnd, afEnd
 		even
 @float1:
 @float2:
 @waterslide:
-@push:	dc.b 4, 8, afEnd, afEnd, afEnd, afEnd
+@push:	dc.b 4, $14, afEnd, afEnd, afEnd, afEnd
 		even
 
 @balance:
@@ -58,22 +58,22 @@
 		even
 
 
-@spring:	dc.b $2F, 7, afChange, id_Walk
+@spring:	dc.b $2F, $13, afChange, id_Walk
 		even
-@air:	dc.b $B, 7, afChange, id_Walk
+@air:	dc.b $B, $13, afChange, id_Walk
 		even
 @death:
-@drown:	dc.b $2F, 5, afEnd
+@drown:	dc.b $2F, $11, afEnd
 		even
-@hurt:	dc.b 3,	6, afEnd
+@hurt:	dc.b 3,	$12, afEnd
 		even
 @null:	dc.b $77, fr_Null, afChange, id_Walk
 		even
-@float3:dc.b 3, 7, afEnd
+@float3:dc.b 3, $13, afEnd
 		even
-@float4: dc.b 3, 7, afChange, id_Walk
+@float4: dc.b 3, $13, afChange, id_Walk
 		even
-@attack:	dc.b $3F, 8, afEnd
+@attack:	dc.b $3F, $14, afEnd
 		even
 
 
