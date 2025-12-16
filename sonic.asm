@@ -597,14 +597,6 @@ VBlank:
 		lea		(vdp_data_port).l,a1
         move.l    #$40000010,4(a1) ; go to $0 in VSRAM
 		move.l	(v_scrposy_vdp).w,(a1) ; send screen y-axis pos. to VSRAM
-		btst	#6,(v_megadrive).w ; is Megadrive PAL?
-		beq.s	@notPAL		; if not, branch
-
-		move.w	#$700,d0
-	@waitPAL:
-		dbf	d0,@waitPAL ; wait here in a loop doing nothing for a while...
-
-	@notPAL:
 		move.b	(v_vbla_routine).w,d0
 		move.b	#0,(v_vbla_routine).w
 		move.w	#1,(f_hbla_pal).w
@@ -639,15 +631,6 @@ VBla_00:
 		cmpi.b	#id_LZ,(v_zone).w ; is level LZ ?
 		bne.w	VBla_Music	; if not, branch
 
-		move.w	(vdp_control_port).l,d0
-		btst	#6,(v_megadrive).w ; is Megadrive PAL?
-		beq.s	@notPAL		; if not, branch
-
-		move.w	#$700,d0
-	@waitPAL:
-		dbf	d0,@waitPAL
-
-	@notPAL:
 		move.w	#1,(f_hbla_pal).w ; set HBlank flag
 		stopZ80
 		waitZ80
