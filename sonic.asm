@@ -2635,12 +2635,13 @@ ExitSegaJP:
 ; EUROPEAN SEGA SPLASH SCREEN
 ;----------------------------------------------------------------------------
 GM_SegaEU:
-
+		;move.w    #$8024,(vdp_control_port).l
 		move.b	#bgm_Fade,d0
 		bsr.w	ClearPLC
 		bsr.w	PaletteFadeOut
 		lea	(vdp_control_port).l,a6
 		move.w	#$8004,(a6)	; use 8-colour mode
+		move.w    #$8174,(a6)        ; enable display
 		move.w	#$8200+(vram_fg>>10),(a6) ; set foreground nametable address
 		move.w	#$8400+(vram_bg>>13),(a6) ; set background nametable address
 		move.w	#$9001,(a6)		; 64-cell hscroll size
@@ -2697,10 +2698,10 @@ GM_SegaEU_MainLoop:
 		jsr	(BuildSprites).l
 		andi.b	#btnStart,(v_jpadpress1).w		
 		beq.s	GM_SegaEU_MainLoop
-		move.w	#$60,(v_generictimer).w
+		move.w	#60,(v_generictimer).w
 
 
-		move.b	#04,($FFFFF600).w	; go to Title Screen
+		move.b	#34,($FFFFF600).w	; go to Title Screen
 		
 GM_SegaEU_Return:
 		rts
