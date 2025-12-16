@@ -1,7 +1,7 @@
 {
     "Flex": 2,
     "name": "Sonic 1",
-    "node": "bd49cb9b-eb59-40ee-ac21-6c5808332911",
+    "node": "7aae929a-16cb-40bd-8db2-a62e6b6c6c13",
     "objects": [
         {
             "name": "Chars",
@@ -35,6 +35,39 @@
                     "dplcs": {
                         "enabled": true,
                         "path": "!Characters/Sonic/DPLC.asm",
+                        "label": ""
+                    },
+                    "uuid": "40ff75a9-c137-46c2-a27d-7fb52a8d55d9"
+                },
+                {
+                    "name": "Kiryu",
+                    "palettes": [
+                        {
+                            "path": "!Characters/KiryuChan/Palette - Normal.bin",
+                            "length": 1
+                        },
+                        {
+                            "path": "!Characters/Sonic/Palette - LZ Underwater.bin",
+                            "length": 1
+                        },
+                        {
+                            "path": "!Characters/Sonic/Palette - SBZ3 Underwater.bin",
+                            "length": 1
+                        }
+                    ],
+                    "format": "Sonic 1.js",
+                    "art": {
+                        "path": "!Characters/KiryuChan/Art.bin",
+                        "compression": "Uncompressed",
+                        "offset": "0"
+                    },
+                    "mappings": {
+                        "path": "!Characters/KiryuChan/Mappings.asm",
+                        "label": ""
+                    },
+                    "dplcs": {
+                        "enabled": true,
+                        "path": "!Characters/KiryuChan/DPLC.asm",
                         "label": ""
                     },
                     "uuid": "7aae929a-16cb-40bd-8db2-a62e6b6c6c13"

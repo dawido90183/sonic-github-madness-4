@@ -399,7 +399,7 @@ id_WaterSlide:	equ $12
 id_Null:	equ $13
 id_Float3:	equ $14
 id_Float4:	equ $15
-id_Extra1:	equ $16
+id_Extra1:	equ $16 ; used in: MoveCmd_Attack (Kiryu)
 id_Extra2:	equ $17
 id_Extra3:	equ $18
 id_Extra4:	equ $19

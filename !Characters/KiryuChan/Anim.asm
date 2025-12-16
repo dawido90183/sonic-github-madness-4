@@ -26,7 +26,7 @@
 	dc.w @float4-@internal
 
 ; Extra Slots (Moves/Extra animations)
-	dc.w @placeholder-@internal
+	dc.w @attack-@internal
 	dc.w @placeholder-@internal
 	dc.w @placeholder-@internal
 	dc.w @placeholder-@internal
@@ -54,7 +54,7 @@
 @duck:
 @stop:
 @hang:
-@wait:	dc.b $17, 1, afEnd
+@wait:	dc.b $17, 0, afEnd
 		even
 
 
@@ -72,6 +72,8 @@
 @float3:dc.b 3, 7, afEnd
 		even
 @float4: dc.b 3, 7, afChange, id_Walk
+		even
+@attack:	dc.b $3F, 8, afEnd
 		even
 
 
