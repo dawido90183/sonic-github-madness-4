@@ -14,3 +14,5 @@ PLEASE DO NOT ALTER SONIC AT ANY COST.
 
 Porting GHM3 chars to 4:
 - make sure to reorder the animations, ones not listed in the anim constants go after
+
+ALSO PRESS A ON THE TITLE SCREEN TO SCROLL THROUGH CHARACTERS
