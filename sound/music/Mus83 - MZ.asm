@@ -6,6 +6,7 @@
 ; =============================================================================================
 
 music83_Header:
+	smpsHeaderStartSong 1
 ;	Voice Pointer	location
 	smpsHeaderVoice	music83_Voices
 ;	Channel Setup	FM	PSG
@@ -28,14 +29,17 @@ music83_Header:
 ;	FM6 Pointer	location	pitch		volume
 	smpsHeaderFM	music83_FM6,	smpsPitch00,	$00
 ;	PSG1 Pointer	location	pitch		volume	instrument
-	smpsHeaderPSG	music83_PSG1,	smpsPitch00,	$00,	$00
+	smpsHeaderPSG	music83_PSG1,	smpsPitch00,	$00, 0,	$00
 ;	PSG2 Pointer	location	pitch		volume	instrument
-	smpsHeaderPSG	music83_PSG2,	smpsPitch00,	$00,	$00
+	smpsHeaderPSG	music83_PSG2,	smpsPitch00,	$00, 0,	$00
 ;	PSG3 Pointer	location	pitch		volume	instrument
-	smpsHeaderPSG	music83_PSG3,	smpsPitch00,	$00,	$00
+	smpsHeaderPSG	music83_PSG3,	smpsPitch00,	$00, 0,	$00
 	dc.b		$00,	$00,	$00,	$00
 
 ; PSG1 Data
+
+music83_DAC:
+
 music83_PSG1:
 
 ; PSG2 Data
