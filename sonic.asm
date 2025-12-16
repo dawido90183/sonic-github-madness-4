@@ -3488,6 +3488,49 @@ LoadPlayerPalette_main:
 		move.l	(a2)+,(a3)+	; move data to RAM
 		dbf	d7,@loop
 		rts
+
+BlendColor: ; d3 -> target subtract color ; a3 -> target palette; d1 -> size
+
+		clr.w	d5
+		clr.w	d6
+	@loop:
+		move.w	(a3),d4
+		move.b	1(a3),d6 ; b
+		andi.b	#$E,d6
+		move.b	1(a3),d5 ; g
+		andi.b	#$E0,d5
+		clr.b	d4 ; r
+
+		move.b	d3,d2
+		andi.b	#$E,d2
+		sub.b	d2,d6
+		bgt.s	@b_ok
+		clr.b	d6
+	@b_ok:
+
+		clr.w	d2
+		move.b	d3,d2
+		andi.b	#$E0,d2
+		sub.w	d2,d5
+		bgt.s	@g_ok
+		clr.w	d5
+	@g_ok:
+
+		move.w	d3,d2
+		clr.b	d2
+		sub.w	d2,d4
+		bgt.s	@r_ok
+		clr.w	d4
+	@r_ok:
+
+		add.b	d5,d4
+		add.b	d6,d4
+		move.w	d4,(a3)+
+
+
+		dbf.w	d1,@loop
+		rts
+
 ; ---------------------------------------------------------------------------
 ; Music playlist
 ; ---------------------------------------------------------------------------
@@ -3610,14 +3653,20 @@ Level_LoadPal:
 		cmpi.b	#id_LZ,(v_zone).w ; is level LZ?
 		bne.s	Level_GetBgm	; if not, branch
 
-		move.w	#$20,d2 ; palette 1 (LZ)
+		clr.w	d2
+		lea (v_pal_water).l,a3
+		bsr.w	LoadPlayerPalette_main	; load Sonic's palette
+
+		move.w	#$0404,d3 ; palette 1 (LZ)
 		cmpi.b	#3,(v_act).w	; is act number 3?
 		bne.s	Level_WaterPal	; if not, branch
-		move.w	#$40,d2 ; palette 2 (SBZ3)
+		move.w	#$0482,d3 ; palette 2 (SBZ3)
 
 	Level_WaterPal:
 		lea (v_pal_water).l,a3
-		bsr.w	LoadPlayerPalette_main	; load Sonic's palette
+		move.w	#$10-1,d1
+		bsr.w	BlendColor
+
 		tst.b	(v_lastlamp).w
 		beq.s	Level_GetBgm
 		move.b	($FFFFFE53).w,(f_wtr_state).w
