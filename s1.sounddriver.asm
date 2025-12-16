@@ -2731,6 +2731,8 @@ ptr_sndCC:	dc.l SoundCC
 ptr_sndCD:	dc.l SoundCD
 ptr_sndCE:	dc.l SoundCE
 ptr_sndCF:	dc.l SoundCF
+ptr_sndEB0:	dc.l SoundEB0
+ptr_sndEB1:	dc.l SoundEB1
 ptr_sndend
 
 ; ---------------------------------------------------------------------------
@@ -2838,6 +2840,10 @@ SoundCD:	include	"sound/sfx/SndCD - Switch.asm"
 SoundCE:	include	"sound/sfx/SndCE - Ring Left Speaker.asm"
 		even
 SoundCF:	include	"sound/sfx/SndCF - Signpost.asm"
+		even
+SoundEB0:	include	"sound/sfx/FC Blip.asm"
+		even
+SoundEB1:	include	"sound/sfx/FC Select.asm"
 		even
 
 ; ---------------------------------------------------------------------------
