@@ -7171,8 +7171,9 @@ BuildSprites:
 		btst	#5,d4		; is static mappings flag on?
 		bne.s	@drawFrame	; if yes, branch
 		move.b	obFrame(a0),d1
-		add.b	d1,d1
-		adda.w	(a1,d1.w),a1	; get mappings frame address
+		add.w	d1,d1					; MJ: changed from byte to word (we want more than 7F sprites)
+		adda.w	(a1,d1.w),a1
+		moveq	#$00,d1					; MJ: clear d1 (because of our byte to word change)
 		move.b	(a1)+,d1	; number of sprite pieces
 		subq.b	#1,d1
 		bmi.s	@setVisible
