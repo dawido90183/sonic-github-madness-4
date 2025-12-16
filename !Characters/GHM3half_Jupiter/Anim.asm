@@ -1,86 +1,87 @@
 ; ---------------------------------------------------------------------------
 ; Animation script - Sonic
 ; ---------------------------------------------------------------------------
-ptr_Walk:	dc.w SonAni_Walk-Ani_Sonic
-ptr_Run:	dc.w SonAni_Run-Ani_Sonic
-ptr_Roll:	dc.w SonAni_Roll-Ani_Sonic
-ptr_Roll2:	dc.w SonAni_Roll2-Ani_Sonic
-ptr_Push:	dc.w SonAni_Push-Ani_Sonic
-ptr_Wait:	dc.w SonAni_Wait-Ani_Sonic
-ptr_Balance:	dc.w SonAni_Balance-Ani_Sonic
-ptr_LookUp:	dc.w SonAni_LookUp-Ani_Sonic
-ptr_Duck:	dc.w SonAni_Duck-Ani_Sonic
-ptr_Stop:	dc.w SonAni_Stop-Ani_Sonic
-ptr_Float1:	dc.w SonAni_Float1-Ani_Sonic
-ptr_Float2:	dc.w SonAni_Float2-Ani_Sonic
-ptr_Spring:	dc.w SonAni_Spring-Ani_Sonic
-ptr_Hang:	dc.w SonAni_Hang-Ani_Sonic
-ptr_GetAir:	dc.w SonAni_GetAir-Ani_Sonic
-ptr_Drown:	dc.w SonAni_Drown-Ani_Sonic
-ptr_Death:	dc.w SonAni_Death-Ani_Sonic
-ptr_Hurt:	dc.w SonAni_Hurt-Ani_Sonic
-ptr_WaterSlide:	dc.w SonAni_WaterSlide-Ani_Sonic
-ptr_Null:	dc.w SonAni_Null-Ani_Sonic
-ptr_Float3:	dc.w SonAni_Float3-Ani_Sonic
-ptr_Float4:	dc.w SonAni_Float4-Ani_Sonic
+@internal:
+	dc.w @walk-@internal
+	dc.w @run-@internal
+	dc.w @roll-@internal
+	dc.w @roll2-@internal
+	dc.w @push-@internal
+	dc.w @wait-@internal
+	dc.w @balance-@internal
+	dc.w @lookup-@internal
+	dc.w @duck-@internal
+	dc.w @stop-@internal
+	dc.w @float1-@internal
+	dc.w @float2-@internal
+	dc.w @spring-@internal
+	dc.w @hang-@internal
+	dc.w @air-@internal
+	dc.w @drown-@internal
+	dc.w @death-@internal
+	dc.w @hurt-@internal
+	dc.w @waterslide-@internal
+	dc.w @null-@internal
+	dc.w @float3-@internal
+	dc.w @float4-@internal
 
 ; Extra Slots (Moves/Extra animations)
-ptr_Extra1:	dc.w SonAni_Placeholder-Ani_Sonic
-ptr_Extra2:	dc.w SonAni_Placeholder-Ani_Sonic
-ptr_Extra3:	dc.w SonAni_Placeholder-Ani_Sonic
-ptr_Extra4:	dc.w SonAni_Placeholder-Ani_Sonic
-ptr_Extra5:	dc.w SonAni_Placeholder-Ani_Sonic
-ptr_Extra6:	dc.w SonAni_Placeholder-Ani_Sonic
-ptr_Extra7:	dc.w SonAni_Placeholder-Ani_Sonic
-ptr_Extra8:	dc.w SonAni_Placeholder-Ani_Sonic
-ptr_Extra9:	dc.w SonAni_Placeholder-Ani_Sonic
+	dc.w @placeholder-@internal
+	dc.w @placeholder-@internal
+	dc.w @placeholder-@internal
+	dc.w @placeholder-@internal
+	dc.w @placeholder-@internal
+	dc.w @placeholder-@internal
+	dc.w @placeholder-@internal
+	dc.w @placeholder-@internal
+	dc.w @placeholder-@internal
 
-SonAni_Placeholder:
-SonAni_Walk:	dc.b $FF, fr_Walk13, fr_Walk14,	fr_Walk15, fr_Walk16, fr_Walk11, fr_Walk12, afEnd
+@placeholder:
+@walk:	dc.b $FF, fr_Walk13, fr_Walk14,	fr_Walk15, fr_Walk16, fr_Walk11, fr_Walk12, afEnd
 		even
-SonAni_Run:	dc.b $FF,  fr_Run11,  fr_Run12,  fr_Run13,  fr_Run14,     afEnd,     afEnd, afEnd
+@run:	dc.b $FF,  fr_Run11,  fr_Run12,  fr_Run13,  fr_Run14,     afEnd,     afEnd, afEnd
 		even
-SonAni_Roll:	dc.b $FE,  fr_Roll1,  fr_Roll2,  fr_Roll3,  fr_Roll4,  fr_Roll5,     afEnd, afEnd
+@roll:	dc.b $FE,  fr_Roll1,  fr_Roll2,  fr_Roll3,  fr_Roll4,  fr_Roll5,     afEnd, afEnd
 		even
-SonAni_Roll2:	dc.b $FE,  fr_Roll1,  fr_Roll2,  fr_Roll5,  fr_Roll3,  fr_Roll4,  fr_Roll5, afEnd
+@roll2:	dc.b $FE,  fr_Roll1,  fr_Roll2,  fr_Roll5,  fr_Roll3,  fr_Roll4,  fr_Roll5, afEnd
 		even
-SonAni_Push:	dc.b $FD,  fr_Push1,  fr_Push2,  fr_Push3,  fr_Push4,     afEnd,     afEnd, afEnd
+@push:	dc.b $FD,  fr_Push1,  fr_Push2,  fr_Push3,  fr_Push4,     afEnd,     afEnd, afEnd
 		even
-SonAni_Wait:	dc.b $17, fr_Stand, fr_Stand, fr_Stand, fr_Stand, fr_Stand, fr_Stand, fr_Stand, fr_Stand, fr_Stand
+@wait:	dc.b $17, fr_Stand, fr_Stand, fr_Stand, fr_Stand, fr_Stand, fr_Stand, fr_Stand, fr_Stand, fr_Stand
 		dc.b fr_Stand, fr_Stand, fr_Stand, fr_Wait2, fr_Wait1, fr_Wait1, fr_Wait1, fr_Wait2, fr_Wait3, afBack, 2
 		even
-SonAni_Balance:	dc.b $1F, fr_Balance1, fr_Balance2, afEnd
+@balance:	dc.b $1F, fr_Balance1, fr_Balance2, afEnd
 		even
-SonAni_LookUp:	dc.b $3F, fr_LookUp, afEnd
+@lookup:	dc.b $3F, fr_LookUp, afEnd
 		even
-SonAni_Duck:	dc.b $3F, fr_Duck, afEnd
+@duck:	dc.b $3F, fr_Duck, afEnd
 		even
-SonAni_Stop:	dc.b 7,	fr_Stop1, fr_Stop2, afEnd
+@stop:	dc.b 7,	fr_Stop1, fr_Stop2, afEnd
 		even
-SonAni_Float1:	dc.b 7,	fr_Float1, fr_Float4, afEnd
+@float1:	dc.b 7,	fr_Float1, fr_Float4, afEnd
 		even
-SonAni_Float2:	dc.b 7,	fr_Float1, fr_Float2, fr_Float5, fr_Float3, fr_Float6, afEnd
+@float2:	dc.b 7,	fr_Float1, fr_Float2, fr_Float5, fr_Float3, fr_Float6, afEnd
 		even
-SonAni_Spring:	dc.b $2F, fr_Spring, afChange, id_Walk
+@spring:	dc.b $2F, fr_Spring, afChange, id_Walk
 		even
-SonAni_Hang:	dc.b 4,	fr_Hang1, fr_Hang2, afEnd
+@hang:	dc.b 4,	fr_Hang1, fr_Hang2, afEnd
 		even
-SonAni_GetAir:	dc.b $B, fr_GetAir, fr_GetAir, fr_Walk15, fr_Walk16, afChange, id_Walk
+@air:	dc.b $B, fr_GetAir, fr_GetAir, fr_Walk15, fr_Walk16, afChange, id_Walk
 		even
-SonAni_Drown:	dc.b $2F, fr_Drown, afEnd
+@drown:	dc.b $2F, fr_Drown, afEnd
 		even
-SonAni_Death:	dc.b 3,	fr_Death, afEnd
+@death:	dc.b 3,	fr_Death, afEnd
 		even
-SonAni_Hurt:	dc.b 3,	fr_Injury, afEnd
+@hurt:	dc.b 3,	fr_Injury, afEnd
 		even
-SonAni_WaterSlide:
+@waterslide:
 		dc.b 7, fr_Injury, fr_WaterSlide, afEnd
 		even
-SonAni_Null:	dc.b $77, fr_Null, afChange, id_Walk
+@null:	dc.b $77, fr_Null, afChange, id_Walk
 		even
-SonAni_Float3:	dc.b 3,	fr_Float1, fr_Float2, fr_Float5, fr_Float3, fr_Float6, afEnd
+@float3:	dc.b 3,	fr_Float1, fr_Float2, fr_Float5, fr_Float3, fr_Float6, afEnd
 		even
-SonAni_Float4:	dc.b 3,	fr_Float1, afChange, id_Walk
+@float4:	dc.b 3,	fr_Float1, afChange, id_Walk
 		even
 
 

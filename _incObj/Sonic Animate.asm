@@ -7,11 +7,14 @@
 Char_Ani:	; CHAR ADD STUFF
 	dc.l	Ani_Sonic
 	dc.l	Ani_Sonic
+	dc.l	Ani_GHM3_Mercury
+	dc.l	Ani_GHM3half_Jupiter
 	; add next char here
 
 Sonic_Animate:
 		move.w	(v_character).w,d0
 		move.l	Char_Ani(pc,d0.w),a1 ; load animation
+		move.l	a1,a2
 		moveq	#0,d0
 		move.b	obAnim(a0),d0
 		cmp.b	obNextAni(a0),d0 ; is animation set to restart?
@@ -105,16 +108,18 @@ Sonic_Animate:
 		neg.w	d2		; modulus speed
 
 	@nomodspeed:
-		lea	(SonAni_Run).l,a1 ; use running animation
+		move.l	a2,a1
+
 		cmpi.w	#$600,d2	; is Sonic at running speed?
 		bcc.s	@running	; if yes, branch
 
-		lea	(SonAni_Walk).l,a1 ; use walking animation
+		subq.w	#2,a2 ; use walking animation
 		move.b	d0,d1
 		lsr.b	#1,d1
 		add.b	d1,d0
 
 	@running:
+		add.w	2(a2),a1
 		add.b	d0,d0
 		move.b	d0,d3
 		neg.w	d2
@@ -138,12 +143,14 @@ Sonic_Animate:
 		neg.w	d2
 
 	@nomodspeed2:
-		lea	(SonAni_Roll2).l,a1 ; use fast animation
+		move.l	a2,a1
+
 		cmpi.w	#$600,d2	; is Sonic moving fast?
 		bcc.s	@rollfast	; if yes, branch
-		lea	(SonAni_Roll).l,a1 ; use slower animation
+		subq.w	#2,a2 ; use slower animation
 
 	@rollfast:
+		add.w	6(a2),a1
 		neg.w	d2
 		addi.w	#$400,d2
 		bpl.s	@belowmax2
@@ -172,7 +179,8 @@ Sonic_Animate:
 	@belowmax3:
 		lsr.w	#6,d2
 		move.b	d2,obTimeFrame(a0) ; modify frame duration
-		lea	(SonAni_Push).l,a1
+		move.l	a2,a1
+		add.w	8(a2),a1 ; push
 		move.b	obStatus(a0),d1
 		andi.b	#1,d1
 		andi.b	#$FC,obRender(a0)
