@@ -177,6 +177,9 @@ react_char4:	macro extra3,extra4,extra5,extra6,extra7,extra8,extra9,extraA
 	endm ; all other anims are vulnerable so keep the ones that do damage here
 
 Char_React: ; CHAR ADD STUFF
+
+	; if you are in doubt copy Sonic's data
+
 	; Sonic
 	react_char1 0,0,1,1,0,0,0,0
 	dc.b 0 ;react_char2 0,0,0,0,0,0,0,0
@@ -209,7 +212,7 @@ React_Enemy:
 		bgt.w	React_ChkHurt
 		move.b	d0,d1
 		andi.b	#$7,d1 ; bit
-		lsr.b	#4,d0 ; byte
+		lsr.b	#3,d0 ; byte
 
 		add.w	(v_character).w,d0
 
