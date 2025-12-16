@@ -2309,25 +2309,34 @@ Sega_GotoTitle:
 SonicSegaJP:
 		; sonic's "object" is stored on $8
 		lea		(v_objspace+$8),a0
-		move.b	#1,obFrame(a0)
+		jsr	(Sonic_Animate).l
 		jsr	(Sonic_LoadGfx).l
 
-		moveq    #0,d5 ; sprite limit
-        moveq    #0,d4
-		move.w	#1,d1 ; mapping frame
+        moveq	#0,d1
+		move.b	obFrame(a0),d1 ; mapping frame
 
-		move.w	#128,d3 ; x pos
-		move.w	#128,d2 ; y pos
 		lea		(Map_Sonic).l,a1 ; map
-		movea.w	#$4780,a3 ; art tile offset (pal 3)
 		add.w	d1,d1
 		adda.w	(a1,d1.w),a1
 		moveq    #0,d1
 		move.b    (a1)+,d1
 		subq.b    #1,d1
 		bmi.s    @empty
+
+		moveq    #0,d5 ; sprite limit
+		movea.w	#$4780,a3 ; art tile offset (pal 3)
+
+		move.w	obX(a0),d3 ; x
+		addi.w	#128,d3
+		move.w	obY(a0),d2 ; y
+		addi.w	#128,d2
+
 		lea	(v_spritetablebuffer).w,a2 ; set address for sprite table
-		jmp		(BuildSpr_Normal).l
+        move.b  (v_objspace+$8),d4
+
+		jsr		(BuildSpr_Draw_checks).l
+		subq.w	#5,a2
+		move.b	#0,(a2) ; clear last link
 	@empty:
 		rts
 
@@ -2349,7 +2358,9 @@ GM_SegaJP:
 		move.l	#HBlank_SegaJP,(H_int_addr).w
 
 		move.w	#0,(v_character).w ; use sonic
-
+		move.b	#id_Walk,(obAnim+v_objspace+$8).w ; sonic object
+		move.w	#240,(obX+v_objspace+$8).w
+		move.w	#160,(obY+v_objspace+$8).w
 
 		; Set up VDP
 		lea	(vdp_control_port).l,a6
@@ -2391,6 +2402,10 @@ GM_SegaJP:
         move.w    #$80,(v_vscrolltablebuffer+$24) ; sega
         move.w    #$80,(v_vscrolltablebuffer+$28) ; sega
         move.w    #$80,(v_vscrolltablebuffer+$2A) ; crane
+
+        move.b	#4,(v_vbla_routine).w
+		bsr.w	WaitForVBla
+		bsr.w	SonicSegaJP
 
 		bsr.w	PaletteFadeIn
 
@@ -2464,11 +2479,28 @@ GM_SegaJP:
 		move.b	#sfx_ChainStomp,d0
 		bsr.w	PlaySound_Special ; stop music
 
+		move.b	#id_WaterSlide,(obAnim+v_objspace+$8).w ; sonic anim
+		move.w	#-$200,(obVelY+v_objspace+$8).w
+		move.w	#$100,(obVelX+v_objspace+$8).w
+		move.b	#1,(v_objspace+$8).w
 
 	@shake:
 		move.b	#4,(v_vbla_routine).w
 		bsr.w	WaitForVBla
 
+		cmpi.b	#id_WaterSlide,(obAnim+v_objspace+$8).w ; sonic anim
+		bne.s	@donefall
+
+		lea	(v_objspace+$8).w,a0
+		addi.w	#$38,obVelY(a0)	; increase vertical speed
+		jsr (SpeedToPos)
+		cmpi.w	#160,(obY+v_objspace+$8).w
+		blt.s	@donefall
+
+		move.w	#160,(obY+v_objspace+$8).w
+		move.b	#id_Walk,(obAnim+v_objspace+$8).w ; sonic anim
+
+	@donefall:
 		bsr.w	SonicSegaJP
 
 		move.w	(v_objspace).w,d0
@@ -2501,6 +2533,8 @@ GM_SegaJP:
 		dbf.w	d1,@clear_hs
 
 		move.l	#0,(v_objspace).w
+
+		move.b	#id_LookUp,(obAnim+v_objspace+$8).w ; sonic anim
 
 	@crane_raise:
 		move.b	#4,(v_vbla_routine).w
@@ -2536,6 +2570,8 @@ GM_SegaJP:
 
 		move.b	#bgm_JPSega,d0
 		bsr.w	PlaySound_Special ; stop music
+
+		move.b	#id_Float3,(obAnim+v_objspace+$8).w ; sonic anim
 
 	@loop_end:
 		move.b	#4,(v_vbla_routine).w
@@ -7187,6 +7223,7 @@ BuildSprites:
 
 BuildSpr_Draw:
 		movea.w	obGfx(a0),a3
+BuildSpr_Draw_checks:
 		btst	#0,d4
 		bne.s	BuildSpr_FlipX
 		btst	#1,d4
