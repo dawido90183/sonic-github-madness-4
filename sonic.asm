@@ -7741,11 +7741,16 @@ loc_12C64:
 		moveq	#0,d0
 		move.b	obStatus(a0),d0
 		andi.w	#6,d0
-		move.w	Sonic_Modes(pc,d0.w),d1
-		jsr	Sonic_Modes(pc,d1.w)
+		rept 2
+			add.w	(v_character),d0
+		endr
+
+		move.w	Char_ModeTable(pc,d0.w),d1
+		add.w	d1,d1
+		jsr	Char_ModeTable(pc,d1.w)
 
 loc_12C7E:
-		bsr.s	Sonic_Display
+		bsr.w	Sonic_Display
 		bsr.w	Sonic_RecordPosition
 		bsr.w	Sonic_Water
 		move.b	(v_anglebuffer).w,$36(a0)
@@ -7766,11 +7771,34 @@ loc_12CB6:
 		bsr.w	Sonic_Loops
 		bsr.w	Sonic_LoadGfx
 		rts	
-; ===========================================================================
-Sonic_Modes:	dc.w Sonic_MdNormal-Sonic_Modes
-		dc.w Sonic_MdJump-Sonic_Modes
-		dc.w Sonic_MdRoll-Sonic_Modes
-		dc.w Sonic_MdJump2-Sonic_Modes
+
+Char_ModeTable:
+	modetable_char:	macro name ; add for all
+
+		dc.w	(\name\_MdNormal-Char_ModeTable)/2
+		dc.w	(\name\_MdJump-Char_ModeTable)/2
+		dc.w	(\name\_MdRoll-Char_ModeTable)/2
+		dc.w	(\name\_MdJump2-Char_ModeTable)/2
+	endm
+
+	; CHAR ADD STUFF
+
+	modetable_char Sonic
+	modetable_char Sonic ; GHM3_Guy
+	modetable_char Sonic ; GHM3_Mercury
+	modetable_char Sonic ; GHM3half_Jupiter
+	modetable_char KiryuChan ; KiryuChan
+	; add next char here
+		even
+
+	routines_char:	macro name ; add for unique cases
+		include	"!Characters\\\name\\Routines.asm"
+	endm
+
+	routines_char Sonic
+	routines_char KiryuChan
+	; add next char here
+
 ; ---------------------------------------------------------------------------
 ; Music to play after invincibility wears off
 ; ---------------------------------------------------------------------------
@@ -7788,64 +7816,6 @@ MusicList2:
 		include	"_incObj\Sonic Display.asm"
 		include	"_incObj\Sonic RecordPosition.asm"
 		include	"_incObj\Sonic Water.asm"
-
-; ===========================================================================
-; ---------------------------------------------------------------------------
-; Modes for controlling Sonic
-; ---------------------------------------------------------------------------
-
-Sonic_MdNormal:
-		bsr.w	Sonic_Jump
-		bsr.w	Sonic_SlopeResist
-		bsr.w	Sonic_Move
-		bsr.w	Sonic_Roll
-		bsr.w	Sonic_LevelBound
-		jsr	(SpeedToPos).l
-		bsr.w	Sonic_AnglePos
-		bsr.w	Sonic_SlopeRepel
-		rts	
-; ===========================================================================
-
-Sonic_MdJump:
-		bsr.w	Sonic_JumpHeight
-		bsr.w	Sonic_JumpDirection
-		bsr.w	Sonic_LevelBound
-		jsr	(ObjectFall).l
-		btst	#6,obStatus(a0)
-		beq.s	loc_12E5C
-		subi.w	#$28,obVelY(a0)
-
-loc_12E5C:
-		bsr.w	Sonic_JumpAngle
-		bsr.w	Sonic_Floor
-		rts	
-; ===========================================================================
-
-Sonic_MdRoll:
-		bsr.w	Sonic_Jump
-		bsr.w	Sonic_RollRepel
-		bsr.w	Sonic_RollSpeed
-		bsr.w	Sonic_LevelBound
-		jsr	(SpeedToPos).l
-		bsr.w	Sonic_AnglePos
-		bsr.w	Sonic_SlopeRepel
-		rts	
-; ===========================================================================
-
-Sonic_MdJump2:
-		bsr.w	Sonic_JumpHeight
-		bsr.w	Sonic_JumpDirection
-		bsr.w	Sonic_LevelBound
-		jsr	(ObjectFall).l
-		btst	#6,obStatus(a0)
-		beq.s	loc_12EA6
-		subi.w	#$28,obVelY(a0)
-
-loc_12EA6:
-		bsr.w	Sonic_JumpAngle
-		bsr.w	Sonic_Floor
-		rts	
-
 		include	"_incObj\Sonic Move.asm"
 		include	"_incObj\Sonic RollSpeed.asm"
 		include	"_incObj\Sonic JumpDirection.asm"
