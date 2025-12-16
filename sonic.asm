@@ -398,6 +398,10 @@ ptr_GM_SegaJP:	bra.w	GM_SegaJP		; Sega Screen JP ($28)
 
 ptr_GM_SegaEU:	bra.w	GM_SegaEU		; Sega Screen EU ($2C)
 
+ptr_GM_SegaEUPC:	bra.w	GM_SegaEU		; PLACEHOLDER
+
+ptr_GM_ColdBrew:	jmp	(GM_ColdBrew).l		; Cold Brew ($34)
+
 		rts	
 ; ===========================================================================
 
@@ -2048,6 +2052,7 @@ Pal_Ending:	incbin	"palette\Ending.bin"
 Pal_CharSel:	incbin "palette\Character Select.bin"
 Pal_SegaJP:	incbin	"palette\Sega Logo JP.bin"
 Pal_SplashPal:	incbin	"eurosega\pal.bin"
+Pal_ColdBrew:	incbin	"cold brew\palette.bin"
 ; ---------------------------------------------------------------------------
 ; Palette data (Character)
 ; ---------------------------------------------------------------------------
@@ -3120,13 +3125,15 @@ loc_33E4:
 		move.w	Demo_Levels(pc,d0.w),d0	; load level number for demo
 		move.w	d0,(v_zone).w
 		addq.w	#1,(v_demonum).w ; add 1 to demo number
-		cmpi.w	#4,(v_demonum).w ; is demo number less than 4?
+		cmpi.w	#5,(v_demonum).w ; is demo number less than 5?
 		blo.s	loc_3422	; if yes, branch
 		move.w	#0,(v_demonum).w ; reset demo number to 0
 
 loc_3422:
 		move.w	#1,(f_demo).w	; turn demo mode on
 		move.b	#id_Demo,(v_gamemode).w ; set screen mode to 08 (demo)
+		cmpi.w	#$700,d0	; is level number 0700 (the secret brew zone)?
+		beq.s	Demo_Brew	; if yes, branch
 		cmpi.w	#$600,d0	; is level number 0600 (special stage)?
 		bne.s	Demo_Level	; if not, branch
 		move.b	#id_Special,(v_gamemode).w ; set screen mode to $10 (Special Stage)
@@ -3143,6 +3150,9 @@ Demo_Level:
 		else
 			move.l	#5000,(v_scorelife).w ; extra life is awarded at 50000 points
 		endc
+		rts	
+Demo_Brew:
+		move.b	#id_ColdBrew,(v_gamemode).w ; set screen mode to $34
 		rts	
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -10141,6 +10151,7 @@ Nem_GitMadScr:	incbin	ATOGKTitle/Nemesis/GitMad.bin
 		even			
 ; ===========================================================================
 			
+		include "cold brew/GM_ColdBrew.asm"
 
 ; end of 'ROM'
 		even

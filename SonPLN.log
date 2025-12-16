@@ -1,92 +1,25 @@
-Mono runtime detected.
 Operating system: Microsoft Windows NT 6.2.9200.0
-Opening INI file "C:\users\carlosiagnecz\Documents\romhacks\sonic-github-madness-4\SonPLN.ini"...
-Opening INI file "Z:\home\carlosiagnecz\Documents\romhacks\reborn\Projects\SonPLN.ini"...
+Opening INI file "C:\Users\Coni\Desktop\projects\the vault\github madness 4\sonic-github-madness-4\SonPLN.ini"...
 Game type is S1.
-Opening INI file "C:\users\carlosiagnecz\Documents\romhacks\sonic-github-madness-4\SonPLN.ini"...
-Opening INI file "Z:\home\carlosiagnecz\Documents\romhacks\reborn\Projects\SonPLN.ini"...
+Opening INI file "C:\Users\Coni\Desktop\projects\the vault\github madness 4\sonic-github-madness-4\SonPLN.ini"...
 Game type is S1.
-Opening INI file "C:\users\carlosiagnecz\Documents\romhacks\sonic-github-madness-4\SonPLN.ini"...
-Game type is S1.
-Loading Sega Logo JP...
-Loading plane mappings from file "tilemaps/Sega Logo JP.bin", using compression Enigma...
-Loading 8x8 tiles from file "artnem/Sega Logo JP.bin", using compression Nemesis...
-Loading palette file "palette/SegaJP.bin"...
-Source: 16 Destination: 0 Length: 16
-Mappings data size does not match given width/height. Expected: 104 (13x4*2) Actual: 2240.
-System.AggregateException: One or more errors occurred. (Palette file could not be loaded! Have you set up your disassembly properly?) ---> System.IO.FileNotFoundException: Palette file could not be loaded! Have you set up your disassembly properly?
-  at SonicRetro.SonLVL.SonPLN.MainForm.LoadLevelPalette () [0x00177] in <d1e8af73a9cb4cd08c2047236bc0a9d3>:0 
-  at System.Threading.Tasks.Task.InnerInvoke () [0x0000f] in <0c09cdbdbe9f4470a58088ff9d75086e>:0 
-  at System.Threading.Tasks.Task.Execute () [0x00000] in <0c09cdbdbe9f4470a58088ff9d75086e>:0 
-   --- End of inner exception stack trace ---
-  at System.Threading.Tasks.Task.WaitAll (System.Threading.Tasks.Task[] tasks, System.Int32 millisecondsTimeout, System.Threading.CancellationToken cancellationToken) [0x001c8] in <0c09cdbdbe9f4470a58088ff9d75086e>:0 
-  at System.Threading.Tasks.Task.WaitAll (System.Threading.Tasks.Task[] tasks, System.Int32 millisecondsTimeout) [0x00000] in <0c09cdbdbe9f4470a58088ff9d75086e>:0 
-  at System.Threading.Tasks.Task.WaitAll (System.Threading.Tasks.Task[] tasks) [0x00000] in <0c09cdbdbe9f4470a58088ff9d75086e>:0 
-  at System.Threading.Tasks.Parallel.Invoke (System.Threading.Tasks.ParallelOptions parallelOptions, System.Action[] actions) [0x0029c] in <0c09cdbdbe9f4470a58088ff9d75086e>:0 
---- End of stack trace from previous location where exception was thrown ---
-
-  at System.Threading.Tasks.Parallel.ThrowSingleCancellationExceptionOrOtherException (System.Collections.ICollection exceptions, System.Threading.CancellationToken cancelToken, System.Exception otherException) [0x0000b] in <0c09cdbdbe9f4470a58088ff9d75086e>:0 
-  at System.Threading.Tasks.Parallel.Invoke (System.Threading.Tasks.ParallelOptions parallelOptions, System.Action[] actions) [0x002b9] in <0c09cdbdbe9f4470a58088ff9d75086e>:0 
-  at System.Threading.Tasks.Parallel.Invoke (System.Action[] actions) [0x00000] in <0c09cdbdbe9f4470a58088ff9d75086e>:0 
-  at SonicRetro.SonLVL.SonPLN.MainForm.backgroundLevelLoader_DoWork (System.Object sender, System.ComponentModel.DoWorkEventArgs e) [0x00029] in <d1e8af73a9cb4cd08c2047236bc0a9d3>:0 
----> (Inner Exception #0) System.IO.FileNotFoundException: Palette file could not be loaded! Have you set up your disassembly properly?
-File name: 'palette/SegaJP.bin'
-  at SonicRetro.SonLVL.SonPLN.MainForm.LoadLevelPalette () [0x00177] in <d1e8af73a9cb4cd08c2047236bc0a9d3>:0 
-  at System.Threading.Tasks.Task.InnerInvoke () [0x0000f] in <0c09cdbdbe9f4470a58088ff9d75086e>:0 
-  at System.Threading.Tasks.Task.Execute () [0x00000] in <0c09cdbdbe9f4470a58088ff9d75086e>:0 <---
-
-Loading Sega Logo JP...
-Loading plane mappings from file "tilemaps/Sega Logo JP.bin", using compression Enigma...
-Mappings data size does not match given width/height. Expected: 104 (13x4*2) Actual: 2240.
-Loading 8x8 tiles from file "artnem/Sega Logo JP.bin", using compression Nemesis...
-Loading palette file "palette/SegaJP.bin"...
-Source: 16 Destination: 0 Length: 16
-System.AggregateException: One or more errors occurred. (Palette file could not be loaded! Have you set up your disassembly properly?) ---> System.IO.FileNotFoundException: Palette file could not be loaded! Have you set up your disassembly properly?
-  at SonicRetro.SonLVL.SonPLN.MainForm.LoadLevelPalette () [0x00177] in <d1e8af73a9cb4cd08c2047236bc0a9d3>:0 
-  at System.Threading.Tasks.Task.InnerInvoke () [0x0000f] in <0c09cdbdbe9f4470a58088ff9d75086e>:0 
-  at System.Threading.Tasks.Task.Execute () [0x00000] in <0c09cdbdbe9f4470a58088ff9d75086e>:0 
-   --- End of inner exception stack trace ---
-  at System.Threading.Tasks.Task.WaitAll (System.Threading.Tasks.Task[] tasks, System.Int32 millisecondsTimeout, System.Threading.CancellationToken cancellationToken) [0x001c8] in <0c09cdbdbe9f4470a58088ff9d75086e>:0 
-  at System.Threading.Tasks.Task.WaitAll (System.Threading.Tasks.Task[] tasks, System.Int32 millisecondsTimeout) [0x00000] in <0c09cdbdbe9f4470a58088ff9d75086e>:0 
-  at System.Threading.Tasks.Task.WaitAll (System.Threading.Tasks.Task[] tasks) [0x00000] in <0c09cdbdbe9f4470a58088ff9d75086e>:0 
-  at System.Threading.Tasks.Parallel.Invoke (System.Threading.Tasks.ParallelOptions parallelOptions, System.Action[] actions) [0x0029c] in <0c09cdbdbe9f4470a58088ff9d75086e>:0 
---- End of stack trace from previous location where exception was thrown ---
-
-  at System.Threading.Tasks.Parallel.ThrowSingleCancellationExceptionOrOtherException (System.Collections.ICollection exceptions, System.Threading.CancellationToken cancelToken, System.Exception otherException) [0x0000b] in <0c09cdbdbe9f4470a58088ff9d75086e>:0 
-  at System.Threading.Tasks.Parallel.Invoke (System.Threading.Tasks.ParallelOptions parallelOptions, System.Action[] actions) [0x002b9] in <0c09cdbdbe9f4470a58088ff9d75086e>:0 
-  at System.Threading.Tasks.Parallel.Invoke (System.Action[] actions) [0x00000] in <0c09cdbdbe9f4470a58088ff9d75086e>:0 
-  at SonicRetro.SonLVL.SonPLN.MainForm.backgroundLevelLoader_DoWork (System.Object sender, System.ComponentModel.DoWorkEventArgs e) [0x00029] in <d1e8af73a9cb4cd08c2047236bc0a9d3>:0 
----> (Inner Exception #0) System.IO.FileNotFoundException: Palette file could not be loaded! Have you set up your disassembly properly?
-File name: 'palette/SegaJP.bin'
-  at SonicRetro.SonLVL.SonPLN.MainForm.LoadLevelPalette () [0x00177] in <d1e8af73a9cb4cd08c2047236bc0a9d3>:0 
-  at System.Threading.Tasks.Task.InnerInvoke () [0x0000f] in <0c09cdbdbe9f4470a58088ff9d75086e>:0 
-  at System.Threading.Tasks.Task.Execute () [0x00000] in <0c09cdbdbe9f4470a58088ff9d75086e>:0 <---
-
-Opening INI file "C:\users\carlosiagnecz\Documents\romhacks\sonic-github-madness-4\SonPLN.ini"...
-Game type is S1.
-Loading Sega Logo JP...
-Loading plane mappings from file "tilemaps/Sega Logo JP.bin", using compression Enigma...
-Mappings data size does not match given width/height. Expected: 104 (13x4*2) Actual: 2240.
-Loading 8x8 tiles from file "artnem/Sega Logo JP.bin", using compression Nemesis...
-Loading palette file "palette/Sega Logo JP.bin"...
-Source: 16 Destination: 0 Length: 16
-System.AggregateException: One or more errors occurred. (Index was outside the bounds of the array.) ---> System.IndexOutOfRangeException: Index was outside the bounds of the array.
-  at SonicRetro.SonLVL.SonPLN.MainForm.LoadLevelPalette () [0x001d1] in <d1e8af73a9cb4cd08c2047236bc0a9d3>:0 
-  at System.Threading.Tasks.Task.InnerInvoke () [0x0000f] in <0c09cdbdbe9f4470a58088ff9d75086e>:0 
-  at System.Threading.Tasks.Task.Execute () [0x00000] in <0c09cdbdbe9f4470a58088ff9d75086e>:0 
-   --- End of inner exception stack trace ---
-  at System.Threading.Tasks.Task.WaitAll (System.Threading.Tasks.Task[] tasks, System.Int32 millisecondsTimeout, System.Threading.CancellationToken cancellationToken) [0x001c8] in <0c09cdbdbe9f4470a58088ff9d75086e>:0 
-  at System.Threading.Tasks.Task.WaitAll (System.Threading.Tasks.Task[] tasks, System.Int32 millisecondsTimeout) [0x00000] in <0c09cdbdbe9f4470a58088ff9d75086e>:0 
-  at System.Threading.Tasks.Task.WaitAll (System.Threading.Tasks.Task[] tasks) [0x00000] in <0c09cdbdbe9f4470a58088ff9d75086e>:0 
-  at System.Threading.Tasks.Parallel.Invoke (System.Threading.Tasks.ParallelOptions parallelOptions, System.Action[] actions) [0x0029c] in <0c09cdbdbe9f4470a58088ff9d75086e>:0 
---- End of stack trace from previous location where exception was thrown ---
-
-  at System.Threading.Tasks.Parallel.ThrowSingleCancellationExceptionOrOtherException (System.Collections.ICollection exceptions, System.Threading.CancellationToken cancelToken, System.Exception otherException) [0x0000b] in <0c09cdbdbe9f4470a58088ff9d75086e>:0 
-  at System.Threading.Tasks.Parallel.Invoke (System.Threading.Tasks.ParallelOptions parallelOptions, System.Action[] actions) [0x002b9] in <0c09cdbdbe9f4470a58088ff9d75086e>:0 
-  at System.Threading.Tasks.Parallel.Invoke (System.Action[] actions) [0x00000] in <0c09cdbdbe9f4470a58088ff9d75086e>:0 
-  at SonicRetro.SonLVL.SonPLN.MainForm.backgroundLevelLoader_DoWork (System.Object sender, System.ComponentModel.DoWorkEventArgs e) [0x00029] in <d1e8af73a9cb4cd08c2047236bc0a9d3>:0 
----> (Inner Exception #0) System.IndexOutOfRangeException: Index was outside the bounds of the array.
-  at SonicRetro.SonLVL.SonPLN.MainForm.LoadLevelPalette () [0x001d1] in <d1e8af73a9cb4cd08c2047236bc0a9d3>:0 
-  at System.Threading.Tasks.Task.InnerInvoke () [0x0000f] in <0c09cdbdbe9f4470a58088ff9d75086e>:0 
-  at System.Threading.Tasks.Task.Execute () [0x00000] in <0c09cdbdbe9f4470a58088ff9d75086e>:0 <---
+Loading Cold Brew...
+Plane mappings file "cold brew/Map.bin" not found.
+Loading palette file "cold brew/Palette.bin"...
+Source: 0 Destination: 0 Length: 16
+8x8 tile file "cold brew/Art.bin" not found.
+System.AggregateException: حدث خطأ واحد أو أكثر. ---> System.IO.FileNotFoundException: Palette file could not be loaded! Have you set up your disassembly properly?
+   عند SonicRetro.SonLVL.SonPLN.MainForm.LoadLevelPalette() في C:\Programs\SonLVL\SonPLN\MainForm.cs:السطر 442
+   عند System.Threading.Tasks.Task.InnerInvoke()
+   عند System.Threading.Tasks.Task.Execute()
+   --- نهاية تتبع بنية تخزين عناصر الاستثناء الداخلي ---
+   عند System.Threading.Tasks.Task.FastWaitAll(Task[] tasks)
+   عند System.Threading.Tasks.Parallel.Invoke(ParallelOptions parallelOptions, Action[] actions)
+   عند System.Threading.Tasks.Parallel.Invoke(Action[] actions)
+   عند SonicRetro.SonLVL.SonPLN.MainForm.backgroundLevelLoader_DoWork(Object sender, DoWorkEventArgs e) في C:\Programs\SonLVL\SonPLN\MainForm.cs:السطر 323
+---> (الاستثناء الداخلي #0) System.IO.FileNotFoundException: Palette file could not be loaded! Have you set up your disassembly properly?
+اسم الملف: 'cold brew/Palette.bin'
+   عند SonicRetro.SonLVL.SonPLN.MainForm.LoadLevelPalette() في C:\Programs\SonLVL\SonPLN\MainForm.cs:السطر 442
+   عند System.Threading.Tasks.Task.InnerInvoke()
+   عند System.Threading.Tasks.Task.Execute()<---
 
