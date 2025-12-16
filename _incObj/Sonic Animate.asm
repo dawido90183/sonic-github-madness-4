@@ -27,6 +27,7 @@ Sonic_Animate:
 	@do:
 		add.w	d0,d0
 		adda.w	(a1,d0.w),a1	; jump to appropriate animation script
+		moveq	#0,d0 ; clear word
 		move.b	(a1),d0
 		bmi.s	@walkrunroll	; if animation is walk/run/roll/jump, branch
 		move.b	obStatus(a0),d1
@@ -112,18 +113,21 @@ Sonic_Animate:
 	@nomodspeed:
 		move.l	a2,a1
 
+		move.w	(v_character).w,d3
+
 		cmpi.w	#$600,d2	; is Sonic at running speed?
 		bcc.s	@running	; if yes, branch
 
-		subq.w	#2,a2 ; use walking animation
-		move.b	d0,d1
-		lsr.b	#1,d1
-		add.b	d1,d0
+		addq.w	#2,d3 ; point to walk anim
 
+		subq.w	#2,a2 ; use walking animation
 	@running:
 		add.w	2(a2),a1
-		add.b	d0,d0
-		move.b	d0,d3
+
+		lea	(Char_AniSize).l,a2
+		move.w	(a2,d3.w),d3 ; load animation
+		mulu.w	d0,d3
+
 		neg.w	d2
 		addi.w	#$800,d2
 		bpl.s	@belowmax
@@ -190,3 +194,17 @@ Sonic_Animate:
 		bra.w	@loadframe
 
 ; End of function Sonic_Animate
+
+anisize_char:	macro run,walk
+	dc.b	0,run/2,0,walk/2
+		endm
+
+Char_AniSize:	; CHAR ADD STUFF
+	; if you are unsure just use sonic's values
+
+	anisize_char	4,6 ; sonic
+	anisize_char	4,6 ; ghm3 guy
+	anisize_char	4,6 ; mercury
+	anisize_char	4,6 ; half jupiter
+	anisize_char	4,4 ; kiryu
+	; add next char here

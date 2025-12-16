@@ -55,20 +55,20 @@
                             "length": 1
                         }
                     ],
-                    "format": "Sonic 1.js",
+                    "format": "Sonic 1 Old.js",
                     "art": {
                         "path": "!Characters/KiryuChan/Art.bin",
                         "compression": "Uncompressed",
-                        "offset": "0"
+                        "offset": ""
                     },
                     "mappings": {
                         "path": "!Characters/KiryuChan/Mappings.asm",
-                        "label": ""
+                        "label": "@internal"
                     },
                     "dplcs": {
                         "enabled": true,
                         "path": "!Characters/KiryuChan/DPLC.asm",
-                        "label": ""
+                        "label": "@internal"
                     },
                     "uuid": "7aae929a-16cb-40bd-8db2-a62e6b6c6c13"
                 },
