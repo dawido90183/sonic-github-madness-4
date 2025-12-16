@@ -22,7 +22,7 @@ Revision:	equ 1
 
 ZoneCount:	equ 6	; discrete zones are: GHZ, MZ, SYZ, LZ, SLZ, and SBZ
 
-CharCount: equ 4
+CharCount: equ 5
 
 ; ===========================================================================
 
@@ -2167,6 +2167,7 @@ Char_Pal:
 	pal_char GHM3_Guy
 	pal_char GHM3_Mercury
 	pal_char GHM3half_Jupiter
+	pal_char KiryuChan
 	; add next char here
 
 ; ---------------------------------------------------------------------------
@@ -7783,6 +7784,7 @@ Char_Map:	; CHAR ADD STUFF
 	dc.l	Map_Sonic
 	dc.l	Map_GHM3_Mercury
 	dc.l	Map_GHM3half_Jupiter
+	dc.l	Map_KiryuChan
 	; add next char here
 
 Sonic_Main:	; Routine 0
@@ -7958,6 +7960,7 @@ Ani_\name:	include	"!Characters\\\name\\Anim.asm"
 
 		anim_char Sonic
 		anim_char GHM3half_Jupiter
+		anim_char KiryuChan
 
 
 ; ---------------------------------------------------------------------------
@@ -9426,6 +9429,7 @@ DPLC_\name:	include	"!Characters\\\name\\DPLC.asm"
 	map_char Sonic
 	map_char GHM3_Mercury
 	map_char GHM3half_Jupiter
+	map_char KiryuChan
 	; add next char here
 
 ; ---------------------------------------------------------------------------
@@ -9440,6 +9444,7 @@ Art_\name:	incbin	"!Characters\\\name\\Art.bin"
 	art_char Sonic
 	art_char GHM3_Mercury
 	art_char GHM3half_Jupiter
+	art_char KiryuChan
 	; add next char here
 		even
 

@@ -9,6 +9,7 @@ Char_Ani:	; CHAR ADD STUFF
 	dc.l	Ani_Sonic ; ghm3 guy
 	dc.l	Ani_Sonic ; mercury
 	dc.l	Ani_GHM3half_Jupiter
+	dc.l	Ani_KiryuChan
 	; add next char here
 
 Sonic_Animate:
