@@ -163,12 +163,59 @@ React_Monitor:
 	@donothing:
 		rts	
 ; ===========================================================================
+react_char1:	macro walk,run,roll,roll2,push,wait,balance,lookup
+	dc.b	walk+run<<1+roll<<2+roll2<<3+push<<4+wait<<5+balance<<6+lookup<<7
+	endm
+react_char2:	macro duck,stop,float1,float2,spring,hang,air,drown
+	dc.b	duck+stop<<1+float1<<2+float2<<3+spring<<4+hang<<5+air<<6+drown<<7
+	endm
+react_char3:	macro death,hurt,waterslide,null,float3,float4,extra1,extra2
+	dc.b	death+hurt<<1+waterslide<<2+null<<3+float3<<4+float4<<5+extra1<<6+extra2<<7
+	endm
+react_char4:	macro extra3,extra4,extra5,extra6,extra7,extra8,extra9,extraA
+	dc.b	extra3+extra4<<1+extra5<<2+extra6<<3+extra7<<4+extra8<<5+extra9<<6+extraA<<7
+	endm ; all other anims are vulnerable so keep the ones that do damage here
+
+Char_React: ; CHAR ADD STUFF
+	; Sonic
+	react_char1 0,0,1,1,0,0,0,0
+	dc.b 0 ;react_char2 0,0,0,0,0,0,0,0
+	dc.b 0 ;react_char3 0,0,0,0,0,0,0,0
+	dc.b 0 ;react_char4 0,0,0,0,0,0,0,0
+	; GHM3_Guy
+	react_char1 0,0,1,1,0,0,0,0
+	dc.b 0 ;react_char2 0,0,0,0,0,0,0,0
+	dc.b 0 ;react_char3 0,0,0,0,0,0,0,0
+	dc.b 0 ;react_char4 0,0,0,0,0,0,0,0
+	; GHM3_Mercury
+	react_char1 0,0,1,1,0,0,0,0
+	dc.b 0 ;react_char2 0,0,0,0,0,0,0,0
+	dc.b 0 ;react_char3 0,0,0,0,0,0,0,0
+	dc.b 0 ;react_char4 0,0,0,0,0,0,0,0
+	; KiryuChan
+	react_char1 0,0,0,0,1,0,0,0
+	dc.b 0 ;react_char2 0,0,0,0,0,0,0,0
+	react_char3 0,0,0,0,0,0,1,0
+	dc.b 0 ;react_char4 0,0,0,0,0,0,0,0
+	; add next char here
 
 React_Enemy:
 		tst.b	(v_invinc).w	; is Sonic invincible?
 		bne.s	@donthurtsonic	; if yes, branch
-		cmpi.b	#id_Roll,obAnim(a0) ; is Sonic rolling/jumping?
-		bne.w	React_ChkHurt	; if not, branch
+
+		moveq	#0,d0
+		move.b	obAnim(a0),d0
+		cmpi.w	#$1F,d0
+		bgt.w	React_ChkHurt
+		move.b	d0,d1
+		andi.b	#$7,d1 ; bit
+		lsr.b	#4,d0 ; byte
+
+		add.w	(v_character).w,d0
+
+		move.b	Char_React(pc,d0.w),d0
+		btst	d1,d0
+		beq.w	React_ChkHurt
 
 	@donthurtsonic:
 		tst.b	obColProp(a1)

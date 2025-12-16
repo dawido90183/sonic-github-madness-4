@@ -409,3 +409,5 @@ id_Extra6:	equ $1B
 id_Extra7:	equ $1C
 id_Extra8:	equ $1D
 id_Extra9:	equ $1E
+id_ExtraA:	equ $1F
+; Anything past $1F is unsafe for characters that aren't made for that, make sure to update anim
