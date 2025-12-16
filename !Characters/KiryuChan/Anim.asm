@@ -38,7 +38,7 @@
 
 @placeholder:
 @run:
-@walk:	dc.b 4,1,2,3,4, afEnd
+@walk:	dc.b 3,1,2,3,4, afEnd
 		even
 @roll2:
 @roll:	dc.b 4, 7, afEnd, afEnd, afEnd, afEnd
