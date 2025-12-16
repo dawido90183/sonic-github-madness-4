@@ -47,1535 +47,1535 @@ music83_PSG3:
 
 ; FM1 Data
 music83_FM1:
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$00
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$7F
-;	Panning	 	direction	amsfms
+;	Panning	Â 	direction	amsfms
 	smpsPan		panCentre,	$00
 	dc.b		nRst,	$79,	smpsNoAttack,	nRst,	$7A
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$98
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$1C,	nRst,	$02
 music83_Jump01:
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG5,	$0E,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$0E,	nRst,	$01,	nC6,	$0E,	nRst,	$02
 	dc.b		nC5,	$20,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F1
 	dc.b		nCs5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F1
 	dc.b		nCs5,	$02,	smpsNoAttack,	nCs5,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F1
 	dc.b		nCs5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F1
 	dc.b		nCs5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F1
 	dc.b		nCs5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F1
 	dc.b		nCs5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F1
 	dc.b		nCs5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F1
 	dc.b		nCs5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F1
 	dc.b		nCs5,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F1
 	dc.b		nCs5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F1
 	dc.b		nCs5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F1
 	dc.b		nCs5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$02,	nRst,	nC5,	$0E,	nRst,	$02,	nBb4
 	dc.b		$1B,	nRst,	$03,	nC5,	$0E,	nRst,	$01,	nBb4
 	dc.b		$0E,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nD5,	$0E,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$21,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$01,	nRst,	$03,	nBb4,	$0E,	nRst,	$01
 	dc.b		nAb4,	$1C,	nRst,	$03,	nBb4,	$0D,	nRst,	$02
 	dc.b		nAb4,	$0E,	nRst,	$01,	nC5,	$0E,	nRst,	$01
 	dc.b		nAb4,	$21,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nAb4,	$02,	smpsNoAttack,	nAb4,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nAb4,	$03,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG4,	$0E,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nAb4,	$0E,	nRst,	$02
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nD5,	$0D,	nRst,	$02
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$21,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$02,	smpsNoAttack,	nBb4,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02,	nRst,	$02,	nBb4,	$0E,	nRst,	$02
 	dc.b		nC5,	$1B,	nRst,	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG5,	$0E,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$0E,	nRst,	$01,	nC6,	$0E,	nRst,	$01
 	dc.b		nC5,	$21,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F1
 	dc.b		nCs5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F1
 	dc.b		nCs5,	$03,	smpsNoAttack,	nCs5,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F1
 	dc.b		nCs5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F1
 	dc.b		nCs5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F1
 	dc.b		nCs5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F1
 	dc.b		nCs5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F1
 	dc.b		nCs5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F1
 	dc.b		nCs5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F1
 	dc.b		nCs5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F1
 	dc.b		nCs5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F1
 	dc.b		nCs5,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F1
 	dc.b		nCs5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$02,	nRst,	nC5,	$0E,	nRst,	$01,	nBb4
 	dc.b		$1C,	nRst,	$03,	nC5,	$0D,	nRst,	$02,	nBb4
 	dc.b		$0E,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nD5,	$0E,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$21,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02,	nRst,	$03,	nBb4,	$0E,	nRst,	$01
 	dc.b		nAb4,	$1C,	nRst,	$02,	nBb4,	$0E,	nRst,	$01
 	dc.b		nAb4,	$0E,	nRst,	$02,	nC5,	$0D,	nRst,	$02
 	dc.b		nAb4,	$21,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
-	smpsAlterNote	$16
-	dc.b		nAb4,	$02,	smpsNoAttack,	nAb4,	$01,	smpsNoAttack
-;	Alter Notes	value
-	smpsAlterNote	$0E
-	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
-	smpsAlterNote	$06
-	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
-	smpsAlterNote	$0E
-	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
-	smpsAlterNote	$16
-	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
-	smpsAlterNote	$0E
-	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
-	smpsAlterNote	$06
-	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
-	smpsAlterNote	$0E
-	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
-	smpsAlterNote	$16
-	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
-	smpsAlterNote	$0E
-	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
-	smpsAlterNote	$06
-	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
-	smpsAlterNote	$0E
-	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
-	smpsAlterNote	$16
-	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
-	smpsAlterNote	$0E
-	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
-	smpsAlterNote	$06
-	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
-	smpsAlterNote	$0E
-	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
-	smpsAlterNote	$16
-	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
-	smpsAlterNote	$0E
-	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
-	smpsAlterNote	$06
-	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
-	smpsAlterNote	$0E
-	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
-	smpsAlterNote	$16
-	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
-	smpsAlterNote	$0E
-	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
-	smpsAlterNote	$06
-	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
-	smpsAlterNote	$0E
-	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
-	smpsAlterNote	$16
-	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
-	smpsAlterNote	$0E
-	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
-	smpsAlterNote	$06
-	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
-	smpsAlterNote	$0E
-	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
-	smpsAlterNote	$16
-	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
-	smpsAlterNote	$0E
-	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
-	smpsAlterNote	$06
-	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
-	smpsAlterNote	$0E
-	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
-	smpsAlterNote	$16
-	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
-	smpsAlterNote	$0E
-	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
-	smpsAlterNote	$06
-	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
-	smpsAlterNote	$0E
-	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
-	smpsAlterNote	$16
-	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
-	smpsAlterNote	$0E
-	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
-	smpsAlterNote	$06
-	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
-	smpsAlterNote	$0E
-	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
-	smpsAlterNote	$16
-	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
-	smpsAlterNote	$0E
-	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
-	smpsAlterNote	$06
-	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
-	smpsAlterNote	$0E
-	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
-	smpsAlterNote	$16
-	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
-	smpsAlterNote	$0E
-	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
-	smpsAlterNote	$06
-	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
-	smpsAlterNote	$0E
-	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nAb4,	$02,	smpsNoAttack,	nAb4,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
+	smpsAlterNote	$0E
+	dc.b		nAb4,	$03,	smpsNoAttack
+;	AlterÂ Notes	value
+	smpsAlterNote	$16
+	dc.b		nAb4,	$02,	smpsNoAttack
+;	AlterÂ Notes	value
+	smpsAlterNote	$0E
+	dc.b		nAb4,	$03,	smpsNoAttack
+;	AlterÂ Notes	value
+	smpsAlterNote	$06
+	dc.b		nAb4,	$02,	smpsNoAttack
+;	AlterÂ Notes	value
+	smpsAlterNote	$0E
+	dc.b		nAb4,	$03,	smpsNoAttack
+;	AlterÂ Notes	value
+	smpsAlterNote	$16
+	dc.b		nAb4,	$02,	smpsNoAttack
+;	AlterÂ Notes	value
+	smpsAlterNote	$0E
+	dc.b		nAb4,	$03,	smpsNoAttack
+;	AlterÂ Notes	value
+	smpsAlterNote	$06
+	dc.b		nAb4,	$02,	smpsNoAttack
+;	AlterÂ Notes	value
+	smpsAlterNote	$0E
+	dc.b		nAb4,	$03,	smpsNoAttack
+;	AlterÂ Notes	value
+	smpsAlterNote	$16
+	dc.b		nAb4,	$02,	smpsNoAttack
+;	AlterÂ Notes	value
+	smpsAlterNote	$0E
+	dc.b		nAb4,	$03,	smpsNoAttack
+;	AlterÂ Notes	value
+	smpsAlterNote	$06
+	dc.b		nAb4,	$03,	smpsNoAttack
+;	AlterÂ Notes	value
+	smpsAlterNote	$0E
+	dc.b		nAb4,	$02,	smpsNoAttack
+;	AlterÂ Notes	value
+	smpsAlterNote	$16
+	dc.b		nAb4,	$03,	smpsNoAttack
+;	AlterÂ Notes	value
+	smpsAlterNote	$0E
+	dc.b		nAb4,	$02,	smpsNoAttack
+;	AlterÂ Notes	value
+	smpsAlterNote	$06
+	dc.b		nAb4,	$03,	smpsNoAttack
+;	AlterÂ Notes	value
+	smpsAlterNote	$0E
+	dc.b		nAb4,	$02,	smpsNoAttack
+;	AlterÂ Notes	value
+	smpsAlterNote	$16
+	dc.b		nAb4,	$03,	smpsNoAttack
+;	AlterÂ Notes	value
+	smpsAlterNote	$0E
+	dc.b		nAb4,	$02,	smpsNoAttack
+;	AlterÂ Notes	value
+	smpsAlterNote	$06
+	dc.b		nAb4,	$03,	smpsNoAttack
+;	AlterÂ Notes	value
+	smpsAlterNote	$0E
+	dc.b		nAb4,	$02,	smpsNoAttack
+;	AlterÂ Notes	value
+	smpsAlterNote	$16
+	dc.b		nAb4,	$03,	smpsNoAttack
+;	AlterÂ Notes	value
+	smpsAlterNote	$0E
+	dc.b		nAb4,	$02,	smpsNoAttack
+;	AlterÂ Notes	value
+	smpsAlterNote	$06
+	dc.b		nAb4,	$03,	smpsNoAttack
+;	AlterÂ Notes	value
+	smpsAlterNote	$0E
+	dc.b		nAb4,	$02,	smpsNoAttack
+;	AlterÂ Notes	value
+	smpsAlterNote	$16
+	dc.b		nAb4,	$03,	smpsNoAttack
+;	AlterÂ Notes	value
+	smpsAlterNote	$0E
+	dc.b		nAb4,	$02,	smpsNoAttack
+;	AlterÂ Notes	value
+	smpsAlterNote	$06
+	dc.b		nAb4,	$03,	smpsNoAttack
+;	AlterÂ Notes	value
+	smpsAlterNote	$0E
+	dc.b		nAb4,	$03,	smpsNoAttack
+;	AlterÂ Notes	value
+	smpsAlterNote	$16
+	dc.b		nAb4,	$02,	smpsNoAttack
+;	AlterÂ Notes	value
+	smpsAlterNote	$0E
+	dc.b		nAb4,	$03,	smpsNoAttack
+;	AlterÂ Notes	value
+	smpsAlterNote	$06
+	dc.b		nAb4,	$02,	smpsNoAttack
+;	AlterÂ Notes	value
+	smpsAlterNote	$0E
+	dc.b		nAb4,	$03,	smpsNoAttack
+;	AlterÂ Notes	value
+	smpsAlterNote	$16
+	dc.b		nAb4,	$02,	smpsNoAttack
+;	AlterÂ Notes	value
+	smpsAlterNote	$0E
+	dc.b		nAb4,	$03,	smpsNoAttack
+;	AlterÂ Notes	value
+	smpsAlterNote	$06
+	dc.b		nAb4,	$02,	smpsNoAttack
+;	AlterÂ Notes	value
+	smpsAlterNote	$0E
+	dc.b		nAb4,	$03,	smpsNoAttack
+;	AlterÂ Notes	value
+	smpsAlterNote	$16
+	dc.b		nAb4,	$02,	smpsNoAttack,	nAb4,	$01,	smpsNoAttack
+;	AlterÂ Notes	value
+	smpsAlterNote	$0E
+	dc.b		nAb4,	$02,	smpsNoAttack
+;	AlterÂ Notes	value
+	smpsAlterNote	$06
+	dc.b		nAb4,	$03,	smpsNoAttack
+;	AlterÂ Notes	value
+	smpsAlterNote	$0E
+	dc.b		nAb4,	$02,	smpsNoAttack
+;	AlterÂ Notes	value
+	smpsAlterNote	$16
+	dc.b		nAb4,	$03,	smpsNoAttack
+;	AlterÂ Notes	value
+	smpsAlterNote	$0E
+	dc.b		nAb4,	$03,	smpsNoAttack
+;	AlterÂ Notes	value
+	smpsAlterNote	$06
+	dc.b		nAb4,	$02,	smpsNoAttack
+;	AlterÂ Notes	value
+	smpsAlterNote	$0E
+	dc.b		nAb4,	$03,	smpsNoAttack
+;	AlterÂ Notes	value
+	smpsAlterNote	$16
+	dc.b		nAb4,	$02,	smpsNoAttack
+;	AlterÂ Notes	value
+	smpsAlterNote	$0E
+	dc.b		nAb4,	$03,	smpsNoAttack
+;	AlterÂ Notes	value
+	smpsAlterNote	$06
+	dc.b		nAb4,	$02,	smpsNoAttack
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nAb4,	$03,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG4,	$0E,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nAb4,	$0E,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nD5,	$0E,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$21,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$03,	smpsNoAttack,	nBb4,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02,	nRst,	$02,	nBb4,	$0E,	nRst,	$01
 	dc.b		smpsNoAttack,	nRst,	$0F,	nC5,	$0E,	nRst,	$02,	nBb4
 	dc.b		$0E,	nRst,	$01,	nC5,	$21,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F1
 	dc.b		nCs5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG4,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	nRst,	$01,	nC5,	$07,	nRst,	$10,	smpsNoAttack
 	dc.b		nRst,	$0F,	nC5,	$0E,	nRst,	$01,	nBb4,	$0E
 	dc.b		nRst,	$01,	nC5,	$21,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F1
 	dc.b		nCs5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$01,	nRst
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG4,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$07,	nC5,	nRst,	$10,	smpsNoAttack,	nRst,	$0F
 	dc.b		nBb4,	$0E,	nRst,	$01,	nAb4,	$0E,	nRst,	$02
 	dc.b		nBb4,	$20,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF4,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nAb4,	$07,	nRst,	$01,	nBb4,	$07,	nRst,	$0F
 	dc.b		smpsNoAttack,	nRst,	$10,	nBb4,	$0D,	nRst,	$02,	nAb4
 	dc.b		$0E,	nRst,	$01,	nBb4,	$21,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF4,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nAb4,	nRst,	$01,	nBb4,	$07,	nRst,	$10,	smpsNoAttack
 	dc.b		nRst,	$0F,	nC5,	$0E,	nRst,	$01,	nBb4,	$0E
 	dc.b		nRst,	$01,	nC5,	$21,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F1
 	dc.b		nCs5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$01,	nRst
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG4,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$07,	nC5,	nRst,	$10,	smpsNoAttack,	nRst,	$0F
 	dc.b		nC5,	$0E,	nRst,	$01,	nBb4,	$0E,	nRst,	$02
 	dc.b		nC5,	$20,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F1
 	dc.b		nCs5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$02
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG4,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$07,	nRst,	$01,	nC5,	$07,	nRst,	$0F
 	dc.b		smpsNoAttack,	nRst,	$10,	nBb4,	$0D,	nRst,	$02,	nAb4
 	dc.b		$0E,	nRst,	$01,	nBb4,	$21,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF4,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nAb4,	nRst,	$01,	nBb4,	$07,	nRst,	$10,	smpsNoAttack
 	dc.b		nRst,	$0F,	nBb4,	$0E,	nRst,	$01,	nAb4,	$0E
 	dc.b		nRst,	$01,	nBb4,	$21,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF4,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nAb4,	$07,	nBb4,	nRst,	$10
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$11
 	dc.b		smpsNoAttack,	nRst,	$0F,	nC5,	$0E,	nRst,	$01,	nBb4
 	dc.b		$0E,	nRst,	$02,	nC5,	$20,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F1
 	dc.b		nCs5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$02,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG4,	$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$07,	nRst,	$01,	nC5,	$07,	nRst,	$0F
 	dc.b		smpsNoAttack,	nRst,	$10,	nC5,	$0D,	nRst,	$02,	nBb4
 	dc.b		$0E,	nRst,	$01,	nC5,	$21,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F1
 	dc.b		nCs5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG4,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	nRst,	$01,	nC5,	$07,	nRst,	$10,	smpsNoAttack
 	dc.b		nRst,	$0F,	nBb4,	$0C,	nRst,	$02,	nAb4,	$0F
 	dc.b		nRst,	$01,	nBb4,	$21,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF4,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nAb4,	$07,	nBb4,	nRst,	$10,	smpsNoAttack,	nRst,	$0F
 	dc.b		nBb4,	$0E,	nRst,	$01,	nAb4,	$0E,	nRst,	$02
 	dc.b		nBb4,	$20,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF4,	$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nAb4,	$07,	nRst,	$01,	nBb4,	$07,	nRst,	$0F
 	dc.b		smpsNoAttack,	nRst,	$10,	nC5,	$0E,	nRst,	$01,	nBb4
 	dc.b		$0E,	nRst,	$01,	nC5,	$21,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F1
 	dc.b		nCs5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG4,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	nRst,	$01,	nC5,	$07,	nRst,	$10,	smpsNoAttack
 	dc.b		nRst,	$0F,	nC5,	$0E,	nRst,	$01,	nBb4,	$0E
 	dc.b		nRst,	$01,	nC5,	$21,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F1
 	dc.b		nCs5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$02
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG4,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$07,	nC5,	nRst,	$10,	smpsNoAttack,	nRst,	$0F
 	dc.b		nBb4,	$0E,	nRst,	$01,	nAb4,	$0E,	nRst,	$02
 	dc.b		nBb4,	$21,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF4,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nAb4,	nRst,	$01,	nBb4,	$07,	nRst,	$0F,	smpsNoAttack
 	dc.b		nRst,	$10,	nBb4,	$0E,	nRst,	$01,	nAb4,	$0E
 	dc.b		nRst,	$01,	nBb4,	$21,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$16
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$02,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF4,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nAb4,	$06,	nRst,	$01,	nBb4,	$07,	nRst,	$10
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$00
 	dc.b		nC5,	$1C,	nRst,	$02
-;	Panning	 	direction	amsfms
+;	Panning	Â 	direction	amsfms
 	smpsPan		panCentre,	$00
-;	Jump To	 	location
+;	JumpÂ To	Â 	location
 	smpsJump	music83_Jump01
 
 ; FM2 Data
 music83_FM2:
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$01
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$17
-;	Panning	 	direction	amsfms
+;	Panning	Â 	direction	amsfms
 	smpsPan		panCentre,	$00
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC3,	$07,	nRst,	$01,	nC3,	$07,	nC4,	nRst
 	dc.b		$01,	nC3,	$07,	nC3,	nRst,	$01,	nC4,	$07
@@ -1746,12675 +1746,12675 @@ music83_Jump02:
 	dc.b		$01,	nBb2,	$07,	nRst,	$01,	nBb3,	$07,	nRst
 	dc.b		$08,	nC3,	$07,	nRst,	$08,	nC3,	$07,	nRst
 	dc.b		$08
-;	Panning	 	direction	amsfms
+;	Panning	Â 	direction	amsfms
 	smpsPan		panCentre,	$00
-;	Jump To	 	location
+;	JumpÂ To	Â 	location
 	smpsJump	music83_Jump02
 
 ; FM3 Data
 music83_FM3:
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$00
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$1F
-;	Panning	 	direction	amsfms
+;	Panning	Â 	direction	amsfms
 	smpsPan		panCentre,	$00
 	dc.b		nRst,	$7F,	$0A,	smpsNoAttack,	nRst,	$79
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FE
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$0F
 music83_Jump03:
 	dc.b		smpsNoAttack,	nC5,	$0D,	nRst,	$02
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG5,	$0E,	nRst,	$02
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$0D,	nRst,	$02,	nC6,	$0E,	nRst,	$01
 	dc.b		nC5,	$21,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nC5,	$02,	smpsNoAttack,	nC5,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$02,	nRst,	$03,	nC5,	$0D,	nRst,	$02
 	dc.b		nBb4,	$1B,	nRst,	$03,	nC5,	$0E,	nRst,	$01
 	dc.b		nBb4,	$0E,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0A
 	dc.b		nD5,	$0E,	nRst,	$02
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$20,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$02,	smpsNoAttack,	nBb4,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$02,	nRst,	$02,	nBb4,	$0E,	nRst,	$01
 	dc.b		nAb4,	$1C,	nRst,	$03,	nBb4,	$0E,	nRst,	$01
 	dc.b		nAb4,	$0E,	nRst,	$01,	nC5,	$0E,	nRst,	$01
 	dc.b		nAb4,	$21,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nAb4,	$02,	smpsNoAttack,	nAb4,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$02,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG4,	$0E,	nRst,	$02
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$0D,	nRst,	$02
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0A
 	dc.b		nD5,	$0E,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$21,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$02,	smpsNoAttack,	nBb4,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$02,	nRst,	$03,	nBb4,	$0D,	nRst,	$02
 	dc.b		nC5,	$1C,	nRst,	$02
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG5,	$0E,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$0E,	nRst,	$01,	nC6,	$0E,	nRst,	$02
 	dc.b		nC5,	$20,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nC5,	$02,	smpsNoAttack,	nC5,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$02,	nRst,	$02,	nC5,	$0E,	nRst,	$01
 	dc.b		nBb4,	$1C,	nRst,	$03,	nC5,	$0E,	nRst,	$01
 	dc.b		nBb4,	$0E,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0A
 	dc.b		nD5,	$0E,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$21,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$01,	nRst,	$03,	nBb4,	$0E,	nRst,	$01
 	dc.b		nAb4,	$1C,	nRst,	$03,	nBb4,	$0D,	nRst,	$02
 	dc.b		nAb4,	$0E,	nRst,	$01,	nC5,	$0E,	nRst,	$01
 	dc.b		nAb4,	$21,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nAb4,	$02,	smpsNoAttack,	nAb4,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nAb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$03,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG4,	$0E,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$0E,	nRst,	$02
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0A
 	dc.b		nD5,	$0D,	nRst,	$02
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$21,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$02,	smpsNoAttack,	nBb4,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$02,	nRst,	$02,	nBb4,	$0E,	nRst,	$02
 	dc.b		smpsNoAttack,	nRst,	$0F,	nC5,	$0E,	nRst,	$01,	nBb4
 	dc.b		$0E,	nRst,	$01,	nC5,	$21,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$02,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG4,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$06,	nRst,	$01,	nC5,	$07,	nRst,	$10
 	dc.b		smpsNoAttack,	nRst,	$0F,	nC5,	$0E,	nRst,	$01,	nBb4
 	dc.b		$0E,	nRst,	$01,	nC5,	$21,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$02
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG4,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$07,	nC5,	nRst,	$10,	smpsNoAttack,	nRst,	$0F
 	dc.b		nBb4,	$0E,	nRst,	$02,	nAb4,	$0D,	nRst,	$02
 	dc.b		nBb4,	$21,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$02,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF4,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	nRst,	$01,	nBb4,	$07,	nRst,	$10,	smpsNoAttack
 	dc.b		nRst,	$0F,	nBb4,	$0E,	nRst,	$01,	nAb4,	$0E
 	dc.b		nRst,	$01,	nBb4,	$21,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$02,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF4,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$07,	nBb4,	nRst,	$10,	smpsNoAttack,	nRst,	$0F
 	dc.b		nC5,	$0E,	nRst,	$01,	nBb4,	$0E,	nRst,	$01
 	dc.b		nC5,	$21,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$02
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG4,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$07,	nRst,	$01,	nC5,	$06,	nRst,	$10
 	dc.b		smpsNoAttack,	nRst,	$0F,	nC5,	$0E,	nRst,	$02,	nBb4
 	dc.b		$0D,	nRst,	$02,	nC5,	$21,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$02,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG4,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	nRst,	$01,	nC5,	$07,	nRst,	$10,	smpsNoAttack
 	dc.b		nRst,	$0F,	nBb4,	$0E,	nRst,	$01,	nAb4,	$0E
 	dc.b		nRst,	$01,	nBb4,	$21,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$02,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF4,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$07,	nBb4,	nRst,	$10,	smpsNoAttack,	nRst,	$0F
 	dc.b		nBb4,	$0E,	nRst,	$01,	nAb4,	$0E,	nRst,	$01
 	dc.b		nBb4,	$21,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$02
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF4,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$07,	nRst,	$01,	nBb4,	$06,	nRst,	$10
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$11
 	dc.b		smpsNoAttack,	nRst,	$0F,	smpsNoAttack,	nRst,	$01,	nC5,	$0D
 	dc.b		nRst,	$02,	nBb4,	$0E,	nRst,	$01,	nC5,	$21
 	dc.b		smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nC5,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$02,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG4,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	nRst,	$01,	nC5,	$07,	nRst,	$10,	smpsNoAttack
 	dc.b		nRst,	$0F,	nC5,	$0E,	nRst,	$01,	nBb4,	$0E
 	dc.b		nRst,	$01,	nC5,	$21,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$01,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG4,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$07,	nC5,	nRst,	$10,	smpsNoAttack,	nRst,	$0F
 	dc.b		nBb4,	$0C,	nRst,	$02,	nAb4,	$0F,	nRst,	$01
 	dc.b		smpsNoAttack,	nRst,	nBb4,	$20,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$02
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF4,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$07,	nRst,	$01,	nBb4,	$07,	nRst,	$0F
 	dc.b		smpsNoAttack,	nRst,	$10,	nBb4,	$0D,	nRst,	$02,	nAb4
 	dc.b		$0E,	nRst,	$01,	nBb4,	$21,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$02,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF4,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	nRst,	$01,	nBb4,	$07,	nRst,	$10,	smpsNoAttack
 	dc.b		nRst,	$0F,	nC5,	$0E,	nRst,	$01,	nBb4,	$0E
 	dc.b		nRst,	$01,	nC5,	$21,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$01,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG4,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$07,	nC5,	nRst,	$10,	smpsNoAttack,	nRst,	$0F
 	dc.b		nC5,	$0E,	nRst,	$01,	nBb4,	$0E,	nRst,	$02
 	dc.b		nC5,	$20,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$02
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG4,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$07,	nRst,	$01,	nC5,	$07,	nRst,	$0F
 	dc.b		smpsNoAttack,	nRst,	$10,	nBb4,	$0D,	nRst,	$02,	nAb4
 	dc.b		$0E,	nRst,	$01,	nBb4,	$21,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$02,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$02,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF4,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	nRst,	$01,	nBb4,	$07,	nRst,	$10,	smpsNoAttack
 	dc.b		nRst,	$0F,	nBb4,	$0E,	nRst,	$01,	nAb4,	$0E
 	dc.b		nRst,	$01,	nBb4,	$21,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nBb4,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$01,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF4,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nAb4,	$07,	nBb4,	nRst,	$10
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$00
 	dc.b		nC5,	$0F
-;	Panning	 	direction	amsfms
+;	Panning	Â 	direction	amsfms
 	smpsPan		panCentre,	$00
-;	Jump To	 	location
+;	JumpÂ To	Â 	location
 	smpsJump	music83_Jump03
 
 ; FM4 Data
 music83_FM4:
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$02
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$27
-;	Panning	 	direction	amsfms
+;	Panning	Â 	direction	amsfms
 	smpsPan		panCentre,	$00
 	dc.b		nRst,	$7A,	smpsNoAttack,	nRst,	$79
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FC
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$07,	nC5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC6,	$07
 music83_Jump04:
 	dc.b		nRst,	$08,	nC6,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC6,	$07,	nRst,	$01,	nC5,	$06,	nRst,	$01
 	dc.b		nC5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC6,	nRst,	$08,	nC5,	$07,	nRst,	$01,	nC5
 	dc.b		$07,	nRst,	$01,	nC5,	$07,	nC5,	nRst,	$01
 	dc.b		nC5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC6,	$07,	nRst,	$08,	nC6,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC6,	nRst,	$01,	nC5,	$07,	nC5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC6,	$07,	nRst,	$08,	nC5,	$07,	nC6,	nRst
 	dc.b		$01,	nC5,	$07,	nRst,	$01,	nBb4,	$06,	nRst
 	dc.b		$01,	nBb4,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb5,	nRst,	$08,	nBb5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb5,	$07,	nBb4,	nRst,	$01,	nBb4,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb5,	$07,	nRst,	$08,	nBb4,	$07,	nRst,	$01
 	dc.b		nBb4,	$07,	nBb4,	nRst,	$01,	nBb4,	$07,	nBb4
 	dc.b		nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb5,	$07,	nRst,	$08,	nBb5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb5,	$07,	nRst,	$01,	nBb4,	$06,	nRst,	$01
 	dc.b		nBb4,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb5,	nRst,	$08,	smpsNoAttack,	nRst,	$01,	nBb4,	$06
 	dc.b		nRst,	$01,	nBb5,	$07,	nRst,	$01,	nBb4,	$07
 	dc.b		nC5,	nRst,	$01,	nC5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC6,	$07,	nRst,	$08,	nC6,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC6,	nRst,	$01,	nC5,	$07,	nRst,	$01,	smpsNoAttack
 	dc.b		nC5,	$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC6,	$07,	nRst,	$08,	nC5,	$07,	nC5,	nRst
 	dc.b		$01,	nC5,	$07,	nRst,	$01,	nC5,	$07,	nC5
 	dc.b		nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC6,	nRst,	$09,	nC6,	$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC6,	$07,	nC5,	nRst,	$01,	nC5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC6,	$07,	nRst,	$08,	nC5,	$07,	nRst,	$01
 	dc.b		nC6,	$07,	nC5,	nRst,	$01,	nBb4,	$07,	nRst
 	dc.b		$01,	nBb4,	$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb5,	$07,	nRst,	$08,	nBb5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF5,	$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb5,	$07,	nRst,	$01,	nBb4,	$07,	nBb4,	nRst
 	dc.b		$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb5,	nRst,	$09,	nBb4,	$06,	nRst,	$01,	nBb4
 	dc.b		$07,	nRst,	$01,	nBb4,	$07,	nBb4,	nRst,	$01
 	dc.b		nBb4,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF5,	$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb5,	$07,	nRst,	$08,	nBb5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb5,	nRst,	$01,	nBb4,	$07,	nRst,	$01,	nBb4
 	dc.b		$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb5,	$07,	nRst,	$08,	nBb4,	$07,	nRst,	$01
 	dc.b		nBb5,	$06,	nRst,	$01,	nBb4,	$07,	nRst,	$01
 	dc.b		nC5,	$07,	nC5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC6,	nRst,	$09,	nC6,	$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC6,	$07,	nC5,	nRst,	$01,	nC5,	$07,	nRst
 	dc.b		$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG5,	$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC6,	$07,	nRst,	$08,	nC5,	$07,	nRst,	$01
 	dc.b		nC5,	$07,	nC5,	nRst,	$01,	nC5,	$07,	nRst
 	dc.b		$01,	nC5,	$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC6,	$07,	nRst,	$08,	nC6,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG5,	$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC6,	$07,	nRst,	$01,	nC5,	$07,	nC5,	nRst
 	dc.b		$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC6,	nRst,	$09,	nC5,	$06,	nRst,	$01,	nC6
 	dc.b		$07,	nRst,	$01,	nC5,	$07,	nBb4,	nRst,	$01
 	dc.b		nBb4,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF5,	$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb5,	$07,	nRst,	$08,	nBb5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb5,	nRst,	$01,	nBb4,	$07,	nRst,	$01,	nBb4
 	dc.b		$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb5,	$07,	nRst,	$08,	nBb4,	$07,	nRst,	$01
 	dc.b		smpsNoAttack,	nBb4,	$06,	nRst,	$01,	nBb4,	$07,	nRst
 	dc.b		$01,	nBb4,	$07,	nBb4,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb5,	nRst,	$09,	nBb5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb5,	$07,	nBb4,	nRst,	$01,	nBb4,	$07,	nRst
 	dc.b		$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF5,	$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb5,	$07,	nRst,	$08,	nBb4,	$07,	nRst,	$01
 	dc.b		nBb5,	$07,	nBb4,	nRst,	$01,	nC5,	$07,	nRst
 	dc.b		$01,	nC5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC6,	$07,	nRst,	$08,	nC6,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG5,	$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC6,	$07,	nRst,	$01,	nC5,	$07,	nC5,	nRst
 	dc.b		$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC6,	nRst,	$09,	nC5,	$07,	nC5,	nRst,	$01
 	dc.b		nC5,	$07,	nC5,	nRst,	$01,	nC5,	$07,	nRst
 	dc.b		$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG5,	$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC6,	$07,	nRst,	$08,	nC6,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC6,	nRst,	$01,	nC5,	$07,	nRst,	$01,	nC5
 	dc.b		$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC6,	$07,	nRst,	$08,	nC5,	$07,	nRst,	$01
 	dc.b		nC6,	$06,	nRst,	$01,	nC5,	$07,	nRst,	$01
 	dc.b		nBb4,	$07,	nBb4,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb5,	nRst,	$09,	nBb5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb5,	$07,	nBb4,	nRst,	$01,	nBb4,	$07,	nRst
 	dc.b		$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF5,	$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb5,	$07,	nRst,	$08,	nBb4,	$07,	nRst,	$01
 	dc.b		nBb4,	$07,	nBb4,	nRst,	$01,	nBb4,	$07,	nRst
 	dc.b		$01,	nBb4,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb5,	$07,	nRst,	$08,	nBb5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF5,	$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb5,	$07,	nRst,	$01,	nBb4,	$07,	nBb4,	nRst
 	dc.b		$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb5,	nRst,	$09,	nBb4,	$07,	nBb5,	nRst,	$01
 	dc.b		nBb4,	$07,	nC5,	$04,	nC5,	nC5,	$07,	nRst
 	dc.b		$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG5,	$06,	nRst,	$01,	nG5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$07,	nC5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG5,	$07,	nG5,	$04,	nG5
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$07,	nRst,	$01,	nC5,	$07,	nC6,	nRst
 	dc.b		$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG6,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	nRst,	$01,	nC5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG5,	$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC6,	$03,	smpsNoAttack,	nC6,	$05,	nC5,	$03,	nRst
 	dc.b		$01,	nC5,	$03,	nC5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG5,	$07,	nG5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$07,	nRst,	$01,	nC5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG5,	nRst,	$01,	nG5,	$03,	smpsNoAttack,	nG5,	$04
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$07,	nRst,	$01,	nC5,	$07,	nRst,	$01
 	dc.b		nC6,	$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG6,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$07,	nC5,	nRst,	$01,	nC5,	$04
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG5,	$03,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC6,	$06,	nRst,	$01,	nBb4,	$04,	nBb4,	nBb4
 	dc.b		$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF5,	nRst,	$01,	nF5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	nRst,	$01,	nBb4,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF5,	$07,	nF5,	$04,	nF5
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$07,	nBb4,	nRst,	$01,	nBb5,	$07,	nRst
 	dc.b		$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF6,	$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$07,	nRst,	$01,	nBb4,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb5,	$04,	nBb5,	$03,	nBb4,	$04,	nBb4,	nBb4
 	dc.b		$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF5,	$07,	nF5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$07,	nBb4,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF5,	$07,	nRst,	$01,	nF5,	$03,	nF5,	$04
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$07,	nRst,	$01,	nBb4,	$07,	nBb5,	nRst
 	dc.b		$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF6,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	nRst,	$01,	nBb4,	$07,	nRst,	$01,	nBb4
 	dc.b		$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF5,	$04
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb5,	$07,	nRst,	$01,	nC5,	$04,	nC5,	$03
 	dc.b		nC5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG5,	$07,	nRst,	$01,	nG5,	$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$07,	nRst,	$01,	nC5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG5,	nRst,	$01,	nG5,	$04,	nG5,	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$07,	nRst,	$01,	nC5,	$07,	nRst,	$01
 	dc.b		nC6,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG6,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$07,	nC5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC6,	$03,	nC6,	$04,	nC5,	nC5,	nC5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG5,	nRst,	$01,	nG5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$06,	nRst,	$01,	nC5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG5,	$07,	nG5,	$04,	nG5
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$07,	nC5,	nRst,	$01,	nC6,	$07,	nRst
 	dc.b		$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG6,	$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$07,	nRst,	$01,	nC5,	$07,	nC5,	$03
 	dc.b		smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG5,	$05
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC6,	$07,	nRst,	$01,	nBb4,	$03,	nBb4,	$04
 	dc.b		nBb4,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF5,	$07,	nF5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$07,	nBb4,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF5,	$07,	nRst,	$01,	nF5,	$03,	nF5,	$04
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$07,	nRst,	$01,	nBb4,	$07,	nBb5,	nRst
 	dc.b		$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF6,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$06,	nRst,	$01,	nBb4,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb5,	$04,	nBb5,	nBb4,	nBb4,	$03,	nBb4,	$07
 	dc.b		nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF5,	$07,	nRst,	$01,	nF5,	$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$07,	nRst,	$01,	nBb4,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF5,	nRst,	$01,	nF5,	$04,	nF5,	$03,	nRst
 	dc.b		$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$06,	nRst,	$01,	nBb4,	$07,	nRst,	$01
 	dc.b		nBb5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF6,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$07,	nBb4,	nRst,	$01,	nBb4,	$04
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF5
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb5,	$06,	nRst,	$01,	nC5,	$03,	smpsNoAttack,	nC5
 	dc.b		$05,	nC5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG5,	nRst,	$01,	nG5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$06,	nRst,	$01,	nC5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG5,	$07,	nG5,	$04,	nG5
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$07,	nC5,	nRst,	$01,	nC6,	$07,	nRst
 	dc.b		$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG6,	$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$07,	nRst,	$01,	nC5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC6,	$04,	nC6,	$03,	nRst,	$01,	nC5,	$03
 	dc.b		nC5,	$04,	nC5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG5,	$07,	nG5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$07,	nC5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG5,	$07,	nRst,	$01,	nG5,	$03,	nG5,	$04
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$07,	nRst,	$01,	nC5,	$07,	nC6,	nRst
 	dc.b		$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG6,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$06,	nRst,	$01,	nC5,	$07,	nRst,	$01
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG5,	$04
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC6,	$07,	nRst,	$01,	nBb4,	$04,	nBb4,	$03
 	dc.b		nBb4,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF5,	$07,	nRst,	$01,	nF5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	nRst,	$01,	nBb4,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF5,	nRst,	$01,	nF5,	$04,	nF5
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$06,	nRst,	$01,	nBb4,	$07,	nRst,	$01
 	dc.b		nBb5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF6,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$07,	nBb4,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb5,	$03,	smpsNoAttack,	nBb5,	$04,	nBb4,	nBb4,	nBb4
 	dc.b		$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF5,	nRst,	$01,	nF5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$06,	nRst,	$01,	nBb4,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF5,	$07,	nF5,	$04,	nF5
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$07,	nBb4,	nRst,	$01,	nBb5,	$07,	nRst
 	dc.b		$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF6,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	nRst,	$01,	nBb4,	$07,	nBb4,	$04
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF5
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb5,	$07,	nRst,	$01,	nC5,	$03,	smpsNoAttack,	nC5
 	dc.b		$04,	nC5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG5,	$07,	nG5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$07,	nC5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG5,	$07,	nRst,	$01,	nG5,	$03,	nG5,	$04
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$07,	nRst,	$01,	nC5,	$07,	nC6,	nRst
 	dc.b		$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG6,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$06,	nRst,	$01,	nC5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC6,	$04,	nC6,	nC5,	nC5,	$03,	nC5,	$07
 	dc.b		nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG5,	$07,	nRst,	$01,	nG5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	nRst,	$01,	nC5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG5,	nRst,	$01,	nG5,	$04,	nG5
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$06,	nRst,	$01,	nC5,	$07,	nRst,	$01
 	dc.b		nC6,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG6,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC5,	$07,	nRst,	$01,	nC5,	$06,	nRst,	$01
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG5,	$05
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC6,	$07,	nBb4,	$04,	nBb4,	nBb4,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF5,	nRst,	$01,	nF5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$06,	nRst,	$01,	nBb4,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF5,	$07,	nF5,	$04,	nF5
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$07,	nBb4,	nRst,	$01,	nBb5,	$07,	nRst
 	dc.b		$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF6,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	nRst,	$01,	nBb4,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb5,	$04,	nBb5,	nBb4,	$03,	nBb4,	$04,	nBb4
 	dc.b		$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF5,	$07,	nF5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$07,	nRst,	$01,	smpsNoAttack,	nBb4,	$06,	nRst
 	dc.b		$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF5,	$07,	nRst,	$01,	nF5,	$03,	nF5,	$04
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$07,	nRst,	$01,	nBb4,	$07,	nBb5,	nRst
 	dc.b		$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF6,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb4,	$07,	nBb4,	nRst,	$01,	nBb4,	$03,	nRst
 	dc.b		$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0D
 	dc.b		nF5,	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nBb5,	$07,	nRst,	$01,	nC5,	$07,	nC5,	nRst
 	dc.b		$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$06
 	dc.b		nG5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
 	dc.b		nC6,	$07
-;	Panning	 	direction	amsfms
+;	Panning	Â 	direction	amsfms
 	smpsPan		panCentre,	$00
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0E
-;	Jump To	 	location
+;	JumpÂ To	Â 	location
 	smpsJump	music83_Jump04
 
 ; FM5 Data
 music83_FM5:
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$02
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$27
-;	Panning	 	direction	amsfms
+;	Panning	Â 	direction	amsfms
 	smpsPan		panCentre,	$00
 	dc.b		nRst,	$7F,	$02,	smpsNoAttack,	nRst,	$79
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$58
 	dc.b		smpsNoAttack,	nRst,	$01
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$A4
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$06,	nRst,	$01,	nC5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG5,	$07
 music83_Jump05:
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC6,	nRst,	$08,	nC6,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC6,	$06,	nRst,	$01,	nC5,	$07,	nRst,	$01
 	dc.b		nC5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC6,	$07,	nRst,	$08,	nC5,	$07,	nRst,	$01
 	dc.b		nC5,	$07,	nC5,	nRst,	$01,	nC5,	$07,	nC5
 	dc.b		nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC6,	$06,	nRst,	$09,	nC6,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC6,	$07,	nRst,	$01,	nC5,	$06,	nRst,	$01
 	dc.b		nC5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC6,	nRst,	$08,	nC5,	$07,	nRst,	$01,	nC6
 	dc.b		$07,	nRst,	$01,	nC5,	$07,	nBb4,	nRst,	$01
 	dc.b		nBb4,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb5,	$07,	nRst,	$08,	nBb5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb5,	nRst,	$01,	nBb4,	$07,	nRst,	$01,	smpsNoAttack
 	dc.b		nBb4,	$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb5,	$07,	nRst,	$08,	nBb4,	$07,	nBb4,	nRst
 	dc.b		$01,	nBb4,	$07,	nRst,	$01,	nBb4,	$06,	nRst
 	dc.b		$01,	nBb4,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb5,	nRst,	$08,	nBb5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb5,	$07,	nBb4,	nRst,	$01,	nBb4,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb5,	$07,	nRst,	$08,	nBb4,	$07,	nRst,	$01
 	dc.b		nBb5,	$07,	nBb4,	nRst,	$01,	nC5,	$07,	nRst
 	dc.b		$01,	smpsNoAttack,	nC5,	$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC6,	$07,	nRst,	$08,	nC6,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC6,	$07,	nRst,	$01,	nC5,	$06,	nRst,	$01
 	dc.b		nC5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC6,	nRst,	$08,	nC5,	$07,	nRst,	$01,	nC5
 	dc.b		$07,	nRst,	$01,	nC5,	$07,	nC5,	nRst,	$01
 	dc.b		nC5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC6,	$07,	nRst,	$08,	nC6,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC6,	nRst,	$01,	nC5,	$07,	nRst,	$01,	smpsNoAttack
 	dc.b		nC5,	$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC6,	$07,	nRst,	$08,	nC5,	$07,	nC6,	nRst
 	dc.b		$01,	nC5,	$07,	nRst,	$01,	nBb4,	$06,	nRst
 	dc.b		$01,	nBb4,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb5,	nRst,	$09,	nBb5,	$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb5,	$07,	nBb4,	nRst,	$01,	nBb4,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb5,	$07,	nRst,	$08,	nBb4,	$07,	nRst,	$01
 	dc.b		nBb4,	$07,	nBb4,	nRst,	$01,	nBb4,	$07,	nRst
 	dc.b		$01,	nBb4,	$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb5,	$07,	nRst,	$08,	nBb5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb5,	$07,	nRst,	$01,	nBb4,	$06,	nRst,	$01
 	dc.b		nBb4,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb5,	nRst,	$09,	nBb4,	$06,	nRst,	$01,	nBb5
 	dc.b		$07,	nRst,	$01,	nBb4,	$07,	nC5,	nRst,	$01
 	dc.b		nC5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC6,	$07,	nRst,	$08,	nC6,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC6,	nRst,	$01,	nC5,	$07,	nRst,	$01,	nC5
 	dc.b		$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC6,	$07,	nRst,	$08,	nC5,	$07,	nC5,	nRst
 	dc.b		$01,	nC5,	$07,	nRst,	$01,	nC5,	$07,	nC5
 	dc.b		nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC6,	nRst,	$09,	nC6,	$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC6,	$07,	nC5,	nRst,	$01,	nC5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC6,	$07,	nRst,	$08,	nC5,	$07,	nRst,	$01
 	dc.b		nC6,	$07,	nC5,	nRst,	$01,	nBb4,	$07,	nRst
 	dc.b		$01,	nBb4,	$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb5,	$07,	nRst,	$08,	nBb5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb5,	$07,	nRst,	$01,	nBb4,	$07,	nBb4,	nRst
 	dc.b		$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb5,	nRst,	$09,	nBb4,	$06,	nRst,	$01,	nBb4
 	dc.b		$07,	nRst,	$01,	nBb4,	$07,	nBb4,	nRst,	$01
 	dc.b		nBb4,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb5,	$07,	nRst,	$08,	nBb5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb5,	nRst,	$01,	nBb4,	$07,	nRst,	$01,	nBb4
 	dc.b		$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb5,	$07,	nRst,	$08,	nBb4,	$07,	nBb5,	nRst
 	dc.b		$01,	nBb4,	$07,	nRst,	$01,	nC5,	$07,	nC5
 	dc.b		nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC6,	nRst,	$09,	nC6,	$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC6,	$07,	nC5,	nRst,	$01,	nC5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC6,	$07,	nRst,	$08,	nC5,	$07,	nRst,	$01
 	dc.b		nC5,	$07,	nC5,	nRst,	$01,	nC5,	$07,	nRst
 	dc.b		$01,	nC5,	$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC6,	$07,	nRst,	$08,	nC6,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC6,	$07,	nRst,	$01,	nC5,	$07,	nC5,	nRst
 	dc.b		$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC6,	nRst,	$09,	nC5,	$06,	nRst,	$01,	nC6
 	dc.b		$07,	nRst,	$01,	nC5,	$07,	nBb4,	nRst,	$01
 	dc.b		nBb4,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF5,	$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb5,	$07,	nRst,	$08,	nBb5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb5,	nRst,	$01,	nBb4,	$07,	nRst,	$01,	nBb4
 	dc.b		$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb5,	$07,	nRst,	$08,	nBb4,	$07,	nRst,	$01
 	dc.b		smpsNoAttack,	nBb4,	$06,	nRst,	$01,	nBb4,	$07,	nRst
 	dc.b		$01,	nBb4,	$07,	nBb4,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb5,	nRst,	$09,	nBb5,	$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb5,	$07,	nBb4,	nRst,	$01,	nBb4,	$07,	nRst
 	dc.b		$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF5,	$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb5,	$07,	nRst,	$08,	nBb4,	$07,	nRst,	$01
 	dc.b		nBb5,	$07,	nBb4,	nRst,	$01,	nC5,	$04,	nC5
 	dc.b		nC5,	$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG5,	$07,	nRst,	$01,	nG5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	nRst,	$01,	nC5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG5,	$06,	nRst,	$01,	nG5,	$04,	nG5
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$07,	nC5,	nRst,	$01,	nC6,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG6,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$07,	nRst,	$01,	nC5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC6,	$03,	smpsNoAttack,	nC6,	$04,	nC5,	nC5,	nC5
 	dc.b		$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG5,	$06,	nRst,	$01,	nG5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$07,	nC5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG5,	$07,	nRst,	$01,	smpsNoAttack,	nG5,	$03,	smpsNoAttack
 	dc.b		nG5,	$04
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$07,	nRst,	$01,	nC5,	$07,	nC6,	nRst
 	dc.b		$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG6,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	nRst,	$01,	nC5,	$07,	nRst,	$01,	nC5
 	dc.b		$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG5,	$04
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC6,	$07,	nRst,	$01,	nBb4,	$03,	nBb4,	$04
 	dc.b		nBb4,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF5,	$07,	nRst,	$01,	nF5,	$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$07,	nRst,	$01,	nBb4,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF5,	nRst,	$01,	nF5,	$04,	nF5,	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$07,	nRst,	$01,	nBb4,	$07,	nRst,	$01
 	dc.b		nBb5,	$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF6,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$07,	nBb4,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb5,	$03,	nBb5,	$04,	nBb4,	nBb4,	nBb4,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF5,	nRst,	$01,	nF5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	nRst,	$01,	nBb4,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF5,	$06,	nRst,	$01,	nF5,	$04,	nF5
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$07,	nBb4,	nRst,	$01,	nBb5,	$07,	nRst
 	dc.b		$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF6,	$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$07,	nRst,	$01,	nBb4,	$07,	nBb4,	$04
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF5
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb5,	$07,	nC5,	$04,	nC5,	nC5,	$07,	nRst
 	dc.b		$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG5,	$06,	nRst,	$01,	nG5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$07,	nC5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG5,	$07,	nRst,	$01,	nG5,	$03,	nG5,	$04
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$07,	nRst,	$01,	nC5,	$07,	nC6,	nRst
 	dc.b		$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG6,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	nRst,	$01,	nC5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG5,	$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC6,	$04,	nC6,	nC5,	$03,	nRst,	$01,	smpsNoAttack
 	dc.b		nC5,	$03,	nC5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG5,	$07,	nRst,	$01,	nG5,	$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$07,	nRst,	$01,	nC5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG5,	nRst,	$01,	nG5,	$04,	nG5,	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$07,	nRst,	$01,	nC5,	$07,	nRst,	$01
 	dc.b		nC6,	$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG6,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$07,	nC5,	nRst,	$01,	nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG5,	$05
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC6,	$06,	nRst,	$01,	nBb4,	$04,	nBb4,	nBb4
 	dc.b		$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF5,	nRst,	$01,	nF5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	nRst,	$01,	nBb4,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF5,	$06,	nRst,	$01,	nF5,	$04,	nF5
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$07,	nBb4,	nRst,	$01,	nBb5,	$07,	nRst
 	dc.b		$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF6,	$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$07,	nRst,	$01,	nBb4,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb5,	$04,	nBb5,	$03,	nBb4,	$04,	nBb4,	nBb4
 	dc.b		$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF5,	$06,	nRst,	$01,	nF5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$07,	nBb4,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF5,	$07,	nRst,	$01,	nF5,	$03,	nF5,	$04
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$07,	nRst,	$01,	nBb4,	$07,	nBb5,	nRst
 	dc.b		$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF6,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$06,	nRst,	$01,	nBb4,	$07,	nRst,	$01
 	dc.b		nBb4,	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF5,	$04
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb5,	$07,	nRst,	$01,	nC5,	$03,	smpsNoAttack,	nC5
 	dc.b		$04,	nRst,	$01,	smpsNoAttack,	nC5,	$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG5,	$07,	nRst,	$01,	nG5,	$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$07,	nRst,	$01,	nC5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG5,	nRst,	$01,	nG5,	$04,	nG5,	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$07,	nRst,	$01,	nC5,	$07,	nRst,	$01
 	dc.b		nC6,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG6,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$07,	nC5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC6,	$03,	nC6,	$04,	nC5,	nC5,	nC5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG5,	nRst,	$01,	nG5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	nRst,	$01,	nC5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG5,	$07,	nG5,	$04,	nG5
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$07,	nC5,	nRst,	$01,	nC6,	$07,	nRst
 	dc.b		$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG6,	$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$07,	nRst,	$01,	nC5,	$07,	nC5,	$03
 	dc.b		smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG5,	$05
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC6,	$07,	nBb4,	$04,	nBb4,	nBb4,	$07,	nRst
 	dc.b		$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF5,	$07,	nF5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$07,	nBb4,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF5,	$07,	nRst,	$01,	nF5,	$03,	nF5,	$04
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$07,	nRst,	$01,	nBb4,	$07,	nBb5,	nRst
 	dc.b		$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF6,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$06,	nRst,	$01,	nBb4,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb5,	$03,	smpsNoAttack,	nBb5,	$05,	nBb4,	$04,	nBb4
 	dc.b		$03,	nBb4,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF5,	$07,	nRst,	$01,	nF5,	$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$07,	nRst,	$01,	nBb4,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF5,	nRst,	$01,	nF5,	$04,	nF5,	$03,	nRst
 	dc.b		$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$06,	nRst,	$01,	nBb4,	$07,	nRst,	$01
 	dc.b		nBb5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF6,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$07,	nBb4,	nRst,	$01,	nBb4,	$04
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF5
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb5,	$06,	nRst,	$01,	nC5,	$03,	smpsNoAttack,	nC5
 	dc.b		$05,	nC5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG5,	nRst,	$01,	nG5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$06,	nRst,	$01,	nC5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG5,	$07,	nG5,	$04,	nG5
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$07,	nC5,	nRst,	$01,	nC6,	$07,	nRst
 	dc.b		$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG6,	$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$07,	nRst,	$01,	nC5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC6,	$04,	nC6,	$03,	nRst,	$01,	nC5,	$03
 	dc.b		nC5,	$04,	nC5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG5,	$07,	nG5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$07,	nC5,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG5,	$07,	nRst,	$01,	nG5,	$03,	nG5,	$04
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$07,	nRst,	$01,	nC5,	$07,	nC6,	nRst
 	dc.b		$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG6,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC5,	$06,	nRst,	$01,	nC5,	$07,	nRst,	$01
 	dc.b		nC5,	$03,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG5,	$04
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nC6,	$07,	nRst,	$01,	nBb4,	$04,	nBb4,	$03
 	dc.b		nBb4,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF5,	$07,	nRst,	$01,	nF5,	$06,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$07,	nRst,	$01,	nBb4,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF5,	nRst,	$01,	nF5,	$04,	nF5
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$06,	nRst,	$01,	nBb4,	$07,	nRst,	$01
 	dc.b		nBb5,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF6,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$07,	nBb4,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb5,	$03,	nBb5,	$04,	nBb4,	nBb4,	nBb4,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF5,	nRst,	$01,	nF5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$06,	nRst,	$01,	nBb4,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF5,	$07,	nF5,	$04,	nF5
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	$07,	nBb4,	nRst,	$01,	nBb5,	$07,	nRst
 	dc.b		$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF6,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb4,	nRst,	$01,	nBb4,	$07,	nBb4,	$04
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nF5
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb5,	$07,	nRst,	$01,	nC5,	$06,	nRst,	$01
 	dc.b		nC5,	$07,	nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nG5,	$07
-;	Panning	 	direction	amsfms
+;	Panning	Â 	direction	amsfms
 	smpsPan		panCentre,	$00
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
-;	Jump To	 	location
+;	JumpÂ To	Â 	location
 	smpsJump	music83_Jump05
 
 ; FM6 Data
 music83_FM6:
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$0A
-;	Panning	 	direction	amsfms
+;	Panning	Â 	direction	amsfms
 	smpsPan		panCentre,	$00
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$05
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$F3
 	dc.b		nRst
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$0D
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
 	dc.b		nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	nRst,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$06
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$F3
 	dc.b		nRst
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$0A
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
 	dc.b		nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$07
 	dc.b		nB3,	$0C,	nRst,	$02
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
 music83_Jump06:
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nEb1,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F7
 	dc.b		nCs1,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$05
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$EE
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0A
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$18
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nCs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$05
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$08
 	dc.b		nRst,	$01
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
 	dc.b		nE1,	$01,	smpsNoAttack,	nD1,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$05
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$20
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$18
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nCs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$FA
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$04
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07,	nRst,	$01
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
 	dc.b		nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nEb1,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F7
 	dc.b		nCs1,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$20
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$EE
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0A
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$18
 	dc.b		nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$FA
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$05
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$09
 	dc.b		nRst
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nEb1,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F7
 	dc.b		nCs1,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$05
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$EE
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0A
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$18
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nCs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$05
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$F3
 	dc.b		nRst,	$01
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$0A
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$08
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
 	dc.b		nE1,	$01,	smpsNoAttack,	nD1,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$05
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$20
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$18
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nCs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$FA
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$04
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$08
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
 	dc.b		nE1,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nEb1,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F7
 	dc.b		nCs1,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$20
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$EE
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0A
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$18
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$FA
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$05
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
 	dc.b		nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nEb1,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nD1,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$05
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$EE
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0A
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$18
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nCs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$05
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$F3
 	dc.b		nRst,	$01
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$0A
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
 	dc.b		nE1,	$01,	smpsNoAttack,	nD1,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$05
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$20
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$18
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nCs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$FA
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$04
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
 	dc.b		nRst,	$01
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB3,	$0B,	nRst,	$03
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$06
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$F3
 	dc.b		nRst,	$01
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$10
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nEb1,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F7
 	dc.b		nCs1,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$20
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$EE
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0A
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$18
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$FA
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$05
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$F3
 	dc.b		nRst,	$01
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$0A
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nEb1,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nD1,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$05
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$EE
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0A
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$18
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$18
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nCs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$05
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$05
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$72
 	dc.b		nRst,	$01
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$8B
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
 	dc.b		nE1,	$01,	smpsNoAttack,	nD1,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F7
 	dc.b		nCs1,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$20
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$18
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nCs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$FA
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$04
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$0A
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$F3
 	dc.b		nRst,	$01
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$0A
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$0B
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$F3
 	dc.b		nRst,	$01
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$10
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nEb1,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F7
 	dc.b		nCs1,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$05
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$EE
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0A
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$18
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$FA
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$05
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$06
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$F3
 	dc.b		nRst,	$01
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$0A
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nEb1,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nD1,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$05
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$EE
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0A
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$18
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$18
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nCs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$05
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$06
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$72
 	dc.b		nRst,	$01
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$8B
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
 	dc.b		nE1,	$01,	smpsNoAttack,	nD1,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F7
 	dc.b		nCs1,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$20
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$18
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$FA
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$04
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$0C
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$F3
 	dc.b		nRst,	$01
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$0A
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07,	nRst,	$01
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nEb1,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F7
 	dc.b		nCs1,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$05
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$EE
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0A
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$18
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nCs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$05
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$06
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$F3
 	dc.b		nRst,	$01
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$0A
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nEb1,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nD1,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$05
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$20
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0A
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$18
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$10
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$18
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nCs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$05
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$F6
 	dc.b		nRst,	$01
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$0D
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	nRst
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	nRst,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$F6
 	dc.b		smpsNoAttack,	nRst,	$01
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$0D
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$F6
 	dc.b		nRst
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$0A
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$0D
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$75
 	dc.b		nRst,	$01
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$8E
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$07
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB3,	$08
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
 	dc.b		nRst
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$08
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$F6
 	dc.b		nRst
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$0A
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$F6
 	dc.b		nRst
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$0D
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$08
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$08
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$F6
 	dc.b		nRst
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$0A
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$08
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$08
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$F6
 	dc.b		nRst
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$0A
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$0E
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$F6
 	dc.b		nRst
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$0D
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$09
 	dc.b		nRst
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$F6
 	dc.b		nRst
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$0D
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$08
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$F6
 	dc.b		nRst
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$0A
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$0F
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$F6
 	dc.b		nRst
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$0D
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$08
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$75
 	dc.b		nRst
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$8B
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$F6
 	dc.b		nRst
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$0A
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$F6
 	dc.b		nRst
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$0D
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$08
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$75
 	dc.b		nRst
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$8B
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$10
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$F6
 	dc.b		nRst
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$0D
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$08
 	dc.b		nRst
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$10
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$F6
 	dc.b		nRst
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$0D
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$09
 	dc.b		nRst
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$12
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$F6
 	dc.b		nRst
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$0A
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$0E
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$F6
 	dc.b		nRst
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$0D
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$07
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB3,	nRst,	$01
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$10
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$F6
 	dc.b		nRst
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$0D
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$10
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$75
 	dc.b		nRst
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$8E
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$08
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$75
 	dc.b		nRst
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$8E
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
 	dc.b		nRst
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$08
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$F6
 	dc.b		nRst
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$0A
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$10
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$F6
 	dc.b		nRst
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$0D
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$09
 	dc.b		nRst
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$F3
 	dc.b		nRst
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$0A
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	nRst
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nD0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$F3
 	dc.b		nRst
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$0A
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack,	nF0,	smpsNoAttack,	nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$08
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$75
 	dc.b		nRst
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$8B
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	nRst
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nF0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$08
 	dc.b		nRst
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F3
 	dc.b		nC0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0,	$07
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$03
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nEb2,	$01,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F7
 	dc.b		nCs2,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$05
 	dc.b		nB1,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$EE
 	dc.b		nBb1,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nA1,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0A
 	dc.b		nG1,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$18
 	dc.b		nFs1
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nBb1,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$EF
 	dc.b		nA1,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$F1
 	dc.b		nAb1,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nFs1,	smpsNoAttack,	nF1,	smpsNoAttack,	nEb1,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$EF
 	dc.b		nCs1,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nB0
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$08
 	dc.b		nEb1,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nD1,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$05
 	dc.b		nB0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$20
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$07
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$0A
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$18
 	dc.b		nFs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$13
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$F0
 	dc.b		nRst
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$0D
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$19
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$02
 	dc.b		nAb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nEb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$03
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$FD
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$01
 	dc.b		nB0
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$07
 	dc.b		nB3,	$0C,	nRst,	$02
-;	Set FM Voice	#
+;	SetÂ FMÂ Voice	#
 	smpsFMvoice	$04
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$F6
 	dc.b		smpsNoAttack,	nRst,	$01
-;	Alter Volume	value
+;	AlterÂ Volume	value
 	smpsAlterVol	$0D
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$E7
 	dc.b		nBb0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nA0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$03
 	dc.b		nG0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$11
 	dc.b		nFs0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$09
 	dc.b		nE0,	smpsNoAttack,	nD0,	smpsNoAttack
-;	Alter Notes	value
+;	AlterÂ Notes	value
 	smpsAlterNote	$00
 	dc.b		nCs0,	smpsNoAttack,	nB0,	$07
-;	Panning	 	direction	amsfms
+;	Panning	Â 	direction	amsfms
 	smpsPan		panCentre,	$00
-;	Jump To	 	location
+;	JumpÂ To	Â 	location
 	smpsJump	music83_Jump06
 
 music83_Voices:
