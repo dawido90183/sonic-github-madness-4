@@ -2607,17 +2607,18 @@ GM_SegaEU_ClrObjRam:
 		bsr.w	PaletteFadeIn
 		move.b	#bgm_EuroSega,d0
 		bsr.w	PlaySound_Special	
-
+		move.w	#60*5,(v_generictimer).w
 
 GM_SegaEU_MainLoop:
 		move.b	#4,(v_vbla_routine).w
 		bsr.w	WaitForVBla
 		jsr	(ExecuteObjects).l
 		jsr	(BuildSprites).l
+		tst.w	(v_generictimer).w
+		beq.s	@timerover
 		andi.b	#btnStart,(v_jpadpress1).w		
 		beq.s	GM_SegaEU_MainLoop
-		move.w	#60,(v_generictimer).w
-
+	@timerover:
 
 		move.b	#34,($FFFFF600).w	; go to Title Screen
 		
