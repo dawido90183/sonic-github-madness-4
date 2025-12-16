@@ -339,7 +339,25 @@ GameInit:
 		bsr.w	VDPSetupGame
 		bsr.w	SoundDriverLoad
 		bsr.w	JoypadInit
-		move.b	#id_Sega,(v_gamemode).w ; set Game Mode to Sega Screen
+		bra.s	SegaGM_Setup
+
+GamemodeTable_Sega:
+		dc.b	id_Sega
+		dc.b	id_SegaJP
+		dc.b	id_SegaEU
+		dc.b	id_Sega ; set this to EU+JP when done
+
+SegaGM_Setup:
+		move.w	#0,d0
+		btst	#6,(v_megadrive).w ; is Megadrive PAL?
+		beq.s	@notpal ; if not, branch
+		addq.w	#2,d0
+	@notpal:
+		tst.b   (v_megadrive).w	; is console Japanese?
+		bmi.s   @not_jp		; if not, branch
+		addq.w	#1,d0
+	@not_jp:
+		move.b	GamemodeTable_Sega(pc,d0.w),(v_gamemode).w
 
 MainGameLoop:
 		move.b	(v_gamemode).w,d0 ; load Game Mode
@@ -2218,18 +2236,6 @@ GenerateSegaTiles: ; d4 -> vram location, d6 -> counter for skip
 		rts
 
 GM_Sega:
-		btst	#6,(v_megadrive).w ; is Megadrive PAL?
-		bmi.s	@ok		; if not, branch
-		move.b	#id_SegaEU,(v_gamemode).w ; go to EU screen
-
-		tst.b   (v_megadrive).w	; is console Japanese?
-		bmi.s   @ok		; if not, branch
-
-		move.b	#id_SegaJP,(v_gamemode).w ; go to JP screen
-		rts
-
-	@ok:
-
 		move.b	#bgm_Stop,d0
 		bsr.w	PlaySound_Special ; stop music
 		bsr.w	ClearPLC
@@ -2310,8 +2316,8 @@ SonicSegaJP:
         moveq    #0,d4
 		move.w	#1,d1 ; mapping frame
 
-		move.w	#0,d3 ; x pos
-		move.w	#0,d2 ; y pos
+		move.w	#128,d3 ; x pos
+		move.w	#128,d2 ; y pos
 		lea		(Map_Sonic).l,a1 ; map
 		movea.w	#$4780,a3 ; art tile offset (pal 3)
 		add.w	d1,d1
