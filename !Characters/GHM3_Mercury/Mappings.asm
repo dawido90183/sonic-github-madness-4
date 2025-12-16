@@ -1,443 +1,501 @@
-; ---------------------------------------------------------------------------
-; Sprite mappings - Sonic
-; ---------------------------------------------------------------------------
-Map_Mercury_internal:
-
-ptr_MMercury_Null:	dc.w MMercury_Null-Map_Mercury_internal
-ptr_MMercury_Stand:	dc.w MMercury_Stand-Map_Mercury_internal
-ptr_MMercury_Wait1:	dc.w MMercury_Wait1-Map_Mercury_internal
-ptr_MMercury_Wait2:	dc.w MMercury_Wait2-Map_Mercury_internal
-ptr_MMercury_Wait3:	dc.w MMercury_Wait3-Map_Mercury_internal
-ptr_MMercury_LookUp:	dc.w MMercury_LookUp-Map_Mercury_internal
-ptr_MMercury_Walk11:	dc.w MMercury_Walk11-Map_Mercury_internal
-ptr_MMercury_Walk12:	dc.w MMercury_Walk12-Map_Mercury_internal
-ptr_MMercury_Walk13:	dc.w MMercury_Walk13-Map_Mercury_internal
-ptr_MMercury_Walk14:	dc.w MMercury_Walk14-Map_Mercury_internal
-ptr_MMercury_Walk15:	dc.w MMercury_Walk15-Map_Mercury_internal
-ptr_MMercury_Walk16:	dc.w MMercury_Walk16-Map_Mercury_internal
-ptr_MMercury_Walk21:	dc.w MMercury_Walk21-Map_Mercury_internal
-ptr_MMercury_Walk22:	dc.w MMercury_Walk22-Map_Mercury_internal
-ptr_MMercury_Walk23:	dc.w MMercury_Walk23-Map_Mercury_internal
-ptr_MMercury_Walk24:	dc.w MMercury_Walk24-Map_Mercury_internal
-ptr_MMercury_Walk25:	dc.w MMercury_Walk25-Map_Mercury_internal
-ptr_MMercury_Walk26:	dc.w MMercury_Walk26-Map_Mercury_internal
-ptr_MMercury_Walk31:	dc.w MMercury_Walk31-Map_Mercury_internal
-ptr_MMercury_Walk32:	dc.w MMercury_Walk32-Map_Mercury_internal
-ptr_MMercury_Walk33:	dc.w MMercury_Walk33-Map_Mercury_internal
-ptr_MMercury_Walk34:	dc.w MMercury_Walk34-Map_Mercury_internal
-ptr_MMercury_Walk35:	dc.w MMercury_Walk35-Map_Mercury_internal
-ptr_MMercury_Walk36:	dc.w MMercury_Walk36-Map_Mercury_internal
-ptr_MMercury_Walk41:	dc.w MMercury_Walk41-Map_Mercury_internal
-ptr_MMercury_Walk42:	dc.w MMercury_Walk42-Map_Mercury_internal
-ptr_MMercury_Walk43:	dc.w MMercury_Walk43-Map_Mercury_internal
-ptr_MMercury_Walk44:	dc.w MMercury_Walk44-Map_Mercury_internal
-ptr_MMercury_Walk45:	dc.w MMercury_Walk45-Map_Mercury_internal
-ptr_MMercury_Walk46:	dc.w MMercury_Walk46-Map_Mercury_internal
-ptr_MMercury_Run11:	dc.w MMercury_Run11-Map_Mercury_internal
-ptr_MMercury_Run12:	dc.w MMercury_Run12-Map_Mercury_internal
-ptr_MMercury_Run13:	dc.w MMercury_Run13-Map_Mercury_internal
-ptr_MMercury_Run14:	dc.w MMercury_Run14-Map_Mercury_internal
-ptr_MMercury_Run21:	dc.w MMercury_Run21-Map_Mercury_internal
-ptr_MMercury_Run22:	dc.w MMercury_Run22-Map_Mercury_internal
-ptr_MMercury_Run23:	dc.w MMercury_Run23-Map_Mercury_internal
-ptr_MMercury_Run24:	dc.w MMercury_Run24-Map_Mercury_internal
-ptr_MMercury_Run31:	dc.w MMercury_Run31-Map_Mercury_internal
-ptr_MMercury_Run32:	dc.w MMercury_Run32-Map_Mercury_internal
-ptr_MMercury_Run33:	dc.w MMercury_Run33-Map_Mercury_internal
-ptr_MMercury_Run34:	dc.w MMercury_Run34-Map_Mercury_internal
-ptr_MMercury_Run41:	dc.w MMercury_Run41-Map_Mercury_internal
-ptr_MMercury_Run42:	dc.w MMercury_Run42-Map_Mercury_internal
-ptr_MMercury_Run43:	dc.w MMercury_Run43-Map_Mercury_internal
-ptr_MMercury_Run44:	dc.w MMercury_Run44-Map_Mercury_internal
-ptr_MMercury_Roll1:	dc.w MMercury_Roll1-Map_Mercury_internal
-ptr_MMercury_Roll2:	dc.w MMercury_Roll2-Map_Mercury_internal
-ptr_MMercury_Roll3:	dc.w MMercury_Roll3-Map_Mercury_internal
-ptr_MMercury_Roll4:	dc.w MMercury_Roll4-Map_Mercury_internal
-ptr_MMercury_Roll5:	dc.w MMercury_Roll5-Map_Mercury_internal
-ptr_MMercury_Warp1:	dc.w MMercury_Warp1-Map_Mercury_internal
-ptr_MMercury_Warp2:	dc.w MMercury_Warp2-Map_Mercury_internal
-ptr_MMercury_Warp3:	dc.w MMercury_Warp3-Map_Mercury_internal
-ptr_MMercury_Warp4:	dc.w MMercury_Warp4-Map_Mercury_internal
-ptr_MMercury_Stop1:	dc.w MMercury_Stop1-Map_Mercury_internal
-ptr_MMercury_Stop2:	dc.w MMercury_Stop2-Map_Mercury_internal
-ptr_MMercury_Duck:	dc.w MMercury_Duck-Map_Mercury_internal
-ptr_MMercury_Balance1:dc.w MMercury_Balance1-Map_Mercury_internal
-ptr_MMercury_Balance2:dc.w MMercury_Balance2-Map_Mercury_internal
-ptr_MMercury_Float1:	dc.w MMercury_Float1-Map_Mercury_internal
-ptr_MMercury_Float2:	dc.w MMercury_Float2-Map_Mercury_internal
-ptr_MMercury_Float3:	dc.w MMercury_Float3-Map_Mercury_internal
-ptr_MMercury_Float4:	dc.w MMercury_Float4-Map_Mercury_internal
-ptr_MMercury_Spring:	dc.w MMercury_Spring-Map_Mercury_internal
-ptr_MMercury_Hang1:	dc.w MMercury_Hang1-Map_Mercury_internal
-ptr_MMercury_Hang2:	dc.w MMercury_Hang2-Map_Mercury_internal
-ptr_MMercury_Leap1:	dc.w MMercury_Leap1-Map_Mercury_internal
-ptr_MMercury_Leap2:	dc.w MMercury_Leap2-Map_Mercury_internal
-ptr_MMercury_Push1:	dc.w MMercury_Push1-Map_Mercury_internal
-ptr_MMercury_Push2:	dc.w MMercury_Push2-Map_Mercury_internal
-ptr_MMercury_Push3:	dc.w MMercury_Push3-Map_Mercury_internal
-ptr_MMercury_Push4:	dc.w MMercury_Push4-Map_Mercury_internal
-ptr_MMercury_Surf:	dc.w MMercury_Surf-Map_Mercury_internal
-ptr_MMercury_BubStand:dc.w MMercury_BubStand-Map_Mercury_internal
-ptr_MMercury_Burnt:	dc.w MMercury_Burnt-Map_Mercury_internal
-ptr_MMercury_Drown:	dc.w MMercury_Drown-Map_Mercury_internal
-ptr_MMercury_Death:	dc.w MMercury_Death-Map_Mercury_internal
-ptr_MMercury_Shrink1:	dc.w MMercury_Shrink1-Map_Mercury_internal
-ptr_MMercury_Shrink2:	dc.w MMercury_Shrink2-Map_Mercury_internal
-ptr_MMercury_Shrink3:	dc.w MMercury_Shrink3-Map_Mercury_internal
-ptr_MMercury_Shrink4:	dc.w MMercury_Shrink4-Map_Mercury_internal
-ptr_MMercury_Shrink5:	dc.w MMercury_Shrink5-Map_Mercury_internal
-ptr_MMercury_Float5:	dc.w MMercury_Float5-Map_Mercury_internal
-ptr_MMercury_Float6:	dc.w MMercury_Float6-Map_Mercury_internal
-ptr_MMercury_Injury:	dc.w MMercury_Injury-Map_Mercury_internal
-ptr_MMercury_GetAir:	dc.w MMercury_GetAir-Map_Mercury_internal
-ptr_MMercury_WaterSlide:dc.w MMercury_WaterSlide-Map_Mercury_internal
-
-MMercury_Null:	dc.b 0
-MMercury_Stand:	dc.b 4			; standing
-		dc.b $EC, 8, 0,	0, $F0
-		dc.b $F4, $D, 0, 3, $F0
-		dc.b 4,	8, 0, $B, $F0
-		dc.b $C, 8, 0, $E, $F8
-MMercury_Wait1:	dc.b 3			; waiting 1
-		dc.b $EC, 9, 0,	0, $F0
-		dc.b $FC, 9, 0,	6, $F0
-		dc.b $C, 8, 0, $C, $F8
-MMercury_Wait2:	dc.b 3			; waiting 2
-		dc.b $EC, 9, 0,	0, $F0
-		dc.b $FC, 9, 0,	6, $F0
-		dc.b $C, 8, 0, $C, $F8
-MMercury_Wait3:	dc.b 3			; waiting 3
-		dc.b $EC, 9, 0,	0, $F0
-		dc.b $FC, 9, 0,	6, $F0
-		dc.b $C, 8, 0, $C, $F8
-MMercury_LookUp:	dc.b 3			; looking up
-		dc.b $EC, $A, 0, 0, $F0
-		dc.b 4,	8, 0, 9, $F0
-		dc.b $C, 8, 0, $C, $F8
-MMercury_Walk11:	dc.b 4			; walking 1-1
-		dc.b $EB, $D, 0, 0, $EC
-		dc.b $FB, 9, 0,	8, $EC
-		dc.b $FB, 6, 0,	$E, 4
-		dc.b $B, 4, 0, $14, $EC
-MMercury_Walk12:	dc.b 2			; walking 1-2
-		dc.b $EC, $D, 0, 0, $ED
-		dc.b $FC, $E, 0, 8, $F5
-MMercury_Walk13:	dc.b 2			; walking 1-3
-		dc.b $ED, 9, 0,	0, $F3
-		dc.b $FD, $A, 0, 6, $F3
-MMercury_Walk14:	dc.b 4			; walking 1-4
-		dc.b $EB, 9, 0,	0, $F4
-		dc.b $FB, 9, 0,	6, $EC
-		dc.b $FB, 6, 0,	$C, 4
-		dc.b $B, 4, 0, $12, $EC
-MMercury_Walk15:	dc.b 2			; walking 1-5
-		dc.b $EC, 9, 0,	0, $F3
-		dc.b $FC, $E, 0, 6, $EB
-MMercury_Walk16:	dc.b 3			; walking 1-6
-		dc.b $ED, $D, 0, 0, $EC
-		dc.b $FD, $C, 0, 8, $F4
-		dc.b 5,	9, 0, $C, $F4
-MMercury_Walk21:	dc.b 5			; walking 2-1
-		dc.b $EB, 9, 0,	0, $EB
-		dc.b $EB, 6, 0,	6, 3
-		dc.b $FB, 8, 0,	$C, $EB
-		dc.b 3,	9, 0, $F, $F3
-		dc.b $13, 0, 0,	$15, $FB
-MMercury_Walk22:	dc.b 6			; walking 2-2
-		dc.b $EC, 9, 0,	0, $EC
-		dc.b $EC, 1, 0,	6, 4
-		dc.b $FC, $C, 0, 8, $EC
-		dc.b 4,	9, 0, $C, $F4
-		dc.b $FC, 5, 0,	$12, $C
-		dc.b $F4, 0, 0,	$16, $14
-MMercury_Walk23:	dc.b 4			; walking 2-3
-		dc.b $ED, 9, 0,	0, $ED
-		dc.b $ED, 1, 0,	6, 5
-		dc.b $FD, $D, 0, 8, $F5
-		dc.b $D, 8, 0, $10, $FD
-MMercury_Walk24:	dc.b 5			; walking 2-4
-		dc.b $EB, 9, 0,	0, $EB
-		dc.b $EB, 5, 0,	6, 3
-		dc.b $FB, $D, 0, $A, $F3
-		dc.b $B, 8, 0, $12, $F3
-		dc.b $13, 4, 0,	$15, $FB
-MMercury_Walk25:	dc.b 4			; walking 2-5
-		dc.b $EC, 9, 0,	0, $EC
-		dc.b $EC, 1, 0,	6, 4
-		dc.b $FC, $D, 0, 8, $F4
-		dc.b $C, 8, 0, $10, $FC
-MMercury_Walk26:	dc.b 5			; walking 2-6
-		dc.b $ED, 9, 0,	0, $ED
-		dc.b $ED, 1, 0,	6, 5
-		dc.b $FD, 0, 0,	8, $ED
-		dc.b $FD, $D, 0, 9, $F5
-		dc.b $D, 8, 0, $11, $FD
-MMercury_Walk31:	dc.b 4			; walking 3-1
-		dc.b $F4, 7, 0,	0, $EB
-		dc.b $EC, 9, 0,	8, $FB
-		dc.b $FC, 4, 0,	$E, $FB
-		dc.b 4,	9, 0, $10, $FB
-MMercury_Walk32:	dc.b 2			; walking 3-2
-		dc.b $F4, 7, 0,	0, $EC
-		dc.b $EC, $B, 0, 8, $FC
-MMercury_Walk33:	dc.b 2			; walking 3-3
-		dc.b $F4, 6, 0,	0, $ED
-		dc.b $F4, $A, 0, 6, $FD
-MMercury_Walk34:	dc.b 4			; walking 3-4
-		dc.b $F4, 6, 0,	0, $EB
-		dc.b $EC, 9, 0,	6, $FB
-		dc.b $FC, 4, 0,	$C, $FB
-		dc.b 4,	9, 0, $E, $FB
-MMercury_Walk35:	dc.b 2			; walking 3-5
-		dc.b $F4, 6, 0,	0, $EC
-		dc.b $F4, $B, 0, 6, $FC
-MMercury_Walk36:	dc.b 3			; walking 3-6
-		dc.b $F4, 7, 0,	0, $ED
-		dc.b $EC, 0, 0,	8, $FD
-		dc.b $F4, $A, 0, 9, $FD
-MMercury_Walk41:	dc.b 6			; walking 4-1
-		dc.b $FD, 6, 0,	0, $EB
-		dc.b $ED, 4, 0,	6, $F3
-		dc.b $F5, 4, 0,	8, $EB
-		dc.b $F5, $A, 0, $A, $FB
-		dc.b $D, 0, 0, $13, $FB
-		dc.b $FD, 0, 0,	$14, $13
-MMercury_Walk42:	dc.b 6			; walking 4-2
-		dc.b $FC, 6, 0,	0, $EC
-		dc.b $E4, 8, 0,	6, $F4
-		dc.b $EC, 4, 0,	9, $FC
-		dc.b $F4, 4, 0,	$B, $EC
-		dc.b $F4, $A, 0, $D, $FC
-		dc.b $C, 0, 0, $16, $FC
-MMercury_Walk43:	dc.b 4			; walking 4-3
-		dc.b $FB, 6, 0,	0, $ED
-		dc.b $F3, 4, 0,	6, $ED
-		dc.b $EB, $A, 0, 8, $FD
-		dc.b 3,	4, 0, $11, $FD
-MMercury_Walk44:	dc.b 5			; walking 4-4
-		dc.b $FD, 6, 0,	0, $EB
-		dc.b $ED, 8, 0,	6, $F3
-		dc.b $F5, 4, 0,	9, $EB
-		dc.b $F5, $D, 0, $B, $FB
-		dc.b 5,	8, 0, $13, $FB
-MMercury_Walk45:	dc.b 4			; walking 4-5
-		dc.b $FC, 6, 0,	0, $EC
-		dc.b $F4, 4, 0,	6, $EC
-		dc.b $EC, $A, 0, 8, $FC
-		dc.b 4,	4, 0, $11, $FC
-MMercury_Walk46:	dc.b 5			; walking 4-6
-		dc.b $FB, 6, 0,	0, $ED
-		dc.b $EB, $A, 0, 6, $FD
-		dc.b $F3, 4, 0,	$F, $ED
-		dc.b 3,	4, 0, $11, $FD
-		dc.b $B, 0, 0, $13, $FD
-MMercury_Run11:	dc.b 2			; running 1-1
-		dc.b $EE, 9, 0,	0, $F4
-		dc.b $FE, $E, 0, 6, $EC
-MMercury_Run12:	dc.b 2			; running 1-2
-		dc.b $EE, 9, 0,	0, $F4
-		dc.b $FE, $E, 0, 6, $EC
-MMercury_Run13:	dc.b 2			; running 1-3
-		dc.b $EE, 9, 0,	0, $F4
-		dc.b $FE, $E, 0, 6, $EC
-MMercury_Run14:	dc.b 2			; running 1-4
-		dc.b $EE, 9, 0,	0, $F4
-		dc.b $FE, $E, 0, 6, $EC
-MMercury_Run21:	dc.b 4			; running 2-1
-		dc.b $EE, 9, 0,	0, $EE
-		dc.b $EE, 1, 0,	6, 6
-		dc.b $FE, $E, 0, 8, $F6
-		dc.b $FE, 0, 0,	$14, $EE
-MMercury_Run22:	dc.b 3			; running 2-2
-		dc.b $EE, 9, 0,	0, $EE
-		dc.b $EE, 1, 0,	6, 6
-		dc.b $FE, $E, 0, 8, $F6
-MMercury_Run23:	dc.b 4			; running 2-3
-		dc.b $EE, 9, 0,	0, $EE
-		dc.b $EE, 1, 0,	6, 6
-		dc.b $FE, $E, 0, 8, $F6
-		dc.b $FE, 0, 0,	$14, $EE
-MMercury_Run24:	dc.b 3			; running 2-4
-		dc.b $EE, 9, 0,	0, $EE
-		dc.b $EE, 1, 0,	6, 6
-		dc.b $FE, $E, 0, 8, $F6
-MMercury_Run31:	dc.b 2			; running 3-1
-		dc.b $F4, 6, 0,	0, $EE
-		dc.b $F4, $B, 0, 6, $FE
-MMercury_Run32:	dc.b 2			; running 3-2
-		dc.b $F4, 6, 0,	0, $EE
-		dc.b $F4, $B, 0, 6, $FE
-MMercury_Run33:	dc.b 2			; running 3-3
-		dc.b $F4, 6, 0,	0, $EE
-		dc.b $F4, $B, 0, 6, $FE
-MMercury_Run34:	dc.b 2			; running 3-4
-		dc.b $F4, 6, 0,	0, $EE
-		dc.b $F4, $B, 0, 6, $FE
-MMercury_Run41:	dc.b 4			; running 4-1
-		dc.b $FA, 6, 0,	0, $EE
-		dc.b $F2, 4, 0,	6, $EE
-		dc.b $EA, $B, 0, 8, $FE
-		dc.b $A, 0, 0, $14, $FE
-MMercury_Run42:	dc.b 2			; running 4-2
-		dc.b $F2, 7, 0,	0, $EE
-		dc.b $EA, $B, 0, 8, $FE
-MMercury_Run43:	dc.b 4			; running 4-3
-		dc.b $FA, 6, 0,	0, $EE
-		dc.b $F2, 4, 0,	6, $EE
-		dc.b $EA, $B, 0, 8, $FE
-		dc.b $A, 0, 0, $14, $FE
-MMercury_Run44:	dc.b 2			; running 4-4
-		dc.b $F2, 7, 0,	0, $EE
-		dc.b $EA, $B, 0, 8, $FE
-MMercury_Roll1:	dc.b 1			; rolling 1
-		dc.b $F0, $F, 0, 0, $F0
-MMercury_Roll2:	dc.b 1			; rolling 2
-		dc.b $F0, $F, 0, 0, $F0
-MMercury_Roll3:	dc.b 1			; rolling 3
-		dc.b $F0, $F, 0, 0, $F0
-MMercury_Roll4:	dc.b 1			; rolling 4
-		dc.b $F0, $F, 0, 0, $F0
-MMercury_Roll5:	dc.b 1			; rolling 5
-		dc.b $F0, $F, 0, 0, $F0
-MMercury_Warp1:	dc.b 2			; warped 1 (unused)
-		dc.b $F4, $E, 0, 0, $EC
-		dc.b $F4, 2, 0,	$C, $C
-MMercury_Warp2:	dc.b 1			; warped 2 (unused)
-		dc.b $F0, $F, 0, 0, $F0
-MMercury_Warp3:	dc.b 2			; warped 3 (unused)
-		dc.b $EC, $B, 0, 0, $F4
-		dc.b $C, 8, 0, $C, $F4
-MMercury_Warp4:	dc.b 1			; warped 4 (unused)
-		dc.b $F0, $F, 0, 0, $F0
-MMercury_Stop1:	dc.b 2			; stopping 1
-		dc.b $ED, 9, 0,	0, $F0
-		dc.b $FD, $E, 0, 6, $F0
-MMercury_Stop2:	dc.b 4			; stopping 2
-		dc.b $ED, 9, 0,	0, $F0
-		dc.b $FD, $D, 0, 6, $F0
-		dc.b $D, 4, 0, $E, 0
-		dc.b 5,	0, 0, $10, $E8
-MMercury_Duck:	dc.b 4			; ducking
-		dc.b $F4, 4, 0,	0, $FC
-		dc.b $FC, $D, 0, 2, $F4
-		dc.b $C, 8, 0, $A, $F4
-		dc.b 4,	0, 0, $D, $EC
-MMercury_Balance1:	dc.b 3			; balancing 1
-		dc.b $EC, 8, 8,	0, $E8
-		dc.b $F4, 2, 8,	3, 0
-		dc.b $F4, $F, 8, 6, $E0
-MMercury_Balance2:	dc.b 3			; balancing 2
-		dc.b $EC, $E, 8, 0, $E8
-		dc.b 4,	$D, 8, $C, $E0
-		dc.b $C, 0, $18, $14, 0
-MMercury_Float1:	dc.b 3			; spinning 1 (LZ)
-		dc.b $F4, $D, 0, 0, $FC
-		dc.b $FC, 5, 0,	8, $EC
-		dc.b 4,	8, 0, $C, $FC
-MMercury_Float2:	dc.b 2			; spinning 2 (LZ)
-		dc.b $F4, $A, 0, 0, $E8
-		dc.b $F4, $A, 8, 0, 0
-MMercury_Float3:	dc.b 3			; spinning 3 (LZ)
-		dc.b $F4, $D, 0, 0, $E4
-		dc.b $FC, 0, 0,	8, 4
-		dc.b 4,	$C, 0, 9, $EC
-MMercury_Float4:	dc.b 3			; spinning 4 (LZ)
-		dc.b $F4, $D, 0, 0, $FC
-		dc.b $FC, 5, 0,	8, $EC
-		dc.b 4,	8, 0, $C, $FC
-MMercury_Spring:	dc.b 3			; bouncing on a spring
-		dc.b $E8, $B, 0, 0, $F0
-		dc.b 8,	4, 0, $C, $F8
-		dc.b $10, 0, 0,	$E, $F8
-MMercury_Hang1:	dc.b 4			; hanging 1 (LZ)
-		dc.b $F8, $E, 0, 0, $E8
-		dc.b 0,	5, 0, $C, 8
-		dc.b $F8, 0, 0,	$10, 8
-		dc.b $F0, 0, 0,	$11, $F8
-MMercury_Hang2:	dc.b 4			; hanging 2 (LZ)
-		dc.b $F8, $E, 0, 0, $E8
-		dc.b 0,	5, 0, $C, 8
-		dc.b $F8, 0, 0,	$10, 8
-		dc.b $F0, 0, 0,	$11, $F8
-MMercury_Leap1:	dc.b 5			; celebration leap 1 (unused)
-		dc.b $E8, $A, 0, 0, $F4
-		dc.b $F0, 1, 0,	9, $C
-		dc.b 0,	9, 0, $B, $F4
-		dc.b $10, 4, 0,	$11, $F4
-		dc.b 0,	0, 0, $13, $EC
-MMercury_Leap2:	dc.b 5			; celebration leap 2 (unused)
-		dc.b $E8, $A, 0, 0, $F4
-		dc.b $E8, 1, 0,	9, $C
-		dc.b 0,	9, 0, $B, $F4
-		dc.b $10, 4, 0,	$11, $F4
-		dc.b 0,	0, 0, $13, $EC
-MMercury_Push1:	dc.b 2			; pushing 1
-		dc.b $ED, $A, 0, 0, $F3
-		dc.b 5,	$D, 0, 9, $EB
-MMercury_Push2:	dc.b 3			; pushing 2
-		dc.b $EC, $A, 0, 0, $F3
-		dc.b 4,	8, 0, 9, $F3
-		dc.b $C, 4, 0, $C, $F3
-MMercury_Push3:	dc.b 2			; pushing 3
-		dc.b $ED, $A, 0, 0, $F3
-		dc.b 5,	$D, 0, 9, $EB
-MMercury_Push4:	dc.b 3			; pushing 4
-		dc.b $EC, $A, 0, 0, $F3
-		dc.b 4,	8, 0, 9, $F3
-		dc.b $C, 4, 0, $C, $F3
-MMercury_Surf:	dc.b 2			; surfing or sliding (unused)
-		dc.b $EC, 9, 0,	0, $F0
-		dc.b $FC, $E, 0, 6, $F0
-MMercury_BubStand:	dc.b 3			; collecting bubble (unused)
-		dc.b $EC, $A, 0, 0, $F0
-		dc.b 4,	5, 0, 9, $F8
-		dc.b $E4, 0, 0,	$D, $F8
-MMercury_Burnt:	dc.b 3			; grey death
-		dc.b $E8, $D, 0, 0, $EC
-		dc.b $E8, 1, 0,	8, $C
-		dc.b $F8, $B, 0, $A, $F4
-MMercury_Drown:	dc.b 5			; drowning
-		dc.b $E8, $D, 0, 0, $EC
-		dc.b $E8, 1, 0,	8, $C
-		dc.b $F8, 9, 0,	$A, $F4
-		dc.b 8,	$C, 0, $10, $F4
-		dc.b $10, 0, 0,	$14, $F4
-MMercury_Death:	dc.b 5			; death
-		dc.b $E8, $D, 0, 0, $EC
-		dc.b $E8, 1, 0,	8, $C
-		dc.b $F8, 9, 0,	$A, $F4
-		dc.b 8,	$C, 0, $10, $F4
-		dc.b $10, 0, 0,	$14, $F4
-MMercury_Shrink1:	dc.b 2			; shrinking 1 (unused)
-		dc.b $EC, 8, 0,	0, $F0
-		dc.b $F4, $F, 0, 3, $F0
-MMercury_Shrink2:	dc.b 3			; shrinking 2 (unused)
-		dc.b $EC, 8, 0,	0, $F0
-		dc.b $F4, $E, 0, 3, $F0
-		dc.b $C, 8, 0, $F, $F8
-MMercury_Shrink3:	dc.b 1			; shrinking 3 (unused)
-		dc.b $F0, $B, 0, 0, $F4
-MMercury_Shrink4:	dc.b 1			; shrinking 4 (unused)
-		dc.b $F4, 6, 0,	0, $F8
-MMercury_Shrink5:	dc.b 1			; shrinking 5 (unused)
-		dc.b $F8, 1, 0,	0, $FC
-MMercury_Float5:	dc.b 3			; spinning 5 (LZ)
-		dc.b $F4, $D, 8, 0, $E4
-		dc.b $FC, 5, 8,	8, 4
-		dc.b 4,	8, 8, $C, $EC
-MMercury_Float6:	dc.b 3			; spinning 6 (LZ)
-		dc.b $F4, $D, 8, 0, $FC
-		dc.b $FC, 0, 8,	8, $F4
-		dc.b 4,	$C, 8, 9, $F4
-MMercury_Injury:	dc.b 3			; injury
-		dc.b $F0, $E, 0, 0, $EC
-		dc.b $F8, 1, 0,	$C, $C
-		dc.b 8,	$C, 0, $E, $F4
-MMercury_GetAir:	dc.b 3			; collecting bubble (LZ)
-		dc.b $EB, 9, 0,	0, $F4
-		dc.b $FB, $E, 0, 6, $EC
-		dc.b 3,	1, 0, $12, $C
-MMercury_WaterSlide:	dc.b 2			; water slide (LZ)
-		dc.b $F0, $F, 0, 0, $EC
-		dc.b $F8, 2, 0,	$10, $C
-		even
+Map_6f0c:
+Map_6f0c_0: 	dc.w Map_6f0c_B2-Map_6f0c
+Map_6f0c_2: 	dc.w Map_6f0c_B3-Map_6f0c
+Map_6f0c_4: 	dc.w Map_6f0c_BE-Map_6f0c
+Map_6f0c_6: 	dc.w Map_6f0c_CE-Map_6f0c
+Map_6f0c_8: 	dc.w Map_6f0c_D9-Map_6f0c
+Map_6f0c_A: 	dc.w Map_6f0c_EE-Map_6f0c
+Map_6f0c_C: 	dc.w Map_6f0c_FE-Map_6f0c
+Map_6f0c_E: 	dc.w Map_6f0c_113-Map_6f0c
+Map_6f0c_10: 	dc.w Map_6f0c_128-Map_6f0c
+Map_6f0c_12: 	dc.w Map_6f0c_13D-Map_6f0c
+Map_6f0c_14: 	dc.w Map_6f0c_14D-Map_6f0c
+Map_6f0c_16: 	dc.w Map_6f0c_15D-Map_6f0c
+Map_6f0c_18: 	dc.w Map_6f0c_172-Map_6f0c
+Map_6f0c_1A: 	dc.w Map_6f0c_18C-Map_6f0c
+Map_6f0c_1C: 	dc.w Map_6f0c_1A6-Map_6f0c
+Map_6f0c_1E: 	dc.w Map_6f0c_1BB-Map_6f0c
+Map_6f0c_20: 	dc.w Map_6f0c_1D5-Map_6f0c
+Map_6f0c_22: 	dc.w Map_6f0c_1EF-Map_6f0c
+Map_6f0c_24: 	dc.w Map_6f0c_204-Map_6f0c
+Map_6f0c_26: 	dc.w Map_6f0c_219-Map_6f0c
+Map_6f0c_28: 	dc.w Map_6f0c_22E-Map_6f0c
+Map_6f0c_2A: 	dc.w Map_6f0c_243-Map_6f0c
+Map_6f0c_2C: 	dc.w Map_6f0c_253-Map_6f0c
+Map_6f0c_2E: 	dc.w Map_6f0c_263-Map_6f0c
+Map_6f0c_30: 	dc.w Map_6f0c_278-Map_6f0c
+Map_6f0c_32: 	dc.w Map_6f0c_292-Map_6f0c
+Map_6f0c_34: 	dc.w Map_6f0c_2AC-Map_6f0c
+Map_6f0c_36: 	dc.w Map_6f0c_2C1-Map_6f0c
+Map_6f0c_38: 	dc.w Map_6f0c_2DB-Map_6f0c
+Map_6f0c_3A: 	dc.w Map_6f0c_2F5-Map_6f0c
+Map_6f0c_3C: 	dc.w Map_6f0c_30A-Map_6f0c
+Map_6f0c_3E: 	dc.w Map_6f0c_31F-Map_6f0c
+Map_6f0c_40: 	dc.w Map_6f0c_334-Map_6f0c
+Map_6f0c_42: 	dc.w Map_6f0c_344-Map_6f0c
+Map_6f0c_44: 	dc.w Map_6f0c_359-Map_6f0c
+Map_6f0c_46: 	dc.w Map_6f0c_373-Map_6f0c
+Map_6f0c_48: 	dc.w Map_6f0c_388-Map_6f0c
+Map_6f0c_4A: 	dc.w Map_6f0c_3A2-Map_6f0c
+Map_6f0c_4C: 	dc.w Map_6f0c_3B7-Map_6f0c
+Map_6f0c_4E: 	dc.w Map_6f0c_3CC-Map_6f0c
+Map_6f0c_50: 	dc.w Map_6f0c_3E1-Map_6f0c
+Map_6f0c_52: 	dc.w Map_6f0c_3F1-Map_6f0c
+Map_6f0c_54: 	dc.w Map_6f0c_406-Map_6f0c
+Map_6f0c_56: 	dc.w Map_6f0c_420-Map_6f0c
+Map_6f0c_58: 	dc.w Map_6f0c_435-Map_6f0c
+Map_6f0c_5A: 	dc.w Map_6f0c_44F-Map_6f0c
+Map_6f0c_5C: 	dc.w Map_6f0c_464-Map_6f0c
+Map_6f0c_5E: 	dc.w Map_6f0c_474-Map_6f0c
+Map_6f0c_60: 	dc.w Map_6f0c_484-Map_6f0c
+Map_6f0c_62: 	dc.w Map_6f0c_494-Map_6f0c
+Map_6f0c_64: 	dc.w Map_6f0c_4A4-Map_6f0c
+Map_6f0c_66: 	dc.w Map_6f0c_4B4-Map_6f0c
+Map_6f0c_68: 	dc.w Map_6f0c_4C4-Map_6f0c
+Map_6f0c_6A: 	dc.w Map_6f0c_4D4-Map_6f0c
+Map_6f0c_6C: 	dc.w Map_6f0c_4E4-Map_6f0c
+Map_6f0c_6E: 	dc.w Map_6f0c_4F4-Map_6f0c
+Map_6f0c_70: 	dc.w Map_6f0c_504-Map_6f0c
+Map_6f0c_72: 	dc.w Map_6f0c_514-Map_6f0c
+Map_6f0c_74: 	dc.w Map_6f0c_524-Map_6f0c
+Map_6f0c_76: 	dc.w Map_6f0c_539-Map_6f0c
+Map_6f0c_78: 	dc.w Map_6f0c_549-Map_6f0c
+Map_6f0c_7A: 	dc.w Map_6f0c_55E-Map_6f0c
+Map_6f0c_7C: 	dc.w Map_6f0c_56E-Map_6f0c
+Map_6f0c_7E: 	dc.w Map_6f0c_583-Map_6f0c
+Map_6f0c_80: 	dc.w Map_6f0c_59D-Map_6f0c
+Map_6f0c_82: 	dc.w Map_6f0c_5AD-Map_6f0c
+Map_6f0c_84: 	dc.w Map_6f0c_5C7-Map_6f0c
+Map_6f0c_86: 	dc.w Map_6f0c_5E1-Map_6f0c
+Map_6f0c_88: 	dc.w Map_6f0c_5F1-Map_6f0c
+Map_6f0c_8A: 	dc.w Map_6f0c_601-Map_6f0c
+Map_6f0c_8C: 	dc.w Map_6f0c_616-Map_6f0c
+Map_6f0c_8E: 	dc.w Map_6f0c_62B-Map_6f0c
+Map_6f0c_90: 	dc.w Map_6f0c_63B-Map_6f0c
+Map_6f0c_92: 	dc.w Map_6f0c_650-Map_6f0c
+Map_6f0c_94: 	dc.w Map_6f0c_660-Map_6f0c
+Map_6f0c_96: 	dc.w Map_6f0c_66B-Map_6f0c
+Map_6f0c_98: 	dc.w Map_6f0c_67B-Map_6f0c
+Map_6f0c_9A: 	dc.w Map_6f0c_68B-Map_6f0c
+Map_6f0c_9C: 	dc.w Map_6f0c_696-Map_6f0c
+Map_6f0c_9E: 	dc.w Map_6f0c_6A6-Map_6f0c
+Map_6f0c_A0: 	dc.w Map_6f0c_6B6-Map_6f0c
+Map_6f0c_A2: 	dc.w Map_6f0c_6C6-Map_6f0c
+Map_6f0c_A4: 	dc.w Map_6f0c_6D6-Map_6f0c
+Map_6f0c_A6: 	dc.w Map_6f0c_6E6-Map_6f0c
+Map_6f0c_A8: 	dc.w Map_6f0c_6FB-Map_6f0c
+Map_6f0c_AA: 	dc.w Map_6f0c_710-Map_6f0c
+Map_6f0c_AC: 	dc.w Map_6f0c_720-Map_6f0c
+Map_6f0c_AE: 	dc.w Map_6f0c_730-Map_6f0c
+Map_6f0c_B0: 	dc.w Map_6f0c_740-Map_6f0c
+Map_6f0c_B2: 	dc.b $0
+Map_6f0c_B3: 	dc.b $2
+	dc.b $E7, $E, $0, $0, $F0
+	dc.b $FF, $A, $0, $C, $F8
+Map_6f0c_BE: 	dc.b $3
+	dc.b $E5, $B, $0, $0, $F5
+	dc.b $5, $9, $0, $C, $F5
+	dc.b $ED, $2, $0, $12, $D
+Map_6f0c_CE: 	dc.b $2
+	dc.b $E7, $E, $0, $0, $F0
+	dc.b $FF, $A, $0, $C, $F8
+Map_6f0c_D9: 	dc.b $4
+	dc.b $E5, $B, $0, $0, $F3
+	dc.b $5, $C, $0, $C, $F3
+	dc.b $D, $4, $0, $10, $FB
+	dc.b $ED, $1, $0, $12, $B
+Map_6f0c_EE: 	dc.b $3
+	dc.b $EC, $D, $0, $0, $EF
+	dc.b $E4, $8, $0, $8, $F7
+	dc.b $FC, $A, $0, $B, $F7
+Map_6f0c_FE: 	dc.b $4
+	dc.b $E5, $B, $0, $0, $F3
+	dc.b $5, $9, $0, $C, $F3
+	dc.b $ED, $1, $0, $12, $B
+	dc.b $5, $0, $0, $14, $B
+Map_6f0c_113: 	dc.b $4
+	dc.b $E5, $B, $0, $0, $F3
+	dc.b $5, $9, $0, $C, $F3
+	dc.b $ED, $1, $0, $12, $B
+	dc.b $5, $0, $0, $14, $B
+Map_6f0c_128: 	dc.b $4
+	dc.b $EF, $D, $0, $0, $EE
+	dc.b $E7, $8, $0, $8, $F6
+	dc.b $FF, $9, $0, $B, $F6
+	dc.b $F, $0, $0, $11, $FE
+Map_6f0c_13D: 	dc.b $3
+	dc.b $F0, $D, $0, $0, $EE
+	dc.b $E8, $8, $0, $8, $F6
+	dc.b $0, $A, $0, $B, $F6
+Map_6f0c_14D: 	dc.b $3
+	dc.b $F0, $D, $0, $0, $EE
+	dc.b $E8, $8, $0, $8, $F6
+	dc.b $0, $A, $0, $B, $F6
+Map_6f0c_15D: 	dc.b $4
+	dc.b $EF, $D, $0, $0, $EE
+	dc.b $E7, $8, $0, $8, $F6
+	dc.b $FF, $9, $0, $B, $F6
+	dc.b $F, $0, $0, $11, $FE
+Map_6f0c_172: 	dc.b $5
+	dc.b $EA, $B, $0, $0, $E8
+	dc.b $F2, $0, $0, $C, $E0
+	dc.b $F2, $3, $0, $D, $0
+	dc.b $FA, $2, $0, $11, $8
+	dc.b $A, $0, $0, $14, $F8
+Map_6f0c_18C: 	dc.b $5
+	dc.b $EA, $B, $0, $0, $E8
+	dc.b $F2, $0, $0, $C, $E0
+	dc.b $F2, $3, $0, $D, $0
+	dc.b $FA, $2, $0, $11, $8
+	dc.b $A, $0, $0, $14, $F8
+Map_6f0c_1A6: 	dc.b $4
+	dc.b $E9, $B, $0, $0, $E7
+	dc.b $9, $8, $0, $C, $F7
+	dc.b $F1, $2, $0, $F, $FF
+	dc.b $F9, $1, $0, $12, $7
+Map_6f0c_1BB: 	dc.b $5
+	dc.b $E8, $B, $0, $0, $E9
+	dc.b $F0, $1, $0, $C, $E1
+	dc.b $F8, $3, $0, $E, $1
+	dc.b $0, $0, $0, $12, $9
+	dc.b $8, $0, $0, $13, $F9
+Map_6f0c_1D5: 	dc.b $5
+	dc.b $E8, $B, $0, $0, $E9
+	dc.b $F0, $1, $0, $C, $E1
+	dc.b $F8, $3, $0, $E, $1
+	dc.b $0, $0, $0, $12, $9
+	dc.b $8, $0, $0, $13, $F9
+Map_6f0c_1EF: 	dc.b $4
+	dc.b $E9, $B, $0, $0, $E7
+	dc.b $9, $8, $0, $C, $F7
+	dc.b $F1, $2, $0, $F, $FF
+	dc.b $F9, $1, $0, $12, $7
+Map_6f0c_204: 	dc.b $4
+	dc.b $F8, $E, $0, $0, $E4
+	dc.b $F0, $4, $0, $C, $EC
+	dc.b $F0, $3, $0, $E, $4
+	dc.b $F8, $2, $0, $12, $C
+Map_6f0c_219: 	dc.b $4
+	dc.b $F8, $E, $0, $0, $E4
+	dc.b $F0, $4, $0, $C, $EC
+	dc.b $F0, $3, $0, $E, $4
+	dc.b $F8, $2, $0, $12, $C
+Map_6f0c_22E: 	dc.b $4
+	dc.b $F5, $E, $0, $0, $E6
+	dc.b $D, $4, $0, $C, $EE
+	dc.b $F5, $2, $0, $E, $6
+	dc.b $FD, $0, $0, $11, $E
+Map_6f0c_243: 	dc.b $3
+	dc.b $F5, $E, $0, $0, $E7
+	dc.b $D, $4, $0, $C, $EF
+	dc.b $F5, $6, $0, $E, $7
+Map_6f0c_253: 	dc.b $3
+	dc.b $F5, $E, $0, $0, $E7
+	dc.b $D, $4, $0, $C, $EF
+	dc.b $F5, $6, $0, $E, $7
+Map_6f0c_263: 	dc.b $4
+	dc.b $F5, $E, $0, $0, $E6
+	dc.b $D, $4, $0, $C, $EE
+	dc.b $F5, $2, $0, $E, $6
+	dc.b $FD, $0, $0, $11, $E
+Map_6f0c_278: 	dc.b $5
+	dc.b $FF, $E, $0, $0, $E9
+	dc.b $F7, $C, $0, $C, $F1
+	dc.b $17, $0, $0, $10, $F1
+	dc.b $EF, $8, $0, $11, $F9
+	dc.b $FF, $0, $0, $14, $9
+Map_6f0c_292: 	dc.b $5
+	dc.b $FF, $E, $0, $0, $E9
+	dc.b $F7, $C, $0, $C, $F1
+	dc.b $17, $0, $0, $10, $F1
+	dc.b $EF, $8, $0, $11, $F9
+	dc.b $FF, $0, $0, $14, $9
+Map_6f0c_2AC: 	dc.b $4
+	dc.b $EA, $2, $0, $0, $A
+	dc.b $F2, $7, $0, $3, $FA
+	dc.b $FA, $7, $0, $B, $EA
+	dc.b $12, $0, $0, $13, $FA
+Map_6f0c_2C1: 	dc.b $5
+	dc.b $FE, $E, $0, $0, $E7
+	dc.b $16, $4, $0, $C, $EF
+	dc.b $F6, $C, $0, $E, $F7
+	dc.b $EE, $0, $0, $12, $FF
+	dc.b $FE, $0, $0, $13, $7
+Map_6f0c_2DB: 	dc.b $5
+	dc.b $FE, $E, $0, $0, $E7
+	dc.b $16, $4, $0, $C, $EF
+	dc.b $F6, $C, $0, $E, $F7
+	dc.b $EE, $0, $0, $12, $FF
+	dc.b $FE, $0, $0, $13, $7
+Map_6f0c_2F5: 	dc.b $4
+	dc.b $EA, $2, $0, $0, $A
+	dc.b $F2, $7, $0, $3, $FA
+	dc.b $FA, $7, $0, $B, $EA
+	dc.b $12, $0, $0, $13, $FA
+Map_6f0c_30A: 	dc.b $4
+	dc.b $E5, $B, $0, $0, $F3
+	dc.b $5, $9, $0, $C, $F3
+	dc.b $ED, $1, $0, $12, $B
+	dc.b $5, $0, $0, $14, $B
+Map_6f0c_31F: 	dc.b $4
+	dc.b $EF, $D, $0, $0, $EE
+	dc.b $E7, $8, $0, $8, $F6
+	dc.b $FF, $9, $0, $B, $F6
+	dc.b $F, $0, $0, $11, $FE
+Map_6f0c_334: 	dc.b $3
+	dc.b $F0, $D, $0, $0, $EE
+	dc.b $E8, $8, $0, $8, $F6
+	dc.b $0, $A, $0, $B, $F6
+Map_6f0c_344: 	dc.b $4
+	dc.b $EF, $D, $0, $0, $EE
+	dc.b $E7, $8, $0, $8, $F6
+	dc.b $FF, $9, $0, $B, $F6
+	dc.b $F, $0, $0, $11, $FE
+Map_6f0c_359: 	dc.b $5
+	dc.b $EA, $B, $0, $0, $E8
+	dc.b $F2, $0, $0, $C, $E0
+	dc.b $F2, $3, $0, $D, $0
+	dc.b $FA, $2, $0, $11, $8
+	dc.b $A, $0, $0, $14, $F8
+Map_6f0c_373: 	dc.b $4
+	dc.b $E9, $B, $0, $0, $E7
+	dc.b $9, $8, $0, $C, $F7
+	dc.b $F1, $2, $0, $F, $FF
+	dc.b $F9, $1, $0, $12, $7
+Map_6f0c_388: 	dc.b $5
+	dc.b $E8, $B, $0, $0, $E9
+	dc.b $F0, $1, $0, $C, $E1
+	dc.b $F8, $3, $0, $E, $1
+	dc.b $0, $0, $0, $12, $9
+	dc.b $8, $0, $0, $13, $F9
+Map_6f0c_3A2: 	dc.b $4
+	dc.b $E9, $B, $0, $0, $E7
+	dc.b $9, $8, $0, $C, $F7
+	dc.b $F1, $2, $0, $F, $FF
+	dc.b $F9, $1, $0, $12, $7
+Map_6f0c_3B7: 	dc.b $4
+	dc.b $F8, $E, $0, $0, $E4
+	dc.b $F0, $4, $0, $C, $EC
+	dc.b $F0, $3, $0, $E, $4
+	dc.b $F8, $2, $0, $12, $C
+Map_6f0c_3CC: 	dc.b $4
+	dc.b $F5, $E, $0, $0, $E6
+	dc.b $D, $4, $0, $C, $EE
+	dc.b $F5, $2, $0, $E, $6
+	dc.b $FD, $0, $0, $11, $E
+Map_6f0c_3E1: 	dc.b $3
+	dc.b $F5, $E, $0, $0, $E7
+	dc.b $D, $4, $0, $C, $EF
+	dc.b $F5, $6, $0, $E, $7
+Map_6f0c_3F1: 	dc.b $4
+	dc.b $F5, $E, $0, $0, $E6
+	dc.b $D, $4, $0, $C, $EE
+	dc.b $F5, $2, $0, $E, $6
+	dc.b $FD, $0, $0, $11, $E
+Map_6f0c_406: 	dc.b $5
+	dc.b $FF, $E, $0, $0, $E9
+	dc.b $F7, $C, $0, $C, $F1
+	dc.b $17, $0, $0, $10, $F1
+	dc.b $EF, $8, $0, $11, $F9
+	dc.b $FF, $0, $0, $14, $9
+Map_6f0c_420: 	dc.b $4
+	dc.b $EA, $2, $0, $0, $A
+	dc.b $F2, $7, $0, $3, $FA
+	dc.b $FA, $7, $0, $B, $EA
+	dc.b $12, $0, $0, $13, $FA
+Map_6f0c_435: 	dc.b $5
+	dc.b $FE, $E, $0, $0, $E7
+	dc.b $16, $4, $0, $C, $EF
+	dc.b $F6, $C, $0, $E, $F7
+	dc.b $EE, $0, $0, $12, $FF
+	dc.b $FE, $0, $0, $13, $7
+Map_6f0c_44F: 	dc.b $4
+	dc.b $EA, $2, $0, $0, $A
+	dc.b $F2, $7, $0, $3, $FA
+	dc.b $FA, $7, $0, $B, $EA
+	dc.b $12, $0, $0, $13, $FA
+Map_6f0c_464: 	dc.b $3
+	dc.b $EC, $E, $0, $0, $ED
+	dc.b $E4, $8, $0, $C, $F5
+	dc.b $4, $9, $0, $F, $F5
+Map_6f0c_474: 	dc.b $3
+	dc.b $EC, $E, $0, $0, $ED
+	dc.b $E4, $8, $0, $C, $F5
+	dc.b $4, $9, $0, $F, $F5
+Map_6f0c_484: 	dc.b $3
+	dc.b $EC, $E, $0, $0, $ED
+	dc.b $E4, $8, $0, $C, $F5
+	dc.b $4, $9, $0, $F, $F5
+Map_6f0c_494: 	dc.b $3
+	dc.b $EC, $E, $0, $0, $ED
+	dc.b $E4, $8, $0, $C, $F5
+	dc.b $4, $9, $0, $F, $F5
+Map_6f0c_4A4: 	dc.b $3
+	dc.b $EC, $E, $0, $0, $ED
+	dc.b $E4, $8, $0, $C, $F5
+	dc.b $4, $9, $0, $F, $F5
+Map_6f0c_4B4: 	dc.b $3
+	dc.b $EC, $E, $0, $0, $ED
+	dc.b $E4, $8, $0, $C, $F5
+	dc.b $4, $9, $0, $F, $F5
+Map_6f0c_4C4: 	dc.b $3
+	dc.b $EC, $E, $0, $0, $ED
+	dc.b $E4, $8, $0, $C, $F5
+	dc.b $4, $9, $0, $F, $F5
+Map_6f0c_4D4: 	dc.b $3
+	dc.b $EC, $E, $0, $0, $ED
+	dc.b $E4, $8, $0, $C, $F5
+	dc.b $4, $9, $0, $F, $F5
+Map_6f0c_4E4: 	dc.b $3
+	dc.b $EC, $E, $0, $0, $ED
+	dc.b $E4, $8, $0, $C, $F5
+	dc.b $4, $9, $0, $F, $F5
+Map_6f0c_4F4: 	dc.b $3
+	dc.b $ED, $D, $0, $0, $EE
+	dc.b $E5, $8, $0, $8, $F6
+	dc.b $FD, $A, $0, $B, $F6
+Map_6f0c_504: 	dc.b $3
+	dc.b $E5, $E, $0, $0, $F2
+	dc.b $FD, $A, $0, $C, $F2
+	dc.b $5, $0, $0, $15, $A
+Map_6f0c_514: 	dc.b $3
+	dc.b $EC, $E, $0, $0, $ED
+	dc.b $E4, $8, $0, $C, $F5
+	dc.b $4, $9, $0, $F, $F5
+Map_6f0c_524: 	dc.b $4
+	dc.b $E5, $B, $8, $0, $FB
+	dc.b $5, $C, $8, $C, $F3
+	dc.b $D, $4, $8, $10, $FB
+	dc.b $ED, $1, $8, $12, $F3
+Map_6f0c_539: 	dc.b $3
+	dc.b $E5, $E, $8, $0, $F5
+	dc.b $FD, $A, $8, $C, $FD
+	dc.b $5, $0, $8, $15, $F5
+Map_6f0c_549: 	dc.b $4
+	dc.b $FC, $C, $8, $0, $F4
+	dc.b $E4, $A, $8, $4, $F4
+	dc.b $4, $9, $8, $D, $F4
+	dc.b $EC, $1, $8, $13, $EC
+Map_6f0c_55E: 	dc.b $3
+	dc.b $E4, $E, $8, $0, $EF
+	dc.b $FC, $A, $8, $C, $F7
+	dc.b $4, $0, $8, $15, $EF
+Map_6f0c_56E: 	dc.b $4
+	dc.b $FC, $D, $0, $0, $ED
+	dc.b $E4, $A, $0, $8, $F5
+	dc.b $C, $4, $0, $11, $F5
+	dc.b $EC, $1, $0, $13, $D
+Map_6f0c_583: 	dc.b $5
+	dc.b $EF, $F, $8, $0, $F4
+	dc.b $E7, $C, $8, $10, $EC
+	dc.b $F, $4, $8, $14, $FC
+	dc.b $EF, $1, $8, $16, $EC
+	dc.b $7, $0, $8, $18, $EC
+Map_6f0c_59D: 	dc.b $3
+	dc.b $EC, $D, $0, $0, $EF
+	dc.b $E4, $8, $0, $8, $F7
+	dc.b $FC, $A, $0, $B, $F7
+Map_6f0c_5AD: 	dc.b $5
+	dc.b $EF, $F, $0, $0, $EC
+	dc.b $E7, $C, $0, $10, $F4
+	dc.b $F, $4, $0, $14, $F4
+	dc.b $EF, $1, $0, $16, $C
+	dc.b $7, $0, $0, $18, $C
+Map_6f0c_5C7: 	dc.b $5
+	dc.b $EF, $F, $0, $0, $EC
+	dc.b $E7, $C, $0, $10, $F4
+	dc.b $F, $4, $0, $14, $F4
+	dc.b $EF, $1, $0, $16, $C
+	dc.b $7, $0, $0, $18, $C
+Map_6f0c_5E1: 	dc.b $3
+	dc.b $ED, $D, $0, $0, $EE
+	dc.b $E5, $8, $0, $8, $F6
+	dc.b $FD, $A, $0, $B, $F6
+Map_6f0c_5F1: 	dc.b $3
+	dc.b $EC, $D, $0, $0, $EF
+	dc.b $E4, $8, $0, $8, $F7
+	dc.b $FC, $A, $0, $B, $F7
+Map_6f0c_601: 	dc.b $4
+	dc.b $E5, $B, $0, $0, $F3
+	dc.b $5, $9, $0, $C, $F3
+	dc.b $ED, $1, $0, $12, $B
+	dc.b $5, $0, $0, $14, $B
+Map_6f0c_616: 	dc.b $4
+	dc.b $EF, $D, $0, $0, $EE
+	dc.b $E7, $8, $0, $8, $F6
+	dc.b $FF, $9, $0, $B, $F6
+	dc.b $F, $0, $0, $11, $FE
+Map_6f0c_62B: 	dc.b $3
+	dc.b $F0, $D, $0, $0, $EE
+	dc.b $E8, $8, $0, $8, $F6
+	dc.b $0, $A, $0, $B, $F6
+Map_6f0c_63B: 	dc.b $4
+	dc.b $EF, $D, $0, $0, $EE
+	dc.b $E7, $8, $0, $8, $F6
+	dc.b $FF, $9, $0, $B, $F6
+	dc.b $F, $0, $0, $11, $FE
+Map_6f0c_650: 	dc.b $3
+	dc.b $EC, $E, $0, $0, $ED
+	dc.b $E4, $8, $0, $C, $F5
+	dc.b $4, $9, $0, $F, $F5
+Map_6f0c_660: 	dc.b $2
+	dc.b $EC, $E, $0, $0, $F0
+	dc.b $4, $9, $0, $C, $F8
+Map_6f0c_66B: 	dc.b $3
+	dc.b $E5, $E, $0, $0, $F2
+	dc.b $FD, $A, $0, $C, $F2
+	dc.b $5, $0, $0, $15, $A
+Map_6f0c_67B: 	dc.b $3
+	dc.b $E5, $E, $0, $0, $F2
+	dc.b $FD, $A, $0, $C, $F2
+	dc.b $5, $0, $0, $15, $A
+Map_6f0c_68B: 	dc.b $2
+	dc.b $EC, $E, $0, $0, $F0
+	dc.b $4, $9, $0, $C, $F8
+Map_6f0c_696: 	dc.b $3
+	dc.b $E5, $E, $0, $0, $F2
+	dc.b $FD, $A, $0, $C, $F2
+	dc.b $5, $0, $0, $15, $A
+Map_6f0c_6A6: 	dc.b $3
+	dc.b $E5, $E, $0, $0, $F2
+	dc.b $FD, $A, $0, $C, $F2
+	dc.b $5, $0, $0, $15, $A
+Map_6f0c_6B6: 	dc.b $3
+	dc.b $E5, $E, $0, $0, $F2
+	dc.b $FD, $A, $0, $C, $F2
+	dc.b $5, $0, $0, $15, $A
+Map_6f0c_6C6: 	dc.b $3
+	dc.b $E5, $E, $0, $0, $F2
+	dc.b $FD, $A, $0, $C, $F2
+	dc.b $5, $0, $0, $15, $A
+Map_6f0c_6D6: 	dc.b $3
+	dc.b $E5, $E, $0, $0, $F2
+	dc.b $FD, $A, $0, $C, $F2
+	dc.b $5, $0, $0, $15, $A
+Map_6f0c_6E6: 	dc.b $4
+	dc.b $FC, $C, $0, $0, $ED
+	dc.b $E4, $A, $0, $4, $F5
+	dc.b $4, $9, $0, $D, $F6
+	dc.b $EC, $1, $0, $13, $D
+Map_6f0c_6FB: 	dc.b $4
+	dc.b $FC, $D, $8, $0, $F5
+	dc.b $E4, $A, $8, $8, $F5
+	dc.b $C, $4, $8, $11, $FD
+	dc.b $EC, $1, $8, $13, $ED
+Map_6f0c_710: 	dc.b $3
+	dc.b $E5, $E, $0, $0, $F2
+	dc.b $FD, $A, $0, $C, $F2
+	dc.b $5, $0, $0, $15, $A
+Map_6f0c_720: 	dc.b $3
+	dc.b $E5, $E, $0, $0, $F2
+	dc.b $FD, $A, $0, $C, $F2
+	dc.b $5, $0, $0, $15, $A
+Map_6f0c_730: 	dc.b $3
+	dc.b $E5, $E, $0, $0, $F2
+	dc.b $FD, $A, $0, $C, $F2
+	dc.b $5, $0, $0, $15, $A
+Map_6f0c_740: 	dc.b $3
+	dc.b $E5, $E, $0, $0, $F2
+	dc.b $FD, $A, $0, $C, $F2
+	dc.b $5, $0, $0, $15, $A
+	even

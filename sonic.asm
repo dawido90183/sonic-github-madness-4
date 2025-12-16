@@ -7957,7 +7957,6 @@ Ani_\name:	include	"!Characters\\\name\\Anim.asm"
 		; CHAR ADD STUFF
 
 		anim_char Sonic
-		anim_char GHM3_Mercury
 		anim_char GHM3half_Jupiter
 
 
