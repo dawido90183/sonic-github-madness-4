@@ -156,8 +156,8 @@ ptr_mus20:	dc.l Music20
 ptr_mus21:	dc.l Music21
 ptr_mus22:	dc.l Music22
 ptr_mus23:	dc.l Music23
-;ptr_mus24:	dc.l Music24
-;ptr_mus25:	dc.l Music25
+ptr_mus24:	dc.l Music24
+ptr_mus25:	dc.l Music25
 ;ptr_mus26:	dc.l Music26
 ;ptr_mus27:	dc.l Music27
 ;ptr_mus28:	dc.l Music28
@@ -2677,6 +2677,10 @@ Music21:	include	"sound/music/TG2000Tracks/SadMac.asm"
 Music22:	include	"sound/music/TG2000Tracks/TG2000Jingle.asm"
 		even
 Music23:	include	"sound/music/sanetracks/MM8 - Stage Select.asm"
+		even
+Music24:	include	"sound/music/TG2000Tracks/DoomGate.asm"
+		even
+Music25:	include	"sound/music/MikeBoard.asm"
 		even
 
 ; ---------------------------------------------------------------------------
