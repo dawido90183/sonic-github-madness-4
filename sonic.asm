@@ -22,6 +22,8 @@ Revision:	equ 1
 
 ZoneCount:	equ 6	; discrete zones are: GHZ, MZ, SYZ, LZ, SLZ, and SBZ
 
+CharCount: equ 4
+
 ; ===========================================================================
 
 StartOfRom:
@@ -2163,6 +2165,8 @@ Char_Pal:
 
 	pal_char Sonic
 	pal_char GHM3_Guy
+	pal_char GHM3_Mercury
+	pal_char GHM3half_Jupiter
 	; add next char here
 
 ; ---------------------------------------------------------------------------
@@ -2828,6 +2832,8 @@ FinalTitle:
 		move.l	d0,(a1)+
 		dbf	d1,Tit_ClrObj1	; fill palette with 0 (black)
 
+		move.w	#0,(v_character).w ; Reset character
+
 		disable_ints
 		locVRAM	$4000
 		lea	(Nem_TitleFg).l,a0 ; load title screen patterns
@@ -2937,6 +2943,22 @@ Tit_MainLoop:
 ; ===========================================================================
 
 Tit_ChkRegion:
+		btst	#bitA,(v_jpadpress1).w ; is pressing A?
+		beq.s	@nocharswap
+
+		move.b	#sfx_Bumper,d0
+		bsr.w	PlaySound_Special	; play ring sound when code is entered
+
+		addq.w	#4,(v_character).w
+		cmpi.w	#(CharCount)*4,(v_character).w
+		blt.s	@nocharswap
+
+		bsr.w	PlaySound_Special	; play ring sound when code is entered
+
+		move.w	#0,(v_character).w
+
+	@nocharswap:
+
 		tst.b	(v_megadrive).w	; check if the machine is US or Japanese
 		bpl.s	Tit_RegionJap	; if Japanese, branch
 
@@ -2993,14 +3015,11 @@ loc_3230:
 		beq.w	Tit_MainLoop	; if not, branch
 
 Tit_ChkLevSel:
-		move.w	#0,(v_character).w ; testing
 
 		tst.b	(f_levselcheat).w ; check if level select code is on
 		beq.w	PlayLevel	; if not, play level
 		btst	#bitA,(v_jpadhold1).w ; check if A is pressed
 		beq.w	PlayLevel	; if not, play level
-
-		move.w	#4,(v_character).w ; testing
 
 		moveq	#palid_LevelSel,d0
 		bsr.w	PalLoad2	; load level select palette
@@ -7761,6 +7780,8 @@ Sonic_Index:	dc.w Sonic_Main-Sonic_Index
 Char_Map:	; CHAR ADD STUFF
 	dc.l	Map_Sonic
 	dc.l	Map_Sonic
+	dc.l	Map_GHM3_Mercury
+	dc.l	Map_GHM3half_Jupiter
 	; add next char here
 
 Sonic_Main:	; Routine 0
@@ -7935,6 +7956,8 @@ Ani_\name:	include	"!Characters\\\name\\Anim.asm"
 		; CHAR ADD STUFF
 
 		anim_char Sonic
+		anim_char GHM3_Mercury
+		anim_char GHM3half_Jupiter
 
 
 ; ---------------------------------------------------------------------------
@@ -9401,6 +9424,8 @@ DPLC_\name:	include	"!Characters\\\name\\DPLC.asm"
 	; CHAR ADD STUFF
 
 	map_char Sonic
+	map_char GHM3_Mercury
+	map_char GHM3half_Jupiter
 	; add next char here
 
 ; ---------------------------------------------------------------------------
@@ -9413,6 +9438,8 @@ Art_\name:	incbin	"!Characters\\\name\\Art.bin"
 	; CHAR ADD STUFF
 
 	art_char Sonic
+	art_char GHM3_Mercury
+	art_char GHM3half_Jupiter
 	; add next char here
 		even
 
