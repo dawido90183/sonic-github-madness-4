@@ -575,24 +575,7 @@ VBlank:
 
 		lea		(vdp_data_port).l,a1
         move.l    #$40000010,4(a1) ; go to $0 in VSRAM
-
-		cmpi.b	#id_SegaJP,(v_gamemode).w
-		bne.s	@not_jp
-
-		lea    (v_vscrolltablebuffer).l,a0 ; get buffer from RAM
-        move.w    #($80/4)-1,d1
-
-    @vscrollloop:
-        move.l    (a0)+,(a1) ; send screen y-axis pos. to VSRAM
-        dbf.w    d1,@vscrollloop
-
-		bra.s	@continue
-
-	@not_jp:
 		move.l	(v_scrposy_vdp).w,(a1) ; send screen y-axis pos. to VSRAM
-; ---------------------------------------------------------------------------
-
-	@continue:
 		btst	#6,(v_megadrive).w ; is Megadrive PAL?
 		beq.s	@notPAL		; if not, branch
 
@@ -850,6 +833,46 @@ sub_106E:
 		startZ80
 		rts	
 ; End of function sub_106E
+
+VBlank_SegaJP:
+		movem.l	d0-a6,-(sp)
+		tst.b	(v_vbla_routine).w
+		beq.w	@end
+
+		move.b	#0,(v_vbla_routine).w
+		move.w	#1,(f_hbla_pal).w
+
+		lea		(vdp_data_port).l,a1
+        move.l    #$40000010,4(a1) ; go to $0 in VSRAM
+
+		lea    (v_vscrolltablebuffer).l,a0 ; get buffer from RAM
+        move.w    #($80/4)-1,d1
+
+    @vscrollloop:
+        move.l    (a0)+,(a1) ; send screen y-axis pos. to VSRAM
+        dbf.w    d1,@vscrollloop
+
+        stopZ80
+		waitZ80
+		bsr.w	ReadJoypads
+        writeCRAM	v_pal_dry,$80,0
+        writeVRAM	v_spritetablebuffer,$280,vram_sprites
+		writeVRAM	v_hscrolltablebuffer,$380,vram_hscroll
+		startZ80
+
+		jsr	(Process_DMA).l
+
+		tst.w	(v_generictimer).w
+		beq.w	@end
+		subq.w	#1,(v_generictimer).w
+
+	@end:
+		jsr	(UpdateMusic).l
+		addq.l	#1,(v_vbla_count).w
+		movem.l	(sp)+,d0-a6
+		rte
+
+		rts
 
 ; ---------------------------------------------------------------------------
 ; Horizontal interrupt
@@ -2276,6 +2299,31 @@ Sega_GotoTitle:
 		move.b	#id_SplashScreen,(v_gamemode).w ; go to splash screen
 		rts	
 ; ===========================================================================
+SonicSegaJP:
+		; sonic's "object" is stored on $8
+		lea		(v_objspace+$8),a0
+		move.b	#1,obFrame(a0)
+		jsr	(Sonic_LoadGfx).l
+
+		moveq    #0,d5 ; sprite limit
+        moveq    #0,d4
+		move.w	#1,d1 ; mapping frame
+
+		move.w	#0,d3 ; x pos
+		move.w	#0,d2 ; y pos
+		lea		(Map_Sonic).l,a1 ; map
+		movea.w	#$4780,a3 ; art tile offset (pal 3)
+		add.w	d1,d1
+		adda.w	(a1,d1.w),a1
+		moveq    #0,d1
+		move.b    (a1)+,d1
+		subq.b    #1,d1
+		bmi.s    @empty
+		lea	(v_spritetablebuffer).w,a2 ; set address for sprite table
+		jmp		(BuildSpr_Normal).l
+	@empty:
+		rts
+
 VDP_Data_SegaJP:
 	dc.w	$8A00+127 ; reset HBlank register
 	dc.w	$8034 ; 8-colour mode (hblank enabled)
@@ -2289,8 +2337,10 @@ VDP_Data_SegaJP:
 GM_SegaJP:
 		disable_ints
 
-		move.l	#VBlank,(V_int_addr).w
+		move.l	#VBlank_SegaJP,(V_int_addr).w
 		move.l	#HBlank_SegaJP,(H_int_addr).w
+
+		move.w	#0,(v_character).w ; use sonic
 
 		; Set up VDP
 		lea	(vdp_control_port).l,a6
@@ -2321,6 +2371,11 @@ GM_SegaJP:
 		bsr.w	PalLoad1
 		move.b	#palid_Sonic,d0
 		bsr.w	PalLoad1
+		lea		(v_pal_dry_dup).l,a0
+		lea		(v_pal_dry_dup+$40).l,a1
+	rept 8
+		move.l	(a0)+,(a1)+
+	endr
 
         move.w    #$80,(v_vscrolltablebuffer+$20) ; sega ; send screen y-axis pos. to VSRAM
         move.w    #$80,(v_vscrolltablebuffer+$22) ; crane
@@ -2348,6 +2403,8 @@ GM_SegaJP:
 		move.b	#4,(v_vbla_routine).w
 		bsr.w	WaitForVBla
 
+		bsr.w	SonicSegaJP
+
 		tst.b	(v_jpadpress1).w
 		bne.w	ExitSegaJP
 
@@ -2363,6 +2420,8 @@ GM_SegaJP:
 	@crane_lower:
 		move.b	#4,(v_vbla_routine).w
 		bsr.w	WaitForVBla
+
+		bsr.w	SonicSegaJP
 
 		addq.w	#$1,(v_objspace).w
 		move.w	(v_objspace).w,d2
@@ -2401,6 +2460,8 @@ GM_SegaJP:
 		move.b	#4,(v_vbla_routine).w
 		bsr.w	WaitForVBla
 
+		bsr.w	SonicSegaJP
+
 		move.w	(v_objspace).w,d0
 		asr.w	#4,d0
 		sub.w	d0,(v_objspace).w
@@ -2436,6 +2497,8 @@ GM_SegaJP:
 		move.b	#4,(v_vbla_routine).w
 		bsr.w	WaitForVBla
 
+		bsr.w	SonicSegaJP
+
 		addq.w	#$1,(v_objspace).w
 		move.w	(v_objspace).w,d2
 
@@ -2469,6 +2532,8 @@ GM_SegaJP:
 		move.b	#4,(v_vbla_routine).w
 		bsr.w	WaitForVBla
 
+		bsr.w	SonicSegaJP
+
 		move.w	(v_generictimer).w,d0
 		andi.w	#$3,d0
 		bne.s	@nopaletrotatething
@@ -2486,6 +2551,8 @@ GM_SegaJP:
 		tst.b	(v_jpadpress1).w
 		bne.s	ExitSegaJP
 
+		bsr.w	SonicSegaJP
+
 		tst.w	(v_generictimer).w
 		bne.s	@loop_end
 
@@ -2494,6 +2561,8 @@ GM_SegaJP:
 	@loop_end_after_song:
 		move.b	#4,(v_vbla_routine).w
 		bsr.w	WaitForVBla
+
+		bsr.w	SonicSegaJP
 
 		tst.b	(v_jpadpress1).w
 		bne.s	ExitSegaJP
