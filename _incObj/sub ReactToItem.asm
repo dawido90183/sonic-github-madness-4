@@ -155,8 +155,20 @@ React_Monitor:
 ; ===========================================================================
 
 @movingdown:
-		cmpi.b	#id_Roll,obAnim(a0) ; is Sonic rolling/jumping?
-		bne.s	@donothing
+		moveq	#0,d0
+		move.b	obAnim(a0),d0
+		cmpi.w	#$1F,d0
+		bgt.s	@donothing
+		move.b	d0,d1
+		andi.b	#$7,d1 ; bit
+		lsr.b	#3,d0 ; byte
+
+		add.w	(v_character).w,d0
+
+		move.b	Char_React(pc,d0.w),d0
+		btst	d1,d0
+		beq.s	@donothing
+
 		neg.w	obVelY(a0)	; reverse Sonic's y-motion
 		addq.b	#2,obRoutine(a1) ; advance the monitor's routine counter
 
