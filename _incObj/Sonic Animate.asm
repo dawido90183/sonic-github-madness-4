@@ -8,7 +8,6 @@ Char_Ani:	; CHAR ADD STUFF
 	dc.l	Ani_Sonic
 	dc.l	Ani_Sonic ; ghm3 guy
 	dc.l	Ani_Sonic ; mercury
-	dc.l	Ani_GHM3half_Jupiter
 	dc.l	Ani_KiryuChan
 	; add next char here
 
@@ -205,6 +204,5 @@ Char_AniSize:	; CHAR ADD STUFF
 	anisize_char	4,6 ; sonic
 	anisize_char	4,6 ; ghm3 guy
 	anisize_char	4,6 ; mercury
-	anisize_char	4,6 ; half jupiter
 	anisize_char	4,4 ; kiryu
 	; add next char here

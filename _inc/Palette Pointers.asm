@@ -42,15 +42,20 @@ ptr_Pal_SplashPal:	palp	Pal_SplashPal,v_pal_dry,$10	; European Sega Splash Scree
 ptr_Pal_ColdBrew:	palp	Pal_ColdBrew,v_pal_dry,$10	; Cold Brew
 ptr_Pal_ColdBrewG:	palp	Pal_ColdBrewG,v_pal_dry,$10	; Cold Brew
 
-pal_char_ptr:	macro name
+pal_char_ptr:	macro name, alts ; put any value on alts to create alternate palette pointers
 ptr_Pal_\name:		palp	Pal_\name,v_pal_dry,$10
-ptr_Pal_LZWater_\name:		palp	Pal_LZWater_\name,v_pal_dry,$10
-ptr_Pal_SBZ3Water_\name:		palp	Pal_SBZ3Water_\name,v_pal_dry,$10
+	if (narg=2)
+		ptr_Pal_Alt1_\name:		palp	Pal_\name+$10,v_pal_dry,$10
+		ptr_Pal_Alt2_\name:		palp	Pal_\name+$20,v_pal_dry,$10
+		ptr_Pal_Alt3_\name:		palp	Pal_\name+$30,v_pal_dry,$10
+	endif
 
 palid_\name:		equ (ptr_Pal_\name-PalPointers)/8
-palid_LZWater_\name:		equ (ptr_Pal_LZWater_\name-PalPointers)/8
-palid_SBZ3Water_\name:		equ (ptr_Pal_SBZ3Water_\name-PalPointers)/8
-
+	if (narg=2)
+		palid_Alt1_\name:		equ (ptr_Pal_Alt1_\name-PalPointers)/8
+		palid_Alt2_\name:		equ (ptr_Pal_Alt2_\name-PalPointers)/8
+		palid_Alt3_\name:		equ (ptr_Pal_Alt3_\name-PalPointers)/8
+	endif
 		endm
 
 	; CHAR ADD STUFF (Not necessary unless you'll use the palette outside of the character)

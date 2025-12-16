@@ -22,7 +22,7 @@ Revision:	equ 1
 
 ZoneCount:	equ 6	; discrete zones are: GHZ, MZ, SYZ, LZ, SLZ, and SBZ
 
-CharCount: equ 5
+CharCount: equ 4
 
 ; ===========================================================================
 
@@ -2008,7 +2008,7 @@ PalLoad3_Water:
 
 
 ; ||||||||||||||| S U B R O U T I N E |||||||||||||||||||||||||||||||||||||||
-
+;
 
 PalLoad4_Water:
 		lea	(PalPointers).l,a1
@@ -2060,8 +2060,9 @@ Pal_ColdBrewG:	incbin	"cold brew\palette grayscale.bin"
 
 pal_char:	macro name
 Pal_\name:		incbin "!Characters\\\name\\Palette - Normal.bin"
-Pal_LZWater_\name:		incbin "!Characters\\\name\\Palette - LZ Underwater.bin"
-Pal_SBZ3Water_\name:		incbin "!Characters\\\name\\Palette - SBZ3 Underwater.bin"
+				incbin "!Characters\\\name\\Palette - Alt 1.bin"
+				incbin "!Characters\\\name\\Palette - Alt 2.bin"
+				incbin "!Characters\\\name\\Palette - Alt 3.bin"
 		endm
 
 Char_Pal:
@@ -2071,7 +2072,6 @@ Char_Pal:
 	pal_char Sonic
 	pal_char GHM3_Guy
 	pal_char GHM3_Mercury
-	pal_char GHM3half_Jupiter
 	pal_char KiryuChan
 	; add next char here
 
@@ -2745,6 +2745,7 @@ FinalTitle:
 		dbf	d1,Tit_ClrObj1	; fill palette with 0 (black)
 
 		move.w	#0,(v_character).w ; Reset character
+		move.b	#0,(v_char_pal).w
 
 		disable_ints
 		locVRAM	$4000
@@ -2866,11 +2867,20 @@ Tit_ChkRegion:
 		cmpi.w	#(CharCount)*4,(v_character).w
 		blt.s	@nocharswap
 
-		bsr.w	PlaySound_Special	; play ring sound when code is entered
-
 		move.w	#0,(v_character).w
 
 	@nocharswap:
+
+		btst	#bitB,(v_jpadpress1).w ; is pressing B?
+		beq.s	@nopalswap
+
+		move.b	#sfx_Switch,d0
+		bsr.w	PlaySound_Special	; play ring sound when code is entered
+
+		addq.b	#1,(v_char_pal).w
+		andi.b	#$3,(v_char_pal).w
+
+	@nopalswap:
 
 		tst.b	(v_megadrive).w	; check if the machine is US or Japanese
 		bpl.s	Tit_RegionJap	; if Japanese, branch
@@ -3457,24 +3467,19 @@ CharSelect_Loop:
 
 LoadCharacterCharSelect:
 		lea (v_pal_dry+$60).l,a3
-		move.w	#0,d2
 		bsr.s	LoadPlayerPalette_main
 		; load rest of stuff I guess
 		rts
 
-LoadPlayerPalette: ; d2 -> offset in memory .w
+LoadPlayerPalette:
 		lea (v_pal_dry).l,a3
 LoadPlayerPalette_main:
 		move.w	(v_character).w,d0
 		lea	(Char_Pal).l,a2
-	rept 3
+		add.b	(v_char_pal).w,d0
+	rept 5
 		add.w	d0,d0
-	endr ; * 8
-		move.w	d0,d1
-		add.w	d0,d0
-		add.w	d1,d0 ; * 3
-
-		add.w	d2,d0
+	endr ; * 32 -> (128)
 		add.w	d0,a2
 		move.w	#($20/4)-1,d7
 
@@ -3647,7 +3652,6 @@ Level_LoadPal:
 		cmpi.b	#id_LZ,(v_zone).w ; is level LZ?
 		bne.s	Level_GetBgm	; if not, branch
 
-		clr.w	d2
 		lea (v_pal_water).l,a3
 		bsr.w	LoadPlayerPalette_main	; load Sonic's palette
 
@@ -7749,7 +7753,6 @@ Char_Map:	; CHAR ADD STUFF
 	dc.l	Map_Sonic
 	dc.l	Map_Sonic
 	dc.l	Map_GHM3_Mercury
-	dc.l	Map_GHM3half_Jupiter
 	dc.l	Map_KiryuChan
 	; add next char here
 
@@ -7833,7 +7836,6 @@ Char_ModeTable:
 	modetable_char Sonic
 	modetable_char Sonic ; GHM3_Guy
 	modetable_char Sonic ; GHM3_Mercury
-	modetable_char Sonic ; GHM3half_Jupiter
 	modetable_char KiryuChan ; KiryuChan
 	; add next char here
 		even
@@ -7895,7 +7897,6 @@ Ani_\name:	include	"!Characters\\\name\\Anim.asm"
 		; CHAR ADD STUFF
 
 		anim_char Sonic
-		anim_char GHM3half_Jupiter
 		anim_char KiryuChan
 
 
@@ -9364,7 +9365,6 @@ DPLC_\name:	include	"!Characters\\\name\\DPLC.asm"
 
 	map_char Sonic
 	map_char GHM3_Mercury
-	map_char GHM3half_Jupiter
 	map_char KiryuChan
 	; add next char here
 
@@ -9379,7 +9379,6 @@ Art_\name:	incbin	"!Characters\\\name\\Art.bin"
 
 	art_char Sonic
 	art_char GHM3_Mercury
-	art_char GHM3half_Jupiter
 	art_char KiryuChan
 	; add next char here
 		even
