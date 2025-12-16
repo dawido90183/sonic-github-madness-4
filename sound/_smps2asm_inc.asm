@@ -862,6 +862,8 @@ smpsModOff macro
 	endif
 	endm
 
+_smpsModOff = $F4
+
 ; F5xx - PSG voice to xx
 smpsPSGvoice macro voice
 	dc.b	$F5,voice

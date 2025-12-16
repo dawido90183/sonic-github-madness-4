@@ -6,6 +6,7 @@
 ; =============================================================================================
 
 music8a.bin_Header:
+	smpsHeaderStartSong 1
 ;	Voice Pointer	location
 	smpsHeaderVoice	music8a.bin_Voices
 ;	Channel Setup	FM	PSG
@@ -26,11 +27,11 @@ music8a.bin_Header:
 ;	FM5 Pointer	location	pitch		volume
 	smpsHeaderFM	music8a.bin_FM5,	smpsPitch00,	$11
 ;	PSG1 Pointer	location	pitch		volume	instrument
-	smpsHeaderPSG	music8a.bin_PSG1,	smpsPitch03lo,	$02,	$00
+	smpsHeaderPSG	music8a.bin_PSG1,	smpsPitch03lo,	$02,	0,$00
 ;	PSG2 Pointer	location	pitch		volume	instrument
-	smpsHeaderPSG	music8a.bin_PSG2,	smpsPitch03lo,	$05,	$00
+	smpsHeaderPSG	music8a.bin_PSG2,	smpsPitch03lo,	$05,	0,$00
 ;	PSG3 Pointer	location	pitch		volume	instrument
-	smpsHeaderPSG	music8a.bin_PSG3,	smpsPitch00,	$03,	$02
+	smpsHeaderPSG	music8a.bin_PSG3,	smpsPitch00,	$03,	0,$02
 
 ; FM1 Data
 music8a.bin_FM1:
@@ -177,22 +178,22 @@ music8a.bin_Jump02:
 	dc.b		nBb5,	$48
 ;	Set Modulation	wait	speed	change	step
 	smpsModSet	$01,	$01,	$16,	$FF
-	dc.b		nA4,	$0A,	smpsModOff,	smpsNoAttack,	nC5,	$0E
+	dc.b		nA4,	$0A,	_smpsModOff,	smpsNoAttack,	nC5,	$0E
 ;	Set Modulation	wait	speed	change	step
 	smpsModSet	$01,	$01,	$0C,	$FF
-	dc.b		nB4,	$0A,	smpsModOff,	smpsNoAttack,	nD5,	$0E
+	dc.b		nB4,	$0A,	_smpsModOff,	smpsNoAttack,	nD5,	$0E
 ;	Set Modulation	wait	speed	change	step
 	smpsModSet	$01,	$01,	$0D,	$FF
-	dc.b		nC5,	$0A,	smpsModOff,	smpsNoAttack,	nEb5,	$0E
+	dc.b		nC5,	$0A,	_smpsModOff,	smpsNoAttack,	nEb5,	$0E
 ;	Set Modulation	wait	speed	change	step
 	smpsModSet	$01,	$01,	$0D,	$FF
-	dc.b		nC5,	$0A,	smpsModOff,	smpsNoAttack,	nEb5,	$0E
+	dc.b		nC5,	$0A,	_smpsModOff,	smpsNoAttack,	nEb5,	$0E
 ;	Set Modulation	wait	speed	change	step
 	smpsModSet	$01,	$01,	$10,	$FF
-	dc.b		nD5,	$0A,	smpsModOff,	smpsNoAttack,	nF5,	$0E
+	dc.b		nD5,	$0A,	_smpsModOff,	smpsNoAttack,	nF5,	$0E
 ;	Set Modulation	wait	speed	change	step
 	smpsModSet	$01,	$01,	$11,	$FF
-	dc.b		nE5,	$0A,	smpsModOff,	smpsNoAttack,	nG5,	$0E
+	dc.b		nE5,	$0A,	_smpsModOff,	smpsNoAttack,	nG5,	$0E
 ;	Set Modulation	wait	speed	change	step
 	smpsModSet	$01,	$01,	$11,	$FF
 	dc.b		nF5,	$0A
@@ -338,7 +339,7 @@ music8a.bin_FM3:
 	smpsModSet	$0E,	$01,	$F3,	$FF
 	dc.b		nC6,	$18
 music8a.bin_Jump03:
-	dc.b		smpsModOff
+	dc.b		_smpsModOff
 ;	Call At	 	location
 	smpsCall	music8a.bin_Call05
 	dc.b		nBb4,	$36,	nRst,	$0C,	nBb4,	$06
@@ -354,7 +355,7 @@ music8a.bin_Jump03:
 	smpsAlterVol	$F4
 ;	Set Modulation	wait	speed	change	step
 	smpsModSet	$0E,	$01,	$05,	$06
-	dc.b		nF4,	$18,	smpsModOff
+	dc.b		nF4,	$18,	_smpsModOff
 ;	Call At	 	location
 	smpsCall	music8a.bin_Call05
 	dc.b		nBb3,	$06,	nRst,	nBb5,	nRst,	$06
@@ -370,7 +371,7 @@ music8a.bin_Jump03:
 ;	Alter Volume	value
 	smpsAlterVol	$E7
 	dc.b		nBb3,	$06,	nRst,	nBb5,	nRst,	$0C,	nBb3,	$06
-	dc.b		smpsModOff
+	dc.b		_smpsModOff
 ;	Set FM Voice	#
 	smpsFMvoice	$0D
 	dc.b		nG5,	$0C,	nFs5,	$06,	nRst,	nF5,	nRst,	nE5
@@ -390,22 +391,22 @@ music8a.bin_Jump03:
 	smpsAlterVol	$05
 ;	Set Modulation	wait	speed	change	step
 	smpsModSet	$01,	$01,	$10,	$FF
-	dc.b		nF4,	$0A,	smpsModOff,	smpsNoAttack,	nAb4,	$0E
+	dc.b		nF4,	$0A,	_smpsModOff,	smpsNoAttack,	nAb4,	$0E
 ;	Set Modulation	wait	speed	change	step
 	smpsModSet	$01,	$01,	$10,	$FF
-	dc.b		nF4,	$0A,	smpsModOff,	smpsNoAttack,	nAb4,	$0E
+	dc.b		nF4,	$0A,	_smpsModOff,	smpsNoAttack,	nAb4,	$0E
 ;	Set Modulation	wait	speed	change	step
 	smpsModSet	$01,	$01,	$13,	$FF
-	dc.b		nA4,	$0A,	smpsModOff,	smpsNoAttack,	nC5,	$0E
+	dc.b		nA4,	$0A,	_smpsModOff,	smpsNoAttack,	nC5,	$0E
 ;	Set Modulation	wait	speed	change	step
 	smpsModSet	$01,	$01,	$13,	$FF
-	dc.b		nA4,	$0A,	smpsModOff,	smpsNoAttack,	nC5,	$0E
+	dc.b		nA4,	$0A,	_smpsModOff,	smpsNoAttack,	nC5,	$0E
 ;	Set Modulation	wait	speed	change	step
 	smpsModSet	$01,	$01,	$13,	$FF
-	dc.b		nA4,	$0A,	smpsModOff,	smpsNoAttack,	nC5,	$0E
+	dc.b		nA4,	$0A,	_smpsModOff,	smpsNoAttack,	nC5,	$0E
 ;	Set Modulation	wait	speed	change	step
 	smpsModSet	$01,	$01,	$0C,	$FF
-	dc.b		nC5,	$0A,	smpsModOff,	smpsNoAttack,	nEb5,	$0E
+	dc.b		nC5,	$0A,	_smpsModOff,	smpsNoAttack,	nEb5,	$0E
 ;	Set Modulation	wait	speed	change	step
 	smpsModSet	$01,	$01,	$0C,	$FF
 	dc.b		nC5,	$0A
@@ -437,7 +438,7 @@ music8a.bin_Call05:
 	smpsAlterVol	$FD
 ;	Set Modulation	wait	speed	change	step
 	smpsModSet	$0A,	$01,	$06,	$05
-	dc.b		nBb3,	$06,	nG3,	nAb3,	nBb3,	$12,	$12,	smpsModOff
+	dc.b		nBb3,	$06,	nG3,	nAb3,	nBb3,	$12,	$12,	_smpsModOff
 ;	Alter Volume	value
 	smpsAlterVol	$03
 ;	Set FM Voice	#
@@ -510,7 +511,7 @@ music8a.bin_FM4:
 	smpsAlterVol	$F9
 	dc.b		nAb5,	$16
 music8a.bin_Jump04:
-	dc.b		smpsModOff
+	dc.b		_smpsModOff
 ;	Call At	 	location
 	smpsCall	music8a.bin_Call07
 	dc.b		nEb4,	$0C,	nEb5,	$06,	nRst,	$0C,	nEb4,	$06
@@ -527,7 +528,7 @@ music8a.bin_Jump04:
 	smpsAlterVol	$F4
 ;	Set Modulation	wait	speed	change	step
 	smpsModSet	$12,	$01,	$0B,	$04
-	dc.b		nD4,	$18,	smpsModOff
+	dc.b		nD4,	$18,	_smpsModOff
 ;	Call At	 	location
 	smpsCall	music8a.bin_Call07
 	dc.b		nRst,	$0C,	nEb5,	$06,	nRst,	$06
@@ -559,22 +560,22 @@ music8a.bin_Jump04:
 	smpsFMvoice	$0F
 ;	Set Modulation	wait	speed	change	step
 	smpsModSet	$01,	$01,	$0E,	$FF
-	dc.b		nC4,	$0A,	smpsModOff,	smpsNoAttack,	nEb4,	$0E
+	dc.b		nC4,	$0A,	_smpsModOff,	smpsNoAttack,	nEb4,	$0E
 ;	Set Modulation	wait	speed	change	step
 	smpsModSet	$01,	$01,	$0D,	$FF
-	dc.b		nD4,	$0A,	smpsModOff,	smpsNoAttack,	nF4,	$0E
+	dc.b		nD4,	$0A,	_smpsModOff,	smpsNoAttack,	nF4,	$0E
 ;	Set Modulation	wait	speed	change	step
 	smpsModSet	$01,	$01,	$12,	$FF
-	dc.b		nF4,	$0A,	smpsModOff,	smpsNoAttack,	nAb4,	$0E
+	dc.b		nF4,	$0A,	_smpsModOff,	smpsNoAttack,	nAb4,	$0E
 ;	Set Modulation	wait	speed	change	step
 	smpsModSet	$01,	$01,	$12,	$FF
-	dc.b		nF4,	$0A,	smpsModOff,	smpsNoAttack,	nAb4,	$0E
+	dc.b		nF4,	$0A,	_smpsModOff,	smpsNoAttack,	nAb4,	$0E
 ;	Set Modulation	wait	speed	change	step
 	smpsModSet	$01,	$01,	$12,	$FF
-	dc.b		nF4,	$0A,	smpsModOff,	smpsNoAttack,	nAb4,	$0E
+	dc.b		nF4,	$0A,	_smpsModOff,	smpsNoAttack,	nAb4,	$0E
 ;	Set Modulation	wait	speed	change	step
 	smpsModSet	$01,	$01,	$15,	$FF
-	dc.b		nA4,	$0A,	smpsModOff,	smpsNoAttack,	nC5,	$0E
+	dc.b		nA4,	$0A,	_smpsModOff,	smpsNoAttack,	nC5,	$0E
 ;	Set Modulation	wait	speed	change	step
 	smpsModSet	$01,	$01,	$15,	$FF
 	dc.b		nA4,	$0A
@@ -676,7 +677,7 @@ music8a.bin_FM5:
 	smpsModSet	$0E,	$01,	$F3,	$FF
 	dc.b		nBb5,	$18
 music8a.bin_Jump05:
-	dc.b		smpsModOff
+	dc.b		_smpsModOff
 ;	Call At	 	location
 	smpsCall	music8a.bin_Call09
 	dc.b		nRst,	$48
@@ -690,7 +691,7 @@ music8a.bin_Jump05:
 	dc.b		nAb4,	$0C
 ;	Alter Volume	value
 	smpsAlterVol	$F4
-	dc.b		smpsModOff,	nC4,	$18
+	dc.b		_smpsModOff,	nC4,	$18
 ;	Call At	 	location
 	smpsCall	music8a.bin_Call09
 	dc.b		nRst,	$0C,	nG4,	$06,	nRst,	$12,	nG4,	$06
@@ -709,22 +710,22 @@ music8a.bin_Jump05:
 	smpsFMvoice	$0F
 ;	Set Modulation	wait	speed	change	step
 	smpsModSet	$01,	$01,	$16,	$FF
-	dc.b		nA3,	$0A,	smpsModOff,	smpsNoAttack,	nC4,	$0E
+	dc.b		nA3,	$0A,	_smpsModOff,	smpsNoAttack,	nC4,	$0E
 ;	Set Modulation	wait	speed	change	step
 	smpsModSet	$01,	$01,	$0C,	$FF
-	dc.b		nB3,	$0A,	smpsModOff,	smpsNoAttack,	nD4,	$0E
+	dc.b		nB3,	$0A,	_smpsModOff,	smpsNoAttack,	nD4,	$0E
 ;	Set Modulation	wait	speed	change	step
 	smpsModSet	$01,	$01,	$0D,	$FF
-	dc.b		nC4,	$0A,	smpsModOff,	smpsNoAttack,	nEb4,	$0E
+	dc.b		nC4,	$0A,	_smpsModOff,	smpsNoAttack,	nEb4,	$0E
 ;	Set Modulation	wait	speed	change	step
 	smpsModSet	$01,	$01,	$0D,	$FF
-	dc.b		nC4,	$0A,	smpsModOff,	smpsNoAttack,	nEb4,	$0E
+	dc.b		nC4,	$0A,	_smpsModOff,	smpsNoAttack,	nEb4,	$0E
 ;	Set Modulation	wait	speed	change	step
 	smpsModSet	$01,	$01,	$10,	$FF
-	dc.b		nD4,	$0A,	smpsModOff,	smpsNoAttack,	nF4,	$0E
+	dc.b		nD4,	$0A,	_smpsModOff,	smpsNoAttack,	nF4,	$0E
 ;	Set Modulation	wait	speed	change	step
 	smpsModSet	$01,	$01,	$11,	$FF
-	dc.b		nE4,	$0A,	smpsModOff,	smpsNoAttack,	nG4,	$0E
+	dc.b		nE4,	$0A,	_smpsModOff,	smpsNoAttack,	nG4,	$0E
 ;	Set Modulation	wait	speed	change	step
 	smpsModSet	$01,	$01,	$11,	$FF
 	dc.b		nF4,	$0A
@@ -792,9 +793,9 @@ music8a.bin_PSG1:
 	dc.b		nRst,	$0C,	nEb5,	$18
 ;	Alter Notes	value
 	smpsAlterNote	$00
-	dc.b		smpsModOff
+	dc.b		_smpsModOff
 ;	Set Volume	value
-	smpsSetVol	$01
+	;not implemented ;smpsSetVol	$01
 music8a.bin_Jump06:
 ;	Set PSG Voice	#
 	smpsPSGvoice	$0B
@@ -807,8 +808,8 @@ music8a.bin_Jump06:
 ;	Set PSG Voice	#
 	smpsPSGvoice	$0A
 ;	Set Volume	value
-	smpsSetVol	$05
-	dc.b		nRst,	$0B,	smpsModOff
+	;not implemented ;smpsSetVol	$05
+	dc.b		nRst,	$0B,	_smpsModOff
 ;	Call At	 	location
 	smpsCall	music8a.bin_Call0C
 	dc.b		nD5,	$12,	nEb5,	$0C,	nD5,	$12,	nEb5,	$06
@@ -818,7 +819,7 @@ music8a.bin_Jump06:
 	dc.b		nD5,	$12,	nEb5,	$0C,	nF5,	$12,	nF5,	$06
 	dc.b		nEb5,	$0C,	nBb5,	$43
 ;	Set Volume	value
-	smpsSetVol	$FB
+	;not implemented ;smpsSetVol	$FB
 	dc.b		nRst,	$48,	$48,	$48,	$48,	$48
 ;	Jump To	 	location
 	smpsJump	music8a.bin_Jump06
@@ -859,16 +860,16 @@ music8a.bin_PSG2:
 	dc.b		nBb5,	$24,	$24,	$48,	$24,	$24,	$1E,	$06
 	dc.b		nRst,	$06
 ;	Set Volume	value
-	smpsSetVol	$05
+	;not implemented ;smpsSetVol	$05
 	dc.b		nBb5,	$06
 ;	Set Volume	value
-	smpsSetVol	$FB
+	;not implemented ;smpsSetVol	$FB
 ;	Set Modulation	wait	speed	change	step
 	smpsModSet	$0E,	$01,	$03,	$FF
 	dc.b		nEb6,	$18
 ;	Alter Notes	value
 	smpsAlterNote	$00
-	dc.b		smpsModOff
+	dc.b		_smpsModOff
 music8a.bin_Jump07:
 ;	Call At	 	location
 	smpsCall	music8a.bin_Call0D
@@ -879,7 +880,7 @@ music8a.bin_Jump07:
 ;	Set PSG Voice	#
 	smpsPSGvoice	$00
 ;	Set Volume	value
-	smpsSetVol	$05
+	;not implemented ;smpsSetVol	$05
 ;	Alter Notes	value
 	smpsAlterNote	$FE
 ;	Call At	 	location
@@ -893,7 +894,7 @@ music8a.bin_Jump07:
 ;	Alter Notes	value
 	smpsAlterNote	$00
 ;	Set Volume	value
-	smpsSetVol	$FB
+	;not implemented ;smpsSetVol	$FB
 	dc.b		nRst,	$48,	$48,	$48,	$48,	$48
 ;	Jump To	 	location
 	smpsJump	music8a.bin_Jump07
@@ -923,7 +924,7 @@ music8a.bin_Call0E:
 ; PSG3 Data
 music8a.bin_PSG3:
 ;	Set Volume	value
-	smpsSetVol	$02
+	;not implemented ;smpsSetVol	$02
 ;	Alter Notes	value
 	smpsAlterNote	$FF
 ;	Alter Pitch	value
@@ -941,7 +942,7 @@ music8a.bin_Loop01:
 	dc.b		nEb7,	nC7,	nBb6,	nEb6,	nC6,	nBb5,	$06,	nC6
 	dc.b		nEb6,	nBb6,	nEb6,	nC6,	nRst,	$24
 ;	Set Volume	value
-	smpsSetVol	$FE
+	;not implemented ;smpsSetVol	$FE
 ;	Alter Notes	value
 	smpsAlterNote	$00
 ;	Alter Pitch	value
