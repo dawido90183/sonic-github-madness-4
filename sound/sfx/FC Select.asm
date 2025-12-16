@@ -8,9 +8,9 @@ FC_Sel_Header:
 
 ; PSG1 Data
 FC_Sel_PSG1:
-	dc.b	nE2, $02
+	dc.b	nA1, $02
 	smpsAlterPitch        $05
-	smpsLoop            $00, $08, FC_Sel_PSG1
+	smpsLoop            $00, $0A, FC_Sel_PSG1
 	smpsStop
 
 ; Song seems to not use any FM voices
