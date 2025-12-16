@@ -37,7 +37,7 @@ ptr_Pal_SegaJP:		palp	Pal_SegaJP,v_pal_dry+$20,$10		; Sega logo JP
 
 ptr_Pal_CharSel:	palp	Pal_CharSel,v_pal_dry,$30	; character select
 
-ptr_Pal_SplashPal:	palp	Pal_SplashPal,v_pal_dry,$40	; European Sega Splash Screen
+ptr_Pal_SplashPal:	palp	Pal_SplashPal,v_pal_dry,$10	; European Sega Splash Screen
 
 pal_char_ptr:	macro name
 ptr_Pal_\name:		palp	Pal_\name,v_pal_dry,$10
