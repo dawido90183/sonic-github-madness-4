@@ -2053,6 +2053,7 @@ Pal_CharSel:	incbin "palette\Character Select.bin"
 Pal_SegaJP:	incbin	"palette\Sega Logo JP.bin"
 Pal_SplashPal:	incbin	"eurosega\pal.bin"
 Pal_ColdBrew:	incbin	"cold brew\palette.bin"
+Pal_ColdBrewG:	incbin	"cold brew\palette grayscale.bin"
 ; ---------------------------------------------------------------------------
 ; Palette data (Character)
 ; ---------------------------------------------------------------------------
