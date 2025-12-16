@@ -2723,6 +2723,52 @@ splash_entry macro art,tilemap,palette,size,music_id,duration_in_frames
 ; ---------------------------------------------------------------------------
 
 GM_Title:
+		move.b	#FadeOut,d0
+		bsr.w	PlaySound_Special ; stop music
+		bsr.w	ClearPLC
+		bsr.w	PaletteFadeOut
+		disable_ints
+		bsr.w	SoundDriverLoad
+		lea	(vdp_control_port).l,a6
+		move.w	#$8004,(a6)	; 8-colour mode
+		move.w	#$8200+(vram_fg>>10),(a6) ; set foreground nametable address
+		move.w	#$8400+(vram_bg>>13),(a6) ; set background nametable address
+		move.w	#$9001,(a6)	; 64-cell hscroll size
+		move.w	#$9200,(a6)	; window vertical position
+		move.w	#$8B03,(a6)
+		move.w	#$8700,(a6)	; set background colour (palette line 2, entry 0)
+		clr.b	(f_wtr_state).w
+		bsr.w	ClearScreen
+
+		lea	(v_objspace).w,a1
+		moveq	#0,d0
+		move.w	#$7FF,d1
+
+Tit_ClrObj0:
+		move.l	d0,(a1)+
+		dbf	d1,Tit_ClrObj0	; fill object space ($D000-$EFFF) with 0
+		lea	(v_pal_dry_dup).w,a1
+		moveq	#cBlack,d0
+		move.w	#$1F,d1
+
+		locVRAM	$14C0
+		lea	(Nem_CreditText).l,a0 ;	load alphabet
+		bsr.w	NemDec
+		moveq	#palid_Sonic,d0	; load Sonic's palette
+		bsr.w	PalLoad2
+		moveq	#palid_GHZ,d0	; load Sonic's palette
+		bsr.w	PalLoad2
+		move.b	#id_CreditsText,(v_sonicteam).w ; load "SONIC TEAM PRESENTS" object
+.wait:		
+		move.b	#2,(vblank).w
+		bsr.w	WaitForVBla	
+		jsr	(ExecuteObjects).l
+		jsr	(BuildSprites).l
+		cmpi.b	#btnStart,(v_jpadhold1).w	; is Start being pressed?
+		beq.s	.skip		; if yes, branch.
+ 		tst.w   (v_sonicteam+Petertime).w
+		bne.s	.wait
+.skip:
         jsr     GitHubScreen
 		rts	
 
