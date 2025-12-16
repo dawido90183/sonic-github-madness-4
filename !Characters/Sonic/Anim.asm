@@ -35,6 +35,7 @@
 	dc.w @placeholder-@internal
 	dc.w @placeholder-@internal
 	dc.w @placeholder-@internal
+	dc.w @placeholder-@internal
 
 @placeholder:
 @walk:	dc.b $FF, fr_Walk13, fr_Walk14,	fr_Walk15, fr_Walk16, fr_Walk11, fr_Walk12, afEnd
