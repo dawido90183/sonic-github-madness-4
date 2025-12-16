@@ -2723,7 +2723,7 @@ splash_entry macro art,tilemap,palette,size,music_id,duration_in_frames
 	splash_entry Nem_Splash_SadMac,Eni_Splash_SadMac,Pal_Splash_SadMac,$60,$21,175
     splash_entry Nem_Splash_Drift,Eni_Splash_Drift,Pal_Splash_Drift,$20,$1D,480
 	splash_entry Nem_Splash_Sane,Eni_Splash_Sane,Pal_Splash_Sane,$40,bgm_MM8StageSel,720
-    splash_entry Nem_Splash_BLUE_LOBSTER,Eni_Splash_BLUE_LOBSTER,Pal_Splash_BLUE_LOBSTER,bgm_GameOver,480 ;No PCM for lobster :(
+    splash_entry Nem_Splash_BLUE_LOBSTER,Eni_Splash_BLUE_LOBSTER,Pal_Splash_BLUE_LOBSTER,$20,bgm_GameOver,480 ;No PCM for lobster :(
     dc.l	-1 ; end marker    
 
 ; ==========================================================================		
