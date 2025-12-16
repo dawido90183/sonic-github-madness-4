@@ -154,7 +154,7 @@ ptr_mus1E:	dc.l Music1E
 ptr_mus1F:	dc.l Music1F
 ptr_mus20:	dc.l Music20
 ptr_mus21:	dc.l Music21
-;ptr_mus22:	dc.l Music22
+ptr_mus22:	dc.l Music22
 ;ptr_mus23:	dc.l Music23
 ;ptr_mus24:	dc.l Music24
 ;ptr_mus25:	dc.l Music25
@@ -2673,6 +2673,8 @@ Music1F:	include	"sound/music/TG2000Tracks/Son1UP.asm"
 Music20:	include	"sound/music/TG2000Tracks/1UPEmerald.asm"
 		even
 Music21:	include	"sound/music/TG2000Tracks/SadMac.asm"
+		even
+Music22:	include	"sound/music/TG2000Tracks/TG2000Jingle.asm"
 		even
 
 ; ---------------------------------------------------------------------------
