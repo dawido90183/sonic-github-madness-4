@@ -2214,8 +2214,13 @@ Sega_WaitEnd:
 		beq.s	Sega_WaitEnd	; if not, branch
 
 Sega_GotoTitle:
+;		tst.w	(v_SplashSkip).w
+;		bne.s	.skipsplash
 		move.b	#id_SplashScreen,(v_gamemode).w ; go to splash screen
 		rts	
+;.skipsplash:
+;		move.b	#id_Title,(v_gamemode).w ; go to splash screen
+;		rts	
 ; ===========================================================================
 
 ; Old SonicSegaJP code, leave this here it could be useful in the future
@@ -2608,8 +2613,13 @@ ExitSegaJP:
 		move.w	#$8004,(vdp_control_port).l ; disable h ints
 		move.l	#HBlank,(H_int_addr).w
 		move.l	#VBlank,(V_int_addr).w
+;		tst.w	(v_SplashSkip).w
+;		bne.s	.skipsplashJP
 		move.b	#id_SplashScreen,(v_gamemode).w ; go to splash screen
-		rts
+		rts	
+;.skipsplashJP:
+;		move.b	#id_Title,(v_gamemode).w ; go to splash screen
+;		rts	
 
 SegaJPFingerWag:
 		move.w	(v_generictimer).w,d0
@@ -2717,10 +2727,14 @@ GM_SegaEU_MainLoop:
 		beq.s	GM_SegaEU_MainLoop
 	@timerover:
 
-		move.b	#34,($FFFFF600).w	; go to Title Screen
-		
+;		tst.w	(v_SplashSkip).w
+;		bne.s	.skipsplashEU
+		move.b	#id_SplashScreen,(v_gamemode).w ; go to splash screen
 GM_SegaEU_Return:
-		rts
+		rts	
+;.skipsplashEU:
+;		move.b	#id_Title,(v_gamemode).w ; go to splash screen
+;		rts	
 
 
 ; ---------------------------------------------------------------------------
@@ -2800,7 +2814,7 @@ GM_Splash:
 
 		tst.l	(a2)
 		bpl.s	@load_next_splash
-
+		move.w	#1,(v_SplashSkip).w
 		move.b	#id_Title,(v_gamemode).w ; go to title screen
 		rts
 
@@ -2822,6 +2836,9 @@ splash_entry macro art,tilemap,palette,size,music_id,duration_in_frames
 	splash_entry Nem_Splash_Sane,Eni_Splash_Sane,Pal_Splash_Sane,$40,bgm_MM8StageSel,720
 	splash_entry Nem_Splash_LastBurenyuu,Eni_Splash_LastBurenyuu,Pal_Splash_LastBurenyuu,$20,bgm_FurElise,60*4
     splash_entry Nem_Splash_BLUE_LOBSTER,Eni_Splash_BLUE_LOBSTER,Pal_Splash_BLUE_LOBSTER,$20,bgm_GameOver,480 ;No PCM for lobster :(
+    splash_entry Nem_Splash_ReimuDrip,Eni_Splash_ReimuDrip,Pal_Splash_ReimuDrip,$20,$14,160
+    splash_entry Nem_Splash_Cmruey,Eni_Splash_Cmruey,Pal_Splash_Cmruey,$20,$1D,240
+    splash_entry Nem_Splash_Disappointed,Eni_Splash_Disappointed,Pal_Splash_Disappointed,$20,bgm_GameOver,120
     dc.l	-1 ; end marker    
 
 ; ==========================================================================		
@@ -9560,6 +9577,9 @@ Pal_Splash_\name:	incbin	"splash\\Pal - \name\.bin"
 	splash_data Sane
     splash_data BLUE_LOBSTER
     splash_data LastBurenyuu
+    splash_data ReimuDrip
+    splash_data Cmruey
+    splash_data Disappointed
 	; next splash screen data here
 
 ; ---------------------------------------------------------------------------
