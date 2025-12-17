@@ -1,8 +1,41 @@
 {
     "Flex": 2,
     "name": "Sonic 1",
-    "node": "40ff75a9-c137-46c2-a27d-7fb52a8d55d9",
+    "node": "192f8644-fe28-4db6-a8d5-c4aa94986086",
     "objects": [
+        {
+            "format": "Sonic 1 Old.js",
+            "name": "Sega JP Sonic",
+            "palettes": [
+                {
+                    "length": 1,
+                    "blank": true
+                },
+                {
+                    "length": 1,
+                    "blank": true
+                },
+                {
+                    "path": "!Characters/Sonic/Palette - Normal.bin",
+                    "length": 1
+                }
+            ],
+            "art": {
+                "path": "artnem/Sega Logo JP.bin",
+                "compression": "Nemesis",
+                "offset": 0
+            },
+            "mappings": {
+                "path": "_maps/Sega JP Sonic.asm",
+                "label": "@internal"
+            },
+            "dplcs": {
+                "enabled": false,
+                "path": "",
+                "label": ""
+            },
+            "uuid": "192f8644-fe28-4db6-a8d5-c4aa94986086"
+        },
         {
             "name": "Chars",
             "children": [
@@ -30,7 +63,7 @@
                     "art": {
                         "path": "!Characters/Sonic/Art.bin",
                         "compression": "Uncompressed",
-                        "offset": ""
+                        "offset": 0
                     },
                     "mappings": {
                         "path": "!Characters/Sonic/Mappings.asm",

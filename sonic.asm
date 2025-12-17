@@ -868,7 +868,7 @@ VBlank_SegaJP:
 		writeVRAM	v_hscrolltablebuffer,$380,vram_hscroll
 		startZ80
 
-		jsr	(Process_DMA).l
+		;jsr	(Process_DMA).l sonic is preloaded
 
 		tst.w	(v_generictimer).w
 		beq.w	@end
@@ -2217,40 +2217,98 @@ Sega_GotoTitle:
 		move.b	#id_SplashScreen,(v_gamemode).w ; go to splash screen
 		rts	
 ; ===========================================================================
+
+; Old SonicSegaJP code, leave this here it could be useful in the future
+; 		; sonic's "object" is stored on $8
+; 		lea		(v_objspace+$8),a0
+; 		jsr	(Sonic_Animate).l
+; 		jsr	(Sonic_LoadGfx).l
+;
+;         moveq	#0,d1
+; 		move.b	obFrame(a0),d1 ; mapping frame
+;
+; 		lea		(Map_Sonic).l,a1 ; map
+; 		add.w	d1,d1
+; 		adda.w	(a1,d1.w),a1
+; 		moveq    #0,d1
+; 		move.b    (a1)+,d1
+; 		subq.b    #1,d1
+; 		bmi.s    @empty
+;
+; 		moveq    #0,d5 ; sprite limit
+; 		movea.w	#$4780,a3 ; art tile offset (pal 3)
+;
+; 		move.w	obX(a0),d3 ; x
+; 		addi.w	#128,d3
+; 		move.w	obY(a0),d2 ; y
+; 		addi.w	#128,d2
+;
+; 		lea	(v_spritetablebuffer).w,a2 ; set address for sprite table
+;         move.b  (v_objspace+$8),d4
+;
+; 		jsr		(BuildSpr_Draw_checks).l
+; 		subq.w	#5,a2
+; 		move.b	#0,(a2) ; clear last link
+; 	@empty:
+; 		rts
+
+
+
 SonicSegaJP:
 		; sonic's "object" is stored on $8
 		lea		(v_objspace+$8),a0
-		jsr	(Sonic_Animate).l
-		jsr	(Sonic_LoadGfx).l
 
         moveq	#0,d1
 		move.b	obFrame(a0),d1 ; mapping frame
 
-		lea		(Map_Sonic).l,a1 ; map
+		lea		Map_SonicSegaJP(pc),a1 ; map
 		add.w	d1,d1
-		adda.w	(a1,d1.w),a1
+		adda.w	Map_SonicSegaJP(pc,d1.w),a1
 		moveq    #0,d1
 		move.b    (a1)+,d1
 		subq.b    #1,d1
 		bmi.s    @empty
 
-		moveq    #0,d5 ; sprite limit
-		movea.w	#$4780,a3 ; art tile offset (pal 3)
+		movea.w	#0,a3 ; art tile offset
 
 		move.w	obX(a0),d3 ; x
 		addi.w	#128,d3
 		move.w	obY(a0),d2 ; y
 		addi.w	#128,d2
 
-		lea	(v_spritetablebuffer).w,a2 ; set address for sprite table
-        move.b  (v_objspace+$8),d4
-
-		jsr		(BuildSpr_Draw_checks).l
+		jsr		(BuildSpr_Normal).l
 		subq.w	#5,a2
 		move.b	#0,(a2) ; clear last link
 	@empty:
 		rts
 
+		Map_SonicSegaJP: include "_maps/Sega JP Sonic.asm"
+
+FallingPaperSegaJP:
+		lea		(v_objspace+$48),a0
+
+		cmpi.w	#224,obY(a0)
+		bge.s	@empty
+
+		addi.w	#$40,obVelY(a0)	; increase vertical speed
+		jsr (SpeedToPos)
+
+		lea		Map_SonicSegaJP(pc),a1 ; map
+		adda.w	Map_SonicSegaJP+$E(pc),a1 ; mapping $7
+		moveq    #0,d1
+		move.b   (a1)+,d1
+		subq.b   #1,d1 ; not empty
+
+		movea.w	#0,a3 ; art tile offset
+
+		move.w	obX(a0),d3 ; x
+		addi.w	#128,d3
+		move.w	obY(a0),d2 ; y
+		addi.w	#128,d2
+
+		jmp		(BuildSpr_Normal).l
+	@empty:
+		rts
 
 VDP_Data_SegaJP:
 	dc.w	$8A00+127 ; reset HBlank register
@@ -2269,9 +2327,12 @@ GM_SegaJP:
 		move.l	#HBlank_SegaJP,(H_int_addr).w
 
 		move.w	#0,(v_character).w ; use sonic
-		move.b	#id_Walk,(obAnim+v_objspace+$8).w ; sonic object
+		move.b	#0,(obFrame+v_objspace+$8).w ; sonic hold paper
 		move.w	#240,(obX+v_objspace+$8).w
 		move.w	#160,(obY+v_objspace+$8).w
+
+		move.w	#240,(obX+v_objspace+$48).w
+		move.w	#160,(obY+v_objspace+$48).w
 
 		; Set up VDP
 		lea	(vdp_control_port).l,a6
@@ -2316,6 +2377,9 @@ GM_SegaJP:
 
         move.b	#4,(v_vbla_routine).w
 		bsr.w	WaitForVBla
+
+		moveq    #0,d5 ; sprite limit
+		lea	(v_spritetablebuffer).w,a2 ; set address for sprite table
 		bsr.w	SonicSegaJP
 
 		bsr.w	PaletteFadeIn
@@ -2338,6 +2402,8 @@ GM_SegaJP:
 		move.b	#4,(v_vbla_routine).w
 		bsr.w	WaitForVBla
 
+		moveq    #0,d5 ; sprite limit
+		lea	(v_spritetablebuffer).w,a2 ; set address for sprite table
 		bsr.w	SonicSegaJP
 
 		tst.b	(v_jpadpress1).w
@@ -2352,10 +2418,14 @@ GM_SegaJP:
 		move.b	#sfx_AB,d0
 		bsr.w	PlaySound_Special ; stop music
 
+		move.b	#1,(obFrame+v_objspace+$8).w ; sonic hold paper looking up
+
 	@crane_lower:
 		move.b	#4,(v_vbla_routine).w
 		bsr.w	WaitForVBla
 
+		moveq    #0,d5 ; sprite limit
+		lea	(v_spritetablebuffer).w,a2 ; set address for sprite table
 		bsr.w	SonicSegaJP
 
 		addq.w	#$1,(v_objspace).w
@@ -2390,28 +2460,23 @@ GM_SegaJP:
 		move.b	#sfx_ChainStomp,d0
 		bsr.w	PlaySound_Special ; stop music
 
-		move.b	#id_WaterSlide,(obAnim+v_objspace+$8).w ; sonic anim
+		move.b	#$2,(obFrame+v_objspace+$8).w ; sonic falling
 		move.w	#-$200,(obVelY+v_objspace+$8).w
 		move.w	#$100,(obVelX+v_objspace+$8).w
-		move.b	#1,(v_objspace+$8).w
+
+
+		move.w	#-$400,(obVelY+v_objspace+$48).w
+		move.w	#$40,(obVelX+v_objspace+$48).w
 
 	@shake:
 		move.b	#4,(v_vbla_routine).w
 		bsr.w	WaitForVBla
 
-		cmpi.b	#id_WaterSlide,(obAnim+v_objspace+$8).w ; sonic anim
-		bne.s	@donefall
+		bsr.w	SonicFallSegaJP
 
-		lea	(v_objspace+$8).w,a0
-		addi.w	#$38,obVelY(a0)	; increase vertical speed
-		jsr (SpeedToPos)
-		cmpi.w	#160,(obY+v_objspace+$8).w
-		blt.s	@donefall
-
-		move.w	#160,(obY+v_objspace+$8).w
-		move.b	#id_Walk,(obAnim+v_objspace+$8).w ; sonic anim
-
-	@donefall:
+		moveq    #0,d5 ; sprite limit
+		lea	(v_spritetablebuffer).w,a2 ; set address for sprite table
+		bsr.w	FallingPaperSegaJP
 		bsr.w	SonicSegaJP
 
 		move.w	(v_objspace).w,d0
@@ -2435,7 +2500,7 @@ GM_SegaJP:
 		bne.w	ExitSegaJP
 
 		tst.w	(v_generictimer).w
-		bne.s	@shake
+		bne.w	@shake
 
 		lea	(v_hscrolltablebuffer).l,a0
 		move.w	#$80-1,d1
@@ -2445,12 +2510,14 @@ GM_SegaJP:
 
 		move.l	#0,(v_objspace).w
 
-		move.b	#id_LookUp,(obAnim+v_objspace+$8).w ; sonic anim
+		move.b	#$4,(obFrame+v_objspace+$8).w ; look up
 
 	@crane_raise:
 		move.b	#4,(v_vbla_routine).w
 		bsr.w	WaitForVBla
 
+		moveq    #0,d5 ; sprite limit
+		lea	(v_spritetablebuffer).w,a2 ; set address for sprite table
 		bsr.w	SonicSegaJP
 
 		addq.w	#$1,(v_objspace).w
@@ -2482,13 +2549,17 @@ GM_SegaJP:
 		move.b	#bgm_JPSega,d0
 		bsr.w	PlaySound_Special ; stop music
 
-		move.b	#id_Float3,(obAnim+v_objspace+$8).w ; sonic anim
+		move.b	#5,(obFrame+v_objspace+$8).w ; sonic anim
 
 	@loop_end:
 		move.b	#4,(v_vbla_routine).w
 		bsr.w	WaitForVBla
 
+		moveq    #0,d5 ; sprite limit
+		lea	(v_spritetablebuffer).w,a2 ; set address for sprite table
 		bsr.w	SonicSegaJP
+
+		bsr.w	SegaJPFingerWag
 
 		move.w	(v_generictimer).w,d0
 		andi.w	#$3,d0
@@ -2516,7 +2587,10 @@ GM_SegaJP:
 		move.b	#4,(v_vbla_routine).w
 		bsr.w	WaitForVBla
 
+		moveq    #0,d5 ; sprite limit
+		lea	(v_spritetablebuffer).w,a2 ; set address for sprite table
 		bsr.w	SonicSegaJP
+		bsr.s	SegaJPFingerWag
 
 		tst.b	(v_jpadpress1).w
 		bne.s	ExitSegaJP
@@ -2535,6 +2609,40 @@ ExitSegaJP:
 		move.l	#HBlank,(H_int_addr).w
 		move.l	#VBlank,(V_int_addr).w
 		move.b	#id_SplashScreen,(v_gamemode).w ; go to splash screen
+		rts
+
+SegaJPFingerWag:
+		move.w	(v_generictimer).w,d0
+		andi.w	#$7,d0
+		bne.s	@nofingerwag
+
+		move.b	(obFrame+v_objspace+$8).w,d0
+		subq.b	#5,d0
+		eor.b	#1,d0
+		addq.b	#5,d0
+		move.b	d0,(obFrame+v_objspace+$8).w
+	@nofingerwag:
+		rts
+
+SonicFallSegaJP:
+		cmpi.b	#$4,(obFrame+v_objspace+$8).w ; sonic falling
+		beq.s	@donefall
+
+		lea	(v_objspace+$8).w,a0
+		addi.w	#$38,obVelY(a0)	; increase vertical speed
+		jsr (SpeedToPos)
+		tst.w	obVelY(a0)
+		bmi.s	@donefall
+
+		move.b	#$3,(obFrame+v_objspace+$8).w ; sonic fall
+
+		cmpi.w	#160,(obY+v_objspace+$8).w
+		blt.s	@donefall
+
+		move.w	#160,(obY+v_objspace+$8).w
+		move.b	#$4,(obFrame+v_objspace+$8).w ; sonic anim
+
+	@donefall:
 		rts
 ; ===========================================================================
 
