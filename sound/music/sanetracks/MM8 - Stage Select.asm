@@ -1,6 +1,6 @@
 ; =============================================================================================
 ; Project Name:		MM8_StageSelect
-; Created:		16th December 2025
+; Created:		17th December 2025
 ; ---------------------------------------------------------------------------------------------
 ; ASM'd using S1SMPS2ASM version 1.1 by Marc Gordon (AKA Cinossu)
 ; =============================================================================================
@@ -118,32 +118,40 @@ MM8_StageSelect_Loop01:
 	smpsAlterNote	$00
 	dc.b		$0B,	nA5,	$12,	nG5,	$0C,	nA5,	nG5,	nFs5
 	dc.b		nD5
-	smpsStop
+	smpsAlterVol	$FA
+	smpsPan		panCentre,	$00
+	smpsJump	MM8_StageSelect_FM1
 
 ; FM2 Data
 MM8_StageSelect_FM2:
 	smpsFMvoice	$01
-	smpsAlterVol	$1E
+	smpsAlterVol	$1D
 	smpsPan		panCentre,	$00
 MM8_StageSelect_Loop02:
 	dc.b		nE3,	$06,	nRst,	nE4,	nE3,	nRst,	nE4,	nA3
 	dc.b		$0C,	nB3,	$06,	nRst,	$2A
 	smpsLoop	$00,	$08,	MM8_StageSelect_Loop02
-	smpsStop
+	smpsFMvoice	$00
+	smpsAlterVol	$E3
+	smpsPan		panCentre,	$00
+	smpsJump	MM8_StageSelect_FM2
 
 ; FM3 Data
 MM8_StageSelect_FM3:
 	smpsPan		panCentre,	$00
 	dc.b		nRst,	$12
 	smpsFMvoice	$01
-	smpsAlterVol	$2A
+	smpsAlterVol	$29
 MM8_StageSelect_Loop03:
 	dc.b		nE3,	$06,	nRst,	nE4,	nE3,	nRst,	nE4,	nA3
 	dc.b		$0C,	nB3,	$06,	nRst,	$2A
 	smpsLoop	$00,	$07,	MM8_StageSelect_Loop03
 	dc.b		nE3,	$06,	nRst,	nE4,	nE3,	nRst,	nE4,	nA3
 	dc.b		$0C,	nB3,	$06,	nRst,	$18
-	smpsStop
+	smpsFMvoice	$00
+	smpsAlterVol	$D7
+	smpsPan		panCentre,	$00
+	smpsJump	MM8_StageSelect_FM3
 
 ; FM4 Data
 MM8_StageSelect_FM4:
@@ -241,7 +249,9 @@ MM8_StageSelect_Loop04:
 	smpsAlterNote	$00
 	dc.b		$0B,	nA5,	$12,	nG5,	$0C,	nA5,	nG5,	nFs5
 	dc.b		$06
-	smpsStop
+	smpsAlterVol	$E4
+	smpsPan		panCentre,	$00
+	smpsJump	MM8_StageSelect_FM4
 
 ; FM5 Data
 MM8_StageSelect_FM5:
@@ -255,7 +265,10 @@ MM8_StageSelect_Loop05:
 	dc.b		nA1,	nB1,	nRst,	nB1,	nRst,	nB1,	nRst,	$06
 	dc.b		nB1,	$0C,	nRst,	$06,	nB1,	$0C
 	smpsLoop	$00,	$02,	MM8_StageSelect_Loop05
-	smpsStop
+	smpsFMvoice	$00
+	smpsAlterVol	$F2
+	smpsPan		panCentre,	$00
+	smpsJump	MM8_StageSelect_FM5
 
 ; PSG1 Data
 MM8_StageSelect_PSG1:
@@ -393,7 +406,8 @@ MM8_StageSelect_Loop06:
 	dc.b		$08
 	smpsPSGAlterVol	$01
 	dc.b		$1B
-	smpsStop
+	smpsPSGAlterVol	$FA
+	smpsJump	MM8_StageSelect_PSG1
 
 ; PSG2 Data
 MM8_StageSelect_PSG2:
@@ -507,7 +521,8 @@ MM8_StageSelect_Loop07:
 	dc.b		$08
 	smpsPSGAlterVol	$01
 	dc.b		$1B
-	smpsStop
+	smpsPSGAlterVol	$FA
+	smpsJump	MM8_StageSelect_PSG2
 
 ; PSG3 Data
 MM8_StageSelect_PSG3:
@@ -532,7 +547,8 @@ MM8_StageSelect_Loop08:
 	smpsPSGAlterVol	$05
 	smpsAlterNote	$01
 	dc.b		nA5,	nRst,	$09
-	smpsStop
+	smpsPSGAlterVol	$F7
+	smpsJump	MM8_StageSelect_PSG3
 
 ; DAC Data
 MM8_StageSelect_DAC:
@@ -549,8 +565,8 @@ MM8_StageSelect_Loop0A:
 	dc.b		$06,	dKick,	$0C,	dSnare,	dKick
 	smpsLoop	$00,	$03,	MM8_StageSelect_Loop0A
 	dc.b		dKick,	dKick,	dSnare,	dKick,	dSnare,	$06,	dSnare,	dKick
-	dc.b		$0C,	dSnare,	dKick,	$06,	dSnare
-	smpsStop
+	dc.b		$0C,	dSnare,	dKick,	$06,	nRst
+	smpsJump	MM8_StageSelect_DAC
 
 MM8_StageSelect_Voices:
 	dc.b		$00,$30,$30,$30,$31,$1F,$1F,$1F,$18,$1F,$1F,$1F,$1F,$1F,$1F,$1F
