@@ -22,7 +22,7 @@ Revision:	equ 1
 
 ZoneCount:	equ 6	; discrete zones are: GHZ, MZ, SYZ, LZ, SLZ, and SBZ
 
-CharCount: equ 5
+CharCount: equ 4
 
 ; ===========================================================================
 
@@ -398,6 +398,10 @@ ptr_GM_SegaJP:	bra.w	GM_SegaJP		; Sega Screen JP ($28)
 
 ptr_GM_SegaEU:	bra.w	GM_SegaEU		; Sega Screen EU ($2C)
 
+ptr_GM_SegaEUPC:	bra.w	GM_SegaEU		; PLACEHOLDER
+
+ptr_GM_ColdBrew:	jmp	(GM_ColdBrew).l		; Cold Brew ($34)
+
 		rts	
 ; ===========================================================================
 
@@ -597,14 +601,6 @@ VBlank:
 		lea		(vdp_data_port).l,a1
         move.l    #$40000010,4(a1) ; go to $0 in VSRAM
 		move.l	(v_scrposy_vdp).w,(a1) ; send screen y-axis pos. to VSRAM
-		btst	#6,(v_megadrive).w ; is Megadrive PAL?
-		beq.s	@notPAL		; if not, branch
-
-		move.w	#$700,d0
-	@waitPAL:
-		dbf	d0,@waitPAL ; wait here in a loop doing nothing for a while...
-
-	@notPAL:
 		move.b	(v_vbla_routine).w,d0
 		move.b	#0,(v_vbla_routine).w
 		move.w	#1,(f_hbla_pal).w
@@ -639,15 +635,6 @@ VBla_00:
 		cmpi.b	#id_LZ,(v_zone).w ; is level LZ ?
 		bne.w	VBla_Music	; if not, branch
 
-		move.w	(vdp_control_port).l,d0
-		btst	#6,(v_megadrive).w ; is Megadrive PAL?
-		beq.s	@notPAL		; if not, branch
-
-		move.w	#$700,d0
-	@waitPAL:
-		dbf	d0,@waitPAL
-
-	@notPAL:
 		move.w	#1,(f_hbla_pal).w ; set HBlank flag
 		stopZ80
 		waitZ80
@@ -881,7 +868,7 @@ VBlank_SegaJP:
 		writeVRAM	v_hscrolltablebuffer,$380,vram_hscroll
 		startZ80
 
-		jsr	(Process_DMA).l
+		;jsr	(Process_DMA).l sonic is preloaded
 
 		tst.w	(v_generictimer).w
 		beq.w	@end
@@ -2021,7 +2008,7 @@ PalLoad3_Water:
 
 
 ; ||||||||||||||| S U B R O U T I N E |||||||||||||||||||||||||||||||||||||||
-
+;
 
 PalLoad4_Water:
 		lea	(PalPointers).l,a1
@@ -2065,14 +2052,17 @@ Pal_Ending:	incbin	"palette\Ending.bin"
 Pal_CharSel:	incbin "palette\Character Select.bin"
 Pal_SegaJP:	incbin	"palette\Sega Logo JP.bin"
 Pal_SplashPal:	incbin	"eurosega\pal.bin"
+Pal_ColdBrew:	incbin	"cold brew\palette.bin"
+Pal_ColdBrewG:	incbin	"cold brew\palette grayscale.bin"
 ; ---------------------------------------------------------------------------
 ; Palette data (Character)
 ; ---------------------------------------------------------------------------
 
 pal_char:	macro name
 Pal_\name:		incbin "!Characters\\\name\\Palette - Normal.bin"
-Pal_LZWater_\name:		incbin "!Characters\\\name\\Palette - LZ Underwater.bin"
-Pal_SBZ3Water_\name:		incbin "!Characters\\\name\\Palette - SBZ3 Underwater.bin"
+				incbin "!Characters\\\name\\Palette - Alt 1.bin"
+				incbin "!Characters\\\name\\Palette - Alt 2.bin"
+				incbin "!Characters\\\name\\Palette - Alt 3.bin"
 		endm
 
 Char_Pal:
@@ -2082,7 +2072,6 @@ Char_Pal:
 	pal_char Sonic
 	pal_char GHM3_Guy
 	pal_char GHM3_Mercury
-	pal_char GHM3half_Jupiter
 	pal_char KiryuChan
 	; add next char here
 
@@ -2228,40 +2217,98 @@ Sega_GotoTitle:
 		move.b	#id_SplashScreen,(v_gamemode).w ; go to splash screen
 		rts	
 ; ===========================================================================
+
+; Old SonicSegaJP code, leave this here it could be useful in the future
+; 		; sonic's "object" is stored on $8
+; 		lea		(v_objspace+$8),a0
+; 		jsr	(Sonic_Animate).l
+; 		jsr	(Sonic_LoadGfx).l
+;
+;         moveq	#0,d1
+; 		move.b	obFrame(a0),d1 ; mapping frame
+;
+; 		lea		(Map_Sonic).l,a1 ; map
+; 		add.w	d1,d1
+; 		adda.w	(a1,d1.w),a1
+; 		moveq    #0,d1
+; 		move.b    (a1)+,d1
+; 		subq.b    #1,d1
+; 		bmi.s    @empty
+;
+; 		moveq    #0,d5 ; sprite limit
+; 		movea.w	#$4780,a3 ; art tile offset (pal 3)
+;
+; 		move.w	obX(a0),d3 ; x
+; 		addi.w	#128,d3
+; 		move.w	obY(a0),d2 ; y
+; 		addi.w	#128,d2
+;
+; 		lea	(v_spritetablebuffer).w,a2 ; set address for sprite table
+;         move.b  (v_objspace+$8),d4
+;
+; 		jsr		(BuildSpr_Draw_checks).l
+; 		subq.w	#5,a2
+; 		move.b	#0,(a2) ; clear last link
+; 	@empty:
+; 		rts
+
+
+
 SonicSegaJP:
 		; sonic's "object" is stored on $8
 		lea		(v_objspace+$8),a0
-		jsr	(Sonic_Animate).l
-		jsr	(Sonic_LoadGfx).l
 
         moveq	#0,d1
 		move.b	obFrame(a0),d1 ; mapping frame
 
-		lea		(Map_Sonic).l,a1 ; map
+		lea		Map_SonicSegaJP(pc),a1 ; map
 		add.w	d1,d1
-		adda.w	(a1,d1.w),a1
+		adda.w	Map_SonicSegaJP(pc,d1.w),a1
 		moveq    #0,d1
 		move.b    (a1)+,d1
 		subq.b    #1,d1
 		bmi.s    @empty
 
-		moveq    #0,d5 ; sprite limit
-		movea.w	#$4780,a3 ; art tile offset (pal 3)
+		movea.w	#0,a3 ; art tile offset
 
 		move.w	obX(a0),d3 ; x
 		addi.w	#128,d3
 		move.w	obY(a0),d2 ; y
 		addi.w	#128,d2
 
-		lea	(v_spritetablebuffer).w,a2 ; set address for sprite table
-        move.b  (v_objspace+$8),d4
-
-		jsr		(BuildSpr_Draw_checks).l
+		jsr		(BuildSpr_Normal).l
 		subq.w	#5,a2
 		move.b	#0,(a2) ; clear last link
 	@empty:
 		rts
 
+		Map_SonicSegaJP: include "_maps/Sega JP Sonic.asm"
+
+FallingPaperSegaJP:
+		lea		(v_objspace+$48),a0
+
+		cmpi.w	#224,obY(a0)
+		bge.s	@empty
+
+		addi.w	#$40,obVelY(a0)	; increase vertical speed
+		jsr (SpeedToPos)
+
+		lea		Map_SonicSegaJP(pc),a1 ; map
+		adda.w	Map_SonicSegaJP+$E(pc),a1 ; mapping $7
+		moveq    #0,d1
+		move.b   (a1)+,d1
+		subq.b   #1,d1 ; not empty
+
+		movea.w	#0,a3 ; art tile offset
+
+		move.w	obX(a0),d3 ; x
+		addi.w	#128,d3
+		move.w	obY(a0),d2 ; y
+		addi.w	#128,d2
+
+		jmp		(BuildSpr_Normal).l
+	@empty:
+		rts
 
 VDP_Data_SegaJP:
 	dc.w	$8A00+127 ; reset HBlank register
@@ -2280,9 +2327,12 @@ GM_SegaJP:
 		move.l	#HBlank_SegaJP,(H_int_addr).w
 
 		move.w	#0,(v_character).w ; use sonic
-		move.b	#id_Walk,(obAnim+v_objspace+$8).w ; sonic object
+		move.b	#0,(obFrame+v_objspace+$8).w ; sonic hold paper
 		move.w	#240,(obX+v_objspace+$8).w
 		move.w	#160,(obY+v_objspace+$8).w
+
+		move.w	#240,(obX+v_objspace+$48).w
+		move.w	#160,(obY+v_objspace+$48).w
 
 		; Set up VDP
 		lea	(vdp_control_port).l,a6
@@ -2327,6 +2377,9 @@ GM_SegaJP:
 
         move.b	#4,(v_vbla_routine).w
 		bsr.w	WaitForVBla
+
+		moveq    #0,d5 ; sprite limit
+		lea	(v_spritetablebuffer).w,a2 ; set address for sprite table
 		bsr.w	SonicSegaJP
 
 		bsr.w	PaletteFadeIn
@@ -2349,6 +2402,8 @@ GM_SegaJP:
 		move.b	#4,(v_vbla_routine).w
 		bsr.w	WaitForVBla
 
+		moveq    #0,d5 ; sprite limit
+		lea	(v_spritetablebuffer).w,a2 ; set address for sprite table
 		bsr.w	SonicSegaJP
 
 		tst.b	(v_jpadpress1).w
@@ -2363,10 +2418,14 @@ GM_SegaJP:
 		move.b	#sfx_AB,d0
 		bsr.w	PlaySound_Special ; stop music
 
+		move.b	#1,(obFrame+v_objspace+$8).w ; sonic hold paper looking up
+
 	@crane_lower:
 		move.b	#4,(v_vbla_routine).w
 		bsr.w	WaitForVBla
 
+		moveq    #0,d5 ; sprite limit
+		lea	(v_spritetablebuffer).w,a2 ; set address for sprite table
 		bsr.w	SonicSegaJP
 
 		addq.w	#$1,(v_objspace).w
@@ -2401,28 +2460,23 @@ GM_SegaJP:
 		move.b	#sfx_ChainStomp,d0
 		bsr.w	PlaySound_Special ; stop music
 
-		move.b	#id_WaterSlide,(obAnim+v_objspace+$8).w ; sonic anim
+		move.b	#$2,(obFrame+v_objspace+$8).w ; sonic falling
 		move.w	#-$200,(obVelY+v_objspace+$8).w
 		move.w	#$100,(obVelX+v_objspace+$8).w
-		move.b	#1,(v_objspace+$8).w
+
+
+		move.w	#-$400,(obVelY+v_objspace+$48).w
+		move.w	#$40,(obVelX+v_objspace+$48).w
 
 	@shake:
 		move.b	#4,(v_vbla_routine).w
 		bsr.w	WaitForVBla
 
-		cmpi.b	#id_WaterSlide,(obAnim+v_objspace+$8).w ; sonic anim
-		bne.s	@donefall
+		bsr.w	SonicFallSegaJP
 
-		lea	(v_objspace+$8).w,a0
-		addi.w	#$38,obVelY(a0)	; increase vertical speed
-		jsr (SpeedToPos)
-		cmpi.w	#160,(obY+v_objspace+$8).w
-		blt.s	@donefall
-
-		move.w	#160,(obY+v_objspace+$8).w
-		move.b	#id_Walk,(obAnim+v_objspace+$8).w ; sonic anim
-
-	@donefall:
+		moveq    #0,d5 ; sprite limit
+		lea	(v_spritetablebuffer).w,a2 ; set address for sprite table
+		bsr.w	FallingPaperSegaJP
 		bsr.w	SonicSegaJP
 
 		move.w	(v_objspace).w,d0
@@ -2446,7 +2500,7 @@ GM_SegaJP:
 		bne.w	ExitSegaJP
 
 		tst.w	(v_generictimer).w
-		bne.s	@shake
+		bne.w	@shake
 
 		lea	(v_hscrolltablebuffer).l,a0
 		move.w	#$80-1,d1
@@ -2456,12 +2510,14 @@ GM_SegaJP:
 
 		move.l	#0,(v_objspace).w
 
-		move.b	#id_LookUp,(obAnim+v_objspace+$8).w ; sonic anim
+		move.b	#$4,(obFrame+v_objspace+$8).w ; look up
 
 	@crane_raise:
 		move.b	#4,(v_vbla_routine).w
 		bsr.w	WaitForVBla
 
+		moveq    #0,d5 ; sprite limit
+		lea	(v_spritetablebuffer).w,a2 ; set address for sprite table
 		bsr.w	SonicSegaJP
 
 		addq.w	#$1,(v_objspace).w
@@ -2493,13 +2549,17 @@ GM_SegaJP:
 		move.b	#bgm_JPSega,d0
 		bsr.w	PlaySound_Special ; stop music
 
-		move.b	#id_Float3,(obAnim+v_objspace+$8).w ; sonic anim
+		move.b	#5,(obFrame+v_objspace+$8).w ; sonic anim
 
 	@loop_end:
 		move.b	#4,(v_vbla_routine).w
 		bsr.w	WaitForVBla
 
+		moveq    #0,d5 ; sprite limit
+		lea	(v_spritetablebuffer).w,a2 ; set address for sprite table
 		bsr.w	SonicSegaJP
+
+		bsr.w	SegaJPFingerWag
 
 		move.w	(v_generictimer).w,d0
 		andi.w	#$3,d0
@@ -2527,7 +2587,10 @@ GM_SegaJP:
 		move.b	#4,(v_vbla_routine).w
 		bsr.w	WaitForVBla
 
+		moveq    #0,d5 ; sprite limit
+		lea	(v_spritetablebuffer).w,a2 ; set address for sprite table
 		bsr.w	SonicSegaJP
+		bsr.s	SegaJPFingerWag
 
 		tst.b	(v_jpadpress1).w
 		bne.s	ExitSegaJP
@@ -2546,6 +2609,40 @@ ExitSegaJP:
 		move.l	#HBlank,(H_int_addr).w
 		move.l	#VBlank,(V_int_addr).w
 		move.b	#id_SplashScreen,(v_gamemode).w ; go to splash screen
+		rts
+
+SegaJPFingerWag:
+		move.w	(v_generictimer).w,d0
+		andi.w	#$7,d0
+		bne.s	@nofingerwag
+
+		move.b	(obFrame+v_objspace+$8).w,d0
+		subq.b	#5,d0
+		eor.b	#1,d0
+		addq.b	#5,d0
+		move.b	d0,(obFrame+v_objspace+$8).w
+	@nofingerwag:
+		rts
+
+SonicFallSegaJP:
+		cmpi.b	#$4,(obFrame+v_objspace+$8).w ; sonic falling
+		beq.s	@donefall
+
+		lea	(v_objspace+$8).w,a0
+		addi.w	#$38,obVelY(a0)	; increase vertical speed
+		jsr (SpeedToPos)
+		tst.w	obVelY(a0)
+		bmi.s	@donefall
+
+		move.b	#$3,(obFrame+v_objspace+$8).w ; sonic fall
+
+		cmpi.w	#160,(obY+v_objspace+$8).w
+		blt.s	@donefall
+
+		move.w	#160,(obY+v_objspace+$8).w
+		move.b	#$4,(obFrame+v_objspace+$8).w ; sonic anim
+
+	@donefall:
 		rts
 ; ===========================================================================
 
@@ -2647,6 +2744,9 @@ GM_Splash:
 		disable_ints
 		bsr.w	SoundDriverLoad
 
+		clr.b	(f_wtr_state).w
+		bsr.w	ClearScreen
+
 		; Set up VDP
 		lea	(vdp_control_port).l,a6
 		move.w	#7-1,d0
@@ -2655,9 +2755,6 @@ GM_Splash:
 		move.w	VDP_Data_Splash(pc,d1.w),(a6)
 		addq.w	#2,d1
 		dbf.w	d0,@vdploop
-
-		clr.b	(f_wtr_state).w
-		bsr.w	ClearScreen
 
 		lea (Splash_Screen_Entries).l,a2
 	@load_next_splash:
@@ -2723,6 +2820,7 @@ splash_entry macro art,tilemap,palette,size,music_id,duration_in_frames
 	splash_entry Nem_Splash_SadMac,Eni_Splash_SadMac,Pal_Splash_SadMac,$60,$21,175
     splash_entry Nem_Splash_Drift,Eni_Splash_Drift,Pal_Splash_Drift,$20,$1D,480
 	splash_entry Nem_Splash_Sane,Eni_Splash_Sane,Pal_Splash_Sane,$40,bgm_MM8StageSel,720
+	splash_entry Nem_Splash_LastBurenyuu,Eni_Splash_LastBurenyuu,Pal_Splash_LastBurenyuu,$20,bgm_FurElise,60*4
     splash_entry Nem_Splash_BLUE_LOBSTER,Eni_Splash_BLUE_LOBSTER,Pal_Splash_BLUE_LOBSTER,$20,bgm_GameOver,480 ;No PCM for lobster :(
     dc.l	-1 ; end marker    
 
@@ -2734,6 +2832,52 @@ splash_entry macro art,tilemap,palette,size,music_id,duration_in_frames
 ; ---------------------------------------------------------------------------
 
 GM_Title:
+		move.b	#FadeOut,d0
+		bsr.w	PlaySound_Special ; stop music
+		bsr.w	ClearPLC
+		bsr.w	PaletteFadeOut
+		disable_ints
+		bsr.w	SoundDriverLoad
+		lea	(vdp_control_port).l,a6
+		move.w	#$8004,(a6)	; 8-colour mode
+		move.w	#$8200+(vram_fg>>10),(a6) ; set foreground nametable address
+		move.w	#$8400+(vram_bg>>13),(a6) ; set background nametable address
+		move.w	#$9001,(a6)	; 64-cell hscroll size
+		move.w	#$9200,(a6)	; window vertical position
+		move.w	#$8B03,(a6)
+		move.w	#$8700,(a6)	; set background colour (palette line 2, entry 0)
+		clr.b	(f_wtr_state).w
+		bsr.w	ClearScreen
+
+		lea	(v_objspace).w,a1
+		moveq	#0,d0
+		move.w	#$7FF,d1
+
+Tit_ClrObj0:
+		move.l	d0,(a1)+
+		dbf	d1,Tit_ClrObj0	; fill object space ($D000-$EFFF) with 0
+		lea	(v_pal_dry_dup).w,a1
+		moveq	#cBlack,d0
+		move.w	#$1F,d1
+
+		locVRAM	$14C0
+		lea	(Nem_CreditText).l,a0 ;	load alphabet
+		bsr.w	NemDec
+		moveq	#palid_Sonic,d0	; load Sonic's palette
+		bsr.w	PalLoad2
+		moveq	#palid_GHZ,d0	; load Sonic's palette
+		bsr.w	PalLoad2
+		move.b	#id_CreditsText,(v_sonicteam).w ; load "SONIC TEAM PRESENTS" object
+.wait:		
+		move.b	#2,(vblank).w
+		bsr.w	WaitForVBla	
+		jsr	(ExecuteObjects).l
+		jsr	(BuildSprites).l
+		cmpi.b	#btnStart,(v_jpadhold1).w	; is Start being pressed?
+		beq.s	.skip		; if yes, branch.
+ 		tst.w   (v_sonicteam+Petertime).w
+		bne.s	.wait
+.skip:
         jsr     GitHubScreen
 		rts	
 
@@ -2756,6 +2900,7 @@ FinalTitle:
 		dbf	d1,Tit_ClrObj1	; fill palette with 0 (black)
 
 		move.w	#0,(v_character).w ; Reset character
+		move.b	#0,(v_char_pal).w
 
 		disable_ints
 		locVRAM	$4000
@@ -2877,11 +3022,20 @@ Tit_ChkRegion:
 		cmpi.w	#(CharCount)*4,(v_character).w
 		blt.s	@nocharswap
 
-		bsr.w	PlaySound_Special	; play ring sound when code is entered
-
 		move.w	#0,(v_character).w
 
 	@nocharswap:
+
+		btst	#bitB,(v_jpadpress1).w ; is pressing B?
+		beq.s	@nopalswap
+
+		move.b	#sfx_Switch,d0
+		bsr.w	PlaySound_Special	; play ring sound when code is entered
+
+		addq.b	#1,(v_char_pal).w
+		andi.b	#$3,(v_char_pal).w
+
+	@nopalswap:
 
 		tst.b	(v_megadrive).w	; check if the machine is US or Japanese
 		bpl.s	Tit_RegionJap	; if Japanese, branch
@@ -3137,13 +3291,15 @@ loc_33E4:
 		move.w	Demo_Levels(pc,d0.w),d0	; load level number for demo
 		move.w	d0,(v_zone).w
 		addq.w	#1,(v_demonum).w ; add 1 to demo number
-		cmpi.w	#4,(v_demonum).w ; is demo number less than 4?
+		cmpi.w	#5,(v_demonum).w ; is demo number less than 5?
 		blo.s	loc_3422	; if yes, branch
 		move.w	#0,(v_demonum).w ; reset demo number to 0
 
 loc_3422:
 		move.w	#1,(f_demo).w	; turn demo mode on
 		move.b	#id_Demo,(v_gamemode).w ; set screen mode to 08 (demo)
+		cmpi.w	#$700,d0	; is level number 0700 (the secret brew zone)?
+		beq.s	Demo_Brew	; if yes, branch
 		cmpi.w	#$600,d0	; is level number 0600 (special stage)?
 		bne.s	Demo_Level	; if not, branch
 		move.b	#id_Special,(v_gamemode).w ; set screen mode to $10 (Special Stage)
@@ -3160,6 +3316,9 @@ Demo_Level:
 		else
 			move.l	#5000,(v_scorelife).w ; extra life is awarded at 50000 points
 		endc
+		rts	
+Demo_Brew:
+		move.b	#id_ColdBrew,(v_gamemode).w ; set screen mode to $34
 		rts	
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
@@ -3463,24 +3622,19 @@ CharSelect_Loop:
 
 LoadCharacterCharSelect:
 		lea (v_pal_dry+$60).l,a3
-		move.w	#0,d2
 		bsr.s	LoadPlayerPalette_main
 		; load rest of stuff I guess
 		rts
 
-LoadPlayerPalette: ; d2 -> offset in memory .w
+LoadPlayerPalette:
 		lea (v_pal_dry).l,a3
 LoadPlayerPalette_main:
 		move.w	(v_character).w,d0
 		lea	(Char_Pal).l,a2
-	rept 3
+		add.b	(v_char_pal).w,d0
+	rept 5
 		add.w	d0,d0
-	endr ; * 8
-		move.w	d0,d1
-		add.w	d0,d0
-		add.w	d1,d0 ; * 3
-
-		add.w	d2,d0
+	endr ; * 32 -> (128)
 		add.w	d0,a2
 		move.w	#($20/4)-1,d7
 
@@ -3653,7 +3807,6 @@ Level_LoadPal:
 		cmpi.b	#id_LZ,(v_zone).w ; is level LZ?
 		bne.s	Level_GetBgm	; if not, branch
 
-		clr.w	d2
 		lea (v_pal_water).l,a3
 		bsr.w	LoadPlayerPalette_main	; load Sonic's palette
 
@@ -7177,8 +7330,9 @@ BuildSprites:
 		btst	#5,d4		; is static mappings flag on?
 		bne.s	@drawFrame	; if yes, branch
 		move.b	obFrame(a0),d1
-		add.b	d1,d1
-		adda.w	(a1,d1.w),a1	; get mappings frame address
+		add.w	d1,d1					; MJ: changed from byte to word (we want more than 7F sprites)
+		adda.w	(a1,d1.w),a1
+		moveq	#$00,d1					; MJ: clear d1 (because of our byte to word change)
 		move.b	(a1)+,d1	; number of sprite pieces
 		subq.b	#1,d1
 		bmi.s	@setVisible
@@ -7754,7 +7908,6 @@ Char_Map:	; CHAR ADD STUFF
 	dc.l	Map_Sonic
 	dc.l	Map_Sonic
 	dc.l	Map_GHM3_Mercury
-	dc.l	Map_GHM3half_Jupiter
 	dc.l	Map_KiryuChan
 	; add next char here
 
@@ -7838,7 +7991,6 @@ Char_ModeTable:
 	modetable_char Sonic
 	modetable_char Sonic ; GHM3_Guy
 	modetable_char Sonic ; GHM3_Mercury
-	modetable_char Sonic ; GHM3half_Jupiter
 	modetable_char KiryuChan ; KiryuChan
 	; add next char here
 		even
@@ -7900,7 +8052,6 @@ Ani_\name:	include	"!Characters\\\name\\Anim.asm"
 		; CHAR ADD STUFF
 
 		anim_char Sonic
-		anim_char GHM3half_Jupiter
 		anim_char KiryuChan
 
 
@@ -9369,7 +9520,6 @@ DPLC_\name:	include	"!Characters\\\name\\DPLC.asm"
 
 	map_char Sonic
 	map_char GHM3_Mercury
-	map_char GHM3half_Jupiter
 	map_char KiryuChan
 	; add next char here
 
@@ -9384,7 +9534,6 @@ Art_\name:	incbin	"!Characters\\\name\\Art.bin"
 
 	art_char Sonic
 	art_char GHM3_Mercury
-	art_char GHM3half_Jupiter
 	art_char KiryuChan
 	; add next char here
 		even
@@ -9410,6 +9559,7 @@ Pal_Splash_\name:	incbin	"splash\\Pal - \name\.bin"
 	splash_data Drift
 	splash_data Sane
     splash_data BLUE_LOBSTER
+    splash_data LastBurenyuu
 	; next splash screen data here
 
 ; ---------------------------------------------------------------------------
@@ -10158,6 +10308,7 @@ Nem_GitMadScr:	incbin	ATOGKTitle/Nemesis/GitMad.bin
 		even			
 ; ===========================================================================
 			
+		include "cold brew/GM_ColdBrew.asm"
 
 ; end of 'ROM'
 		even

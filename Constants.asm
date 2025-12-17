@@ -84,6 +84,7 @@ id_CharSelect:	equ ptr_GM_CharSelect-GameModeArray ; $24
 id_SegaJP:	equ ptr_GM_SegaJP-GameModeArray ; $28
 id_SegaEU:	equ ptr_GM_SegaEU-GameModeArray ; $2C
 id_Sega50JP:	equ ptr_GM_Sega50JP-GameModeArray ; $30
+id_ColdBrew:	equ ptr_GM_ColdBrew-GameModeArray ; $34
 
 ; Levels
 id_GHZ:		equ 0
@@ -220,6 +221,8 @@ bgm_Basillica:	equ ((ptr_mus94-MusicIndex)/4)+bgm__First
 bgm_JPSega:	equ ((ptr_mus1F-MusicIndex)/4)+bgm__First
 bgm_EuroSega:	equ ((ptr_mus20-MusicIndex)/4)+bgm__First
 bgm_MM8StageSel:	equ ((ptr_mus23-MusicIndex)/4)+bgm__First
+
+bgm_FurElise:	equ ((ptr_mus19-MusicIndex)/4)+bgm__First
 bgm__Last:	equ ((ptr_musend-MusicIndex-4)/4)+bgm__First
 
 ; Sound effects
@@ -408,3 +411,5 @@ id_Extra6:	equ $1B
 id_Extra7:	equ $1C
 id_Extra8:	equ $1D
 id_Extra9:	equ $1E
+id_ExtraA:	equ $1F
+; Anything past $1F is unsafe for characters that aren't made for that, make sure to update anim

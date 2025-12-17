@@ -156,8 +156,8 @@ ptr_mus20:	dc.l Music20
 ptr_mus21:	dc.l Music21
 ptr_mus22:	dc.l Music22
 ptr_mus23:	dc.l Music23
-;ptr_mus24:	dc.l Music24
-;ptr_mus25:	dc.l Music25
+ptr_mus24:	dc.l Music24
+ptr_mus25:	dc.l Music25
 ;ptr_mus26:	dc.l Music26
 ;ptr_mus27:	dc.l Music27
 ;ptr_mus28:	dc.l Music28
@@ -2678,6 +2678,10 @@ Music22:	include	"sound/music/TG2000Tracks/TG2000Jingle.asm"
 		even
 Music23:	include	"sound/music/sanetracks/MM8 - Stage Select.asm"
 		even
+Music24:	include	"sound/music/TG2000Tracks/DoomGate.asm"
+		even
+Music25:	include	"sound/music/MikeBoard.asm"
+		even
 
 ; ---------------------------------------------------------------------------
 ; Sound effect pointers
@@ -2731,6 +2735,8 @@ ptr_sndCC:	dc.l SoundCC
 ptr_sndCD:	dc.l SoundCD
 ptr_sndCE:	dc.l SoundCE
 ptr_sndCF:	dc.l SoundCF
+ptr_sndEB0:	dc.l SoundEB0
+ptr_sndEB1:	dc.l SoundEB1
 ptr_sndend
 
 ; ---------------------------------------------------------------------------
@@ -2838,6 +2844,10 @@ SoundCD:	include	"sound/sfx/SndCD - Switch.asm"
 SoundCE:	include	"sound/sfx/SndCE - Ring Left Speaker.asm"
 		even
 SoundCF:	include	"sound/sfx/SndCF - Signpost.asm"
+		even
+SoundEB0:	include	"sound/sfx/FC Blip.asm"
+		even
+SoundEB1:	include	"sound/sfx/FC Select.asm"
 		even
 
 ; ---------------------------------------------------------------------------

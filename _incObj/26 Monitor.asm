@@ -81,8 +81,23 @@ Mon_Solid:	; Routine 2
 		beq.w	loc_A25C
 		tst.w	obVelY(a1)
 		bmi.s	loc_A20A
-		cmpi.b	#id_Roll,obAnim(a1) ; is Sonic rolling?
-		beq.s	loc_A25C	; if yes, branch
+		;cmpi.b	#id_Roll,obAnim(a1) ; is Sonic rolling?
+		;beq.s	loc_A25C	; if yes, branch
+
+		moveq	#0,d5
+		move.b	obAnim(a1),d5
+		cmpi.w	#$1F,d5
+		bgt.s	loc_A20A
+		move.b	d5,d4
+		andi.b	#$7,d5 ; bit
+		lsr.b	#3,d4 ; byte
+
+		add.w	(v_character).w,d4
+
+		lea (Char_React).l,a2
+		move.b	(a2,d4.w),d4
+		btst	d5,d4
+		bne.s	loc_A25C
 
 loc_A20A:
 		tst.w	d1

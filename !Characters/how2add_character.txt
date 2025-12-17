@@ -4,7 +4,7 @@ Should be working
 
 - Copy the Sonic folder and name it accordingly;
 - Edit data in the folder;
-- Search for 'CHAR ADD STUFF' in sonic.asm, _incObj/Sonic LoadGfx.asm, _incObj/Sonic Animate.asm & _inc/Palette Pointers.asm (optional) and add your character.
+- Search for 'CHAR ADD STUFF' in sonic.asm, _incObj/Sonic LoadGfx.asm, _incObj/Sonic Animate.asm, _incObj/sub ReactToItem.asm & _inc/Palette Pointers.asm (optional) and add your character.
 
 *You can delete things that are just gonna be copies in your folder and not do the macro related to them
 
@@ -16,3 +16,4 @@ Porting GHM3 chars to 4:
 - make sure to reorder the animations, ones not listed in the anim constants go after
 
 ALSO PRESS A ON THE TITLE SCREEN TO SCROLL THROUGH CHARACTERS
+B TO SCROLL THROUGH PALETTES 0,1,2 & 3

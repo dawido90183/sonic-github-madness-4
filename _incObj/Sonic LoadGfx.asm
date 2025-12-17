@@ -8,7 +8,6 @@ Char_DPLC:	; CHAR ADD STUFF
 	dc.l	DPLC_Sonic
 	dc.l	DPLC_Sonic
 	dc.l	DPLC_GHM3_Mercury
-	dc.l	DPLC_GHM3half_Jupiter
 	dc.l	DPLC_KiryuChan
 	; add next char here
 
@@ -57,7 +56,6 @@ Char_Art:	; CHAR ADD STUFF
 	dc.l	Art_Sonic
 	dc.l	Art_Sonic
 	dc.l	Art_GHM3_Mercury
-	dc.l	Art_GHM3half_Jupiter
 	dc.l	Art_KiryuChan
 	; add next char here
 
