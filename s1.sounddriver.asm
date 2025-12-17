@@ -2764,6 +2764,7 @@ ptr_sndCE:	dc.l SoundCE
 ptr_sndCF:	dc.l SoundCF
 ptr_sndEB0:	dc.l SoundEB0
 ptr_sndEB1:	dc.l SoundEB1
+ptr_sndEB2:	dc.l SoundEB2
 ptr_sndend
 
 ; ---------------------------------------------------------------------------
@@ -2875,6 +2876,8 @@ SoundCF:	include	"sound/sfx/SndCF - Signpost.asm"
 SoundEB0:	include	"sound/sfx/FC Blip.asm"
 		even
 SoundEB1:	include	"sound/sfx/FC Select.asm"
+		even
+SoundEB2:	include	"sound/sfx/Lobotomy.asm"
 		even
 
 ; ---------------------------------------------------------------------------
