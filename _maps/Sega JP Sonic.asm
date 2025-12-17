@@ -37,5 +37,5 @@
 @internal_7B: 	dc.b $3
 	dc.b $EC, $4, $C0, $92, $F5
 	dc.b $F4, $0, $C0, $94, $F5
-	dc.b $2, $4, $E0, $95, $F9
+	dc.b $2, $4, $C0, $95, $F9
 	even
