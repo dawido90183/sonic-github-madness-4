@@ -40,30 +40,55 @@ PSG9:		dc.b 0,1,2,3,4,5,6,7,8,9,$A,$B,$C,$D,$E,$F,$80
 ; ---------------------------------------------------------------------------
 ; New tempos for songs during speed shoes
 ; ---------------------------------------------------------------------------
-; DANGER! several songs will use the first few bytes of MusicIndex as their main
-; tempos while speed shoes are active. If you don't want that, you should add
-; their "correct" sped-up main tempos to the list.
-; byte_71A94:
+; DANGER! Please choose Your correct Speed after adding, who knows if it plays too slow or fast
 SpeedUpIndex:
-		dc.b 7		; GHZ
-		dc.b $72	; LZ
-		dc.b $73	; MZ
-		dc.b $26	; SLZ
-		dc.b $15	; SYZ
-		dc.b 8		; SBZ
-		dc.b $FF	; Invincibility
-		dc.b 5		; Extra Life
-		;dc.b ?		; Special Stage
-		;dc.b ?		; Title Screen
-		;dc.b ?		; Ending
-		;dc.b ?		; Boss
-		;dc.b ?		; FZ
-		;dc.b ?		; Sonic Got Through
-		;dc.b ?		; Game Over
-		;dc.b ?		; Continue Screen
-		;dc.b ?		; Credits
-		;dc.b ?		; Drowning
-		;dc.b ?		; Get Emerald
+		dc.b 7		; $01
+		dc.b $72	; $02
+		dc.b $73	; $03
+		dc.b $26	; $04
+		dc.b $15	; $05
+		dc.b 8		; $06
+		dc.b $FF	; $07
+		dc.b 5		; $08
+		dc.b $00	; $09
+		dc.b $00	; $0A
+		dc.b $00	; $0B
+		dc.b $00	; $0C
+		dc.b $00	; $0D
+		dc.b $00	; $0E
+		dc.b $00	; $0F
+		dc.b $00	; $10
+		dc.b $00	; $11
+		dc.b $00	; $12
+		dc.b $00	; $13
+		dc.b $00	; $14
+		dc.b $00	; $15
+		dc.b $00	; $16
+		dc.b $00	; $17
+		dc.b $00	; $18
+		dc.b $00	; $19
+		dc.b $00	; $1A
+		dc.b $00	; $1B
+		dc.b $00	; $1C
+		dc.b $00	; $1D
+		dc.b $00	; $1E
+		dc.b $00	; $2F
+		dc.b $00	; $20
+		dc.b $00	; $21
+		dc.b $00	; $22
+		dc.b $00	; $23
+		dc.b $00	; $24
+		dc.b $00	; $25
+		dc.b $00	; $26
+		dc.b $00	; $27
+		dc.b $00	; $28
+		dc.b $00	; $29
+		dc.b $00	; $2A
+		dc.b $00	; $2B
+		dc.b $00	; $2C
+		dc.b $00	; $2D
+		dc.b $00	; $2E
+		dc.b $00	; $2F
 
 PALSpeedIndex:			; NOTE BY CONI - this is for whenever you want your music to play either at the same speed or slower in PAL consoles
 						; set the byte for your respective music to 0 if you want your track to play slower
@@ -158,7 +183,7 @@ ptr_mus22:	dc.l Music22
 ptr_mus23:	dc.l Music23
 ptr_mus24:	dc.l Music24
 ptr_mus25:	dc.l Music25
-;ptr_mus26:	dc.l Music26
+ptr_mus26:	dc.l Music26
 ;ptr_mus27:	dc.l Music27
 ;ptr_mus28:	dc.l Music28
 ;ptr_mus29:	dc.l Music29
@@ -2681,6 +2706,8 @@ Music23:	include	"sound/music/sanetracks/MM8 - Stage Select.asm"
 Music24:	include	"sound/music/TG2000Tracks/DoomGate.asm"
 		even
 Music25:	include	"sound/music/MikeBoard.asm"
+		even
+Music26:	include	"sound/music/CNTracks/RE Mansion.asm"
 		even
 
 ; ---------------------------------------------------------------------------
