@@ -110,11 +110,7 @@ loc_E0:
 		dc.b "IAMDINGINGWING.." ; Copyright holder and release date (generally year)
 		dc.b "SoNiC geethoub maedness 4 sonic tts 4 no        " ; Domestic name
 		dc.b "making SonLVL on my s1built build into batch of " ; International name
-		if Revision=0
-		dc.b "GM 00001009-00"   ; Serial/version number (Rev 0)
-		else
-			dc.b "GM 00004049-01" ; Serial/version number (Rev non-0)
-		endc
+			dc.b "GM EA_GAMES-01" ; Serial/version number (Rev non-0)
 Checksum:
 		if Revision=0
 		dc.w $264A	; Hardcoded to make it easier to check for ROM correctness
