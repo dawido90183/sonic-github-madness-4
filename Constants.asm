@@ -221,6 +221,8 @@ bgm_Basillica:	equ ((ptr_mus94-MusicIndex)/4)+bgm__First
 bgm_JPSega:	equ ((ptr_mus1F-MusicIndex)/4)+bgm__First
 bgm_EuroSega:	equ ((ptr_mus20-MusicIndex)/4)+bgm__First
 bgm_MM8StageSel:	equ ((ptr_mus23-MusicIndex)/4)+bgm__First
+
+bgm_FurElise:	equ ((ptr_mus19-MusicIndex)/4)+bgm__First
 bgm__Last:	equ ((ptr_musend-MusicIndex-4)/4)+bgm__First
 
 ; Sound effects

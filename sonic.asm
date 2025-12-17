@@ -2636,6 +2636,9 @@ GM_Splash:
 		disable_ints
 		bsr.w	SoundDriverLoad
 
+		clr.b	(f_wtr_state).w
+		bsr.w	ClearScreen
+
 		; Set up VDP
 		lea	(vdp_control_port).l,a6
 		move.w	#7-1,d0
@@ -2644,9 +2647,6 @@ GM_Splash:
 		move.w	VDP_Data_Splash(pc,d1.w),(a6)
 		addq.w	#2,d1
 		dbf.w	d0,@vdploop
-
-		clr.b	(f_wtr_state).w
-		bsr.w	ClearScreen
 
 		lea (Splash_Screen_Entries).l,a2
 	@load_next_splash:
@@ -2712,6 +2712,7 @@ splash_entry macro art,tilemap,palette,size,music_id,duration_in_frames
 	splash_entry Nem_Splash_SadMac,Eni_Splash_SadMac,Pal_Splash_SadMac,$60,$21,175
     splash_entry Nem_Splash_Drift,Eni_Splash_Drift,Pal_Splash_Drift,$20,$1D,480
 	splash_entry Nem_Splash_Sane,Eni_Splash_Sane,Pal_Splash_Sane,$40,bgm_MM8StageSel,720
+	splash_entry Nem_Splash_LastBurenyuu,Eni_Splash_LastBurenyuu,Pal_Splash_LastBurenyuu,$20,bgm_FurElise,60*4
     splash_entry Nem_Splash_BLUE_LOBSTER,Eni_Splash_BLUE_LOBSTER,Pal_Splash_BLUE_LOBSTER,$20,bgm_GameOver,480 ;No PCM for lobster :(
     dc.l	-1 ; end marker    
 
@@ -9450,6 +9451,7 @@ Pal_Splash_\name:	incbin	"splash\\Pal - \name\.bin"
 	splash_data Drift
 	splash_data Sane
     splash_data BLUE_LOBSTER
+    splash_data LastBurenyuu
 	; next splash screen data here
 
 ; ---------------------------------------------------------------------------
