@@ -2835,6 +2835,7 @@ splash_entry macro art,tilemap,palette,size,music_id,duration_in_frames
     splash_entry Nem_Splash_ReimuDrip,Eni_Splash_ReimuDrip,Pal_Splash_ReimuDrip,$20,$14,160
     splash_entry Nem_Splash_Cmruey,Eni_Splash_Cmruey,Pal_Splash_Cmruey,$20,$1D,240
     splash_entry Nem_Splash_Disappointed,Eni_Splash_Disappointed,Pal_Splash_Disappointed,$20,bgm_GameOver,120
+	splash_entry Nem_Splash_Mines,Eni_Splash_Mines,Pal_Splash_Mines,$20,$27,650 ;if anybody is curious this is a screenshot of my ps3. not much else tosay
     dc.l	-1 ; end marker    
 
 ; ==========================================================================		
@@ -10322,6 +10323,12 @@ Eni_Madness:	incbin	ATOGKTitle/Enigma/Madness.bin
 		even
 Nem_GitMadScr:	incbin	ATOGKTitle/Nemesis/GitMad.bin	
 		even			
+Nem_Splash_Mines: incbin "splash/Art - Mines.bin"
+        even
+Eni_Splash_Mines: incbin "splash/Map - Mines.bin"
+        even
+Pal_Splash_Mines: incbin "splash/Pal - Mines.bin"
+        even
 ; ===========================================================================
 			
 		include "cold brew/GM_ColdBrew.asm"

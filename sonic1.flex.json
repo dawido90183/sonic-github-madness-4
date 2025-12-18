@@ -1,8 +1,33 @@
 {
     "Flex": 2,
     "name": "Sonic 1",
-    "node": "192f8644-fe28-4db6-a8d5-c4aa94986086",
+    "node": "4f52c6cc-234c-4f4a-9a88-f78f8e0b9752",
     "objects": [
+        {
+            "uuid": "4f52c6cc-234c-4f4a-9a88-f78f8e0b9752",
+            "format": "Sonic 1.js",
+            "name": "object",
+            "palettes": [
+                {
+                    "path": "splash\\Pal - Mines.bin",
+                    "length": 1
+                }
+            ],
+            "art": {
+                "path": "",
+                "compression": "Uncompressed",
+                "offset": 0
+            },
+            "mappings": {
+                "path": "",
+                "label": ""
+            },
+            "dplcs": {
+                "enabled": false,
+                "path": "",
+                "label": ""
+            }
+        },
         {
             "format": "Sonic 1 Old.js",
             "name": "Sega JP Sonic",
