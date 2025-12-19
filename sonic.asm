@@ -2977,8 +2977,7 @@ FinalTitle:
 		moveq	#palid_Title,d0	; load title screen palette
 		bsr.w	PalLoad1
 		move.b	#0,(f_debugmode).w ; disable debug mode
-		move.w	#$178,(v_generictimer).w ; run title screen for $178 frames
-		
+		move.w	#$FFF8,(v_generictimer).w ; Title Time
 		lea	(v_sonicteam).w,a1
 		moveq	#0,d0
 		move.w	#$F,d1
