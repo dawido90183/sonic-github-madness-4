@@ -3299,8 +3299,8 @@ loc_33E4:
 		bne.w	Tit_ChkLevSel	; if yes, branch
 		tst.w	(v_generictimer).w
 		bne.w	loc_33B6
-		move.b	#bgm_Fade,d0
-		bsr.w	PlaySound_Special ; fade out music
+		;move.b	#bgm_Fade,d0
+		;bsr.w	PlaySound_Special ; fade out music
 		move.w	(v_demonum).w,d0 ; load demo number
 		andi.w	#7,d0
 		add.w	d0,d0
@@ -3744,8 +3744,8 @@ GM_Level:
 		move.l	#VBlank,(V_int_addr).w
 		move.l	#HBlank,(H_int_addr).w
 		bset	#7,(v_gamemode).w ; add $80 to screen mode (for pre level sequence)
-		tst.w	(f_demo).w
-		bmi.s	Level_NoMusicFade
+		tst.w	(f_demo).w	; is demo mode on?
+		bne.s	Level_NoMusicFade	; if so, branch
 		move.b	#bgm_Fade,d0
 		bsr.w	PlaySound_Special ; fade out music
 
@@ -3866,7 +3866,7 @@ Level_GetBgm:
 
 		; Demo plays title music... I think??
 		tst.w	(f_demo).w	; is demo mode on?
-		bne.s	Level_TtlCardLoop	; if not, branch
+		bne.s	Level_TtlCardLoop	; if so, branch
 
 		moveq    #0,d0
 		move.b    (v_zone).w,d0
