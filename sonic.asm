@@ -3703,14 +3703,34 @@ BlendColor: ; d3 -> target subtract color ; a3 -> target palette; d1 -> size
 ; Music playlist
 ; ---------------------------------------------------------------------------
 MusicList:
-		dc.b bgm_GHZ	; GHZ
-		dc.b bgm_LZ	; LZ
-		dc.b bgm_MZ	; MZ
-		dc.b bgm_SLZ	; SLZ
-		dc.b bgm_SYZ	; SYZ
-		dc.b bgm_SBZ	; SBZ
-		zonewarning MusicList,1
-		dc.b bgm_FZ	; Ending
+		dc.b bgm_GHZ    ; GHZ1
+        dc.b bgm_GHZ    ; GHZ2
+        dc.b bgm_GHZ    ; GHZ3
+        dc.b bgm_GHZ    ; GHZ4
+        dc.b bgm_LZ    ; LZ1
+        dc.b bgm_LZ    ; LZ2
+        dc.b bgm_LZ    ; LZ3
+        dc.b bgm_SBZ    ; LZ4
+        dc.b bgm_MZ    ; MZ1
+        dc.b bgm_MZ    ; MZ2
+        dc.b bgm_MZ    ; MZ3
+        dc.b bgm_MZ    ; MZ4
+        dc.b bgm_SLZ    ; SLZ1
+        dc.b bgm_SLZ    ; SLZ2
+        dc.b bgm_SLZ    ; SLZ3
+        dc.b bgm_SLZ    ; SLZ4
+        dc.b bgm_SYZ    ; SYZ1
+        dc.b bgm_SYZ    ; SYZ2
+        dc.b bgm_SYZ    ; SYZ3
+        dc.b bgm_SYZ    ; SYZ4
+        dc.b bgm_SBZ    ; SBZ1
+        dc.b bgm_SBZ    ; SBZ2
+        dc.b bgm_FZ    ; SBZ3
+        dc.b bgm_SBZ    ; SBZ4
+        dc.b bgm_GHZ    ; GHZ1
+        dc.b bgm_GHZ    ; GHZ1
+        dc.b bgm_GHZ    ; GHZ1
+        dc.b bgm_GHZ    ; GHZ1
 		even
 ; ===========================================================================
 
@@ -3841,22 +3861,19 @@ Level_LoadPal:
 Level_GetBgm:
 		tst.w	(f_demo).w
 		bmi.s	Level_SkipTtlCard
-		moveq	#0,d0
-		move.b	(v_zone).w,d0
-		cmpi.w	#(id_LZ<<8)+3,(v_zone).w ; is level SBZ3?
-		bne.s	Level_BgmNotLZ4	; if not, branch
-		moveq	#5,d0		; use 5th music (SBZ)
 
-	Level_BgmNotLZ4:
-		cmpi.w	#(id_SBZ<<8)+2,(v_zone).w ; is level FZ?
-		bne.s	Level_PlayBgm	; if not, branch
-		moveq	#6,d0		; use 6th music (FZ)
-
-Level_PlayBgm:
+		; Demo plays title music... I think??
 		tst.w	(f_demo).w	; is demo mode on?
 		bne.s	Level_TtlCardLoop	; if not, branch
+
+		moveq    #0,d0
+		move.b    (v_zone).w,d0
+		add.b    d0,d0
+		add.b    d0,d0
+		add.b    (v_act).w,d0
 		lea	(MusicList).l,a1 ; load music playlist
 		move.b	(a1,d0.w),d0
+		move.b	d0,(Saved_music).w
 		bsr.w	PlaySound	; play music
 		move.b	#id_TitleCard,(v_titlecard).w ; load title card object
      	
@@ -8079,23 +8096,16 @@ Ani_\name:	include	"!Characters\\\name\\Anim.asm"
 ResumeMusic:
 		cmpi.w	#12,(v_air).w	; more than 12 seconds of air left?
 		bhi.s	@over12		; if yes, branch
-		move.w	#bgm_LZ,d0	; play LZ music
-		cmpi.w	#(id_LZ<<8)+3,(v_zone).w ; check if level is 0103 (SBZ3)
-		bne.s	@notsbz
-		move.w	#bgm_SBZ,d0	; play SBZ music
+		move.b	(Saved_music).w,d0 ; restore music
 
-	@notsbz:
-		if Revision=0
-		else
-			tst.b	(v_invinc).w ; is Sonic invincible?
-			beq.s	@notinvinc ; if not, branch
-			move.w	#bgm_Invincible,d0
+		tst.b	(v_invinc).w ; is Sonic invincible?
+		beq.s	@notinvinc ; if not, branch
+		move.b	#bgm_Invincible,d0
 	@notinvinc:
-			tst.b	(f_lockscreen).w ; is Sonic at a boss?
-			beq.s	@playselected ; if not, branch
-			move.w	#bgm_Boss,d0
+		tst.b	(f_lockscreen).w ; is Sonic at a boss?
+		beq.s	@playselected ; if not, branch
+		move.b	#bgm_Boss,d0
 	@playselected:
-		endc
 
 		jsr	(PlaySound).l
 

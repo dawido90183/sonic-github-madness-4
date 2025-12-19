@@ -303,8 +303,17 @@ loc_18566:
 
 loc_1856C:
 		clr.w	obVelY(a0)
-		move.w	#bgm_MZ,d0
-		jsr	(PlaySound).l		; play MZ music
+		tst.b	(v_invinc).w
+        bne.s	@boss_invinc
+
+        move.b	(Saved_music).w,d0
+        bra.s	@boss_play
+
+@boss_invinc:
+        move.b #bgm_Invincible,d0
+
+@boss_play:
+        jsr (PlaySound).l
 
 loc_1857A:
 		bsr.w	BossMove
