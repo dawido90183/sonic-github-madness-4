@@ -8106,7 +8106,7 @@ ResumeMusic:
 
 		tst.b	(v_invinc).w ; is Sonic invincible?
 		beq.s	@notinvinc ; if not, branch
-		move.b	#bgm_Invincible,d0
+		bsr.s	GetInvincibleMusic
 	@notinvinc:
 		tst.b	(f_lockscreen).w ; is Sonic at a boss?
 		beq.s	@playselected ; if not, branch
@@ -8120,6 +8120,29 @@ ResumeMusic:
 		clr.b	(v_sonicbubbles+$32).w
 		rts	
 ; End of function ResumeMusic
+
+GetInvincibleMusic:
+		move.w	(v_character).w,d0
+		lsr.w	#2,d0
+		move.b	Char_InvMusic(pc,d0.w),d0
+		rts
+; End of function InvincibleMusic
+
+; ---------------------------------------------------------------------------
+; Invincible music data (Character)
+; ---------------------------------------------------------------------------
+
+Char_InvMusic:
+
+	; CHAR ADD STUFF
+
+	dc.b	bgm_Invincible ; Sonic
+	dc.b	bgm_CanCan ; GHM3_Guy (Placeholder music?)
+	dc.b	bgm_Invincible ; GHM3_Mercury (Placeholder music?)
+	dc.b	bgm_VampireKiller ; KiryuChan (Placeholder music?)
+	dc.b	bgm_Invincible ; Jeebler (Placeholder music?)
+	; add next char here
+
 
 ; ===========================================================================
 
