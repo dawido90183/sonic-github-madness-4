@@ -116,7 +116,7 @@ loc_179E0:
         bra.s	@boss_play
 
 @boss_invinc:
-        move.b #bgm_Invincible,d0
+        jsr (GetInvincibleMusic).l
 
 @boss_play:
         jsr (PlaySound).l

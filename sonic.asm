@@ -22,7 +22,7 @@ Revision:	equ 1
 
 ZoneCount:	equ 6	; discrete zones are: GHZ, MZ, SYZ, LZ, SLZ, and SBZ
 
-CharCount: equ 4
+CharCount: equ 5
 
 ; ===========================================================================
 
@@ -2069,6 +2069,7 @@ Char_Pal:
 	pal_char GHM3_Guy
 	pal_char GHM3_Mercury
 	pal_char KiryuChan
+	pal_char Jeebler
 	; add next char here
 
 ; ---------------------------------------------------------------------------
@@ -2976,8 +2977,7 @@ FinalTitle:
 		moveq	#palid_Title,d0	; load title screen palette
 		bsr.w	PalLoad1
 		move.b	#0,(f_debugmode).w ; disable debug mode
-		move.w	#$178,(v_generictimer).w ; run title screen for $178 frames
-		
+		move.w	#$FFF8,(v_generictimer).w ; Title Time
 		lea	(v_sonicteam).w,a1
 		moveq	#0,d0
 		move.w	#$F,d1
@@ -7942,6 +7942,7 @@ Char_Map:	; CHAR ADD STUFF
 	dc.l	Map_Sonic
 	dc.l	Map_GHM3_Mercury
 	dc.l	Map_KiryuChan
+	dc.l	Map_Jeebler
 	; add next char here
 
 Sonic_Main:	; Routine 0
@@ -8025,6 +8026,7 @@ Char_ModeTable:
 	modetable_char Sonic ; GHM3_Guy
 	modetable_char Sonic ; GHM3_Mercury
 	modetable_char KiryuChan ; KiryuChan
+	modetable_char Sonic
 	; add next char here
 		even
 
@@ -8086,6 +8088,7 @@ Ani_\name:	include	"!Characters\\\name\\Anim.asm"
 
 		anim_char Sonic
 		anim_char KiryuChan
+		anim_char Jeebler
 
 
 ; ---------------------------------------------------------------------------
@@ -8102,7 +8105,7 @@ ResumeMusic:
 
 		tst.b	(v_invinc).w ; is Sonic invincible?
 		beq.s	@notinvinc ; if not, branch
-		move.b	#bgm_Invincible,d0
+		bsr.s	GetInvincibleMusic
 	@notinvinc:
 		tst.b	(f_lockscreen).w ; is Sonic at a boss?
 		beq.s	@playselected ; if not, branch
@@ -8116,6 +8119,29 @@ ResumeMusic:
 		clr.b	(v_sonicbubbles+$32).w
 		rts	
 ; End of function ResumeMusic
+
+GetInvincibleMusic:
+		move.w	(v_character).w,d0
+		lsr.w	#2,d0
+		move.b	Char_InvMusic(pc,d0.w),d0
+		rts
+; End of function InvincibleMusic
+
+; ---------------------------------------------------------------------------
+; Invincible music data (Character)
+; ---------------------------------------------------------------------------
+
+Char_InvMusic:
+
+	; CHAR ADD STUFF
+
+	dc.b	bgm_Invincible ; Sonic
+	dc.b	bgm_CanCan ; GHM3_Guy (Placeholder music?)
+	dc.b	bgm_Invincible ; GHM3_Mercury (Placeholder music?)
+	dc.b	bgm_VampireKiller ; KiryuChan (Placeholder music?)
+	dc.b	bgm_Invincible ; Jeebler (Placeholder music?)
+	; add next char here
+
 
 ; ===========================================================================
 
@@ -9547,6 +9573,7 @@ DPLC_\name:	include	"!Characters\\\name\\DPLC.asm"
 	map_char Sonic
 	map_char GHM3_Mercury
 	map_char KiryuChan
+	map_char Jeebler
 	; add next char here
 
 ; ---------------------------------------------------------------------------
@@ -9561,6 +9588,7 @@ Art_\name:	incbin	"!Characters\\\name\\Art.bin"
 	art_char Sonic
 	art_char GHM3_Mercury
 	art_char KiryuChan
+	art_char Jeebler
 	; add next char here
 		even
 

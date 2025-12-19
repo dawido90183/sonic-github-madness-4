@@ -217,6 +217,8 @@ bgm_Continue:	equ ((ptr_mus90-MusicIndex)/4)+bgm__First
 bgm_Credits:	equ ((ptr_mus91-MusicIndex)/4)+bgm__First
 bgm_Drowning:	equ ((ptr_mus92-MusicIndex)/4)+bgm__First
 bgm_Emerald:	equ ((ptr_mus93-MusicIndex)/4)+bgm__First
+bgm_VampireKiller:	equ ((ptr_mus15-MusicIndex)/4)+bgm__First
+bgm_CanCan:	equ ((ptr_mus17-MusicIndex)/4)+bgm__First
 bgm_Basillica:	equ ((ptr_mus94-MusicIndex)/4)+bgm__First
 bgm_JPSega:	equ ((ptr_mus1F-MusicIndex)/4)+bgm__First
 bgm_EuroSega:	equ ((ptr_mus20-MusicIndex)/4)+bgm__First
