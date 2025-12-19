@@ -2768,6 +2768,8 @@ GM_Splash:
 
 		lea (Splash_Screen_Entries).l,a2
 	@load_next_splash:
+		move.b	#bgm_Fade,d0
+		bsr.w	PlaySound_Special ; stop music
 		locVRAM 0
 		move.l	(a2)+,a0 ; art
 		bsr.w	NemDec
