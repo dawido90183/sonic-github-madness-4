@@ -108,9 +108,18 @@ loc_179DA:
 ; ===========================================================================
 
 loc_179E0:
-		clr.w	obVelY(a0)
-		move.w	#bgm_GHZ,d0
-		jsr	(PlaySound).l		; play GHZ music
+        clr.w	obVelY(a0)
+        tst.b	(v_invinc).w
+        bne.s	@boss_invinc
+
+        move.b	(Saved_music).w,d0
+        bra.s	@boss_play
+
+@boss_invinc:
+        move.b #bgm_Invincible,d0
+
+@boss_play:
+        jsr (PlaySound).l
 
 loc_179EE:
 		bsr.w	BossMove

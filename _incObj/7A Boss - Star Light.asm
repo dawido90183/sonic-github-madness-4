@@ -301,8 +301,17 @@ loc_18BAE:
 
 loc_18BB4:
 		clr.w	obVelY(a0)
-		move.w	#bgm_SLZ,d0
-		jsr	(PlaySound).l		; play SLZ music
+        tst.b	(v_invinc).w
+        bne.s	@boss_invinc
+
+        move.b	(Saved_music).w,d0
+        bra.s	@boss_play
+
+@boss_invinc:
+        move.b #bgm_Invincible,d0
+
+@boss_play:
+        jsr (PlaySound).l
 
 loc_18BC2:
 		bra.w	loc_189EE

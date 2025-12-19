@@ -269,12 +269,19 @@ loc_180F6:
 		move.b	#$32,$3C(a0)
 
 loc_18112:
-		move.w	#bgm_LZ,d0
-		jsr	(PlaySound).l		; play LZ music
-		if Revision=0
-		else
-			clr.b	(f_lockscreen).w
-		endc
+		clr.w	obVelY(a0)
+        tst.b	(v_invinc).w
+        bne.s	@boss_invinc
+
+        move.b	(Saved_music).w,d0
+        bra.s	@boss_play
+
+@boss_invinc:
+        move.b #bgm_Invincible,d0
+
+@boss_play:
+        jsr (PlaySound).l
+		clr.b	(f_lockscreen).w
 		bset	#0,obStatus(a0)
 		addq.b	#2,ob2ndRout(a0)
 

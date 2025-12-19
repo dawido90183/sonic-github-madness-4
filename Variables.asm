@@ -419,6 +419,7 @@ V_int_jump:	equ $FFFFFFC4
 V_int_addr: equ $FFFFFFC6 ; .l
 
 v_char_pal: equ $FFFFFFCA ; byte
+Saved_music: equ $FFFFFFCB ; byte
 
 f_levselcheat:	equ $FFFFFFE0	; level select cheat flag
 f_slomocheat:	equ $FFFFFFE1	; slow motion & frame advance cheat flag
