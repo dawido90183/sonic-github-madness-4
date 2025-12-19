@@ -185,7 +185,7 @@ ptr_mus24:	dc.l Music24
 ptr_mus25:	dc.l Music25
 ptr_mus26:	dc.l Music26
 ptr_mus27:	dc.l Music27
-;ptr_mus28:	dc.l Music28
+ptr_mus28:	dc.l Music28
 ;ptr_mus29:	dc.l Music29
 ;ptr_mus2A:	dc.l Music2A
 ;ptr_mus2B:	dc.l Music2B
@@ -2710,6 +2710,8 @@ Music25:	include	"sound/music/MikeBoard.asm"
 Music26:	include	"sound/music/CNTracks/RE Mansion.asm"
 		even
 Music27:	incbin	"sound/music/Minecraft.bin"
+		even
+Music28:	incbin	"sound/music/TG2000Tracks/SwingSinners.bin"
 		even
 ; ---------------------------------------------------------------------------
 ; Sound effect pointers
