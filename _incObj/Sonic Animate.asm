@@ -206,5 +206,5 @@ Char_AniSize:	; CHAR ADD STUFF
 	anisize_char	4,6 ; ghm3 guy
 	anisize_char	4,6 ; mercury
 	anisize_char	4,4 ; kiryu
-	anisize_char	4,6 ; jeebler
+	anisize_char	8,8 ; jeebler
 	; add next char here

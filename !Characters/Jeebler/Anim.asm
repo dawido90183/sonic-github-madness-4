@@ -47,7 +47,7 @@
 @float2:
 @float3:
 @roll2:
-@roll:	dc.b $FE,  10,  14,  11,  14,  12,  14,  13,  14,     afEnd, afEnd
+@roll:	dc.b $FE,  $22,  $26,  $23,  $26,  $24,  $26,  $25,  $26,     afEnd, afEnd
 		even
 @duck:
 @balance:
@@ -62,11 +62,11 @@
 @drown:
 @death:
 @waterslide:
-@hurt:	dc.b 3,	15, afEnd
+@hurt:	dc.b 3,	$27, afEnd
 		even
 @null:	dc.b $77, fr_Null, afChange, id_Walk
 		even
-@float4:	dc.b 3,	14, afChange, id_Walk
+@float4:	dc.b 3,	$25, afChange, id_Walk
 		even
 
 
