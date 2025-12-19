@@ -1,0 +1,58 @@
+dplc_def_jeeb:
+dplc_def_jeeb_0: 	dc.w dplc_def_jeeb_20-dplc_def_jeeb
+dplc_def_jeeb_2: 	dc.w dplc_def_jeeb_21-dplc_def_jeeb
+dplc_def_jeeb_4: 	dc.w dplc_def_jeeb_26-dplc_def_jeeb
+dplc_def_jeeb_6: 	dc.w dplc_def_jeeb_29-dplc_def_jeeb
+dplc_def_jeeb_8: 	dc.w dplc_def_jeeb_2E-dplc_def_jeeb
+dplc_def_jeeb_A: 	dc.w dplc_def_jeeb_33-dplc_def_jeeb
+dplc_def_jeeb_C: 	dc.w dplc_def_jeeb_38-dplc_def_jeeb
+dplc_def_jeeb_E: 	dc.w dplc_def_jeeb_3B-dplc_def_jeeb
+dplc_def_jeeb_10: 	dc.w dplc_def_jeeb_40-dplc_def_jeeb
+dplc_def_jeeb_12: 	dc.w dplc_def_jeeb_45-dplc_def_jeeb
+dplc_def_jeeb_14: 	dc.w dplc_def_jeeb_4A-dplc_def_jeeb
+dplc_def_jeeb_16: 	dc.w dplc_def_jeeb_4D-dplc_def_jeeb
+dplc_def_jeeb_18: 	dc.w dplc_def_jeeb_50-dplc_def_jeeb
+dplc_def_jeeb_1A: 	dc.w dplc_def_jeeb_53-dplc_def_jeeb
+dplc_def_jeeb_1C: 	dc.w dplc_def_jeeb_56-dplc_def_jeeb
+dplc_def_jeeb_1E: 	dc.w dplc_def_jeeb_59-dplc_def_jeeb
+dplc_def_jeeb_20: 	dc.b $0
+dplc_def_jeeb_21: 	dc.b $2
+	dc.b $F0, $62
+	dc.b $50, $72
+dplc_def_jeeb_26: 	dc.b $1
+	dc.b $E0, $78
+dplc_def_jeeb_29: 	dc.b $2
+	dc.b $F0, $87
+	dc.b $0, $97
+dplc_def_jeeb_2E: 	dc.b $2
+	dc.b $F0, $98
+	dc.b $0, $A8
+dplc_def_jeeb_33: 	dc.b $2
+	dc.b $F0, $A9
+	dc.b $0, $B9
+dplc_def_jeeb_38: 	dc.b $1
+	dc.b $F0, $BA
+dplc_def_jeeb_3B: 	dc.b $2
+	dc.b $F0, $CA
+	dc.b $10, $DA
+dplc_def_jeeb_40: 	dc.b $2
+	dc.b $F0, $DC
+	dc.b $10, $EC
+dplc_def_jeeb_45: 	dc.b $2
+	dc.b $F0, $EE
+	dc.b $10, $FE
+dplc_def_jeeb_4A: 	dc.b $1
+	dc.b $F0, $0
+dplc_def_jeeb_4D: 	dc.b $1
+	dc.b $F0, $10
+dplc_def_jeeb_50: 	dc.b $1
+	dc.b $F0, $20
+dplc_def_jeeb_53: 	dc.b $1
+	dc.b $F0, $30
+dplc_def_jeeb_56: 	dc.b $1
+	dc.b $F0, $40
+dplc_def_jeeb_59: 	dc.b $3
+	dc.b $B0, $50
+	dc.b $10, $5C
+	dc.b $30, $5E
+	even
