@@ -113,7 +113,7 @@ GM_CB_ChangeMode:
 		move.b	#id_Title,(v_gamemode).w	; go to Title Screen
 		rts
 
-Nem_ColdBrew:	incbin	"cold brew/Art.bin"
+Nem_ColdBrew:	incbin	"conimodes\cold brew\Art.bin"
 		even
-Eni_ColdBrew:	incbin	"cold brew/Map.bin"
+Eni_ColdBrew:	incbin	"conimodes\cold brew\Map.bin"
 		even

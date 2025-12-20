@@ -149,7 +149,7 @@ PALSpeedIndex:			; NOTE BY CONI - this is for whenever you want your music to pl
 		dc.b $01	; $27
 		dc.b $01	; $28
 		dc.b $01	; $29
-		dc.b $01	; $2A
+		dc.b $00	; $2A - original game wasn't optimized for 50hz
 		dc.b $01	; $2B
 		dc.b $01	; $2C
 		dc.b $01	; $2D
@@ -202,8 +202,8 @@ ptr_mus26:	dc.l Music26
 ptr_mus27:	dc.l Music27
 ptr_mus28:	dc.l Music28
 ptr_mus29:	dc.l Music29
-;ptr_mus2A:	dc.l Music2A
-;ptr_mus2B:	dc.l Music2B
+ptr_mus2A:	dc.l Music2A
+ptr_mus2B:	dc.l Music2B
 ;ptr_mus2C:	dc.l Music2C
 ;ptr_mus2D:	dc.l Music2D
 ;ptr_mus2E:	dc.l Music2E
@@ -2729,6 +2729,10 @@ Music27:	incbin	"sound/music/Minecraft.bin"
 Music28:	incbin	"sound/music/TG2000Tracks/SwingSinners.bin"
 		even
 Music29:	incbin	"sound/music/TG2000Tracks/AVGNInvF.bin"
+		even
+Music2A:	include	"sound/music/CNTracks/SailorMoonTrans.asm"
+		even
+Music2B:	include	"sound/music/CNTracks/SailorMoonInvi.asm"
 		even
 ; ---------------------------------------------------------------------------
 ; Sound effect pointers

@@ -2048,8 +2048,8 @@ Pal_Ending:	incbin	"palette\Ending.bin"
 Pal_CharSel:	incbin "palette\Character Select.bin"
 Pal_SegaJP:	incbin	"palette\Sega Logo JP.bin"
 Pal_SplashPal:	incbin	"eurosega\pal.bin"
-Pal_ColdBrew:	incbin	"cold brew\palette.bin"
-Pal_ColdBrewG:	incbin	"cold brew\palette grayscale.bin"
+Pal_ColdBrew:	incbin	"conimodes\cold brew\palette.bin"
+Pal_ColdBrewG:	incbin	"conimodes\cold brew\palette grayscale.bin"
 ; ---------------------------------------------------------------------------
 ; Palette data (Character)
 ; ---------------------------------------------------------------------------
@@ -8136,7 +8136,7 @@ Char_InvMusic:
 
 	dc.b	bgm_Invincible ; Sonic
 	dc.b	bgm_CanCan ; GHM3_Guy (Placeholder music?)
-	dc.b	bgm_Invincible ; GHM3_Mercury (Placeholder music?)
+	dc.b	bgm_SailorInvi ; GHM3_Mercury
 	dc.b	bgm_VampireKiller ; KiryuChan (Placeholder music?)
 	dc.b	bgm_Invincible ; Jeebler (Placeholder music?)
 	dc.b	bgm_Invincible ; Mr Boss (Placeholder music?)
@@ -10373,7 +10373,7 @@ Pal_Splash_Mines: incbin "splash/Pal - Mines.bin"
         even
 ; ===========================================================================
 			
-		include "cold brew/GM_ColdBrew.asm"
+		include "conimodes\cold brew\GM_ColdBrew.asm"
 
 ; end of 'ROM'
 		even
