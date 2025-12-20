@@ -9,26 +9,18 @@ TitleSonic:
 		jmp	TSon_Index(pc,d1.w)
 ; ===========================================================================
 TSon_Index:	dc.w TSon_Main-TSon_Index
-		dc.w TSon_Delay-TSon_Index
 		dc.w TSon_Move-TSon_Index
 		dc.w TSon_Animate-TSon_Index
 ; ===========================================================================
 
 TSon_Main:	; Routine 0
 		addq.b	#2,obRoutine(a0)
-		move.w	#$F0,obX(a0)
-		move.w	#$DE,obScreenY(a0) ; position is fixed to screen
+		move.w	#$DC,obX(a0)
+		move.w	#$FE,obScreenY(a0) ; position is fixed to screen
 		move.l	#Map_TSon,obMap(a0)
 		move.w	#$2300,obGfx(a0)
 		move.b	#1,obPriority(a0)
-		move.b	#29,obDelayAni(a0) ; set time delay to 0.5 seconds
-		lea	(Ani_TSon).l,a1
-		bsr.w	AnimateSprite
 
-TSon_Delay:	;Routine 2
-		subq.b	#1,obDelayAni(a0) ; subtract 1 from time delay
-		bpl.s	@wait		; if time remains, branch
-		addq.b	#2,obRoutine(a0) ; go to next routine
 		bra.w	DisplaySprite
 
 	@wait:
@@ -37,7 +29,9 @@ TSon_Delay:	;Routine 2
 
 TSon_Move:	; Routine 4
 		subq.w	#8,obScreenY(a0) ; move Sonic up
-		cmpi.w	#$96,obScreenY(a0) ; has Sonic reached final position?
+        asr.w	#1,d0
+		
+		cmpi.w	#$B6,obScreenY(a0) ; has Sonic reached final position?
 		bne.s	@display	; if not, branch
 		addq.b	#2,obRoutine(a0)
 
