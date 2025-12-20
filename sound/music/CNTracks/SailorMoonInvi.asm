@@ -5,107 +5,133 @@ SailorInvi_Header:
 	smpsHeaderTempo     $01, $00
 
 	smpsHeaderDAC       SailorInvi_DAC
-	smpsHeaderFM        SailorInvi_FM1,	$00, $1B
-	smpsHeaderFM        SailorInvi_FM2,	$00, $1B
-	smpsHeaderFM        SailorInvi_FM3,	$0C, $0C
-	smpsHeaderFM        SailorInvi_FM4,	$00, $20
-	smpsHeaderFM        SailorInvi_FM5,	$00, $20
-	smpsHeaderPSG       SailorInvi_PSG1,	$DC, $06, $00, $00
-	smpsHeaderPSG       SailorInvi_PSG2,	$DC, $06, $00, $00
-	smpsHeaderPSG       SailorInvi_PSG3,	$0C, $06, $00, fTone_02
-
-; FM1 Data
-SailorInvi_FM1:
-	smpsSetvoice        $01
-	dc.b	nE3, $0C, nD3, nE3, nG3, nRst, nD3, nE3, nD3, nE3, $12, nRst
-	dc.b	$06, nB2, $0C, nA2, $24, nB2, $12, nRst, $06
-	smpsSetvoice        $02
-	dc.b	nC5, $18, nE4, $0C, nFs4, $1E, nRst, $06, nE5, $18, nD5, nB4
-	dc.b	$0C, nG5, $36, nRst, $06, nC2, $0C, nRst, $18, nC2, $0C, nRst
-	dc.b	$18, nBb1, $60, smpsNoAttack, $18
-	smpsStop
-
-; FM2 Data
-SailorInvi_FM2:
-	smpsSetvoice        $01
-	dc.b	nE5, $0C, nRst, $54, nE5, $0C, nRst, $18, nA5, $24, nB5, $12
-	dc.b	nRst, $06, nG4, $1E, nRst, $06, nFs4, $36, nRst, $06, nFs4, $1E
-	dc.b	nRst, $06, nG4, $36, nRst, $06, nE5, $0C, nRst, $18, nFs5, $0C
-	dc.b	nRst, $18, nG5, $60, smpsNoAttack, $18
-	smpsStop
-
-; FM3 Data
-SailorInvi_FM3:
-	smpsSetvoice        $00
-	dc.b	nBb1, $0C, nBb2, $0C, nBb1, $0C, nBb2, $0C, nBb1, $0C, nBb2, $0C
-	dc.b	nBb1, $0C, nBb2, $0C, nC2, $0C, nC3, $0C, nC2, $0C, nC3, $0C
-	dc.b	nC2, $0C, nC3, $0C, nC2, $0C, nC3, $0C, nD2, $0C, nD3, $0C
-	dc.b	nD2, $0C, nD3, $0C, nD2, $0C, nD3, $0C, nD2, $0C, nD3, $0C
-	dc.b	nCs2, $18, nCs2, $0C, nEb2, $0C, nRst, $0C, nEb2, $0C, nF2, $18
-	dc.b	nBb1, $0C, nBb2, $0C, nBb1, $0C, nBb2, $0C, nBb1, $0C, nBb2, $0C
-	dc.b	nBb1, $0C, nBb2, $0C, nC2, $0C, nC3, $0C, nC2, $0C, nC3, $0C
-	dc.b	nC2, $0C, nC3, $0C, nC2, $0C, nC3, $0C, nD2, $0C, nD3, $0C
-	dc.b	nD2, $0C, nD3, $0C, nD2, $0C, nD3, $0C, nD2, $0C, nD3, $0C
-	dc.b	nG1, $0C, nG2, $0C, nG1, $0C, nG2, $0C, nG1, $0C, nG2, $0C
-	dc.b	nB1, $0C, nB2, $0C, nC2, $0C, nC3, $0C, nD2, $0C, nD3, $0C
-	dc.b	nEb2, $0C, nEb3, $0C, nC2, $0C, nC3, $0C, nF1, $0C, nF2, $0C
-	dc.b	nF1, $0C, nF2, $0C, nFs1, $0C, nFs2, $0C, nFs1, $0C, nFs2, $0C
-	dc.b	nG1, $0C, nG2, $0C, nG1, $0C, nG2, $0C, nA1, $0C, nA2, $0C
-	dc.b	nBb1, $0C, nBb2, $0C, nC2, $0C, nC3, $0C, nC2, $0C, nC3, $0C
-	dc.b	nC2, $0C, nC3, $0C, nC2, $0C, nC3, $0C, nC2, $0C, nC2, $0C
-	dc.b	nD2, $0C, nEb2, $0C, nRst, $0C, nE2, $0C, nRst, $0C, nF2, $0C
-	dc.b	nF2, $24, nRst, $0C, nAb1, $24, nRst, $0C, nBb1, $0C, nBb2, $0C
-	dc.b	nBb1, $0C, nBb2, $0C, nBb1, $0C, nBb2, $0C, nBb1, $0C, nBb2, $0C
-	dc.b	nCs2, $18, nCs2, $0C, nEb2, $0C, nRst, $0C, nEb2, $0C, nF2, $18
-	smpsJump		SailorInvi_FM3
+	smpsHeaderFM        SailorInvi_FM1,	$00, $10
+	smpsHeaderFM        SailorInvi_FM2,	$0C, $06
+	smpsHeaderFM        SailorInvi_FM3,	$0C, $14
+	smpsHeaderFM        SailorInvi_FM4,	$00, $1C
+	smpsHeaderFM        SailorInvi_FM5,	$0C, $20
+	smpsHeaderPSG       SailorInvi_PSG1,	$00, $04, $00, $05
+	smpsHeaderPSG       SailorInvi_PSG2,	$00, $04, $00, $05
+	smpsHeaderPSG       SailorInvi_PSG3,	$0C, $03, $00, fTone_02
 
 ; FM4 Data
 SailorInvi_FM4:
 	dc.b	nRst, $0C
-	smpsJump            SailorInvi_FM1
+; FM1 Data
+SailorInvi_FM1:
+	smpsSetvoice        $01
+	smpsCall            SailorInvi_FM1C1
+	dc.b	nD5, $0C, nEb5, nD5, $18, nBb4, $0C, nF5, $3C, smpsNoAttack, $5A, nRst, $06
+
+	smpsCall            SailorInvi_FM1C1
+	dc.b	nD5, $0C, nEb5, nF5, $18, nA5, $0C, nF5, $3C, smpsNoAttack, $60
+	smpsSetvoice        $02
+	dc.b	nRst, $18, nG5, nF5, nEb5, nD5, nC5, nF5
+	dc.b	nD5, nBb4, $3C, nA4, $18, nBb4, $6C
+	smpsSetvoice        $01
+	dc.b	nEb5, $0C, nEb5, nD5, nEb5, nRst, nD5, nRst, nBb4, $3C, nC5, $30
+	dc.b	nBb4, $09, nRst, nBb4, nRst, nBb4, $60, smpsNoAttack, $3C
+	smpsJump		SailorInvi_FM1
+
+SailorInvi_FM1C1:
+	dc.b	nRst, $18, nBb4, nF4, nBb4, nC5, nG4, $0C, nC5, $24
+	smpsReturn
+
+; FM2 Data
+SailorInvi_FM2:
+	smpsSetvoice        $00
+	smpsCall            SailorInvi_FM2C1
+	smpsCall            SailorInvi_FM2C2
+
+	dc.b	nCs2, $18, nCs2, $0C, nEb2, nRst, nEb2, nF2, $18
+	
+	smpsCall            SailorInvi_FM2C1
+	smpsCall            SailorInvi_FM2C2
+
+	dc.b	nG1, nG2, nG1, nG2, nG1, nG2, nB1, nB2
+	dc.b	nC2, nC3, nD2, nD3, nEb2, nEb3, nC2, nC3
+	dc.b	nF1, nF2, nF1, nF2, nFs1, nFs2, nFs1, nFs2
+
+	dc.b	nG1, nG2, nG1, nG2, nA1, nA2, nBb1, nBb2
+	dc.b	nC2, nC3, nC2, nC3, nC2, nC3, nC2, nC3, nC2, nC2
+	dc.b	nD2, nEb2, nRst, nE2, nRst, nF2, $30, nRst, $0C, nAb1, $30
+
+	smpsCall            SailorInvi_FM2C1
+	smpsCall            SailorInvi_FM2C1
+	smpsJump		SailorInvi_FM2
+
+SailorInvi_FM2C1:
+	dc.b	nBb1, $0C, nBb2, nBb1, nBb2, nBb1, nBb2, nBb1, nBb2
+	smpsReturn
+SailorInvi_FM2C2:
+	dc.b	nC2, nC3, nC2, nC3, nC2, nC3, nC2, nC3
+	dc.b	nD2, nD3, nD2, nD3, nD2, nD3, nD2, nD3
+	smpsReturn
 
 ; FM5 Data
 SailorInvi_FM5:
 	dc.b	nRst, $0C
-	smpsJump            SailorInvi_FM2
+; FM3 Data
+SailorInvi_FM3:
+	smpsSetvoice        $01
+	dc.b	nF3, $60, nG3, nA3, nRst, nF3, nG3, nA3, nB3
+	dc.b	nC4, nC4, $30, nA3, nBb3, $60, nC4
+	dc.b	nC4, $0C, nC4, nC4, nC4, nRst, nC4, nRst, nC4, $3C, nEb4, $30
+	dc.b	nD4, $09, nRst, nD4, nRst, nD4, $60, smpsNoAttack, $3C
+	smpsJump		SailorInvi_FM3
 
 ; PSG1 Data
 SailorInvi_PSG1:
-	smpsNoteFill        $00
 	smpsModSet          $0C, $02, $01, $02
-	dc.b	nB4, $0C, nRst, $54, nB4, $0C, nRst, $18, nE5, $24, nFs5, $12
+	dc.b	nF2, $60, smpsNoAttack, $60, smpsNoAttack, $60
+	dc.b	nCs3, $18, nCs3, $0C, nEb3, $18, nEb3, $0C
+	smpsModSet          $0C, $04, $04, $04
+	dc.b	nF3, $18
+	smpsModSet          $0C, $02, $01, $02
+	dc.b	nF2, $60, smpsNoAttack, $60, smpsNoAttack, $60
 	dc.b	nRst, $06
-	smpsNoteFill        $05
-	dc.b	nE4, $1E, nRst, $06, nD4, $36, nRst, $06, nD4, $1E, nRst, $06
-	dc.b	nE4, $36, nRst, $06
-	smpsNoteFill        $00
-	dc.b	nC5, $0C, nRst, $18, nD5, $0C, nRst, $18, nE5, $60, smpsNoAttack, $18
-	smpsStop
+	smpsCall            SailorInvi_PSG2C1
+	
+	dc.b	nG2, $60, nG2, $30, nFs2, $30, nF2, $60
+	dc.b	nD2, $60, nEb2, $60, smpsNoAttack, $60, nD2, $60, smpsNoAttack, $60
+	smpsJump            SailorInvi_PSG1
 
 ; PSG2 Data
 SailorInvi_PSG2:
-	smpsNoteFill        $00
 	smpsModSet          $0C, $02, $01, $02
-	dc.b	nG4, $0C, nRst, $54, nG4, $0C, nRst, $18, nCs5, $1E, nRst, $06
-	dc.b	nEb5, $12, nRst, $06
-	smpsNoteFill        $05
-	dc.b	nC4, $1E, nRst, $06, nC4, $36, nRst, $06, nB3, $1E, nRst, $06
-	dc.b	nB3, $36, nRst, $06
-	smpsNoteFill        $00
-	dc.b	nG4, $0C, nRst, $18, nA4, $0C, nRst, $18, nC5, $60, smpsNoAttack, $18
-	smpsStop
+	dc.b	nBb2, $60, smpsNoAttack, $60, smpsNoAttack, $60
+	smpsCall            SailorInvi_PSG2C1
+	dc.b	nF2
+	dc.b	nBb2, $60, smpsNoAttack, $60, smpsNoAttack, $60
+	smpsCall            SailorInvi_PSG2C1
+	dc.b	nF2
+
+	dc.b	nBb2, $60, nBb2, $30, nBb2, $30, nBb2, $60, nG2, $60
+	dc.b	nBb2, $60, smpsNoAttack, $60, smpsNoAttack, $60, smpsNoAttack, $60
+	smpsJump            SailorInvi_PSG2
+
+SailorInvi_PSG2C1:
+	dc.b	nC1, $06, nD1, nEb1, nF1, nEb1, nF1, nG1, nA1
+	dc.b	nF1, nG1, nA1, nBb1, nC2, nD2, nEb2
+	smpsReturn
 
 ; PSG3 Data
 SailorInvi_PSG3:
-	smpsStop
+	smpsPSGform         $E7
+	dc.b	nMaxPSG, $0C, nMaxPSG
+	smpsPSGvoice        $01
+	dc.b	nMaxPSG
+	smpsPSGvoice        $02
+	dc.b	nMaxPSG
+	smpsJump            SailorInvi_PSG3
+
+dBongoLo = dLowTimpani
+dBongoHi = dHiTimpani
 
 ; DAC Data
 SailorInvi_DAC:
-	dc.b	dKick, $18, dSnare, $0C, dKick, $18, dKick, $0C, dSnare, dKick, dKick, $18
-	dc.b	dSnare, $0C, dKick, $18, dKick, $0C, dSnare, $18, dKick, dSnare, $0C, dKick
-	dc.b	$18, dKick, $0C, dSnare, $18, dKick, dSnare, $0C, dKick, $18, dMidTimpani, $06
-	dc.b	dMidTimpani, dLowTimpani, dLowTimpani, dVLowTimpani, $0C, dKick, $24, dKick, dKick, $18, nRst, $60
-	smpsStop
+	dc.b	dBongoLo, $0C, dBongoHi, dSnare, dBongoLo, $06, dBongoLo
+	smpsJump            SailorInvi_DAC
 
 SailorInvi_Voices:
 ;	Voice $00
