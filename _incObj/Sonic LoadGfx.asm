@@ -10,6 +10,7 @@ Char_DPLC:	; CHAR ADD STUFF
 	dc.l	DPLC_GHM3_Mercury
 	dc.l	DPLC_KiryuChan
 	dc.l	DPLC_Jeebler
+	dc.l	DPLC_MrBoss
 	; add next char here
 
 Sonic_LoadGfx:
@@ -59,6 +60,7 @@ Char_Art:	; CHAR ADD STUFF
 	dc.l	Art_GHM3_Mercury
 	dc.l	Art_KiryuChan
 	dc.l	Art_Jeebler
+	dc.l	Art_MrBoss
 	; add next char here
 
 ; End of function Sonic_LoadGfx

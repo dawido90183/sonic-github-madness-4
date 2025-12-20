@@ -22,7 +22,7 @@ Revision:	equ 1
 
 ZoneCount:	equ 6	; discrete zones are: GHZ, MZ, SYZ, LZ, SLZ, and SBZ
 
-CharCount: equ 5
+CharCount: equ 6
 
 ; ===========================================================================
 
@@ -2070,6 +2070,7 @@ Char_Pal:
 	pal_char GHM3_Mercury
 	pal_char KiryuChan
 	pal_char Jeebler
+	pal_char MrBoss
 	; add next char here
 
 ; ---------------------------------------------------------------------------
@@ -7938,6 +7939,7 @@ Char_Map:	; CHAR ADD STUFF
 	dc.l	Map_GHM3_Mercury
 	dc.l	Map_KiryuChan
 	dc.l	Map_Jeebler
+	dc.l	Map_MrBoss
 	; add next char here
 
 Sonic_Main:	; Routine 0
@@ -8022,6 +8024,7 @@ Char_ModeTable:
 	modetable_char Sonic ; GHM3_Mercury
 	modetable_char KiryuChan ; KiryuChan
 	modetable_char Sonic
+	modetable_char Sonic
 	; add next char here
 		even
 
@@ -8084,6 +8087,7 @@ Ani_\name:	include	"!Characters\\\name\\Anim.asm"
 		anim_char Sonic
 		anim_char KiryuChan
 		anim_char Jeebler
+		anim_char MrBoss
 
 
 ; ---------------------------------------------------------------------------
@@ -8135,6 +8139,7 @@ Char_InvMusic:
 	dc.b	bgm_Invincible ; GHM3_Mercury (Placeholder music?)
 	dc.b	bgm_VampireKiller ; KiryuChan (Placeholder music?)
 	dc.b	bgm_Invincible ; Jeebler (Placeholder music?)
+	dc.b	bgm_Invincible ; Mr Boss (Placeholder music?)
 	; add next char here
 
 
@@ -9569,6 +9574,7 @@ DPLC_\name:	include	"!Characters\\\name\\DPLC.asm"
 	map_char GHM3_Mercury
 	map_char KiryuChan
 	map_char Jeebler
+	map_char MrBoss
 	; add next char here
 
 ; ---------------------------------------------------------------------------
@@ -9584,6 +9590,7 @@ Art_\name:	incbin	"!Characters\\\name\\Art.bin"
 	art_char GHM3_Mercury
 	art_char KiryuChan
 	art_char Jeebler
+	art_char MrBoss
 	; add next char here
 		even
 

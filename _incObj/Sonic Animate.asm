@@ -10,6 +10,7 @@ Char_Ani:	; CHAR ADD STUFF
 	dc.l	Ani_Sonic ; mercury
 	dc.l	Ani_KiryuChan
 	dc.l	Ani_Jeebler
+	dc.l	Ani_MrBoss
 	; add next char here
 
 Sonic_Animate:
@@ -207,4 +208,5 @@ Char_AniSize:	; CHAR ADD STUFF
 	anisize_char	4,6 ; mercury
 	anisize_char	4,4 ; kiryu
 	anisize_char	8,8 ; jeebler
+	anisize_char	2,2 ; jeebler
 	; add next char here

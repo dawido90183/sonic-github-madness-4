@@ -1,0 +1,36 @@
+DPLC_81db:
+DPLC_81db_0: 	dc.w DPLC_81db_12-DPLC_81db
+DPLC_81db_2: 	dc.w DPLC_81db_13-DPLC_81db
+DPLC_81db_4: 	dc.w DPLC_81db_18-DPLC_81db
+DPLC_81db_6: 	dc.w DPLC_81db_1D-DPLC_81db
+DPLC_81db_8: 	dc.w DPLC_81db_22-DPLC_81db
+DPLC_81db_A: 	dc.w DPLC_81db_27-DPLC_81db
+DPLC_81db_C: 	dc.w DPLC_81db_2C-DPLC_81db
+DPLC_81db_E: 	dc.w DPLC_81db_31-DPLC_81db
+DPLC_81db_10: 	dc.w DPLC_81db_36-DPLC_81db
+DPLC_81db_12: 	dc.b $0
+DPLC_81db_13: 	dc.b $2
+	dc.b $F0, $0
+	dc.b $30, $10
+DPLC_81db_18: 	dc.b $2
+	dc.b $F0, $14
+	dc.b $20, $24
+DPLC_81db_1D: 	dc.b $2
+	dc.b $F0, $27
+	dc.b $30, $37
+DPLC_81db_22: 	dc.b $2
+	dc.b $F0, $3B
+	dc.b $20, $4B
+DPLC_81db_27: 	dc.b $2
+	dc.b $F0, $4E
+	dc.b $30, $5E
+DPLC_81db_2C: 	dc.b $2
+	dc.b $F0, $62
+	dc.b $20, $72
+DPLC_81db_31: 	dc.b $2
+	dc.b $F0, $75
+	dc.b $30, $85
+DPLC_81db_36: 	dc.b $2
+	dc.b $F0, $89
+	dc.b $20, $99
+	even
