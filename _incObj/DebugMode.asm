@@ -180,7 +180,9 @@ Debug_ChgItem:
 		beq.s	@stayindebug	; if not, branch
 		moveq	#0,d0
 		move.w	d0,(v_debuguse).w ; deactivate debug mode
-		move.l	#Map_Sonic,(v_player+obMap).w
+		move.w	(v_character).w,d5
+		lea		(Char_Map).l,a1
+		move.l	(a1,d5.w),obMap(a0) ; load PLC script
 		move.w	#$780,(v_player+obGfx).w
 		move.b	d0,(v_player+obAnim).w
 		move.w	d0,obX+2(a0)
