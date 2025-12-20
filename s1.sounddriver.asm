@@ -204,7 +204,7 @@ ptr_mus28:	dc.l Music28
 ptr_mus29:	dc.l Music29
 ptr_mus2A:	dc.l Music2A
 ptr_mus2B:	dc.l Music2B
-;ptr_mus2C:	dc.l Music2C
+ptr_mus2C:	dc.l Music2C
 ;ptr_mus2D:	dc.l Music2D
 ;ptr_mus2E:	dc.l Music2E
 ;ptr_mus2F:	dc.l Music2F
@@ -2733,6 +2733,8 @@ Music29:	incbin	"sound/music/TG2000Tracks/AVGNInvF.bin"
 Music2A:	include	"sound/music/CNTracks/SailorMoonTrans.asm"
 		even
 Music2B:	include	"sound/music/CNTracks/SailorMoonInvi.asm"
+		even
+Music2C:	include	"sound/music/TG2000Tracks/Dingaling.asm"
 		even
 ; ---------------------------------------------------------------------------
 ; Sound effect pointers
