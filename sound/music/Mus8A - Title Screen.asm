@@ -1,63 +1,63 @@
 ; =============================================================================================
-; Project Name:		music8a.bin
+; Project Name:		SMILING BOMB
 ; Created:		15th December 2025
 ; ---------------------------------------------------------------------------------------------
 ; ASM'd using S1SMPS2ASM version 1.1 by Marc Gordon (AKA Cinossu)
 ; =============================================================================================
 
-music8a.bin_Header:
+SmilingBomb_Header:
 	smpsHeaderStartSong 1
 ;	Voice Pointer	location
-	smpsHeaderVoice	music8a.bin_Voices
+	smpsHeaderVoice	SmilingBomb_Voices
 ;	Channel Setup	FM	PSG
 	smpsHeaderChan	$06,	$03
 ;	Tempo Setup	divider	modifier
 	smpsHeaderTempo	$01,	$07
 
 ;	DAC Pointer	location
-	smpsHeaderDAC	music8a.bin_DAC
+	smpsHeaderDAC	SmilingBomb_DAC
 ;	FM1 Pointer	location	pitch		volume
-	smpsHeaderFM	music8a.bin_FM1,	smpsPitch00,	$10
+	smpsHeaderFM	SmilingBomb_FM1,	smpsPitch00,	$10
 ;	FM2 Pointer	location	pitch		volume
-	smpsHeaderFM	music8a.bin_FM2,	smpsPitch00,	$16
+	smpsHeaderFM	SmilingBomb_FM2,	smpsPitch00,	$16
 ;	FM3 Pointer	location	pitch		volume
-	smpsHeaderFM	music8a.bin_FM3,	smpsPitch00,	$11
+	smpsHeaderFM	SmilingBomb_FM3,	smpsPitch00,	$11
 ;	FM4 Pointer	location	pitch		volume
-	smpsHeaderFM	music8a.bin_FM4,	smpsPitch00,	$11
+	smpsHeaderFM	SmilingBomb_FM4,	smpsPitch00,	$11
 ;	FM5 Pointer	location	pitch		volume
-	smpsHeaderFM	music8a.bin_FM5,	smpsPitch00,	$11
+	smpsHeaderFM	SmilingBomb_FM5,	smpsPitch00,	$11
 ;	PSG1 Pointer	location	pitch		volume	instrument
-	smpsHeaderPSG	music8a.bin_PSG1,	smpsPitch03lo,	$02,	0,$00
+	smpsHeaderPSG	SmilingBomb_PSG1,	smpsPitch03lo,	$06,	6,$00
 ;	PSG2 Pointer	location	pitch		volume	instrument
-	smpsHeaderPSG	music8a.bin_PSG2,	smpsPitch03lo,	$05,	0,$00
+	smpsHeaderPSG	SmilingBomb_PSG2,	smpsPitch03lo,	$08,	$D,$00
 ;	PSG3 Pointer	location	pitch		volume	instrument
-	smpsHeaderPSG	music8a.bin_PSG3,	smpsPitch00,	$03,	0,$02
+	smpsHeaderPSG	SmilingBomb_PSG3,	smpsPitch00,	$03,	4,$02
 
 ; FM1 Data
-music8a.bin_FM1:
+SmilingBomb_FM1:
 ;	Set FM Voice	#
 	smpsFMvoice	$00
 	dc.b		nBb2,	$24,	$24,	$30,	nEb3,	$06,	nG3,	nAb3
 	dc.b		nA3,	nBb3,	$24,	nBb2,	$24,	nAb3,	$02,	smpsNoAttack
 	dc.b		nA3,	smpsNoAttack,	nBb3,	$1A,	nBb3,	$06,	nRst,	$0C
 	dc.b		nBb2,	$06,	nEb3,	$12
-music8a.bin_Jump01:
+SmilingBomb_Jump01:
 ;	Call At	 	location
-	smpsCall	music8a.bin_Call01
+	smpsCall	SmilingBomb_Call01
 	dc.b		nBb2,	$0C,	nBb3,	$06,	nRst,	$0C,	nBb2,	$06
 	dc.b		nBb3,	$0C,	nBb2,	$06,	nBb3,	$12,	nBb2,	$12
 	dc.b		nC3,	nD3,	nF3
 ;	Call At	 	location
-	smpsCall	music8a.bin_Call01
+	smpsCall	SmilingBomb_Call01
 	dc.b		nBb2,	$0C,	nBb3,	$06,	nRst,	$0C,	nBb2,	$06
 	dc.b		nBb3,	$06,	nRst,	$0C,	nBb2,	$0C,	nBb3,	$06
 	dc.b		nRst,	$0C,	nBb2,	$06,	nBb3,	$06,	nRst,	$36
 ;	Call At	 	location
-	smpsCall	music8a.bin_Call02
+	smpsCall	SmilingBomb_Call02
 	dc.b		nC4,	$12,	nC3,	nEb3,	nG3,	nBb3,	$0C,	nBb2
 	dc.b		$02,	nRst,	$04,	nF3,	$12,	nEb3,	nBb3
 ;	Call At	 	location
-	smpsCall	music8a.bin_Call02
+	smpsCall	SmilingBomb_Call02
 	dc.b		nC3,	$12,	nD3,	nEb3,	nC3,	nBb2,	$06,	nRst
 	dc.b		nBb2,	nF3,	$12,	nEb3,	nBb3,	nAb3,	$0C,	nAb2
 	dc.b		$02,	nRst,	$04,	nEb3,	$12,	nC3,	nAb3,	nC3
@@ -66,9 +66,9 @@ music8a.bin_Jump01:
 	dc.b		nD3,	nF3,	nBb3,	nF3,	nBb3,	nRst,	nRst,	$30
 	dc.b		nBb2,	$06,	nF3,	nFs3,	nG3
 ;	Jump To	 	location
-	smpsJump	music8a.bin_Jump01
+	smpsJump	SmilingBomb_Jump01
 
-music8a.bin_Call01:
+SmilingBomb_Call01:
 	dc.b		nAb3,	$0C,	nAb2,	$02,	nRst,	$04,	nC3,	$12
 	dc.b		nD3,	nEb3,	nG3,	nBb2,	nC3,	$0C,	nC2,	$03
 	dc.b		nRst,	$03,	nG3,	$12,	nF3,	nC3,	nAb3,	nF3
@@ -88,7 +88,7 @@ music8a.bin_Call01:
 	dc.b		$0C,	nAb2,	$02,	nRst,	$04
 	smpsReturn
 
-music8a.bin_Call02:
+SmilingBomb_Call02:
 	dc.b		nAb3,	$12,	nBb3,	nC4,	$0C,	nC2,	$01,	nRst
 	dc.b		$05,	nAb3,	$12,	nG3,	$0C,	nG2,	$01,	nRst
 	dc.b		$05,	nD3,	$12,	nB2,	nD3,	nG3,	nD3,	nBb2
@@ -99,7 +99,7 @@ music8a.bin_Call02:
 	smpsReturn
 
 ; FM2 Data
-music8a.bin_FM2:
+SmilingBomb_FM2:
 ;	Set FM Voice	#
 	smpsFMvoice	$06
 ;	Set Modulation	wait	speed	change	step
@@ -117,7 +117,7 @@ music8a.bin_FM2:
 ;	Set Modulation	wait	speed	change	step
 	smpsModSet	$0E,	$01,	$F3,	$FF
 	dc.b		nCs6,	$01,	smpsNoAttack,	nD6,	smpsNoAttack,	nEb6,	$16
-music8a.bin_Jump02:
+SmilingBomb_Jump02:
 ;	Set Modulation	wait	speed	change	step
 	smpsModSet	$10,	$01,	$07,	$04
 ;	Alter Volume	value
@@ -125,7 +125,7 @@ music8a.bin_Jump02:
 ;	Alter Pitch	value
 	smpsAlterPitch	$0C
 ;	Call At	 	location
-	smpsCall	music8a.bin_Call03
+	smpsCall	SmilingBomb_Call03
 	dc.b		nRst,	$0C,	nAb4,	$06,	nF4,	nAb4,	nC5,	nG5
 	dc.b		$12,	nFs5,	$0C,	nF5,	$06
 ;	Set Modulation	wait	speed	change	step
@@ -142,7 +142,7 @@ music8a.bin_Jump02:
 ;	Set Modulation	wait	speed	change	step
 	smpsModSet	$10,	$01,	$07,	$04
 ;	Call At	 	location
-	smpsCall	music8a.bin_Call03
+	smpsCall	SmilingBomb_Call03
 	dc.b		nRst,	$0C,	nBb5,	$06,	nRst,	$06
 ;	Alter Volume	value
 	smpsAlterVol	$19
@@ -168,11 +168,11 @@ music8a.bin_Jump02:
 ;	Alter Pitch	value
 	smpsAlterPitch	$F4
 ;	Call At	 	location
-	smpsCall	music8a.bin_Call04
+	smpsCall	SmilingBomb_Call04
 	dc.b		nD5,	$12,	nEb5,	$0C,	nD5,	$12,	nEb5,	$06
 	dc.b		nF5,	$0C,	nEb5,	$06,	nG5,	$48
 ;	Call At	 	location
-	smpsCall	music8a.bin_Call04
+	smpsCall	SmilingBomb_Call04
 	dc.b		nD5,	$12,	nEb5,	$0C,	nF5,	$0C,	nRst,	$06
 	dc.b		nF5,	nEb5,	$0C,	nAb5,	$03,	smpsNoAttack,	nA5,	smpsNoAttack
 	dc.b		nBb5,	$48
@@ -212,9 +212,9 @@ music8a.bin_Jump02:
 	smpsAlterVol	$01
 	dc.b		nRst,	$48
 ;	Jump To	 	location
-	smpsJump	music8a.bin_Jump02
+	smpsJump	SmilingBomb_Jump02
 
-music8a.bin_Call03:
+SmilingBomb_Call03:
 ;	Set FM Voice	#
 	smpsFMvoice	$01
 	dc.b		nEb5,	$0C,	$06,	nRst,	$06
@@ -303,7 +303,7 @@ music8a.bin_Call03:
 	dc.b		nG5,	$2A
 	smpsReturn
 
-music8a.bin_Call04:
+SmilingBomb_Call04:
 ;	Set FM Voice	#
 	smpsFMvoice	$05
 	dc.b		nD5,	$02,	nRst,	$01,	nEb5,	$09,	nF5,	$06
@@ -325,7 +325,7 @@ music8a.bin_Call04:
 	smpsReturn
 
 ; FM3 Data
-music8a.bin_FM3:
+SmilingBomb_FM3:
 ;	Set FM Voice	#
 	smpsFMvoice	$10
 	dc.b		nRst,	$01,	nEb5,	$24,	$24,	$48,	$24,	$24
@@ -338,10 +338,10 @@ music8a.bin_FM3:
 ;	Set Modulation	wait	speed	change	step
 	smpsModSet	$0E,	$01,	$F3,	$FF
 	dc.b		nC6,	$18
-music8a.bin_Jump03:
+SmilingBomb_Jump03:
 	dc.b		_smpsModOff
 ;	Call At	 	location
-	smpsCall	music8a.bin_Call05
+	smpsCall	SmilingBomb_Call05
 	dc.b		nBb4,	$36,	nRst,	$0C,	nBb4,	$06
 ;	Set Modulation	wait	speed	change	step
 	smpsModSet	$0B,	$01,	$EE,	$FF
@@ -357,7 +357,7 @@ music8a.bin_Jump03:
 	smpsModSet	$0E,	$01,	$05,	$06
 	dc.b		nF4,	$18,	_smpsModOff
 ;	Call At	 	location
-	smpsCall	music8a.bin_Call05
+	smpsCall	SmilingBomb_Call05
 	dc.b		nBb3,	$06,	nRst,	nBb5,	nRst,	$06
 ;	Alter Volume	value
 	smpsAlterVol	$19
@@ -377,12 +377,12 @@ music8a.bin_Jump03:
 	dc.b		nG5,	$0C,	nFs5,	$06,	nRst,	nF5,	nRst,	nE5
 	dc.b		nRst,	nEb5,	nRst
 ;	Call At	 	location
-	smpsCall	music8a.bin_Call06
+	smpsCall	SmilingBomb_Call06
 	dc.b		nBb3,	$12,	nC4,	$0C,	nBb3,	$06,	nRst,	$0C
 	dc.b		nBb3,	$06,	nC4,	$0C,	nBb3,	$06,	nCs4,	$12
 	dc.b		nRst,	$0C,	nCs4,	$2A
 ;	Call At	 	location
-	smpsCall	music8a.bin_Call06
+	smpsCall	SmilingBomb_Call06
 	dc.b		nBb3,	$12,	$0C,	$12,	nC4,	$06,	nBb3,	$0C
 	dc.b		nG4,	$06,	smpsNoAttack,	$48
 ;	Set FM Voice	#
@@ -423,9 +423,9 @@ music8a.bin_Jump03:
 	smpsAlterVol	$FB
 	dc.b		nRst,	$48
 ;	Jump To	 	location
-	smpsJump	music8a.bin_Jump03
+	smpsJump	SmilingBomb_Jump03
 
-music8a.bin_Call05:
+SmilingBomb_Call05:
 ;	Set FM Voice	#
 	smpsFMvoice	$03
 	dc.b		nAb4,	$24,	nRst,	$0C,	nAb4,	$0C,	nRst,	$0C
@@ -475,7 +475,7 @@ music8a.bin_Call05:
 	dc.b		nF4,	nAb4,	nC5
 	smpsReturn
 
-music8a.bin_Call06:
+SmilingBomb_Call06:
 ;	Set FM Voice	#
 	smpsFMvoice	$02
 	dc.b		nEb4,	$1E,	$06
@@ -499,7 +499,7 @@ music8a.bin_Call06:
 	smpsReturn
 
 ; FM4 Data
-music8a.bin_FM4:
+SmilingBomb_FM4:
 ;	Set FM Voice	#
 	smpsFMvoice	$10
 	dc.b		nRst,	$02,	nAb4,	$24,	$24,	$48,	$24,	$24
@@ -510,10 +510,10 @@ music8a.bin_FM4:
 ;	Alter Volume	value
 	smpsAlterVol	$F9
 	dc.b		nAb5,	$16
-music8a.bin_Jump04:
+SmilingBomb_Jump04:
 	dc.b		_smpsModOff
 ;	Call At	 	location
-	smpsCall	music8a.bin_Call07
+	smpsCall	SmilingBomb_Call07
 	dc.b		nEb4,	$0C,	nEb5,	$06,	nRst,	$0C,	nEb4,	$06
 	dc.b		nEb5,	$0C,	nEb4,	$06,	nEb5,	$0C,	nD4,	$06
 ;	Set Modulation	wait	speed	change	step
@@ -530,7 +530,7 @@ music8a.bin_Jump04:
 	smpsModSet	$12,	$01,	$0B,	$04
 	dc.b		nD4,	$18,	_smpsModOff
 ;	Call At	 	location
-	smpsCall	music8a.bin_Call07
+	smpsCall	SmilingBomb_Call07
 	dc.b		nRst,	$0C,	nEb5,	$06,	nRst,	$06
 ;	Alter Volume	value
 	smpsAlterVol	$19
@@ -549,11 +549,11 @@ music8a.bin_Jump04:
 	dc.b		nC5,	$0C,	nC5,	$06,	nRst,	nB4,	nRst,	nBb4
 	dc.b		nRst,	nA4,	nRst
 ;	Call At	 	location
-	smpsCall	music8a.bin_Call08
+	smpsCall	SmilingBomb_Call08
 	dc.b		nD4,	$12,	nEb4,	$0C,	nD4,	$12,	nEb4,	$06
 	dc.b		nF4,	$0C,	nEb4,	$06,	nG4,	$48
 ;	Call At	 	location
-	smpsCall	music8a.bin_Call08
+	smpsCall	SmilingBomb_Call08
 	dc.b		nD4,	$12,	nEb4,	$0C,	nF4,	$06,	nRst,	$0C
 	dc.b		nF4,	$06,	nEb4,	$0C,	nCs4,	$06,	smpsNoAttack,	$48
 ;	Set FM Voice	#
@@ -589,9 +589,9 @@ music8a.bin_Jump04:
 	smpsModSet	$1F,	$01,	$F5,	$FF
 	dc.b		smpsNoAttack,	nBb4,	$1E,	nRst,	$48
 ;	Jump To	 	location
-	smpsJump	music8a.bin_Jump04
+	smpsJump	SmilingBomb_Jump04
 
-music8a.bin_Call07:
+SmilingBomb_Call07:
 ;	Set FM Voice	#
 	smpsFMvoice	$03
 	dc.b		nF4,	$24,	nRst,	$0C,	nF4,	$0C,	nRst,	$0C
@@ -637,7 +637,7 @@ music8a.bin_Call07:
 	dc.b		nRst,	$0C,	nD5,	$02,	nEb5,	$28
 	smpsReturn
 
-music8a.bin_Call08:
+SmilingBomb_Call08:
 ;	Set FM Voice	#
 	smpsFMvoice	$02
 	dc.b		nC4,	$1E,	$06
@@ -661,7 +661,7 @@ music8a.bin_Call08:
 	smpsReturn
 
 ; FM5 Data
-music8a.bin_FM5:
+SmilingBomb_FM5:
 ;	Set FM Voice	#
 	smpsFMvoice	$10
 ;	Set Modulation	wait	speed	change	step
@@ -676,10 +676,10 @@ music8a.bin_FM5:
 ;	Set Modulation	wait	speed	change	step
 	smpsModSet	$0E,	$01,	$F3,	$FF
 	dc.b		nBb5,	$18
-music8a.bin_Jump05:
+SmilingBomb_Jump05:
 	dc.b		_smpsModOff
 ;	Call At	 	location
-	smpsCall	music8a.bin_Call09
+	smpsCall	SmilingBomb_Call09
 	dc.b		nRst,	$48
 ;	Set Modulation	wait	speed	change	step
 	smpsModSet	$0A,	$01,	$EE,	$FF
@@ -693,15 +693,15 @@ music8a.bin_Jump05:
 	smpsAlterVol	$F4
 	dc.b		_smpsModOff,	nC4,	$18
 ;	Call At	 	location
-	smpsCall	music8a.bin_Call09
+	smpsCall	SmilingBomb_Call09
 	dc.b		nRst,	$0C,	nG4,	$06,	nRst,	$12,	nG4,	$06
 	dc.b		nRst,	$18,	nG4,	$06,	nRst,	$12,	nG4,	$06
 	dc.b		nRst,	$30,	$06
 ;	Call At	 	location
-	smpsCall	music8a.bin_Call0A
+	smpsCall	SmilingBomb_Call0A
 	dc.b		nRst,	$48,	$48
 ;	Call At	 	location
-	smpsCall	music8a.bin_Call0A
+	smpsCall	SmilingBomb_Call0A
 	dc.b		nRst,	$42
 ;	Set FM Voice	#
 	smpsFMvoice	$02
@@ -739,9 +739,9 @@ music8a.bin_Jump05:
 	smpsModSet	$1F,	$01,	$F5,	$FF
 	dc.b		smpsNoAttack,	nG4,	$1E,	nRst,	$48
 ;	Jump To	 	location
-	smpsJump	music8a.bin_Jump05
+	smpsJump	SmilingBomb_Jump05
 
-music8a.bin_Call09:
+SmilingBomb_Call09:
 ;	Set FM Voice	#
 	smpsFMvoice	$03
 	dc.b		nC4,	$24,	nRst,	$0C,	nC4,	$0C,	nRst,	$0C
@@ -765,7 +765,7 @@ music8a.bin_Call09:
 	dc.b		nRst,	$48,	nRst,	$1E,	nFs4,	$02,	nG4,	$28
 	smpsReturn
 
-music8a.bin_Call0A:
+SmilingBomb_Call0A:
 ;	Set FM Voice	#
 	smpsFMvoice	$02
 	dc.b		nAb3,	$1E,	$06
@@ -782,7 +782,7 @@ music8a.bin_Call0A:
 	smpsReturn
 
 ; PSG1 Data
-music8a.bin_PSG1:
+SmilingBomb_PSG1:
 ;	Set PSG Voice	#
 	smpsPSGvoice	$0B
 ;	Alter Notes	value
@@ -796,14 +796,14 @@ music8a.bin_PSG1:
 	dc.b		_smpsModOff
 ;	Set Volume	value
 	;not implemented ;smpsSetVol	$01
-music8a.bin_Jump06:
+SmilingBomb_Jump06:
 ;	Set PSG Voice	#
 	smpsPSGvoice	$0B
 ;	Call At	 	location
-	smpsCall	music8a.bin_Call0B
+	smpsCall	SmilingBomb_Call0B
 	dc.b		nRst,	$48,	$48
 ;	Call At	 	location
-	smpsCall	music8a.bin_Call0B
+	smpsCall	SmilingBomb_Call0B
 	dc.b		nRst,	$48,	$4E
 ;	Set PSG Voice	#
 	smpsPSGvoice	$0A
@@ -811,20 +811,20 @@ music8a.bin_Jump06:
 	;not implemented ;smpsSetVol	$05
 	dc.b		nRst,	$0B,	_smpsModOff
 ;	Call At	 	location
-	smpsCall	music8a.bin_Call0C
+	smpsCall	SmilingBomb_Call0C
 	dc.b		nD5,	$12,	nEb5,	$0C,	nD5,	$12,	nEb5,	$06
 	dc.b		nF5,	$0C,	nEb5,	$06,	nG5,	$48
 ;	Call At	 	location
-	smpsCall	music8a.bin_Call0C
+	smpsCall	SmilingBomb_Call0C
 	dc.b		nD5,	$12,	nEb5,	$0C,	nF5,	$12,	nF5,	$06
 	dc.b		nEb5,	$0C,	nBb5,	$43
 ;	Set Volume	value
 	;not implemented ;smpsSetVol	$FB
 	dc.b		nRst,	$48,	$48,	$48,	$48,	$48
 ;	Jump To	 	location
-	smpsJump	music8a.bin_Jump06
+	smpsJump	SmilingBomb_Jump06
 
-music8a.bin_Call0B:
+SmilingBomb_Call0B:
 	dc.b		nEb4,	$24,	nRst,	$0C,	nEb4,	$06,	nRst,	$12
 	dc.b		nC4,	$24,	nRst,	$0C,	nC4,	$06,	nRst,	$12
 	dc.b		nC4,	$24,	nRst,	$0C,	nC4,	$06,	nRst,	$12
@@ -837,7 +837,7 @@ music8a.bin_Call0B:
 	dc.b		nF4,	$2A,	nRst,	$48,	$48,	$48,	$48
 	smpsReturn
 
-music8a.bin_Call0C:
+SmilingBomb_Call0C:
 ;	Alter Pitch	value
 	smpsAlterPitch	$0C
 	dc.b		nEb5,	$0C,	nF5,	$12,	nG5,	$2A,	smpsNoAttack,	$12
@@ -852,7 +852,7 @@ music8a.bin_Call0C:
 	smpsReturn
 
 ; PSG2 Data
-music8a.bin_PSG2:
+SmilingBomb_PSG2:
 ;	Alter Notes	value
 	smpsAlterNote	$FF
 ;	Set Modulation	wait	speed	change	step
@@ -870,25 +870,25 @@ music8a.bin_PSG2:
 ;	Alter Notes	value
 	smpsAlterNote	$00
 	dc.b		_smpsModOff
-music8a.bin_Jump07:
+SmilingBomb_Jump07:
 ;	Call At	 	location
-	smpsCall	music8a.bin_Call0D
+	smpsCall	SmilingBomb_Call0D
 	dc.b		nRst,	$48,	$42
 ;	Call At	 	location
-	smpsCall	music8a.bin_Call0D
+	smpsCall	SmilingBomb_Call0D
 	dc.b		nRst,	$42,	nRst,	$4E,	nRst,	$08
 ;	Set PSG Voice	#
-	smpsPSGvoice	$00
+	smpsPSGvoice	$0B
 ;	Set Volume	value
 	;not implemented ;smpsSetVol	$05
 ;	Alter Notes	value
 	smpsAlterNote	$FE
 ;	Call At	 	location
-	smpsCall	music8a.bin_Call0E
+	smpsCall	SmilingBomb_Call0E
 	dc.b		nD5,	$12,	nEb5,	$0C,	nD5,	$12,	nEb5,	$06
 	dc.b		nF5,	$0C,	nEb5,	$06,	nG5,	$48
 ;	Call At	 	location
-	smpsCall	music8a.bin_Call0E
+	smpsCall	SmilingBomb_Call0E
 	dc.b		nD5,	$12,	nEb5,	$0C,	nF5,	$12,	nF5,	$06
 	dc.b		nEb5,	$0C,	nBb5,	$46
 ;	Alter Notes	value
@@ -897,9 +897,9 @@ music8a.bin_Jump07:
 	;not implemented ;smpsSetVol	$FB
 	dc.b		nRst,	$48,	$48,	$48,	$48,	$48
 ;	Jump To	 	location
-	smpsJump	music8a.bin_Jump07
+	smpsJump	SmilingBomb_Jump07
 
-music8a.bin_Call0D:
+SmilingBomb_Call0D:
 	dc.b		nRst,	$48,	$48,	$48,	$48,	$48,	$48,	$48
 	dc.b		nRst,	$24,	nEb5,	$12,	nF5,	$06,	nG5,	$0C
 	dc.b		nAb5,	$06,	nBb5,	$5A,	nRst,	$0C,	nBb5,	$12
@@ -911,7 +911,7 @@ music8a.bin_Call0D:
 	dc.b		$2A
 	smpsReturn
 
-music8a.bin_Call0E:
+SmilingBomb_Call0E:
 	dc.b		nEb5,	$0C,	nF5,	$12,	nG5,	$2A,	smpsNoAttack,	$12
 	dc.b		nF5,	$0C,	nBb5,	$12,	nAb5,	$06,	nG5,	$0C
 	dc.b		nF5,	$06,	nF5,	$12,	nG5,	$0C,	nBb4,	$2A
@@ -922,7 +922,7 @@ music8a.bin_Call0E:
 	smpsReturn
 
 ; PSG3 Data
-music8a.bin_PSG3:
+SmilingBomb_PSG3:
 ;	Set Volume	value
 	;not implemented ;smpsSetVol	$02
 ;	Alter Notes	value
@@ -931,11 +931,11 @@ music8a.bin_PSG3:
 	smpsAlterPitch	$D0
 ;	Set PSG Voice	#
 	smpsPSGvoice	$0A
-music8a.bin_Loop01:
+SmilingBomb_Loop01:
 	dc.b		nBb5,	$06,	nC6,	nEb6,	nBb6,	nC7,	nEb7,	nBb7
 	dc.b		nEb7,	nC7,	nBb6,	nEb6,	nC6
 ;	Loop To	 	index	loops	location
-	smpsLoop	$00,	$02,	music8a.bin_Loop01
+	smpsLoop	$00,	$02,	SmilingBomb_Loop01
 ;	Alter Pitch	value
 	smpsAlterPitch	$0C
 	dc.b		nBb5,	$06,	nC6,	nEb6,	nBb6,	nC7,	nEb7,	nBb7
@@ -951,31 +951,31 @@ music8a.bin_Loop01:
 	smpsPSGvoice	$02
 ;	Set PSG WvForm	#
 	smpsPSGform	$E7
-music8a.bin_Loop02:
+SmilingBomb_Loop02:
 	dc.b		nA5,	$12,	$12,	$12,	$12
 ;	Loop To	 	index	loops	location
-	smpsLoop	$00,	$1E,	music8a.bin_Loop02
+	smpsLoop	$00,	$1E,	SmilingBomb_Loop02
 	dc.b		nRst,	$48,	$4E
-music8a.bin_Loop03:
+SmilingBomb_Loop03:
 	dc.b		nA5,	$12,	$12,	$12,	$12
 ;	Loop To	 	index	loops	location
-	smpsLoop	$00,	$14,	music8a.bin_Loop03
+	smpsLoop	$00,	$14,	SmilingBomb_Loop03
 	dc.b		nRst,	$48
 ;	Jump To	 	location
-	smpsJump	music8a.bin_Loop02
+	smpsJump	SmilingBomb_Loop02
 
 ; DAC Data
-music8a.bin_DAC:
+SmilingBomb_DAC:
 	dc.b		dKick,	$24,	$24,	$24,	dSnare,	$06,	$06,	$06
 	dc.b		$06,	$06,	$06,	dKick,	$24,	$24,	$24,	nRst
 	dc.b		$0C,	$8D,	$06,	dSnare,	$12
-music8a.bin_Loop04:
+SmilingBomb_Loop04:
 	dc.b		dKick,	$12,	dSnare,	dKick,	dSnare
 ;	Loop To	 	index	loops	location
-	smpsLoop	$00,	$07,	music8a.bin_Loop04
+	smpsLoop	$00,	$07,	SmilingBomb_Loop04
 	dc.b		dKick,	$12,	dSnare,	dKick,	$0C,	$8E,	$06,	dSnare
 	dc.b		$12
-music8a.bin_Loop05:
+SmilingBomb_Loop05:
 	dc.b		dKick,	$12,	dSnare,	dKick,	$0C,	$8E,	$06,	dSnare
 	dc.b		$12,	dKick,	$12,	dSnare,	dKick,	$0C,	dSnare,	$03
 	dc.b		$03,	$12,	dKick,	$0C,	dSnare,	$12,	dKick,	$06
@@ -983,11 +983,11 @@ music8a.bin_Loop05:
 	dc.b		dSnare,	$03,	$03,	dSnare,	$12,	dKick,	$0C,	dSnare
 	dc.b		$18
 ;	Loop To	 	index	loops	location
-	smpsLoop	$00,	$02,	music8a.bin_Loop05
-music8a.bin_Loop06:
+	smpsLoop	$00,	$02,	SmilingBomb_Loop05
+SmilingBomb_Loop06:
 	dc.b		dKick,	$12,	dSnare,	dKick,	dSnare
 ;	Loop To	 	index	loops	location
-	smpsLoop	$00,	$07,	music8a.bin_Loop06
+	smpsLoop	$00,	$07,	SmilingBomb_Loop06
 	dc.b		dKick,	$12,	dSnare,	dKick,	$0C,	$8E,	$06,	dSnare
 	dc.b		$12,	dKick,	$12,	dSnare,	dKick,	$0C,	$8E,	$06
 	dc.b		dSnare,	$12,	dKick,	$12,	dSnare,	dKick,	$0C,	dSnare
@@ -998,39 +998,39 @@ music8a.bin_Loop06:
 	dc.b		$8E,	$06,	dSnare,	$12,	dKick,	$0C,	$06,	dSnare
 	dc.b		$0C,	dSnare,	$0C,	dKick,	$06,	dSnare,	$03,	$03
 	dc.b		$12,	nRst,	$48,	nRst,	$4E
-music8a.bin_Loop07:
+SmilingBomb_Loop07:
 	dc.b		dKick,	$12,	dSnare,	dKick,	dSnare
 ;	Loop To	 	index	loops	location
-	smpsLoop	$00,	$03,	music8a.bin_Loop07
+	smpsLoop	$00,	$03,	SmilingBomb_Loop07
 	dc.b		dKick,	$12,	dSnare,	dKick,	$0C,	$06,	dSnare,	$12
-music8a.bin_Loop08:
+SmilingBomb_Loop08:
 	dc.b		dKick,	$12,	dSnare,	dKick,	dSnare
 ;	Loop To	 	index	loops	location
-	smpsLoop	$00,	$03,	music8a.bin_Loop08
+	smpsLoop	$00,	$03,	SmilingBomb_Loop08
 	dc.b		dKick,	$0C,	dSnare,	$06,	nRst,	$0C,	dSnare,	$06
 	dc.b		dKick,	$0C,	dSnare,	$06,	$8E,	$12
-music8a.bin_Loop09:
+SmilingBomb_Loop09:
 	dc.b		dKick,	$12,	dSnare,	dKick,	dSnare
 ;	Loop To	 	index	loops	location
-	smpsLoop	$00,	$03,	music8a.bin_Loop09
+	smpsLoop	$00,	$03,	SmilingBomb_Loop09
 	dc.b		dKick,	$12,	dSnare,	dKick,	$0C,	$06,	dSnare,	$12
-music8a.bin_Loop0A:
+SmilingBomb_Loop0A:
 	dc.b		dKick,	$12,	dSnare,	dKick,	dSnare
 ;	Loop To	 	index	loops	location
-	smpsLoop	$00,	$03,	music8a.bin_Loop0A
+	smpsLoop	$00,	$03,	SmilingBomb_Loop0A
 	dc.b		dKick,	$0C,	dSnare,	$06,	nRst,	$0C,	dSnare,	$06
 	dc.b		dKick,	$0C,	dSnare,	$06,	$8E,	$12
-music8a.bin_Loop0B:
+SmilingBomb_Loop0B:
 	dc.b		dKick,	$12,	dSnare,	dKick,	dSnare
 ;	Loop To	 	index	loops	location
-	smpsLoop	$00,	$03,	music8a.bin_Loop0B
+	smpsLoop	$00,	$03,	SmilingBomb_Loop0B
 	dc.b		dKick,	$0C,	$8D,	$06,	dSnare,	$12,	dKick,	$1E
 	dc.b		$06,	$8E,	$0C,	dSnare,	$06,	$8D,	$12,	dSnare
 	dc.b		$0C,	dKick,	$03,	$03,	dSnare,	$12
 ;	Jump To	 	location
-	smpsJump	music8a.bin_Loop04
+	smpsJump	SmilingBomb_Loop04
 
-music8a.bin_Voices:
+SmilingBomb_Voices:
 ;	Voice 00
 ;	$35,$10,$51,$00,$11,$5F,$5F,$5F,$5F,$0E,$1F,$1F,$1F,$00,$00,$00,$00,$46,$07,$07,$07,$13,$80,$98,$80
 ;				#
