@@ -876,8 +876,6 @@ VBlank_SegaJP:
 		movem.l	(sp)+,d0-a6
 		rte
 
-		rts
-
 
 ; ---------------------------------------------------------------------------
 ; Horizontal interrupt
