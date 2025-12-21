@@ -63,9 +63,9 @@ PCycGHZ_Skip:
 PCycle_LZ:
 ; Waterfalls
 		subq.w	#1,(v_pcyc_time).w ; decrement timer
-		bpl.s	PCycLZ_Skip1	; if time remains, branch
+		bpl.s	loc_1A0A	; if time remains, branch
 
-		move.w	#2,(v_pcyc_time).w ; reset timer to 2 frames
+		move.w	#5,(v_pcyc_time).w ; reset timer to 2 frames
 		move.w	(v_pcyc_num).w,d0
 		addq.w	#1,(v_pcyc_num).w ; increment cycle number
 		andi.w	#3,d0		; if cycle > 3, reset to 0
@@ -83,28 +83,6 @@ PCycle_LZ:
 		move.l	(a0,d0.w),(a1)+
 		move.l	4(a0,d0.w),(a1)
 
-PCycLZ_Skip1:
-; Conveyor belts
-		move.w	(v_framecount).w,d0
-		andi.w	#7,d0
-		move.b	PCycLZ_Seq(pc,d0.w),d0 ; get byte from palette sequence
-		beq.s	PCycLZ_Skip2	; if byte is 0, branch
-		moveq	#1,d1
-		tst.b	(f_conveyrev).w	; have conveyor belts been reversed?
-		beq.s	PCycLZ_NoRev	; if not, branch
-		neg.w	d1
-
-	PCycLZ_NoRev:
-		move.w	(v_pal_buffer).w,d0
-		andi.w	#3,d0
-		add.w	d1,d0
-		cmpi.w	#3,d0
-		bcs.s	loc_1A0A
-		move.w	d0,d1
-		moveq	#0,d0
-		tst.w	d1
-		bpl.s	loc_1A0A
-		moveq	#2,d0
 
 loc_1A0A:
 		move.w	d0,(v_pal_buffer).w
