@@ -49,9 +49,11 @@
 @roll2:
 @roll:	dc.b $FE,  $22,  $26,  $23,  $26,  $24,  $26,  $25,  $26,     afEnd, afEnd
 		even
-@duck:
+@lookup: 	dc.b 3,	$28, afEnd
+			even
+@duck:		dc.b 3,	$29, afEnd
+			even
 @balance:
-@lookup:
 @hang:
 @wait:	dc.b $17, 1, afEnd
 		even

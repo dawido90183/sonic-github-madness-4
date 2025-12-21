@@ -7970,7 +7970,7 @@ Char_InvMusic:
 	dc.b	bgm_CanCan ; GHM3_Guy (Placeholder music?)
 	dc.b	bgm_SailorInvi ; GHM3_Mercury
 	dc.b	bgm_VampireKiller ; KiryuChan (Placeholder music?)
-	dc.b	bgm_Invincible ; Jeebler (Placeholder music?)
+	dc.b	bgm_MM8StageSel ; Jeebler (Placeholder music?)
 	dc.b	bgm_Invincible ; Mr Boss (Placeholder music?)
 	; add next char here
 
