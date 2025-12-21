@@ -2,6 +2,14 @@
 ; | Based on the main code, this takes just the sound driver for testing & a new UI|
 ; ==================================================================================
 
+; Settings
+
+; This can't use bgm_XX, sfx_XX or any of that kind
+Autoplay = $23 ; 0 to not autoplay, plays the id specified on boot
+
+; End of Settings
+
+
 	include	"Constants.asm"
 	include	"Variables.asm"
 	include	"Macros.asm"
@@ -325,8 +333,9 @@ SetUpVDP:
 		move.b	d0,(z80_expansion_control+1).l	; init port 3 (expansion/extra)
 		startZ80
 
-		PlaySound bgm_Title ; testing
-
+	if Autoplay > 0
+		PlaySound Autoplay ; testing
+	endif
 		enable_ints
 
 MainGameLoop:
