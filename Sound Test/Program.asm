@@ -337,16 +337,26 @@ SetUpVDP:
 		startZ80
 
 		move.w	#InitialItemSelected,(v_levselitem).w
+		move.w	#Autoplay,(v_levselsound).w
 		bsr.w	LoadMenu
 
 	if Autoplay > 0
 		PlaySound Autoplay ; testing
 	endif
-		enable_ints
 
 MainGameLoop:
-		nop
-		nop
+		enable_ints
+		move.b	#1,(v_vbla_routine).w
+	@wait:
+		tst.b	(v_vbla_routine).w ; has VBlank routine finished?
+		bne.s	@wait		; if not, branch
+
+		tst.b	(v_levselitem+1)
+		bne.s	@not_soundtest
+
+		bsr.w	LR_SoundTest
+	@not_soundtest:
+
 		bra.s	MainGameLoop	; loop indefinitely
 
 VBlank:
@@ -359,9 +369,9 @@ VBlank:
         stopZ80
 		waitZ80
 		bsr.w	ReadJoypads
-        writeCRAM	v_pal_dry,$80,0
-        writeVRAM	v_spritetablebuffer,$280,vram_sprites
-		writeVRAM	v_hscrolltablebuffer,$380,vram_hscroll
+        ;writeCRAM	v_pal_dry,$80,0
+        ;writeVRAM	v_spritetablebuffer,$280,vram_sprites
+		;writeVRAM	v_hscrolltablebuffer,$380,vram_hscroll
 		startZ80
 	@music:
 		jsr	(UpdateMusic).l
@@ -411,9 +421,36 @@ ReadJoypads:
 Art_Text: incbin	"artunc\menutext.bin"
 	even
 
+LR_SoundTest:
+		move.w	(v_levselsound),d1
+
+		move.b	(v_jpadpress1),d0
+		andi.b	#btnL+btnR,d0
+		beq.s	@return
+
+		btst	#bitL,d0
+		beq.s	@right
+		subq.b	#1,d1
+		bra.s	@render
+	@right:
+		addq.b	#1,d1
+	@render:
+		move.w	d1,(v_levselsound).w
+		move.w	#$4000,d0
+		move.b	d1,d0
+		lea	(vdp_data_port).l,a6
+
+		disable_ints
+		bra.w	DrawSoundTest
+	@return:
+		rts
 ; ===========================================================================
 MenuTextLines = 5
-
+	if MenuTextLines <= InitialItemSelected
+		inform 2, "InitialItemSelected is above last item"
+	endc
+MenuVRAMPos = $C082
+SoundVRAMPos = MenuVRAMPos+$1C
 LoadMenu:
 		lea	(vdp_data_port).l,a6
 		locVRAM	$20,4(a6)
@@ -431,7 +468,7 @@ LoadMenu:
 
 		lea	(MenuText).l,a1
 		move.w	#$2000,d0
-		locVRAM $C082,d4
+		locVRAM MenuVRAMPos,d4
 
 		move.w	(v_levselitem).w,d1
 		subq.w	#1,d1
@@ -462,6 +499,22 @@ LoadMenu:
 		addi.l	#$80<<16,d4
 		dbf.w	d1,@nextlinepostsel
 	@nopostsel:
+
+		tst.w	(v_levselitem).w
+		bne.s	@notsoundtest
+		move.w	#$4000,d0
+	@notsoundtest:
+DrawSoundTest:
+		locVRAM SoundVRAMPos,4(a6)
+		move.b	(v_levselsound+1).w,d0
+		move.b	d0,d1
+		lsr.b	#4,d0
+		addq.b	#1,d0
+		move.w	d0,(a6)
+		move.b	d1,d0
+		andi.b	#$F,d0
+		addq.b	#1,d0
+		move.w	d0,(a6)
 		rts
 
 
@@ -518,7 +571,7 @@ text macro textline
 	dc.b 0
 	endm
 
-MT_0:	text "SOUND TEST = $00"
+MT_0:	text "SOUND TEST = $"
 MT_1:	text "$FF > SILENCE"
 MT_2:	text "$FE > SLOW DOWN"
 MT_3:	text "$FD > SPEED UP"
