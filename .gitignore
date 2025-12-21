@@ -1,11 +1,12 @@
-SonED2 Projects/temp.dat
-SonED2 v1.0x Projects/temp.dat
+temp.dat
 SonLVL INI Files/dllcache
-SonLVL INI Files/SonLVL.log
-sonic.lst
+*.log
+*.lst
 errors.txt
 s1built.bin
-s1built.prev.bin
-splash/Splash Screens to be Converted (Resource Suite)/RetroGraphicsToolkit (Conversion Tool)/RetroGraphicsToolkit.exe
 ghm4built.bin
-ghm4built.prev.bin
+sndtest.bin
+
+splash/Splash Screens to be Converted (Resource Suite)/RetroGraphicsToolkit (Conversion Tool)/RetroGraphicsToolkit.exe
+
+*.prev.bin
