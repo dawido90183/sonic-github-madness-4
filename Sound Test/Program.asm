@@ -7,6 +7,8 @@
 ; This can't use bgm_XX, sfx_XX or any of that kind
 Autoplay = $23 ; 0 to not autoplay, plays the id specified on boot
 
+InitialItemSelected = 0 ; Initial selection on the menu
+
 ; End of Settings
 
 
@@ -333,6 +335,9 @@ SetUpVDP:
 		move.b	d0,(z80_expansion_control+1).l	; init port 3 (expansion/extra)
 		startZ80
 
+		move.w	#InitialItemSelected,(v_levselitem).w
+		bsr.w	LoadMenu
+
 	if Autoplay > 0
 		PlaySound Autoplay ; testing
 	endif
@@ -401,6 +406,122 @@ ReadJoypads:
 ; End of function ReadJoypads
 
 	include	"_inc\Kosinski Decompression.asm"
+
+Art_Text: incbin	"artunc\menutext.bin"
+	even
+
+; ===========================================================================
+MenuTextLines = 5
+
+LoadMenu:
+		lea	(vdp_data_port).l,a6
+		locVRAM	$20,4(a6)
+		lea	Art_Text(pc),a5	; load level select font
+		move.w	#$147,d1
+
+	@loadfont:
+		move.l	(a5)+,(a6)
+		dbf	d1,@loadfont
+
+		locCRAM	$2C,4(a6)
+		move.w	#$0888,(a6) ; normal
+		locCRAM	$4C,4(a6)
+		move.w	#$0EEE,(a6) ; highlight
+
+		lea	(MenuText).l,a1
+		move.w	#$2000,d0
+		locVRAM $C082,d4
+
+		move.w	(v_levselitem).w,d1
+		beq.s	@nopresel
+		subq.w	#1,d1
+
+	@nextlinepresel:
+		move.l	d4,4(a6)
+		bsr.s	DrawLine
+		addi.l	#$80<<16,d4
+		dbf.w	d1,@nextlinepresel
+
+	@nopresel:
+		move.w	#$4000,d0
+		move.l	d4,4(a6)
+		bsr.s	DrawLine
+		addi.l	#$80<<16,d4
+
+		move.w	#$2000,d0
+
+		move.w	#MenuTextLines,d1
+		sub.w	(v_levselitem).w,d1
+		subq.w	#1,d1
+		ble.s	@nopostsel
+
+	@nextlinepostsel:
+		move.l	d4,4(a6)
+		bsr.s	DrawLine
+		addi.l	#$80<<16,d4
+		dbf.w	d1,@nextlinepostsel
+	@nopostsel:
+		rts
+
+
+DrawLine:
+		move.b	(a1)+,d0
+		beq.s	@end
+		subq.b	#1,d0
+		move.w	d0,(a6)
+		bra.s	DrawLine
+	@end:
+		rts
+
+; ---------------------------------------------------------------------------
+; Menu text
+; ---------------------------------------------------------------------------
+MenuTextPointers:
+	dc.w	MT_0-MenuTextPointers
+	dc.w	MT_1-MenuTextPointers
+	dc.w	MT_2-MenuTextPointers
+	dc.w	MT_3-MenuTextPointers
+	dc.w	MT_4-MenuTextPointers
+
+MenuText:
+text macro textline
+	i:   = 1
+	len: = strlen(\textline)
+
+	while (i<=len)
+		char:	substr i,i,\textline
+		i: = i+1
+
+		if     "\char"=' '
+			dc.b	$01
+		elseif ("\char">='0')&("\char"<='9')
+			dc.b	$02+"\char"-'0'
+		elseif "\char"='$'
+			dc.b	$0C
+		elseif "\char"='-'
+			dc.b	$0D
+		elseif "\char"='='
+			dc.b	$0E
+		elseif "\char"=">"
+			dc.b	$0F
+		elseif "\char"='Y'
+			dc.b	$11
+		elseif "\char"='Z'
+			dc.b	$12
+		elseif ("\char">='A')&("\char"<='X')
+			dc.b	$13+"\char"-'A'
+		else
+			inform 2, "illegal char \char"
+		endif
+	endw
+	dc.b 0
+	endm
+
+MT_0:	text "SOUND TEST = $00"
+MT_1:	text "$FF > SILENCE"
+MT_2:	text "$FE > SLOW DOWN"
+MT_3:	text "$FD > SPEED UP"
+MT_4:	text "$FB > FADE OUT"
 
 ; ===========================================================================
 
