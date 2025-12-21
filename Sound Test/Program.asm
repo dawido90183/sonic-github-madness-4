@@ -355,6 +355,11 @@ MainGameLoop:
 		bne.s	@not_soundtest
 
 		bsr.w	LR_SoundTest
+		move.b	(v_jpadpress1).w,d0
+		andi.b	#btnC+btnStart,d0
+		beq.s	@not_soundtest
+		move.b	(v_levselsound+1).w,(v_snddriver_ram+v_soundqueue0).w
+
 	@not_soundtest:
 
 		bra.s	MainGameLoop	; loop indefinitely
@@ -509,14 +514,20 @@ DrawSoundTest:
 		move.b	(v_levselsound+1).w,d0
 		move.b	d0,d1
 		lsr.b	#4,d0
-		addq.b	#1,d0
-		move.w	d0,(a6)
+		bsr.s	@digit
+
 		move.b	d1,d0
 		andi.b	#$F,d0
+
+	@digit:
+		cmpi.b	#$A,d0
+		blt.s	@not_alpha
+		addq.b	#7,d0
+	@not_alpha:
 		addq.b	#1,d0
+
 		move.w	d0,(a6)
 		rts
-
 
 DrawLine:
 		move.b	(a1)+,d0
