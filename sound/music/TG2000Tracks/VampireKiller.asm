@@ -13,7 +13,7 @@ VampireKiller_Header:
 	smpsHeaderPSG       VampireKiller_PSG1,	$00, $00, $00, $00
 	smpsHeaderPSG       VampireKiller_PSG2,	$00, $00, $00, $00
 	smpsHeaderPSG       VampireKiller_PSG3,	$00, $00, $00, $00
-	dc.b		$00,	$00,	$00,	$00	smpsStop
+	dc.b		$00,	$00,	$00,	$00,	_smpsStop
 
 ; FM1 Data
 VampireKiller_FM1:

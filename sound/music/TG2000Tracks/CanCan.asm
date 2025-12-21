@@ -13,7 +13,7 @@ CanCan_Header:
 	smpsHeaderPSG       CanCan_PSG1,	$00, $00, $00, $00
 	smpsHeaderPSG       CanCan_PSG2,	$00, $00, $00, $00
 	smpsHeaderPSG       CanCan_PSG3,	$00, $00, $00, $00
-	dc.b		$00,	$00,	$00,	$00	smpsStop
+	dc.b		$00,	$00,	$00,	$00,	_smpsStop
 
 ; FM1 Data
 CanCan_FM1:

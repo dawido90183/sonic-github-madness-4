@@ -3,5 +3,8 @@
 echo The Madness of All Madnesses is Here. ~ TheGamer2000
 
 IF EXIST ghm4built.bin move /Y ghm4built.bin ghm4built.prev.bin >NUL
-asm64k /k /p /o ae-,c+ sonic.asm, ghm4built.bin >errors.txt, , sonic.lst
+rem the om stuff is compiler optimizations
+asm64k /k /m /o ws+ /o op+ /o os+ /o ow+ /o oz+ /o oaq+ /o osq+ /o omq+ /o ae- /o v+ /o c+ /p sonic.asm ghm4built.bin ghm4built.sym sonic.lst >errors.txt
+convsym.exe ghm4built.sym ghm4built.bin -a
+
 fixheadr.exe ghm4built.bin

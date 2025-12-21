@@ -13,7 +13,7 @@ Dingaling_Header:
 	smpsHeaderPSG       Dingaling_PSG1,	$00, $00, $00, $00
 	smpsHeaderPSG       Dingaling_PSG2,	$00, $00, $00, $00
 	smpsHeaderPSG       Dingaling_PSG3,	$00, $00, $00, $00
-	dc.b		$00,	$00,	$00,	$00	smpsStop
+	dc.b		$00,	$00,	$00,	$00,	_smpsStop
 
 ; FM1 Data
 Dingaling_FM1:

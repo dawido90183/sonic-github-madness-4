@@ -847,6 +847,7 @@ smpsModOn macro type
 smpsStop macro
 	dc.b	$F2
 	endm
+_smpsStop = $F2
 
 ; F3xx - PSG waveform to xx
 smpsPSGform macro form

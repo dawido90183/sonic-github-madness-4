@@ -14,7 +14,7 @@ MikeBoard_Header:
 	smpsHeaderPSG       MikeBoard_PSG1,	$00, $00, $00, $00
 	smpsHeaderPSG       MikeBoard_PSG2,	$00, $00, $00, $00
 	smpsHeaderPSG       MikeBoard_PSG3,	$00, $00, $00, $00
-	dc.b		$00,	$00,	$00,	$00	smpsStop
+	dc.b		$00,	$00,	$00,	$00,	_smpsStop
 
 ; DAC Data
 MikeBoard_DAC:

@@ -14,7 +14,7 @@ Aporia_Header:
 	smpsHeaderPSG       Aporia_PSG1,	$00, $00, $00, $00
 	smpsHeaderPSG       Aporia_PSG2,	$00, $00, $00, $00
 	smpsHeaderPSG       Aporia_PSG3,	$00, $00, $00, $00
-	dc.b		$00,	$00,	$00,	$00	smpsStop
+	dc.b		$00,	$00,	$00,	$00,	_smpsStop
 
 ; FM1 Data
 Aporia_FM1:

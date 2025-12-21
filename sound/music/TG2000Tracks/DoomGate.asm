@@ -14,7 +14,7 @@ DoomGate_Header:
 	smpsHeaderPSG       DoomGate_PSG1,	$00, $00, $00, $00
 	smpsHeaderPSG       DoomGate_PSG2,	$00, $00, $00, $00
 	smpsHeaderPSG       DoomGate_PSG3,	$00, $00, $00, $00
-	dc.b		$00,	$00,	$00,	$00	smpsStop
+	dc.b		$00,	$00,	$00,	$00,	_smpsStop
 
 ; PSG1 Data
 DoomGate_PSG1:

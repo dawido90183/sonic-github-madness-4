@@ -5,7 +5,7 @@
 ; Settings
 
 ; This can't use bgm_XX, sfx_XX or any of that kind
-Autoplay = $23 ; 0 to not autoplay, plays the id specified on boot
+Autoplay = $21 ; 0 to not autoplay, plays the id specified on boot
 
 InitialItemSelected = 0 ; Initial selection on the menu
 
@@ -15,6 +15,7 @@ InitialItemSelected = 0 ; Initial selection on the menu
 	include	"Constants.asm"
 	include	"Variables.asm"
 	include	"Macros.asm"
+	include	"Debugger.asm"
 
 PlaySound:	macro id
 		move.b	#id,(v_snddriver_ram+v_soundqueue0).w
@@ -433,8 +434,9 @@ LoadMenu:
 		locVRAM $C082,d4
 
 		move.w	(v_levselitem).w,d1
-		beq.s	@nopresel
 		subq.w	#1,d1
+		bmi.s	@nopresel
+
 
 	@nextlinepresel:
 		move.l	d4,4(a6)
@@ -450,10 +452,9 @@ LoadMenu:
 
 		move.w	#$2000,d0
 
-		move.w	#MenuTextLines,d1
+		move.w	#MenuTextLines-1,d1
 		sub.w	(v_levselitem).w,d1
-		subq.w	#1,d1
-		ble.s	@nopostsel
+		bmi.s	@nopostsel
 
 	@nextlinepostsel:
 		move.l	d4,4(a6)
@@ -526,6 +527,21 @@ MT_4:	text "$FB > FADE OUT"
 ; ===========================================================================
 
 SoundDriver:	include "s1.sounddriver.asm"
+
+; ==============================================================
+; --------------------------------------------------------------
+; Debugging modules
+; --------------------------------------------------------------
+
+   include   "ErrorHandler.asm"
+
+; --------------------------------------------------------------
+; WARNING!
+;	DO NOT put any data from now on! DO NOT use ROM padding!
+;	Symbol data should be appended here after ROM is compiled
+;	by ConvSym utility, otherwise debugger modules won't be able
+;	to resolve symbol names.
+; --------------------------------------------------------------
 
 ; end of 'ROM'
 		even

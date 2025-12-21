@@ -14,7 +14,7 @@ TheGamer2000Jingle_Header:
 	smpsHeaderPSG       TheGamer2000Jingle_PSG1,	$00, $00, $00, $00
 	smpsHeaderPSG       TheGamer2000Jingle_PSG2,	$00, $00, $00, $00
 	smpsHeaderPSG       TheGamer2000Jingle_PSG3,	$00, $00, $00, $00
-	dc.b		$00,	$00,	$00,	$00	smpsStop
+	dc.b		$00,	$00,	$00,	$00,	_smpsStop
 
 TheGamer2000Jingle_DAC:
 

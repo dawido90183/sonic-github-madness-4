@@ -13,7 +13,7 @@ Gadget_Header:
 	smpsHeaderPSG       Gadget_PSG1,	$00, $00, $00, $00
 	smpsHeaderPSG       Gadget_PSG2,	$00, $00, $00, $00
 	smpsHeaderPSG       Gadget_PSG3,	$00, $00, $00, $00
-	dc.b		$00,	$00,	$00,	$00	smpsStop
+	dc.b		$00,	$00,	$00,	$00,	_smpsStop
 
 ; FM1 Data
 Gadget_FM1:

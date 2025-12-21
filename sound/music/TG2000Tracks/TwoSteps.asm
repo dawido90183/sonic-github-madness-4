@@ -13,7 +13,7 @@ TwoSteps_Header:
 	smpsHeaderPSG       TwoSteps_PSG1,	$00, $00, $00, $00
 	smpsHeaderPSG       TwoSteps_PSG2,	$00, $00, $00, $00
 	smpsHeaderPSG       TwoSteps_PSG3,	$00, $00, $00, $00
-	dc.b		$00,	$00,	$00,	$00	smpsStop
+	dc.b		$00,	$00,	$00,	$00,	_smpsStop
 
 ; PSG1 Data
 TwoSteps_PSG1:
