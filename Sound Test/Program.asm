@@ -386,6 +386,8 @@ MainGameLoop:
 		tst.b	(v_vbla_routine).w ; has VBlank routine finished?
 		bne.s	@wait		; if not, branch
 
+		bsr.w	UpdateTracker
+
 		tst.b	(v_levselitem+1)
 		bne.s	@not_soundtest
 
@@ -493,6 +495,47 @@ MenuVRAMPos = $C002
 SoundVRAMPos = MenuVRAMPos+$1C
 
 TrackerVRAMPos = $C302
+
+UpdateTracker:
+		lea	(vdp_data_port).l,a6
+
+		lea (v_music_fmdac_tracks+v_snddriver_ram),a5
+		move.w	#10-1,d2 ; 7fm+3sn tracks updated
+
+		lea (Tracker_CHS),a0
+
+		disable_ints
+
+		locVRAM TrackerVRAMPos,4(a6)
+
+	@chl_loop:
+		move.b	TrackPlaybackControl(a5),d0
+
+		move.w	#$2000,d1 ; pal 1
+		btst	#1,d0
+		bne.s	@restflagset
+		btst	#4,d0
+		bne.s	@noattackflagset
+		move.w	#$4000,d1 ; pal 2
+	@noattackflagset:
+	@restflagset:
+
+		move.w	#4-1,d3
+	@text_loop:
+		move.b	(a0)+,d1
+		subq.b	#1,d1
+		move.w	d1,(a6)
+		dbf.w d3,@text_loop
+
+		addi.l	#TrackSz,a5
+		dbf.w d2,@chl_loop
+
+		locVRAM TrackerVRAMPos+$80,4(a6)
+
+		enable_ints
+		rts
+
+
 Tracker_CHS:
 	text "DAC FM1 FM2 FM3 FM4 FM5 FM6 SN1 SN2 SN3",0
 	even
@@ -507,10 +550,13 @@ LoadMenu:
 		move.l	(a5)+,(a6)
 		dbf	d1,@loadfont
 
+		locCRAM	$0C,4(a6)
+		move.w	#$00CC,(a6) ; s highlight
 		locCRAM	$2C,4(a6)
 		move.w	#$0888,(a6) ; normal
 		locCRAM	$4C,4(a6)
 		move.w	#$0EEE,(a6) ; highlight
+
 
 		locVRAM TrackerVRAMPos,4(a6)
 		lea	Tracker_CHS(pc),a1
