@@ -5,7 +5,7 @@
 ; Settings
 
 ; This can't use bgm_XX, sfx_XX or any of that kind
-Autoplay = $21 ; 0 to not autoplay, plays the id specified on boot
+Autoplay = $23 ; 0 to not autoplay, plays the id specified on boot
 
 InitialItemSelected = 0 ; Initial selection on the menu
 
@@ -15,7 +15,7 @@ InitialItemSelected = 0 ; Initial selection on the menu
 	include	"Constants.asm"
 	include	"Variables.asm"
 	include	"Macros.asm"
-	include	"Debugger.asm"
+	include	"Libraries\Debugger.asm"
 
 PlaySound:	macro id
 		move.b	#id,(v_snddriver_ram+v_soundqueue0).w
@@ -32,29 +32,29 @@ PlaySound_Unused:	macro id
 StartOfRom:
 Vectors:	dc.l v_systemstack&$FFFFFF	; Initial stack pointer value
 		dc.l EntryPoint			; Start of program
-		dc.l ErrorTrap			; Bus error
-		dc.l ErrorTrap		; Address error (4)
-		dc.l ErrorTrap		; Illegal instruction
-		dc.l ErrorTrap			; Division by zero
-		dc.l ErrorTrap			; CHK exception
-		dc.l ErrorTrap			; TRAPV exception (8)
-		dc.l ErrorTrap		; Privilege violation
-		dc.l ErrorTrap				; TRACE exception
-		dc.l ErrorTrap		; Line-A emulator
-		dc.l ErrorTrap		; Line-F emulator (12)
-		dc.l ErrorTrap		; Unused (reserved)
-		dc.l ErrorTrap		; Unused (reserved)
-		dc.l ErrorTrap		; Unused (reserved)
-		dc.l ErrorTrap		; Unused (reserved) (16)
-		dc.l ErrorTrap		; Unused (reserved)
-		dc.l ErrorTrap		; Unused (reserved)
-		dc.l ErrorTrap		; Unused (reserved)
-		dc.l ErrorTrap		; Unused (reserved) (20)
-		dc.l ErrorTrap		; Unused (reserved)
-		dc.l ErrorTrap		; Unused (reserved)
-		dc.l ErrorTrap		; Unused (reserved)
-		dc.l ErrorTrap		; Unused (reserved) (24)
-		dc.l ErrorTrap		; Spurious exception
+		dc.l BusError			; Bus error
+		dc.l AddressError		; Address error (4)
+		dc.l IllegalInstr		; Illegal instruction
+		dc.l ZeroDivide			; Division by zero
+		dc.l ChkInstr			; CHK exception
+		dc.l TrapvInstr			; TRAPV exception (8)
+		dc.l PrivilegeViol		; Privilege violation
+		dc.l Trace				; TRACE exception
+		dc.l Line1010Emu		; Line-A emulator
+		dc.l Line1111Emu		; Line-F emulator (12)
+		dc.l ErrorExcept		; Unused (reserved)
+		dc.l ErrorExcept		; Unused (reserved)
+		dc.l ErrorExcept		; Unused (reserved)
+		dc.l ErrorExcept		; Unused (reserved) (16)
+		dc.l ErrorExcept		; Unused (reserved)
+		dc.l ErrorExcept		; Unused (reserved)
+		dc.l ErrorExcept		; Unused (reserved)
+		dc.l ErrorExcept		; Unused (reserved) (20)
+		dc.l ErrorExcept		; Unused (reserved)
+		dc.l ErrorExcept		; Unused (reserved)
+		dc.l ErrorExcept		; Unused (reserved)
+		dc.l ErrorExcept		; Unused (reserved) (24)
+		dc.l ErrorExcept		; Spurious exception
 		dc.l ErrorTrap			; IRQ level 1
 		dc.l ErrorTrap			; IRQ level 2
 		dc.l ErrorTrap			; IRQ level 3 (28)
@@ -523,6 +523,7 @@ MT_1:	text "$FF > SILENCE"
 MT_2:	text "$FE > SLOW DOWN"
 MT_3:	text "$FD > SPEED UP"
 MT_4:	text "$FB > FADE OUT"
+	even
 
 ; ===========================================================================
 
@@ -533,7 +534,7 @@ SoundDriver:	include "s1.sounddriver.asm"
 ; Debugging modules
 ; --------------------------------------------------------------
 
-   include   "ErrorHandler.asm"
+   include   "Libraries\ErrorHandler.asm"
 
 ; --------------------------------------------------------------
 ; WARNING!
