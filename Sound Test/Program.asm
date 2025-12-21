@@ -29,6 +29,41 @@ PlaySound_Unused:	macro id
 		move.b	#id,(v_snddriver_ram+v_soundqueue2).w
 	endm
 
+text: macro textline,end
+	i:   = 1
+	len: = strlen(\textline)
+
+	while (i<=len)
+		char:	substr i,i,\textline
+		i: = i+1
+
+		if     "\char"=' '
+			dc.b	$01
+		elseif ("\char">='0')&("\char"<='9')
+			dc.b	$02+"\char"-'0'
+		elseif "\char"='$'
+			dc.b	$0C
+		elseif "\char"='-'
+			dc.b	$0D
+		elseif "\char"='='
+			dc.b	$0E
+		elseif "\char"=">"
+			dc.b	$0F
+		elseif "\char"='Y'
+			dc.b	$11
+		elseif "\char"='Z'
+			dc.b	$12
+		elseif ("\char">='A')&("\char"<='X')
+			dc.b	$13+"\char"-'A'
+		else
+			inform 2, "illegal char \char"
+		endif
+	endw
+	if (narg=2)
+		dc.b	0
+	endif
+	endm
+
 StartOfRom:
 Vectors:	dc.l v_systemstack&$FFFFFF	; Initial stack pointer value
 		dc.l EntryPoint			; Start of program
@@ -454,8 +489,14 @@ MenuTextLines = 5
 	if MenuTextLines <= InitialItemSelected
 		inform 2, "InitialItemSelected is above last item"
 	endc
-MenuVRAMPos = $C082
+MenuVRAMPos = $C002
 SoundVRAMPos = MenuVRAMPos+$1C
+
+TrackerVRAMPos = $C302
+Tracker_CHS:
+	text "DAC FM1 FM2 FM3 FM4 FM5 FM6 SN1 SN2 SN3",0
+	even
+
 LoadMenu:
 		lea	(vdp_data_port).l,a6
 		locVRAM	$20,4(a6)
@@ -470,6 +511,12 @@ LoadMenu:
 		move.w	#$0888,(a6) ; normal
 		locCRAM	$4C,4(a6)
 		move.w	#$0EEE,(a6) ; highlight
+
+		locVRAM TrackerVRAMPos,4(a6)
+		lea	Tracker_CHS(pc),a1
+
+		move.w	#$2000,d0
+		bsr.w	DrawLine
 
 		lea	(MenuText).l,a1
 		move.w	#$2000,d0
@@ -549,46 +596,14 @@ MenuTextPointers:
 	dc.w	MT_4-MenuTextPointers
 
 MenuText:
-text macro textline
-	i:   = 1
-	len: = strlen(\textline)
 
-	while (i<=len)
-		char:	substr i,i,\textline
-		i: = i+1
 
-		if     "\char"=' '
-			dc.b	$01
-		elseif ("\char">='0')&("\char"<='9')
-			dc.b	$02+"\char"-'0'
-		elseif "\char"='$'
-			dc.b	$0C
-		elseif "\char"='-'
-			dc.b	$0D
-		elseif "\char"='='
-			dc.b	$0E
-		elseif "\char"=">"
-			dc.b	$0F
-		elseif "\char"='Y'
-			dc.b	$11
-		elseif "\char"='Z'
-			dc.b	$12
-		elseif ("\char">='A')&("\char"<='X')
-			dc.b	$13+"\char"-'A'
-		else
-			inform 2, "illegal char \char"
-		endif
-	endw
-	dc.b 0
-	endm
-
-MT_0:	text "SOUND TEST = $"
-MT_1:	text "$FF > SILENCE"
-MT_2:	text "$FE > SLOW DOWN"
-MT_3:	text "$FD > SPEED UP"
-MT_4:	text "$FB > FADE OUT"
+MT_0:	text "SOUND TEST = $",0
+MT_1:	text "$FF > SILENCE",0
+MT_2:	text "$FE > SLOW DOWN",0
+MT_3:	text "$FD > SPEED UP",0
+MT_4:	text "$FB > FADE OUT",0
 	even
-
 ; ===========================================================================
 
 SoundDriver:	include "s1.sounddriver.asm"
