@@ -29,16 +29,14 @@ Jaws_Main:	; Routine 0
 		subq.w	#1,d0
 		move.w	d0,jaws_timecount(a0) ; set turn delay time
 		move.w	d0,jaws_timedelay(a0)
-		move.w	#-$40,obVelX(a0) ; move Jaws to the left
-		btst	#0,obStatus(a0)	; is Jaws facing left?
-		beq.s	Jaws_Turn	; if yes, branch
-		neg.w	obVelX(a0)	; move Jaws to the right
+		addi.w	#-$80,obVelY(a0) ; move object
 
 Jaws_Turn:	; Routine 2
 		subq.w	#1,jaws_timecount(a0) ; subtract 1 from turn delay time
 		bpl.s	@animate	; if time remains, branch
 		move.w	jaws_timedelay(a0),jaws_timecount(a0) ; reset turn delay time
-		neg.w	obVelX(a0)	; change speed direction
+		subi.w	#$80,obVelY(a0)	; Reduce Object	Speed		
+		neg.w	obVelY(a0)	; change speed direction
 		bchg	#0,obStatus(a0)	; change Jaws facing direction
 		move.b	#1,obNextAni(a0) ; reset animation
 
