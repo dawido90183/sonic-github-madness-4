@@ -29,6 +29,14 @@ PlaySound_Unused:	macro id
 		move.b	#id,(v_snddriver_ram+v_soundqueue2).w
 	endm
 
+divide_bin_search_iter: macro div,iter
+		cmpi.b	#(div<<iter),d0
+		blt.s	@less_\div\_\iter\
+		subi.b	#(div<<iter),d0
+		addi.w	#1<<iter,d1
+@less_\div\_\iter\:
+	endm
+
 text: macro textline,end
 	i:   = 1
 	len: = strlen(\textline)
@@ -536,43 +544,86 @@ UpdateTracker:
 
 		locVRAM (TrackerVRAMPos+$80),d4
 		move.w	#22-1,d5 ; limit
-	@dataloop:
+UpdateTracker_DataLoop:
 		lea (v_music_fmdac_tracks+v_snddriver_ram),a5
 		move.l	d4,4(a6)
-		move.w	#$2000,d1 ; pal 1
+
 		move.w	#10-1,d2 ; 7fm+3sn tracks updated
-	@chl_loop2:
+UpdateTracker_ChLoop:
 		move.l	TrackDataPointer(a5),a2
 		add.w	d5,a2
-
-		move.w	#$4000,d0 ; pal 2
+		move.w	#$2000,d0 ; pal 1 (for duration)
 		move.b	(a2),d0
-
-		cmpi.b	#-2,d0
-		beq.s	@restcmd
-		cmpi.b	#-1,d0
-		bne.s	@notcmd
-	@restcmd:
-		subi.w	#$4000,d0 ; pal 0
-		bra.s	@note
-	@notcmd:
 		tst.b	d0
-		bmi.s	@note
+		bpl.s	UpdateTracker_Digit
 
-		subi.w	#$2000,d0 ; pal 1
-	@note:
+		subi.w	#$2000,d0 ; remove pal 1
+		bsr.w	DrawNote
+		bra.s	UpdateTracker_Merge
+UpdateTracker_Digit:
 		bsr.w	DrawDigits
 		move.l	#0,(a6)
-
+UpdateTracker_Merge:
 		addi.l	#TrackSz,a5
-		dbf.w d2,@chl_loop2
+		dbf.w d2,UpdateTracker_ChLoop
 
 		addi.l	#$80<<16,d4
-		dbf.w d5,@dataloop
+		dbf.w d5,UpdateTracker_DataLoop
 
 		enable_ints
 		rts
 
+DrawNote:
+		bclr	#7,d0
+		subq.b	#1,d0
+		bmi.w	@off
+		clr.w	d1
+		cmpi.b	#12<<3,d0
+		bge.w	@digit
+		divide_bin_search_iter 12, 2 ; last octave is 8
+		divide_bin_search_iter 12, 1
+		divide_bin_search_iter 12, 0
+
+;		cmpi.b	#12,d0
+;		blt.s	@ok
+;		RaiseError "Note on D0 doesn't exist"
+;@ok:
+		; D1 has result (octave), d0 has remainder (note)
+		add.w	d0,d0
+		lea Tracker_Notes(pc),a1
+		add.w	d0,a1
+
+		move.w	#$4000,d0 ; set pal 2
+		move.b	(a1)+,d0
+		move.w	d0,(a6)
+		move.b	(a1)+,d0
+		move.w	d0,(a6)
+
+		addq.b	#1,d1
+		addi.w	#$4000,d1
+		move.w	d1,(a6)
+		move.w	#0,(a6)
+		rts
+@digit:
+		addq.b	#1,d0
+		bset #7,d0
+		move.w	d0,d1
+		clr.w	d0
+		move.b	d1,d0
+		bsr.w	DrawDigits
+		move.l	#0,(a6)
+		rts
+@off:
+		move.w	#$2000,d0
+		lea	TrackerRest(pc),a1
+		bra.w	DrawLine
+TrackerRest:	text "OFF ",0
+
+Tracker_Notes:
+	;text "C-C$D-D$E-F-F$G-G$A-A$B-"
+	dc.b	$14,$C,$14,$B,$15,$C,$15,$B,$16,$C
+	dc.b	$17,$C,$17,$B,$18,$C,$18,$B,$12,$C,$12,$B,$13,$C
+	even
 
 Tracker_CHS:
 	text "DAC FM1 FM2 FM3 FM4 FM5 FM6 SN1 SN2 SN3",0
