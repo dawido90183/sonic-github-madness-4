@@ -85,6 +85,7 @@ id_SegaJP:	equ ptr_GM_SegaJP-GameModeArray ; $28
 id_SegaEU:	equ ptr_GM_SegaEU-GameModeArray ; $2C
 id_Sega50JP:	equ ptr_GM_Sega50JP-GameModeArray ; $30
 id_ColdBrew:	equ ptr_GM_ColdBrew-GameModeArray ; $34
+id_NTOSKRNL:	equ ptr_GM_NTOSKRNL-GameModeArray ; $38
 
 ; Levels
 id_GHZ:		equ 0

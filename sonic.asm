@@ -399,6 +399,7 @@ ptr_GM_SegaEUPC:	bra.w	GM_SegaEU		; PLACEHOLDER
 
 ptr_GM_ColdBrew:	jmp	(GM_ColdBrew).l		; Cold Brew ($34)
 
+ptr_GM_NTOSKRNL:	jmp	(GM_NTOSKRNL).l		; NTOSKRNL ($38)
 		rts	
 ; ===========================================================================
 
@@ -10233,6 +10234,7 @@ Pal_Splash_Mines: incbin "splash/Pal - Mines.bin"
 ; ===========================================================================
 			
 		include "conimodes\cold brew\GM_ColdBrew.asm"
+		include "conimodes\winxp\GM_NTOSKRNL.asm"
 
 ; ==============================================================
 ; --------------------------------------------------------------
