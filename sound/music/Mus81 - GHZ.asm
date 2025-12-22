@@ -12,7 +12,7 @@ Mus81_GHZ_Header:
 	smpsHeaderFM        Mus81_GHZ_FM5,	$F4, $20
 	smpsHeaderPSG       Mus81_GHZ_PSG1,	$D0, $01, $00, fTone_03
 	smpsHeaderPSG       Mus81_GHZ_PSG2,	$D0, $03, $00, fTone_06
-	smpsHeaderPSG       Mus81_GHZ_PSG3,	$00, $03, $00, fTone_04
+	smpsHeaderPSG       Mus81_GHZ_PSG3,	$00, $00, $00, fTone_01
 
 ; FM1 Data
 Mus81_GHZ_FM1:
@@ -37,11 +37,10 @@ Mus81_GHZ_Jump04:
 	smpsSetvoice        $06
 	smpsModSet          $0D, $01, $07, $04
 	smpsAlterPitch      $F4
-	dc.b	nRst, $20
 	smpsCall            Mus81_GHZ_Call07
-	dc.b	nC6, $38
+	dc.b	nC6, $40
 	smpsCall            Mus81_GHZ_Call07
-	dc.b	nC6, $08, $08, nE6
+	dc.b	nC6, $28, nC6, $08, $08, nE6
 	smpsAlterPitch      $0C
 	smpsSetvoice        $06
 	smpsAlterPitch      $F4
@@ -69,11 +68,12 @@ Mus81_GHZ_Call02:
 	smpsReturn
 
 Mus81_GHZ_Call07:
-	dc.b	nC7, $08, nA6, $10, nC7, $08, nB6, $10, nC7, $08, nB6, $10
-	dc.b	nG6, $30, nA6, $08, nE7, nD7, $10, nC7, $08, nB6, $10, nC7
-	dc.b	$08, nB6, $10, nG6, $38, nC7, $08, nA6, $10, nC7, $08, nB6
-	dc.b	$10, nC7, $08, nB6, $10, nG6, $30, nA6, $08, $08, nF6, $10
-	dc.b	nA6, $08, nG6, $10, nA6, $08, nG6, $10
+	dc.b	nG6, $10, nC6, $18, nC7, $10, nA6, $08
+	dc.b	nG6, $10, nC6, $18, nG6, $10, nF6, $08
+	dc.b	nE6, $08, nE6, nF6, nG6, nC6, $10, nD6, $10, nE6, $40
+	dc.b	nG6, $10, nC6, $18, nC7, $10, nA6, $08
+	dc.b	nG6, $10, nC6, $18, nG6, $10, nF6, $08
+	dc.b	nE6, $08, nE6, nF6, nG6, nC6, $10, nD6, $10
 	smpsReturn
 
 ; FM2 Data
@@ -439,11 +439,11 @@ Mus81_GHZ_Loop10:
 ; PSG3 Data
 Mus81_GHZ_PSG3:
 	smpsPSGform         $E7
-	smpsNoteFill        $06
-	dc.b	nMaxPSG, $10, $10, $10
+;	smpsNoteFill        $06
+	dc.b	nMaxPSG, $10, $10, $10, $10
 
 Mus81_GHZ_Jump05:
-	dc.b	$08
+	dc.b	nMaxPSG, $08, nMaxPSG, nA4, nMaxPSG
 	smpsJump            Mus81_GHZ_Jump05
 
 ; DAC Data

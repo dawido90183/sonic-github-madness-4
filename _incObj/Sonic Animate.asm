@@ -7,7 +7,7 @@
 Char_Ani:	; CHAR ADD STUFF
 	dc.l	Ani_Sonic
 	dc.l	Ani_Sonic ; ghm3 guy
-	dc.l	Ani_Sonic ; mercury
+	dc.l	Ani_GHM3_Mercury ; mercury
 	dc.l	Ani_KiryuChan
 	dc.l	Ani_Jeebler
 	dc.l	Ani_MrBoss
@@ -205,7 +205,7 @@ Char_AniSize:	; CHAR ADD STUFF
 
 	anisize_char	4,6 ; sonic
 	anisize_char	4,6 ; ghm3 guy
-	anisize_char	4,6 ; mercury
+	anisize_char	4,4 ; mercury
 	anisize_char	4,4 ; kiryu
 	anisize_char	8,8 ; jeebler
 	anisize_char	2,2 ; jeebler

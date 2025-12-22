@@ -6781,7 +6781,7 @@ Map_Card:	dc.w M_Card_GHZ-Map_Card
 		dc.w M_Card_Oval-Map_Card
 		dc.w M_Card_FZ-Map_Card
 M_Card_GHZ:	dc.b 9 			; GREEN HILL
-		dc.b $F8, 5, 0,	$18, $B4
+		dc.b $F8, 5, 0,	  4, $B4
 		dc.b $F8, 5, 0,	$3A, $C4
 		dc.b $F8, 5, 0,	$10, $D4
 		dc.b $F8, 5, 0,	$10, $E4
@@ -7931,6 +7931,7 @@ Ani_\name:	include	"!Characters\\\name\\Anim.asm"
 		; CHAR ADD STUFF
 
 		anim_char Sonic
+		anim_char GHM3_Mercury
 		anim_char KiryuChan
 		anim_char Jeebler
 		anim_char MrBoss
