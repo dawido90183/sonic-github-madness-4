@@ -336,11 +336,12 @@ VDP_Data:
 	dc.w	$9001 ; 64-cell hscroll size
 	dc.w	$9200 ; window vertical position
 	dc.w	$8B07 ; scroll mode (vscroll enabled)
+	dc.w	$8C85 ; s/h off
 	dc.w	$8700 ; set background colour (palette line 0, entry 0)
 SetUpVDP:
 		; Set up VDP
 		lea	(vdp_control_port).l,a6
-		move.w	#9-1,d0
+		move.w	#10-1,d0
 		clr.w	d1
 	@vdploop:
 		move.w	VDP_Data(pc,d1.w),(a6)
@@ -530,7 +531,44 @@ UpdateTracker:
 		addi.l	#TrackSz,a5
 		dbf.w d2,@chl_loop
 
-		locVRAM TrackerVRAMPos+$80,4(a6)
+
+
+
+		locVRAM (TrackerVRAMPos+$80),d4
+		move.w	#22-1,d5 ; limit
+	@dataloop:
+		lea (v_music_fmdac_tracks+v_snddriver_ram),a5
+		move.l	d4,4(a6)
+		move.w	#$2000,d1 ; pal 1
+		move.w	#10-1,d2 ; 7fm+3sn tracks updated
+	@chl_loop2:
+		move.l	TrackDataPointer(a5),a2
+		add.w	d5,a2
+
+		move.w	#$4000,d0 ; pal 2
+		move.b	(a2),d0
+
+		cmpi.b	#-2,d0
+		beq.s	@restcmd
+		cmpi.b	#-1,d0
+		bne.s	@notcmd
+	@restcmd:
+		subi.w	#$4000,d0 ; pal 0
+		bra.s	@note
+	@notcmd:
+		tst.b	d0
+		bmi.s	@note
+
+		subi.w	#$2000,d0 ; pal 1
+	@note:
+		bsr.w	DrawDigits
+		move.l	#0,(a6)
+
+		addi.l	#TrackSz,a5
+		dbf.w d2,@chl_loop2
+
+		addi.l	#$80<<16,d4
+		dbf.w d5,@dataloop
 
 		enable_ints
 		rts
@@ -553,7 +591,7 @@ LoadMenu:
 		locCRAM	$0C,4(a6)
 		move.w	#$00CC,(a6) ; s highlight
 		locCRAM	$2C,4(a6)
-		move.w	#$0888,(a6) ; normal
+		move.w	#$0444,(a6) ; normal
 		locCRAM	$4C,4(a6)
 		move.w	#$0EEE,(a6) ; highlight
 
@@ -605,6 +643,7 @@ LoadMenu:
 DrawSoundTest:
 		locVRAM SoundVRAMPos,4(a6)
 		move.b	(v_levselsound+1).w,d0
+DrawDigits:
 		move.b	d0,d1
 		lsr.b	#4,d0
 		bsr.s	@digit
