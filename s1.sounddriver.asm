@@ -205,10 +205,26 @@ ptr_mus29:	dc.l Music29
 ptr_mus2A:	dc.l Music2A
 ptr_mus2B:	dc.l Music2B
 ptr_mus2C:	dc.l Music2C
-;ptr_mus2D:	dc.l Music2D
-;ptr_mus2E:	dc.l Music2E
-;ptr_mus2F:	dc.l Music2F
-;ptr_mus30:	dc.l Music30
+ptr_mus2D:	dc.l Music2D
+ptr_mus2E:	dc.l Music2E
+ptr_mus2F:	dc.l Music2F
+ptr_mus30:	dc.l Music30
+;ptr_mus31:	dc.l Music31
+;ptr_mus32:	dc.l Music32
+;ptr_mus33:	dc.l Music33
+;ptr_mus34:	dc.l Music34
+;ptr_mus35:	dc.l Music35
+;ptr_mus36:	dc.l Music36
+;ptr_mus37:	dc.l Music37
+;ptr_mus38:	dc.l Music38
+;ptr_mus39:	dc.l Music39
+;ptr_mus3A:	dc.l Music3A
+;ptr_mus3B:	dc.l Music3B
+;ptr_mus3C:	dc.l Music3C
+;ptr_mus3D:	dc.l Music3D
+;ptr_mus3E:	dc.l Music3E
+;ptr_mus3F:	dc.l Music3F
+
 ptr_musend
 
 ;Note to TG2000 or any other track implementors, remove semicolons on pointers upon implementing a track on a commented pointer! 
@@ -2735,6 +2751,14 @@ Music2A:	include	"sound/music/CNTracks/SailorMoonTrans.asm"
 Music2B:	include	"sound/music/CNTracks/SailorMoonInvi.asm"
 		even
 Music2C:	include	"sound/music/TG2000Tracks/Dingaling.asm"
+		even
+Music2D:	include	"sound/music/TG2000Tracks/Minuscule.asm"
+		even
+Music2E:	include	"sound/music/TG2000Tracks/Folgers.asm"
+		even
+Music2F:	include	"sound/music/TG2000Tracks/Rickroll.asm"
+		even
+Music30:	include	"sound/music/TG2000Tracks/Wormy.asm"
 		even
 ; ---------------------------------------------------------------------------
 ; Sound effect pointers
