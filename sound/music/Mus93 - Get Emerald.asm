@@ -73,7 +73,6 @@ Mus93_Get_Emerald_Loop00:
 Mus93_Get_Emerald_DAC:
 ; PSG3 Data
 Mus93_Get_Emerald_PSG3:
-	smpsNop             $01
 	smpsStop
 
 Mus93_Get_Emerald_Voices:
