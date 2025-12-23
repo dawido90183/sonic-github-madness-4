@@ -4,12 +4,12 @@ Pac_Header:
 	smpsHeaderChan	$06,	$03
 	smpsHeaderTempo	$01,	$00
 
-	smpsHeaderDAC	Pac_FM6,	smpsPitch00,	$00
-	smpsHeaderFM	Pac_FM1,	smpsPitch00,	$00
-	smpsHeaderFM	Pac_FM2,	smpsPitch00,	$00
-	smpsHeaderFM	Pac_FM3,	smpsPitch00,	$00
-	smpsHeaderFM	Pac_FM4,	smpsPitch00,	$00
-	smpsHeaderFM	Pac_FM5,	smpsPitch00,	$00
+	smpsHeaderDAC	Pac_FM6,	smpsPitch00,	$0C
+	smpsHeaderFM	Pac_FM1,	smpsPitch00,	$08
+	smpsHeaderFM	Pac_FM2,	smpsPitch00,	$0C
+	smpsHeaderFM	Pac_FM3,	smpsPitch00,	$0C
+	smpsHeaderFM	Pac_FM4,	smpsPitch00,	$0C
+	smpsHeaderFM	Pac_FM5,	smpsPitch00,	$0C
 	smpsHeaderPSG       Pac_PSG1,	$00, $00, $00, $00
 	smpsHeaderPSG       Pac_PSG2,	$00, $00, $00, $00
 	smpsHeaderPSG       Pac_PSG3,	$00, $00, $00, $00
@@ -34,7 +34,6 @@ Pac_PSG3:
 ; FM1 Data
 Pac_FM1:
 	smpsFMvoice	$00
-	smpsAlterVol	$19
 	smpsPan		panCentre,	$00
 	smpsAlterNote	$17
 	dc.b		nA3,	$01,	smpsNoAttack
@@ -1169,7 +1168,6 @@ Pac_Jump01:
 ; FM2 Data
 Pac_FM2:
 	smpsFMvoice	$01
-	smpsAlterVol	$0F
 	smpsPan		panCentre,	$00
 	smpsAlterNote	$FF
 	dc.b		nC2,	$13
@@ -1741,7 +1739,6 @@ Pac_Jump02:
 ; FM3 Data
 Pac_FM3:
 	smpsFMvoice	$02
-	smpsAlterVol	$19
 	smpsPan		panCentre,	$00
 	dc.b		nRst,	$01
 	smpsAlterNote	$05
@@ -6119,7 +6116,6 @@ Pac_Jump03:
 ; FM4 Data
 Pac_FM4:
 	smpsFMvoice	$03
-	smpsAlterVol	$19
 	smpsPan		panCentre,	$00
 	smpsAlterNote	$EE
 	dc.b		nC3,	$01,	smpsNoAttack
@@ -6885,11 +6881,9 @@ Pac_Jump04:
 ; FM5 Data
 Pac_FM5:
 	smpsFMvoice	$04
-	smpsAlterVol	$7F
 	smpsPan		panCentre,	$00
 	dc.b		nRst,	$01
 	smpsFMvoice	$06
-	smpsAlterVol	$9F
 	smpsAlterNote	$08
 	dc.b		nG3,	smpsNoAttack
 	smpsAlterNote	$09
