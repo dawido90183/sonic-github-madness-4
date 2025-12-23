@@ -219,12 +219,12 @@ ptr_mus2E:	dc.l Music2E
 ptr_mus2F:	dc.l Music2F
 ptr_mus30:	dc.l Music30
 ptr_mus31:	dc.l Music31
-;ptr_mus32:	dc.l Music32
-;ptr_mus33:	dc.l Music33
-;ptr_mus34:	dc.l Music34
-;ptr_mus35:	dc.l Music35
-;ptr_mus36:	dc.l Music36
-;ptr_mus37:	dc.l Music37
+ptr_mus32:	dc.l Music32
+ptr_mus33:	dc.l Music33
+ptr_mus34:	dc.l Music34
+ptr_mus35:	dc.l Music35
+ptr_mus36:	dc.l Music36
+ptr_mus37:	dc.l Music37
 ;ptr_mus38:	dc.l Music38
 ;ptr_mus39:	dc.l Music39
 ;ptr_mus3A:	dc.l Music3A
@@ -2770,6 +2770,18 @@ Music2F:	include	"sound/music/TG2000Tracks/Rickroll.asm"
 Music30:	include	"sound/music/TG2000Tracks/Wormy.asm"
 		even
 Music31:	include	"sound/music/HS_Tracks/GCV2005.asm"
+		even
+Music32:	include	"sound/music/TG2000Tracks/Starman.asm"
+		even
+Music33:	include	"sound/music/TG2000Tracks/MayoDed.asm"
+		even
+Music34:	include	"sound/music/TG2000Tracks/PuyoReject.asm"
+		even
+Music35:	include	"sound/music/TG2000Tracks/SFZShop.asm"
+		even
+Music36:	include	"sound/music/TG2000Tracks/JamesPond.asm"
+		even
+Music37:	include	"sound/music/TG2000Tracks/AlexKiddEnd.asm"
 		even
 ; ---------------------------------------------------------------------------
 ; Sound effect pointers
