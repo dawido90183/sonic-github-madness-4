@@ -5,7 +5,7 @@
 ; Settings
 
 ; This can't use bgm_XX, sfx_XX or any of that kind
-Autoplay = $23 ; 0 to not autoplay, plays the id specified on boot
+Autoplay = $31 ; 0 to not autoplay, plays the id specified on boot
 
 InitialItemSelected = 0 ; Initial selection on the menu
 

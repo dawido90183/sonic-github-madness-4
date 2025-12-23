@@ -18,6 +18,7 @@ PSG_Index:
 		dc.l PSG4, PSG5, PSG6
 		dc.l PSG7, PSG8, PSG9
 		dc.l PSG10, PSG11
+		dc.l GCV_PSG0, GCV_PSG1, GCV_PSG2
 		
 PSG1:		dc.b 0,0,0,1,1,1,2,2,2,3,3,3,4,4,4,5,5,5,6,6,6,7,$80
 
@@ -50,6 +51,10 @@ PSG10:		dc.b 7, 6, 6, 6, 5, 5, 5, 4, 4, 3, 3, 3, 3, 3, 2, 2, 2
 PSG11:		dc.b 2, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2  
             dc.b 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3  
 			dc.b 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, $81
+; GCV2005 PSG
+GCV_PSG0:		dc.b 0, 0, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, $80
+GCV_PSG1:		dc.b 0, 0, 8, $10, $80
+GCV_PSG2:		dc.b 0,1,2,3,4,5,$80
 
 
 ; ---------------------------------------------------------------------------
@@ -104,6 +109,8 @@ SpeedUpIndex:
 		dc.b $00	; $2D
 		dc.b $00	; $2E
 		dc.b $00	; $2F
+		dc.b $00	; $30
+		dc.b $00	; $31
 
 PALSpeedIndex:			; NOTE BY CONI - this is for whenever you want your music to play either at the same speed or slower in PAL consoles
 						; set the byte for your respective music to 0 if you want your track to play slower
@@ -155,6 +162,8 @@ PALSpeedIndex:			; NOTE BY CONI - this is for whenever you want your music to pl
 		dc.b $01	; $2D
 		dc.b $01	; $2E
 		dc.b $01	; $2F
+		dc.b $01	; $30
+		dc.b $01	; $31
         even
 
 ; ---------------------------------------------------------------------------
@@ -209,7 +218,7 @@ ptr_mus2D:	dc.l Music2D
 ptr_mus2E:	dc.l Music2E
 ptr_mus2F:	dc.l Music2F
 ptr_mus30:	dc.l Music30
-;ptr_mus31:	dc.l Music31
+ptr_mus31:	dc.l Music31
 ;ptr_mus32:	dc.l Music32
 ;ptr_mus33:	dc.l Music33
 ;ptr_mus34:	dc.l Music34
@@ -2759,6 +2768,8 @@ Music2E:	include	"sound/music/TG2000Tracks/Folgers.asm"
 Music2F:	include	"sound/music/TG2000Tracks/Rickroll.asm"
 		even
 Music30:	include	"sound/music/TG2000Tracks/Wormy.asm"
+		even
+Music31:	include	"sound/music/HS_Tracks/GCV2005.asm"
 		even
 ; ---------------------------------------------------------------------------
 ; Sound effect pointers
