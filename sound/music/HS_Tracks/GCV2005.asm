@@ -19,7 +19,7 @@ GCV2005:
 	smpsHeaderFM        GCV2005_FM3,	$00, $00
 	smpsHeaderPSG       GCV2005_PSG1,	$00, $00, $00, gcv_psg2
 	smpsHeaderPSG       GCV2005_Empty,	$00, $00, $00, $00
-	smpsHeaderPSG       GCV2005_PSG3,	$00, $00, $00, gcv_psg1
+	smpsHeaderPSG       GCV2005_PSG3,	$0C, $00, $00, gcv_psg1
 
 GCV2005_PSG3:
 	; Pattern 00
@@ -37,33 +37,33 @@ GCV2005_PSG3:
     smpsPSGvoice gcv_psg1
 	dc.b nC7,3*3
 	smpsPSGvoice gcv_psg1
-	dc.b nC7, 3,_smpsAlterVol,1,3,_smpsAlterVol,1,3,_smpsAlterVol,1,3,3
+	dc.b nC6, 3,_smpsAlterVol,1,3,_smpsAlterVol,1,3,_smpsAlterVol,1,3,3
 
 	; Pattern 01
 	@loop1:
 	smpsPSGvoice gcv_psg1
-	dc.b nC7,3,3
+	dc.b nC6,3,3
 	smpsPSGvoice gcv_psg0
-	dc.b nC7,6
+	dc.b nD7,6
 	smpsLoop 0,3,@loop1
 	smpsPSGvoice gcv_psg1
-	dc.b nC7,3,3
+	dc.b nC6,3,3
 	smpsPSGvoice gcv_psg0
-	dc.b nC7,3
-	smpsPSGvoice gcv_psg1
 	dc.b nD7,3
+	smpsPSGvoice gcv_psg1
+	dc.b nA6,3
 	@loop2:
 	smpsPSGvoice gcv_psg1
-	dc.b nC7,3,3
+	dc.b nC6,3,3
 	smpsPSGvoice gcv_psg0
-	dc.b nC7,6
+	dc.b nD7,6
 	smpsLoop 0,3,@loop2
 	smpsPSGvoice gcv_psg1
-	dc.b nC7,3,3
+	dc.b nC6,3,3
 	smpsPSGvoice gcv_psg0
-	dc.b nC7,3
+	dc.b nD7,3
 	smpsPSGvoice gcv_psg1
-	dc.b nC7,3
+	dc.b nD7,3
 	smpsJump	@loop1
 
 GCV2005_FM1:
