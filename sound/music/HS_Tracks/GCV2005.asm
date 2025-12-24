@@ -37,22 +37,34 @@ GCV2005_PSG3:
     smpsPSGvoice gcv_psg1
 	dc.b nC7,3*3
 	smpsPSGvoice gcv_psg1
-	dc.b nC6, 3,_smpsAlterVol,1,3,_smpsAlterVol,1,3,_smpsAlterVol,1,3,3
+	dc.b nC7, 3,_smpsAlterVol,1,3,_smpsAlterVol,1,3,_smpsAlterVol,1,3,3
+
 	; Pattern 01
-GCV2005_PSG3_Loop:
+	@loop1:
 	smpsPSGvoice gcv_psg1
-	dc.b nC6,3,3
+	dc.b nC7,3,3
+	smpsPSGvoice gcv_psg0
+	dc.b nC7,6
+	smpsLoop 0,3,@loop1
+	smpsPSGvoice gcv_psg1
+	dc.b nC7,3,3
 	smpsPSGvoice gcv_psg0
 	dc.b nC7,3
-	smpsLoop 0,3,GCV2005_PSG3_Loop
-	dc.b nRst
 	smpsPSGvoice gcv_psg1
-	dc.b nC6,3,3
+	dc.b nD7,3
+	@loop2:
+	smpsPSGvoice gcv_psg1
+	dc.b nC7,3,3
+	smpsPSGvoice gcv_psg0
+	dc.b nC7,6
+	smpsLoop 0,3,@loop2
+	smpsPSGvoice gcv_psg1
+	dc.b nC7,3,3
 	smpsPSGvoice gcv_psg0
 	dc.b nC7,3
 	smpsPSGvoice gcv_psg1
-	dc.b nA6
-	smpsJump	GCV2005_PSG3_Loop
+	dc.b nC7,3
+	smpsJump	@loop1
 
 GCV2005_DAC:
 
