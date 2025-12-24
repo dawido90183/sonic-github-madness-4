@@ -29,6 +29,9 @@ Got_ChkPLC:	; Routine 0
 ; ===========================================================================
 
 Got_Main:
+		move.b	#4,d2 ; win sfx (signpost)
+		jsr (PlayCharSFX).l
+
 		movea.l	a0,a1
 		lea	(Got_Config).l,a2
 		moveq	#6,d1
