@@ -3526,7 +3526,7 @@ Char_SFX_Type:
 PlayCharSFX: ; d2 -> SFX in index (jump,hurt,die,start,win,ex1,ex2,ex3)
 	moveq	#0,d0
 	rept 2
-		move.w	(v_character).w,d0
+		add.w	(v_character).w,d0
 	endr
 	add.b	d2,d0
 	move.b	Char_SFX(pc,d0.w),d1
@@ -3540,7 +3540,7 @@ PlayCharSFX: ; d2 -> SFX in index (jump,hurt,die,start,win,ex1,ex2,ex3)
 	beq.s	@sfx
 
 	; pcm
-	st d0
+	move.l	#-1,d0
 	move.b	d1,d0
 
 	jmp (MegaPCM_PlaySample)
