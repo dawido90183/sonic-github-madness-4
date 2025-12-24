@@ -66,9 +66,26 @@ GCV2005_PSG3:
 	dc.b nC7,3
 	smpsJump	@loop1
 
-GCV2005_DAC:
-
 GCV2005_FM1:
+	; Pattern 00
+
+	smpsFMvoice 0 ; Bass
+    dc.b nRst,3*2
+
+	dc.b nG2,3,3,3,3,nRst,6
+	dc.b nG2,3,3,3,3,nRst,6
+	dc.b nF2,6,nRst,3,nF2,21
+	@loop1:
+	; Pattern 01
+	dc.b nAb2,3,nG2,6,nBb2,9,nC3,3,nRst
+	dc.b nC3,nCs3,6,nEb3,9,nE3,3,nF3
+	dc.b nAb2,nG2,6,nBb2,9,nC3,3,nRst
+	dc.b nC3,nCs3,6,nEb3,9,nE3,3,nF3
+
+	smpsJump	@loop1
+
+
+GCV2005_DAC:
 
 GCV2005_FM2:
 
@@ -81,3 +98,17 @@ GCV2005_Empty:
     smpsStop
 
 GCV2005_Voices:
+	; Acoustic Bass (meow) -TODO-
+	smpsVcAlgorithm     $00
+	smpsVcFeedback      $01
+	smpsVcUnusedBits    $00
+	smpsVcDetune        $00, $03, $07, $00
+	smpsVcCoarseFreq    $02, $00, $00, $04
+	smpsVcRateScale     $01, $01, $00, $00
+	smpsVcAttackRate    $1F, $1F, $1F, $1F
+	smpsVcAmpMod        $00, $00, $00, $00
+	smpsVcDecayRate1    $0A, $0A, $0E, $12
+	smpsVcDecayRate2    $03, $04, $04, $00
+	smpsVcDecayLevel    $02, $02, $02, $02
+	smpsVcReleaseRate   $0F, $0F, $0F, $0F
+	smpsVcTotalLevel    $00, $13, $30, $23
