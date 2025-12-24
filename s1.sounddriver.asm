@@ -275,27 +275,6 @@ SoundPriorities:
 
 ; sub_71B4C:
 UpdateMusic:
-		stopZ80
-		nop	
-		nop	
-		nop	
-; loc_71B5A:
-@updateloop:
-		btst	#0,(z80_bus_request).l		; Is the z80 busy?
-		bne.s	@updateloop			; If so, wait
-
-		btst	#7,(z80_dac_status).l		; Is DAC accepting new samples?
-		beq.s	@driverinput			; Branch if yes
-		startZ80
-		nop	
-		nop	
-		nop	
-		nop	
-		nop	
-		bra.s	UpdateMusic
-; ===========================================================================
-; loc_71B82:
-@driverinput:
 		lea	(v_snddriver_ram&$FFFFFF).l,a6
 		clr.b	f_voice_selector(a6)
 		tst.b	f_pausemusic(a6)		; is music paused?
@@ -396,7 +375,7 @@ UpdateMusic:
 		jsr	PSGUpdateTrack(pc)
 ; loc_71C44:
 DoStartZ80:
-		startZ80
+
 		rts	
 ; End of function UpdateMusic
 
@@ -442,29 +421,13 @@ DACUpdateTrack:
 		move.b	TrackSavedDAC(a5),d0	; Get sample
 		cmpi.b	#$80,d0			; Is it a rest?
 		beq.s	@locret			; Return if yes
-		btst	#3,d0			; Is bit 3 set (samples between $88-$8F)?
-		bne.s	@timpani		; Various timpani
-		move.b	d0,(z80_dac_sample).l
+		MPCM_stopZ80
+		move.b  d0, MPCM_Z80_RAM+Z_MPCM_CommandInput    ; send DAC sample to Mega PCM
+		MPCM_startZ80
 ; locret_71CAA:
 @locret:
-		rts	
-; ===========================================================================
-; loc_71CAC:
-@timpani:
-		subi.b	#$88,d0		; Convert into an index
-		move.b	DAC_sample_rate(pc,d0.w),d0
-		; Warning: this affects the raw pitch of sample $83, meaning it will
-		; use this value from then on.
-		move.b	d0,(z80_dac3_pitch).l
-		move.b	#$83,(z80_dac_sample).l	; Use timpani
-		rts	
+		rts
 ; End of function DACUpdateTrack
-
-; ===========================================================================
-; Note: this only defines rates for samples $88-$8D, meaning $8E-$8F are invalid.
-; Also, $8C-$8D are so slow you may want to skip them.
-; byte_71CC4:
-DAC_sample_rate: dc.b $12, $15, $1C, $1D, $FF, $FF
 
 ; ||||||||||||||| S U B R O U T I N E |||||||||||||||||||||||||||||||||||||||
 
@@ -841,32 +804,12 @@ Sound_E0toE4:
 
 Sound_ExIndex:
 ptr_flgE0:	bra.w	FadeOutMusic		; $E0
-ptr_flgE1:	bra.w	PlaySegaSound		; $E1
-ptr_flgE2:	bra.w	SpeedUpMusic		; $E2
-ptr_flgE3:	bra.w	SlowDownMusic		; $E3
-ptr_flgE4:	bra.w	StopAllSound		; $E4
-ptr_flgend
-; ===========================================================================
-; ---------------------------------------------------------------------------
-; Play "Say-gaa" PCM sound
-; ---------------------------------------------------------------------------
-; Sound_E1: PlaySega:
-PlaySegaSound:
-		move.b	#$88,(z80_dac_sample).l	; Queue Sega PCM
-		startZ80
-		move.w	#$11,d1
-; loc_71FC0:
-@busyloop_outer:
-		move.w	#-1,d0
-; loc_71FC4:
-@busyloop:
-		nop	
-		dbf	d0,@busyloop
+ptr_flgE1:	bra.w	SpeedUpMusic		; $E1
+ptr_flgE2:	bra.w	SlowDownMusic		; $E2
+ptr_flgE3:	bra.w	StopAllSound		; $E3
+ptr_flgend:
 
-		dbf	d1,@busyloop_outer
 
-		addq.w	#4,sp	; Tamper return value so we don't return to caller
-		rts	
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
 ; Play music track $81-$9F
@@ -1745,76 +1688,66 @@ locret_72714:
 ; ===========================================================================
 ; loc_72716:
 WriteFMIorIIMain:
-		btst	#2,(a5)		; Is track being overriden by sfx? (TrackPlaybackControl)
-		bne.s	@locret		; Return if yes
-		bra.w	WriteFMIorII
+		btst    #2,TrackPlaybackControl(a5); Is track being overriden by sfx?
+		bne.s   @locret                         ; Return if yes
+		bra.w   WriteFMIorII
 ; ===========================================================================
 ; locret_72720:
 @locret:
-		rts	
+		rts
 
 ; ||||||||||||||| S U B R O U T I N E |||||||||||||||||||||||||||||||||||||||
 
 ; sub_72722:
 WriteFMIorII:
-		btst	#2,TrackVoiceControl(a5)	; Is this bound for part I or II?
-		bne.s	WriteFMIIPart			; Branch if for part II
-		add.b	TrackVoiceControl(a5),d0	; Add in voice control bits
-; End of function WriteFMIorII
+		move.b  TrackVoiceControl(a5), d2
+		subq.b  #4, d2                          ; Is this bound for part I or II?
+		bcc.s   WriteFMIIPart                   ; If yes, branch
+		addq.b  #4, d2                          ; Add in voice control bits
+		add.b   d2, d0                          ;
 
-
-; ||||||||||||||| S U B R O U T I N E |||||||||||||||||||||||||||||||||||||||
-
-; Strangely, despite this driver being SMPS 68k Type 1b,
-; WriteFMI and WriteFMII are the Type 1a versions.
-; In Sonic 1's prototype, they were the Type 1b versions.
-; I wonder why they were changed?
-
-; sub_7272E:
+; ---------------------------------------------------------------------------
 WriteFMI:
-		move.b	(ym2612_a0).l,d2
-		btst	#7,d2		; Is FM busy?
-		bne.s	WriteFMI	; Loop if so
-		move.b	d0,(ym2612_a0).l
-		nop	
-		nop	
-		nop	
-; loc_72746:
-@waitloop:
-		move.b	(ym2612_a0).l,d2
-		btst	#7,d2		; Is FM busy?
-		bne.s	@waitloop	; Loop if so
-
-		move.b	d1,(ym2612_d0).l
-		rts	
+		MPCM_stopZ80
+		MPCM_ensureYMWriteReady
+@waitLoop:
+		tst.b   (ym2612_a0).l           ; is FM busy?
+		bmi.s   @waitLoop               ; branch if yes
+		move.b  d0, (ym2612_a0).l
+		nop
+		move.b  d1, (ym2612_d0).l
+		nop
+		nop
+@waitLoop2:
+		tst.b   (ym2612_a0).l           ; is FM busy?
+		bmi.s   @waitLoop2              ; branch if yes
+		move.b  #$2A, (ym2612_a0).l     ; restore DAC output for Mega PCM
+		MPCM_startZ80
+		rts
 ; End of function WriteFMI
 
 ; ===========================================================================
 ; loc_7275A:
 WriteFMIIPart:
-		move.b	TrackVoiceControl(a5),d2 ; Get voice control bits
-		bclr	#2,d2			; Clear chip toggle
-		add.b	d2,d0			; Add in to destination register
+		add.b   d2,d0                   ; Add in to destination register
 
-; ||||||||||||||| S U B R O U T I N E |||||||||||||||||||||||||||||||||||||||
-
-; sub_72764:
+; ---------------------------------------------------------------------------
 WriteFMII:
-		move.b	(ym2612_a0).l,d2
-		btst	#7,d2		; Is FM busy?
-		bne.s	WriteFMII	; Loop if so
-		move.b	d0,(ym2612_a1).l
-		nop	
-		nop	
-		nop	
-; loc_7277C:
-@waitloop:
-		move.b	(ym2612_a0).l,d2
-		btst	#7,d2		; Is FM busy?
-		bne.s	@waitloop	; Loop if so
-
-		move.b	d1,(ym2612_d1).l
-		rts	
+		MPCM_stopZ80
+		MPCM_ensureYMWriteReady
+.waitLoop:
+		tst.b   (ym2612_a0).l           ; is FM busy?
+		bmi.s   .waitLoop               ; branch if yes
+		move.b  d0, (ym2612_a1).l
+		nop
+		move.b  d1, (ym2612_d1).l
+		nop
+                nop
+.waitLoop2:     tst.b   (ym2612_a0).l           ; is FM busy?
+		bmi.s   .waitLoop2              ; branch if yes
+		move.b  #$2A, (ym2612_a0).l     ; restore DAC output for Mega PCM
+		MPCM_startZ80
+		rts
 ; End of function WriteFMII
 
 ; ===========================================================================
@@ -2250,7 +2183,7 @@ cfFadeInToPrevious:
 		move.b	#$80,f_fadein_flag(a6)		; Trigger fade-in
 		move.b	#$28,v_fadein_counter(a6)	; Fade-in delay
 		clr.b	f_1up_playing(a6)
-		startZ80
+
 		addq.w	#8,sp		; Tamper return value so we don't return to caller
 		rts	
 ; ===========================================================================
@@ -2647,24 +2580,6 @@ cfOpF9:
 		bra.w	WriteFMI
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
-; DAC driver
-; ---------------------------------------------------------------------------
-Kos_Z80:
-		; In this branch, the DAC driver is a binary blob. We do some
-		; hackery here to manually patch some of its pointers. In the
-		; AS branch, this driver is properly disassembled.
-		incbin	"sound\z80.bin", 0, $15
-		dc.b ((SegaPCM&$FF8000)/$8000)&1						; Least bit of bank ID (bit 15 of address)
-		incbin	"sound\z80.bin", $16, 6
-		dc.b ((SegaPCM&$FF8000)/$8000)>>1						; ... the remaining bits of bank ID (bits 16-23)
-		incbin	"sound\z80.bin", $1D, $93
-		dc.w ((SegaPCM&$FF)<<8)+((SegaPCM&$7F00)>>8)|$80				; Pointer to Sega PCM, relative to start of ROM bank (i.e., little_endian($8000 + SegaPCM&$7FFF)
-		incbin	"sound\z80.bin", $B2, 1
-		dc.w (((SegaPCM_End-SegaPCM)&$FF)<<8)+(((SegaPCM_End-SegaPCM)&$FF00)>>8)	; ... the size of the Sega PCM (little endian)
-		incbin	"sound\z80.bin", $B5, $16AB
-		even
-
-; ---------------------------------------------------------------------------
 ; SMPS2ASM - A collection of macros that make SMPS's bytecode human-readable.
 ; ---------------------------------------------------------------------------
 FixMusicAndSFXDataBugs = 0
@@ -2961,23 +2876,3 @@ SoundEB3:	include	"sound/sfx/Shine64.asm"
 ; ---------------------------------------------------------------------------
 SoundD0:	include	"sound/sfx/SndD0 - Waterfall.asm"
 		even
-
-; ---------------------------------------------------------------------------
-; 'Sega' chant PCM sample
-; ---------------------------------------------------------------------------
-		; Don't let Sega sample cross $8000-byte boundary
-		; (DAC driver doesn't switch banks automatically)
-		if (*&$7FFF)+Size_of_SegaPCM>$8000
-			align $8000
-		endc
-SegaPCM:	incbin	"sound/dac/sega.pcm"
-SegaPCM_End
-		even
-
-		if SegaPCM_End-SegaPCM>$8000
-			inform 3,"Sega sound must fit within $8000 bytes, but you have a $%h byte Sega sound.",SegaPCM_End-SegaPCM
-		endc
-		if SegaPCM_End-SegaPCM>Size_of_SegaPCM
-			inform 3,"Size_of_SegaPCM = $%h, but you have a $%h byte Sega sound.",Size_of_SegaPCM,SegaPCM_End-SegaPCM
-		endc
-

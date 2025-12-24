@@ -357,30 +357,25 @@ SetUpVDP:
 		move.w	VDP_Data(pc,d1.w),(a6)
 		addq.w	#2,d1
 		dbf.w	d0,@vdploop
-
-; SoundDriverLoad
-		nop
-		stopZ80
-		resetZ80
-		lea	(Kos_Z80).l,a0	; load sound driver
-		lea	(z80_ram).l,a1	; target Z80 RAM
-		bsr.w	KosDec		; decompress
-		resetZ80a
-		nop
-		nop
-		nop
-		nop
-		resetZ80
-		startZ80
-
 ; JoypadInit
-		stopZ80
-		waitZ80
 		moveq	#$40,d0
 		move.b	d0,(z80_port_1_control+1).l	; init port 1 (joypad 1)
 		move.b	d0,(z80_port_2_control+1).l	; init port 2 (joypad 2)
 		move.b	d0,(z80_expansion_control+1).l	; init port 3 (expansion/extra)
-		startZ80
+
+
+		jsr     (MegaPCM_LoadDriver).l
+		lea     (SampleTable).l, a0
+		jsr     MegaPCM_LoadSampleTable
+		tst.w   d0                      ; was sample table loaded successfully?
+		beq.s   @SampleTableOk          ; if yes, branch
+; 	ifdef __DEBUG__
+; 		; for MD Debugger v.2.5 or above
+; 		RaiseError "MegaPCM_LoadSampleTable returned %<.b d0>", MPCM_Debugger_LoadSampleTableException
+; 	else
+		illegal
+; 	endif
+	@SampleTableOk:
 
 		move.w	#InitialItemSelected,(v_levselitem).w
 		move.w	#Autoplay,(v_levselsound).w
@@ -419,13 +414,13 @@ VBlank:
 
 		move.b	#0,(v_vbla_routine).w
 
-        stopZ80
-		waitZ80
+
+
 		bsr.w	ReadJoypads
         ;writeCRAM	v_pal_dry,$80,0
         ;writeVRAM	v_spritetablebuffer,$280,vram_sprites
 		;writeVRAM	v_hscrolltablebuffer,$380,vram_hscroll
-		startZ80
+
 	@music:
 		jsr	(UpdateMusic).l
 		addq.l	#1,(v_vbla_count).w
@@ -784,7 +779,8 @@ MT_3:	text "$FD > SPEED UP",0
 MT_4:	text "$FB > FADE OUT",0
 	even
 ; ===========================================================================
-
+	include "Libraries/MegaPCM.asm"
+	include "sound/SampleTable.asm"
 SoundDriver:	include "s1.sounddriver.asm"
 
 ; ==============================================================
