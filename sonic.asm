@@ -3505,7 +3505,7 @@ sfx_type_char:	macro jump,hurt,die,start,win,ex1,ex2,ex3
 Char_SFX:
 	sfx_char sfx_Jump,sfx_Death,sfx_Death,sfx_Cash,sfx_Lamppost,0,0,0 ; Sonic
 	sfx_char sfx_Jump,sfx_Death,sfx_Death,sfx_Switch,sfx_Lamppost,0,0,0 ; GHM3_Guy
-	sfx_char sfx_Jump,sfx_Death,sfx_Death,sfx_Signpost,sfx_Lamppost,0,0,0 ; GHM3_Mercury
+	sfx_char sfx_MercJump,$96,$97,0,$98,$95,0,0 ; GHM3_Mercury
 	sfx_char $8D,$8E,$8F,$90,sfx_Lamppost,$91,0,0 ; KiryuChan
 	sfx_char sfx_Jump,sfx_Death,sfx_Death,sfx_Shield,sfx_Lamppost,0,0,0 ; Jeebler
 	sfx_char sfx_Jump,sfx_Death,sfx_Death,sfx_Collapse,sfx_Lamppost,0,0,0 ; MrBoss
@@ -3517,7 +3517,7 @@ Char_SFX_Type:
 @all_pcm = $FF
 	dc.b @sfx ; sfx_type_char @sfx,@sfx,@sfx,@sfx,@sfx,@sfx,@sfx,@sfx ; Sonic
 	dc.b @sfx ; sfx_type_char @sfx,@sfx,@sfx,@sfx,@sfx,@sfx,@sfx,@sfx ; GHM3_Guy
-	dc.b @sfx ; sfx_type_char @sfx,@sfx,@sfx,@sfx,@sfx,@sfx,@sfx,@sfx ; GHM3_Mercury
+	sfx_type_char @sfx,@pcm,@pcm,@sfx,@pcm,@pcm,@sfx,@sfx ; GHM3_Mercury
 	sfx_type_char @pcm,@pcm,@pcm,@pcm,@sfx,@pcm,@sfx,@sfx ; KiryuChan
 	dc.b @sfx ; sfx_type_char @sfx,@sfx,@sfx,@sfx,@sfx,@sfx,@sfx,@sfx ; Jeebler
 	dc.b @sfx ; sfx_type_char @sfx,@sfx,@sfx,@sfx,@sfx,@sfx,@sfx,@sfx ; MrBoss

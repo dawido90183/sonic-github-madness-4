@@ -2754,6 +2754,7 @@ ptr_sndEB0:	dc.l SoundEB0
 ptr_sndEB1:	dc.l SoundEB1
 ptr_sndEB2:	dc.l SoundEB2
 ptr_sndEB3:	dc.l SoundEB3
+ptr_sndEB4:	dc.l SoundEB4
 ptr_sndend
 
 ; ---------------------------------------------------------------------------
@@ -2869,6 +2870,8 @@ SoundEB1:	include	"sound/sfx/FC Select.asm"
 SoundEB2:	include	"sound/sfx/Lobotomy.asm"
 		even
 SoundEB3:	include	"sound/sfx/Shine64.asm"
+		even
+SoundEB4:	incbin	"sound/sfx/mercuryjump.sfx"
 		even
 
 ; ---------------------------------------------------------------------------

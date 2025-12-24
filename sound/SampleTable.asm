@@ -19,6 +19,13 @@ SampleTable:
 	dcSample	TYPE_PCM,		Kiryu_Dead,		0, FLAGS_SFX	; $8F
 	dcSample	TYPE_PCM,		Kiryu_LetsGo,	0, FLAGS_SFX	; $90
 	dcSample	TYPE_PCM,		Kiryu_Punch,	0, FLAGS_SFX	; $91
+	dcSample	TYPE_DPCM,	Mercury_Makeup,	11250, FLAGS_SFX	; $92
+	dcSample	TYPE_DPCM,	Mercury_Ha,		11250, FLAGS_SFX	; $93
+	dcSample	TYPE_DPCM,	Mercury_Ya,		11250, FLAGS_SFX	; $94
+	dcSample	TYPE_DPCM,	Mercury_Spray,	11250, FLAGS_SFX	; $95
+	dcSample	TYPE_DPCM,	Mercury_Hit,	11250, FLAGS_SFX	; $96
+	dcSample	TYPE_DPCM,	Mercury_Death,	11250, FLAGS_SFX	; $97
+	dcSample	TYPE_DPCM,	Mercury_Win,	11250, FLAGS_SFX	; $98
 	dc.w	-1	; end marker
 
 ; ---------------------------------------------------------------
@@ -35,6 +42,16 @@ SampleTable:
 	incdac	Kiryu_Dead, "sound/dac/kiryu/dead.wav"
 	incdac	Kiryu_LetsGo, "sound/dac/kiryu/letsgo.wav"
 	incdac	Kiryu_Punch, "sound/dac/kiryu/punch.wav"
+
+; ---------------------------------------------------------------
+; mercury - from BSSM's initial DPCM data
+	incdac	Mercury_Makeup, "sound/dac/mercury/Mercury_Makeup.bin"
+	incdac	Mercury_Ha, "sound/dac/mercury/Mercury_Ha.bin"
+	incdac	Mercury_Ya, "sound/dac/mercury/Mercury_Ya.bin"
+	incdac	Mercury_Spray, "sound/dac/mercury/Mercury_Spray.bin"
+	incdac	Mercury_Hit, "sound/dac/mercury/Mercury_Hit.bin"
+	incdac	Mercury_Death, "sound/dac/mercury/Mercury_Death.bin"
+	incdac	Mercury_Win, "sound/dac/mercury/Mercury_Win.bin"
 
 ; ---------------------------------------------------------------
 
