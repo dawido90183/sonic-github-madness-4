@@ -337,7 +337,7 @@ GameInit:
 
 		bsr.w    InitDMAQueue
 		bsr.w	VDPSetupGame
-		bsr.w	SoundDriverLoad
+
 		bsr.w	JoypadInit
 		bra.s	SegaGM_Setup
 
@@ -358,6 +358,19 @@ SegaGM_Setup:
 		addq.w	#1,d0
 	@not_jp:
 		move.b	GamemodeTable_Sega(pc,d0.w),(v_gamemode).w
+
+		jsr     (MegaPCM_LoadDriver).l
+		lea     (SampleTable).l, a0
+		jsr     MegaPCM_LoadSampleTable
+		tst.w   d0                      ; was sample table loaded successfully?
+		beq.s   @SampleTableOk          ; if yes, branch
+; 	ifdef __DEBUG__
+; 		; for MD Debugger v.2.5 or above
+; 		RaiseError "MegaPCM_LoadSampleTable returned %<.b d0>", MPCM_Debugger_LoadSampleTableException
+; 	else
+		illegal
+; 	endif
+	@SampleTableOk:
 
 MainGameLoop:
 		move.b	(v_gamemode).w,d0 ; load Game Mode
@@ -467,8 +480,8 @@ VBla_00:
 		bne.w	VBla_Music	; if not, branch
 
 		move.w	#1,(f_hbla_pal).w ; set HBlank flag
-		stopZ80
-		waitZ80
+
+
 		tst.b	(f_wtr_state).w	; is water above top of screen?
 		bne.s	@waterabove 	; if yes, branch
 
@@ -480,7 +493,7 @@ VBla_00:
 
 	@waterbelow:
 		move.w	(v_hbla_hreg).w,(a5)
-		startZ80
+
 		bra.w	VBla_Music
 ; ===========================================================================
 
@@ -518,8 +531,8 @@ VBla_10:
 		beq.w	VBla_0A		; if yes, branch
 
 VBla_08:
-		stopZ80
-		waitZ80
+
+
 		bsr.w	ReadJoypads
 		tst.b	(f_wtr_state).w
 		bne.s	@waterabove
@@ -536,7 +549,7 @@ VBla_08:
 		writeVRAM	v_hscrolltablebuffer,$380,vram_hscroll
 		writeVRAM	v_spritetablebuffer,$280,vram_sprites
 		jsr	(Process_DMA).l
-		startZ80
+
 		movem.l	(v_screenposx).w,d0-d7
 		movem.l	d0-d7,(v_screenposx_dup).w
 		movem.l	(v_fg_scroll_flags).w,d0-d1
@@ -570,13 +583,13 @@ Demo_Time:
 ; ===========================================================================
 
 VBla_0A:
-		stopZ80
-		waitZ80
+
+
 		bsr.w	ReadJoypads
 		writeCRAM	v_pal_dry,$80,0
 		writeVRAM	v_spritetablebuffer,$280,vram_sprites
 		writeVRAM	v_hscrolltablebuffer,$380,vram_hscroll
-		startZ80
+
 		bsr.w	PalCycle_SS
 		jsr	(Process_DMA).l
 		tst.w	(v_generictimer).w	; is there time left on the demo?
@@ -588,8 +601,8 @@ VBla_0A:
 ; ===========================================================================
 
 VBla_0C:
-		stopZ80
-		waitZ80
+
+
 		bsr.w	ReadJoypads
 		tst.b	(f_wtr_state).w
 		bne.s	@waterabove
@@ -610,7 +623,7 @@ VBla_0C:
 		move.b	#0,(f_sonframechg).w
 
 	@nochg:
-		startZ80
+
 		movem.l	(v_screenposx).w,d0-d7
 		movem.l	d0-d7,(v_screenposx_dup).w
 		movem.l	(v_fg_scroll_flags).w,d0-d1
@@ -636,13 +649,13 @@ VBla_12:
 ; ===========================================================================
 
 VBla_16:
-		stopZ80
-		waitZ80
+
+
 		bsr.w	ReadJoypads
 		writeCRAM	v_pal_dry,$80,0
 		writeVRAM	v_spritetablebuffer,$280,vram_sprites
 		writeVRAM	v_hscrolltablebuffer,$380,vram_hscroll
-		startZ80
+
 		jsr	(Process_DMA).l
 		tst.w	(v_generictimer).w
 		beq.w	@end
@@ -655,8 +668,8 @@ VBla_16:
 
 
 sub_106E:
-		stopZ80
-		waitZ80
+
+
 		bsr.w	ReadJoypads
 		tst.b	(f_wtr_state).w ; is water above top of screen?
 		bne.s	@waterabove	; if yes, branch
@@ -669,7 +682,7 @@ sub_106E:
 	@waterbelow:
 		writeVRAM	v_spritetablebuffer,$280,vram_sprites
 		writeVRAM	v_hscrolltablebuffer,$380,vram_hscroll
-		startZ80
+
 		rts	
 ; End of function sub_106E
 
@@ -691,13 +704,13 @@ VBlank_SegaJP:
         move.l    (a0)+,(a1) ; send screen y-axis pos. to VSRAM
         dbf.w    d1,@vscrollloop
 
-        stopZ80
-		waitZ80
+
+
 		bsr.w	ReadJoypads
         writeCRAM	v_pal_dry,$80,0
         writeVRAM	v_spritetablebuffer,$280,vram_sprites
 		writeVRAM	v_hscrolltablebuffer,$380,vram_hscroll
-		startZ80
+
 
 		;jsr	(Process_DMA).l sonic is preloaded
 
@@ -801,13 +814,13 @@ HBlank_SegaJP:
 
 
 JoypadInit:
-		stopZ80
-		waitZ80
+
+
 		moveq	#$40,d0
 		move.b	d0,(z80_port_1_control+1).l	; init port 1 (joypad 1)
 		move.b	d0,(z80_port_2_control+1).l	; init port 2 (joypad 2)
 		move.b	d0,(z80_expansion_control+1).l	; init port 3 (expansion/extra)
-		startZ80
+
 		rts	
 ; End of function JoypadInit
 
@@ -955,30 +968,6 @@ ClearScreen:
 		dbf	d1,@clearhscroll ; clear hscroll table (in RAM)
 		rts	
 ; End of function ClearScreen
-
-; ---------------------------------------------------------------------------
-; Subroutine to load the sound driver
-; ---------------------------------------------------------------------------
-
-; ||||||||||||||| S U B R O U T I N E |||||||||||||||||||||||||||||||||||||||
-
-
-SoundDriverLoad:
-		nop	
-		stopZ80
-		resetZ80
-		lea	(Kos_Z80).l,a0	; load sound driver
-		lea	(z80_ram).l,a1	; target Z80 RAM
-		bsr.w	KosDec		; decompress
-		resetZ80a
-		nop	
-		nop	
-		nop	
-		nop	
-		resetZ80
-		startZ80
-		rts	
-; End of function SoundDriverLoad
 
 		include	"_incObj\sub PlaySound.asm"
 		include	"_inc\PauseGame.asm"
@@ -2030,11 +2019,11 @@ Sega_WaitPal:
 		bsr.w	PalCycle_Sega
 		bne.s	Sega_WaitPal
 
-		move.b	#sfx_Sega,d0
-		bsr.w	PlaySound_Special	; play "SEGA" sound
+		moveq   #$FFFFFF8C, d0	; request SEGA PCM sample
+		jsr	(MegaPCM_PlaySample).l
 		move.b	#$14,(v_vbla_routine).w
 		bsr.w	WaitForVBla
-		move.w	#$1E,(v_generictimer).w
+		move.w	#$1E+2*60,(v_generictimer).w
 
 Sega_WaitEnd:
 		move.b	#2,(v_vbla_routine).w
@@ -2179,7 +2168,7 @@ GM_SegaJP:
 		addq.w	#2,d1
 		dbf.w	d0,@vdploop
 
-		bsr.w	SoundDriverLoad
+
 		move.b	#bgm_Stop,d0
 		bsr.w	PlaySound_Special ; stop music
 		bsr.w	ClearScreen
@@ -2587,7 +2576,7 @@ GM_Splash:
 		bsr.w	ClearPLC
 		bsr.w	PaletteFadeOut
 		disable_ints
-		bsr.w	SoundDriverLoad
+
 
 		clr.b	(f_wtr_state).w
 		bsr.w	ClearScreen
@@ -2660,7 +2649,7 @@ splash_entry macro art,tilemap,palette,size,music_id,duration_in_frames
 	endm
 
 	splash_entry Nem_Splash_Blessed,Eni_Splash_Blessed,Pal_Splash_Blessed,$40,sfx_SSGoal,200
-	splash_entry Nem_Splash_Shiki,Eni_Splash_Shiki,Pal_Splash_Shiki,$80,$28,280
+	splash_entry Nem_Splash_Shiki,Eni_Splash_Shiki,Pal_Splash_Shiki,$20,$28,280
 	splash_entry Nem_Splash_SonicBroke,Eni_Splash_SonicBroke,Pal_Splash_SonicBroke,$20,bgm_Continue,480
     splash_entry Nem_Splash_Monke,Eni_Splash_Monke,Pal_Splash_Monke,$20,$1D,480 ; my dumbass brain did not get it how it works, untill now :P
 	splash_entry Nem_Splash_Wait,Eni_Splash_Wait,Pal_Splash_Wait,$60,$1C,145
@@ -2674,16 +2663,16 @@ splash_entry macro art,tilemap,palette,size,music_id,duration_in_frames
     splash_entry Nem_Splash_Disappointed,Eni_Splash_Disappointed,Pal_Splash_Disappointed,$20,bgm_GameOver,120
 	splash_entry Nem_Splash_Mines,Eni_Splash_Mines,Pal_Splash_Mines,$20,$27,650 ;if anybody is curious this is a screenshot of my ps3. not much else tosay
 
-    splash_entry Nem_Splash_Waldo,Eni_Splash_Waldo,Pal_Splash_Waldo,$40,$1B,200
-    splash_entry Nem_Splash_Undertaley,Eni_Splash_Undertaley,Pal_Splash_Undertaley,$40,bgm_NewdinTown,400
+    splash_entry Nem_Splash_Waldo,Eni_Splash_Waldo,Pal_Splash_Waldo,$40,$33,100
+    splash_entry Nem_Splash_Undertaley,Eni_Splash_Undertaley,Pal_Splash_Undertaley,$10,$34,300 ; put song as $35 when song is fixed
     splash_entry Nem_Splash_StupidBat,Eni_Splash_StupidBat,Pal_Splash_StupidBat,$40,$1B,200
     splash_entry Nem_Splash_Sad,Eni_Splash_Sad,Pal_Splash_Sad,$40,$1B,200
     splash_entry Nem_Splash_Peppa,Eni_Splash_Peppa,Pal_Splash_Peppa,$40,$1B,200
     splash_entry Nem_Splash_Support,Eni_Splash_Support,Pal_Splash_Support,$40,$1B,200
-    splash_entry Nem_Splash_Iceage,Eni_Splash_Iceage,Pal_Splash_Iceage,$40,$1B,200
+    splash_entry Nem_Splash_Iceage,Eni_Splash_Iceage,Pal_Splash_Iceage,$40,$36,300
     splash_entry Nem_Splash_Fredbear,Eni_Splash_Fredbear,Pal_Splash_Fredbear,$40,$1B,200
     splash_entry Nem_Splash_Damnit,Eni_Splash_Damnit,Pal_Splash_Damnit,$40,$1B,200
-    splash_entry Nem_Splash_CRT,Eni_Splash_CRT,Pal_Splash_CRT,$40,$1B,200
+    splash_entry Nem_Splash_CRT,Eni_Splash_CRT,Pal_Splash_CRT,$40,$34,300
     splash_entry Nem_Splash_Crispbilly,Eni_Splash_Crispbilly,Pal_Splash_Crispbilly,$40,$1B,200
     splash_entry Nem_Splash_Bonniewtf,Eni_Splash_Bonniewtf,Pal_Splash_Bonniewtf,$40,$1B,200
     splash_entry Nem_Splash_Rick,Eni_Splash_Rick,Pal_Splash_Rick,$40,$2F,480
@@ -2703,7 +2692,7 @@ GM_Title:
 		bsr.w	ClearPLC
 		bsr.w	PaletteFadeOut
 		disable_ints
-		bsr.w	SoundDriverLoad
+
 		lea	(vdp_control_port).l,a6
 		move.w	#$8004,(a6)	; 8-colour mode
 		move.w	#$8200+(vram_fg>>10),(a6) ; set foreground nametable address
@@ -2875,15 +2864,14 @@ Tit_ChkRegion:
 		btst	#bitA,(v_jpadpress1).w ; is pressing A?
 		beq.s	@nocharswap
 
-		move.b	#sfx_Bumper,d0
-		bsr.w	PlaySound_Special	; play ring sound when code is entered
-
 		addq.w	#4,(v_character).w
 		cmpi.w	#(CharCount)*4,(v_character).w
-		blt.s	@nocharswap
+		blt.s	@sfx
 
 		move.w	#0,(v_character).w
-
+	@sfx:
+		move.b	#3,d2 ; start sfx
+		jsr (PlayCharSFX).l
 	@nocharswap:
 
 		btst	#bitB,(v_jpadpress1).w ; is pressing B?
@@ -3503,6 +3491,62 @@ LoadPlayerPalette_main:
 		dbf	d7,@loop
 		rts
 
+sfx_char: macro jump_sfx,hurt,die,start,win,ex1,ex2,ex3
+	dc.b jump_sfx,hurt,die,start
+	dc.b win,ex1,ex2,ex3 ; slots are placeholder
+	endm
+
+; 0 -> SFX, 1 -> Sample
+sfx_type_char:	macro jump,hurt,die,start,win,ex1,ex2,ex3
+	dc.b	jump+hurt<<1+die<<2+start<<3+win<<4+ex1<<5+ex2<<6+ex3<<7
+	endm
+	; ex 1 is used in... -> MoveCmd_Attack
+
+Char_SFX:
+	sfx_char sfx_Jump,sfx_Death,sfx_Death,sfx_Cash,sfx_Lamppost,0,0,0 ; Sonic
+	sfx_char sfx_Jump,sfx_Death,sfx_Death,sfx_Switch,sfx_Lamppost,0,0,0 ; GHM3_Guy
+	sfx_char sfx_MercJump,$96,$97,0,$98,$95,0,0 ; GHM3_Mercury
+	sfx_char $8D,$8E,$8F,$90,sfx_Lamppost,$91,0,0 ; KiryuChan
+	sfx_char sfx_Jump,sfx_Death,sfx_Death,sfx_Shield,sfx_Lamppost,0,0,0 ; Jeebler
+	sfx_char sfx_Jump,sfx_Death,sfx_Death,sfx_Collapse,sfx_Lamppost,0,0,0 ; MrBoss
+	; add next char here
+
+Char_SFX_Type:
+@sfx = 0
+@pcm = 1
+@all_pcm = $FF
+	dc.b @sfx ; sfx_type_char @sfx,@sfx,@sfx,@sfx,@sfx,@sfx,@sfx,@sfx ; Sonic
+	dc.b @sfx ; sfx_type_char @sfx,@sfx,@sfx,@sfx,@sfx,@sfx,@sfx,@sfx ; GHM3_Guy
+	sfx_type_char @sfx,@pcm,@pcm,@sfx,@pcm,@pcm,@sfx,@sfx ; GHM3_Mercury
+	sfx_type_char @pcm,@pcm,@pcm,@pcm,@sfx,@pcm,@sfx,@sfx ; KiryuChan
+	dc.b @sfx ; sfx_type_char @sfx,@sfx,@sfx,@sfx,@sfx,@sfx,@sfx,@sfx ; Jeebler
+	dc.b @sfx ; sfx_type_char @sfx,@sfx,@sfx,@sfx,@sfx,@sfx,@sfx,@sfx ; MrBoss
+	; add next char here
+
+PlayCharSFX: ; d2 -> SFX in index (jump,hurt,die,start,win,ex1,ex2,ex3)
+	moveq	#0,d0
+	rept 2
+		add.w	(v_character).w,d0
+	endr
+	add.b	d2,d0
+	move.b	Char_SFX(pc,d0.w),d1
+
+	moveq	#0,d0
+	move.w	(v_character).w,d0
+	lsr.w	#2,d0
+	move.b	Char_SFX_Type(pc,d0.w),d0
+	btst	d2,d0
+	beq.s	@sfx
+
+	; pcm
+	move.l	#-1,d0
+	move.b	d1,d0
+
+	jmp (MegaPCM_PlaySample)
+@sfx:
+	move.b	d1,d0
+	jmp (PlaySound_Special).l
+
 BlendColor: ; d3 -> target subtract color ; a3 -> target palette; d1 -> size
 
 		clr.w	d5
@@ -3578,6 +3622,36 @@ MusicList:
         dc.b bgm_GHZ    ; GHZ1
         dc.b bgm_GHZ    ; GHZ1
 		even
+PreLevelStartArray:
+        dc.l $00	; ghz1
+        dc.l $00	; ghz2
+        dc.l $00	; ghz3
+        dc.l $00	; ghz4
+        dc.l $00	; lz1
+        dc.l $00	; lz2
+        dc.l $00	; lz3
+        dc.l $00	; lz4
+        dc.l $00	; mz1
+        dc.l $00	; mz2
+        dc.l $00	; mz3
+        dc.l $00	; mz4
+        dc.l GM_NTOSKRNL	; slz1
+        dc.l $00	; slz2
+        dc.l $00	; slz3
+        dc.l $00	; slz4
+        dc.l $00	; syz1
+	    dc.l $00	; syz2
+		dc.l $00	; syz3
+		dc.l $00	; syz4
+        dc.l $00	; sbz1
+        dc.l $00	; sbz2
+        dc.l $00	; sbz3
+        dc.l $00	; sbz4
+        dc.l $00	; aaa1
+        dc.l $00	; aaa2
+		dc.l $00	; aaa3
+        dc.l $00	; aaa4
+		even
 ; ===========================================================================
 
 ; ---------------------------------------------------------------------------
@@ -3590,6 +3664,20 @@ GM_Level:
 		bset	#7,(v_gamemode).w ; add $80 to screen mode (for pre level sequence)
 		tst.w	(f_demo).w	; is demo mode on?
 		bne.s	Level_NoMusicFade	; if so, branch
+
+		moveq    #0,d0
+		move.b    (v_zone).w,d0
+		add.b    d0,d0
+		add.b    d0,d0
+		add.b    (v_act).w,d0
+		add.b    d0,d0
+		add.b    d0,d0
+		lea	(PreLevelStartArray).l,a1 ; load routine list
+		move.l	(a1,d0.w),a0
+		tst.l	(a1,d0.w)	; is there a routine to run?
+		beq.s	Level_MusicFade	; if not, branch
+		jsr	(a0)
+Level_MusicFade:
 		move.b	#bgm_Fade,d0
 		bsr.w	PlaySound_Special ; fade out music
 
@@ -3721,6 +3809,12 @@ Level_GetBgm:
 		move.b	(a1,d0.w),d0
 		move.b	d0,(Saved_music).w
 		bsr.w	PlaySound	; play music
+
+		move.b	#$C,(v_vbla_routine).w
+		bsr.w	WaitForVBla
+
+		move.b	#3,d2 ; start
+		jsr (PlayCharSFX).l
 		move.b	#id_TitleCard,(v_titlecard).w ; load title card object
      	
 Level_TtlCardLoop:
@@ -10214,7 +10308,8 @@ ObjPos_Null:	dc.b $FF, $FF, 0, 0, 0,	0
 		dcb.b $63C,$FF
 		endc
 		;dcb.b ($10000-(*%$10000))-(EndOfRom-SoundDriver),$FF
-
+	include "Libraries/MegaPCM.asm"
+	include "sound/SampleTable.asm"
 SoundDriver:	include "s1.sounddriver.asm"
 
 ; ===========================================================================

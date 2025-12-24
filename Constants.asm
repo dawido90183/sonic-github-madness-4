@@ -13,9 +13,6 @@ psg_input:		equ $C00011
 
 ; Z80 addresses
 z80_ram:		equ $A00000	; start of Z80 RAM
-z80_dac3_pitch:		equ $A000EA
-z80_dac_status:		equ $A01FFD
-z80_dac_sample:		equ $A01FFF
 z80_ram_end:		equ $A02000	; end of non-reserved Z80 RAM
 z80_version:		equ $A10001
 z80_port_1_data:	equ $A10002
@@ -283,6 +280,7 @@ sfx_Spring:	equ ((ptr_sndCC-SoundIndex)/4)+sfx__First
 sfx_Switch:	equ ((ptr_sndCD-SoundIndex)/4)+sfx__First
 sfx_RingLeft:	equ ((ptr_sndCE-SoundIndex)/4)+sfx__First
 sfx_Signpost:	equ ((ptr_sndCF-SoundIndex)/4)+sfx__First
+sfx_MercJump:	equ ((ptr_sndEB4-SoundIndex)/4)+sfx__First
 sfx__Last:	equ ((ptr_sndend-SoundIndex-4)/4)+sfx__First
 
 ; Special sound effects
@@ -292,10 +290,9 @@ spec__Last:	equ ((ptr_specend-SpecSoundIndex-4)/4)+spec__First
 
 flg__First:	equ $FB
 bgm_Fade:	equ ((ptr_flgE0-Sound_ExIndex)/4)+flg__First
-sfx_Sega:	equ ((ptr_flgE1-Sound_ExIndex)/4)+flg__First
-bgm_Speedup:	equ ((ptr_flgE2-Sound_ExIndex)/4)+flg__First
-bgm_Slowdown:	equ ((ptr_flgE3-Sound_ExIndex)/4)+flg__First
-bgm_Stop:	equ ((ptr_flgE4-Sound_ExIndex)/4)+flg__First
+bgm_Speedup:	equ ((ptr_flgE1-Sound_ExIndex)/4)+flg__First
+bgm_Slowdown:	equ ((ptr_flgE2-Sound_ExIndex)/4)+flg__First
+bgm_Stop:	equ ((ptr_flgE3-Sound_ExIndex)/4)+flg__First
 flg__Last:	equ ((ptr_flgend-Sound_ExIndex-4)/4)+flg__First
 
 ; Sonic frame IDs

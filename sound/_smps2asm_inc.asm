@@ -725,7 +725,7 @@ smpsChanTempoDiv macro val
 smpsAlterVol macro val
 	dc.b	$E6,val
 	endm
-
+_smpsAlterVol = $E6
 ; E7 - Prevent attack of next note
 smpsNoAttack	EQU $E7
 

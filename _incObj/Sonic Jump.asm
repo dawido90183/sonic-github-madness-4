@@ -36,8 +36,8 @@ loc_1341C:
 		addq.l	#4,sp
 		move.b	#1,$3C(a0)
 		clr.b	$38(a0)
-		move.w	#sfx_Jump,d0
-		jsr	(PlaySound_Special).l	; play jumping sound
+		move.b	#0,d2 ; jump
+		jsr (PlayCharSFX).l
 		btst	#2,obStatus(a0)
 		bne.s	locret_1348E
 		move.b	#$E,obHeight(a0)

@@ -5,11 +5,12 @@
 GM_NTOSKRNL:
 		move.b	#bgm_Stop,d0
 		jsr		(PlaySound_Special).l  ; fade out music
-		jsr		(ClearPLC).l
-		bsr.w	WinXP_CLearPal
 		move.w	(v_vdp_buffer1).w,d0
 		ori.b	#$BF,d0
 		move.w	d0,(vdp_control_port).l
+		jsr		(ClearScreen).l
+		bsr.w	WinXP_CLearPal
+		jsr		(ClearPLC).l
 		lea	(vdp_control_port).l,a6
 		move.w	#$8004,(a6)	; use 8-colour mode
 		move.w	#$8200+(vram_fg>>10),(a6) ; set foreground nametable address
@@ -18,7 +19,6 @@ GM_NTOSKRNL:
 		move.w	#$9200,(a6)	; window vertical position
 		move.w	#$8B03,(a6)	; line scroll mode
 		move.w	#$8700,(a6)	; set background colour (line 0; colour 0)
-		jsr		(ClearScreen).l
 ;		ResetDMAQueue
 		move.w	(v_vdp_buffer1).w,d0
 		ori.b	#$40,d0
@@ -77,7 +77,10 @@ GM_WinXP_MainLoop:
 
 GM_WinXP_ChangeMode:
 		bsr.w	WinXP_CLearPal
+		cmpi.b	#id_Level+$80,(v_gamemode).w
+		beq.s	@noset	; if mode is $C (level), branch
 		move.b	#id_Title,(v_gamemode).w	; go to Title Screen
+@noset:
 		rts
 
 WinXP_CLearPal:

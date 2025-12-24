@@ -5,7 +5,7 @@
 ; Settings
 
 ; This can't use bgm_XX, sfx_XX or any of that kind
-Autoplay = $23 ; 0 to not autoplay, plays the id specified on boot
+Autoplay = $31 ; 0 to not autoplay, plays the id specified on boot
 
 InitialItemSelected = 0 ; Initial selection on the menu
 
@@ -16,6 +16,8 @@ InitialItemSelected = 0 ; Initial selection on the menu
 	include	"Variables.asm"
 	include	"Macros.asm"
 	include	"Libraries\Debugger.asm"
+
+v_ch_render_flags: equ $FFFF0100	; $A bytes
 
 PlaySound:	macro id
 		move.b	#id,(v_snddriver_ram+v_soundqueue0).w
@@ -355,30 +357,25 @@ SetUpVDP:
 		move.w	VDP_Data(pc,d1.w),(a6)
 		addq.w	#2,d1
 		dbf.w	d0,@vdploop
-
-; SoundDriverLoad
-		nop
-		stopZ80
-		resetZ80
-		lea	(Kos_Z80).l,a0	; load sound driver
-		lea	(z80_ram).l,a1	; target Z80 RAM
-		bsr.w	KosDec		; decompress
-		resetZ80a
-		nop
-		nop
-		nop
-		nop
-		resetZ80
-		startZ80
-
 ; JoypadInit
-		stopZ80
-		waitZ80
 		moveq	#$40,d0
 		move.b	d0,(z80_port_1_control+1).l	; init port 1 (joypad 1)
 		move.b	d0,(z80_port_2_control+1).l	; init port 2 (joypad 2)
 		move.b	d0,(z80_expansion_control+1).l	; init port 3 (expansion/extra)
-		startZ80
+
+
+		jsr     (MegaPCM_LoadDriver).l
+		lea     (SampleTable).l, a0
+		jsr     MegaPCM_LoadSampleTable
+		tst.w   d0                      ; was sample table loaded successfully?
+		beq.s   @SampleTableOk          ; if yes, branch
+; 	ifdef __DEBUG__
+; 		; for MD Debugger v.2.5 or above
+; 		RaiseError "MegaPCM_LoadSampleTable returned %<.b d0>", MPCM_Debugger_LoadSampleTableException
+; 	else
+		illegal
+; 	endif
+	@SampleTableOk:
 
 		move.w	#InitialItemSelected,(v_levselitem).w
 		move.w	#Autoplay,(v_levselsound).w
@@ -417,13 +414,13 @@ VBlank:
 
 		move.b	#0,(v_vbla_routine).w
 
-        stopZ80
-		waitZ80
+
+
 		bsr.w	ReadJoypads
         ;writeCRAM	v_pal_dry,$80,0
         ;writeVRAM	v_spritetablebuffer,$280,vram_sprites
 		;writeVRAM	v_hscrolltablebuffer,$380,vram_hscroll
-		startZ80
+
 	@music:
 		jsr	(UpdateMusic).l
 		addq.l	#1,(v_vbla_count).w
@@ -506,9 +503,31 @@ SoundVRAMPos = MenuVRAMPos+$1C
 TrackerVRAMPos = $C302
 
 UpdateTracker:
-		lea	(vdp_data_port).l,a6
+
+		lea (v_ch_render_flags).l,a0
 
 		lea (v_music_fmdac_tracks+v_snddriver_ram),a5
+		move.w	#10-1,d2 ; 7fm+3sn tracks updated
+
+	@loop:
+		clr.b	(a0)
+		tst.l	TrackDataPointer(a5)
+		beq.s	@empty_data
+		move.l	TrackDataPointer(a5),a2
+		cmpi.b	#_smpsStop,(a2)
+		beq.s	@empty_data
+
+		move.b	#1,(a0)
+	@empty_data:
+		addq.w	#1,a0
+		addi.l	#TrackSz,a5
+		dbf.w d2,@loop
+
+UpdateTracker_Header:
+
+		lea	(vdp_data_port).l,a6
+		lea (v_music_fmdac_tracks+v_snddriver_ram),a5
+		lea (v_ch_render_flags).l,a4
 		move.w	#10-1,d2 ; 7fm+3sn tracks updated
 
 		lea (Tracker_CHS),a0
@@ -519,6 +538,9 @@ UpdateTracker:
 
 	@chl_loop:
 		move.b	TrackPlaybackControl(a5),d0
+
+		tst.b	(a4)+
+		beq.s	@empty
 
 		move.w	#$2000,d1 ; pal 1
 		btst	#1,d0
@@ -535,6 +557,12 @@ UpdateTracker:
 		subq.b	#1,d1
 		move.w	d1,(a6)
 		dbf.w d3,@text_loop
+		bra.s	@notempty
+	@empty:
+		addq.w	#4,a0
+		move.l	#0,(a6)
+		move.l	#0,(a6)
+	@notempty:
 
 		addi.l	#TrackSz,a5
 		dbf.w d2,@chl_loop
@@ -548,8 +576,13 @@ UpdateTracker_DataLoop:
 		lea (v_music_fmdac_tracks+v_snddriver_ram),a5
 		move.l	d4,4(a6)
 
+		lea (v_ch_render_flags).l,a4
+
 		move.w	#10-1,d2 ; 7fm+3sn tracks updated
 UpdateTracker_ChLoop:
+		tst.b	(a4)+
+		beq.s	@empty
+
 		move.l	TrackDataPointer(a5),a2
 		add.w	d5,a2
 		move.w	#$2000,d0 ; pal 1 (for duration)
@@ -560,6 +593,11 @@ UpdateTracker_ChLoop:
 		subi.w	#$2000,d0 ; remove pal 1
 		bsr.w	DrawNote
 		bra.s	UpdateTracker_Merge
+	@empty:
+		move.l	#0,(a6)
+		move.l	#0,(a6)
+		bra.s	UpdateTracker_Merge
+
 UpdateTracker_Digit:
 		bsr.w	DrawDigits
 		move.l	#0,(a6)
@@ -646,12 +684,12 @@ LoadMenu:
 		locCRAM	$4C,4(a6)
 		move.w	#$0EEE,(a6) ; highlight
 
-
-		locVRAM TrackerVRAMPos,4(a6)
-		lea	Tracker_CHS(pc),a1
-
-		move.w	#$2000,d0
-		bsr.w	DrawLine
+;	Unused channels are hidden now
+; 		locVRAM TrackerVRAMPos,4(a6)
+; 		lea	Tracker_CHS(pc),a1
+;
+; 		move.w	#$2000,d0
+; 		bsr.w	DrawLine
 
 		lea	(MenuText).l,a1
 		move.w	#$2000,d0
@@ -741,7 +779,8 @@ MT_3:	text "$FD > SPEED UP",0
 MT_4:	text "$FB > FADE OUT",0
 	even
 ; ===========================================================================
-
+	include "Libraries/MegaPCM.asm"
+	include "sound/SampleTable.asm"
 SoundDriver:	include "s1.sounddriver.asm"
 
 ; ==============================================================
