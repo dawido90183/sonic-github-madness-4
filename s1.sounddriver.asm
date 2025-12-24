@@ -209,7 +209,7 @@ ptr_mus2D:	dc.l Music2D
 ptr_mus2E:	dc.l Music2E
 ptr_mus2F:	dc.l Music2F
 ptr_mus30:	dc.l Music30
-;ptr_mus31:	dc.l Music31
+ptr_mus31:	dc.l Music31
 ;ptr_mus32:	dc.l Music32
 ;ptr_mus33:	dc.l Music33
 ;ptr_mus34:	dc.l Music34
@@ -2759,6 +2759,8 @@ Music2E:	include	"sound/music/TG2000Tracks/Folgers.asm"
 Music2F:	include	"sound/music/TG2000Tracks/Rickroll.asm"
 		even
 Music30:	include	"sound/music/TG2000Tracks/Wormy.asm"
+		even
+Music31:	include	"sound/music/sanetracks/Newdin Town.asm"
 		even
 ; ---------------------------------------------------------------------------
 ; Sound effect pointers

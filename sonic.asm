@@ -2675,7 +2675,7 @@ splash_entry macro art,tilemap,palette,size,music_id,duration_in_frames
 	splash_entry Nem_Splash_Mines,Eni_Splash_Mines,Pal_Splash_Mines,$20,$27,650 ;if anybody is curious this is a screenshot of my ps3. not much else tosay
 
     splash_entry Nem_Splash_Waldo,Eni_Splash_Waldo,Pal_Splash_Waldo,$40,$1B,200
-    splash_entry Nem_Splash_Undertaley,Eni_Splash_Undertaley,Pal_Splash_Undertaley,$40,$1B,200
+    splash_entry Nem_Splash_Undertaley,Eni_Splash_Undertaley,Pal_Splash_Undertaley,$40,bgm_NewdinTown,400
     splash_entry Nem_Splash_StupidBat,Eni_Splash_StupidBat,Pal_Splash_StupidBat,$40,$1B,200
     splash_entry Nem_Splash_Sad,Eni_Splash_Sad,Pal_Splash_Sad,$40,$1B,200
     splash_entry Nem_Splash_Peppa,Eni_Splash_Peppa,Pal_Splash_Peppa,$40,$1B,200

@@ -230,6 +230,7 @@ bgm_Mansion:	equ ((ptr_mus26-MusicIndex)/4)+bgm__First
 
 bgm_SailorTrans:	equ ((ptr_mus2A-MusicIndex)/4)+bgm__First
 bgm_SailorInvi:	equ ((ptr_mus2B-MusicIndex)/4)+bgm__First
+bgm_NewdinTown:	equ ((ptr_mus31-MusicIndex)/4)+bgm__First
 bgm__Last:	equ ((ptr_musend-MusicIndex-4)/4)+bgm__First
 
 ; Sound effects
