@@ -3534,7 +3534,6 @@ PlayCharSFX: ; d2 -> SFX in index (jump,hurt,die,start,win,ex1,ex2,ex3)
 	moveq	#0,d0
 	move.w	(v_character).w,d0
 	lsr.w	#2,d0
-	add.b	d2,d0
 	move.b	Char_SFX_Type(pc,d0.w),d0
 	btst	d2,d0
 	beq.s	@sfx
