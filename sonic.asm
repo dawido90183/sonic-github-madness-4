@@ -2649,7 +2649,7 @@ splash_entry macro art,tilemap,palette,size,music_id,duration_in_frames
 	endm
 
 	splash_entry Nem_Splash_Blessed,Eni_Splash_Blessed,Pal_Splash_Blessed,$40,sfx_SSGoal,200
-	splash_entry Nem_Splash_Shiki,Eni_Splash_Shiki,Pal_Splash_Shiki,$80,$28,280
+	splash_entry Nem_Splash_Shiki,Eni_Splash_Shiki,Pal_Splash_Shiki,$20,$28,280
 	splash_entry Nem_Splash_SonicBroke,Eni_Splash_SonicBroke,Pal_Splash_SonicBroke,$20,bgm_Continue,480
     splash_entry Nem_Splash_Monke,Eni_Splash_Monke,Pal_Splash_Monke,$20,$1D,480 ; my dumbass brain did not get it how it works, untill now :P
 	splash_entry Nem_Splash_Wait,Eni_Splash_Wait,Pal_Splash_Wait,$60,$1C,145
@@ -2664,7 +2664,7 @@ splash_entry macro art,tilemap,palette,size,music_id,duration_in_frames
 	splash_entry Nem_Splash_Mines,Eni_Splash_Mines,Pal_Splash_Mines,$20,$27,650 ;if anybody is curious this is a screenshot of my ps3. not much else tosay
 
     splash_entry Nem_Splash_Waldo,Eni_Splash_Waldo,Pal_Splash_Waldo,$40,$33,100
-    splash_entry Nem_Splash_Undertaley,Eni_Splash_Undertaley,Pal_Splash_Undertaley,$40,$35,300
+    splash_entry Nem_Splash_Undertaley,Eni_Splash_Undertaley,Pal_Splash_Undertaley,$10,$34,300 ; put song as $35 when song is fixed
     splash_entry Nem_Splash_StupidBat,Eni_Splash_StupidBat,Pal_Splash_StupidBat,$40,$1B,200
     splash_entry Nem_Splash_Sad,Eni_Splash_Sad,Pal_Splash_Sad,$40,$1B,200
     splash_entry Nem_Splash_Peppa,Eni_Splash_Peppa,Pal_Splash_Peppa,$40,$1B,200
@@ -2864,15 +2864,14 @@ Tit_ChkRegion:
 		btst	#bitA,(v_jpadpress1).w ; is pressing A?
 		beq.s	@nocharswap
 
-		move.b	#sfx_Bumper,d0
-		bsr.w	PlaySound_Special	; play ring sound when code is entered
-
 		addq.w	#4,(v_character).w
 		cmpi.w	#(CharCount)*4,(v_character).w
-		blt.s	@nocharswap
+		blt.s	@sfx
 
 		move.w	#0,(v_character).w
-
+	@sfx:
+		move.b	#3,d2 ; start sfx
+		jsr (PlayCharSFX).l
 	@nocharswap:
 
 		btst	#bitB,(v_jpadpress1).w ; is pressing B?
@@ -3505,11 +3504,11 @@ sfx_type_char:	macro jump,hurt,die,start,win,ex1,ex2,ex3
 
 Char_SFX:
 	sfx_char sfx_Jump,sfx_Death,sfx_Death,sfx_Cash,sfx_Lamppost,0,0,0 ; Sonic
-	sfx_char sfx_Jump,sfx_Death,sfx_Death,sfx_Cash,sfx_Lamppost,0,0,0 ; GHM3_Guy
-	sfx_char sfx_Jump,sfx_Death,sfx_Death,sfx_Cash,sfx_Lamppost,0,0,0 ; GHM3_Mercury
+	sfx_char sfx_Jump,sfx_Death,sfx_Death,sfx_Switch,sfx_Lamppost,0,0,0 ; GHM3_Guy
+	sfx_char sfx_Jump,sfx_Death,sfx_Death,sfx_Signpost,sfx_Lamppost,0,0,0 ; GHM3_Mercury
 	sfx_char $8D,$8E,$8F,$90,sfx_Lamppost,$91,0,0 ; KiryuChan
-	sfx_char sfx_Jump,sfx_Death,sfx_Death,sfx_Cash,sfx_Lamppost,0,0,0 ; Jeebler
-	sfx_char sfx_Jump,sfx_Death,sfx_Death,sfx_Cash,sfx_Lamppost,0,0,0 ; MrBoss
+	sfx_char sfx_Jump,sfx_Death,sfx_Death,sfx_Shield,sfx_Lamppost,0,0,0 ; Jeebler
+	sfx_char sfx_Jump,sfx_Death,sfx_Death,sfx_Collapse,sfx_Lamppost,0,0,0 ; MrBoss
 	; add next char here
 
 Char_SFX_Type:
@@ -3766,6 +3765,9 @@ Level_GetBgm:
 		move.b	(a1,d0.w),d0
 		move.b	d0,(Saved_music).w
 		bsr.w	PlaySound	; play music
+
+		move.b	#$C,(v_vbla_routine).w
+		bsr.w	WaitForVBla
 
 		move.b	#3,d2 ; start
 		jsr (PlayCharSFX).l

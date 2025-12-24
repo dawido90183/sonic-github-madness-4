@@ -38,8 +38,8 @@ Sign_Touch:	; Routine 2
 		bcs.s	@notouch
 		cmpi.w	#$20,d0		; is Sonic within $20 pixels of the signpost?
 		bcc.s	@notouch	; if not, branch
-		move.b	#4,d2 ; win sfx (signpost)
-		jsr (PlayCharSFX).l
+		move.w	#sfx_Signpost,d0
+		jsr	(PlaySound).l	; play signpost sound
 		clr.b	(f_timecount).w	; stop time counter
 		move.w	(v_limitright2).w,(v_limitleft2).w ; lock screen position
 		addq.b	#2,obRoutine(a0)
