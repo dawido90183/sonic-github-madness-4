@@ -3492,6 +3492,62 @@ LoadPlayerPalette_main:
 		dbf	d7,@loop
 		rts
 
+sfx_char: macro jump_sfx,hurt,die,start,win,ex1,ex2,ex3
+	dc.b jump_sfx,hurt,die,start
+	dc.b win,ex1,ex2,ex3 ; slots are placeholder
+	endm
+
+; 0 -> SFX, 1 -> Sample
+sfx_type_char:	macro jump,hurt,die,start,win,ex1,ex2,ex3
+	dc.b	jump+hurt<<1+die<<2+start<<3+win<<4+ex1<<5+ex2<<6+ex3<<7
+	endm
+
+Char_SFX:
+	sfx_char sfx_Jump,sfx_Death,sfx_Death,sfx_Cash,sfx_Lamppost,0,0,0 ; Sonic
+	sfx_char sfx_Jump,sfx_Death,sfx_Death,sfx_Cash,sfx_Lamppost,0,0,0 ; GHM3_Guy
+	sfx_char sfx_Jump,sfx_Death,sfx_Death,sfx_Cash,sfx_Lamppost,0,0,0 ; GHM3_Mercury
+	sfx_char $8D,$8E,$8F,$90,sfx_Lamppost,$91,0,0 ; KiryuChan
+	sfx_char sfx_Jump,sfx_Death,sfx_Death,sfx_Cash,sfx_Lamppost,0,0,0 ; Jeebler
+	sfx_char sfx_Jump,sfx_Death,sfx_Death,sfx_Cash,sfx_Lamppost,0,0,0 ; MrBoss
+	; add next char here
+
+Char_SFX_Type:
+@sfx = 0
+@pcm = 1
+@all_pcm = $FF
+	dc.b @sfx ; sfx_type_char @sfx,@sfx,@sfx,@sfx,@sfx,@sfx,@sfx,@sfx ; Sonic
+	dc.b @sfx ; sfx_type_char @sfx,@sfx,@sfx,@sfx,@sfx,@sfx,@sfx,@sfx ; GHM3_Guy
+	dc.b @sfx ; sfx_type_char @sfx,@sfx,@sfx,@sfx,@sfx,@sfx,@sfx,@sfx ; GHM3_Mercury
+	sfx_type_char @pcm,@pcm,@pcm,@pcm,@sfx,@pcm,@sfx,@sfx ; KiryuChan
+	dc.b @sfx ; sfx_type_char @sfx,@sfx,@sfx,@sfx,@sfx,@sfx,@sfx,@sfx ; Jeebler
+	dc.b @sfx ; sfx_type_char @sfx,@sfx,@sfx,@sfx,@sfx,@sfx,@sfx,@sfx ; MrBoss
+	; add next char here
+
+PlayCharSFX: ; d2 -> SFX in index (jump,hurt,die,start,win,ex1,ex2,ex3)
+	moveq	#0,d0
+	rept 2
+		move.w	(v_character).w,d0
+	endr
+	add.b	d2,d0
+	move.b	Char_SFX(pc,d0.w),d1
+
+	moveq	#0,d0
+	move.w	(v_character).w,d0
+	lsr.w	#2,d0
+	add.b	d2,d0
+	move.b	Char_SFX_Type(pc,d0.w),d0
+	btst	d2,d0
+	beq.s	@sfx
+
+	; pcm
+	st d0
+	move.b	d1,d0
+
+	jmp (MegaPCM_PlaySample)
+@sfx:
+	move.b	d1,d0
+	jmp (PlaySound_Special).l
+
 BlendColor: ; d3 -> target subtract color ; a3 -> target palette; d1 -> size
 
 		clr.w	d5
@@ -3710,6 +3766,9 @@ Level_GetBgm:
 		move.b	(a1,d0.w),d0
 		move.b	d0,(Saved_music).w
 		bsr.w	PlaySound	; play music
+
+		move.b	#3,d2 ; start
+		jsr (PlayCharSFX).l
 		move.b	#id_TitleCard,(v_titlecard).w ; load title card object
      	
 Level_TtlCardLoop:
