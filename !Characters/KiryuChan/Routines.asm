@@ -74,7 +74,7 @@ MoveCmd_Attack:
 		neg.w	obInertia(a0)
 		neg.w	obVelX(a0)
 	@notneg:
-		move.b	#sfx_Teleport,d0
-		jmp	(PlaySound_Special).l
+		move.b	#5,d2 ; EX 1 (MoveCmd_Attack)
+		jsr (PlayCharSFX).l
 	@return:
 		rts
