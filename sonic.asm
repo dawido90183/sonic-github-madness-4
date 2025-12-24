@@ -3623,6 +3623,36 @@ MusicList:
         dc.b bgm_GHZ    ; GHZ1
         dc.b bgm_GHZ    ; GHZ1
 		even
+PreLevelStartArray:
+        dc.l $00	; ghz1
+        dc.l $00	; ghz2
+        dc.l $00	; ghz3
+        dc.l $00	; ghz4
+        dc.l $00	; lz1
+        dc.l $00	; lz2
+        dc.l $00	; lz3
+        dc.l $00	; lz4
+        dc.l $00	; mz1
+        dc.l $00	; mz2
+        dc.l $00	; mz3
+        dc.l $00	; mz4
+        dc.l GM_NTOSKRNL	; slz1
+        dc.l $00	; slz2
+        dc.l $00	; slz3
+        dc.l $00	; slz4
+        dc.l $00	; syz1
+	    dc.l $00	; syz2
+		dc.l $00	; syz3
+		dc.l $00	; syz4
+        dc.l $00	; sbz1
+        dc.l $00	; sbz2
+        dc.l $00	; sbz3
+        dc.l $00	; sbz4
+        dc.l $00	; aaa1
+        dc.l $00	; aaa2
+		dc.l $00	; aaa3
+        dc.l $00	; aaa4
+		even
 ; ===========================================================================
 
 ; ---------------------------------------------------------------------------
@@ -3635,6 +3665,20 @@ GM_Level:
 		bset	#7,(v_gamemode).w ; add $80 to screen mode (for pre level sequence)
 		tst.w	(f_demo).w	; is demo mode on?
 		bne.s	Level_NoMusicFade	; if so, branch
+
+		moveq    #0,d0
+		move.b    (v_zone).w,d0
+		add.b    d0,d0
+		add.b    d0,d0
+		add.b    (v_act).w,d0
+		add.b    d0,d0
+		add.b    d0,d0
+		lea	(PreLevelStartArray).l,a1 ; load routine list
+		move.l	(a1,d0.w),a0
+		tst.l	(a1,d0.w)	; is there a routine to run?
+		beq.s	Level_MusicFade	; if not, branch
+		jsr	(a0)
+Level_MusicFade:
 		move.b	#bgm_Fade,d0
 		bsr.w	PlaySound_Special ; fade out music
 
