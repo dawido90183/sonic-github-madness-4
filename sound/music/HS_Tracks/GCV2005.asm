@@ -46,24 +46,28 @@ GCV2005_PSG3:
 	smpsPSGvoice gcv_psg0
 	dc.b nD7,6
 	smpsLoop 0,3,@loop1
+
 	smpsPSGvoice gcv_psg1
 	dc.b nC6,3,3
 	smpsPSGvoice gcv_psg0
 	dc.b nD7,3
 	smpsPSGvoice gcv_psg1
 	dc.b nA6,3
+
 	@loop2:
 	smpsPSGvoice gcv_psg1
 	dc.b nC6,3,3
 	smpsPSGvoice gcv_psg0
 	dc.b nD7,6
 	smpsLoop 0,3,@loop2
+
 	smpsPSGvoice gcv_psg1
 	dc.b nC6,3,3
 	smpsPSGvoice gcv_psg0
 	dc.b nD7,3
 	smpsPSGvoice gcv_psg1
 	dc.b nD7,3
+
 	smpsJump	@loop1
 
 GCV2005_FM1:
@@ -75,14 +79,28 @@ GCV2005_FM1:
 	dc.b nG2,3,3,3,3,nRst,6
 	dc.b nG2,3,3,3,3,nRst,6
 	dc.b nF2,6,nRst,3,nF2,21
+
 	@loop1:
 	; Pattern 01
 	dc.b nAb2,3,nG2,6,nBb2,9,nC3,3,nRst
 	dc.b nC3,nCs3,6,nEb3,9,nE3,3,nF3
-	dc.b nAb2,nG2,6,nBb2,9,nC3,3,nRst
-	dc.b nC3,nCs3,6,nEb3,9,nE3,3,nF3
+	smpsLoop 0,7*2-1,@loop1
 
-	smpsJump	@loop1
+	@loop2:
+	; Pattern 01
+	dc.b nAb2,3,nG2,6,nBb2,9,nC3,3,nRst
+	dc.b nC3,nCs3,6,nEb3,9,nE3,3,nF3
+	smpsLoop 0,2*2,@loop2
+
+	@loop3:
+	; Pattern 02
+	dc.b nA2,3,nBb2,6,nC3,9,nD3,3,nRst
+	dc.b nB2,nC3,6,nF3,9,nG3,6
+	smpsLoop 0,2*2,@loop3
+
+	smpsLoop 1,2,@loop2
+
+	smpsJump	@loop1 ; 0B03
 
 
 GCV2005_DAC:
