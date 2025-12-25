@@ -227,8 +227,8 @@ ptr_mus36:	dc.l Music36
 ptr_mus37:	dc.l Music37
 ptr_mus38:	dc.l Music38
 ptr_mus39:	dc.l Music39
-;ptr_mus3A:	dc.l Music3A
-;ptr_mus3B:	dc.l Music3B
+ptr_mus3A:	dc.l Music3A
+ptr_mus3B:	dc.l Music3B
 ;ptr_mus3C:	dc.l Music3C
 ;ptr_mus3D:	dc.l Music3D
 ;ptr_mus3E:	dc.l Music3E
@@ -2701,6 +2701,10 @@ Music37:	include	"sound/music/TG2000Tracks/AlexKiddEnd.asm"
 Music38:	include	"sound/music/TG2000Tracks/Cheetah.asm"
 		even
 Music39:	include	"sound/music/Extremely_intense_boss_song_for_someone.asm"
+		even
+Music3A:	include	"sound/music/DeltaTale fighte.asm"
+		even
+Music3B:	include	"sound/music/WINDOWS2000.asm"
 		even
 ; ---------------------------------------------------------------------------
 ; Sound effect pointers

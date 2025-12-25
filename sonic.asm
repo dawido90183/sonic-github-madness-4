@@ -2671,7 +2671,7 @@ splash_entry macro art,tilemap,palette,size,music_id,duration_in_frames
     splash_entry Nem_Splash_Support,Eni_Splash_Support,Pal_Splash_Support,$40,$1B,200
     splash_entry Nem_Splash_Iceage,Eni_Splash_Iceage,Pal_Splash_Iceage,$40,$36,300
     splash_entry Nem_Splash_Fredbear,Eni_Splash_Fredbear,Pal_Splash_Fredbear,$40,$1B,200
-    splash_entry Nem_Splash_Damnit,Eni_Splash_Damnit,Pal_Splash_Damnit,$40,$1B,200
+    splash_entry Nem_Splash_Damnit,Eni_Splash_Damnit,Pal_Splash_Damnit,$40,$3A,500
     splash_entry Nem_Splash_CRT,Eni_Splash_CRT,Pal_Splash_CRT,$40,$34,300
     splash_entry Nem_Splash_Crispbilly,Eni_Splash_Crispbilly,Pal_Splash_Crispbilly,$40,$1B,200
     splash_entry Nem_Splash_Bonniewtf,Eni_Splash_Bonniewtf,Pal_Splash_Bonniewtf,$40,$1B,200
