@@ -33,11 +33,11 @@ Cred_Main:	; Routine 0
 		addq.b	#2,obRoutine(a0)
 		move.w	#$A6,obGfx(a0)
 		move.b	#$A,obFrame(a0)	; display "SONIC TEAM PRESENTS"
-		move.w	#3*100,Petertime(a0)
+		move.w	#200,Petertime(a0)
 		btst	#6,(v_megadrive).w ; is Megadrive PAL?
 		beq.s	@notPAL		; if not, branch
 		addq.b	#2,obRoutine(a0)
-		move.w	#3*90,Petertime(a0)
+		move.w	#166,Petertime(a0)
 @notPAL:
 ; crack is said at 1,5
 ; last line at 2,4
@@ -48,17 +48,17 @@ Cred_Display:	; Routine 2
 
 Cred_Title:
 		subq.w	#1,Petertime(a0)
-		cmpi.w	#1*110,Petertime(a0)
+		cmpi.w	#90,Petertime(a0)
 		beq.s	Peterraise
-		cmpi.w	#2*100,Petertime(a0)
+		cmpi.w	#40,Petertime(a0)
 		beq.s	Peterraise
 		rts
 
 Cred_TitlePAL:
 		subq.w	#1,Petertime(a0)
-		cmpi.w	#1*100,Petertime(a0)
+		cmpi.w	#74,Petertime(a0)
 		beq.s	Peterraise
-		cmpi.w	#2*90,Petertime(a0)
+		cmpi.w	#28,Petertime(a0)
 		beq.s	Peterraise
 		rts
 

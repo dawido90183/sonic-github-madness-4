@@ -9,7 +9,7 @@ VDPCtrl:         equ   $C00004
 Chunk:	         equ   $FF0000
 Timer:           equ   $FFFFF614
 SmilingBomb:     equ   $0A
-FadeOut:         equ   $E0
+FadeOut:         equ   $FE
 vblank:          equ   $FFFFF62A
 VDP_buff:	     equ   $FFFFF60C	
 
@@ -21,10 +21,11 @@ VDP_buff:	     equ   $FFFFF60C
 ; ===========================================================================
 
 GitHubScreen: 		 		
-		move.b	#FadeOut,d0
-		bsr.w	PlaySound_Special ; stop music
-		bsr.w	ClearPLC         ; PLCs Reset
-		bsr.w   PaletteFadeOut
+		jsr		(MegaPCM_StopPlayback).l
+;		move.b	#FadeOut,d0
+;		bsr.w	PlaySound_Special ; stop music
+;		bsr.w	ClearPLC         ; PLCs Reset - CONI - this and the music fade already called formerly soooo
+;		bsr.w   PaletteFadeOut		; CONI -  this is specifically removed for the CRACK bit to abruptly end
 		move	#$2700,sr    ; Disable Interrupts
 		lea	    (VDPCtrl).l,a6
 		move.w	#$8004,(a6)    ; Set VDP

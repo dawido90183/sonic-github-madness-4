@@ -1872,6 +1872,7 @@ Pal_SegaJP:	incbin	"palette\Sega Logo JP.bin"
 Pal_SplashPal:	incbin	"eurosega\pal.bin"
 Pal_ColdBrew:	incbin	"conimodes\cold brew\palette.bin"
 Pal_ColdBrewG:	incbin	"conimodes\cold brew\palette grayscale.bin"
+Pal_STeam:	incbin	"palette\Sonic Team Presents.bin"
 ; ---------------------------------------------------------------------------
 ; Palette data (Character)
 ; ---------------------------------------------------------------------------
@@ -2687,6 +2688,7 @@ splash_entry macro art,tilemap,palette,size,music_id,duration_in_frames
 ; ---------------------------------------------------------------------------
 
 GM_Title:
+		jsr		(MegaPCM_StopPlayback).l
 		move.b	#FadeOut,d0
 		bsr.w	PlaySound_Special ; stop music
 		bsr.w	ClearPLC
@@ -2711,18 +2713,17 @@ GM_Title:
 Tit_ClrObj0:
 		move.l	d0,(a1)+
 		dbf	d1,Tit_ClrObj0	; fill object space ($D000-$EFFF) with 0
-		lea	(v_pal_dry_dup).w,a1
-		moveq	#cBlack,d0
-		move.w	#$1F,d1
 
 		locVRAM	$14C0
 		lea	(Nem_CreditText).l,a0 ;	load alphabet
 		bsr.w	NemDec
 		moveq	#palid_Sonic,d0	; load Sonic's palette
 		bsr.w	PalLoad2
-		moveq	#palid_GHZ,d0	; load Sonic's palette
+		moveq	#palid_STeam,d0	; load Sonic Team palette
 		bsr.w	PalLoad2
 		move.b	#id_CreditsText,(v_sonicteam).w ; load "SONIC TEAM PRESENTS" object
+		moveq   #$FFFFFF99, d0	; request CRACK PCM sample
+		jsr	(MegaPCM_PlaySample).l
 .wait:		
 		move.b	#2,(vblank).w
 		bsr.w	WaitForVBla	

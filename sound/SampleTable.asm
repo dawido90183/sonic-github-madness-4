@@ -26,6 +26,7 @@ SampleTable:
 	dcSample	TYPE_DPCM,	Mercury_Hit,	11250, FLAGS_SFX	; $96
 	dcSample	TYPE_DPCM,	Mercury_Death,	11250, FLAGS_SFX	; $97
 	dcSample	TYPE_DPCM,	Mercury_Win,	11250, FLAGS_SFX	; $98
+	dcSample	TYPE_PCM,		CRACK,		8000, 	FLAGS_SFX	; $99
 	dc.w	-1	; end marker
 
 ; ---------------------------------------------------------------
@@ -33,6 +34,7 @@ SampleTable:
 	incdac	Snare, "sound/dac/snare.pcm"
 	incdac	Timpani, "sound/dac/timpani.dpcm"
 	incdac	SegaPCM, "sound/dac/sega.pcm"
+	incdac	CRACK, "sound/dac/CRACK.pcm"
 	even
 
 ; ---------------------------------------------------------------

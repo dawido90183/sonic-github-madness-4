@@ -42,6 +42,8 @@ ptr_Pal_SplashPal:	palp	Pal_SplashPal,v_pal_dry,$10	; European Sega Splash Scree
 ptr_Pal_ColdBrew:	palp	Pal_ColdBrew,v_pal_dry,$10	; Cold Brew
 ptr_Pal_ColdBrewG:	palp	Pal_ColdBrewG,v_pal_dry,$10	; Cold Brew
 
+ptr_Pal_STeam:	palp	Pal_STeam,v_pal_dry+$20, $30	; Sonic Team Presents
+
 pal_char_ptr:	macro name, alts ; put any value on alts to create alternate palette pointers
 ptr_Pal_\name:		palp	Pal_\name,v_pal_dry,$10
 	if (narg=2)
@@ -85,3 +87,4 @@ palid_SegaJP:		equ (ptr_Pal_SegaJP-PalPointers)/8
 palid_SplashPal:	equ (ptr_Pal_SplashPal-PalPointers)/8
 palid_ColdBrew:	equ (ptr_Pal_ColdBrew-PalPointers)/8
 palid_ColdBrewG:	equ (ptr_Pal_ColdBrewG-PalPointers)/8
+palid_STeam:	equ (ptr_Pal_STeam-PalPointers)/8
