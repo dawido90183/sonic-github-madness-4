@@ -27,11 +27,11 @@ SmilingBomb_Header:
 ;	FM5 Pointer	location	pitch		volume
 	smpsHeaderFM	SmilingBomb_FM5,	smpsPitch00,	$11
 ;	PSG1 Pointer	location	pitch		volume	instrument
-	smpsHeaderPSG	SmilingBomb_PSG1,	smpsPitch03lo,	$06,	6,$00
+	smpsHeaderPSG	SmilingBomb_PSG1,	smpsPitch03lo,	$06,	$1e,$00
 ;	PSG2 Pointer	location	pitch		volume	instrument
-	smpsHeaderPSG	SmilingBomb_PSG2,	smpsPitch03lo,	$08,	$D,$00
+	smpsHeaderPSG	SmilingBomb_PSG2,	smpsPitch03lo,	$06,	$2E,$00
 ;	PSG3 Pointer	location	pitch		volume	instrument
-	smpsHeaderPSG	SmilingBomb_PSG3,	smpsPitch00,	$03,	4,$02
+	smpsHeaderPSG	SmilingBomb_PSG3,	smpsPitch00,	$03,	$3,$02
 
 ; FM1 Data
 SmilingBomb_FM1:
@@ -856,12 +856,12 @@ SmilingBomb_PSG2:
 ;	Alter Notes	value
 	smpsAlterNote	$FF
 ;	Set Modulation	wait	speed	change	step
-	smpsModSet	$15,	$01,	$01,	$05
+	smpsModSet	$15,	$04,	$01,	$f5
 	dc.b		nBb5,	$24,	$24,	$48,	$24,	$24,	$1E,	$06
 	dc.b		nRst,	$06
 ;	Set Volume	value
 	;not implemented ;smpsSetVol	$05
-	dc.b		nBb5,	$06
+	dc.b		nBb5,	$02
 ;	Set Volume	value
 	;not implemented ;smpsSetVol	$FB
 ;	Set Modulation	wait	speed	change	step
@@ -968,15 +968,15 @@ SmilingBomb_Loop03:
 SmilingBomb_DAC:
 	dc.b		dKick,	$24,	$24,	$24,	dSnare,	$06,	$06,	$06
 	dc.b		$06,	$06,	$06,	dKick,	$24,	$24,	$24,	nRst
-	dc.b		$0C,	$8D,	$06,	dSnare,	$12
+	dc.b		$0C,	dSnare,	$06,	dSnare,	$12
 SmilingBomb_Loop04:
 	dc.b		dKick,	$12,	dSnare,	dKick,	dSnare
 ;	Loop To	 	index	loops	location
 	smpsLoop	$00,	$07,	SmilingBomb_Loop04
-	dc.b		dKick,	$12,	dSnare,	dKick,	$0C,	$8E,	$06,	dSnare
+	dc.b		dKick,	$12,	dSnare,	dKick,	$0C,	dSnare,	$06,	dSnare
 	dc.b		$12
 SmilingBomb_Loop05:
-	dc.b		dKick,	$12,	dSnare,	dKick,	$0C,	$8E,	$06,	dSnare
+	dc.b		dKick,	$12,	dSnare,	dKick,	$0C,	dSnare,	$06,	dSnare
 	dc.b		$12,	dKick,	$12,	dSnare,	dKick,	$0C,	dSnare,	$03
 	dc.b		$03,	$12,	dKick,	$0C,	dSnare,	$12,	dKick,	$06
 	dc.b		dSnare,	$0C,	dKick,	$06,	dSnare,	$12,	dKick,	$0C
@@ -988,14 +988,14 @@ SmilingBomb_Loop06:
 	dc.b		dKick,	$12,	dSnare,	dKick,	dSnare
 ;	Loop To	 	index	loops	location
 	smpsLoop	$00,	$07,	SmilingBomb_Loop06
-	dc.b		dKick,	$12,	dSnare,	dKick,	$0C,	$8E,	$06,	dSnare
-	dc.b		$12,	dKick,	$12,	dSnare,	dKick,	$0C,	$8E,	$06
+	dc.b		dKick,	$12,	dSnare,	dKick,	$0C,	dSnare,	$06,	dSnare
+	dc.b		$12,	dKick,	$12,	dSnare,	dKick,	$0C,	dSnare,	$06
 	dc.b		dSnare,	$12,	dKick,	$12,	dSnare,	dKick,	$0C,	dSnare
 	dc.b		$03,	$03,	$12,	dKick,	$0C,	dSnare,	$12,	dKick
 	dc.b		$06,	dSnare,	$0C,	dKick,	$06,	dSnare,	$12,	dKick
 	dc.b		$0C,	dSnare,	$03,	$03,	dSnare,	$12,	dKick,	$0C
 	dc.b		dSnare,	$18,	dKick,	$12,	dSnare,	$0C,	dKick,	$12
-	dc.b		$8E,	$06,	dSnare,	$12,	dKick,	$0C,	$06,	dSnare
+	dc.b		dSnare,	$06,	dSnare,	$12,	dKick,	$0C,	$06,	dSnare
 	dc.b		$0C,	dSnare,	$0C,	dKick,	$06,	dSnare,	$03,	$03
 	dc.b		$12,	nRst,	$48,	nRst,	$4E
 SmilingBomb_Loop07:
@@ -1008,7 +1008,7 @@ SmilingBomb_Loop08:
 ;	Loop To	 	index	loops	location
 	smpsLoop	$00,	$03,	SmilingBomb_Loop08
 	dc.b		dKick,	$0C,	dSnare,	$06,	nRst,	$0C,	dSnare,	$06
-	dc.b		dKick,	$0C,	dSnare,	$06,	$8E,	$12
+	dc.b		dKick,	$0C,	dSnare,	$06,	dSnare,	$12
 SmilingBomb_Loop09:
 	dc.b		dKick,	$12,	dSnare,	dKick,	dSnare
 ;	Loop To	 	index	loops	location
@@ -1019,13 +1019,13 @@ SmilingBomb_Loop0A:
 ;	Loop To	 	index	loops	location
 	smpsLoop	$00,	$03,	SmilingBomb_Loop0A
 	dc.b		dKick,	$0C,	dSnare,	$06,	nRst,	$0C,	dSnare,	$06
-	dc.b		dKick,	$0C,	dSnare,	$06,	$8E,	$12
+	dc.b		dKick,	$0C,	dSnare,	$06,	dSnare,	$12
 SmilingBomb_Loop0B:
 	dc.b		dKick,	$12,	dSnare,	dKick,	dSnare
 ;	Loop To	 	index	loops	location
 	smpsLoop	$00,	$03,	SmilingBomb_Loop0B
-	dc.b		dKick,	$0C,	$8D,	$06,	dSnare,	$12,	dKick,	$1E
-	dc.b		$06,	$8E,	$0C,	dSnare,	$06,	$8D,	$12,	dSnare
+	dc.b		dKick,	$0C,	dSnare,	$06,	dSnare,	$12,	dKick,	$1E
+	dc.b		$06,	dSnare,	$0C,	dSnare,	$06,	dSnare,	$12,	dSnare
 	dc.b		$0C,	dKick,	$03,	$03,	dSnare,	$12
 ;	Jump To	 	location
 	smpsJump	SmilingBomb_Loop04
@@ -1066,7 +1066,7 @@ SmilingBomb_Voices:
 	smpsVcTotalLevel	$84,	$84,	$80,	$10
 
 ;	Voice 02
-;	$3A,$01,$01,$01,$02,$8D,$07,$07,$52,$09,$00,$00,$03,$01,$02,$02,$00,$52,$02,$02,$28,$18,$22,$18,$80
+;	$3A,$01,$01,$01,$02,dSnare,$07,$07,$52,$09,$00,$00,$03,$01,$02,$02,$00,$52,$02,$02,$28,$18,$22,$18,$80
 ;				#
 	smpsVcAlgorithm		$02
 	smpsVcFeedback		$07
@@ -1168,7 +1168,7 @@ SmilingBomb_Voices:
 	smpsVcTotalLevel	$83,	$83,	$83,	$11
 
 ;	Voice 08
-;	$3A,$01,$01,$01,$02,$8D,$07,$07,$52,$09,$00,$00,$03,$01,$02,$02,$00,$52,$02,$02,$28,$18,$22,$18,$80
+;	$3A,$01,$01,$01,$02,dSnare,$07,$07,$52,$09,$00,$00,$03,$01,$02,$02,$00,$52,$02,$02,$28,$18,$22,$18,$80
 ;				#
 	smpsVcAlgorithm		$02
 	smpsVcFeedback		$07
@@ -1202,7 +1202,7 @@ SmilingBomb_Voices:
 	smpsVcTotalLevel	$80,	$0A,	$0B,	$23
 
 ;	Voice 0A
-;	$3A,$00,$01,$00,$00,$8D,$14,$0F,$10,$19,$10,$00,$10,$11,$15,$08,$07,$52,$02,$02,$18,$1C,$20,$06,$80
+;	$3A,$00,$01,$00,$00,dSnare,$14,$0F,$10,$19,$10,$00,$10,$11,$15,$08,$07,$52,$02,$02,$18,$1C,$20,$06,$80
 ;				#
 	smpsVcAlgorithm		$02
 	smpsVcFeedback		$07
@@ -1236,7 +1236,7 @@ SmilingBomb_Voices:
 	smpsVcTotalLevel	$80,	$15,	$27,	$1A
 
 ;	Voice 0C
-;	$3A,$01,$01,$01,$03,$8D,$07,$07,$52,$09,$00,$00,$0A,$01,$02,$02,$09,$52,$02,$02,$28,$1A,$25,$10,$80
+;	$3A,$01,$01,$01,$03,dSnare,$07,$07,$52,$09,$00,$00,$0A,$01,$02,$02,$09,$52,$02,$02,$28,$1A,$25,$10,$80
 ;				#
 	smpsVcAlgorithm		$02
 	smpsVcFeedback		$07
@@ -1253,7 +1253,7 @@ SmilingBomb_Voices:
 	smpsVcTotalLevel	$80,	$10,	$25,	$1A
 
 ;	Voice 0D
-;	$3A,$01,$01,$01,$03,$8D,$07,$07,$52,$09,$00,$00,$0A,$01,$02,$02,$09,$52,$02,$02,$28,$1A,$25,$10,$80
+;	$3A,$01,$01,$01,$03,dSnare,$07,$07,$52,$09,$00,$00,$0A,$01,$02,$02,$09,$52,$02,$02,$28,$1A,$25,$10,$80
 ;				#
 	smpsVcAlgorithm		$02
 	smpsVcFeedback		$07

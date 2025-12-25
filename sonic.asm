@@ -1872,6 +1872,7 @@ Pal_SegaJP:	incbin	"palette\Sega Logo JP.bin"
 Pal_SplashPal:	incbin	"eurosega\pal.bin"
 Pal_ColdBrew:	incbin	"conimodes\cold brew\palette.bin"
 Pal_ColdBrewG:	incbin	"conimodes\cold brew\palette grayscale.bin"
+Pal_STeam:	incbin	"palette\Sonic Team Presents.bin"
 ; ---------------------------------------------------------------------------
 ; Palette data (Character)
 ; ---------------------------------------------------------------------------
@@ -1966,6 +1967,7 @@ GenerateSegaTiles: ; d4 -> vram location, d6 -> counter for skip
 		rts
 
 GM_Sega:
+		
 		move.b	#bgm_Stop,d0
 		bsr.w	PlaySound_Special ; stop music
 		bsr.w	ClearPLC
@@ -2033,11 +2035,17 @@ Sega_WaitEnd:
 		andi.b	#btnStart,(v_jpadpress1).w ; is Start button pressed?
 		beq.s	Sega_WaitEnd	; if not, branch
 
-Sega_GotoTitle:
+Sega_GotoTitle:         ; GK: this is temporary i guess
+        tst.b	(f_debugmode).w ; has debug cheat been entered?
+		bne.s	NoSplashs	; if not, branch
 ;		tst.w	(v_SplashSkip).w
 ;		bne.s	.skipsplash
 		move.b	#id_SplashScreen,(v_gamemode).w ; go to splash screen
 		rts	
+		
+NoSplashs:
+		move.b	#id_Title,(v_gamemode).w ; go to splash screen
+        rts
 ;.skipsplash:
 ;		move.b	#id_Title,(v_gamemode).w ; go to splash screen
 ;		rts	
@@ -2671,7 +2679,7 @@ splash_entry macro art,tilemap,palette,size,music_id,duration_in_frames
     splash_entry Nem_Splash_Support,Eni_Splash_Support,Pal_Splash_Support,$40,$1B,200
     splash_entry Nem_Splash_Iceage,Eni_Splash_Iceage,Pal_Splash_Iceage,$40,$36,300
     splash_entry Nem_Splash_Fredbear,Eni_Splash_Fredbear,Pal_Splash_Fredbear,$40,$1B,200
-    splash_entry Nem_Splash_Damnit,Eni_Splash_Damnit,Pal_Splash_Damnit,$40,$1B,200
+    splash_entry Nem_Splash_Damnit,Eni_Splash_Damnit,Pal_Splash_Damnit,$40,$3A,500
     splash_entry Nem_Splash_CRT,Eni_Splash_CRT,Pal_Splash_CRT,$40,$34,300
     splash_entry Nem_Splash_Crispbilly,Eni_Splash_Crispbilly,Pal_Splash_Crispbilly,$40,$1B,200
     splash_entry Nem_Splash_Bonniewtf,Eni_Splash_Bonniewtf,Pal_Splash_Bonniewtf,$40,$1B,200
@@ -2687,6 +2695,7 @@ splash_entry macro art,tilemap,palette,size,music_id,duration_in_frames
 ; ---------------------------------------------------------------------------
 
 GM_Title:
+		jsr		(MegaPCM_StopPlayback).l
 		move.b	#FadeOut,d0
 		bsr.w	PlaySound_Special ; stop music
 		bsr.w	ClearPLC
@@ -2711,18 +2720,17 @@ GM_Title:
 Tit_ClrObj0:
 		move.l	d0,(a1)+
 		dbf	d1,Tit_ClrObj0	; fill object space ($D000-$EFFF) with 0
-		lea	(v_pal_dry_dup).w,a1
-		moveq	#cBlack,d0
-		move.w	#$1F,d1
 
 		locVRAM	$14C0
 		lea	(Nem_CreditText).l,a0 ;	load alphabet
 		bsr.w	NemDec
 		moveq	#palid_Sonic,d0	; load Sonic's palette
 		bsr.w	PalLoad2
-		moveq	#palid_GHZ,d0	; load Sonic's palette
+		moveq	#palid_STeam,d0	; load Sonic Team palette
 		bsr.w	PalLoad2
 		move.b	#id_CreditsText,(v_sonicteam).w ; load "SONIC TEAM PRESENTS" object
+		moveq   #$FFFFFF99, d0	; request CRACK PCM sample
+		jsr	(MegaPCM_PlaySample).l
 .wait:		
 		move.b	#2,(vblank).w
 		bsr.w	WaitForVBla	

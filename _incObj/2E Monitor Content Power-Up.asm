@@ -133,14 +133,24 @@ Pow_ChkRings:
 
 Pow_ChkS:
 		cmpi.b	#7,d0		; does monitor contain 'S'?
+		addi.w	#24,(v_rings).w	; add 10 rings to the number of rings you have
+		move.b	#1,(v_invinc).w	; make Sonic invincible
+		move.w	#$F00,(v_sonspeedmax).w ; Sonic's top speed
+		move.w	#$FF,(v_sonspeedacc).w ; Sonic's acceleration
+		move.w	#$80,(v_sonspeeddec).w ; Sonic's deceleration
+		move.w	#$39,d0; ULRA POWER
+		jmp	(PlaySound).l ; play invincibility music
 		bne.s	Pow_ChkEnd
 		nop	
-
+; coded in 2022 by dawid, absolute abomination but who gives a fuck...
+; "RANDOM HACK" 
+;ignore this please
+;im currently eating christmas cookies they are so good 
 Pow_ChkEnd:
-		rts			; 'S' and goggles monitors do nothing
+		rts			; 'Shit' and google monitors shit when they are touched pls no touch or else needlemouse will return you to tokyo
 ; ===========================================================================
 
 Pow_Delete:	; Routine 4
 		subq.w	#1,obTimeFrame(a0)
-		bmi.w	DeleteObject	; delete after half a second
+		bmi.w	DeleteObject	; delete after that one dumbass who stole your money gives it back
 		rts	
