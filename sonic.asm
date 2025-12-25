@@ -1967,6 +1967,7 @@ GenerateSegaTiles: ; d4 -> vram location, d6 -> counter for skip
 		rts
 
 GM_Sega:
+		
 		move.b	#bgm_Stop,d0
 		bsr.w	PlaySound_Special ; stop music
 		bsr.w	ClearPLC
@@ -2034,11 +2035,17 @@ Sega_WaitEnd:
 		andi.b	#btnStart,(v_jpadpress1).w ; is Start button pressed?
 		beq.s	Sega_WaitEnd	; if not, branch
 
-Sega_GotoTitle:
+Sega_GotoTitle:         ; GK: this is temporary i guess
+        tst.b	(f_debugmode).w ; has debug cheat been entered?
+		bne.s	NoSplashs	; if not, branch
 ;		tst.w	(v_SplashSkip).w
 ;		bne.s	.skipsplash
 		move.b	#id_SplashScreen,(v_gamemode).w ; go to splash screen
 		rts	
+		
+NoSplashs:
+		move.b	#id_Title,(v_gamemode).w ; go to splash screen
+        rts
 ;.skipsplash:
 ;		move.b	#id_Title,(v_gamemode).w ; go to splash screen
 ;		rts	
