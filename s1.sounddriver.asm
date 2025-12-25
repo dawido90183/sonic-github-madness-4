@@ -225,7 +225,7 @@ ptr_mus34:	dc.l Music34
 ptr_mus35:	dc.l Music35
 ptr_mus36:	dc.l Music36
 ptr_mus37:	dc.l Music37
-;ptr_mus38:	dc.l Music38
+ptr_mus38:	dc.l Music38
 ;ptr_mus39:	dc.l Music39
 ;ptr_mus3A:	dc.l Music3A
 ;ptr_mus3B:	dc.l Music3B
@@ -2697,6 +2697,8 @@ Music35:	include	"sound/music/TG2000Tracks/SFZShop.asm"
 Music36:	include	"sound/music/TG2000Tracks/JamesPond.asm"
 		even
 Music37:	include	"sound/music/TG2000Tracks/AlexKiddEnd.asm"
+		even
+Music38:	include	"sound/music/TG2000Tracks/Cheetah.asm"
 		even
 ; ---------------------------------------------------------------------------
 ; Sound effect pointers
