@@ -138,7 +138,7 @@ Pow_ChkS:
 		move.w	#$F00,(v_sonspeedmax).w ; Sonic's top speed
 		move.w	#$FF,(v_sonspeedacc).w ; Sonic's acceleration
 		move.w	#$80,(v_sonspeeddec).w ; Sonic's deceleration
-		move.w	#$8C,d0; ULRA POWER
+		move.w	#$39,d0; ULRA POWER
 		jmp	(PlaySound).l ; play invincibility music
 		bne.s	Pow_ChkEnd
 		nop	
