@@ -26,7 +26,7 @@
 	dc.w @float4-@internal
 
 ; Extra Slots (Moves/Extra animations)
-	dc.w @placeholder-@internal
+	dc.w @rocketlauncher-@internal
 	dc.w @placeholder-@internal
 	dc.w @placeholder-@internal
 	dc.w @placeholder-@internal
@@ -40,7 +40,7 @@
 @placeholder:
 @walk:	dc.b $FF, $10, $11,	$12, $13, $14, $15, $16, $17, afEnd
 		even
-@run:	dc.b $FF,  $28,  $29,  $2A,  $28,  $29,  $2A, afEnd, afEnd
+@run:	dc.b $FF,  $26,  $27,  $28,  $26,  $27,  $28, afEnd, afEnd
 		even
 @roll2:
 @roll:	dc.b $FE,  $18,  $18,  $19,  $19,  afEnd,     afEnd, afEnd
@@ -82,4 +82,8 @@
 @float4:	dc.b 3,	$21, $22, $23, $24, $25, afChange, id_Walk
 		even
 
+	; anim size, speed then standard data
+@rocketlauncher:
+		dc.b $FC, 2, 2, $32, $33, afEnd
+		even
 

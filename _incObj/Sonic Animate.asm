@@ -45,7 +45,7 @@ Sonic_Animate:
 		moveq	#0,d1
 		move.b	obAniFrame(a0),d1 ; load current frame number
 		move.b	1(a1,d1.w),d0	; read sprite number from script
-        cmp.b	#$FD,d0					; MJ: is it a flag from FD to FF? 
+        cmpi.b	#$FD,d0					; MJ: is it a flag from FD to FF?
 		bhs 	@end_FF		; MJ: if animation is complete, branch
 
 	@next:
@@ -176,6 +176,8 @@ Sonic_Animate:
 ; ===========================================================================
 
 @push:
+		addq.b	#1,d0		; is animation push?
+		bne.s	@customrotate		; if not, branch
 		move.w	obInertia(a0),d2 ; get Sonic's speed
 		bmi.s	@negspeed
 		neg.w	d2
@@ -195,6 +197,44 @@ Sonic_Animate:
 		andi.b	#$FC,obRender(a0)
 		or.b	d1,obRender(a0)
 		bra.w	@loadframe
+; ===========================================================================
+; anim size, speed then standard data
+@customrotate:
+		; go to current
+
+		move.l	a1,a2
+		addq.w	#2,a1
+		bsr.w	@loadframe
+
+		move.b	2(a2),obTimeFrame(a0) ; modify frame duration
+
+		moveq	#0,d1
+		moveq	#0,d0
+		move.b	obAngle(a0),d0	; get Sonic's angle
+		move.b	obStatus(a0),d2
+		andi.b	#1,d2		; is Sonic mirrored horizontally?
+		bne.s	@flip2		; if yes, branch
+		not.b	d0		; reverse angle
+
+	@flip2:
+		addi.b	#$10,d0		; add $10 to angle
+		bpl.s	@noinvert2	; if angle is $0-$7F, branch
+		moveq	#3,d1
+
+	@noinvert2:
+		andi.b	#$FC,obRender(a0)
+		eor.b	d1,d2
+		or.b	d2,obRender(a0)
+
+		lsr.b	#5,d0		; divide angle by $20
+		andi.b	#$3,d0		; angle must be 0, 1, 2 or 3
+ 		move.w	#0,d3
+ 		move.b	1(a2),d3
+ 		mulu.w	d3,d0
+		move.b	#0,d3
+		add.b	d0,obFrame(a0)	; modify frame number
+		rts
+; ===========================================================================
 
 ; End of function Sonic_Animate
 
@@ -204,6 +244,7 @@ anisize_char:	macro run,walk
 
 Char_AniSize:	; CHAR ADD STUFF
 	; if you are unsure just use sonic's values
+	; 0 disables rotation
 
 	anisize_char	4,6 ; sonic
 	anisize_char	4,6 ; ghm3 guy

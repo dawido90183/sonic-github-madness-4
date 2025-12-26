@@ -8,7 +8,6 @@ NecoArc_MdNormal:
 		bsr.w	Sonic_Jump
 		bsr.w	Sonic_SlopeResist
 		bsr.w	Sonic_Move
-		bsr.w	Sonic_Roll
 		bsr.w	Sonic_LevelBound
 		jsr	(SpeedToPos).l
 		bsr.w	Sonic_AnglePos
