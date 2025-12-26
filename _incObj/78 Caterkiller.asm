@@ -34,10 +34,10 @@ Cat_Main:	; Routine 0
 		clr.w	obVelY(a0)
 		addq.b	#2,obRoutine(a0)
 		move.l	#Map_Cat,obMap(a0)
-		move.w	#$22B0,obGfx(a0)
+		move.w	#$2B0,obGfx(a0)
 		cmpi.b	#id_SBZ,(v_zone).w ; if level is SBZ, branch
 		beq.s	@isscrapbrain
-		move.w	#$24FF,obGfx(a0) ; MZ specific code
+		move.w	#$4FF,obGfx(a0) ; MZ specific code
 
 	@isscrapbrain:
 		andi.b	#3,obRender(a0)
@@ -146,7 +146,7 @@ Cat_Index2:	dc.w @wait-Cat_Index2
 @move:
 		addq.b	#2,ob2ndRout(a0)
 		move.b	#$10,$2A(a0)
-		move.w	#-$C0,obVelX(a0)
+		move.w	#-$200,obVelX(a0)
 		move.w	#$40,obInertia(a0)
 		bchg	#4,$2B(a0)
 		bne.s	loc_16AFC
