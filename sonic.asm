@@ -3529,12 +3529,12 @@ Char_SFX: ; CHAR ADD STUFF
 	sfx_char $8D,$8E,$8F,$90,sfx_Lamppost,$91,0,0 ; KiryuChan
 	sfx_char sfx_Jump,sfx_Death,sfx_Death,sfx_Shield,sfx_Lamppost,0,0,0 ; Jeebler
 	sfx_char sfx_Jump,sfx_Death,sfx_Death,sfx_Collapse,sfx_Lamppost,0,0,0 ; MrBoss
-	sfx_char sfx_Jump,sfx_Death,sfx_Death,sfx_Collapse,sfx_Lamppost,0,0,0 ; NecoArc
-		sfx_char sfx_Jump,sfx_Death,sfx_Death,sfx_Collapse,sfx_Bubble,0,0,0 ; PREPUCIOP
+	sfx_char $9A,$9B,$9C,$9D,$9E,0,0,0 ; NecoArc
+	sfx_char sfx_Jump,sfx_Death,sfx_Death,sfx_Collapse,sfx_Bubble,0,0,0 ; PREPUCIOP
 
 	; add next char here
 
-Char_SFX_Type:
+Char_SFX_Type: ; CHAR ADD STUFF
 @sfx = 0
 @pcm = 1
 @all_pcm = $FF
@@ -3544,7 +3544,8 @@ Char_SFX_Type:
 	sfx_type_char @pcm,@pcm,@pcm,@pcm,@sfx,@pcm,@sfx,@sfx ; KiryuChan
 	dc.b @sfx ; sfx_type_char @sfx,@sfx,@sfx,@sfx,@sfx,@sfx,@sfx,@sfx ; Jeebler
 	dc.b @sfx ; sfx_type_char @sfx,@sfx,@sfx,@sfx,@sfx,@sfx,@sfx,@sfx ; MrBoss
-	dc.b @sfx ; sfx_type_char @sfx,@sfx,@sfx,@sfx,@sfx,@sfx,@sfx,@sfx ; NecoArc
+	sfx_type_char @pcm,@pcm,@pcm,@pcm,@pcm,@sfx,@sfx,@sfx ; Neco Arc
+	dc.b @sfx ; sfx_type_char @sfx,@sfx,@sfx,@sfx,@sfx,@sfx,@sfx,@sfx ; PREPUCIOP
 	; add next char here
 	even
 PlayCharSFX: ; d2 -> SFX in index (jump,hurt,die,start,win,ex1,ex2,ex3)

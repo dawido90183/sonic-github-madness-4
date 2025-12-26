@@ -27,6 +27,11 @@ SampleTable:
 	dcSample	TYPE_DPCM,	Mercury_Death,	11250, FLAGS_SFX	; $97
 	dcSample	TYPE_DPCM,	Mercury_Win,	11250, FLAGS_SFX	; $98
 	dcSample	TYPE_PCM,		CRACK,		8000, 	FLAGS_SFX	; $99
+	dcSample	TYPE_PCM,		NecoArc_Jump,	0, FLAGS_SFX	; $9A
+	dcSample	TYPE_PCM,		NecoArc_Ouch,	0, FLAGS_SFX	; $9B
+	dcSample	TYPE_PCM,		NecoArc_Dead,	0, FLAGS_SFX	; $9C
+	dcSample	TYPE_PCM,		NecoArc_LetsGo,	0, FLAGS_SFX	; $9D
+	dcSample	TYPE_PCM,		NecoArc_Win,	0, FLAGS_SFX	; $9E
 	dc.w	-1	; end marker
 
 ; ---------------------------------------------------------------
@@ -38,7 +43,7 @@ SampleTable:
 	even
 
 ; ---------------------------------------------------------------
-; Kiryu
+; Kiryu - Yakuza 3
 	incdac	Kiryu_Jump, "sound/dac/kiryu/jump.wav"
 	incdac	Kiryu_Ouch, "sound/dac/kiryu/ouch.wav"
 	incdac	Kiryu_Dead, "sound/dac/kiryu/dead.wav"
@@ -56,4 +61,10 @@ SampleTable:
 	incdac	Mercury_Win, "sound/dac/mercury/Mercury_Win.bin"
 
 ; ---------------------------------------------------------------
+; Neco Arc - MB:AA
+	incdac	NecoArc_Jump, "sound/dac/necoarc/jump.wav"
+	incdac	NecoArc_Ouch, "sound/dac/necoarc/ouch.wav"
+	incdac	NecoArc_Dead, "sound/dac/necoarc/dead.wav"
+	incdac	NecoArc_LetsGo, "sound/dac/necoarc/letsgo.wav"
+	incdac	NecoArc_Win, "sound/dac/necoarc/win.wav"
 
