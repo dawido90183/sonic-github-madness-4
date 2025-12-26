@@ -3520,7 +3520,7 @@ sfx_char: macro jump_sfx,hurt,die,start,win,ex1,ex2,ex3
 sfx_type_char:	macro jump,hurt,die,start,win,ex1,ex2,ex3
 	dc.b	jump+hurt<<1+die<<2+start<<3+win<<4+ex1<<5+ex2<<6+ex3<<7
 	endm
-	; ex 1 is used in... -> MoveCmd_Attack
+	; ex 1 is used in... -> MoveCmd_Attack, MoveCmd_Fly
 
 Char_SFX: ; CHAR ADD STUFF
 	sfx_char sfx_Jump,sfx_Death,sfx_Death,sfx_Cash,sfx_Lamppost,0,0,0 ; Sonic
@@ -3529,7 +3529,7 @@ Char_SFX: ; CHAR ADD STUFF
 	sfx_char $8D,$8E,$8F,$90,sfx_Lamppost,$91,0,0 ; KiryuChan
 	sfx_char sfx_Jump,sfx_Death,sfx_Death,sfx_Shield,sfx_Lamppost,0,0,0 ; Jeebler
 	sfx_char sfx_Jump,sfx_Death,sfx_Death,sfx_Collapse,sfx_Lamppost,0,0,0 ; MrBoss
-	sfx_char $9A,$9B,$9C,$9D,$9E,0,0,0 ; NecoArc
+	sfx_char $9A,$9B,$9C,$9D,$9E,sfx_Teleport,0,0 ; NecoArc
 	sfx_char sfx_Jump,sfx_Death,sfx_Death,sfx_Collapse,sfx_Bubble,0,0,0 ; PREPUCIOP
 
 	; add next char here

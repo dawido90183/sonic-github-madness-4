@@ -75,6 +75,6 @@ MoveCmd_Attack:
 		neg.w	obVelX(a0)
 	@notneg:
 		move.b	#5,d2 ; EX 1 (MoveCmd_Attack)
-		jsr (PlayCharSFX).l
+		jmp (PlayCharSFX).l
 	@return:
 		rts
