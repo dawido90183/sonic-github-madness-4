@@ -1897,6 +1897,7 @@ Char_Pal:
 	pal_char Jeebler
 	pal_char MrBoss
 	pal_char NecoArc
+	pal_char PrepucioLopez
 	; add next char here
 
 ; ---------------------------------------------------------------------------
@@ -3398,6 +3399,9 @@ lstxt macro textline
 		elseif ("\char">='A')&("\char"<='X')
 			dc.b	$11+"\char"-'A'
 		else
+				elseif ("\char">='A')&("\char"<='X')
+			dc.b	$12+"\char"-'A'
+		else
 			inform 2, "illegal char \char"
 		endif
 	endw
@@ -3526,6 +3530,8 @@ Char_SFX: ; CHAR ADD STUFF
 	sfx_char sfx_Jump,sfx_Death,sfx_Death,sfx_Shield,sfx_Lamppost,0,0,0 ; Jeebler
 	sfx_char sfx_Jump,sfx_Death,sfx_Death,sfx_Collapse,sfx_Lamppost,0,0,0 ; MrBoss
 	sfx_char sfx_Jump,sfx_Death,sfx_Death,sfx_Collapse,sfx_Lamppost,0,0,0 ; NecoArc
+		sfx_char sfx_Jump,sfx_Death,sfx_Death,sfx_Collapse,sfx_Bubble,0,0,0 ; PREPUCIOP
+
 	; add next char here
 
 Char_SFX_Type:
@@ -7901,6 +7907,8 @@ Char_Map:	; CHAR ADD STUFF
 	dc.l	Map_Jeebler
 	dc.l	Map_MrBoss
 	dc.l	Map_NecoArc
+	dc.l	Map_PrepucioLopez
+	
 	; add next char here
 
 Sonic_Main:	; Routine 0
@@ -7987,6 +7995,8 @@ Char_ModeTable:
 	modetable_char Sonic
 	modetable_char Sonic
 	modetable_char NecoArc
+	modetable_char PrepucioLopez
+	
 	; add next char here
 		even
 
@@ -7997,6 +8007,8 @@ Char_ModeTable:
 	routines_char Sonic
 	routines_char KiryuChan
 	routines_char NecoArc
+	routines_char PrepucioLopez
+	
 	; add next char here
 
 ; ---------------------------------------------------------------------------
@@ -8053,7 +8065,7 @@ Ani_\name:	include	"!Characters\\\name\\Anim.asm"
 		anim_char Jeebler
 		anim_char MrBoss
 		anim_char NecoArc
-
+		anim_char PrepucioLopez
 
 ; ---------------------------------------------------------------------------
 ; Subroutine to play music for LZ/SBZ3 after a countdown
@@ -9542,6 +9554,7 @@ DPLC_\name:	include	"!Characters\\\name\\DPLC.asm"
 	map_char Jeebler
 	map_char MrBoss
 	map_char NecoArc
+	map_char PrepucioLopez
 	; add next char here
 
 ; ---------------------------------------------------------------------------
@@ -9559,6 +9572,7 @@ Art_\name:	incbin	"!Characters\\\name\\Art.bin"
 	art_char Jeebler
 	art_char MrBoss
 	art_char NecoArc
+	art_char PrepucioLopez
 	; add next char here
 		even
 
