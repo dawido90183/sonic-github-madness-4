@@ -23,7 +23,7 @@ Revision:	equ 1
 
 ZoneCount:	equ 6	; discrete zones are: GHZ, MZ, SYZ, LZ, SLZ, and SBZ
 
-CharCount: equ 7
+CharCount: equ 8
 
 SkipSplash: equ 1
 

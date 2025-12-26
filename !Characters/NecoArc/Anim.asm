@@ -40,10 +40,10 @@
 @placeholder:
 @walk:	dc.b $FF, $10, $11,	$12, $13, $14, $15, $16, $17, afEnd
 		even
-@run:	dc.b $FF,  $A,  $B,  $C,  afEnd, afEnd, afEnd, afEnd, afEnd
+@run:	dc.b $FF,  $28,  $29,  $2A,  $28,  $29,  $2A, afEnd, afEnd
 		even
 @roll2:
-@roll:	dc.b $FE,  $18,  $19,  afEnd,  afEnd,  afEnd,     afEnd, afEnd
+@roll:	dc.b $FE,  $18,  $18,  $19,  $19,  afEnd,     afEnd, afEnd
 		even
 @push:	dc.b $FD,  $10, $11,	$12, $13, $14, $15, $16, $17, afEnd
 		even
@@ -52,7 +52,7 @@
 		even
 @balance:	dc.b $1F, $F, $E, afEnd
 		even
-@duck:	dc.b $3F, $6, $7, $8, $9, afBack, 1
+@duck:	dc.b 5, $6, $7, $8, $9, afBack, 1
 		even
 @stop:	dc.b 5,	$D, $E, $F, afBack, 2
 		even

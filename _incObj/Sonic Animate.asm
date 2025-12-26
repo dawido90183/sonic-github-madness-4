@@ -106,8 +106,8 @@ Sonic_Animate:
 		btst	#5,obStatus(a0)	; is Sonic pushing something?
 		bne.w	@push		; if yes, branch
 
-		lsr.b	#4,d0		; divide angle by $10
-		andi.b	#6,d0		; angle must be 0, 2, 4 or 6
+		lsr.b	#5,d0		; divide angle by $20
+		andi.b	#$3,d0		; angle must be 0, 1, 2 or 3
 		move.w	obInertia(a0),d2 ; get Sonic's speed
 		bpl.s	@nomodspeed
 		neg.w	d2		; modulus speed
@@ -198,7 +198,7 @@ Sonic_Animate:
 ; End of function Sonic_Animate
 
 anisize_char:	macro run,walk
-	dc.b	0,run/2,0,walk/2
+	dc.b	0,run,0,walk
 		endm
 
 Char_AniSize:	; CHAR ADD STUFF
