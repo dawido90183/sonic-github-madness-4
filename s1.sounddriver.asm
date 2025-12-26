@@ -229,7 +229,7 @@ ptr_mus38:	dc.l Music38
 ptr_mus39:	dc.l Music39
 ptr_mus3A:	dc.l Music3A
 ptr_mus3B:	dc.l Music3B
-;ptr_mus3C:	dc.l Music3C
+ptr_mus3C:	dc.l Music3C
 ;ptr_mus3D:	dc.l Music3D
 ;ptr_mus3E:	dc.l Music3E
 ;ptr_mus3F:	dc.l Music3F
@@ -2692,7 +2692,7 @@ Music33:	include	"sound/music/TG2000Tracks/MayoDed.asm"
 		even
 Music34:	include	"sound/music/TG2000Tracks/PuyoReject.asm"
 		even
-Music35:	include	"sound/music/TG2000Tracks/SFZShop.asm"
+Music35:	include	"sound/music/TG2000Tracks/NewShop.asm"
 		even
 Music36:	include	"sound/music/TG2000Tracks/JamesPond.asm"
 		even
@@ -2705,6 +2705,8 @@ Music39:	include	"sound/music/Extremely_intense_boss_song_for_someone.asm"
 Music3A:	include	"sound/music/DeltaTale fighte.asm"
 		even
 Music3B:	include	"sound/music/WINDOWS2000.asm"
+		even
+Music3C:	include	"sound/music/TG2000Tracks/DJKK.asm"
 		even
 ; ---------------------------------------------------------------------------
 ; Sound effect pointers
