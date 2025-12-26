@@ -1,0 +1,158 @@
+@internal:
+@internal_0: 	dc.w @internal_50-@internal
+@internal_2: 	dc.w @internal_51-@internal
+@internal_4: 	dc.w @internal_56-@internal
+@internal_6: 	dc.w @internal_5B-@internal
+@internal_8: 	dc.w @internal_60-@internal
+@internal_A: 	dc.w @internal_65-@internal
+@internal_C: 	dc.w @internal_6A-@internal
+@internal_E: 	dc.w @internal_6F-@internal
+@internal_10: 	dc.w @internal_74-@internal
+@internal_12: 	dc.w @internal_77-@internal
+@internal_14: 	dc.w @internal_7A-@internal
+@internal_16: 	dc.w @internal_7F-@internal
+@internal_18: 	dc.w @internal_84-@internal
+@internal_1A: 	dc.w @internal_89-@internal
+@internal_1C: 	dc.w @internal_8E-@internal
+@internal_1E: 	dc.w @internal_93-@internal
+@internal_20: 	dc.w @internal_98-@internal
+@internal_22: 	dc.w @internal_9D-@internal
+@internal_24: 	dc.w @internal_A2-@internal
+@internal_26: 	dc.w @internal_A7-@internal
+@internal_28: 	dc.w @internal_AC-@internal
+@internal_2A: 	dc.w @internal_B1-@internal
+@internal_2C: 	dc.w @internal_B6-@internal
+@internal_2E: 	dc.w @internal_BB-@internal
+@internal_30: 	dc.w @internal_C0-@internal
+@internal_32: 	dc.w @internal_C5-@internal
+@internal_34: 	dc.w @internal_CA-@internal
+@internal_36: 	dc.w @internal_CF-@internal
+@internal_38: 	dc.w @internal_D4-@internal
+@internal_3A: 	dc.w @internal_D9-@internal
+@internal_3C: 	dc.w @internal_DE-@internal
+@internal_3E: 	dc.w @internal_E3-@internal
+@internal_40: 	dc.w @internal_E8-@internal
+@internal_42: 	dc.w @internal_ED-@internal
+@internal_44: 	dc.w @internal_F2-@internal
+@internal_46: 	dc.w @internal_F7-@internal
+@internal_48: 	dc.w @internal_FC-@internal
+@internal_4A: 	dc.w @internal_101-@internal
+@internal_4C: 	dc.w @internal_106-@internal
+@internal_4E: 	dc.w @internal_10B-@internal
+@internal_50: 	dc.b $0
+@internal_51: 	dc.b $2
+	dc.b $F0, $0
+	dc.b $30, $10
+@internal_56: 	dc.b $2
+	dc.b $F0, $14
+	dc.b $30, $24
+@internal_5B: 	dc.b $2
+	dc.b $F0, $28
+	dc.b $40, $38
+@internal_60: 	dc.b $2
+	dc.b $F0, $3D
+	dc.b $40, $4D
+@internal_65: 	dc.b $2
+	dc.b $F0, $52
+	dc.b $30, $62
+@internal_6A: 	dc.b $2
+	dc.b $F0, $66
+	dc.b $0, $76
+@internal_6F: 	dc.b $2
+	dc.b $F0, $77
+	dc.b $0, $87
+@internal_74: 	dc.b $1
+	dc.b $C0, $88
+@internal_77: 	dc.b $1
+	dc.b $B0, $95
+@internal_7A: 	dc.b $2
+	dc.b $F0, $A1
+	dc.b $30, $B1
+@internal_7F: 	dc.b $2
+	dc.b $F0, $B5
+	dc.b $40, $C5
+@internal_84: 	dc.b $2
+	dc.b $F0, $CA
+	dc.b $40, $DA
+@internal_89: 	dc.b $2
+	dc.b $F0, $DF
+	dc.b $10, $EF
+@internal_8E: 	dc.b $2
+	dc.b $F0, $F1
+	dc.b $1, $1
+@internal_93: 	dc.b $2
+	dc.b $F1, $2
+	dc.b $11, $12
+@internal_98: 	dc.b $2
+	dc.b $F1, $14
+	dc.b $31, $24
+@internal_9D: 	dc.b $2
+	dc.b $F1, $28
+	dc.b $21, $38
+@internal_A2: 	dc.b $2
+	dc.b $F1, $3B
+	dc.b $11, $4B
+@internal_A7: 	dc.b $2
+	dc.b $F1, $4D
+	dc.b $21, $5D
+@internal_AC: 	dc.b $2
+	dc.b $F1, $60
+	dc.b $31, $70
+@internal_B1: 	dc.b $2
+	dc.b $F1, $74
+	dc.b $21, $84
+@internal_B6: 	dc.b $2
+	dc.b $F1, $87
+	dc.b $11, $97
+@internal_BB: 	dc.b $2
+	dc.b $F1, $99
+	dc.b $21, $A9
+@internal_C0: 	dc.b $2
+	dc.b $F1, $AC
+	dc.b $11, $BC
+@internal_C5: 	dc.b $2
+	dc.b $F1, $BE
+	dc.b $11, $CE
+@internal_CA: 	dc.b $2
+	dc.b $F1, $D0
+	dc.b $11, $E0
+@internal_CF: 	dc.b $2
+	dc.b $F1, $E2
+	dc.b $11, $F2
+@internal_D4: 	dc.b $2
+	dc.b $F1, $F4
+	dc.b $22, $4
+@internal_D9: 	dc.b $2
+	dc.b $F2, $7
+	dc.b $32, $17
+@internal_DE: 	dc.b $2
+	dc.b $F2, $1B
+	dc.b $22, $2B
+@internal_E3: 	dc.b $2
+	dc.b $F2, $2E
+	dc.b $22, $3E
+@internal_E8: 	dc.b $2
+	dc.b $F2, $41
+	dc.b $42, $51
+@internal_ED: 	dc.b $2
+	dc.b $F2, $56
+	dc.b $2, $66
+@internal_F2: 	dc.b $2
+	dc.b $F2, $67
+	dc.b $22, $77
+@internal_F7: 	dc.b $2
+	dc.b $F2, $7A
+	dc.b $22, $8A
+@internal_FC: 	dc.b $2
+	dc.b $F2, $8D
+	dc.b $12, $9D
+@internal_101: 	dc.b $2
+	dc.b $F2, $9F
+	dc.b $22, $AF
+@internal_106: 	dc.b $2
+	dc.b $F2, $B2
+	dc.b $42, $C2
+@internal_10B: 	dc.b $2
+	dc.b $F2, $C7
+	dc.b $22, $D7
+	even

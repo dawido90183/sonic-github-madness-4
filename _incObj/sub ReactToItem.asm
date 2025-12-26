@@ -222,6 +222,11 @@ Char_React: ; CHAR ADD STUFF
 	dc.b 0 ;react_char2 0,0,0,0,0,0,0,0
 	dc.b 0 ;react_char3 0,0,0,0,0,0,0,0
 	dc.b 0 ;react_char4 0,0,0,0,0,0,0,0
+	; Neco Arc
+	react_char1 1,0,0,0,0,0,0,0
+	react_char2 1,0,0,0,0,1,0,0
+	react_char3 0,1,0,0,1,1,0,0
+	dc.b 0 ;react_char4 0,0,0,0,0,0,0,0
 	; add next char here
 
 React_Enemy:

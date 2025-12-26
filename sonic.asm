@@ -23,7 +23,9 @@ Revision:	equ 1
 
 ZoneCount:	equ 6	; discrete zones are: GHZ, MZ, SYZ, LZ, SLZ, and SBZ
 
-CharCount: equ 6
+CharCount: equ 7
+
+SkipSplash: equ 1
 
 ; ===========================================================================
 
@@ -1894,6 +1896,7 @@ Char_Pal:
 	pal_char KiryuChan
 	pal_char Jeebler
 	pal_char MrBoss
+	pal_char NecoArc
 	; add next char here
 
 ; ---------------------------------------------------------------------------
@@ -2597,6 +2600,11 @@ GM_Splash:
 		move.w	VDP_Data_Splash(pc,d1.w),(a6)
 		addq.w	#2,d1
 		dbf.w	d0,@vdploop
+
+	if SkipSplash = 1
+		move.b	#id_Title,(v_gamemode).w ; PLEASESKIPTHISSHITPLEASEPLEASE
+		rts
+	endif
 
 		lea (Splash_Screen_Entries).l,a2
 	@load_next_splash:
@@ -3510,13 +3518,14 @@ sfx_type_char:	macro jump,hurt,die,start,win,ex1,ex2,ex3
 	endm
 	; ex 1 is used in... -> MoveCmd_Attack
 
-Char_SFX:
+Char_SFX: ; CHAR ADD STUFF
 	sfx_char sfx_Jump,sfx_Death,sfx_Death,sfx_Cash,sfx_Lamppost,0,0,0 ; Sonic
 	sfx_char sfx_Jump,sfx_Death,sfx_Death,sfx_Switch,sfx_Lamppost,0,0,0 ; GHM3_Guy
 	sfx_char sfx_MercJump,$96,$97,0,$98,$95,0,0 ; GHM3_Mercury
 	sfx_char $8D,$8E,$8F,$90,sfx_Lamppost,$91,0,0 ; KiryuChan
 	sfx_char sfx_Jump,sfx_Death,sfx_Death,sfx_Shield,sfx_Lamppost,0,0,0 ; Jeebler
 	sfx_char sfx_Jump,sfx_Death,sfx_Death,sfx_Collapse,sfx_Lamppost,0,0,0 ; MrBoss
+	sfx_char sfx_Jump,sfx_Death,sfx_Death,sfx_Collapse,sfx_Lamppost,0,0,0 ; NecoArc
 	; add next char here
 
 Char_SFX_Type:
@@ -3529,17 +3538,18 @@ Char_SFX_Type:
 	sfx_type_char @pcm,@pcm,@pcm,@pcm,@sfx,@pcm,@sfx,@sfx ; KiryuChan
 	dc.b @sfx ; sfx_type_char @sfx,@sfx,@sfx,@sfx,@sfx,@sfx,@sfx,@sfx ; Jeebler
 	dc.b @sfx ; sfx_type_char @sfx,@sfx,@sfx,@sfx,@sfx,@sfx,@sfx,@sfx ; MrBoss
+	dc.b @sfx ; sfx_type_char @sfx,@sfx,@sfx,@sfx,@sfx,@sfx,@sfx,@sfx ; NecoArc
 	; add next char here
-
+	even
 PlayCharSFX: ; d2 -> SFX in index (jump,hurt,die,start,win,ex1,ex2,ex3)
 	moveq	#0,d0
+	move.b	d2,d0
+	move.w	d0,d2
 	rept 2
 		add.w	(v_character).w,d0
 	endr
-	add.b	d2,d0
 	move.b	Char_SFX(pc,d0.w),d1
 
-	moveq	#0,d0
 	move.w	(v_character).w,d0
 	lsr.w	#2,d0
 	move.b	Char_SFX_Type(pc,d0.w),d0
@@ -7890,6 +7900,7 @@ Char_Map:	; CHAR ADD STUFF
 	dc.l	Map_KiryuChan
 	dc.l	Map_Jeebler
 	dc.l	Map_MrBoss
+	dc.l	Map_NecoArc
 	; add next char here
 
 Sonic_Main:	; Routine 0
@@ -7975,6 +7986,7 @@ Char_ModeTable:
 	modetable_char KiryuChan ; KiryuChan
 	modetable_char Sonic
 	modetable_char Sonic
+	modetable_char NecoArc
 	; add next char here
 		even
 
@@ -7984,6 +7996,7 @@ Char_ModeTable:
 
 	routines_char Sonic
 	routines_char KiryuChan
+	routines_char NecoArc
 	; add next char here
 
 ; ---------------------------------------------------------------------------
@@ -8039,6 +8052,7 @@ Ani_\name:	include	"!Characters\\\name\\Anim.asm"
 		anim_char KiryuChan
 		anim_char Jeebler
 		anim_char MrBoss
+		anim_char NecoArc
 
 
 ; ---------------------------------------------------------------------------
@@ -8091,6 +8105,7 @@ Char_InvMusic:
 	dc.b	bgm_VampireKiller ; KiryuChan (Placeholder music?)
 	dc.b	bgm_MM8StageSel ; Jeebler (Placeholder music?)
 	dc.b	bgm_Invincible ; Mr Boss (Placeholder music?)
+	dc.b	bgm_Invincible ; Neco Arc (Placeholder.)
 	; add next char here
 
 
@@ -9526,6 +9541,7 @@ DPLC_\name:	include	"!Characters\\\name\\DPLC.asm"
 	map_char KiryuChan
 	map_char Jeebler
 	map_char MrBoss
+	map_char NecoArc
 	; add next char here
 
 ; ---------------------------------------------------------------------------
@@ -9542,6 +9558,7 @@ Art_\name:	incbin	"!Characters\\\name\\Art.bin"
 	art_char KiryuChan
 	art_char Jeebler
 	art_char MrBoss
+	art_char NecoArc
 	; add next char here
 		even
 

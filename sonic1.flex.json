@@ -1,7 +1,7 @@
 {
     "Flex": 2,
     "name": "Sonic 1",
-    "node": "fe4e2561-81db-4e4a-be50-73572994e161",
+    "node": "40ff75a9-c137-46c2-a27d-7fb52a8d55d9",
     "objects": [
         {
             "uuid": "4f52c6cc-234c-4f4a-9a88-f78f8e0b9752",
@@ -99,7 +99,7 @@
                         "path": "!Characters/Sonic/DPLC.asm",
                         "label": ""
                     },
-                    "uuid": "40ff75a9-c137-46c2-a27d-7fb52a8d55d9"
+                    "uuid": "55ed03a3-cb2f-479d-af50-fadab02da007"
                 },
                 {
                     "name": "Kiryu",
@@ -248,6 +248,43 @@
                         "label": ""
                     },
                     "uuid": "cede454f-6702-40ab-b50c-6e25d3a052bc"
+                },
+                {
+                    "name": "Neco Arc",
+                    "palettes": [
+                        {
+                            "path": "!Characters/NecoArc/Palette - Normal.bin",
+                            "length": 1
+                        },
+                        {
+                            "path": "!Characters/NecoArc/Palette - Alt 1.bin",
+                            "length": 1
+                        },
+                        {
+                            "path": "!Characters/NecoArc/Palette - Alt 2.bin",
+                            "length": 1
+                        },
+                        {
+                            "path": "!Characters/NecoArc/Palette - Alt 3.bin",
+                            "length": 1
+                        }
+                    ],
+                    "format": "Sonic 1 Old.js",
+                    "art": {
+                        "path": "!Characters/NecoArc/Art.bin",
+                        "compression": "Uncompressed",
+                        "offset": 0
+                    },
+                    "mappings": {
+                        "path": "!Characters/NecoArc/Mappings.asm",
+                        "label": "@internal"
+                    },
+                    "dplcs": {
+                        "enabled": true,
+                        "path": "!Characters/NecoArc/DPLC.asm",
+                        "label": "@internal"
+                    },
+                    "uuid": "40ff75a9-c137-46c2-a27d-7fb52a8d55d9"
                 }
             ],
             "isDirectory": true,
