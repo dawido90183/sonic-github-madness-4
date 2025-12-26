@@ -227,6 +227,12 @@ Char_React: ; CHAR ADD STUFF
 	react_char2 1,0,0,0,0,1,0,0
 	react_char3 0,1,0,0,1,1,0,0
 	dc.b 0 ;react_char4 0,0,0,0,0,0,0,0
+
+	; PrepucioLopez
+	react_char1 0,0,1,1,0,0,0,0
+	dc.b 0 ;react_char2 0,0,0,0,0,0,0,0
+	dc.b 0 ;react_char3 0,0,0,0,0,0,0,0
+	dc.b 0 ;react_char4 0,0,0,0,0,0,0,0
 	; add next char here
 
 React_Enemy:
@@ -401,7 +407,7 @@ KillSonic:
 		bne.s	@dontdie	; if yes, branch
 		move.b	#0,(v_invinc).w	; remove invincibility
 		move.b	#6,obRoutine(a0)
-		bsr.w	Sonic_ResetOnFloor
+		jsr	Sonic_ResetOnFloor
 		bset	#1,obStatus(a0)
 		move.w	#-$700,obVelY(a0)
 		move.w	#0,obVelX(a0)

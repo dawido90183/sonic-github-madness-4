@@ -12,6 +12,7 @@ Char_Ani:	; CHAR ADD STUFF
 	dc.l	Ani_Jeebler
 	dc.l	Ani_MrBoss
 	dc.l	Ani_NecoArc
+	dc.l	Ani_PrepucioLopez
 	; add next char here
 
 Sonic_Animate:
@@ -211,4 +212,5 @@ Char_AniSize:	; CHAR ADD STUFF
 	anisize_char	8,8 ; jeebler
 	anisize_char	2,2 ; mr boss
 	anisize_char	3,0 ; neco arc
+	anisize_char	0,0 ; PrepucioLopez
 	; add next char here
