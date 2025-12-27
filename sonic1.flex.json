@@ -1,8 +1,28 @@
 {
     "Flex": 2,
     "name": "Sonic 1",
-    "node": "c9abaf64-a3bf-493c-9ee1-eb3479be470c",
+    "node": "f217e579-d89d-4455-9d4f-2404610199b9",
     "objects": [
+        {
+            "uuid": "f217e579-d89d-4455-9d4f-2404610199b9",
+            "format": "Sonic 1.js",
+            "name": "huid",
+            "palettes": [],
+            "art": {
+                "path": "artnem\\HUD.bin",
+                "compression": "Nemesis",
+                "offset": 0
+            },
+            "mappings": {
+                "path": "_maps\\HUD.asm",
+                "label": ""
+            },
+            "dplcs": {
+                "enabled": false,
+                "path": "",
+                "label": ""
+            }
+        },
         {
             "uuid": "c9abaf64-a3bf-493c-9ee1-eb3479be470c",
             "format": "Sonic 1.js",
@@ -349,7 +369,7 @@
                     "format": "Sonic 1.js",
                     "palettes": [
                         {
-                            "path": "!Characters/Sonic/Palette - Normal.bin",
+                            "path": "palette\\Labyrinth Zone.bin",
                             "length": 1
                         }
                     ],
