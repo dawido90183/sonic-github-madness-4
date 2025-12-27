@@ -25,7 +25,7 @@ ZoneCount:	equ 6	; discrete zones are: GHZ, MZ, SYZ, LZ, SLZ, and SBZ
 
 CharCount: equ 8
 
-SkipSplash: equ 1
+SkipSplash: equ 0
 
 ; ===========================================================================
 
@@ -2693,6 +2693,7 @@ splash_entry macro art,tilemap,palette,size,music_id,duration_in_frames
     splash_entry Nem_Splash_Crispbilly,Eni_Splash_Crispbilly,Pal_Splash_Crispbilly,$40,$1B,200
     splash_entry Nem_Splash_Bonniewtf,Eni_Splash_Bonniewtf,Pal_Splash_Bonniewtf,$40,$1B,200
     splash_entry Nem_Splash_Rick,Eni_Splash_Rick,Pal_Splash_Rick,$40,$2F,480
+	splash_entry Nem_Splash_W,Eni_Splash_W,Pal_Splash_W,$40,$3B,480
 
     dc.l	-1 ; end marker    
 
@@ -10368,6 +10369,12 @@ Nem_Splash_Mines: incbin "splash/Art - Mines.bin"
 Eni_Splash_Mines: incbin "splash/Map - Mines.bin"
         even
 Pal_Splash_Mines: incbin "splash/Pal - Mines.bin"
+        even
+Nem_Splash_W: incbin "splash/Art - W.bin"
+        even
+Eni_Splash_W: incbin "splash/Map - W.bin"
+        even
+Pal_Splash_W: incbin "splash/Pal - W.bin"
         even
 ; ===========================================================================
 			

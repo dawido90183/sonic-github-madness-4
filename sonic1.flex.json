@@ -1,8 +1,33 @@
 {
     "Flex": 2,
     "name": "Sonic 1",
-    "node": "40ff75a9-c137-46c2-a27d-7fb52a8d55d9",
+    "node": "c9abaf64-a3bf-493c-9ee1-eb3479be470c",
     "objects": [
+        {
+            "uuid": "c9abaf64-a3bf-493c-9ee1-eb3479be470c",
+            "format": "Sonic 1.js",
+            "name": "WIN",
+            "palettes": [
+                {
+                    "path": "splash\\Pal - W.bin",
+                    "length": 1
+                }
+            ],
+            "art": {
+                "path": "",
+                "compression": "Uncompressed",
+                "offset": 0
+            },
+            "mappings": {
+                "path": "",
+                "label": ""
+            },
+            "dplcs": {
+                "enabled": false,
+                "path": "",
+                "label": ""
+            }
+        },
         {
             "uuid": "4f52c6cc-234c-4f4a-9a88-f78f8e0b9752",
             "format": "Sonic 1.js",
