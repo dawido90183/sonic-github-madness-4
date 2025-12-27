@@ -376,7 +376,7 @@ SegaGM_Setup:
 
 MainGameLoop:
 		move.b	(v_gamemode).w,d0 ; load Game Mode
-		andi.w	#$3C,d0	; limit Game Mode value to $1C max (change to a maximum of 7C to add more game modes)
+		andi.w	#$7C,d0	; limit Game Mode value to $1C max (change to a maximum of 7C to add more game modes)
 		jsr	GameModeArray(pc,d0.w) ; jump to apt location in ROM
 		bra.s	MainGameLoop	; loop indefinitely
 ; ===========================================================================
@@ -415,7 +415,12 @@ ptr_GM_SegaEUPC:	bra.w	GM_SegaEU		; PLACEHOLDER
 ptr_GM_ColdBrew:	jmp	(GM_ColdBrew).l		; Cold Brew ($34)
 
 ptr_GM_NTOSKRNL:	jmp	(GM_NTOSKRNL).l		; NTOSKRNL ($38)
-		rts	
+
+ptr_GM_MultiFC:		jmp	(GM_MultiFC).l		; GM_MultiFC ($3C)
+
+ptr_GM_SpongeBob:	jmp (GM_SpongeBob).l	; I'm spunchbob! ($40)
+		rts
+
 ; ===========================================================================
 
 CheckSumError:
@@ -619,12 +624,7 @@ VBla_0C:
 		move.w	(v_hbla_hreg).w,(a5)
 		writeVRAM	v_hscrolltablebuffer,$380,vram_hscroll
 		writeVRAM	v_spritetablebuffer,$280,vram_sprites
-		tst.b	(f_sonframechg).w
-		beq.s	@nochg
-		writeVRAM	VDP_Command_Buffer,$2E0,vram_sonic
-		move.b	#0,(f_sonframechg).w
-
-	@nochg:
+		jsr	(Process_DMA).l
 
 		movem.l	(v_screenposx).w,d0-d7
 		movem.l	d0-d7,(v_screenposx_dup).w
@@ -10380,6 +10380,10 @@ Pal_Splash_W: incbin "splash/Pal - W.bin"
 			
 		include "conimodes\cold brew\GM_ColdBrew.asm"
 		include "conimodes\winxp\GM_NTOSKRNL.asm"
+		include "conimodes\multiFC\GM_MultiFC.asm"
+
+; ==========================================================================
+		include	"ATOGKSpongeBob/MAIN.asm"	; Code
 
 ; ==============================================================
 ; --------------------------------------------------------------

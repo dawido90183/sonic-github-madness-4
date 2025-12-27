@@ -81,12 +81,16 @@ fillVRAM:	macro value,length,loc
 ; input: source, destination, width [cells], height [cells]
 ; ---------------------------------------------------------------------------
 
-copyTilemap:	macro source,destination,width,height
+copyTilemap:	macro source,destination,width,height,jump
 		lea	(source).l,a1
 		locVRAM	\destination,d0
 		moveq	#width,d1
 		moveq	#height,d2
-		bsr.w	TilemapToVRAM
+		if (narg=4)
+			bsr.w	TilemapToVRAM
+		else
+			jsr TilemapToVRAM
+		endif
 		endm
 
 ; ---------------------------------------------------------------------------
