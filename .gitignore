@@ -4,8 +4,10 @@ SonLVL INI Files/dllcache
 *.lst
 *.sym
 errors.txt
+errors_debug.txt
 s1built.bin
 ghm4built.bin
+ghm4built.debug.bin
 sndtest.bin
 
 splash/Splash Screens to be Converted (Resource Suite)/RetroGraphicsToolkit (Conversion Tool)/RetroGraphicsToolkit.exe
