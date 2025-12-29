@@ -366,12 +366,12 @@ SegaGM_Setup:
 		jsr     MegaPCM_LoadSampleTable
 		tst.w   d0                      ; was sample table loaded successfully?
 		beq.s   @SampleTableOk          ; if yes, branch
-; 	ifdef __DEBUG__
-; 		; for MD Debugger v.2.5 or above
-; 		RaiseError "MegaPCM_LoadSampleTable returned %<.b d0>", MPCM_Debugger_LoadSampleTableException
-; 	else
+	if def(__DEBUG__)
+		; for MD Debugger v.2.5 or above
+		RaiseError "MegaPCM_LoadSampleTable returned %<.b d0>", MPCM_Debugger_LoadSampleTableException
+	else
 		illegal
-; 	endif
+	endif
 	@SampleTableOk:
 
 MainGameLoop:
@@ -2751,8 +2751,7 @@ Tit_ClrObj0:
  		tst.w   (v_sonicteam+Petertime).w
 		bne.s	.wait
 .skip:
-        jsr     GitHubScreen
-		rts	
+		jmp	GitHubScreen
 
 FinalTitle:
 		bsr.w	ClearPLC	
@@ -3433,67 +3432,7 @@ LevelMenuText:
 	lstxt "CHAR SELECT     "
 	even
 
-GM_CharSelect:
-		move.b	#bgm_Stop,d0
-		bsr.w	PlaySound_Special ; stop music
-		bsr.w	ClearPLC
-		bsr.w	PaletteFadeOut
-		disable_ints
-		clr.b	(f_wtr_state).w
-		bsr.w	ClearScreen
-
-		lea	(v_objspace).w,a1
-		moveq	#0,d0
-		move.w	#$7FF,d1
-
-	@clrobj:
-		move.l	d0,(a1)+
-		dbf	d1,@clrobj	; fill object space ($D000-$EFFF) with 0
-
-		locVRAM 0
-		lea	(Nem_CharSelBG).l,a0 ; art
-		bsr.w	NemDec
-
-		lea	($FF0000).l,a1
-		lea	(Eni_CharSelBG).l,a0 ; tilemap
-		clr.w	d0
-		bsr.w	EniDec
-
-		copyTilemap	$FF0000,$E000,$27,$1B
-
-		locVRAM $20*$20
-		lea	(Nem_CharSelFG).l,a0 ; art
-		bsr.w	NemDec
-
-		lea	($FF0000).l,a1
-		lea	(Eni_CharSelFG).l,a0 ; tilemap
-		move.w	#$20,d0
-		bsr.w	EniDec
-
-		copyTilemap	$FF0000,$C000,$27,$1B
-
-		moveq	#palid_CharSel,d0
-		bsr.w	PalLoad1	; load char select palette
-
-		move.b	#bgm_Basillica,d0
-		bsr.w	PlaySound_Special ; stop music
-
-		bsr.w	PaletteFadeIn
-		bsr.w	LoadCharacterCharSelect
-CharSelect_Loop:
-		move.b	#4,(v_vbla_routine).w
-		bsr.w	WaitForVBla
-		bsr.w	RunPLC
-		tst.l	(v_plc_buffer).w
-		bne.s	CharSelect_Loop
-		bra.s	CharSelect_Loop
-		rts
-
-LoadCharacterCharSelect:
-		lea (v_pal_dry+$60).l,a3
-		bsr.s	LoadPlayerPalette_main
-		; load rest of stuff I guess
-		rts
+	include "CharSelect\CharSelect.asm"
 
 LoadPlayerPalette:
 		lea (v_pal_dry).l,a3
