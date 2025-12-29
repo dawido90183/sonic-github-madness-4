@@ -70,8 +70,8 @@ Deform_GHZ:
 		move.w	(v_bgscreenposy).w,(v_bgscrposy_vdp).w
 		move.w	#$6F,d1
 		sub.w	d4,d1
-;		move.w	(v_screenposx).w,d0			; CONI - title checks in a routine now unused there, pfft...
-;		cmpi.b	#id_Title,(v_gamemode).w
+		move.w	(v_screenposx).w,d0
+;		cmpi.b	#id_Title,(v_gamemode).w			; CONI - title checks in a routine now unused there, pfft...
 ;		bne.s	loc_633C
 ;		moveq	#0,d0
 ;
