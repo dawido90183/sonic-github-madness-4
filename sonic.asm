@@ -2775,6 +2775,9 @@ FinalTitle:
 		move.b	#0,(v_char_pal).w
 
 		disable_ints
+		locVRAM	0
+		lea	(Nem_TitleBg).l,a0 ; load GHZ patterns
+		bsr.w	NemDec
 		locVRAM	$4000
 		lea	(Nem_TitleFg).l,a0 ; load title screen patterns
 		bsr.w	NemDec
@@ -2794,37 +2797,42 @@ FinalTitle:
 		move.w	#0,(v_debuguse).w ; disable debug item placement mode
 		move.w	#0,(f_demo).w	; disable debug mode
 		move.w	#0,($FFFFFFEA).w ; unused variable
+		move.w	#0,(v_title_ccount).w	;4cheaters
 	;	move.w	#(id_GHZ<<8),(v_zone).w	; set level to GHZ (00)
 		move.w	#0,(v_pcyc_time).w ; disable palette cycling
-		bsr.w	DeformLayers
-		lea	(v_16x16).w,a1
-		lea	(Blk16_GHZ).l,a0 ; load GHZ 16x16 mappings
-		move.w	#0,d0
-		bsr.w	EniDec
-		lea	(Blk256_GHZ).l,a0 ; load GHZ 256x256 mappings
-		lea	(v_256x256).l,a1
-		bsr.w	KosDec
-		bsr.w	LevelLayoutLoad
+;		bsr.w	DeformLayers		; CONI - NO NEED
+;		lea	(v_16x16).w,a1
+;		lea	(Blk16_GHZ).l,a0 ; load GHZ 16x16 mappings
+;		move.w	#0,d0
+;		bsr.w	EniDec
+;		lea	(Blk256_GHZ).l,a0 ; load GHZ 256x256 mappings
+;		lea	(v_256x256).l,a1
+;		bsr.w	KosDec
+;		bsr.w	LevelLayoutLoad
 		bsr.w	PaletteWhiteOut
 		disable_ints
 		bsr.w	ClearScreen
 		ResetDMAQueue
-		lea	(vdp_control_port).l,a5
-		lea	(vdp_data_port).l,a6
-		lea	(v_bgscreenposx).w,a3
-		lea	(v_lvllayout+$40).w,a4
-		move.w	#$6000,d2
-		bsr.w	DrawChunks
+;		lea	(vdp_control_port).l,a5
+;		lea	(vdp_data_port).l,a6
+;		lea	(v_bgscreenposx).w,a3
+;		lea	(v_lvllayout+$40).w,a4
+;		move.w	#$6000,d2
+;		bsr.w	DrawChunks
 		lea	($FF0000).l,a1
-		lea	(Eni_Title).l,a0 ; load title screen mappings
+		lea	(Eni_TitleBg).l,a0 ; load title screen BG mappings
+		move.w	#0,d0
+		bsr.w	EniDec
+
+		copyTilemap	$FF0000,$E000,$27,$1B
+
+		lea	($FF0000).l,a1
+		lea	(Eni_TitleFg).l,a0 ; load title screen FG mappings
 		move.w	#0,d0
 		bsr.w	EniDec
 
 		copyTilemap	$FF0000,$C30A,$21,$15
 
-		locVRAM	0
-		lea	(Nem_GHZ_1st).l,a0 ; load GHZ patterns
-		bsr.w	NemDec
 		moveq	#palid_Title,d0	; load title screen palette
 		bsr.w	PalLoad1
 		move.b	#0,(f_debugmode).w ; disable debug mode
@@ -2848,7 +2856,7 @@ FinalTitle:
 		move.b	#id_PSBTM,(v_ttlsonichide).w ; load object which hides part of Sonic
 		move.b	#2,(v_ttlsonichide+obFrame).w
 		jsr	(ExecuteObjects).l
-		bsr.w	DeformLayers
+;		bsr.w	DeformLayers		; CONI - NO NEED
 		jsr	(BuildSprites).l
 		moveq	#plcid_Main,d0
 		bsr.w	NewPLC
@@ -2863,21 +2871,20 @@ Tit_MainLoop:
 		move.b	#4,(v_vbla_routine).w
 		bsr.w	WaitForVBla
 		jsr	(ExecuteObjects).l
-		bsr.w	DeformLayers
+;		bsr.w	DeformLayers		; CONI - NO NEED
 		jsr	(BuildSprites).l
 		; bsr.w	PCycle_Title
 		bsr.w	RunPLC
-		move.w	(v_objspace+obX).w,d0
-		addq.w	#2,d0
-		move.w	d0,(v_objspace+obX).w ; move Sonic to the right
-		cmpi.w	#$FFFF,d0	; has Sonic object passed $FFFF on x-axis?
-		blo.s	Tit_ChkRegion	; if not, branch
-
-		move.b	#id_Sega,(v_gamemode).w ; go to Sega screen
-		rts	
+;		move.w	(v_objspace+obX).w,d0	; CONI - NO SCROLLING DONE
+;		addq.w	#2,d0
+;		move.w	d0,(v_objspace+obX).w ; move Sonic to the right
+;		cmpi.w	#$FFFF,d0	; has Sonic object passed $FFFF on x-axis? - odd unused check from the original
+;		blo.s	Tit_ChkRegion	; if not, branch
+;		move.b	#id_Sega,(v_gamemode).w ; go to Sega screen
+;		rts	
 ; ===========================================================================
 
-Tit_ChkRegion:
+;Tit_ChkRegion:
 		btst	#bitA,(v_jpadpress1).w ; is pressing A?
 		beq.s	@nocharswap
 
@@ -2926,11 +2933,14 @@ Tit_EnterCheat:
 		lsr.w	#1,d1
 		andi.w	#3,d1
 		beq.s	Tit_PlayRing
-		tst.b	(v_megadrive).w
-		bpl.s	Tit_PlayRing
+		
+		; CONI - i removed this check to ensure the credits cheat is accessible
+		; C twice for debug, twice again for pause features, twice again again for credits
+		; i made sure to clear the C press variable when starting over from the gamemode
+;		tst.b	(v_megadrive).w
+;		bpl.s	Tit_PlayRing
 		moveq	#1,d1
 		move.b	d1,1(a0,d1.w)	; cheat depends on how many times C is pressed
-
 	Tit_PlayRing:
 		move.b	#1,(a0,d1.w)	; activate cheat
 		move.b	#sfx_Ring,d0
@@ -3007,9 +3017,9 @@ LevelSelect:
 		move.w	(v_levselsound).w,d0
 		tst.b	(f_creditscheat).w ; is Japanese Credits cheat on?
 		beq.s	LevSel_PlaySnd	; if not, branch
-		cmpi.w	#$9F,d0		; is sound $9F being played?
+		cmpi.w	#$EF,d0		; is sound $EF being played?
 		beq.s	LevSel_Ending	; if yes, branch
-		cmpi.w	#$9E,d0		; is sound $9E being played?
+		cmpi.w	#$EE,d0		; is sound $EE being played?
 		beq.s	LevSel_Credits	; if yes, branch
 
 LevSel_PlaySnd:
@@ -3131,16 +3141,16 @@ GotoDemo:
 loc_33B6:
 		move.b	#4,(v_vbla_routine).w
 		bsr.w	WaitForVBla
-		bsr.w	DeformLayers
-		bsr.w	PaletteCycle
+;		bsr.w	DeformLayers		; CONI - NO NEED
+;		bsr.w	PaletteCycle		; CONI - NO NEED
 		bsr.w	RunPLC
-		move.w	(v_objspace+obX).w,d0
-		addq.w	#2,d0
-		move.w	d0,(v_objspace+obX).w
-		cmpi.w	#$1C00,d0
-		blo.s	loc_33E4
-		move.b	#id_Sega,(v_gamemode).w
-		rts	
+;		move.w	(v_objspace+obX).w,d0 ; uhm not this shit again
+;		addq.w	#2,d0					; hey cna i get miku if merch pweeease
+;		move.w	d0,(v_objspace+obX).w
+;		cmpi.w	#$1C00,d0
+;		blo.s	loc_33E4
+;		move.b	#id_Sega,(v_gamemode).w
+;		rts	
 ; ===========================================================================
 
 loc_33E4:
@@ -9461,7 +9471,11 @@ Eni_SegaJP:	incbin	"tilemaps\Sega Logo JP.bin" ; JP Sega logo (mappings)
 Eni_SegaCraneJP:	incbin	"tilemaps\Sega Crane JP.bin" ; JP Sega crane (mappings)
 		even
 
-Eni_Title:	incbin	"tilemaps\Title Screen.bin" ; title screen foreground (mappings)
+Eni_TitleBg:	incbin	"tilemaps\Title Screen Background.bin" ; title screen background (mappings)
+		even
+Eni_TitleFg:	incbin	"tilemaps\Title Screen Foreground.bin" ; title screen foreground (mappings)
+		even
+Nem_TitleBg:	incbin	"artnem\Title Screen Background.bin"
 		even
 Nem_TitleFg:	incbin	"artnem\Title Screen Foreground.bin"
 		even

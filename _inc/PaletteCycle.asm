@@ -31,9 +31,9 @@ PCycle_Index:	dc.w PCycle_GHZ-PCycle_Index
 ; ||||||||||||||| S U B R O U T I N E |||||||||||||||||||||||||||||||||||||||
 
 
-PCycle_Title:
-		lea	(Pal_TitleCyc).l,a0
-		bra.s	PCycGHZ_Go
+;PCycle_Title:				; THIS IS UNUSED
+;		lea	(Pal_TitleCyc).l,a0
+;		bra.s	PCycGHZ_Go
 ; ===========================================================================
 
 PCycle_GHZ:
