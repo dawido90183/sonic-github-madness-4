@@ -17,6 +17,9 @@ BossDioMildanner:
 		dc.w BossDioMildanner_IntroMain-@index
 		dc.w BossDioMildanner_AwaitPLCBoss-@index
 		dc.w BossDioMildanner_BossMain-@index
+		dc.w BossDioMildanner_BossAttackRun-@index
+		dc.w BossDioMildanner_BossAttackSmash-@index
+		dc.w BossDioMildanner_BossAttackHops-@index
 
 BossDioMildanner_SetFadeOut:
 		move.w	#0,(v_pal_dry+$40).w ; bg is black
@@ -49,7 +52,6 @@ BossDioMildanner_SetupBoss:
 		move.w	#-$A00,obVelY(a0)
 		move.w	#0,obVelX(a0)
 
-; 		move.b	#$F,obColType(a0)
 		move.b	#$A1,obColType(a0)
 		move.b	#8,obColProp(a0) ; set number of hits to 8
 		move.b	#4,obPriority(a0)
@@ -122,6 +124,9 @@ BossDioMildanner_IntroMain:
 		move.b	#0,obAnim(a0) ; @idle
 		subi.w	#34,obY(a0) ; go up due to size
 
+		move.b	#bgm_AtDoomsGate,d0
+		jsr	(PlaySound_Special)
+
 		; size initially is 20x40
 		move.b	#56,obActWid(a0)
 		move.b	#56/2,obWidth(a0)
@@ -133,7 +138,10 @@ BossDioMildanner_IntroMain:
 BossDioMildanner_AwaitPLCBoss:
 		tst.l	(v_plc_buffer).w
 		bne.s	@ok
+		move.b	#$F,obColType(a0)
 		addq.b	#2,	obRoutine(a0)
+		move.b	#1,$30(a0) ; attack timer
+		move.b	#0,$32(a0) ; attack counter
 	@ok:
 		lea (DioDannerAni_Boss).l,a1
 		jsr	(AnimateSprite).l
@@ -141,9 +149,58 @@ BossDioMildanner_AwaitPLCBoss:
 ; ---------------------------------------------------------------------------
 
 BossDioMildanner_BossMain:
+		subq.b	#1,$30(a0)
+		beq.s	@next_attack
 		lea (DioDannerAni_Boss).l,a1
 		jsr	(AnimateSprite).l
 		jmp	(DisplaySprite).l
+	@next_attack:
+		move.b	#$A1,obColType(a0)
+		clr.w	d0
+		move.b	$32(a0),d0
+		cmpi.b	#3,d0
+		blt.s	@ok
+		clr.b	d0
+	@ok:
+		addq.b	#1,d0
+		move.b	d0,$32(a0)
+
+		add.b	d0,d0
+		add.b	d0,obRoutine(a0)
+
+		move.w	@indexsetup-2(pc,d0.w),d1
+		jmp	@indexsetup-2(pc,d1.w)
+
+	@indexsetup:
+		dc.w BossDioMildanner_SetupAttackRun-@indexsetup
+		dc.w BossDioMildanner_SetupAttackSmash-@indexsetup
+		dc.w BossDioMildanner_SetupAttackHops-@indexsetup
+
+BossDioMildanner_SetupAttackRun: ; jump to the left of the screen then go run
+		move.b	#2,obAnim(a0) ; @jump
+		bra.s	BossDioMildanner_Display
+BossDioMildanner_SetupAttackSmash:
+		move.b	#2,obAnim(a0) ; @jump
+		bra.s	BossDioMildanner_Display
+
+BossDioMildanner_SetupAttackHops:
+		move.b	#2,obAnim(a0) ; @jump
+; 		bra.s	BossDioMildanner_Display
+
+BossDioMildanner_Display:
+		lea (DioDannerAni_Boss).l,a1
+		jsr	(AnimateSprite).l
+		jmp	(DisplaySprite).l
+
+BossDioMildanner_BossAttackRun:
+		bra.s	BossDioMildanner_Display
+
+BossDioMildanner_BossAttackSmash:
+		bra.s	BossDioMildanner_Display
+
+BossDioMildanner_BossAttackHops:
+		bra.s	BossDioMildanner_Display
+
 ; ---------------------------------------------------------------------------
 Map_DioDanner_Intro:	include "_incObj\DioMildanner\Map - Intro.asm"
 	even
