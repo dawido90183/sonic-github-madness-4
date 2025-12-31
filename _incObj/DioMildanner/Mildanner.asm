@@ -17,8 +17,13 @@ BossDioMildanner:
 		dc.w BossDioMildanner_IntroMain-@index
 		dc.w BossDioMildanner_AwaitPLCBoss-@index
 		dc.w BossDioMildanner_BossMain-@index
-		dc.w BossDioMildanner_BossAttackRun-@index
+	; attack index
+		dc.w BossDioMildanner_BossAttackJump2Side-@index
 		dc.w BossDioMildanner_BossAttackSmash-@index
+		dc.w BossDioMildanner_BossAttackJump2Side-@index
+	; post jump index
+		dc.w BossDioMildanner_BossAttackRun-@index
+		dc.w 0
 		dc.w BossDioMildanner_BossAttackHops-@index
 
 BossDioMildanner_SetFadeOut:
@@ -140,7 +145,7 @@ BossDioMildanner_AwaitPLCBoss:
 		bne.s	@ok
 		move.b	#$F,obColType(a0)
 		addq.b	#2,	obRoutine(a0)
-		move.b	#1,$30(a0) ; attack timer
+		move.w	#1,$30(a0) ; attack timer
 		move.b	#0,$32(a0) ; attack counter
 	@ok:
 		lea (DioDannerAni_Boss).l,a1
@@ -149,12 +154,14 @@ BossDioMildanner_AwaitPLCBoss:
 ; ---------------------------------------------------------------------------
 
 BossDioMildanner_BossMain:
-		subq.b	#1,$30(a0)
-		beq.s	@next_attack
+		subq.w	#1,$30(a0)
+		bmi.s	@next_attack
 		lea (DioDannerAni_Boss).l,a1
 		jsr	(AnimateSprite).l
 		jmp	(DisplaySprite).l
+
 	@next_attack:
+		move.b  #0,ob2ndRout(a0)
 		move.b	#$A1,obColType(a0)
 		clr.w	d0
 		move.b	$32(a0),d0
@@ -167,39 +174,60 @@ BossDioMildanner_BossMain:
 
 		add.b	d0,d0
 		add.b	d0,obRoutine(a0)
-
-		move.w	@indexsetup-2(pc,d0.w),d1
-		jmp	@indexsetup-2(pc,d1.w)
-
-	@indexsetup:
-		dc.w BossDioMildanner_SetupAttackRun-@indexsetup
-		dc.w BossDioMildanner_SetupAttackSmash-@indexsetup
-		dc.w BossDioMildanner_SetupAttackHops-@indexsetup
-
-BossDioMildanner_SetupAttackRun: ; jump to the left of the screen then go run
-		move.b	#2,obAnim(a0) ; @jump
-		bra.s	BossDioMildanner_Display
-BossDioMildanner_SetupAttackSmash:
-		move.b	#2,obAnim(a0) ; @jump
-		bra.s	BossDioMildanner_Display
-
-BossDioMildanner_SetupAttackHops:
-		move.b	#2,obAnim(a0) ; @jump
-; 		bra.s	BossDioMildanner_Display
+		;bra.s	BossDioMildanner_Display
 
 BossDioMildanner_Display:
 		lea (DioDannerAni_Boss).l,a1
 		jsr	(AnimateSprite).l
 		jmp	(DisplaySprite).l
 
-BossDioMildanner_BossAttackRun:
+BossDioMildanner_BossAttackJump2Side: ; Pre attack to jump to a side of the screen
+		tst.b ob2ndRout(a0)
+		bne.s	@dojump
+		move.b	#2,obAnim(a0) ; @jump
+		move.b	#1,ob2ndRout(a0)
+		move.w	#-$A00,obVelY(a0)
+
+		lea (v_player).l,a1
+		move.w	obX(a1),d0
+		sub.w	#$22E8,d0 ; middle of arena
+
+		move.b	#1,obStatus(a0)
+		move.w	#$23C0,$34(a0) ; target X pos
+
+		tst.w	d0
+		bpl.s	BossDioMildanner_Display
+		; go right
+		move.b	#0,obStatus(a0)
+		move.w	#$2200,$34(a0) ; target X pos
+
 		bra.s	BossDioMildanner_Display
+	@dojump:
+		move.w	obX(a0),d0
+		sub.w	$34(a0),d0
+		asr.w	#4,d0
+		sub.w	d0,obVelX(a0)
+
+	@goalreached:
+		jsr (ObjectFall)
+		tst.w	obVelY(a0)
+		bmi.w	BossDioMildanner_Display
+		; go to y $34C
+		cmpi.w	#$32A,obY(a0)
+		blt.w	BossDioMildanner_Display
+
+		move.w	#$32A,obY(a0)
+		addq.b	#6,obRoutine(a0)
+		bra.w	BossDioMildanner_Display
+
+BossDioMildanner_BossAttackRun:
+		bra.w	BossDioMildanner_Display
 
 BossDioMildanner_BossAttackSmash:
-		bra.s	BossDioMildanner_Display
+		bra.w	BossDioMildanner_Display
 
 BossDioMildanner_BossAttackHops:
-		bra.s	BossDioMildanner_Display
+		bra.w	BossDioMildanner_Display
 
 ; ---------------------------------------------------------------------------
 Map_DioDanner_Intro:	include "_incObj\DioMildanner\Map - Intro.asm"
@@ -237,7 +265,7 @@ DioDannerAni_Boss: dc.w @idle-DioDannerAni_Boss
 	even
 @runattack: dc.b 3,3,4,5,6,7,afBack,4
 	even
-@jump:	dc.b 8,8,9,$A,afEnd
+@jump:	dc.b 8,8,9,$A,afBack,1
 	even
 @fall:	dc.b 2,$B,$B,$B,$B,$C,$D,afBack,2
 	even
