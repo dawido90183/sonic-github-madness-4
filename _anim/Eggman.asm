@@ -23,11 +23,11 @@ Ani_Eggman:	dc.w @ship-Ani_Eggman
 		even
 @facelaugh:	dc.b 4,	3, 4, afEnd
 		even
-@facehit:	dc.b $4, 5, 7,  8, 7, afBack, 2
+@facehit:	dc.b $4, 5, 7,  8, 7, afBack, 3
 		even
 @facepanic:	dc.b 3,	6, 1, afEnd
 		even
-@blank:		dc.b $F, $A, afEnd
+@blank:		dc.b $F, $B, afEnd
 		even
 @flame1:	dc.b 3,	9, $A, afEnd
 		even
