@@ -143,7 +143,7 @@ BossDioMildanner_IntroMain:
 BossDioMildanner_AwaitPLCBoss:
 		tst.l	(v_plc_buffer).w
 		bne.s	@ok
-		move.b	#$F,obColType(a0)
+		;move.b	#$F,obColType(a0)
 		addq.b	#2,	obRoutine(a0)
 		move.w	#1,$30(a0) ; attack timer
 		move.b	#0,$32(a0) ; attack counter
@@ -205,7 +205,7 @@ BossDioMildanner_BossAttackJump2Side: ; Pre attack to jump to a side of the scre
 	@dojump:
 		move.w	obX(a0),d0
 		sub.w	$34(a0),d0
-		asr.w	#4,d0
+		asr.w	#2,d0
 		sub.w	d0,obVelX(a0)
 
 	@goalreached:
@@ -213,14 +213,55 @@ BossDioMildanner_BossAttackJump2Side: ; Pre attack to jump to a side of the scre
 		tst.w	obVelY(a0)
 		bmi.w	BossDioMildanner_Display
 		; go to y $34C
-		cmpi.w	#$32A,obY(a0)
+		cmpi.w	#$328,obY(a0)
 		blt.w	BossDioMildanner_Display
 
-		move.w	#$32A,obY(a0)
+		move.w	#$328,obY(a0)
+
+		move.b	#0,ob2ndRout(a0)
 		addq.b	#6,obRoutine(a0)
+		move.w	#0,obVelY(a0)
+		move.w	#0,obVelX(a0)
 		bra.w	BossDioMildanner_Display
 
 BossDioMildanner_BossAttackRun:
+		tst.b ob2ndRout(a0)
+		bne.s	@joestarsecrettechnique
+		move.w	obX(a0),d0
+		sub.w	#$22E8,d0 ; middle of arena
+
+		move.b	#1,obAnim(a0) ; @runattack
+
+		move.b	#1,ob2ndRout(a0)
+		move.b	#1,obStatus(a0)
+		move.w	#$2200,$34(a0) ; target X pos
+		move.w	#-$200,$36(a0) ; x accel
+
+		tst.w	d0
+		bpl.w	BossDioMildanner_Display
+
+		move.b	#0,obStatus(a0)
+		move.w	#$23C0,$34(a0) ; target X pos
+		move.w	#$200,$36(a0) ; x accel
+		bra.w	BossDioMildanner_Display
+	@joestarsecrettechnique: ; RUN AWAY!!
+		move.w	$36(a0),d1
+		add.w	d1,obVelX(a0)
+		jsr (SpeedToPos).l
+		move.w	obX(a0),d0
+		sub.w	$34(a0),d0
+		tst.w	$36(a0)
+		bpl.s	@noneg
+		neg.w	d0
+	@noneg:
+		tst.w	d0
+		blt.w	BossDioMildanner_Display
+	; reached goal
+		move.b	#0,ob2ndRout(a0)
+		move.b	#$E,obRoutine(a0)
+		move.w	#60*3,$30(a0) ; timer
+		move.w	#0,obVelX(a0)
+		;move.b	#$F,obColType(a0)
 		bra.w	BossDioMildanner_Display
 
 BossDioMildanner_BossAttackSmash:
