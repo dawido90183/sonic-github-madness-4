@@ -577,16 +577,63 @@ DLE_SBZx:	dc.w DLE_SBZ1-DLE_SBZx
 ; ===========================================================================
 
 DLE_SBZ1:
+		moveq	#0,d0
+		move.b	(v_dle_routine).w,d0
+		move.w	DLE_SBZ1_Boss(pc,d0.w),d0
+		jmp	DLE_SBZ1_Boss(pc,d0.w)
+
+
+DLE_SBZ1_Boss:
+		dc.w DLE_SBZ1_PreBoss-DLE_SBZ1_Boss
+		dc.w DLE_SBZ1_Boss_Setup-DLE_SBZ1_Boss
+		dc.w DLE_SBZ1_return-DLE_SBZ1_Boss
+		dc.w DLE_SBZ1_BossEnd-DLE_SBZ1_Boss
+		dc.w DLE_SBZ1_return-DLE_SBZ1_Boss
+DLE_SBZ1_PreBoss:
+		move.w	#$2700,(v_limitright1).w
+		move.w	#$2700,(v_limitright2).w
 		move.w	#$720,(v_limitbtm1).w
 		cmpi.w	#$1880,(v_screenposx).w
-		bcs.s	locret_7242
+		bcs.s	DLE_SBZ1_return
 		move.w	#$620,(v_limitbtm1).w
 		cmpi.w	#$2000,(v_screenposx).w
-		bcs.s	locret_7242
+		bcs.s	DLE_SBZ1_return
 		move.w	#$2A0,(v_limitbtm1).w
 
-locret_7242:
-		rts	
+		cmpi.w	#$2200,(v_screenposx).w
+		bcs.s	DLE_SBZ1_return
+
+		addq.b	#2,(v_dle_routine).w
+
+
+DLE_SBZ1_return:
+		rts
+DLE_SBZ1_BossEnd:
+		move.w	#$2700,(v_limitright1).w
+		move.w	#$2700,(v_limitright2).w
+		rts
+DLE_SBZ1_Boss_Setup:
+
+		move.w	#$2300-64,(v_limitright1).w
+		move.w	#$2300-64,(v_limitright2).w ; limit screen
+
+		move.w	#$2200,(v_limitleft1).w
+		move.w	#$2200,(v_limitleft2).w ; can't go back
+		addq.b	#2,(v_dle_routine).w
+
+
+
+		bsr.w	FindFreeObj
+		bne.s	@noobj
+		move.b	#id_ObjBossDioMildanner,(a1) ; load boss
+	@noobj:
+		move.w	#bgm_Fade,d0
+		bsr.w	PlaySound	; play boss music
+
+		move.w	#palid_DioMildanner,d0
+		jsr (PalLoad2).l
+
+
 ; ===========================================================================
 
 DLE_SBZ2:

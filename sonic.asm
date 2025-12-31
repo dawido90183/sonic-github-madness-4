@@ -25,7 +25,9 @@ ZoneCount:	equ 6	; discrete zones are: GHZ, MZ, SYZ, LZ, SLZ, and SBZ
 
 CharCount: equ 8
 
-SkipSplash: equ 0
+SkipSplash: equ 1
+
+DebugActivatedAuto: equ 1
 
 ; ===========================================================================
 
@@ -1875,6 +1877,7 @@ Pal_SplashPal:	incbin	"eurosega\pal.bin"
 Pal_ColdBrew:	incbin	"conimodes\cold brew\palette.bin"
 Pal_ColdBrewG:	incbin	"conimodes\cold brew\palette grayscale.bin"
 Pal_STeam:	incbin	"palette\Sonic Team Presents.bin"
+Pal_DioMildanner:	incbin	"_incObj\DioMildanner\Palette.bin"
 ; ---------------------------------------------------------------------------
 ; Palette data (Character)
 ; ---------------------------------------------------------------------------
@@ -2795,6 +2798,11 @@ FinalTitle:
 
 		move.b	#0,(v_lastlamp).w ; clear lamppost counter
 		move.w	#0,(v_debuguse).w ; disable debug item placement mode
+	if DebugActivatedAuto
+		move.b	#1,(f_levselcheat).w
+		move.b	#1,(f_debugcheat).w
+	endif
+
 		move.w	#0,(f_demo).w	; disable debug mode
 		move.w	#0,($FFFFFFEA).w ; unused variable
 		move.w	#0,(v_title_ccount).w	;4cheaters
@@ -8771,6 +8779,8 @@ Map_Pri:	include	"_maps\Prison Capsule.asm"
 
 		include	"_incObj\sub ReactToItem.asm"
 
+		include "_incObj\DioMildanner\Mildanner.asm"
+
 ; ---------------------------------------------------------------------------
 ; Subroutine to show the special stage layout
 ; ---------------------------------------------------------------------------
@@ -9943,10 +9953,11 @@ Nem_EndSonic:	incbin	"artnem\Ending - Sonic.bin"
 		even
 Nem_TryAgain:	incbin	"artnem\Ending - Try Again.bin"
 		even
-Nem_EndEggman:	if Revision=0
-		incbin	"artnem\Unused - Eggman Ending.bin"
-		else
-		endc
+Nem_DioDanner_Intro:	incbin	"_incObj\DioMildanner\Art - Intro.nem"
+		even
+Nem_DioDanner_Boss:	incbin	"_incObj\DioMildanner\Art - Boss.nem"
+		even
+Nem_DioDanner_Dead:	incbin	"_incObj\DioMildanner\Art - Dead.nem"
 		even
 Kos_EndFlowers:	incbin	"artkos\Flowers at Ending.bin" ; ending sequence animated flowers
 		even

@@ -39,6 +39,7 @@ ptr_PLC_Ending:		dc.w PLC_Ending-ArtLoadCues
 ptr_PLC_TryAgain:	dc.w PLC_TryAgain-ArtLoadCues
 ptr_PLC_EggmanSBZ2:	dc.w PLC_EggmanSBZ2-ArtLoadCues
 ptr_PLC_FZBoss:		dc.w PLC_FZBoss-ArtLoadCues
+ptr_PLC_DioDanner:	dc.w PLC_DioDanner-ArtLoadCues
 
 plcm:	macro gfx,vram
 	dc.l gfx
@@ -389,8 +390,14 @@ PLC_FZBoss:	dc.w ((PLC_FZBossend-PLC_FZBoss-2)/6)-1
 		plcm	Nem_Sbz2Eggman, $8E00	; Eggman without ship
 		plcm	Nem_Exhaust, $A540	; exhaust flame
 	PLC_FZBossend:
+; ---------------------------------------------------------------------------
+; Pattern load cues - boss sbz1 (mildanner)
+; ---------------------------------------------------------------------------
+PLC_DioDanner:	dc.w ((PLC_DioDannerend-PLC_DioDanner-2)/6)-1
+		plcm	Nem_DioDanner_Intro, $2FC0	; intro
+		;plcm	Nem_DioDanner_Boss, $0	; boss (I'm gonna have to butcher a lot of his sprites to fit him in)
+	PLC_DioDannerend:
 		even
-
 ; ---------------------------------------------------------------------------
 ; Pattern load cue IDs
 ; ---------------------------------------------------------------------------
@@ -426,3 +433,5 @@ plcid_Ending:		equ (ptr_PLC_Ending-ArtLoadCues)/2	; $1C
 plcid_TryAgain:		equ (ptr_PLC_TryAgain-ArtLoadCues)/2	; $1D
 plcid_EggmanSBZ2:	equ (ptr_PLC_EggmanSBZ2-ArtLoadCues)/2	; $1E
 plcid_FZBoss:		equ (ptr_PLC_FZBoss-ArtLoadCues)/2	; $1F
+
+plcid_DioDanner:		equ (ptr_PLC_DioDanner-ArtLoadCues)/2	; $1F
