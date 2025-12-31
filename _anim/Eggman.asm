@@ -21,11 +21,11 @@ Ani_Eggman:	dc.w @ship-Ani_Eggman
 		even
 @facenormal3:	dc.b 1,	1, 2, afEnd
 		even
-@facelaugh:	dc.b 2,	3, 4, afEnd
+@facelaugh:	dc.b 4,	3, 4, afEnd
 		even
-@facehit:	dc.b $3, 5, 7,  8, 7, afBack, 3
+@facehit:	dc.b $3, 5, 7,  8, afBack, 2
 		even
-@facepanic:	dc.b $1, 5, 7,  8, 7, afBack, 3
+@facepanic:	dc.b $1, 5, 7,  8, afBack, 2
 		even
 @blank:		dc.b $F, $B, afEnd
 		even
