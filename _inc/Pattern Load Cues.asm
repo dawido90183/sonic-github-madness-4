@@ -241,7 +241,7 @@ PLC_TitleCard:	dc.w ((PLC_TitleCardend-PLC_TitleCard-2)/6)-1
 ; Pattern load cues - act 3 boss
 ; ---------------------------------------------------------------------------
 PLC_Boss:	dc.w ((PLC_Bossend-PLC_Boss-2)/6)-1
-		plcm	Nem_Eggman, $8000	; Eggman main patterns
+		plcm	Nem_Eggman, $7E00	; Eggman main patterns
 		plcm	Nem_Weapons, $8D80	; Eggman's weapons
 		plcm	Nem_Prison, $93A0	; prison capsule
 		plcm	Nem_Bomb, $A300		; bomb enemy ((gets overwritten)
