@@ -238,3 +238,13 @@ zonewarning:	macro loc,elementsize
 		inform 1,"Size of \loc ($%h) does not match ZoneCount ($\#ZoneCount).",(@end-loc)/elementsize
 		endc
 		endm
+; ---------------------------------------------------------------------------
+; GKATO: mildanner boss VRAM
+; ---------------------------------------------------------------------------
+
+Dilmanner:	macro
+		move.l	#Map_Eggman,obMap(a1)
+		move.w	#($7E00/$20),obGfx(a1)
+		endm
+		
+		
