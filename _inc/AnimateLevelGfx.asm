@@ -193,10 +193,18 @@ AniArt_MZ_Torch:
 ; ---------------------------------------------------------------------------
 ; Animated pattern routine - Scrap Brain
 ; ---------------------------------------------------------------------------
-
+AniArt_SBZ_end:
+		rts
 AniArt_SBZ:
 
 @size:		equ 12	; number of tiles per frame
+
+
+		tst.b	(v_act).w
+		bne.s	@ok
+		tst.b	(v_dle_routine).w
+		bne.s	AniArt_SBZ_end
+@ok:
 
 		tst.b	(v_lani2_frame).w
 		beq.s	@smokepuff	; branch if counter hits 0

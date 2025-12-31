@@ -170,12 +170,14 @@ locret_1AC6:
 
 
 PalCycle_SBZ:
-		lea	(Pal_SBZCycList1).l,a2
-		tst.b	(v_act).w
-		beq.s	loc_1ADA
 		lea	(Pal_SBZCycList2).l,a2
-
+		tst.b	(v_act).w
+		bne.s	loc_1ADA
+		lea	(Pal_SBZCycList1).l,a2
+		tst.b	(v_dle_routine).w
+		bne.s	locret_1AC6
 loc_1ADA:
+
 		lea	(v_pal_buffer).w,a1
 		move.w	(a2)+,d1
 

@@ -40,6 +40,7 @@ ptr_PLC_TryAgain:	dc.w PLC_TryAgain-ArtLoadCues
 ptr_PLC_EggmanSBZ2:	dc.w PLC_EggmanSBZ2-ArtLoadCues
 ptr_PLC_FZBoss:		dc.w PLC_FZBoss-ArtLoadCues
 ptr_PLC_DioDanner:	dc.w PLC_DioDanner-ArtLoadCues
+ptr_PLC_DioDannerBOSS:	dc.w PLC_DioDannerBOSS-ArtLoadCues
 
 plcm:	macro gfx,vram
 	dc.l gfx
@@ -394,9 +395,13 @@ PLC_FZBoss:	dc.w ((PLC_FZBossend-PLC_FZBoss-2)/6)-1
 ; Pattern load cues - boss sbz1 (mildanner)
 ; ---------------------------------------------------------------------------
 PLC_DioDanner:	dc.w ((PLC_DioDannerend-PLC_DioDanner-2)/6)-1
-		plcm	Nem_DioDanner_Intro, $2FC0	; intro
-		;plcm	Nem_DioDanner_Boss, $0	; boss (I'm gonna have to butcher a lot of his sprites to fit him in)
+		plcm	Nem_DioDanner_Intro, $6620	; intro
 	PLC_DioDannerend:
+		even
+
+PLC_DioDannerBOSS:	dc.w ((PLC_DioDannerBOSSend-PLC_DioDannerBOSS-2)/6)-1
+		plcm	Nem_DioDanner_Boss, $80	; boss (I'm gonna have to butcher a lot of his sprites to fit him in)
+	PLC_DioDannerBOSSend:
 		even
 ; ---------------------------------------------------------------------------
 ; Pattern load cue IDs
@@ -434,4 +439,5 @@ plcid_TryAgain:		equ (ptr_PLC_TryAgain-ArtLoadCues)/2	; $1D
 plcid_EggmanSBZ2:	equ (ptr_PLC_EggmanSBZ2-ArtLoadCues)/2	; $1E
 plcid_FZBoss:		equ (ptr_PLC_FZBoss-ArtLoadCues)/2	; $1F
 
-plcid_DioDanner:		equ (ptr_PLC_DioDanner-ArtLoadCues)/2	; $1F
+plcid_DioDanner:		equ (ptr_PLC_DioDanner-ArtLoadCues)/2	; $20
+plcid_DioDannerBOSS:		equ (ptr_PLC_DioDannerBOSS-ArtLoadCues)/2	; $21

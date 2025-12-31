@@ -586,6 +586,7 @@ DLE_SBZ1:
 DLE_SBZ1_Boss:
 		dc.w DLE_SBZ1_PreBoss-DLE_SBZ1_Boss
 		dc.w DLE_SBZ1_Boss_Setup-DLE_SBZ1_Boss
+		dc.w DLE_SBZ1_return-DLE_SBZ1_Boss ; wait until palette fades in mildanner object
 		dc.w DLE_SBZ1_return-DLE_SBZ1_Boss
 		dc.w DLE_SBZ1_BossEnd-DLE_SBZ1_Boss
 		dc.w DLE_SBZ1_return-DLE_SBZ1_Boss
@@ -621,17 +622,14 @@ DLE_SBZ1_Boss_Setup:
 		move.w	#$2200,(v_limitleft2).w ; can't go back
 		addq.b	#2,(v_dle_routine).w
 
-
-
 		bsr.w	FindFreeObj
 		bne.s	@noobj
 		move.b	#id_ObjBossDioMildanner,(a1) ; load boss
 	@noobj:
 		move.w	#bgm_Fade,d0
 		bsr.w	PlaySound	; play boss music
-
 		move.w	#palid_DioMildanner,d0
-		jsr (PalLoad2).l
+		jmp (PalLoad2).l
 
 
 ; ===========================================================================
