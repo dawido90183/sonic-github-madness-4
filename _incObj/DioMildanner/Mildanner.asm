@@ -10,21 +10,24 @@ BossDioMildanner:
 		jmp	@index(pc,d1.w)
 
 	@index:
-		dc.w BossDioMildanner_SetFadeOut-@index
-		dc.w BossDioMildanner_DoFadeOut-@index
-		dc.w BossDioMildanner_SetupBoss-@index
-		dc.w BossDioMildanner_IntroHopIn-@index
-		dc.w BossDioMildanner_IntroMain-@index
-		dc.w BossDioMildanner_AwaitPLCBoss-@index
-		dc.w BossDioMildanner_BossMain-@index
+		dc.w BossDioMildanner_SetFadeOut-@index ; 0
+		dc.w BossDioMildanner_DoFadeOut-@index	; 2
+		dc.w BossDioMildanner_SetupBoss-@index	; 4
+		dc.w BossDioMildanner_IntroHopIn-@index	; 6
+		dc.w BossDioMildanner_IntroMain-@index	; 8
+		dc.w BossDioMildanner_AwaitPLCBoss-@index ; $A
+		dc.w BossDioMildanner_BossMain-@index	; $C
 	; attack index
-		dc.w BossDioMildanner_BossAttackJump2Side-@index
-		dc.w BossDioMildanner_BossAttackSmash-@index
-		dc.w BossDioMildanner_BossAttackJump2Side-@index
+		dc.w BossDioMildanner_BossAttackJump2Side-@index ; $E
+		dc.w BossDioMildanner_BossAttackSmash-@index	; $10
+		dc.w BossDioMildanner_BossAttackJump2Side-@index ; $12
 	; post jump index
-		dc.w BossDioMildanner_BossAttackRun-@index
-		dc.w 0
-		dc.w BossDioMildanner_BossAttackHops-@index
+		dc.w BossDioMildanner_BossAttackRun-@index ; $14
+		dc.w 0	; $16
+		dc.w BossDioMildanner_BossAttackHops-@index ; $18
+		dc.w DeadDioMildanner_AwaitPLCDead-@index ; $1A
+		dc.w DeadDioMildanner_Display-@index ; $1C
+; ---------------------------------------------------------------------------
 
 BossDioMildanner_SetFadeOut:
 		move.w	#0,(v_pal_dry+$40).w ; bg is black
@@ -33,8 +36,8 @@ BossDioMildanner_SetFadeOut:
 		addq.b	#2,	obRoutine(a0)
 BossDioMildanner_SetFadeOut_rts:
 		rts
-; ---------------------------------------------------------------------------
 
+; ---------------------------------------------------------------------------
 BossDioMildanner_DoFadeOut:
 		move.l	a0,-(sp)
 		jsr	FadeOut_ToBlack
@@ -48,6 +51,7 @@ BossDioMildanner_DoFadeOut:
 		addq.b	#2,	obRoutine(a0)
 		moveq	#plcid_DioDanner,d0
 		jmp	NewPLC		; load SBZ1 diodanner intro patterns
+
 ; ---------------------------------------------------------------------------
 BossDioMildanner_SetupBoss:
 ;
@@ -58,7 +62,6 @@ BossDioMildanner_SetupBoss:
 		move.w	#0,obVelX(a0)
 
 		move.b	#$A1,obColType(a0)
-		move.b	#8,obColProp(a0) ; set number of hits to 8
 		move.b	#4,obPriority(a0)
 		move.b	#5,obRender(a0) ; x flip
 		move.b	#1,obStatus(a0)
@@ -75,6 +78,7 @@ BossDioMildanner_SetupBoss:
 		addq.b	#2,	obRoutine(a0)
 BossDioMildanner_SetupBoss_rts:
 		rts
+
 ; ---------------------------------------------------------------------------
 BossDioMildanner_IntroHopIn:
 		jsr (ObjectFall)
@@ -91,8 +95,8 @@ BossDioMildanner_IntroHopIn:
 		addq.b	#2,	obRoutine(a0)
 	@notfinished:
 		jmp	(DisplaySprite).l
-; ---------------------------------------------------------------------------
 
+; ---------------------------------------------------------------------------
 BossDioMildanner_IntroMain:
 		cmpi.b	#1,obAnim(a0)
 		bne.s	@ok
@@ -103,6 +107,10 @@ BossDioMildanner_IntroMain:
 		bne.s	@ok2
 
 		move.b	#2,obAnim(a0) ; @transformation
+
+		move.w	#sfx_SSGoal,d0
+		jsr	(PlaySound_Special).l	; play boss damage sound
+
 		bra.s	@ok2
 	@ok:
 		tst.b	$32(a0)	; boss plc loaded?
@@ -137,23 +145,35 @@ BossDioMildanner_IntroMain:
 		move.b	#56/2,obWidth(a0)
 		move.b	#114/2,obHeight(a0)
 		addq.b	#2,	obRoutine(a0)
+		move.b	#0,obColType(a0) ; don't have hitbox until ready
 		jmp	(DisplaySprite).l
-; ---------------------------------------------------------------------------
 
+; ---------------------------------------------------------------------------
 BossDioMildanner_AwaitPLCBoss:
 		tst.l	(v_plc_buffer).w
-		bne.s	@ok
+		bne.s	BossDioMildanner_Display_0
 		;move.b	#$F,obColType(a0)
 		addq.b	#2,	obRoutine(a0)
 		move.w	#1,$30(a0) ; attack timer
 		move.b	#0,$32(a0) ; attack counter
-	@ok:
+
+		move.b	#$F,obColType(a0)
+
+		move.b	#8,obColProp(a0) ; set number of hits to 8
+BossDioMildanner_Display_0:
 		lea (DioDannerAni_Boss).l,a1
 		jsr	(AnimateSprite).l
 		jmp	(DisplaySprite).l
-; ---------------------------------------------------------------------------
 
+; ---------------------------------------------------------------------------
 BossDioMildanner_BossMain:
+		bsr.w	BossDioMildanner_Hurt
+		cmpi.b	#4,obAnim(a0) ; @hurt
+		bge.s	BossDioMildanner_Display_0
+
+		tst.b	obColType(a0)
+		beq.s	BossDioMildanner_Display_0
+
 		subq.w	#1,$30(a0)
 		bmi.s	@next_attack
 		lea (DioDannerAni_Boss).l,a1
@@ -181,12 +201,16 @@ BossDioMildanner_Display:
 		jsr	(AnimateSprite).l
 		jmp	(DisplaySprite).l
 
+; ---------------------------------------------------------------------------
 BossDioMildanner_BossAttackJump2Side: ; Pre attack to jump to a side of the screen
 		tst.b ob2ndRout(a0)
 		bne.s	@dojump
 		move.b	#2,obAnim(a0) ; @jump
 		move.b	#1,ob2ndRout(a0)
 		move.w	#-$A00,obVelY(a0)
+
+		move.b	#sfx_Jump,d0
+		jsr	(PlaySound_Special).l
 
 		lea (v_player).l,a1
 		move.w	obX(a1),d0
@@ -224,11 +248,15 @@ BossDioMildanner_BossAttackJump2Side: ; Pre attack to jump to a side of the scre
 		move.w	#0,obVelX(a0)
 		bra.w	BossDioMildanner_Display
 
+; ---------------------------------------------------------------------------
 BossDioMildanner_BossAttackRun:
 		tst.b ob2ndRout(a0)
 		bne.s	@joestarsecrettechnique
 		move.w	obX(a0),d0
 		sub.w	#$22E8,d0 ; middle of arena
+
+		move.b	#sfx_Teleport,d0
+		jsr	(PlaySound_Special).l
 
 		move.b	#1,obAnim(a0) ; @runattack
 
@@ -248,27 +276,181 @@ BossDioMildanner_BossAttackRun:
 		move.w	$36(a0),d1
 		add.w	d1,obVelX(a0)
 		jsr (SpeedToPos).l
-		move.w	obX(a0),d0
-		sub.w	$34(a0),d0
+
+		move.w	obX(a0), d0
+		sub.w	$34(a0), d0
+
 		tst.w	$36(a0)
 		bpl.s	@noneg
 		neg.w	d0
 	@noneg:
 		tst.w	d0
-		blt.w	BossDioMildanner_Display
+		bmi.w	BossDioMildanner_Display
 	; reached goal
+		bchg	#0,obStatus(a0)
+
+BossDioMildanner_ResetToBoss:
 		move.b	#0,ob2ndRout(a0)
-		move.b	#$E,obRoutine(a0)
-		move.w	#60*3,$30(a0) ; timer
+		move.b	#$C,obRoutine(a0)
+		move.w	#60,$30(a0) ; timer
 		move.w	#0,obVelX(a0)
-		;move.b	#$F,obColType(a0)
+		move.b	#0,obAnim(a0) ; idle
+		move.b	#$F,obColType(a0)
 		bra.w	BossDioMildanner_Display
 
+; ---------------------------------------------------------------------------
+BossDioMildanner_Hurt:
+		cmpi.b	#5,obAnim(a0)
+		beq.s	@ret
+		tst.b	obColType(a0)
+		bne.s	@ret
+		tst.b	$3E(a0)
+		bne.s	@already_hurt
+		move.w	#0,$30(a0) ; no more timer
+		move.b	#$20,$3E(a0)
+
+		move.w	#$1000,obVelX(a1)
+		move.w	#$1000,obInertia(a1)
+		lea (v_player).l,a1
+		move.w	obX(a1),d0
+		sub.w	#$22E8,d0 ; middle of arena
+		bmi.s	@positiveknock
+
+		move.w	#-$1000,obVelX(a1)
+		move.w	#-$1000,obInertia(a1)
+	@positiveknock:
+		move.w	#sfx_HitBoss,d0
+		jsr	(PlaySound_Special).l	; play boss damage sound
+		move.b	#4, obAnim(a0) ; hurt
+		tst.b	obColProp(a0)
+		beq.s	@dead
+	@already_hurt:
+		lea	(v_pal_dry+$22).w,a1
+		moveq	#0,d0
+		tst.w	(a1)
+		bne.s	@black
+		move.w	#cWhite,d0
+
+	@black:
+		move.w	d0,(a1)
+		subq.b	#1,$3E(a0)
+		bne.s	@ret
+		move.b	#$F,obColType(a0)
+	@ret:
+		rts
+	@dead:
+		move.b	#5,obAnim(a0)
+		move.b	#$1A,obRoutine(a0)
+		moveq	#plcid_DioDannerDEAD,d0
+		move.l	a0,-(sp)
+		jsr	NewPLC		; load SBZ1 diodanner dead patterns
+		move.l	(sp)+,a0
+
+		move.b #bgm_Fade,d0
+        jmp (PlaySound).l
+
+; ---------------------------------------------------------------------------
 BossDioMildanner_BossAttackSmash:
+		tst.b ob2ndRout(a0)
+		bne.s	@jump
+
+		move.b	#2,obAnim(a0) ; @jump
+
+		move.b	#1,ob2ndRout(a0)
+
+		move.w	#-$C00,obVelY(a0)
+		move.w	#0,obVelX(a0)
+		move.b	#$A1,obColType(a0)
+
+	@jump:
+		tst.w	obVelY(a0)
+		bpl.s	@fall
+		lea (v_player).l,a1
+		move.w	obX(a0),d0
+		sub.w	obX(a1),d0
+		asr.w	#2,d0
+		sub.w	d0,obX(a0)
+
+		jsr (ObjectFall).l
+		bra.w	BossDioMildanner_Display
+	@fall:
+		move.b	#3,obAnim(a0) ; @fall
+		add.w	#$20,obY(a0)
+		; go to y $34C
+		cmpi.w	#$328,obY(a0)
+		blt.w	BossDioMildanner_Display
+
+		move.w	#$328,obY(a0)
+
+
+		move.b	#sfx_ChainStomp,d0
+		jsr	(PlaySound_Special).l
+
+		bra.w	BossDioMildanner_ResetToBoss
+
+; ---------------------------------------------------------------------------
+BossDioMildanner_BossAttackHops:
+		tst.b ob2ndRout(a0)
+		bne.s	@hoponfortnite
+
+		move.b	#sfx_Jump,d0
+		jsr	(PlaySound_Special).l
+
+		move.b	#3,obAnim(a0) ; @fall
+		move.b	#4,$30(a0)
+		move.b	#1,ob2ndRout(a0)
+	@hoponfortnite:
+
+		lea (v_player).l,a1
+		move.w	obX(a0),d0
+		sub.w	obX(a1),d0
+		asr.w	#4,d0
+		sub.w	d0,obX(a0)
+
+		jsr (ObjectFall).l
+
+		; go to y $34C
+		cmpi.w	#$328,obY(a0)
+		blt.w	BossDioMildanner_Display
+
+		move.w	#$329,obY(a0)
+		move.w	#-$1000,obVelY(a0)
+
+		move.b	#sfx_ChainStomp,d0
+		jsr	(PlaySound_Special).l
+
+		subq.b	#1,$30(a0)
+		beq.w	BossDioMildanner_ResetToBoss
+
 		bra.w	BossDioMildanner_Display
 
-BossDioMildanner_BossAttackHops:
-		bra.w	BossDioMildanner_Display
+; ---------------------------------------------------------------------------
+DeadDioMildanner_AwaitPLCDead:
+		tst.l	(v_plc_buffer).w
+		bne.w	BossDioMildanner_Display
+
+		move.l	#Map_DioDanner_Dead,obMap(a0)
+		addq.b	#2,(v_dle_routine).w ; go to next screen routine
+		move.w	#$A09E,obGfx(a0)
+		move.b	#0,obFrame(a0)
+		move.b	#0,obAnim(a0) ; @idle
+		addq.b	#2,obRoutine(a0)
+		tst.b	(v_invinc).w
+        bne.s	@boss_invinc
+
+        move.b	(Saved_music).w,d0
+        bra.s	@boss_play
+
+@boss_invinc:
+        jsr (GetInvincibleMusic).l
+
+@boss_play:
+        jsr (PlaySound).l
+
+DeadDioMildanner_Display:
+		lea (DioDannerAni_Dead).l,a1
+		jsr	(AnimateSprite).l
+		jmp	(DisplaySprite).l
 
 ; ---------------------------------------------------------------------------
 Map_DioDanner_Intro:	include "_incObj\DioMildanner\Map - Intro.asm"
@@ -314,3 +496,7 @@ DioDannerAni_Boss: dc.w @idle-DioDannerAni_Boss
 	even
 @hurt_dead_await:	dc.b 2,$8,$E,$F,$E,$F,$E,$F,$E,$F,$1,afBack,1
 	even
+
+DioDannerAni_Dead: dc.w @dead-DioDannerAni_Dead
+
+@dead:	dc.b 5,0,0,1,2,2,3,4,4,5,6,7,afBack,1
