@@ -124,8 +124,8 @@ v_speeduptempo:		equ $029	; music - tempo modifier with speed shoes
 f_speedup:		equ $02A	; flag indicating whether speed shoes tempo is on ($80) or off ($00)
 v_ring_speaker:		equ $02B	; which speaker the "ring" sound is played in (00 = right; 01 = left)
 f_push_playing:		equ $02C	; if set, prevents further push sounds from playing
-v_palmuscounter: equ $02E
-v_palmusflag:	 equ $02F
+f_palmusflag:	 equ $02E
+v_palmuscounter: equ $02F
 
 
 v_music_track_ram:	equ $040	; Start of music RAM

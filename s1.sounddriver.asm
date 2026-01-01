@@ -860,7 +860,7 @@ Sound_PlayBGM:
 		subi.b	#bgm__First,d7
 		move.b	(a4,d7.w),v_speeduptempo(a6)
         lea    (PALSpeedIndex).l,a4
-		move.b	(a4,d7.w),v_palmusflag(a6)
+		move.b	(a4,d7.w),f_palmusflag(a6)
 		movea.l	(Go_MusicIndex).l,a4
 		lsl.w	#2,d7
 		movea.l	(a4,d7.w),a4		; a4 now points to (uncompressed) song data
