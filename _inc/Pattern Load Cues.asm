@@ -39,6 +39,8 @@ ptr_PLC_Ending:		dc.w PLC_Ending-ArtLoadCues
 ptr_PLC_TryAgain:	dc.w PLC_TryAgain-ArtLoadCues
 ptr_PLC_EggmanSBZ2:	dc.w PLC_EggmanSBZ2-ArtLoadCues
 ptr_PLC_FZBoss:		dc.w PLC_FZBoss-ArtLoadCues
+ptr_PLC_DioDanner:	dc.w PLC_DioDanner-ArtLoadCues
+ptr_PLC_DioDannerBOSS:	dc.w PLC_DioDannerBOSS-ArtLoadCues
 
 plcm:	macro gfx,vram
 	dc.l gfx
@@ -241,7 +243,7 @@ PLC_TitleCard:	dc.w ((PLC_TitleCardend-PLC_TitleCard-2)/6)-1
 ; Pattern load cues - act 3 boss
 ; ---------------------------------------------------------------------------
 PLC_Boss:	dc.w ((PLC_Bossend-PLC_Boss-2)/6)-1
-		plcm	Nem_Eggman, $8000	; Eggman main patterns
+		plcm	Nem_Eggman, $7E00	; Eggman main patterns
 		plcm	Nem_Weapons, $8D80	; Eggman's weapons
 		plcm	Nem_Prison, $93A0	; prison capsule
 		plcm	Nem_Bomb, $A300		; bomb enemy ((gets overwritten)
@@ -389,8 +391,18 @@ PLC_FZBoss:	dc.w ((PLC_FZBossend-PLC_FZBoss-2)/6)-1
 		plcm	Nem_Sbz2Eggman, $8E00	; Eggman without ship
 		plcm	Nem_Exhaust, $A540	; exhaust flame
 	PLC_FZBossend:
+; ---------------------------------------------------------------------------
+; Pattern load cues - boss sbz1 (mildanner)
+; ---------------------------------------------------------------------------
+PLC_DioDanner:	dc.w ((PLC_DioDannerend-PLC_DioDanner-2)/6)-1
+		plcm	Nem_DioDanner_Intro, $6620	; intro
+	PLC_DioDannerend:
 		even
 
+PLC_DioDannerBOSS:	dc.w ((PLC_DioDannerBOSSend-PLC_DioDannerBOSS-2)/6)-1
+		plcm	Nem_DioDanner_Boss, $80	; boss (I'm gonna have to butcher a lot of his sprites to fit him in)
+	PLC_DioDannerBOSSend:
+		even
 ; ---------------------------------------------------------------------------
 ; Pattern load cue IDs
 ; ---------------------------------------------------------------------------
@@ -426,3 +438,6 @@ plcid_Ending:		equ (ptr_PLC_Ending-ArtLoadCues)/2	; $1C
 plcid_TryAgain:		equ (ptr_PLC_TryAgain-ArtLoadCues)/2	; $1D
 plcid_EggmanSBZ2:	equ (ptr_PLC_EggmanSBZ2-ArtLoadCues)/2	; $1E
 plcid_FZBoss:		equ (ptr_PLC_FZBoss-ArtLoadCues)/2	; $1F
+
+plcid_DioDanner:		equ (ptr_PLC_DioDanner-ArtLoadCues)/2	; $20
+plcid_DioDannerBOSS:		equ (ptr_PLC_DioDannerBOSS-ArtLoadCues)/2	; $21

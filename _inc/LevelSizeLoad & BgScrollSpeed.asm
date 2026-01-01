@@ -39,6 +39,8 @@ LevelSizeLoad:
 ; Level size array
 ; ---------------------------------------------------------------------------
 LevelSizeArray:
+; https://sonicresearch.org/community/index.php?threads/sonic-1-how-to-work-with-resizing
+; Unused, left boundary, right boundary, top boundary, bottom boundary, Y camera shift
 		; GHZ
 		dc.w $0004, $0000, $24BF, $0000, $0300, $0060
 		dc.w $0004, $0000, $1EBF, $0000, $0300, $0060
@@ -65,14 +67,14 @@ LevelSizeArray:
 		dc.w $0004, $0000, $2C00, $0000, $0620, $0060
 		dc.w $0004, $0000, $2EC0, $0000, $0620, $0060
 		; SBZ
-		dc.w $0004, $0000, $21C0, $0000, $0720, $0060
+		dc.w $0004, $0000, $2700, $0000, $0720, $0060 ; extended due to boss
 		dc.w $0004, $0000, $1E40, $FF00, $0800, $0060
 		dc.w $0004, $2080, $2460, $0510, $0510, $0060
 		dc.w $0004, $0000, $3EC0, $0000, $0720, $0060
 		zonewarning LevelSizeArray,$30
 		; Ending
-		dc.w $0004, $0000, $0500, $0110, $0110, $0060
-		dc.w $0004, $0000, $0DC0, $0110, $0110, $0060
+		dc.w $0004, $0000, $0500, $0110, $0110, $0060 ; yay ending
+		dc.w $0004, $0000, $0DC0, $0110, $0110, $0060 ; nay ending
 		dc.w $0004, $0000, $2FFF, $0000, $0320, $0060
 		dc.w $0004, $0000, $2FFF, $0000, $0320, $0060
 

@@ -23,17 +23,17 @@ Ani_Eggman:	dc.w @ship-Ani_Eggman
 		even
 @facelaugh:	dc.b 4,	3, 4, afEnd
 		even
-@facehit:	dc.b $1F, 5, 1,	afEnd
+@facehit:	dc.b $3, 5, 7,  8, afBack, 2
 		even
-@facepanic:	dc.b 3,	6, 1, afEnd
+@facepanic:	dc.b $1, 5, 7,  8, afBack, 2
 		even
-@blank:		dc.b $F, $A, afEnd
+@blank:		dc.b $F, $B, afEnd
 		even
-@flame1:	dc.b 3,	8, 9, afEnd
+@flame1:	dc.b 3,	9, $A, afEnd
 		even
-@flame2:	dc.b 1,	8, 9, afEnd
+@flame2:	dc.b 1,	9, $A, afEnd
 		even
 @facedefeat:	dc.b $F, 7, afEnd
 		even
-@escapeflame:	dc.b 2,	9, 8, $B, $C, $B, $C, 9, 8, afBack, 2
+@escapeflame:	dc.b 2,	9, $A, $C, $D, $C, $D, 9, $A, afBack, 2
 		even

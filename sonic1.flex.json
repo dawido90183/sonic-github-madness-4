@@ -1,7 +1,7 @@
 {
     "Flex": 2,
     "name": "Sonic 1",
-    "node": "f217e579-d89d-4455-9d4f-2404610199b9",
+    "node": "92ce3488-ee24-44e1-b29e-eaf487dc151d",
     "objects": [
         {
             "uuid": "f217e579-d89d-4455-9d4f-2404610199b9",
@@ -616,7 +616,8 @@
                         "enabled": false,
                         "path": "",
                         "label": ""
-                    }
+                    },
+                    "expanded": true
                 },
                 {
                     "name": "Bridge",
@@ -674,7 +675,8 @@
                         "path": "",
                         "label": ""
                     },
-                    "uuid": "6d9cd886-5fb1-4792-9999-eaa239c3047f"
+                    "uuid": "6d9cd886-5fb1-4792-9999-eaa239c3047f",
+                    "expanded": true
                 },
                 {
                     "name": "Helix of spikes on a pole",
@@ -703,7 +705,8 @@
                         "path": "",
                         "label": ""
                     },
-                    "uuid": "9cd8865f-b147-4299-99ea-a239c3047fd4"
+                    "uuid": "9cd8865f-b147-4299-99ea-a239c3047fd4",
+                    "expanded": true
                 },
                 {
                     "name": "Platform",
@@ -1502,7 +1505,8 @@
                         "path": "",
                         "label": ""
                     },
-                    "uuid": "6bdae612-ef85-4e41-a2ca-5284d18ba250"
+                    "uuid": "6bdae612-ef85-4e41-a2ca-5284d18ba250",
+                    "expanded": true
                 },
                 {
                     "name": "Buzz Bomber",
@@ -1912,7 +1916,7 @@
                 }
             ],
             "isDirectory": true,
-            "expanded": false,
+            "expanded": true,
             "uuid": "2c6bdae6-12ef-45be-81a2-ca5284d18ba2"
         },
         {
@@ -3120,12 +3124,96 @@
                         "path": "",
                         "label": ""
                     },
-                    "uuid": "7ebd49cb-9beb-4960-ae2c-216c58083329"
+                    "uuid": "7ebd49cb-9beb-4960-ae2c-216c58083329",
+                    "expanded": true
                 }
             ],
             "isDirectory": true,
             "expanded": true,
             "uuid": "587aae92-9a16-4bd0-bdcd-b2a62e6b6c6c"
+        },
+        {
+            "name": "Mildanner DIO",
+            "children": [
+                {
+                    "format": "Sonic 1 Old.js",
+                    "name": "Intro",
+                    "palettes": [
+                        {
+                            "path": "_incObj/DioMildanner/Palette.bin",
+                            "length": 1
+                        }
+                    ],
+                    "art": {
+                        "path": "_incObj/DioMildanner/Art - Intro.nem",
+                        "compression": "Nemesis",
+                        "offset": 0
+                    },
+                    "mappings": {
+                        "path": "_incObj/DioMildanner/Map - Intro.asm",
+                        "label": "@internal"
+                    },
+                    "dplcs": {
+                        "enabled": false,
+                        "path": "",
+                        "label": ""
+                    },
+                    "uuid": "9892ce34-88ee-44e4-a172-9eeaf487dc15"
+                },
+                {
+                    "format": "Sonic 1 Old.js",
+                    "name": "Boss",
+                    "palettes": [
+                        {
+                            "path": "_incObj/DioMildanner/Palette.bin",
+                            "length": 1
+                        }
+                    ],
+                    "art": {
+                        "path": "_incObj/DioMildanner/Art - Boss.nem",
+                        "compression": "Nemesis",
+                        "offset": 0
+                    },
+                    "mappings": {
+                        "path": "_incObj/DioMildanner/Map - Boss.asm",
+                        "label": "@internal"
+                    },
+                    "dplcs": {
+                        "enabled": false,
+                        "path": "",
+                        "label": ""
+                    },
+                    "uuid": "92ce3488-ee24-44e1-b29e-eaf487dc151d"
+                },
+                {
+                    "format": "Sonic 1 Old.js",
+                    "name": "Dead",
+                    "palettes": [
+                        {
+                            "path": "_incObj/DioMildanner/Palette.bin",
+                            "length": 1
+                        }
+                    ],
+                    "art": {
+                        "path": "_incObj/DioMildanner/Art - Dead.nem",
+                        "compression": "Nemesis",
+                        "offset": 0
+                    },
+                    "mappings": {
+                        "path": "_incObj/DioMildanner/Map - Dead.asm",
+                        "label": "@internal"
+                    },
+                    "dplcs": {
+                        "enabled": false,
+                        "path": "",
+                        "label": ""
+                    },
+                    "uuid": "169892ce-3488-4e24-a4e1-729eeaf487dc"
+                }
+            ],
+            "isDirectory": true,
+            "expanded": true,
+            "uuid": "7ec432c5-e3dd-49d4-8586-2e4e916baae6"
         }
     ]
 }

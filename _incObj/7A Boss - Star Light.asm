@@ -46,8 +46,7 @@ Obj7A_LoadBoss:
 		move.b	(a2)+,obRoutine(a1)
 		move.b	(a2)+,obAnim(a1)
 		move.b	(a2)+,obPriority(a1)
-		move.l	#Map_Eggman,obMap(a1)
-		move.w	#$400,obGfx(a1)
+		Dilmanner
 		move.b	#4,obRender(a1)
 		move.b	#$20,obActWid(a1)
 		move.l	a0,$34(a1)
