@@ -1,3 +1,13 @@
+; Fat fucking chud shim
+dAmenKick:			equ 	$9F
+dAmenSnare1:		equ 	$A0
+dAmenSnare2:		equ 	$A1
+dAmenShortKick1:	equ 	$A2
+dAmenShortKick2:	equ 	$A3
+dAmenRide1:			equ 	$A4
+dAmenRide2:			equ 	$A5
+dAmenCrash:			equ 	$A6
+
 Mus89_Special_Stage_Header:
 	smpsHeaderStartSong 1
 	smpsHeaderVoice     Mus89_Special_Stage_Voices
@@ -167,15 +177,34 @@ Mus89_Special_Stage_PSG2:
 	dc.b	nC5, $24
 	smpsJump            Mus89_Special_Stage_PSG2
 
-; DAC Data
-Mus89_Special_Stage_DAC:
+; FM6 Data
+Mus89_Special_Stage_FM6:
+
 ; PSG3 Data
 Mus89_Special_Stage_PSG3:
 	smpsStop
 
-; FM6 Data
-Mus89_Special_Stage_FM6:
-	smpsSetvoice        $01
+; DAC Data
+Mus89_Special_Stage_DAC:
+Mus89_Special_Stage_Break00:
+	dc.b	dAmenKick, $06, dAmenRide1, $03, dAmenRide2, dAmenSnare1, $06, dAmenKick, dAmenSnare1, dAmenRide1, $03, dAmenRide2
+	dc.b	dAmenKick, $06, dAmenRide1, $03, dAmenRide2, dAmenSnare1, $06, dAmenKick, dAmenRide1, $03, dAmenRide2, dAmenSnare2, $06
+	dc.b	dAmenKick, $06, dAmenRide1, $03, dAmenRide2, dAmenSnare1, $06, dAmenKick, dAmenSnare1, dAmenRide1, $03, dAmenRide2
+	dc.b	dAmenKick, $06, dAmenRide1, $03, dAmenRide2, dAmenRide1, dAmenRide2, dAmenKick, $06, dAmenRide1, $03, dAmenRide2, dAmenCrash, $06
+	dc.b	dAmenKick, $06, dAmenRide1, $03, dAmenRide2, dAmenSnare1, $06, dAmenKick, dAmenSnare1, dAmenRide1, $03, dAmenRide2
+	dc.b	dAmenKick, $06, dAmenRide1, $03, dAmenRide2, dAmenSnare1, $06, dAmenKick, dAmenShortKick1, $03, dAmenShortKick2, dAmenSnare2, $06
+	dc.b	dAmenKick, $06, dAmenRide1, $03, dAmenRide2, dAmenSnare1, $06, dAmenKick, dAmenSnare1, dAmenRide1, $03, dAmenRide2
+	dc.b	dAmenCrash, $0C, dAmenSnare2, $06, dAmenCrash, $0C, dAmenSnare2, $06
+	smpsLoop            $00, $02, Mus89_Special_Stage_Break00
+	dc.b	dAmenKick, $06, dAmenShortKick1, $03, dAmenShortKick2, dAmenKick, $06, dAmenSnare1, dAmenRide1, $03, dAmenRide2, dAmenSnare1, $06
+	dc.b	dAmenKick, $06, dAmenShortKick1, $03, dAmenShortKick2, dAmenKick, $06, dAmenSnare1, dAmenRide1, $03, dAmenRide2, dAmenRide1, dAmenRide2
+	dc.b	dAmenKick, $06, dAmenShortKick1, $03, dAmenShortKick2, dAmenKick, $06, dAmenSnare1, dAmenRide1, $03, dAmenRide2, dAmenSnare1, $06
+	dc.b	dAmenKick, $06, dAmenRide1, $03, dAmenRide2, dAmenRide1, dAmenRide2, dAmenSnare1, $06, dAmenShortKick1, $03, dAmenShortKick2, dAmenSnare2, $06
+	dc.b	dAmenKick, $06, dAmenShortKick1, $03, dAmenShortKick2, dAmenKick, $06, dAmenSnare1, dAmenRide1, $03, dAmenRide2, dAmenSnare1, $06
+	dc.b	dAmenKick, $06, dAmenShortKick1, $03, dAmenShortKick2, dAmenKick, $06, dAmenSnare1, dAmenRide1, $03, dAmenRide2, dAmenRide1, dAmenRide2
+	dc.b	dAmenKick, $06, dAmenShortKick1, $03, dAmenShortKick2, dAmenKick, $06, dAmenSnare1, dAmenRide1, $03, dAmenRide2, dAmenSnare1, $06
+	dc.b	dAmenCrash, $0C, dAmenSnare2, $06, dAmenCrash, $0C, dAmenSnare2, $06
+	smpsJump            Mus89_Special_Stage_Break00
 
 Mus89_Special_Stage_Loop00:
 	dc.b	nE7, $18, nF7, $0C, nG7, $18, nE7, $0C, $18, nC7, $0C, nE7
