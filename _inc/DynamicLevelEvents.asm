@@ -615,6 +615,10 @@ DLE_SBZ1_BossEnd:
 		rts
 DLE_SBZ1_Boss_Setup:
 
+
+		move.w	#$2A0,(v_limitbtm1).w
+		move.w	#$2A0,(v_limitbtm2).w
+
 		move.w	#$2300-64,(v_limitright1).w
 		move.w	#$2300-64,(v_limitright2).w ; limit screen
 

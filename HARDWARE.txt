@@ -1,0 +1,2 @@
+-atollyguyke's title screen does not display properly, look in whats being sent to the VDP.
+-LZ bubbles have an odd address error

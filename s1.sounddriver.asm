@@ -330,14 +330,14 @@ UpdateMusic:
 		dbf	d7,@bgmpsgloop
 		btst #6,(v_megadrive).w ; is MD PAL?
 		beq.s @SMPSPALno ; if not, don't run
-		tst.b (v_palmusflag).w		; was the music needed to be optimized
+		tst.b f_palmusflag(a6)		; was the music needed to be optimized
 		beq.s @SMPSPALno		; if not, don't run
-		cmpi.b #$5,(v_palmuscounter).w ; 5th frame?
+		cmpi.b #$5,v_palmuscounter(a6) ; 5th frame?
 		bne.s @end ; if not, branch
-		clr.b (v_palmuscounter).w ; reset counter
+		clr.b v_palmuscounter(a6) ; reset counter
 		bra.w UpdateMusic ; run sound driver again
 	@end:
-		addq.b #$1,(v_palmuscounter).w ; add 1 to frame count
+		addq.b #$1,v_palmuscounter(a6) ; add 1 to frame count
 @SMPSPALno:
 		move.b	#$80,f_voice_selector(a6)			; Now at SFX tracks
 		moveq	#((v_sfx_fm_tracks_end-v_sfx_fm_tracks)/TrackSz)-1,d7	; 3 FM tracks (SFX)
@@ -860,7 +860,7 @@ Sound_PlayBGM:
 		subi.b	#bgm__First,d7
 		move.b	(a4,d7.w),v_speeduptempo(a6)
         lea    (PALSpeedIndex).l,a4
-		move.b	(a4,d7.w),(v_palmusflag).w
+		move.b	(a4,d7.w),f_palmusflag(a6)
 		movea.l	(Go_MusicIndex).l,a4
 		lsl.w	#2,d7
 		movea.l	(a4,d7.w),a4		; a4 now points to (uncompressed) song data

@@ -124,6 +124,9 @@ v_speeduptempo:		equ $029	; music - tempo modifier with speed shoes
 f_speedup:		equ $02A	; flag indicating whether speed shoes tempo is on ($80) or off ($00)
 v_ring_speaker:		equ $02B	; which speaker the "ring" sound is played in (00 = right; 01 = left)
 f_push_playing:		equ $02C	; if set, prevents further push sounds from playing
+f_palmusflag:	 equ $02E
+v_palmuscounter: equ $02F
+
 
 v_music_track_ram:	equ $040	; Start of music RAM
 
@@ -166,9 +169,6 @@ v_spcsfx_psg3_track:	equ v_spcsfx_track_ram+TrackSz*1
 v_spcsfx_track_ram_end:	equ v_spcsfx_track_ram+TrackSz*2
 
 v_1up_ram_copy:		equ v_spcsfx_track_ram_end
-
-v_palmuscounter: equ $FFFFF5F0
-v_palmusflag:	 equ $FFFFF5F1
 
 ; =================================================================================
 ; From here on, no longer relative to sound driver RAM
