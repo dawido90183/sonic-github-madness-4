@@ -25,7 +25,7 @@ ZoneCount:	equ 6	; discrete zones are: GHZ, MZ, SYZ, LZ, SLZ, and SBZ
 
 CharCount: equ 8
 
-SkipSplash: equ 1
+SkipSplash: equ 0
 
 DebugActivatedAuto: equ 1
 
@@ -2680,7 +2680,7 @@ splash_entry macro art,tilemap,palette,size,music_id,duration_in_frames
     splash_entry Nem_Splash_BLUE_LOBSTER,Eni_Splash_BLUE_LOBSTER,Pal_Splash_BLUE_LOBSTER,$20,bgm_GameOver,480 ;No PCM for lobster :(
     splash_entry Nem_Splash_ReimuDrip,Eni_Splash_ReimuDrip,Pal_Splash_ReimuDrip,$20,$14,160
     splash_entry Nem_Splash_Cmruey,Eni_Splash_Cmruey,Pal_Splash_Cmruey,$20,$30,240
-    splash_entry Nem_Splash_Disappointed,Eni_Splash_Disappointed,Pal_Splash_Disappointed,$20,bgm_GameOver,120
+    splash_entry Nem_Splash_Disappointed,Eni_Splash_Disappointed,Pal_Splash_Disappointed,$20,$3E,480
 	splash_entry Nem_Splash_Mines,Eni_Splash_Mines,Pal_Splash_Mines,$20,$27,650 ;if anybody is curious this is a screenshot of my ps3. not much else tosay
 
     splash_entry Nem_Splash_Waldo,Eni_Splash_Waldo,Pal_Splash_Waldo,$40,$33,100
@@ -2690,7 +2690,7 @@ splash_entry macro art,tilemap,palette,size,music_id,duration_in_frames
     splash_entry Nem_Splash_Peppa,Eni_Splash_Peppa,Pal_Splash_Peppa,$40,$1B,200
     splash_entry Nem_Splash_Support,Eni_Splash_Support,Pal_Splash_Support,$40,$1B,200
     splash_entry Nem_Splash_Iceage,Eni_Splash_Iceage,Pal_Splash_Iceage,$40,$36,300
-    splash_entry Nem_Splash_Fredbear,Eni_Splash_Fredbear,Pal_Splash_Fredbear,$40,$1B,200
+    splash_entry Nem_Splash_Fredbear,Eni_Splash_Fredbear,Pal_Splash_Fredbear,$40,$3D,480
     splash_entry Nem_Splash_Damnit,Eni_Splash_Damnit,Pal_Splash_Damnit,$40,$3A,500
     splash_entry Nem_Splash_CRT,Eni_Splash_CRT,Pal_Splash_CRT,$40,$34,300
     splash_entry Nem_Splash_Crispbilly,Eni_Splash_Crispbilly,Pal_Splash_Crispbilly,$40,$1B,200

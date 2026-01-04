@@ -230,8 +230,8 @@ ptr_mus39:	dc.l Music39
 ptr_mus3A:	dc.l Music3A
 ptr_mus3B:	dc.l Music3B
 ptr_mus3C:	dc.l Music3C
-;ptr_mus3D:	dc.l Music3D
-;ptr_mus3E:	dc.l Music3E
+ptr_mus3D:	dc.l Music3D
+ptr_mus3E:	dc.l Music3E
 ;ptr_mus3F:	dc.l Music3F
 
 ptr_musend
@@ -2707,6 +2707,10 @@ Music3A:	include	"sound/music/DeltaTale fighte.asm"
 Music3B:	include	"sound/music/WINDOWS2000.asm"
 		even
 Music3C:	include	"sound/music/TG2000Tracks/DJKK.asm"
+		even
+Music3D:	include	"sound/music/TG2000Tracks/FuneralMarch.asm"
+		even
+Music3E:	include	"sound/music/TG2000Tracks/Levian.asm"
 		even
 ; ---------------------------------------------------------------------------
 ; Sound effect pointers
