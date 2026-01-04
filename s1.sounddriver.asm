@@ -232,7 +232,23 @@ ptr_mus3B:	dc.l Music3B
 ptr_mus3C:	dc.l Music3C
 ptr_mus3D:	dc.l Music3D
 ptr_mus3E:	dc.l Music3E
-;ptr_mus3F:	dc.l Music3F
+ptr_mus3F:	dc.l Music3F
+;ptr_mus40:	dc.l Music40
+;ptr_mus41:	dc.l Music41
+;ptr_mus42:	dc.l Music42
+;ptr_mus43:	dc.l Music43
+;ptr_mus44:	dc.l Music44
+;ptr_mus45:	dc.l Music45
+;ptr_mus46:	dc.l Music46
+;ptr_mus47:	dc.l Music47
+;ptr_mus48:	dc.l Music48
+;ptr_mus49:	dc.l Music49
+;ptr_mus4A:	dc.l Music4A
+;ptr_mus4B:	dc.l Music4B
+;ptr_mus4C:	dc.l Music4C
+;ptr_mus4D:	dc.l Music4D
+;ptr_mus4E:	dc.l Music4E
+;ptr_mus4F:	dc.l Music4F
 
 ptr_musend
 
@@ -2711,6 +2727,8 @@ Music3C:	include	"sound/music/TG2000Tracks/DJKK.asm"
 Music3D:	include	"sound/music/TG2000Tracks/FuneralMarch.asm"
 		even
 Music3E:	include	"sound/music/TG2000Tracks/Levian.asm"
+		even
+Music3F:	include	"sound/music/TG2000Tracks/BatMan.asm"
 		even
 ; ---------------------------------------------------------------------------
 ; Sound effect pointers
