@@ -2687,14 +2687,14 @@ splash_entry macro art,tilemap,palette,size,music_id,duration_in_frames
     splash_entry Nem_Splash_Undertaley,Eni_Splash_Undertaley,Pal_Splash_Undertaley,$10,$34,300 ; put song as $35 when song is fixed
     splash_entry Nem_Splash_StupidBat,Eni_Splash_StupidBat,Pal_Splash_StupidBat,$40,$3F,480
     splash_entry Nem_Splash_Sad,Eni_Splash_Sad,Pal_Splash_Sad,$40,$1B,200
-    splash_entry Nem_Splash_Peppa,Eni_Splash_Peppa,Pal_Splash_Peppa,$40,$1B,200
+    splash_entry Nem_Splash_Peppa,Eni_Splash_Peppa,Pal_Splash_Peppa,$40,$40,200
     splash_entry Nem_Splash_Support,Eni_Splash_Support,Pal_Splash_Support,$40,$1B,200
     splash_entry Nem_Splash_Iceage,Eni_Splash_Iceage,Pal_Splash_Iceage,$40,$36,300
     splash_entry Nem_Splash_Fredbear,Eni_Splash_Fredbear,Pal_Splash_Fredbear,$40,$3D,480
     splash_entry Nem_Splash_Damnit,Eni_Splash_Damnit,Pal_Splash_Damnit,$40,$3A,500
     splash_entry Nem_Splash_CRT,Eni_Splash_CRT,Pal_Splash_CRT,$40,$34,300
     splash_entry Nem_Splash_Crispbilly,Eni_Splash_Crispbilly,Pal_Splash_Crispbilly,$40,$1B,200
-    splash_entry Nem_Splash_Bonniewtf,Eni_Splash_Bonniewtf,Pal_Splash_Bonniewtf,$40,$1B,200
+    splash_entry Nem_Splash_Bonniewtf,Eni_Splash_Bonniewtf,Pal_Splash_Bonniewtf,$60,$41,300
     splash_entry Nem_Splash_Rick,Eni_Splash_Rick,Pal_Splash_Rick,$40,$2F,480
 	splash_entry Nem_Splash_W,Eni_Splash_W,Pal_Splash_W,$40,$3B,480
 
