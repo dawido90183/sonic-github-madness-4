@@ -2677,7 +2677,7 @@ splash_entry macro art,tilemap,palette,size,music_id,duration_in_frames
     splash_entry Nem_Splash_Drift,Eni_Splash_Drift,Pal_Splash_Drift,$20,$2D,480
 	splash_entry Nem_Splash_Sane,Eni_Splash_Sane,Pal_Splash_Sane,$40,bgm_MM8StageSel,720
 	splash_entry Nem_Splash_LastBurenyuu,Eni_Splash_LastBurenyuu,Pal_Splash_LastBurenyuu,$20,bgm_FurElise,60*4
-    splash_entry Nem_Splash_BLUE_LOBSTER,Eni_Splash_BLUE_LOBSTER,Pal_Splash_BLUE_LOBSTER,$20,bgm_GameOver,480 ;No PCM for lobster :(
+    splash_entry Nem_Splash_BLUE_LOBSTER,Eni_Splash_BLUE_LOBSTER,Pal_Splash_BLUE_LOBSTER,$20,$43,280 ;No PCM for lobster :( ...OH YEAH? Says WHO? -TG2000
     splash_entry Nem_Splash_ReimuDrip,Eni_Splash_ReimuDrip,Pal_Splash_ReimuDrip,$20,$14,160
     splash_entry Nem_Splash_Cmruey,Eni_Splash_Cmruey,Pal_Splash_Cmruey,$20,$30,240
     splash_entry Nem_Splash_Disappointed,Eni_Splash_Disappointed,Pal_Splash_Disappointed,$20,$3E,480
@@ -2693,10 +2693,10 @@ splash_entry macro art,tilemap,palette,size,music_id,duration_in_frames
     splash_entry Nem_Splash_Fredbear,Eni_Splash_Fredbear,Pal_Splash_Fredbear,$40,$3D,480
     splash_entry Nem_Splash_Damnit,Eni_Splash_Damnit,Pal_Splash_Damnit,$40,$3A,500
     splash_entry Nem_Splash_CRT,Eni_Splash_CRT,Pal_Splash_CRT,$40,$34,300
-    splash_entry Nem_Splash_Crispbilly,Eni_Splash_Crispbilly,Pal_Splash_Crispbilly,$40,$1B,200
+    splash_entry Nem_Splash_Crispbilly,Eni_Splash_Crispbilly,Pal_Splash_Crispbilly,$40,$42,200
     splash_entry Nem_Splash_Bonniewtf,Eni_Splash_Bonniewtf,Pal_Splash_Bonniewtf,$60,$41,300
     splash_entry Nem_Splash_Rick,Eni_Splash_Rick,Pal_Splash_Rick,$40,$2F,480
-	splash_entry Nem_Splash_W,Eni_Splash_W,Pal_Splash_W,$40,$3B,480
+	splash_entry Nem_Splash_W,Eni_Splash_W,Pal_Splash_W,$40,$44,380
 
     dc.l	-1 ; end marker    
 

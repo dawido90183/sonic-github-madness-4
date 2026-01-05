@@ -235,9 +235,9 @@ ptr_mus3E:	dc.l Music3E
 ptr_mus3F:	dc.l Music3F
 ptr_mus40:	dc.l Music40
 ptr_mus41:	dc.l Music41
-;ptr_mus42:	dc.l Music42
-;ptr_mus43:	dc.l Music43
-;ptr_mus44:	dc.l Music44
+ptr_mus42:	dc.l Music42
+ptr_mus43:	dc.l Music43
+ptr_mus44:	dc.l Music44
 ;ptr_mus45:	dc.l Music45
 ;ptr_mus46:	dc.l Music46
 ;ptr_mus47:	dc.l Music47
@@ -2733,6 +2733,12 @@ Music3F:	include	"sound/music/TG2000Tracks/BatMan.asm"
 Music40:	include	"sound/music/TG2000Tracks/Peppa.asm"
 		even
 Music41:	include	"sound/music/TG2000Tracks/Resetti.asm"
+		even
+Music42:	include	"sound/music/TG2000Tracks/CrispBilly.asm"
+		even
+Music43:	include	"sound/music/TG2000Tracks/BlueLobster.asm"
+		even
+Music44:	include	"sound/music/TG2000Tracks/WinTwoK.asm"
 		even
 ; ---------------------------------------------------------------------------
 ; Sound effect pointers
