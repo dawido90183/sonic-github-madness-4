@@ -239,7 +239,7 @@ ptr_mus42:	dc.l Music42
 ptr_mus43:	dc.l Music43
 ptr_mus44:	dc.l Music44
 ptr_mus45:	dc.l Music45
-;ptr_mus46:	dc.l Music46
+ptr_mus46:	dc.l Music46
 ;ptr_mus47:	dc.l Music47
 ;ptr_mus48:	dc.l Music48
 ;ptr_mus49:	dc.l Music49
@@ -2617,7 +2617,7 @@ Music85:	include	"sound/music/Mus85 - SYZ.asm"
 		even
 Music86:	include	"sound/music/Pac2.asm"
 		even
-Music87:	include	"sound/music/Mus87 - Invincibility.asm"
+Music87:	include	"sound/music/TG2000Tracks/SomariInv.asm"
 		even
 Music88:	include	"sound/music/Mus88 - Extra Life.asm"
 		even
@@ -2741,6 +2741,8 @@ Music43:	include	"sound/music/TG2000Tracks/BlueLobster.asm"
 Music44:	include	"sound/music/TG2000Tracks/WinTwoK.asm"
 		even
 Music45:	include	"sound/music/TG2000Tracks/DeppaDig.asm"
+		even
+Music46:	include	"sound/music/Mus87 - Invincibility.asm"
 		even
 ; ---------------------------------------------------------------------------
 ; Sound effect pointers
