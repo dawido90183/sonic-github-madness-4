@@ -262,6 +262,7 @@ fTone_0D		rs.b	1
 dKick		rs.b	1
 dSnare		rs.b	1
 dTimpani	rs.b	1
+dCrashKC   =    $AA
 		rsset	$88
 dHiTimpani	rs.b	1
 dMidTimpani	rs.b	1
