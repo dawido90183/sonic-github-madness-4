@@ -2687,7 +2687,7 @@ splash_entry macro art,tilemap,palette,size,music_id,duration_in_frames
     splash_entry Nem_Splash_Undertaley,Eni_Splash_Undertaley,Pal_Splash_Undertaley,$10,$34,300 ; put song as $35 when song is fixed
     splash_entry Nem_Splash_StupidBat,Eni_Splash_StupidBat,Pal_Splash_StupidBat,$40,$3F,480
     splash_entry Nem_Splash_Sad,Eni_Splash_Sad,Pal_Splash_Sad,$40,$1B,200
-    splash_entry Nem_Splash_Peppa,Eni_Splash_Peppa,Pal_Splash_Peppa,$40,$40,200
+    splash_entry Nem_Splash_Peppa,Eni_Splash_Peppa,Pal_Splash_Peppa,$40,$45,200
     splash_entry Nem_Splash_Support,Eni_Splash_Support,Pal_Splash_Support,$40,$1B,200
     splash_entry Nem_Splash_Iceage,Eni_Splash_Iceage,Pal_Splash_Iceage,$40,$36,300
     splash_entry Nem_Splash_Fredbear,Eni_Splash_Fredbear,Pal_Splash_Fredbear,$40,$3D,480

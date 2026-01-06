@@ -238,7 +238,7 @@ ptr_mus41:	dc.l Music41
 ptr_mus42:	dc.l Music42
 ptr_mus43:	dc.l Music43
 ptr_mus44:	dc.l Music44
-;ptr_mus45:	dc.l Music45
+ptr_mus45:	dc.l Music45
 ;ptr_mus46:	dc.l Music46
 ;ptr_mus47:	dc.l Music47
 ;ptr_mus48:	dc.l Music48
@@ -2739,6 +2739,8 @@ Music42:	include	"sound/music/TG2000Tracks/CrispBilly.asm"
 Music43:	include	"sound/music/TG2000Tracks/BlueLobster.asm"
 		even
 Music44:	include	"sound/music/TG2000Tracks/WinTwoK.asm"
+		even
+Music45:	include	"sound/music/TG2000Tracks/DeppaDig.asm"
 		even
 ; ---------------------------------------------------------------------------
 ; Sound effect pointers
