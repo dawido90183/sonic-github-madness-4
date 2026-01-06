@@ -451,14 +451,14 @@ Mus81_GHZ_DAC:
 	dc.b	nRst, $08, dKick, dSnare, dKick, dKick, dSnare, dSnare, dSnare
 
 Mus81_GHZ_Loop00:
-	dc.b	dKick, $10, dSnare, $08, dKick, $10, $08, dSnare, $10
+	dc.b	dCrashKC, $10, dSnare, $08, dKick, $10, $08, dSnare, $10
 	smpsLoop            $00, $07, Mus81_GHZ_Loop00
-	dc.b	dKick, $10, dSnare, $08, dKick, $10, dSnare, $08, $08, $08
+	dc.b	dCrashKC, $10, dSnare, $08, dKick, $10, dSnare, $08, $08, $08
 
 Mus81_GHZ_Loop01:
-	dc.b	dKick, $10, dSnare, $08, dKick, $10, $08, dSnare, $10
+	dc.b	dCrashKC, $10, dSnare, $08, dKick, $10, $08, dSnare, $10
 	smpsLoop            $00, $07, Mus81_GHZ_Loop01
-	dc.b	dKick, $10, dSnare, $08, dKick, $10, dSnare, $08, $08, $08
+	dc.b	dCrashKC, $10, dSnare, $08, dKick, $10, dSnare, $08, $08, $08
 	smpsLoop            $01, $02, Mus81_GHZ_Loop01
 	smpsJump            Mus81_GHZ_Loop01
 
