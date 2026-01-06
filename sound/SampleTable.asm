@@ -40,9 +40,10 @@ SampleTable:
 	dcSample	TYPE_PCM,		Amen_Ride1,				0					; $A4
 	dcSample	TYPE_PCM,		Amen_Ride2,				0					; $A5
 	dcSample	TYPE_PCM,		Amen_Crash,				0					; $A6
-    	dcSample    	TYPE_PCM,       	CrispBilly,      			8000, 	       ; $A7
-    	dcSample    	TYPE_PCM,       	BlueLobster,      			8000, 	       ; $A8
-    	dcSample    	TYPE_PCM,       	WinTwoK,      				8000, 	       ; $A9
+    dcSample   	TYPE_PCM,       CrispBilly,      		8000, 	       ; $A7
+	dcSample   	TYPE_PCM,      	BlueLobster,      		8000, 	       ; $A8
+    dcSample    TYPE_PCM,      	WinTwoK,      			8000, 	       ; $A9
+	dcSample	TYPE_PCM,		Chaotix's Crash,		19030		   ; $A6
 	dc.w	-1	; end marker
 
 ; ---------------------------------------------------------------
@@ -94,4 +95,4 @@ SampleTable:
 	incdac	CrispBilly, "sound/dac/splashes/CrispBilly.wav"
 	incdac	BlueLobster, "sound/dac/splashes/BlueLobster.wav"
 	incdac	WinTwoK, "sound/dac/splashes/WinTwoK.wav"
-	
+	incdac	Chaotix's Crash, "sound/dac/Knuckles Chaotix/Crash.pcm"
