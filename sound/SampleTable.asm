@@ -43,7 +43,7 @@ SampleTable:
     dcSample   	TYPE_PCM,       CrispBilly,      		8000, 	            ; $A7
 	dcSample   	TYPE_PCM,      	BlueLobster,      		8000, 	            ; $A8
     dcSample    TYPE_PCM,      	WinTwoK,      			8000, 	            ; $A9
-	dcSample	TYPE_PCM,		Chaotix's_Crash,		19030		        ; $AA Nano: i didn't find the perfect sample rate so i make the pcm uses 19030
+	dcSample	TYPE_PCM,		Chaotix_Crash,		19030		        ; $AA Nano: i didn't find the perfect sample rate so i make the pcm uses 19030
 	dc.w	-1	; end marker
 
 ; ---------------------------------------------------------------
@@ -95,4 +95,6 @@ SampleTable:
 	incdac	CrispBilly, "sound/dac/splashes/CrispBilly.wav"
 	incdac	BlueLobster, "sound/dac/splashes/BlueLobster.wav"
 	incdac	WinTwoK, "sound/dac/splashes/WinTwoK.wav"
-	incdac	Chaotix's_Crash, "sound/dac/Knuckles Chaotix/Crash.pcm"
+; ---------------------------------------------------------------
+; Knuckles chaotix samples to GHM4 (mildanner never thought about it :P)
+    incdac	Chaotix_Crash, "sound/dac/Knuckles Chaotix/Crash.pcm"
