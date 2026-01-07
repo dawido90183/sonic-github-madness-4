@@ -11110,7 +11110,7 @@ ChickenDance_Jump08:
 	dc.b		nA5,	$01
 	smpsPSGAlterVol	$01
 	smpsAlterNote	$01
-	dc.b		nA5,	$02
+	dc.b		nA5,	$01
 	smpsPSGAlterVol	$FC
 	smpsJump	ChickenDance_Jump08
 

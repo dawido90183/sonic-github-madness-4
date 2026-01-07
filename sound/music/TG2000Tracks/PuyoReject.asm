@@ -14,7 +14,7 @@ PuyoReject_Header:
 	smpsHeaderPSG       PuyoReject_PSG1,	$00, $00, $00, $00
 	smpsHeaderPSG       PuyoReject_PSG2,	$00, $00, $00, $00
 	smpsHeaderPSG       PuyoReject_PSG3,	$00, $00, $00, $00
-	dc.b		$00,	$00,	$00,	$00	
+	dc.b		$00,	$00,	$00,	$00,	_smpsStop		
 
 ; DAC Data
 PuyoReject_DAC:
@@ -22,10 +22,10 @@ PuyoReject_DAC:
 
 ; PSG1 Data
 PuyoReject_PSG1:
-
+	smpsStop
 ; PSG2 Data
 PuyoReject_PSG2:
-
+	smpsStop
 ; PSG3 Data
 PuyoReject_PSG3:
 	smpsStop
