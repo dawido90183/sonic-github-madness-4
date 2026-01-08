@@ -2677,7 +2677,7 @@ splash_entry macro art,tilemap,palette,size,music_id,duration_in_frames
     splash_entry Nem_Splash_Drift,Eni_Splash_Drift,Pal_Splash_Drift,$20,$2D,480
 	splash_entry Nem_Splash_Sane,Eni_Splash_Sane,Pal_Splash_Sane,$40,bgm_MM8StageSel,720
 	splash_entry Nem_Splash_LastBurenyuu,Eni_Splash_LastBurenyuu,Pal_Splash_LastBurenyuu,$20,bgm_FurElise,60*4
-    splash_entry Nem_Splash_BLUE_LOBSTER,Eni_Splash_BLUE_LOBSTER,Pal_Splash_BLUE_LOBSTER,$20,$43,280 ;No PCM for lobster :( ...OH YEAH? Says WHO? -TG2000
+    splash_entry Nem_Splash_BLUE_LOBSTER,Eni_Splash_BLUE_LOBSTER,Pal_Splash_BLUE_LOBSTER,$20,bgm_BlueLobster,280 ;No PCM for lobster :( ...OH YEAH? Says WHO? -TG2000 Says the guy who didn't forgot adding a FUCKING CONSTANT for the splash screeen -NTH
     splash_entry Nem_Splash_ReimuDrip,Eni_Splash_ReimuDrip,Pal_Splash_ReimuDrip,$20,$14,160
     splash_entry Nem_Splash_Cmruey,Eni_Splash_Cmruey,Pal_Splash_Cmruey,$20,$30,240
     splash_entry Nem_Splash_Disappointed,Eni_Splash_Disappointed,Pal_Splash_Disappointed,$20,$3E,480
