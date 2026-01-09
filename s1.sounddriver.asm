@@ -242,7 +242,7 @@ ptr_mus45:	dc.l Music45
 ptr_mus46:	dc.l Music46
 ptr_mus47:	dc.l Music47
 ptr_mus48:	dc.l Music48
-;ptr_mus49:	dc.l Music49
+ptr_mus49:	dc.l Music49
 ;ptr_mus4A:	dc.l Music4A
 ;ptr_mus4B:	dc.l Music4B
 ;ptr_mus4C:	dc.l Music4C
@@ -2639,7 +2639,7 @@ Music90:	include	"sound/music/Mus90 - Continue Screen.asm"
 		even
 Music91:	include	"sound/music/Mus91 - Credits.asm"
 		even
-Music92:	include	"sound/music/Mus92 - Drowning.asm"
+Music92:	include	"sound/music/TG2000Tracks/Thundersink.asm"
 		even
 Music93:	include	"sound/music/Mus93 - Get Emerald.asm"
 		even
@@ -2747,6 +2747,8 @@ Music46:	include	"sound/music/Mus87 - Invincibility.asm"
 Music47:	include	"sound/music/TG2000Tracks/Spoopy.asm"
 		even
 Music48:	include	"sound/music/TG2000Tracks/ChickenDance.asm"
+		even
+Music49:	include	"sound/music/Mus92 - Drowning.asm"
 		even
 ; ---------------------------------------------------------------------------
 ; Sound effect pointers
