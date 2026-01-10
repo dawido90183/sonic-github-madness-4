@@ -2689,6 +2689,7 @@ splash_entry macro art,tilemap,palette,size,music_id,duration_in_frames
     splash_entry Nem_Splash_Sad,Eni_Splash_Sad,Pal_Splash_Sad,$40,$47,200
     splash_entry Nem_Splash_Support,Eni_Splash_Support,Pal_Splash_Support,$60,$48,480
     splash_entry Nem_Splash_Peppa,Eni_Splash_Peppa,Pal_Splash_Peppa,$40,$45,200
+    splash_entry Nem_Splash_Snowgrave,Eni_Splash_Snowgrave,Pal_Splash_Snowgrave,$40,$4A,100
     splash_entry Nem_Splash_Damnit,Eni_Splash_Damnit,Pal_Splash_Damnit,$40,$3A,500
     splash_entry Nem_Splash_Iceage,Eni_Splash_Iceage,Pal_Splash_Iceage,$40,$36,300
     splash_entry Nem_Splash_Fredbear,Eni_Splash_Fredbear,Pal_Splash_Fredbear,$40,$3D,480
@@ -9569,6 +9570,7 @@ Pal_Splash_\name:	incbin	"splash\\Pal - \name\.bin"
     splash_data Bonniewtf
     splash_data Crispbilly
     splash_data CRT
+    splash_data Snowgrave
     splash_data Damnit
     splash_data Iceage
     splash_data Fredbear

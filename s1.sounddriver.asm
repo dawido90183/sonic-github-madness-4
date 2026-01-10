@@ -243,7 +243,7 @@ ptr_mus46:	dc.l Music46
 ptr_mus47:	dc.l Music47
 ptr_mus48:	dc.l Music48
 ptr_mus49:	dc.l Music49
-;ptr_mus4A:	dc.l Music4A
+ptr_mus4A:	dc.l Music4A
 ;ptr_mus4B:	dc.l Music4B
 ;ptr_mus4C:	dc.l Music4C
 ;ptr_mus4D:	dc.l Music4D
@@ -2749,6 +2749,8 @@ Music47:	include	"sound/music/TG2000Tracks/Spoopy.asm"
 Music48:	include	"sound/music/TG2000Tracks/ChickenDance.asm"
 		even
 Music49:	include	"sound/music/Mus92 - Drowning.asm"
+		even
+Music4A:	include	"sound/music/SanewayTracks/Weird.asm"
 		even
 ; ---------------------------------------------------------------------------
 ; Sound effect pointers
