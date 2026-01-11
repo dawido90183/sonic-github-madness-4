@@ -156,7 +156,7 @@ loc_6EB0:
 
 loc_6ED0:
 		move.w	#bgm_Boss,d0
-		bsr.w	PlaySound	; play boss music
+		jsr PlaySound	; play boss music
 		move.b	#1,(f_lockscreen).w ; lock screen
 		addq.b	#2,(v_dle_routine).w
 		moveq	#plcid_Boss,d0
@@ -200,7 +200,7 @@ DLE_LZ3:
 		beq.s	loc_6F28
 		move.b	#7,(a1)		; modify level layout
 		move.w	#sfx_Rumbling,d0
-		bsr.w	PlaySound_Special ; play rumbling sound
+		jsr PlaySound_Special ; play rumbling sound
 
 loc_6F28:
 		tst.b	(v_dle_routine).w
@@ -215,7 +215,7 @@ loc_6F28:
 
 loc_6F4A:
 		move.w	#bgm_Boss,d0
-		bsr.w	PlaySound	; play boss music
+		jsr PlaySound	; play boss music
 		move.b	#1,(f_lockscreen).w ; lock screen
 		addq.b	#2,(v_dle_routine).w
 		moveq	#plcid_Boss,d0
@@ -398,7 +398,7 @@ DLE_MZ3boss:
 
 loc_70D0:
 		move.w	#bgm_Boss,d0
-		bsr.w	PlaySound	; play boss music
+		jsr PlaySound	; play boss music
 		move.b	#1,(f_lockscreen).w ; lock screen
 		addq.b	#2,(v_dle_routine).w
 		moveq	#plcid_Boss,d0
@@ -463,7 +463,7 @@ DLE_SLZ3boss:
 
 loc_7144:
 		move.w	#bgm_Boss,d0
-		bsr.w	PlaySound	; play boss music
+		jsr PlaySound	; play boss music
 		move.b	#1,(f_lockscreen).w ; lock screen
 		addq.b	#2,(v_dle_routine).w
 		moveq	#plcid_Boss,d0
@@ -546,7 +546,7 @@ DLE_SYZ3boss:
 
 loc_71EC:
 		move.w	#bgm_Boss,d0
-		bsr.w	PlaySound	; play boss music
+		jsr PlaySound	; play boss music
 		move.b	#1,(f_lockscreen).w ; lock screen
 		moveq	#plcid_Boss,d0
 		bra.w	AddPLC		; load boss patterns
@@ -631,7 +631,7 @@ DLE_SBZ1_Boss_Setup:
 		move.b	#id_ObjBossDioMildanner,(a1) ; load boss
 	@noobj:
 		move.w	#bgm_Fade,d0
-		bsr.w	PlaySound	; play boss music
+		jsr PlaySound	; play boss music
 		move.w	#palid_DioMildanner,d0
 		jmp (PalLoad2).l
 

@@ -25,7 +25,7 @@ ZoneCount:	equ 6	; discrete zones are: GHZ, MZ, SYZ, LZ, SLZ, and SBZ
 
 CharCount: equ 8
 
-SkipSplash: equ 0
+SkipSplash: equ 1
 
 DebugActivatedAuto: equ 1
 
@@ -1012,6 +1012,7 @@ TilemapToVRAM:
     popo    ; buffer local label symbol config
 
 		include	"_inc\Nemesis Decompression.asm"
+		include	"_inc\BitPixel Decompression.asm"
 
 
 ; ---------------------------------------------------------------------------
@@ -9587,14 +9588,9 @@ Pal_Splash_\name:	incbin	"splash\\Pal - \name\.bin"
 ; ---------------------------------------------------------------------------
 ; Compressed graphics - Character Select
 ; ---------------------------------------------------------------------------
-Nem_CharSelBG:	incbin	"artnem\Character Select Background.bin" ; background art
+Nem_CharSel:	incbin	"artnem\Character Select.bin" ; character select art
 		even
-Eni_CharSelBG:	incbin	"tilemaps\Character Select Background.bin" ; background (mappings)
-		even
-
-Nem_CharSelFG:	incbin	"artnem\Character Select Foreground.bin" ; foreground art
-		even
-Eni_CharSelFG:	incbin	"tilemaps\Character Select Foreground.bin" ; foreground (mappings)
+Eni_ChoosePlayer:	incbin	"tilemaps\Choose a Player.bin" ; background (mappings)
 		even
 ; ---------------------------------------------------------------------------
 ; Compressed graphics - various

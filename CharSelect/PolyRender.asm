@@ -614,7 +614,7 @@ Poly_RotateSonicHead:
 		bsr.w Poly_Update
 
 		disable_ints
-		writeVRAM $FF0400,$200,$80 ; Update Canvas
+		writeVRAM $FF0400,$200,$E00 ; Update Canvas
 		rts
 ; ===========================================================================
 ; Keep this at last to not mess with branches

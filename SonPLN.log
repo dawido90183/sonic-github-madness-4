@@ -1,45 +1,87 @@
-Operating system: Microsoft Windows NT 6.1.7601 Service Pack 1
-Opening INI file "C:\Users\HP\Documents\GitHub\sonic-github-madness-4\SonPLN.ini"...
+Mono runtime detected.
+Operating system: Microsoft Windows NT 6.2.9200.0
+Opening INI file "Z:\home\hip_snake\Projects\Mega Drive\github-madness-4\SonPLN.ini"...
 Game type is S1.
-Loading mc...
-Plane mappings file "cold brew/Map - Mines.bin" not found.
-8x8 tile file "cold brew/Art - Mines.bin" not found.
-Loading palette file "cold brew/Pal - Mines.bin"...
+Loading ChooseText...
+Loading plane mappings from file "tilemaps/Choose a Player.bin", using compression Enigma...
+Loading 8x8 tiles from file "artnem/Character Select.bin", using compression Nemesis...
+Loading palette file "palette/Sonic.bin"...
 Source: 0 Destination: 0 Length: 16
-System.AggregateException: One or more errors occurred. ---> System.IO.FileNotFoundException: Palette file could not be loaded! Have you set up your disassembly properly?
-   at SonicRetro.SonLVL.SonPLN.MainForm.LoadLevelPalette() in E:\Programs\SonLVL\SonPLN\MainForm.cs:line 440
-   at System.Threading.Tasks.Task.InnerInvoke()
-   at System.Threading.Tasks.Task.Execute()
+Mappings data size does not match given width/height. Expected: 112 (28x2*2) Actual: 1496.
+System.AggregateException: One or more errors occurred. (Palette file could not be loaded! Have you set up your disassembly properly?) ---> System.IO.FileNotFoundException: Palette file could not be loaded! Have you set up your disassembly properly?
+  at SonicRetro.SonLVL.SonPLN.MainForm.LoadLevelPalette () [0x00177] in <11ac92a7e1e24ad68baadbab1e918999>:0 
+  at System.Threading.Tasks.Task.InnerInvoke () [0x0000f] in <60bb7eaf44204dc583390995e42e38f8>:0 
+  at System.Threading.Tasks.Task.Execute () [0x00000] in <60bb7eaf44204dc583390995e42e38f8>:0 
    --- End of inner exception stack trace ---
-   at System.Threading.Tasks.Task.FastWaitAll(Task[] tasks)
-   at System.Threading.Tasks.Parallel.Invoke(ParallelOptions parallelOptions, Action[] actions)
-   at System.Threading.Tasks.Parallel.Invoke(Action[] actions)
-   at SonicRetro.SonLVL.SonPLN.MainForm.backgroundLevelLoader_DoWork(Object sender, DoWorkEventArgs e) in E:\Programs\SonLVL\SonPLN\MainForm.cs:line 321
----> (Inner Exception #0) System.IO.FileNotFoundException: Palette file could not be loaded! Have you set up your disassembly properly?
-File name: 'cold brew/Pal - Mines.bin'
-   at SonicRetro.SonLVL.SonPLN.MainForm.LoadLevelPalette() in E:\Programs\SonLVL\SonPLN\MainForm.cs:line 440
-   at System.Threading.Tasks.Task.InnerInvoke()
-   at System.Threading.Tasks.Task.Execute()<---
+  at System.Threading.Tasks.Task.WaitAll (System.Threading.Tasks.Task[] tasks, System.Int32 millisecondsTimeout, System.Threading.CancellationToken cancellationToken) [0x001c8] in <60bb7eaf44204dc583390995e42e38f8>:0 
+  at System.Threading.Tasks.Task.WaitAll (System.Threading.Tasks.Task[] tasks, System.Int32 millisecondsTimeout) [0x00000] in <60bb7eaf44204dc583390995e42e38f8>:0 
+  at System.Threading.Tasks.Task.WaitAll (System.Threading.Tasks.Task[] tasks) [0x00000] in <60bb7eaf44204dc583390995e42e38f8>:0 
+  at System.Threading.Tasks.Parallel.Invoke (System.Threading.Tasks.ParallelOptions parallelOptions, System.Action[] actions) [0x0029c] in <60bb7eaf44204dc583390995e42e38f8>:0 
+--- End of stack trace from previous location where exception was thrown ---
 
-Opening INI file "C:\Users\HP\Documents\GitHub\sonic-github-madness-4\SonPLN.ini"...
-Game type is S1.
-Loading mc...
-8x8 tile file "cold brew/Art - Mines.bin" not found.
-Loading palette file "cold brew/Pal - Mines.bin"...
-Source: 0 Destination: 0 Length: 16
-Plane mappings file "cold brew/Map - Mines.bin" not found.
-System.AggregateException: One or more errors occurred. ---> System.IO.FileNotFoundException: Palette file could not be loaded! Have you set up your disassembly properly?
-   at SonicRetro.SonLVL.SonPLN.MainForm.LoadLevelPalette() in E:\Programs\SonLVL\SonPLN\MainForm.cs:line 440
-   at System.Threading.Tasks.Task.InnerInvoke()
-   at System.Threading.Tasks.Task.Execute()
-   --- End of inner exception stack trace ---
-   at System.Threading.Tasks.Task.FastWaitAll(Task[] tasks)
-   at System.Threading.Tasks.Parallel.Invoke(ParallelOptions parallelOptions, Action[] actions)
-   at System.Threading.Tasks.Parallel.Invoke(Action[] actions)
-   at SonicRetro.SonLVL.SonPLN.MainForm.backgroundLevelLoader_DoWork(Object sender, DoWorkEventArgs e) in E:\Programs\SonLVL\SonPLN\MainForm.cs:line 321
+  at System.Threading.Tasks.Parallel.ThrowSingleCancellationExceptionOrOtherException (System.Collections.ICollection exceptions, System.Threading.CancellationToken cancelToken, System.Exception otherException) [0x0000b] in <60bb7eaf44204dc583390995e42e38f8>:0 
+  at System.Threading.Tasks.Parallel.Invoke (System.Threading.Tasks.ParallelOptions parallelOptions, System.Action[] actions) [0x002b9] in <60bb7eaf44204dc583390995e42e38f8>:0 
+  at System.Threading.Tasks.Parallel.Invoke (System.Action[] actions) [0x00000] in <60bb7eaf44204dc583390995e42e38f8>:0 
+  at SonicRetro.SonLVL.SonPLN.MainForm.backgroundLevelLoader_DoWork (System.Object sender, System.ComponentModel.DoWorkEventArgs e) [0x00029] in <11ac92a7e1e24ad68baadbab1e918999>:0 
 ---> (Inner Exception #0) System.IO.FileNotFoundException: Palette file could not be loaded! Have you set up your disassembly properly?
-File name: 'cold brew/Pal - Mines.bin'
-   at SonicRetro.SonLVL.SonPLN.MainForm.LoadLevelPalette() in E:\Programs\SonLVL\SonPLN\MainForm.cs:line 440
-   at System.Threading.Tasks.Task.InnerInvoke()
-   at System.Threading.Tasks.Task.Execute()<---
+File name: 'palette/Sonic.bin'
+  at SonicRetro.SonLVL.SonPLN.MainForm.LoadLevelPalette () [0x00177] in <11ac92a7e1e24ad68baadbab1e918999>:0 
+  at System.Threading.Tasks.Task.InnerInvoke () [0x0000f] in <60bb7eaf44204dc583390995e42e38f8>:0 
+  at System.Threading.Tasks.Task.Execute () [0x00000] in <60bb7eaf44204dc583390995e42e38f8>:0 <---
+
+Opening INI file "Z:\home\hip_snake\Projects\Mega Drive\github-madness-4\SonPLN.ini"...
+Game type is S1.
+Loading ChooseText...
+Loading plane mappings from file "tilemaps/Choose a Player.bin", using compression Enigma...
+Mappings data size does not match given width/height. Expected: 112 (28x2*2) Actual: 1496.
+Loading 8x8 tiles from file "artnem/Character Select.bin", using compression Nemesis...
+Loading palette file "palette/Sonic.bin"...
+Source: 0 Destination: 0 Length: 16
+System.AggregateException: One or more errors occurred. (Palette file could not be loaded! Have you set up your disassembly properly?) ---> System.IO.FileNotFoundException: Palette file could not be loaded! Have you set up your disassembly properly?
+  at SonicRetro.SonLVL.SonPLN.MainForm.LoadLevelPalette () [0x00177] in <11ac92a7e1e24ad68baadbab1e918999>:0 
+  at System.Threading.Tasks.Task.InnerInvoke () [0x0000f] in <60bb7eaf44204dc583390995e42e38f8>:0 
+  at System.Threading.Tasks.Task.Execute () [0x00000] in <60bb7eaf44204dc583390995e42e38f8>:0 
+   --- End of inner exception stack trace ---
+  at System.Threading.Tasks.Task.WaitAll (System.Threading.Tasks.Task[] tasks, System.Int32 millisecondsTimeout, System.Threading.CancellationToken cancellationToken) [0x001c8] in <60bb7eaf44204dc583390995e42e38f8>:0 
+  at System.Threading.Tasks.Task.WaitAll (System.Threading.Tasks.Task[] tasks, System.Int32 millisecondsTimeout) [0x00000] in <60bb7eaf44204dc583390995e42e38f8>:0 
+  at System.Threading.Tasks.Task.WaitAll (System.Threading.Tasks.Task[] tasks) [0x00000] in <60bb7eaf44204dc583390995e42e38f8>:0 
+  at System.Threading.Tasks.Parallel.Invoke (System.Threading.Tasks.ParallelOptions parallelOptions, System.Action[] actions) [0x0029c] in <60bb7eaf44204dc583390995e42e38f8>:0 
+--- End of stack trace from previous location where exception was thrown ---
+
+  at System.Threading.Tasks.Parallel.ThrowSingleCancellationExceptionOrOtherException (System.Collections.ICollection exceptions, System.Threading.CancellationToken cancelToken, System.Exception otherException) [0x0000b] in <60bb7eaf44204dc583390995e42e38f8>:0 
+  at System.Threading.Tasks.Parallel.Invoke (System.Threading.Tasks.ParallelOptions parallelOptions, System.Action[] actions) [0x002b9] in <60bb7eaf44204dc583390995e42e38f8>:0 
+  at System.Threading.Tasks.Parallel.Invoke (System.Action[] actions) [0x00000] in <60bb7eaf44204dc583390995e42e38f8>:0 
+  at SonicRetro.SonLVL.SonPLN.MainForm.backgroundLevelLoader_DoWork (System.Object sender, System.ComponentModel.DoWorkEventArgs e) [0x00029] in <11ac92a7e1e24ad68baadbab1e918999>:0 
+---> (Inner Exception #0) System.IO.FileNotFoundException: Palette file could not be loaded! Have you set up your disassembly properly?
+File name: 'palette/Sonic.bin'
+  at SonicRetro.SonLVL.SonPLN.MainForm.LoadLevelPalette () [0x00177] in <11ac92a7e1e24ad68baadbab1e918999>:0 
+  at System.Threading.Tasks.Task.InnerInvoke () [0x0000f] in <60bb7eaf44204dc583390995e42e38f8>:0 
+  at System.Threading.Tasks.Task.Execute () [0x00000] in <60bb7eaf44204dc583390995e42e38f8>:0 <---
+
+Loading ChooseText...
+Loading plane mappings from file "tilemaps/Choose a Player.bin", using compression Enigma...
+Mappings data size does not match given width/height. Expected: 112 (28x2*2) Actual: 1496.
+Loading palette file "palette/Sonic.bin"...
+Source: 0 Destination: 0 Length: 16
+Loading 8x8 tiles from file "artnem/Character Select.bin", using compression Nemesis...
+System.AggregateException: One or more errors occurred. (Palette file could not be loaded! Have you set up your disassembly properly?) ---> System.IO.FileNotFoundException: Palette file could not be loaded! Have you set up your disassembly properly?
+  at SonicRetro.SonLVL.SonPLN.MainForm.LoadLevelPalette () [0x00177] in <11ac92a7e1e24ad68baadbab1e918999>:0 
+  at System.Threading.Tasks.Task.InnerInvoke () [0x0000f] in <60bb7eaf44204dc583390995e42e38f8>:0 
+  at System.Threading.Tasks.Task.Execute () [0x00000] in <60bb7eaf44204dc583390995e42e38f8>:0 
+   --- End of inner exception stack trace ---
+  at System.Threading.Tasks.Task.WaitAll (System.Threading.Tasks.Task[] tasks, System.Int32 millisecondsTimeout, System.Threading.CancellationToken cancellationToken) [0x001c8] in <60bb7eaf44204dc583390995e42e38f8>:0 
+  at System.Threading.Tasks.Task.WaitAll (System.Threading.Tasks.Task[] tasks, System.Int32 millisecondsTimeout) [0x00000] in <60bb7eaf44204dc583390995e42e38f8>:0 
+  at System.Threading.Tasks.Task.WaitAll (System.Threading.Tasks.Task[] tasks) [0x00000] in <60bb7eaf44204dc583390995e42e38f8>:0 
+  at System.Threading.Tasks.Parallel.Invoke (System.Threading.Tasks.ParallelOptions parallelOptions, System.Action[] actions) [0x0029c] in <60bb7eaf44204dc583390995e42e38f8>:0 
+--- End of stack trace from previous location where exception was thrown ---
+
+  at System.Threading.Tasks.Parallel.ThrowSingleCancellationExceptionOrOtherException (System.Collections.ICollection exceptions, System.Threading.CancellationToken cancelToken, System.Exception otherException) [0x0000b] in <60bb7eaf44204dc583390995e42e38f8>:0 
+  at System.Threading.Tasks.Parallel.Invoke (System.Threading.Tasks.ParallelOptions parallelOptions, System.Action[] actions) [0x002b9] in <60bb7eaf44204dc583390995e42e38f8>:0 
+  at System.Threading.Tasks.Parallel.Invoke (System.Action[] actions) [0x00000] in <60bb7eaf44204dc583390995e42e38f8>:0 
+  at SonicRetro.SonLVL.SonPLN.MainForm.backgroundLevelLoader_DoWork (System.Object sender, System.ComponentModel.DoWorkEventArgs e) [0x00029] in <11ac92a7e1e24ad68baadbab1e918999>:0 
+---> (Inner Exception #0) System.IO.FileNotFoundException: Palette file could not be loaded! Have you set up your disassembly properly?
+File name: 'palette/Sonic.bin'
+  at SonicRetro.SonLVL.SonPLN.MainForm.LoadLevelPalette () [0x00177] in <11ac92a7e1e24ad68baadbab1e918999>:0 
+  at System.Threading.Tasks.Task.InnerInvoke () [0x0000f] in <60bb7eaf44204dc583390995e42e38f8>:0 
+  at System.Threading.Tasks.Task.Execute () [0x00000] in <60bb7eaf44204dc583390995e42e38f8>:0 <---
 
