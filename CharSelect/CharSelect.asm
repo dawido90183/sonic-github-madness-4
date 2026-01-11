@@ -8,6 +8,10 @@ CharSelect_ShadowTilemap:
     dc.w $6D,$6E,$6F,$86F,$86E,$86D
 	even
 
+CS_WhiText = $70
+CS_BluText = $B0
+CS_YelText = $F0
+
 GM_CharSelect:
 		move.b	#bgm_Stop,d0
 		bsr.w	PlaySound_Special ; stop music
@@ -113,6 +117,11 @@ GM_CharSelect:
 ; 		bsr.w Poly_RotateCube
 	; End of 3D Stuff
 
+		lea		(CharSelect_Moves).l,a0
+		move.w	#CS_WhiText,d3 ; White text
+		locVRAM $EB02,d4
+		bsr.w	CharSelect_TextBlit
+
 		lea (v_pal_dry_dup).l,a3
 		move.b	#0,(v_char_pal).w
 		bsr.s	LoadPlayerPalette_main
@@ -140,4 +149,24 @@ LoadCharacterCharSelect:
 		; load rest of stuff I guess
 		rts
 
+; d4 is text location in vram
+; d3 is vram offset for tiles
+; a0 is text itself in rom/ram
+CharSelect_TextBlit:
+		lea	(vdp_data_port).l,a6
+		move.l	d4,4(a6)
 
+CharSelect_LineLoop:
+		clr.w	d0
+		move.b	(a0)+,d0
+		beq.s	@end
+		subi.b	#' ',d0
+		add.w	d3,d0
+		move.w	d0,(a6)
+		bra.s	CharSelect_LineLoop
+	@end:
+		rts
+
+CharSelect_Moves:
+	dc.b "MOVES",0
+	even
