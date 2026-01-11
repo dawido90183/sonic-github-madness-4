@@ -25,7 +25,7 @@ ZoneCount:	equ 6	; discrete zones are: GHZ, MZ, SYZ, LZ, SLZ, and SBZ
 
 CharCount: equ 8
 
-SkipSplash: equ 1
+SkipSplash: equ 0
 
 DebugActivatedAuto: equ 1
 
