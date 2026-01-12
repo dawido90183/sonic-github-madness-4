@@ -1,13 +1,3 @@
-; Fat fucking chud shim
-dAmenKick:			equ 	$9F
-dAmenSnare1:		equ 	$A0
-dAmenSnare2:		equ 	$A1
-dAmenShortKick1:	equ 	$A2
-dAmenShortKick2:	equ 	$A3
-dAmenRide1:			equ 	$A4
-dAmenRide2:			equ 	$A5
-dAmenCrash:			equ 	$A6
-
 Basillica_Header:
 	smpsHeaderStartSong 1
 	smpsHeaderVoice     Basillica_Voices
@@ -571,12 +561,11 @@ Basillica_Loop10:
 
 ; DAC Data
 Basillica_DAC:
-	dc.b 	nRst, $7F, $7F, $22, dAmenKick, $0C, dAmenKick, dAmenSnare1, dAmenKick, dAmenKick, dAmenKick, dAmenSnare1, dAmenRide1, $06, dAmenRide2
-Basillica_Break00:
-	dc.b	dAmenKick, $0C, dAmenKick, dAmenSnare1, dAmenRide1, $06, dAmenRide2, dAmenRide1, dAmenRide2, dAmenKick, $0C, dAmenSnare2, $06, dAmenRide2, dAmenRide1, $0C
-	smpsLoop            $00, $07, Basillica_Break00
-	dc.b	dAmenRide1, $06, dAmenRide2, dAmenSnare1, $0C, dAmenSnare1, dAmenRide1, $06, dAmenRide2, dAmenRide1, dAmenRide2, dAmenShortKick1, dAmenShortKick2, dAmenSnare1, dAmenRide1, dAmenSnare1, $0C
-	smpsJump            Basillica_Break00
+	dc.b 	nRst,$7F,$7F,$22,$C,dHiTimpani, dLowTimpani, dHiTimpani, dLowTimpani
+	dc.b	$6,dLowTimpani,dSnare,$C,dSnare,dSnare,$6,$6
+Basillica_Jump00:
+	dc.b	dKick,$6,dLowTimpani,dLowTimpani,dKick,dSnare,dKick,dVLowTimpani,$C
+	smpsJump            Basillica_Jump00
 
 Basillica_Voices:
 ;	$08
