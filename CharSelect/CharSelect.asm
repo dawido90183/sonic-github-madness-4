@@ -117,10 +117,26 @@ GM_CharSelect:
 ; 		bsr.w Poly_RotateCube
 	; End of 3D Stuff
 
+		lea	(vdp_data_port).l,a6
+		locVRAM $EB02,4(a6)
+
 		lea		(CharSelect_Moves).l,a0
 		move.w	#CS_WhiText,d3 ; White text
-		locVRAM $EB02,d4
 		bsr.w	CharSelect_TextBlit
+
+		lea		(CharSelect_MovesNormal).l,a0
+		move.w	#CS_YelText,d3 ; Yellow text
+		bsr.w	CharSelect_TextBlit
+
+		locVRAM $EB82,4(a6)
+		move.w	#CS_BluText,d3 ; Blue text
+		bsr.w	CharSelect_TextBlit
+
+		locVRAM $ED02,4(a6)
+		lea		(CharSelect_Clear).l,a0
+		move.w	#CS_WhiText,d3 ; White text
+		bsr.w	CharSelect_TextBlit
+
 
 		lea (v_pal_dry_dup).l,a3
 		move.b	#0,(v_char_pal).w
@@ -149,24 +165,28 @@ LoadCharacterCharSelect:
 		; load rest of stuff I guess
 		rts
 
-; d4 is text location in vram
 ; d3 is vram offset for tiles
 ; a0 is text itself in rom/ram
 CharSelect_TextBlit:
-		lea	(vdp_data_port).l,a6
-		move.l	d4,4(a6)
-
-CharSelect_LineLoop:
 		clr.w	d0
 		move.b	(a0)+,d0
 		beq.s	@end
 		subi.b	#' ',d0
 		add.w	d3,d0
 		move.w	d0,(a6)
-		bra.s	CharSelect_LineLoop
+		bra.s	CharSelect_TextBlit
 	@end:
 		rts
 
 CharSelect_Moves:
-	dc.b "MOVES",0
+	dc.b "MOVES ",0
+	even
+
+CharSelect_Clear:
+	dc.b "CLEAR 00",0
+	even
+
+CharSelect_MovesNormal:
+	dc.b "NORMAL",0
+	dc.b "JUMP & NORMAL",0
 	even
