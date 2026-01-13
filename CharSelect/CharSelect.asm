@@ -3,6 +3,8 @@ CharSelect_Font:
     incbin "CharSelect/Font.bin"
 CharSelect_FontEnd:
 
+	include "CharSelect/Display Player.asm"
+
 CharSelect_ShadowTilemap:
     dc.w $6A,$6B,$6C,$86C,$86B,$86A
     dc.w $6D,$6E,$6F,$86F,$86E,$86D
@@ -19,6 +21,8 @@ GM_CharSelect:
 		bsr.w	PaletteFadeOut
 		disable_ints
 
+		move.l	#VBlank_CharSel,(V_int_addr).w
+
 		move.w	#$8720,(a6)	; set background colour (palette line 2, entry 0)
 		clr.b	(f_wtr_state).w
 		bsr.w	ClearScreen
@@ -30,6 +34,11 @@ GM_CharSelect:
 	@clrobj:
 		move.l	d0,(a1)+
 		dbf	d1,@clrobj	; fill object space ($D000-$EFFF) with 0
+
+	; Set variables here
+		move.w	#64,(obX+v_objspace).w ; Sonic
+		move.w	#100,(obY+v_objspace).w
+	; Variable set end
 
 	; Load Art
 		locVRAM 0
@@ -118,29 +127,33 @@ GM_CharSelect:
 	; End of 3D Stuff
 
 		lea	(vdp_data_port).l,a6
-		locVRAM $EB02,4(a6)
+		tst.b	(f_levselcheat).w ; check if level select code is on
+		beq.s	@nosecretdebugtext
 
+		lea		(CharSelect_LevSelText).l,a0
+		locVRAM $E000,4(a6)
+		move.w	#CS_BluText,d3 ; White text
+		bsr.w	CharSelect_TextBlit
+@nosecretdebugtext:
+		locVRAM $EC02,4(a6)
+		move.l	#('B'-' '+CS_WhiText)<<16+('Y'-' '+CS_WhiText),(a6)
+
+		locVRAM $EB02,4(a6)
 		lea		(CharSelect_Moves).l,a0
 		move.w	#CS_WhiText,d3 ; White text
 		bsr.w	CharSelect_TextBlit
 
-		lea		(CharSelect_MovesNormal).l,a0
-		move.w	#CS_YelText,d3 ; Yellow text
-		bsr.w	CharSelect_TextBlit
-
-		locVRAM $EB82,4(a6)
-		move.w	#CS_BluText,d3 ; Blue text
-		bsr.w	CharSelect_TextBlit
-
 		locVRAM $ED02,4(a6)
 		lea		(CharSelect_Clear).l,a0
-		move.w	#CS_WhiText,d3 ; White text
 		bsr.w	CharSelect_TextBlit
 
+		bsr.w	CharSelect_UpdateCharText
 
 		lea (v_pal_dry_dup).l,a3
+		move.b	(v_char_pal).w,d1
 		move.b	#0,(v_char_pal).w
-		bsr.s	LoadPlayerPalette_main
+		bsr.w	LoadPlayerPalette_main
+		move.b	d1,(v_char_pal).w
 
 		; Load the rest
 		move.w	#($60/4)-1,d7
@@ -148,22 +161,27 @@ GM_CharSelect:
 		move.l	(a2)+,(a3)+	; move data to RAM
 		dbf	d7,@loop1
 
+		bsr.w	CharSelect_DisplayPlayer
+
 		bsr.w	PaletteFadeIn
 CharSelect_Loop:
 		move.b	#4,(v_vbla_routine).w
 		bsr.w	WaitForVBla
+		bsr.w	CharSelect_DisplayPlayer
 		;bsr.w	RunPLC
 
 		;bsr.w	Poly_RotateCube
+		bsr.w	CharSelect_Move
 
-		bra.s	CharSelect_Loop
-		rts
+		tst.b	(v_jpadpress1).w
+		bpl.s	CharSelect_Loop
 
-LoadCharacterCharSelect:
-		lea (v_pal_dry).l,a3
-		bsr.s	LoadPlayerPalette_main
-		; load rest of stuff I guess
-		rts
+		tst.b	(f_levselcheat).w ; check if level select code is on
+		beq.w	PlayLevel
+		btst	#bitC,(v_jpadhold1).w ; check if C is pressed
+		beq.w	PlayLevel
+
+		bra.w	GoTo_LevelSelect
 
 ; d3 is vram offset for tiles
 ; a0 is text itself in rom/ram
@@ -178,15 +196,120 @@ CharSelect_TextBlit:
 	@end:
 		rts
 
-CharSelect_Moves:
-	dc.b "MOVES ",0
-	even
+; d3 is vram offset for tiles
+; a0 is text itself in rom/ram
+; d1 is ammount of characters
+CharSelect_TextBlitField:
+		clr.w	d0
+		move.b	(a0)+,d0
+		beq.s	@fill_0_loop
+		subi.b	#' ',d0
+		add.w	d3,d0
+		move.w	d0,(a6)
+		subq.w	#1,d1
+		bne.s	CharSelect_TextBlitField
+		rts
+	@fill_0_loop:
+		move.w	d3,(a6)
+		dbf.w	d1,@fill_0_loop
+	@end:
+		rts
 
+CharSelect_Moves:
+	dc.b "MOVES",0
 CharSelect_Clear:
 	dc.b "CLEAR 00",0
+CharSelect_LevSelText:
+	dc.b "HOLD C & START TO GO TO LEVEL SELECT!",0
 	even
 
-CharSelect_MovesNormal:
+Char_ModeList:
+	modelist_char:	macro name ; add for all
+		dc.w	CharSelect_Moves\name\-Char_ModeList
+	endm
+
+	; CHAR ADD STUFF
+
+	modelist_char Sonic ; Sonic
+	modelist_char Sonic ; GHM3_Guy
+	modelist_char Sonic ; GHM3_Mercury
+	modelist_char KiryuChan ; KiryuChan
+	modelist_char Sonic ; Jeebler
+	modelist_char Sonic ; MrBoss
+	modelist_char NecoArc ; NecoArc
+	modelist_char PrepucioLopez ; PrepucioLopez
+
+	; add next char here
+		even
+CharSelect_MovesSonic:
 	dc.b "NORMAL",0
-	dc.b "JUMP & NORMAL",0
-	even
+	dc.b "JUMP & ROLL",0
+CharSelect_MovesKiryuChan:
+	dc.b "DOJIMA",0
+	dc.b "C> PUNCH",0
+CharSelect_MovesNecoArc:
+	dc.b "C-MOON",0
+	dc.b "C> CROC.CNTRY",0
+CharSelect_MovesPrepucioLopez:
+	dc.b "LOPEZ",0
+	dc.b "I DUNNO",0
+
+Char_MakerList:
+	maker_char:	macro name ; add for all
+	dc.w	CharSelect_Maker\name\-Char_MakerList
+	endm
+
+	; CHAR ADD STUFF
+
+	maker_char SEGA ; Sonic
+	maker_char MADNESS3 ; GHM3_Guy
+	maker_char CONINIGHT ; GHM3_Mercury
+	maker_char HIPSNAKE ; KiryuChan
+	maker_char SANEWAY ; Jeebler
+	maker_char GUYKE ; MrBoss
+	maker_char HIPSNAKE ; NecoArc
+	maker_char GUYKE ; PrepucioLopez
+
+	; add next char here
+		even
+
+	maker_name:	macro name
+CharSelect_Maker\name\:
+	dc.b "\name",0
+	endm
+
+	maker_name SEGA
+	maker_name MADNESS3
+	maker_name CONINIGHT
+	maker_name HIPSNAKE
+	maker_name SANEWAY
+	maker_name GUYKE
+
+	; add next author here
+		even
+CharSelect_Move:
+		btst	#bitA,(v_jpadpress1).w ; is pressing A?
+		beq.s	@nocharswap
+
+		addq.w	#4,(v_character).w
+		cmpi.w	#(CharCount)*4,(v_character).w
+		blt.s	@sfx
+
+		move.w	#0,(v_character).w
+	@sfx:
+		move.b	#3,d2 ; start sfx
+		jsr (PlayCharSFX).l
+		bsr.w	CharSelect_LoadCharacter
+	@nocharswap:
+		btst	#bitB,(v_jpadpress1).w ; is pressing B?
+		beq.s	@nopalswap
+
+		move.b	#sfx_Switch,d0
+		bsr.w	PlaySound_Special	; play ring sound when code is entered
+
+		addq.b	#1,(v_char_pal).w
+		andi.b	#$3,(v_char_pal).w
+	@nopalswap:
+
+	@return:
+		rts

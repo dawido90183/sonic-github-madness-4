@@ -728,6 +728,31 @@ VBlank_SegaJP:
 		movem.l	(sp)+,d0-a6
 		rte
 
+VBlank_CharSel:
+		movem.l	d0-a6,-(sp)
+		tst.b	(v_vbla_routine).w
+		beq.w	@end
+
+		move.b	#0,(v_vbla_routine).w
+		move.w	#1,(f_hbla_pal).w
+
+		bsr.w	ReadJoypads
+        writeCRAM	v_pal_dry,$80,0
+        writeVRAM	v_spritetablebuffer,$280,vram_sprites
+		writeVRAM	v_hscrolltablebuffer,$380,vram_hscroll
+
+		jsr	(Process_DMA).l
+
+		tst.w	(v_generictimer).w
+		beq.w	@end
+		subq.w	#1,(v_generictimer).w
+
+	@end:
+		jsr	(UpdateMusic).l
+		addq.l	#1,(v_vbla_count).w
+		movem.l	(sp)+,d0-a6
+		rte
+
 
 ; ---------------------------------------------------------------------------
 ; Horizontal interrupt
@@ -2059,42 +2084,6 @@ NoSplashs:
 ;		rts	
 ; ===========================================================================
 
-; Old SonicSegaJP code, leave this here it could be useful in the future
-; 		; sonic's "object" is stored on $8
-; 		lea		(v_objspace+$8),a0
-; 		jsr	(Sonic_Animate).l
-; 		jsr	(Sonic_LoadGfx).l
-;
-;         moveq	#0,d1
-; 		move.b	obFrame(a0),d1 ; mapping frame
-;
-; 		lea		(Map_Sonic).l,a1 ; map
-; 		add.w	d1,d1
-; 		adda.w	(a1,d1.w),a1
-; 		moveq    #0,d1
-; 		move.b    (a1)+,d1
-; 		subq.b    #1,d1
-; 		bmi.s    @empty
-;
-; 		moveq    #0,d5 ; sprite limit
-; 		movea.w	#$4780,a3 ; art tile offset (pal 3)
-;
-; 		move.w	obX(a0),d3 ; x
-; 		addi.w	#128,d3
-; 		move.w	obY(a0),d2 ; y
-; 		addi.w	#128,d2
-;
-; 		lea	(v_spritetablebuffer).w,a2 ; set address for sprite table
-;         move.b  (v_objspace+$8),d4
-;
-; 		jsr		(BuildSpr_Draw_checks).l
-; 		subq.w	#5,a2
-; 		move.b	#0,(a2) ; clear last link
-; 	@empty:
-; 		rts
-
-
-
 SonicSegaJP:
 		; sonic's "object" is stored on $8
 		lea		(v_objspace+$8),a0
@@ -2895,30 +2884,6 @@ Tit_MainLoop:
 ; ===========================================================================
 
 ;Tit_ChkRegion:
-		btst	#bitA,(v_jpadpress1).w ; is pressing A?
-		beq.s	@nocharswap
-
-		addq.w	#4,(v_character).w
-		cmpi.w	#(CharCount)*4,(v_character).w
-		blt.s	@sfx
-
-		move.w	#0,(v_character).w
-	@sfx:
-		move.b	#3,d2 ; start sfx
-		jsr (PlayCharSFX).l
-	@nocharswap:
-
-		btst	#bitB,(v_jpadpress1).w ; is pressing B?
-		beq.s	@nopalswap
-
-		move.b	#sfx_Switch,d0
-		bsr.w	PlaySound_Special	; play ring sound when code is entered
-
-		addq.b	#1,(v_char_pal).w
-		andi.b	#$3,(v_char_pal).w
-
-	@nopalswap:
-
 		tst.b	(v_megadrive).w	; check if the machine is US or Japanese
 		bpl.s	Tit_RegionJap	; if Japanese, branch
 
@@ -2976,14 +2941,18 @@ loc_3230:
 		beq.w	GotoDemo
 		andi.b	#btnStart,(v_jpadpress1).w ; check if Start is pressed
 		beq.w	Tit_MainLoop	; if not, branch
-
+		bra.s	Tit_ChkLevSel
+GoTo_CharSelect:
+		move.b	#id_CharSelect,(v_gamemode).w
+		rts
 Tit_ChkLevSel:
 
 		tst.b	(f_levselcheat).w ; check if level select code is on
-		beq.w	PlayLevel	; if not, play level
+		beq.s	GoTo_CharSelect	; if not, play level
 		btst	#bitA,(v_jpadhold1).w ; check if A is pressed
-		beq.w	PlayLevel	; if not, play level
+		beq.s	GoTo_CharSelect	; if not, play level
 
+GoTo_LevelSelect:
 		moveq	#palid_LevelSel,d0
 		bsr.w	PalLoad2	; load level select palette
 		lea	(v_hscrolltablebuffer).w,a1
@@ -7938,7 +7907,7 @@ loc_12CB6:
 		bsr.w	Sonic_LoadGfx
 		rts	
 
-Char_ModeTable:
+Char_ModeTable: ; Change on CharSelect too
 	modetable_char:	macro name ; add for all
 
 		dc.w	(\name\_MdNormal-Char_ModeTable)/2
