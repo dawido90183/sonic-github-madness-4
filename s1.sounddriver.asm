@@ -244,7 +244,7 @@ ptr_mus47:	dc.l Music47
 ptr_mus48:	dc.l Music48
 ptr_mus49:	dc.l Music49
 ptr_mus4A:	dc.l Music4A
-;ptr_mus4B:	dc.l Music4B
+ptr_mus4B:	dc.l Music4B
 ;ptr_mus4C:	dc.l Music4C
 ;ptr_mus4D:	dc.l Music4D
 ;ptr_mus4E:	dc.l Music4E
@@ -2649,7 +2649,7 @@ Music15:	include	"sound/music/TG2000Tracks/VampireKiller.asm"
 		even
 Music16:	include	"sound/music/TG2000Tracks/Gadget.asm"
 		even
-Music17:	include	"sound/music/TG2000Tracks/CanCan.asm"
+Music17:	include	"sound/music/TG2000Tracks/CanCanInv.asm"
 		even
 Music18:	include	"sound/music/TG2000Tracks/TwoSteps.asm"
 		even
@@ -2751,6 +2751,8 @@ Music48:	include	"sound/music/TG2000Tracks/ChickenDance.asm"
 Music49:	include	"sound/music/Mus92 - Drowning.asm"
 		even
 Music4A:	include	"sound/music/SanewayTracks/Weird.asm"
+		even
+Music4B:	include	"sound/music/TG2000Tracks/CanCan.asm"
 		even
 ; ---------------------------------------------------------------------------
 ; Sound effect pointers
