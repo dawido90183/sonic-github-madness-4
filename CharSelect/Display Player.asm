@@ -64,7 +64,7 @@ CharSelect_UpdateCharText:
 		move.l	(a0,d5.w),(obMap+v_objspace).w ; load mapping
 
 		lea	(vdp_data_port).l,a6
-		locVRAM $EB0E,4(a6)
+		locVRAM $CB0E,4(a6)
 		lea		(Char_ModeList).l,a0
 		lsr.w	#1,d5
 		adda.w	(a0,d5.w),a0
@@ -72,12 +72,12 @@ CharSelect_UpdateCharText:
 		move.w	#8-1,d1
 		bsr.w	CharSelect_TextBlitField
 
-		locVRAM $EB82,4(a6)
+		locVRAM $CB82,4(a6)
 		move.w	#CS_BluText,d3 ; Blue text
 		move.w	#14-1,d1
 		bsr.w	CharSelect_TextBlitField
 
-		locVRAM $EC08,4(a6)
+		locVRAM $CC08,4(a6)
 		lea		(Char_MakerList).l,a0
 		adda.w	(a0,d5.w),a0
 		move.w	#CS_WhiText,d3 ; Yellow text

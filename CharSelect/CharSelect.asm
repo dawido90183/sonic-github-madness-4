@@ -10,9 +10,38 @@ CharSelect_ShadowTilemap:
     dc.w $6D,$6E,$6F,$86F,$86E,$86D
 	even
 
-CS_WhiText = $70
-CS_BluText = $B0
-CS_YelText = $F0
+CharSelect_MonitorTilemap:
+	dc.w $70,$71,$71,$870
+	dc.w $72,$00,$00,$872
+	dc.w $73,$00,$00,$873
+	dc.w $74,$75,$875,$76
+	dc.w $77,$78,$878,$877
+	even
+
+CS_WhiText = $79
+CS_BluText = $B9
+CS_YelText = $F9
+
+; d0 is vram location
+; a6 must be vdp data port
+CharSelect_MonitorPrinter:
+		move.w	#5-1,d1
+	@line_loop:
+		move.l	d0,4(a6)
+
+		move.w	#5-1,d2
+	@monitor_loop:
+		move.l	a1,a2
+		move.l	(a2)+,(a6)
+		move.l	(a2)+,(a6)
+		move.w	#0,(a6)
+		dbf.w	d2,@monitor_loop
+		; go to start of monitor loop
+
+		move.l	a2,a1
+		addi.l	#$80<<16,d0
+		dbf.w	d1,@line_loop
+		rts
 
 GM_CharSelect:
 		move.b	#bgm_Stop,d0
@@ -63,7 +92,7 @@ GM_CharSelect:
 		bsr.w	BitPixelDec
 
 		disable_ints
-		writeVRAM $FF0000,(CharSelect_FontEnd-CharSelect_Font-1)*24,$E00 ; Update Canvas
+		writeVRAM $FF0000,(CharSelect_FontEnd-CharSelect_Font-1)*24,(CS_WhiText*$20) ; Update Canvas
 
 	; Load "Choose a Player"
 		lea	($FF0000).l,a1
@@ -98,6 +127,16 @@ GM_CharSelect:
 
 		copyTilemap CharSelect_ShadowTilemap,$C70A,5,2,1
 
+	; Monitor printer
+		locVRAM	$C19E,d0
+		move.w	#5-1,d3
+	@mon_print_loop:
+		lea	(CharSelect_MonitorTilemap).l,a1
+		bsr.w	CharSelect_MonitorPrinter
+		dbf.w	d3,@mon_print_loop
+
+	; End of Monitor printer
+
 	; Character name tilemap
 		lea	($FF0000).l,a0 ; setup the tilemap on screen
 		move.w	#$34-1,d1
@@ -131,19 +170,19 @@ GM_CharSelect:
 		beq.s	@nosecretdebugtext
 
 		lea		(CharSelect_LevSelText).l,a0
-		locVRAM $E000,4(a6)
+		locVRAM $C000,4(a6)
 		move.w	#CS_BluText,d3 ; White text
 		bsr.w	CharSelect_TextBlit
 @nosecretdebugtext:
-		locVRAM $EC02,4(a6)
+		locVRAM $CC02,4(a6)
 		move.l	#('B'-' '+CS_WhiText)<<16+('Y'-' '+CS_WhiText),(a6)
 
-		locVRAM $EB02,4(a6)
+		locVRAM $CB02,4(a6)
 		lea		(CharSelect_Moves).l,a0
 		move.w	#CS_WhiText,d3 ; White text
 		bsr.w	CharSelect_TextBlit
 
-		locVRAM $ED02,4(a6)
+		locVRAM $CD02,4(a6)
 		lea		(CharSelect_Clear).l,a0
 		bsr.w	CharSelect_TextBlit
 
