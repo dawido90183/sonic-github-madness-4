@@ -234,6 +234,12 @@ bgm_NewdinTown:	equ ((ptr_mus31-MusicIndex)/4)+bgm__First
 bgm_BlueLobster:	equ ((ptr_mus43-MusicIndex)/4)+bgm__First
 bgm__Last:	equ ((ptr_musend-MusicIndex-4)/4)+bgm__First
 
+bgm_BEHZ:	equ ((ptr_mus4C-MusicIndex)/4)+bgm__First
+
+bgm_Dingaling:	equ ((ptr_mus2C-MusicIndex)/4)+bgm__First
+
+bgm_Vampire:	equ ((ptr_mus15-MusicIndex)/4)+bgm__First
+
 ; Sound effects
 sfx__First:	equ $80
 sfx_Jump:	equ ((ptr_sndA0-SoundIndex)/4)+sfx__First

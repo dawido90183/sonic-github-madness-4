@@ -3548,7 +3548,7 @@ BlendColor: ; d3 -> target subtract color ; a3 -> target palette; d1 -> size
 ; ---------------------------------------------------------------------------
 MusicList:
 		dc.b bgm_GHZ    ; GHZ1
-        dc.b bgm_GHZ    ; GHZ2
+        dc.b bgm_BEHZ    ; GHZ2
         dc.b bgm_GHZ    ; GHZ3
         dc.b bgm_GHZ    ; GHZ4
         dc.b bgm_LZ    ; LZ1
@@ -3560,7 +3560,7 @@ MusicList:
         dc.b bgm_MZ    ; MZ3
         dc.b bgm_MZ    ; MZ4
         dc.b bgm_SLZ    ; SLZ1
-        dc.b bgm_SLZ    ; SLZ2
+        dc.b bgm_Dingaling    ; SLZ2
         dc.b bgm_SLZ    ; SLZ3
         dc.b bgm_SLZ    ; SLZ4
         dc.b bgm_SYZ    ; SYZ1
@@ -3568,7 +3568,7 @@ MusicList:
         dc.b bgm_SYZ    ; SYZ3
         dc.b bgm_SYZ    ; SYZ4
         dc.b bgm_SBZ    ; SBZ1
-        dc.b bgm_SBZ    ; SBZ2
+        dc.b bgm_Vampire    ; SBZ2
         dc.b bgm_FZ    ; SBZ3
         dc.b bgm_SBZ    ; SBZ4
         dc.b bgm_GHZ    ; GHZ1
