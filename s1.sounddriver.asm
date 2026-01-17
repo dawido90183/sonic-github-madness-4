@@ -246,9 +246,25 @@ ptr_mus49:	dc.l Music49
 ptr_mus4A:	dc.l Music4A
 ptr_mus4B:	dc.l Music4B
 ptr_mus4C:	dc.l Music4C
-;ptr_mus4D:	dc.l Music4D
+ptr_mus4D:	dc.l Music4D
 ;ptr_mus4E:	dc.l Music4E
 ;ptr_mus4F:	dc.l Music4F
+;ptr_mus50:	dc.l Music50
+;ptr_mus51:	dc.l Music51
+;ptr_mus52:	dc.l Music52
+;ptr_mus53:	dc.l Music53
+;ptr_mus54:	dc.l Music54
+;ptr_mus55:	dc.l Music55
+;ptr_mus56:	dc.l Music56
+;ptr_mus57:	dc.l Music57
+;ptr_mus58:	dc.l Music58
+;ptr_mus59:	dc.l Music59
+;ptr_mus5A:	dc.l Music5A
+;ptr_mus5B:	dc.l Music5B
+;ptr_mus5C:	dc.l Music5C
+;ptr_mus5D:	dc.l Music5D
+;ptr_mus5E:	dc.l Music5E
+;ptr_mus5F:	dc.l Music5F
 
 ptr_musend
 
@@ -2755,6 +2771,8 @@ Music4A:	include	"sound/music/SanewayTracks/Weird.asm"
 Music4B:	include	"sound/music/TG2000Tracks/CanCan.asm"
 		even
 Music4C:	include	"sound/music/TG2000Tracks/BadEmerald.asm"
+		even
+Music4D:	include	"sound/music/TG2000Tracks/SkyBase.asm"
 		even
 ; ---------------------------------------------------------------------------
 ; Sound effect pointers
