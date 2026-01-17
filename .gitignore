@@ -13,3 +13,4 @@ sndtest.bin
 splash/Splash Screens to be Converted (Resource Suite)/RetroGraphicsToolkit (Conversion Tool)/RetroGraphicsToolkit.exe
 
 *.prev.bin
+*.pyc

@@ -219,7 +219,7 @@ loc_6F4A:
 		move.b	#1,(f_lockscreen).w ; lock screen
 		addq.b	#2,(v_dle_routine).w
 		moveq	#plcid_Boss,d0
-		bra.w	AddPLC		; load boss patterns
+		jmp	AddPLC		; load boss patterns
 ; ===========================================================================
 
 locret_6F62:
@@ -671,7 +671,7 @@ DLE_SBZ2boss:
 		move.b	#id_FalseFloor,(a1) ; load collapsing block object
 		addq.b	#2,(v_dle_routine).w
 		moveq	#plcid_EggmanSBZ2,d0
-		bra.w	AddPLC		; load SBZ2 Eggman patterns
+		jmp	AddPLC		; load SBZ2 Eggman patterns
 ; ===========================================================================
 
 locret_7298:
@@ -720,7 +720,7 @@ DLE_FZmain:
 		bcs.s	loc_72F4
 		addq.b	#2,(v_dle_routine).w
 		moveq	#plcid_FZBoss,d0
-		bsr.w	AddPLC		; load FZ boss patterns
+		jsr	AddPLC		; load FZ boss patterns
 
 loc_72F4:
 		bra.s	loc_72C2

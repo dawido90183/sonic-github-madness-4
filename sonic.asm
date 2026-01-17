@@ -10308,6 +10308,9 @@ Eni_Splash_W: incbin "splash/Map - W.bin"
 Pal_Splash_W: incbin "splash/Pal - W.bin"
         even
 ; ===========================================================================
+CharSelect_Icons:
+    incbin "CharSelect/Icons.bin"
+CharSelect_IconsEnd:
 			
 		include "conimodes\cold brew\GM_ColdBrew.asm"
 		include "conimodes\winxp\GM_NTOSKRNL.asm"

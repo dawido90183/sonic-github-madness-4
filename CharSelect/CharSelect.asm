@@ -12,8 +12,8 @@ CharSelect_ShadowTilemap:
 
 CharSelect_MonitorTilemap:
 	dc.w $70,$71,$71,$870
-	dc.w $72,$00,$00,$872
-	dc.w $73,$00,$00,$873
+	dc.w 0,$72,$872
+	dc.w 0,$73,$873
 	dc.w $74,$75,$875,$76
 	dc.w $77,$78,$878,$877
 	even
@@ -21,6 +21,7 @@ CharSelect_MonitorTilemap:
 CS_WhiText = $79
 CS_BluText = $B9
 CS_YelText = $F9
+CS_Icons = $139
 
 ; d0 is vram location
 ; a6 must be vdp data port
@@ -30,6 +31,8 @@ CharSelect_MonitorPrinter:
 		move.l	d0,4(a6)
 
 		move.w	#5-1,d2
+		tst.w	(a1)
+		beq.s	@icon_line
 	@monitor_loop:
 		move.l	a1,a2
 		move.l	(a2)+,(a6)
@@ -38,10 +41,26 @@ CharSelect_MonitorPrinter:
 		dbf.w	d2,@monitor_loop
 		; go to start of monitor loop
 
+	@continue_loop_from_icon:
 		move.l	a2,a1
 		addi.l	#$80<<16,d0
 		dbf.w	d1,@line_loop
 		rts
+	@icon_line:
+		addq.w	#2,a1
+	@loop_icon_monitor:
+		move.l	a1,a2
+		move.w	(a2)+,(a6)
+
+		move.l	d3,(a6)
+		addi.l	#$04<<16+$04,d3
+
+		move.w	(a2)+,(a6)
+		move.w	#0,(a6)
+		dbf.w	d2,@loop_icon_monitor
+
+		subi.l	#$12<<16+$12,d3
+		bra.s	@continue_loop_from_icon
 
 GM_CharSelect:
 		move.b	#bgm_Stop,d0
@@ -75,6 +94,7 @@ GM_CharSelect:
 		bsr.w	NemDec
 
 	; Load Font
+		move.b	#0,d6
 		lea	($FF0000).l,a1
 		lea	(CharSelect_Font).l,a0
 		move.b	#6,d0
@@ -93,6 +113,25 @@ GM_CharSelect:
 
 		disable_ints
 		writeVRAM $FF0000,(CharSelect_FontEnd-CharSelect_Font-1)*24,(CS_WhiText*$20) ; Update Canvas
+	; End of Font Loading
+
+	; Icon loading
+		lea	(CharSelect_Icons).l,a0
+
+		move.b	#0,d6
+		move.b	#1,d0
+		lea	($FF0000).l,a1
+		move.w	#(CharSelect_IconsEnd-CharSelect_Icons)/2-1,d3
+		bsr.w	BitPixelDec
+
+		move.b	#5,d6
+		move.b	#3,d0
+		lea	($FF0000).l,a1
+		move.w	#(CharSelect_IconsEnd-CharSelect_Icons)/2-1,d3
+		bsr.w	BitPixelDec_Add
+
+		writeVRAM $FF0000,(CharSelect_IconsEnd-CharSelect_Icons)/4*8,(CS_Icons*$20) ; Update Canvas
+	; End of Icon Loading
 
 	; Load "Choose a Player"
 		lea	($FF0000).l,a1
@@ -129,11 +168,13 @@ GM_CharSelect:
 
 	; Monitor printer
 		locVRAM	$C19E,d0
-		move.w	#5-1,d3
+		move.w	#5-1,d4
+		move.l	#CS_Icons<<16+CS_Icons+1,d3
 	@mon_print_loop:
 		lea	(CharSelect_MonitorTilemap).l,a1
 		bsr.w	CharSelect_MonitorPrinter
-		dbf.w	d3,@mon_print_loop
+		addi.l	#$10<<16+$10,d3
+		dbf.w	d4,@mon_print_loop
 
 	; End of Monitor printer
 
