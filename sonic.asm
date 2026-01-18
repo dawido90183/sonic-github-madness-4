@@ -1897,7 +1897,6 @@ Pal_SBZ3Water:	incbin	"palette\SBZ Act 3 Underwater.bin"
 Pal_SSResult:	incbin	"palette\Special Stage Results.bin"
 Pal_Continue:	incbin	"palette\Special Stage Continue Bonus.bin"
 Pal_Ending:	incbin	"palette\Ending.bin"
-Pal_CharSel:	incbin "palette\Character Select.bin"
 Pal_SegaJP:	incbin	"palette\Sega Logo JP.bin"
 Pal_SplashPal:	incbin	"eurosega\pal.bin"
 Pal_ColdBrew:	incbin	"conimodes\cold brew\palette.bin"
@@ -9554,13 +9553,7 @@ Pal_Splash_\name:	incbin	"splash\\Pal - \name\.bin"
 
 	; next splash screen data here
 
-; ---------------------------------------------------------------------------
-; Compressed graphics - Character Select
-; ---------------------------------------------------------------------------
-Nem_CharSel:	incbin	"artnem\Character Select.bin" ; character select art
-		even
-Eni_ChoosePlayer:	incbin	"tilemaps\Choose a Player.bin" ; background (mappings)
-		even
+	include "CharSelect/Data.asm"
 ; ---------------------------------------------------------------------------
 ; Compressed graphics - various
 ; ---------------------------------------------------------------------------
@@ -10308,9 +10301,6 @@ Eni_Splash_W: incbin "splash/Map - W.bin"
 Pal_Splash_W: incbin "splash/Pal - W.bin"
         even
 ; ===========================================================================
-CharSelect_Icons:
-    incbin "CharSelect/Icons.bin"
-CharSelect_IconsEnd:
 			
 		include "conimodes\cold brew\GM_ColdBrew.asm"
 		include "conimodes\winxp\GM_NTOSKRNL.asm"

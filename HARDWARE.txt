@@ -1,2 +1,2 @@
--atollyguyke's title screen does not display properly, look in whats being sent to the VDP.
+-atollyguyke's title screen does not display properly, look in whats being sent to the VDP. (ClownMDEmu logs show "'Latch H/V counter' flag set but is currently unemulated.")
 -LZ bubbles have an odd address error

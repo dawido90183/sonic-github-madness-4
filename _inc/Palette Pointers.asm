@@ -34,9 +34,6 @@ ptr_Pal_Ending:		palp	Pal_Ending,v_pal_dry,$40		; $13 (19) - ending sequence
 
 ptr_Pal_SegaJP:		palp	Pal_SegaJP,v_pal_dry+$20,$10		; Sega logo JP
 
-
-ptr_Pal_CharSel:	palp	Pal_CharSel,v_pal_dry,$30	; character select
-
 ptr_Pal_SplashPal:	palp	Pal_SplashPal,v_pal_dry,$10	; European Sega Splash Screen
 
 ptr_Pal_ColdBrew:	palp	Pal_ColdBrew,v_pal_dry,$10	; Cold Brew
@@ -83,7 +80,6 @@ palid_SBZ2:		equ (ptr_Pal_SBZ2-PalPointers)/8
 palid_SSResult:		equ (ptr_Pal_SSResult-PalPointers)/8
 palid_Continue:		equ (ptr_Pal_Continue-PalPointers)/8
 palid_Ending:		equ (ptr_Pal_Ending-PalPointers)/8
-palid_CharSel:		equ (ptr_Pal_CharSel-PalPointers)/8
 palid_SegaJP:		equ (ptr_Pal_SegaJP-PalPointers)/8
 palid_SplashPal:	equ (ptr_Pal_SplashPal-PalPointers)/8
 palid_ColdBrew:	equ (ptr_Pal_ColdBrew-PalPointers)/8

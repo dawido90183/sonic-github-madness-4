@@ -1,63 +1,75 @@
-    include "CharSelect/PolyRender.asm"
-CharSelect_Font:
-    incbin "CharSelect/Font.bin"
-CharSelect_FontEnd:
-
-	include "CharSelect/Display Player.asm"
-
-CharSelect_ShadowTilemap:
-    dc.w $6A,$6B,$6C,$86C,$86B,$86A
-    dc.w $6D,$6E,$6F,$86F,$86E,$86D
-	even
-
-CharSelect_MonitorTilemap:
-	dc.w $70,$71,$71,$870
-	dc.w 0,$72,$872
-	dc.w 0,$73,$873
-	dc.w $74,$75,$875,$76
-	dc.w $77,$78,$878,$877
-	even
-
 CS_WhiText = $79
 CS_BluText = $B9
 CS_YelText = $F9
 CS_Icons = $139
+CS_Ptrts = $1C0
+mon_vram = $C19E
+
+    include "CharSelect/PolyRender.asm"
+
+	include "CharSelect/Display Player.asm"
+
+SelectionToCharTable:
+	dc.b $0,$1,$2,$3,$4
+	dc.b $5,$6,$7,-1,-1
+	dc.b -1,-1,-1,-1,-1
+	dc.b -1,-1,-1,-1,-1
+	dc.b -1,-1,-1,-1,-1
+	even
+
+; Output: d1 as selection
+FindSelectionFromChar: ; Input: d0 as character
+		lsr.w	#2,d0
+		clr.w	d1
+	@loop:
+		move.b	SelectionToCharTable(pc,d1.w),d2
+		addq.w	#1,d1
+		sub.b	d0,d2
+		bne.s	@loop
+		subq.w	#1,d1
+		rts
+
+
+CharSelect_MonitorTilemap:
+	dc.w $70,$71,$71,$870
+	dc.w $72,$00,$00,$872
+	dc.w $73,$00,$00,$873
+	dc.w $74,$75,$875,$76
+	dc.w $77,$78,$878,$877
+	even
 
 ; d0 is vram location
 ; a6 must be vdp data port
 CharSelect_MonitorPrinter:
+		lea	CharSelect_MonitorTilemap(pc),a1
 		move.w	#5-1,d1
 	@line_loop:
 		move.l	d0,4(a6)
 
 		move.w	#5-1,d2
-		tst.w	(a1)
+		tst.w	2(a1)
 		beq.s	@icon_line
 	@monitor_loop:
-		move.l	a1,a2
-		move.l	(a2)+,(a6)
-		move.l	(a2)+,(a6)
+		move.l	(a1),(a6)
+		move.l	4(a1),(a6)
 		move.w	#0,(a6)
 		dbf.w	d2,@monitor_loop
 		; go to start of monitor loop
 
 	@continue_loop_from_icon:
-		move.l	a2,a1
+		addq.w	#8,a1
 		addi.l	#$80<<16,d0
 		dbf.w	d1,@line_loop
 		rts
 	@icon_line:
-		addq.w	#2,a1
-	@loop_icon_monitor:
-		move.l	a1,a2
-		move.w	(a2)+,(a6)
+		move.w	(a1),(a6)
 
 		move.l	d3,(a6)
 		addi.l	#$04<<16+$04,d3
 
-		move.w	(a2)+,(a6)
+		move.w	6(a1),(a6)
 		move.w	#0,(a6)
-		dbf.w	d2,@loop_icon_monitor
+		dbf.w	d2,@icon_line
 
 		subi.l	#$12<<16+$12,d3
 		bra.s	@continue_loop_from_icon
@@ -133,6 +145,12 @@ GM_CharSelect:
 		writeVRAM $FF0000,(CharSelect_IconsEnd-CharSelect_Icons)/4*8,(CS_Icons*$20) ; Update Canvas
 	; End of Icon Loading
 
+	; Load Portrait Art
+		locVRAM (CS_Ptrts*$20)
+		lea	(Nem_CharPortraits).l,a0 ; art
+		bsr.w	NemDec
+	; End of Portrait Art Load
+
 	; Load "Choose a Player"
 		lea	($FF0000).l,a1
 		lea	(Eni_ChoosePlayer).l,a0 ; tilemap
@@ -167,16 +185,32 @@ GM_CharSelect:
 		copyTilemap CharSelect_ShadowTilemap,$C70A,5,2,1
 
 	; Monitor printer
-		locVRAM	$C19E,d0
+		locVRAM	mon_vram,d0
 		move.w	#5-1,d4
 		move.l	#CS_Icons<<16+CS_Icons+1,d3
 	@mon_print_loop:
-		lea	(CharSelect_MonitorTilemap).l,a1
 		bsr.w	CharSelect_MonitorPrinter
 		addi.l	#$10<<16+$10,d3
 		dbf.w	d4,@mon_print_loop
-
 	; End of Monitor printer
+
+	; Char Selection Portraits
+		lea	($FF2000).l,a1
+		lea	(Eni_CharPortraits).l,a0 ; tilemap
+		move.w	#CS_Ptrts,d0
+		bsr.w	EniDec
+
+		lea	($FF2400).l,a1
+		lea (CharSelect_MonitorTilemap).l,a0
+		move.w	#10-1,d1
+	@load_monitor_in_ram_loop:
+		move.l	(a0)+,(a1)+
+		dbf.w	d1,@load_monitor_in_ram_loop
+
+		move.w	(v_character).w,d0
+		bsr.w	FindSelectionFromChar
+		bsr.w	RenderCharSelection
+	; End of char selection
 
 	; Character name tilemap
 		lea	($FF0000).l,a0 ; setup the tilemap on screen
@@ -371,6 +405,7 @@ CharSelect_Move:
 		btst	#bitA,(v_jpadpress1).w ; is pressing A?
 		beq.s	@nocharswap
 
+		move.w	(v_character).w,-(sp)
 		addq.w	#4,(v_character).w
 		cmpi.w	#(CharCount)*4,(v_character).w
 		blt.s	@sfx
@@ -380,6 +415,13 @@ CharSelect_Move:
 		move.b	#3,d2 ; start sfx
 		jsr (PlayCharSFX).l
 		bsr.w	CharSelect_LoadCharacter
+		move.w	(v_character).w,d0
+		bsr.w	FindSelectionFromChar
+		bsr.w	RenderCharSelection
+		move.w	(sp)+,d0
+		bsr.w	FindSelectionFromChar ; there will be a selection variable in the future
+		bsr.w	RenderMonitorSelection
+
 	@nocharswap:
 		btst	#bitB,(v_jpadpress1).w ; is pressing B?
 		beq.s	@nopalswap
@@ -392,4 +434,63 @@ CharSelect_Move:
 	@nopalswap:
 
 	@return:
+		rts
+
+; d1.w is selection
+RenderCharSelection:
+		bsr.w	FindPosInSelection
+
+		lea	($FF2000).l,a1
+	rept 5
+		add.w	d1,d1
+	endr
+		adda.w	d1,a1
+		move.w	#4-1,d1
+		move.w	#4-1,d2
+		jmp TilemapToVRAM
+
+RenderMonitorSelection:
+		bsr.w	FindPosInSelection
+
+		lea	($FF2400).l,a1
+
+		move.w	#CS_Icons,d3
+		add.w	d1,d1
+		add.w	d1,d1
+		add.w	d1,d3
+		move.w	d3,$A(a1)
+		addq.w	#1,d3
+		move.w	d3,$C(a1)
+		addq.w	#1,d3
+		move.w	d3,$12(a1)
+		addq.w	#1,d3
+		move.w	d3,$14(a1)
+		move.w	#4-1,d1
+		move.w	#5-1,d2
+		jmp TilemapToVRAM
+
+FindPosInSelection:
+		locVRAM mon_vram,d0
+
+		moveq	#0,d2
+
+		move.w	d1,d2
+
+		divu.w	#5,d2
+		add.l	d2,d2
+
+		move.l	d2,d4
+		add.l	d2,d2
+		add.l	d2,d2
+		add.l	d4,d2 ; *2*5 tiles
+
+		moveq	#0,d3
+		move.w	d2,d3
+		clr.w	d2 ; only remainder left (h. scroll)
+
+		add.l	d2,d0
+
+		lsl.w	#6,d3
+		swap	d3
+		add.l	d3,d0
 		rts

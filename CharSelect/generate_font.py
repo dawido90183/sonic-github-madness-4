@@ -36,7 +36,7 @@ def main() -> None:
     compressed: list[bytes] = generate_compressed_from_index( \
         tiles,indexes,tile_y_jump, row_size)
 
-    with open("Font.bin",mode="wb") as file:
+    with open("art/Font.bitpxl",mode="wb") as file:
         for i in compressed:
             file.write(i)
 
