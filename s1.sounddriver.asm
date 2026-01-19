@@ -247,7 +247,7 @@ ptr_mus4A:	dc.l Music4A
 ptr_mus4B:	dc.l Music4B
 ptr_mus4C:	dc.l Music4C
 ptr_mus4D:	dc.l Music4D
-;ptr_mus4E:	dc.l Music4E
+ptr_mus4E:	dc.l Music4E
 ;ptr_mus4F:	dc.l Music4F
 ;ptr_mus50:	dc.l Music50
 ;ptr_mus51:	dc.l Music51
@@ -2773,6 +2773,8 @@ Music4B:	include	"sound/music/TG2000Tracks/CanCan.asm"
 Music4C:	include	"sound/music/TG2000Tracks/BadEmerald.asm"
 		even
 Music4D:	include	"sound/music/TG2000Tracks/SkyBase.asm"
+		even
+Music4E:	include	"sound/music/TG2000Tracks/Megalovania.asm"
 		even
 ; ---------------------------------------------------------------------------
 ; Sound effect pointers
