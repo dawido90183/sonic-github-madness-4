@@ -32,7 +32,7 @@ GitHubScreen:
 		move.w  #$8230,(a6)    ; Set FG address
 		move.w  #$8407,(a6)    ; Set BG address
 		move.w  #$8B03,(a6)    ; line scroll mode
-		move.w	#$8007,(a6)
+; 		move.w	#$8007,(a6) ; HS - Please do NOT write into the same register TWICE in a frame!
 		move.w	#$8720,(a6)
  		move.w  (VDP_buff).w,d0      ; VDP instruction buffer 
 		andi.b  #$BF,d0

@@ -10,12 +10,22 @@ mon_vram = $C19E
 	include "CharSelect/Display Player.asm"
 
 SelectionToCharTable:
-	dc.b $0,$1,$2,$3,$4
+	dc.b -1,-1,$2,$3,$4
 	dc.b $5,$6,$7,-1,-1
-	dc.b -1,-1,-1,-1,-1
+	dc.b -1,$0,-1,$1,-1
 	dc.b -1,-1,-1,-1,-1
 	dc.b -1,-1,-1,-1,-1
 	even
+; Output: d1 as char
+FindCharFromSelection: ; Input: d0 as sel
+		clr.w	d1
+		move.b	SelectionToCharTable(pc,d0.w),d1
+		bmi.s	@end
+	rept 2
+		add.w	d1,d1
+	endr
+	@end:
+		rts
 
 ; Output: d1 as selection
 FindSelectionFromChar: ; Input: d0 as character
@@ -207,8 +217,7 @@ GM_CharSelect:
 		move.l	(a0)+,(a1)+
 		dbf.w	d1,@load_monitor_in_ram_loop
 
-		move.w	(v_character).w,d0
-		bsr.w	FindSelectionFromChar
+		move.w	(v_char_sel).w,d1
 		bsr.w	RenderCharSelection
 	; End of char selection
 
@@ -402,27 +411,62 @@ CharSelect_Maker\name\:
 	; add next author here
 		even
 CharSelect_Move:
-		btst	#bitA,(v_jpadpress1).w ; is pressing A?
-		beq.s	@nocharswap
+		move.b	(v_jpadpress1).w,d1 ; is pressing DPAD?
+		andi.b	#btnDir,d1
+		beq.s	CharSelect_MovePalette
 
-		move.w	(v_character).w,-(sp)
-		addq.w	#4,(v_character).w
-		cmpi.w	#(CharCount)*4,(v_character).w
+		move.w	(v_char_sel).w,-(sp)
+		move.w	(sp),d0
+
+		btst	#bitDn,d1
+		beq.s	@up
+		addq.b	#5,d0
+		cmpi.b	#25,d0
+		blt.s	@up
+		subi.b	#25,d0
+
+	@up:
+		btst	#bitUp,d1
+		beq.s	@left
+		subq.b	#5,d0
+		bpl.s	@left
+		addi.b	#25,d0
+
+	@left:
+		btst	#bitL,d1
+		beq.s	@right
+		subq.b	#1,d0
+		bpl.s	@right
+		addi.b	#25,d0
+
+	@right:
+		btst	#bitR,d1
+		beq.s	@sfx
+		addq.b	#1,d0
+		cmpi.b	#25,d0
 		blt.s	@sfx
+		subi.b	#25,d0
 
-		move.w	#0,(v_character).w
 	@sfx:
+		move.w	d0,(v_char_sel).w
+		bsr.w	FindCharFromSelection
+		tst.b	d1
+		bmi.s	@non_character
+
+		move.w	d1,(v_character).w
 		move.b	#3,d2 ; start sfx
 		jsr (PlayCharSFX).l
 		bsr.w	CharSelect_LoadCharacter
-		move.w	(v_character).w,d0
-		bsr.w	FindSelectionFromChar
+
+	@non_character: ; examples: Random & locked characters
+		move.w	(v_char_sel).w,d1
 		bsr.w	RenderCharSelection
-		move.w	(sp)+,d0
-		bsr.w	FindSelectionFromChar ; there will be a selection variable in the future
+
+		move.w	(sp)+,d1
 		bsr.w	RenderMonitorSelection
 
-	@nocharswap:
+
+CharSelect_MovePalette:
 		btst	#bitB,(v_jpadpress1).w ; is pressing B?
 		beq.s	@nopalswap
 

@@ -339,6 +339,8 @@ GameInit:
 		move.l	#VBlank,(V_int_addr).w
 		move.l	#HBlank,(H_int_addr).w
 
+		move.w	#11,(v_char_sel).w ; selection defaults to Sonic
+
 		bsr.w    InitDMAQueue
 		bsr.w	VDPSetupGame
 
