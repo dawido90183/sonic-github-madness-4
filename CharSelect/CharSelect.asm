@@ -270,6 +270,12 @@ GM_CharSelect:
 		lea		(CharSelect_Clear).l,a0
 		bsr.w	CharSelect_TextBlit
 
+		move.w	(v_char_sel).w,d0
+		bsr.w	FindCharFromSelection
+		tst.b	d1
+		bmi.s	@non_char_selection
+		move.w	d1,(v_character).w
+	@non_char_selection:
 		bsr.w	CharSelect_UpdateCharText
 
 		lea (v_pal_dry_dup).l,a3
@@ -292,6 +298,8 @@ CharSelect_Loop:
 		bsr.w	WaitForVBla
 		bsr.w	CharSelect_DisplayPlayer
 		;bsr.w	RunPLC
+
+		jsr (RandomNumber).l ; Keep randomizing
 
 		;bsr.w	Poly_RotateCube
 		bsr.w	CharSelect_Move

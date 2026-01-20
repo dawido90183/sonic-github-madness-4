@@ -324,6 +324,7 @@ CheckSumCheck:
 		andi.b	#$C0,d0
 		move.b	d0,(v_megadrive).w ; get region setting
 		move.l	#'init',(v_init).w ; set flag so checksum won't run again
+		move.w	#11,(v_char_sel).w ; selection defaults to Sonic
 
 GameInit:
 		lea	($FF0000).l,a6
@@ -338,8 +339,6 @@ GameInit:
 		move.w	d0,(H_int_jump).w
 		move.l	#VBlank,(V_int_addr).w
 		move.l	#HBlank,(H_int_addr).w
-
-		move.w	#11,(v_char_sel).w ; selection defaults to Sonic
 
 		bsr.w    InitDMAQueue
 		bsr.w	VDPSetupGame
@@ -3630,8 +3629,19 @@ GM_Level:
 		lea	(PreLevelStartArray).l,a1 ; load routine list
 		move.l	(a1,d0.w),a0
 		tst.l	(a1,d0.w)	; is there a routine to run?
-		beq.s	Level_MusicFade	; if not, branch
+		beq.s	@check_rng_char	; if not, branch
 		jsr	(a0)
+
+	@check_rng_char:
+		cmpi.w	#12,(v_char_sel).w
+		bne.s	Level_MusicFade
+		jsr (RandomNumber).l
+		andi.l	#$FFFF,d0
+		divu.w	#CharCount,d0
+		swap	d0 ; remainder
+		add.w	d0,d0
+		add.w	d0,d0
+		move.w	d0,(v_character).w
 Level_MusicFade:
 		move.b	#bgm_Fade,d0
 		bsr.w	PlaySound_Special ; fade out music
