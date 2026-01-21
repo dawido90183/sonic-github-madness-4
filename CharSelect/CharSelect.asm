@@ -397,7 +397,7 @@ Char_MakerList:
 	maker_char CONINIGHT ; GHM3_Mercury
 	maker_char HIPSNAKE ; KiryuChan
 	maker_char SANEWAY ; Jeebler
-	maker_char GUYKE ; MrBoss
+	maker_char SANEWAY ; MrBoss
 	maker_char HIPSNAKE ; NecoArc
 	maker_char GUYKE ; PrepucioLopez
 
