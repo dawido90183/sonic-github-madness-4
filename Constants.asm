@@ -232,6 +232,7 @@ bgm_SailorTrans:	equ ((ptr_mus2A-MusicIndex)/4)+bgm__First
 bgm_SailorInvi:	equ ((ptr_mus2B-MusicIndex)/4)+bgm__First
 bgm_NewdinTown:	equ ((ptr_mus31-MusicIndex)/4)+bgm__First
 bgm_BlueLobster:	equ ((ptr_mus43-MusicIndex)/4)+bgm__First
+bgm_CharSel:	equ ((ptr_mus50-MusicIndex)/4)+bgm__First
 bgm__Last:	equ ((ptr_musend-MusicIndex-4)/4)+bgm__First
 
 bgm_BEHZ:	equ ((ptr_mus4C-MusicIndex)/4)+bgm__First

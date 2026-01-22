@@ -249,7 +249,7 @@ ptr_mus4C:	dc.l Music4C
 ptr_mus4D:	dc.l Music4D
 ptr_mus4E:	dc.l Music4E
 ptr_mus4F:	dc.l Music4F
-;ptr_mus50:	dc.l Music50
+ptr_mus50:	dc.l Music50
 ;ptr_mus51:	dc.l Music51
 ;ptr_mus52:	dc.l Music52
 ;ptr_mus53:	dc.l Music53
@@ -2777,6 +2777,8 @@ Music4D:	include	"sound/music/TG2000Tracks/SkyBase.asm"
 Music4E:	include	"sound/music/TG2000Tracks/Megalovania.asm"
 		even
 Music4F:	include	"sound/music/TG2000Tracks/Scrappy.asm"
+		even
+Music50:	include	"sound/music/CharSel.asm"
 		even
 ; ---------------------------------------------------------------------------
 ; Sound effect pointers

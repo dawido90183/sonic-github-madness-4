@@ -85,8 +85,8 @@ CharSelect_MonitorPrinter:
 		bra.s	@continue_loop_from_icon
 
 GM_CharSelect:
-		move.b	#bgm_Stop,d0
-		bsr.w	PlaySound_Special ; stop music
+		move.b	#bgm_CharSel,d0
+		bsr.w	PlaySound_Special ; stop musicc
 		bsr.w	ClearPLC
 		bsr.w	PaletteFadeOut
 		disable_ints
@@ -96,7 +96,6 @@ GM_CharSelect:
 		move.w	#$8720,(a6)	; set background colour (palette line 2, entry 0)
 		clr.b	(f_wtr_state).w
 		bsr.w	ClearScreen
-
 		lea	(v_objspace).w,a1
 		moveq	#0,d0
 		move.w	#$7FF,d1
@@ -109,6 +108,7 @@ GM_CharSelect:
 		move.w	#64,(obX+v_objspace).w ; Sonic
 		move.w	#100,(obY+v_objspace).w
 	; Variable set end
+  
 
 	; Load Art
 		locVRAM 0
@@ -293,6 +293,7 @@ GM_CharSelect:
 		bsr.w	CharSelect_DisplayPlayer
 
 		bsr.w	PaletteFadeIn
+
 CharSelect_Loop:
 		move.b	#4,(v_vbla_routine).w
 		bsr.w	WaitForVBla
