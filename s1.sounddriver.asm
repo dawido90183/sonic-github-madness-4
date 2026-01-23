@@ -2670,6 +2670,7 @@ Music17:	include	"sound/music/TG2000Tracks/CanCanInv.asm"
 Music18:	include	"sound/music/TG2000Tracks/TwoSteps.asm"
 		even
 Music94:	include	"sound/music/HS_Tracks/Basillica.asm"
+		even ; oof
 Music19:	include	"sound/music/TG2000Tracks/FurElise.asm"
 		even
 Music1A:	include	"sound/music/TG2000Tracks/Ding.asm"
