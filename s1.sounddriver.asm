@@ -115,6 +115,7 @@ SpeedUpIndex:
 PALSpeedIndex:			; NOTE BY CONI - this is for whenever you want your music to play either at the same speed or slower in PAL consoles
 						; set the byte for your respective music to 0 if you want your track to play slower
 						; 81-93 are basically placeholders for sonic 1 music, change them if otherwise
+						; update: please expand this if you add more omfg broooo
 		dc.b $01	; $01
 		dc.b $01	; $02
 		dc.b $01	; $03
@@ -164,6 +165,52 @@ PALSpeedIndex:			; NOTE BY CONI - this is for whenever you want your music to pl
 		dc.b $01	; $2F
 		dc.b $01	; $30
 		dc.b $01	; $31
+		dc.b $01	; $32
+		dc.b $01	; $33
+		dc.b $01	; $34
+		dc.b $01	; $35
+		dc.b $01	; $36
+		dc.b $01	; $37
+		dc.b $01	; $38
+		dc.b $01	; $39
+		dc.b $01	; $3A
+		dc.b $01	; $3B
+		dc.b $01	; $3C
+		dc.b $01	; $3D
+		dc.b $01	; $3E
+		dc.b $01	; $3F
+		dc.b $01	; $40
+		dc.b $01	; $41
+		dc.b $01	; $42
+		dc.b $01	; $43
+		dc.b $01	; $44
+		dc.b $01	; $45
+		dc.b $01	; $46
+		dc.b $01	; $47
+		dc.b $01	; $48
+		dc.b $01	; $49
+		dc.b $01	; $4A
+		dc.b $01	; $4B
+		dc.b $01	; $4C
+		dc.b $01	; $4D
+		dc.b $01	; $4E
+		dc.b $01	; $4F
+		dc.b $01	; $50
+		dc.b $00	; $51  - original game wasn't optimized for 50hz (it's made for a 60hz only machine lol)
+		dc.b $01	; $52
+		dc.b $01	; $53
+		dc.b $01	; $54
+		dc.b $01	; $55
+		dc.b $01	; $56
+		dc.b $01	; $57
+		dc.b $01	; $58
+		dc.b $01	; $59
+		dc.b $01	; $5A
+		dc.b $01	; $5B
+		dc.b $01	; $5C
+		dc.b $01	; $5D
+		dc.b $01	; $5E
+		dc.b $01	; $5F
         even
 
 ; ---------------------------------------------------------------------------
@@ -250,7 +297,7 @@ ptr_mus4D:	dc.l Music4D
 ptr_mus4E:	dc.l Music4E
 ptr_mus4F:	dc.l Music4F
 ptr_mus50:	dc.l Music50
-;ptr_mus51:	dc.l Music51
+ptr_mus51:	dc.l Music51
 ;ptr_mus52:	dc.l Music52
 ;ptr_mus53:	dc.l Music53
 ;ptr_mus54:	dc.l Music54
@@ -2780,6 +2827,8 @@ Music4E:	include	"sound/music/TG2000Tracks/Megalovania.asm"
 Music4F:	include	"sound/music/TG2000Tracks/Scrappy.asm"
 		even
 Music50:	include	"sound/music/CharSel.asm"
+		even
+Music51:	include	"sound/music/CNTracks/FuckedUpBlueSpheres.asm"
 		even
 ; ---------------------------------------------------------------------------
 ; Sound effect pointers
