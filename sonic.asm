@@ -2725,6 +2725,13 @@ Tit_ClrObj0:
 		move.l	d0,(a1)+
 		dbf	d1,Tit_ClrObj0	; fill object space ($D000-$EFFF) with 0
 
+		locVRAM	$4000
+		lea	(Nem_TitleFg).l,a0 ; load title screen patterns
+		bsr.w	NemDec
+		locVRAM	$6000
+		lea	(Nem_TitleSonic).l,a0 ; load Sonic title screen patterns
+		bsr.w	NemDec
+
 		locVRAM	$14C0
 		lea	(Nem_CreditText).l,a0 ;	load alphabet
 		bsr.w	NemDec
@@ -2768,24 +2775,18 @@ FinalTitle:
 		move.w	#0,(v_character).w ; Reset character
 		move.b	#0,(v_char_pal).w
 
+		lea	(vdp_data_port).l,a6
+		locVRAM	$D000,4(a6)
+		lea	(Art_Text).l,a5	; load level select font
+		move.w	#$148-1,d1
+
+@loadtxt:
+		move.l	(a5)+,(a6)
+		dbf	d1,@loadtxt	; load level select font
 		disable_ints
 		locVRAM	0
 		lea	(Nem_TitleBg).l,a0 ; load GHZ patterns
 		bsr.w	NemDec
-		locVRAM	$4000
-		lea	(Nem_TitleFg).l,a0 ; load title screen patterns
-		bsr.w	NemDec
-		locVRAM	$6000
-		lea	(Nem_TitleSonic).l,a0 ; load Sonic title screen patterns
-		bsr.w	NemDec
-		lea	(vdp_data_port).l,a6
-		locVRAM	$D000,4(a6)
-		lea	(Art_Text).l,a5	; load level select font
-		move.w	#$28F,d1
-
-	Tit_LoadText:
-		move.w	(a5)+,(a6)
-		dbf	d1,Tit_LoadText	; load level select font
 
 		move.b	#0,(v_lastlamp).w ; clear lamppost counter
 		move.w	#0,(v_debuguse).w ; disable debug item placement mode

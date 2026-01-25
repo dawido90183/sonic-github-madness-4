@@ -176,8 +176,8 @@ BlankScr_Loop6:
 		bne.s   BlankScr_Loop6
 			
 MadnessScr_Frame4:				
-		bsr.w FinalTitle ; Send to next screen
-        rts
+		bra.w FinalTitle ; Send to next screen
+
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
 ; GITHUB MADNESS 4 TITLE  

@@ -23,7 +23,7 @@ HUD_Update:
 
 	@notzero:
 		clr.b	(f_ringcount).w
-		locVRAM	$DF40,d0	; set VRAM address
+		;locVRAM	$DF40,d0	; set VRAM address
 		moveq	#0,d1
 		move.w	(v_rings).w,d1	; load number of rings
 		bsr.w	Hud_Rings
@@ -100,7 +100,7 @@ HudDebug:
 
 	@notzero:
 		clr.b	(f_ringcount).w
-		locVRAM	$DF40,d0	; set VRAM address
+		;locVRAM	$DF40,d0	; set VRAM address
 		moveq	#0,d1
 		move.w	(v_rings).w,d1	; load number of rings
 		bsr.w	Hud_Rings
@@ -189,7 +189,7 @@ loc_1C85E:
 
 ; ===========================================================================
 Hud_TilesBase:	dc.b $16, $FF, $FF, $FF, $FF, $FF, $FF,	0, 0, $14, 0, 0
-Hud_TilesZero:	dc.b $FF, $FF, 0, 0
+Hud_TilesZero:	dc.b $18, $19, $1A, $FF
 ; ---------------------------------------------------------------------------
 ; Subroutine to load debug mode numbers patterns
 ; ---------------------------------------------------------------------------
@@ -247,11 +247,79 @@ loc_1C8B2:
 
 ; ||||||||||||||| S U B R O U T I N E |||||||||||||||||||||||||||||||||||||||
 
+; old normal hud
+; 		lea	(Hud_100).l,a2
+; 		moveq	#2,d6
+; 		bra.s	Hud_LoadArt
 
-Hud_Rings:
-		lea	(Hud_100).l,a2
-		moveq	#2,d6
-		bra.s	Hud_LoadArt
+; This is meant to just be a bar in the hud, I'm not making it with sprites tho
+Hud_Rings: ; d1 has ring ammount
+		lea	(vdp_data_port).l,a6
+
+		add.w	d1,d1
+		add.w	d1,d1
+		move.w	d1,d2
+		add.w	d1,d1
+		add.w	d2,d1 ; * 6
+
+		divu.w	#25,d1; /100*48, /50*24, /25*12
+		andi.l	#$3F,d1
+
+		cmpi.w	#48,d1
+		ble.s	@cap_not_reached
+		move.w	#48,d1
+	@cap_not_reached:
+
+		moveq	#0,d2
+		move.w	(v_lastring).w,d2
+		move.w	d1,(v_lastring).w ; save count
+
+	; check delta and see what kind of fill to use
+
+		move.w	d2,d3
+		sub.w	d1,d2 ; Ring0 - Ring
+		;beq.w	Hud_RingsEnd
+		bpl.w	Hud_RingsEnd ; @decrease
+
+		neg.w	d2 ; |DeltaRing|
+		move.w	d3,d1 ; Start at Ring0
+		move.w	#0,d3
+
+		locVRAM	$DF44,d0	; set VRAM address
+		move.b	d1,d3
+		andi.b	#3,d3
+		add.b	d3,d3
+		move.b	d1,d4
+		andi.b	#4,d4
+		lsr.b	#1,d4
+		andi.b	#~7,d1
+	rept 2
+		add.b	d1,d1
+	endr ; /4*$20=*8
+		add.b	d4,d1 ; d4 will be relevant
+		swap	d1
+		add.l	d1,d0
+		move.l	d0,4(a6)
+
+		lsr.w	#2,d2
+		subq.w	#1,d2
+		bmi.s	@skip_fill
+	@fill:
+		move.w	#$FFFF,(a6)
+		bchg	#1,d4
+		beq.s	@loop_fill
+
+		addi.l	#$20<<16,d0
+		move.l	d0,4(a6)
+	@loop_fill:
+		dbf.w	d2,@fill
+	@skip_fill:
+		move.w	Hud_Rings_Arrangement(pc,d3.w),(a6)
+Hud_RingsEnd:
+		rts
+Hud_Rings_Arrangement:
+	dc.w	$FCCC,$FFCC,$FFFC,$FFFF
+
 ; End of function Hud_Rings
 
 ; ---------------------------------------------------------------------------

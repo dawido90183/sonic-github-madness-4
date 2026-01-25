@@ -324,6 +324,7 @@ v_scroll_block_2_size:	equ $FFFFF7F2	; unused (2 bytes)
 v_scroll_block_3_size:	equ $FFFFF7F4	; unused (2 bytes)
 v_scroll_block_4_size:	equ $FFFFF7F6	; unused (2 bytes)
 
+v_lastring: equ $FFFFFF7FE ; last ring ammount from updating
 
 v_spritetablebuffer:	equ $FFFFF800 ; sprite table ($280 bytes, last $80 bytes are overwritten by v_pal_water_dup)
 v_pal_water_dup:	equ $FFFFFA00 ; duplicate underwater palette, used for transitions ($80 bytes)
