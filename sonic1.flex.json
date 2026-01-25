@@ -1,8 +1,37 @@
 {
     "Flex": 2,
     "name": "Sonic 1",
-    "node": "370be4a5-a57a-499b-9c55-183eface4cb0",
+    "node": "01686b9d-1078-47b8-a452-71e0b6fca32e",
     "objects": [
+        {
+            "format": "Sonic 1 Old.js",
+            "name": "Instagram",
+            "palettes": [
+                {
+                    "path": "!Characters/Sonic/Palette - Normal.bin",
+                    "length": 1
+                },
+                {
+                    "path": "palette/Marble Zone.bin",
+                    "length": 3
+                }
+            ],
+            "art": {
+                "path": "artnem/Instagram.bin",
+                "compression": "Nemesis",
+                "offset": 0
+            },
+            "mappings": {
+                "path": "_maps/Instagram.asm",
+                "label": ""
+            },
+            "dplcs": {
+                "enabled": false,
+                "path": "",
+                "label": ""
+            },
+            "uuid": "01686b9d-1078-47b8-a452-71e0b6fca32e"
+        },
         {
             "format": "Sonic 1.js",
             "name": "Mr Hudd Numbers",

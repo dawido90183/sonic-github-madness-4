@@ -3759,6 +3759,40 @@ Level_LoadPal:
 		move.b	($FFFFFE53).w,(f_wtr_state).w
 
 Level_GetBgm:
+		cmpi.w	#(id_MZ<<8)+1,(v_zone).w
+		bne.s	@ok
+
+		move.b	#$C,(v_vbla_routine).w
+		bsr.w	WaitForVBla
+		;4000 is address
+		disable_ints
+		lea	(vdp_control_port).l,a6
+		move.w	#$8300+(vram_win>>10),(a6) ; 40x30
+		move.w	#$918C,(a6)
+		move.w	#$929E,(a6)
+
+		fillVRAM	$C1C1,$FFF,vram_win ; clear background namespace
+
+	@wait1:
+		move.w	(a5),d1
+		btst	#1,d1
+		bne.s	@wait1
+
+		move.w	#$8F02,(a5)
+
+		; this will be removed when instagram is loaded
+		fillVRAM	$3333,$1FF,$3800 ; clear background namespace
+
+	@wait2:
+		move.w	(a5),d1
+		btst	#1,d1
+		bne.s	@wait2
+
+		move.w	#$8F02,(a5) ; end of remove
+
+
+	@ok:
+
 		tst.w	(f_demo).w
 		bmi.s	Level_SkipTtlCard
 
