@@ -344,26 +344,7 @@ GameInit:
 		bsr.w	VDPSetupGame
 
 		bsr.w	JoypadInit
-		bra.s	SegaGM_Setup
-
-GamemodeTable_Sega:
-		dc.b	id_Sega
-		dc.b	id_SegaJP
-		dc.b	id_SegaEU
-		dc.b	id_Sega ; set this to EU+JP when done
-
-SegaGM_Setup:
-		move.w	#0,d0
-		btst	#6,(v_megadrive).w ; is Megadrive PAL?
-		beq.s	@notpal ; if not, branch
-		addq.w	#2,d0
-	@notpal:
-		tst.b   (v_megadrive).w	; is console Japanese?
-		bmi.s   @not_jp		; if not, branch
-		addq.w	#1,d0
-	@not_jp:
-		move.b	GamemodeTable_Sega(pc,d0.w),(v_gamemode).w
-
+		move.b	#id_Sega,(v_gamemode).w
 		jsr     (MegaPCM_LoadDriver).l
 		lea     (SampleTable).l, a0
 		jsr     MegaPCM_LoadSampleTable
@@ -2006,6 +1987,31 @@ GM_Sega:
 		bsr.w	ClearPLC
 		bsr.w	PaletteFadeOut
 		lea	(vdp_control_port).l,a6
+
+		move.w	#$9100,(a6)
+		move.w	#$9200,(a6)
+		bra.s	SegaGM_Setup
+GamemodeTable_Sega:
+		dc.b	id_Sega
+		dc.b	id_SegaJP
+		dc.b	id_SegaEU
+		dc.b	id_Sega ; set this to EU+JP when done
+
+SegaGM_Setup:
+		move.w	#0,d0
+		btst	#6,(v_megadrive).w ; is Megadrive PAL?
+		beq.s	@notpal ; if not, branch
+		addq.w	#2,d0
+	@notpal:
+		tst.b   (v_megadrive).w	; is console Japanese?
+		bmi.s   @not_jp		; if not, branch
+		addq.w	#1,d0
+	@not_jp:
+		move.b	GamemodeTable_Sega(pc,d0.w),(v_gamemode).w
+		cmpi.b	#id_Sega,(v_gamemode).w
+		beq.s	@ok
+		rts
+	@ok:
 		move.w	#$8004,(a6)	; use 8-colour mode
 		move.w	#$8200+(vram_fg>>10),(a6) ; set foreground nametable address
 		move.w	#$8400+(vram_bg>>13),(a6) ; set background nametable address
@@ -3713,6 +3719,8 @@ Level_ClrRam:
 		move.w	#$8500+(vram_sprites>>9),(a6) ; set sprite table address
 		move.w	#$9001,(a6)		; 64-cell hscroll size
 		move.w	#$8004,(a6)		; 8-colour mode
+		move.w	#$9100,(a6)
+		move.w	#$9200,(a6)
 		move.w	#$8720,(a6)		; set background colour (line 3; colour 0)
 		move.w	#$8A00+223,(v_hbla_hreg).w ; set palette change position (for water)
 		move.w	(v_hbla_hreg).w,(a6)
@@ -4168,6 +4176,8 @@ GM_Special:
 		lea	(vdp_control_port).l,a6
 		move.w	#$8B03,(a6)	; line scroll mode
 		move.w	#$8004,(a6)	; 8-colour mode
+		move.w	#$9100,(a6)
+		move.w	#$9200,(a6)
 		move.w	#$8A00+175,(v_hbla_hreg).w
 		move.w	#$9011,(a6)	; 128-cell hscroll size
 		move.w	(v_vdp_buffer1).w,d0
@@ -7212,6 +7222,13 @@ Map_Instagram: include "_maps/Instagram.asm"
 	even
 
 DrawInstagramOverlay:
+		move.b	(v_gamemode).w,d0
+		andi.b	#$7F,d0
+		cmpi.b	#id_Demo,d0
+		beq.s	@demo
+		cmpi.b	#id_Level,d0
+		bne.s	@return
+@demo:
 		cmpi.w	#(id_MZ<<8)+1,(v_zone).w
 		bne.s	@return
 		move.w	#128+92,d3 ; x
