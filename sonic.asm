@@ -3780,16 +3780,9 @@ Level_GetBgm:
 
 		move.w	#$8F02,(a5)
 
-		; this will be removed when instagram is loaded
-		fillVRAM	$3333,$1FF,$3800 ; clear background namespace
-
-	@wait2:
-		move.w	(a5),d1
-		btst	#1,d1
-		bne.s	@wait2
-
-		move.w	#$8F02,(a5) ; end of remove
-
+		locVRAM	$3800
+		lea	(Nem_Instagram).l,a0 ;	load alphabet
+		bsr.w	NemDec
 
 	@ok:
 
@@ -7215,6 +7208,24 @@ Obj_Index:
 		include	"_incObj\sub DisplaySprite.asm"
 		include	"_incObj\sub DeleteObject.asm"
 
+Map_Instagram: include "_maps/Instagram.asm"
+	even
+
+DrawInstagramOverlay:
+		cmpi.w	#(id_MZ<<8)+1,(v_zone).w
+		bne.s	@return
+		move.w	#128+92,d3 ; x
+		move.w	#128+92,d2 ; y
+		move.w	#$1C0,a3 ; art tile offset
+		lea	Map_Instagram(pc),a1
+		adda.w	(a1),a1
+		clr.w	d1
+		move.b	(a1)+,d1
+		subq.w	#1,d1
+; 		bmi.s	@return
+		bra.w	BuildSpr_Normal
+@return:
+		rts
 ; ===========================================================================
 BldSpr_ScrPos:	dc.l 0				; blank
 		dc.l v_screenposx&$FFFFFF	; main screen x-position
@@ -7230,6 +7241,7 @@ BldSpr_ScrPos:	dc.l 0				; blank
 BuildSprites:
 		lea	(v_spritetablebuffer).w,a2 ; set address for sprite table
 		moveq	#0,d5
+		bsr.w	DrawInstagramOverlay
 		lea	(v_spritequeue).w,a4
 		moveq	#7,d7
 
@@ -9721,6 +9733,8 @@ Nem_LzBlock1:	incbin	"artnem\LZ 32x32 Block.bin"
 ; ---------------------------------------------------------------------------
 ; Compressed graphics - MZ stuff
 ; ---------------------------------------------------------------------------
+Nem_Instagram:	incbin	"artnem\Instagram.bin"
+		even
 Nem_MzMetal:	incbin	"artnem\MZ Metal Blocks.bin"
 		even
 Nem_MzSwitch:	incbin	"artnem\MZ Switch.bin"

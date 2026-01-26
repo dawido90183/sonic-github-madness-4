@@ -23,7 +23,7 @@
             },
             "mappings": {
                 "path": "_maps/Instagram.asm",
-                "label": ""
+                "label": "@internal"
             },
             "dplcs": {
                 "enabled": false,

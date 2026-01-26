@@ -1,25 +1,25 @@
-Map_686b:
-Map_686b_0: 	dc.w Map_686b_2-Map_686b
-Map_686b_2: 	dc.b $15
-	dc.b $A4, $F, $40, $0, $A0
-	dc.b $C4, $F, $40, $0, $A0
-	dc.b $E4, $F, $40, $0, $A0
-	dc.b $4, $F, $40, $0, $A0
-	dc.b $24, $F, $40, $0, $A0
-	dc.b $44, $F, $40, $0, $A0
-	dc.b $A4, $B, $40, $0, $C0
-	dc.b $C4, $B, $40, $0, $C0
-	dc.b $E4, $B, $40, $0, $C0
-	dc.b $4, $B, $40, $0, $C0
-	dc.b $24, $B, $40, $0, $C0
-	dc.b $44, $B, $40, $0, $C0
-	dc.b $5C, $E, $40, $10, $D8
-	dc.b $5C, $E, $40, $1C, $F8
-	dc.b $5C, $A, $40, $28, $18
-	dc.b $64, $A, $40, $31, $48
-	dc.b $5C, $4, $40, $3A, $50
-	dc.b $84, $F, $40, $0, $A0
-	dc.b $64, $F, $40, $0, $A0
-	dc.b $64, $B, $40, $0, $C0
-	dc.b $84, $B, $40, $0, $C0
+@internal:
+@internal_0: 	dc.w @internal_2-@internal
+@internal_2: 	dc.b $15
+	dc.b $A4, $F, $C0, $0, $A4
+	dc.b $C4, $F, $C0, $0, $A4
+	dc.b $E4, $F, $C0, $0, $A4
+	dc.b $4, $F, $C0, $0, $A4
+	dc.b $24, $F, $C0, $0, $A4
+	dc.b $44, $F, $C0, $0, $A4
+	dc.b $A4, $B, $C0, $0, $C4
+	dc.b $C4, $B, $C0, $0, $C4
+	dc.b $E4, $B, $C0, $0, $C4
+	dc.b $4, $B, $C0, $0, $C4
+	dc.b $24, $B, $C0, $0, $C4
+	dc.b $44, $B, $C0, $0, $C4
+	dc.b $5C, $E, $C0, $10, $DC
+	dc.b $5C, $E, $C0, $1C, $FC
+	dc.b $5C, $A, $C0, $28, $1C
+	dc.b $64, $A, $C0, $31, $4C
+	dc.b $5C, $4, $C0, $3A, $54
+	dc.b $84, $F, $C0, $0, $A4
+	dc.b $64, $F, $C0, $0, $A4
+	dc.b $64, $B, $C0, $0, $C4
+	dc.b $84, $B, $C0, $0, $C4
 	even
