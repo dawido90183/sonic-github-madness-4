@@ -95,8 +95,8 @@ Poly_Populate:
 ; Adds a 2x2 grid of vertices to the table
 Poly_PopulateVert: ; uses D1 & A0
 		move.b	#8,(v_vert_count).l
-		lea (v_vert_buffer+$30).l,a0
-		move.w	#$30,d1
+		lea (v_vert_buffer+$18).l,a0
+		move.w	#$18,d1
 	@copy_buffer:
 		move.l  Poly_PopulateVertData-4(pc,d1.w),-(a0)
 		subq.w	#4,d1
@@ -106,15 +106,15 @@ Poly_PopulateVert: ; uses D1 & A0
 Poly_PopulateVertData:
 @size = $800 ; radius of a sphere inscribed within the cube
 ; Cube (8 verts, $30 bytes)
-	dc.w	@size,	@size,	-@size
-	dc.w	-@size,	@size,	-@size
-	dc.w	-@size,	-@size,	-@size
-	dc.w	@size,	-@size,	-@size
-
-	dc.w	@size,	@size,	@size
-	dc.w	-@size,	@size,	@size
-	dc.w	-@size,	-@size,	@size
-	dc.w	@size,	-@size,	@size
+; 	dc.w	@size,	@size,	-@size
+; 	dc.w	-@size,	@size,	-@size
+; 	dc.w	-@size,	-@size,	-@size
+; 	dc.w	@size,	-@size,	-@size
+;
+; 	dc.w	@size,	@size,	@size
+; 	dc.w	-@size,	@size,	@size
+; 	dc.w	-@size,	-@size,	@size
+; 	dc.w	@size,	-@size,	@size
 ; One (5 verts, $1E bytes, round to $20 bytes)
 ; 	dc.w	-@size/2,	-@size, $00
 ; 	dc.w	@size/2,	-@size, $00
@@ -138,13 +138,18 @@ Poly_PopulateVertData:
 ; 	dc.w	-@size*3/4,	0, 0
 ; 	dc.w	0,	@size*3/4, 0
 
+; Plane (4 verts, $18 bytes)
+	dc.w	@size,	@size,	0
+	dc.w	-@size,	@size,	0
+	dc.w	-@size,	-@size,	0
+	dc.w	@size,	-@size,	0
 
 ; Adds edges around the vertices from Poly_PopulateVert to the table
 
 Poly_PopulateEdge: ; uses D1 & A0
-		move.b	#12,(v_edge_count).l
-		lea (v_edge_buffer+$18).l,a0
-		move.w	#$18,d1
+		move.b	#4,(v_edge_count).l
+		lea (v_edge_buffer+8).l,a0
+		move.w	#$8,d1
 	@copy_buffer:
 		move.l  Poly_PopulateEdgeData-4(pc,d1.w),-(a0)
 		subq.w	#4,d1
@@ -154,20 +159,20 @@ Poly_PopulateEdge: ; uses D1 & A0
 
 Poly_PopulateEdgeData:
 ; Cube (12 edges, $18 bytes)
-	dc.b	0,1
-	dc.b	1,2
-	dc.b	2,3
-	dc.b	3,0
-
-	dc.b	4,5
-	dc.b	5,6
-	dc.b	6,7
-	dc.b	7,4
-
-	dc.b	0,4
-	dc.b	1,5
-	dc.b	2,6
-	dc.b	3,7
+; 	dc.b	0,1
+; 	dc.b	1,2
+; 	dc.b	2,3
+; 	dc.b	3,0
+;
+; 	dc.b	4,5
+; 	dc.b	5,6
+; 	dc.b	6,7
+; 	dc.b	7,4
+;
+; 	dc.b	0,4
+; 	dc.b	1,5
+; 	dc.b	2,6
+; 	dc.b	3,7
 ; One (3 edges, $6 bytes, round to $8 bytes)
 ;  	dc.b	0,1
 ;  	dc.b	2,3
@@ -191,6 +196,11 @@ Poly_PopulateEdgeData:
 ;  	dc.b	3,11
 ;  	dc.b	2,10
 ;  	dc.b	2,9
+; Plane (4 edges, $8 bytes)
+	dc.b	0,1
+	dc.b	1,2
+	dc.b	2,3
+	dc.b	3,0
 
 ; ===========================================================================
 ; Rotates a vertice around the Z axis
@@ -284,7 +294,7 @@ Poly_Update:
 		;bsr.s	Poly_DrawVertice ; Paint old vertices in black
 		bsr.s	Poly_Project
 
-		move.b	#$BB,d3
+		move.b	#$60,d3
 		bra.w	Poly_DrawLine
 
 ; 		move.b	#$09,d3
@@ -557,7 +567,65 @@ Poly_DrawLine: ; uses D0,D1,D2,(D3,D4),A0,A1,A2
 
 ; ===========================================================================
 ; Enviroment code (Basically what runs to make stuff move and call update after)
-Poly_RotateCube:
+; Poly_RotateCube:
+; 		move.w	#$1100,(v_poly_cam_z).l
+;
+; 		addq.b	#2,(v_poly_cam_rx).l
+; 		bsr.w Poly_PopulateVert
+; 		lea (v_vert_buffer).l,a0
+; 		move.b	(v_vert_count).l,d6
+; 		subq.w	#1,d6
+; 	@zoomout:
+; 		move.b	(v_poly_cam_rx).l,d0
+; 		bsr.w	Poly_RotateZY
+;
+; 		addq.w	#6,a0
+; 		dbf.w	d6,@zoomout
+; 		bsr.w Poly_Update
+;
+; 		disable_ints
+; 		writeVRAM $FF0400,$200,$E00 ; Update Canvas
+; 		rts
+; Poly_RotateOne:
+; 		move.w	#$C00,(v_poly_cam_z).l
+; 		addq.b	#2,(v_poly_cam_rz).l
+; 		bsr.w Poly_PopulateVert
+; 		lea (v_vert_buffer).l,a0
+; 		move.b	(v_vert_count).l,d6
+; 		subq.w	#1,d6
+; 	@zoomout:
+; 		move.b	(v_poly_cam_rz).l,d0
+; 		bsr.w	Poly_RotateXY
+; 		move.b	#$50,d0
+; 		bsr.w	Poly_RotateZY
+;
+; 		addq.w	#6,a0
+; 		dbf.w	d6,@zoomout
+; 		bsr.w Poly_Update
+;
+; 		disable_ints
+; 		writeVRAM $FF0400,$200,$80 ; Update Canvas
+; 		rts
+; Poly_RotateSonicHead:
+; 		move.w	#$1000,(v_poly_cam_z).l
+;
+; 		addq.b	#2,(v_poly_cam_ry).l
+; 		bsr.w Poly_PopulateVert
+; 		lea (v_vert_buffer).l,a0
+; 		move.b	(v_vert_count).l,d6
+; 		subq.w	#1,d6
+; 	@zoomout:
+; 		move.b	(v_poly_cam_ry).l,d0
+; 		bsr.w	Poly_RotateZX
+;
+; 		addq.w	#6,a0
+; 		dbf.w	d6,@zoomout
+; 		bsr.w Poly_Update
+;
+; 		disable_ints
+; 		writeVRAM $FF0400,$200,$E00 ; Update Canvas
+; 		rts
+Poly_RotatePlane:
 		move.w	#$1100,(v_poly_cam_z).l
 
 		addq.b	#2,(v_poly_cam_rx).l
@@ -574,47 +642,7 @@ Poly_RotateCube:
 		bsr.w Poly_Update
 
 		disable_ints
-		writeVRAM $FF0400,$200,$80 ; Update Canvas
-		rts
-
-Poly_RotateOne:
-		move.w	#$C00,(v_poly_cam_z).l
-		addq.b	#2,(v_poly_cam_rz).l
-		bsr.w Poly_PopulateVert
-		lea (v_vert_buffer).l,a0
-		move.b	(v_vert_count).l,d6
-		subq.w	#1,d6
-	@zoomout:
-		move.b	(v_poly_cam_rz).l,d0
-		bsr.w	Poly_RotateXY
-		move.b	#$50,d0
-		bsr.w	Poly_RotateZY
-
-		addq.w	#6,a0
-		dbf.w	d6,@zoomout
-		bsr.w Poly_Update
-
-		disable_ints
-		writeVRAM $FF0400,$200,$80 ; Update Canvas
-		rts
-Poly_RotateSonicHead:
-		move.w	#$1000,(v_poly_cam_z).l
-
-		addq.b	#2,(v_poly_cam_ry).l
-		bsr.w Poly_PopulateVert
-		lea (v_vert_buffer).l,a0
-		move.b	(v_vert_count).l,d6
-		subq.w	#1,d6
-	@zoomout:
-		move.b	(v_poly_cam_ry).l,d0
-		bsr.w	Poly_RotateZX
-
-		addq.w	#6,a0
-		dbf.w	d6,@zoomout
-		bsr.w Poly_Update
-
-		disable_ints
-		writeVRAM $FF0400,$200,$E00 ; Update Canvas
+		writeVRAM $FF0400,$200,$6000 ; Update Canvas
 		rts
 ; ===========================================================================
 ; Keep this at last to not mess with branches

@@ -234,19 +234,19 @@ GM_CharSelect:
 	; End of Character name tilemap loading
 
 	; 3D stuff
-; 		lea	($FF0000).l,a0 ; setup the tilemap on screen
-; 		move.w	#($20/2)-1,d1
-; 		move.w	#$A004,d0
-; 	@loop0:
-; 		move.w	d0,(a0)+
-; 		addq.w	#1,d0
-; 		dbf.w	d1,@loop0
-;
-; 		copyTilemap $FF0000,$C5A4,3,3,1
+		lea	($FF0000).l,a0 ; setup the tilemap on screen
+		move.w	#($20/2)-1,d1
+		move.w	#$8300,d0
+	@loop0:
+		move.w	d0,(a0)+
+		addq.w	#1,d0
+		dbf.w	d1,@loop0
 
-; 		bsr.w Poly_Setup
-; 		bsr.w Poly_Populate
-; 		bsr.w Poly_RotateCube
+		copyTilemap $FF0000,$E402,3,3,1
+
+		bsr.w Poly_Setup
+		bsr.w Poly_Populate
+		bsr.w Poly_RotatePlane
 	; End of 3D Stuff
 
 		lea	(vdp_data_port).l,a6
@@ -302,7 +302,7 @@ CharSelect_Loop:
 
 		jsr (RandomNumber).l ; Keep randomizing
 
-		;bsr.w	Poly_RotateCube
+		bsr.w	Poly_RotatePlane
 		bsr.w	CharSelect_Move
 
 		tst.b	(v_jpadpress1).w
