@@ -316,10 +316,10 @@ Deform_SYZ:
 		asl.l	#6,d4
 		move.w	(v_scrshifty).w,d5
 		ext.l	d5
-		asl.l	#4,d5
+		asl.l	#6,d5
 		move.l	d5,d1
-		asl.l	#1,d5
-		add.l	d1,d5
+; 		asl.l	#1,d5
+; 		add.l	d1,d5
 		bsr.w	ScrollBlock1
 		move.w	(v_bgscreenposy).w,(v_bgscrposy_vdp).w
 		lea	(v_hscrolltablebuffer).w,a1
