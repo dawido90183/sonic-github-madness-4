@@ -298,7 +298,7 @@ ptr_mus4E:	dc.l Music4E
 ptr_mus4F:	dc.l Music4F
 ptr_mus50:	dc.l Music50
 ptr_mus51:	dc.l Music51
-;ptr_mus52:	dc.l Music52
+ptr_mus52:	dc.l Music52
 ;ptr_mus53:	dc.l Music53
 ;ptr_mus54:	dc.l Music54
 ;ptr_mus55:	dc.l Music55
@@ -2829,6 +2829,8 @@ Music4F:	include	"sound/music/TG2000Tracks/Scrappy.asm"
 Music50:	include	"sound/music/CharSel.asm"
 		even
 Music51:	include	"sound/music/CNTracks/FuckedUpBlueSpheres.asm"
+		even
+Music52:	include	"sound/music/TG2000Tracks/WeAreTheSonic.asm"
 		even
 ; ---------------------------------------------------------------------------
 ; Sound effect pointers
