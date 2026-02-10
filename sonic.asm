@@ -3281,7 +3281,7 @@ LevSelTextLoad:
 		lea	(vdp_data_port).l,a6
 		move.l	#textpos,d4	; text position on screen
 		move.w	#$E680,d3	; VRAM setting (4th palette, $680th tile)
-		moveq	#22-1,d1		; number of lines of text
+		moveq	#23-1,d1		; number of lines of text
 
 	LevSel_DrawAll:
 		move.l	d4,4(a6)
@@ -3410,7 +3410,7 @@ LevelMenuText:
 	lstxt "FUCKING DESERT 1"
 	lstxt " HARD          2"
 	lstxt "               3"
-	lstxt "PEEING YEERD   1"
+	lstxt "WINDOWS YEERD  1"
 	lstxt "               2"
 	lstxt "               3"
 	lstxt "HOMER PEE ASS  1"
@@ -3424,7 +3424,8 @@ LevelMenuText:
 	lstxt "KING           3"
 	lstxt "FINAL ZONE      "
 	lstxt "SPECIAL STAGE   "
-	lstxt "SOUND TEST -  - "
+	lstxt "SYMPHONY   -  - "
+    lstxt "SPONGEBOB GAME  "	
 	lstxt "CHAR SELECT     "
 	even
 
