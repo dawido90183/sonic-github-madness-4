@@ -68,7 +68,9 @@ Deform_GHZ:
 		move.w	d0,d4
 		bsr.w	ScrollBlock3
 		move.w	(v_bgscreenposy).w,(v_bgscrposy_vdp).w
-		move.w	#$6F,d1
+		move.w	#$5f,d1
+	        asr.w   #8,d0
+	
 		sub.w	d4,d1
 		move.w	(v_screenposx).w,d0
 ;		cmpi.b	#id_Title,(v_gamemode).w			; CONI - title checks in a routine now unused there, pfft...
@@ -84,35 +86,24 @@ Deform_GHZ:
 loc_6346:
 		move.l	d0,(a1)+
 		dbf	d1,loc_6346
-		move.w	#$27,d1
+		move.w	#$2f,d1    ; Ato 
 		move.w	(v_bg2screenposx).w,d0
 		neg.w	d0
-
+        asr.w   #1,d0
+		
 loc_6356:
 		move.l	d0,(a1)+
 		dbf	d1,loc_6356
-		move.w	(v_bg2screenposx).w,d0
-		addi.w	#0,d0
-		move.w	(v_screenposx).w,d2
-		addi.w	#-$200,d2
-		sub.w	d0,d2
-		ext.l	d2
-		asl.l	#8,d2
-		divs.w	#$68,d2
-		ext.l	d2
-		asl.l	#8,d2
-		moveq	#0,d3
+		move.w	($FFFFF708).w,d0
+		moveq	#0,d2	
 		move.w	d0,d3
-		move.w	#$47,d1
+		move.w	#$4F,d1
 		add.w	d4,d1
-
+ 
 loc_6384:
-		move.w	d3,d0
+		move.w	d3,d0		
 		neg.w	d0
 		move.l	d0,(a1)+
-		swap	d3
-		add.l	d2,d3
-		swap	d3
 		dbf	d1,loc_6384
 		rts	
 ; End of function Deform_GHZ
