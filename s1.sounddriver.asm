@@ -300,8 +300,8 @@ ptr_mus50:	dc.l Music50
 ptr_mus51:	dc.l Music51
 ptr_mus52:	dc.l Music52
 ptr_mus53:	dc.l Music53
-;ptr_mus54:	dc.l Music54
-;ptr_mus55:	dc.l Music55
+ptr_mus54:	dc.l Music54
+ptr_mus55:	dc.l Music55
 ;ptr_mus56:	dc.l Music56
 ;ptr_mus57:	dc.l Music57
 ;ptr_mus58:	dc.l Music58
@@ -2833,6 +2833,10 @@ Music51:	include	"sound/music/CNTracks/FuckedUpBlueSpheres.asm"
 Music52:	include	"sound/music/TG2000Tracks/WeAreTheSonic.asm"
 		even
 Music53:	include	"sound/music/TG2000Tracks/LG.asm"
+		even
+Music54:	include	"sound/music/TG2000Tracks/Thomas.asm"
+		even
+Music55:	include	"sound/music/TG2000Tracks/ILBT.asm"
 		even
 ; ---------------------------------------------------------------------------
 ; Sound effect pointers
